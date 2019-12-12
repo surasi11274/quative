@@ -16,6 +16,7 @@ class DesignerController extends Controller
     public function index()
     {
         //        return view('auth.registerDesigner');
+        
 
     }
 
