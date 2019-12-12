@@ -18,7 +18,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/login/designer','DesignerController@index');
+Route::get('/login/designer','DesignerController@create');
 Route::post('/login/designer/store','DesignerController@store');
 
 Route::get('/login/designer',function(){

@@ -15,23 +15,28 @@ class CreateDesignersTable extends Migration
     {
         Schema::create('designers', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('about');
-            $table->text('experience');
-            $table->string('tagStyle');
-            $table->string('website');
+            $table->text('description');
+            $table->integer('phonenumber');
+            $table->string('profilepic');
+            $table->string('tag');
+
+
             $table->string('personalID');
             $table->string('titleName');
             $table->string('name');
             $table->string('surname');
+            $table->datetime('birthdate');
             $table->text('address');
             $table->integer('zipcode');
             $table->string('selfie_ID');
             $table->string('picture_IDCard');
+
+            $table->integer('pricerate');
             $table->string('bankname');
             $table->integer('bankaccount');
-            $table->string('picture_bookbank');
+
             $table->boolean('hasjob');
-            $table->integer('rate');
+            $table->integer('rating');
         });
     }
 

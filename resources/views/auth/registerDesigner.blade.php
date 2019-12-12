@@ -8,7 +8,7 @@
             กรอกข้อมูลผู้ใช้งาน
         </div>
         <div class="card-body" >
-        <form action="/login/designer/store" method="POST" enctype="multipart/form-data">
+        <form action="/login/designer/store" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
 
 
@@ -38,14 +38,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputUsername">About You</label>
-                    <input type="text" class="form-control"  name="about">
+                    <label for="inputUsername">Description</label>
+                    <input type="text" class="form-control"  name="description">
                 </div>
 
                 <div class="form-group">
-                    <label for="inputUsername">Experience</label>
-                    <input type="text" class="form-control"  name="experience">
+                    <label for="inputUsername">Phone Number</label>
+                    <input type="number" class="form-control"  name="phonenumber">
                 </div>
+
+            
+
+               
 
                 <div class="form-group">
                     
@@ -56,7 +60,7 @@
                         
                         <div class="form-check">
                             <!-- <li> -->
-                                <input class="form-check-input" type="checkbox" id="checkbox" value="{{$tag->nameTag}}">
+                                <input class="form-check-input" type="checkbox" id="checkbox" value="{{$tag->nameTag}}" name="tag">
                                 <label  class="form-check-label" for="checkbox">{{$tag->nameTag}}</label>
                             <!-- </li> -->
                         </div>
@@ -65,11 +69,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="inputUsername">Website</label>
-                    <input type="text" class="form-control"  name="website">
-                </div>
-
+              
                 <div class="row justify-content-center">
                     <h1 for="">กรอกข้อมูลบัตรประชาชน</h1>
                 </div>
@@ -79,9 +79,15 @@
                     <input type="number" class="form-control"  name="personalID">
                 </div>
 
-                <div class="form-group">
-                    <label for="inputUsername">Title Name</label>
-                    <input type="text" class="form-control"  name="titleName" >
+                <div class="form-group dropdown">
+                <label for="due" >Photo Personal ID</label>
+                    
+                    <select class="form-control" name="titlename" id="month" >
+                                <option selected="selected" value="นาย">นาย</option>
+                                <option value="นาง">นาง</option>
+                                <option value="นางสาว">นางสาว</option>
+                        
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -95,6 +101,11 @@
                         <label for="inputUsername">Surname</label>
                         <input type="text" class="form-control"  name="surname">
                     </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputUsername">Birth Date</label>
+                    <input type="date" class="form-control"  name="birthdate">
                 </div>
 
                 <div class="form-group">
@@ -126,23 +137,22 @@
                     <h1 for="">กรอกข้อมูลบัญชี</h1>
                 </div>
 
-                <div class="form-group dropdown">
-                <label for="due" >Photo Personal ID</label>
-                    
-                    <select class="form-control" name="titlename" id="month" >
-                                <option selected="selected" value="นาย">นาย</option>
-                                <option value="นาง">นาง</option>
-                                <option value="นางสาว">นางสาว</option>
-                        
-                    </select>
+                <div class="form-group">
+                    <label for="inputUsername">Price Rate </label>
+                    <input type="text" class="form-control" name="pricerate" >
                 </div>
 
                 <div class="form-group">
                     <label for="inputUsername">Bank </label>
-                    <input type="text" class="form-control"  >
+                    <input type="text" class="form-control"  name="bankname">
                 </div>
 
                 <div class="form-group">
+                    <label for="inputUsername">Bank Account</label>
+                    <input type="number" class="form-control"  name="bankaccount">
+                </div>
+
+                <!-- <div class="form-group">
                     <label for="due" >Pictures of Book Bank</label>
 
                     <div class="form-group ">
@@ -151,7 +161,7 @@
                             <input type="file" class="form-control" name="picture_bookbank">
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- <div class="form-group">
                     <label for="inputUsername">Name</label>

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Designer;
 use Illuminate\Http\Request;
+use App\Designer;
+
 
 class DesignerController extends Controller
 {
@@ -14,8 +15,7 @@ class DesignerController extends Controller
      */
     public function index()
     {
-        //
-        return view('auth.registerDesigner');
+        //        return view('auth.registerDesigner');
 
     }
 
@@ -27,6 +27,7 @@ class DesignerController extends Controller
     public function create()
     {
         //
+        return view('auth.registerDesigner');
     }
 
     /**
@@ -41,16 +42,21 @@ class DesignerController extends Controller
             //    dd($request->all());
 
         $this->validate($request,[
-            'about'=>'required',
-            'experience'=>'required',
+            'description'=>'required',
+            'phonenumber'=>'required',
+            'tag'=>'required',
+
+
             // 'tagStyle'=>'required',
-            'website'=>'required',
             'personalID'=>'required',
             'titleName'=>'required',
             'name'=>'required',
             'surname'=>'required',
+            'birthdate'=>'required',
             'address'=>'required',
             'zipcode'=>'required',
+
+            'pricerate'=>'required',
             'bankname'=>'required',
             'bankaccount'=>'required',
 
@@ -59,7 +65,7 @@ class DesignerController extends Controller
 //            'due'=>'required',
             'selfie_ID'=>'image|max:1999',
             'picture_IDCard'=>'image|max:1999',
-            'picture_bookbank'=>'image|max:1999'
+          //  'profilepic'=>'image|max:1999'
 
         ]);
 
@@ -67,7 +73,7 @@ class DesignerController extends Controller
 
         $filenameWithExt = $request->file('selfie_ID')->getClientOriginalName();
         $filenameWithExt = $request->file('picture_IDCard')->getClientOriginalName();
-        $filenameWithExt = $request->file('picture_bookbank')->getClientOriginalName();
+      //  $filenameWithExt = $request->file('profilepic')->getClientOriginalName();
 
         //get file name
 
@@ -75,7 +81,7 @@ class DesignerController extends Controller
 
         $extension = $request->file('selfie_ID')->getClientOriginalExtension();
         $extension = $request->file('picture_IDCard')->getClientOriginalExtension();
-        $extension = $request->file('picture_bookbank')->getClientOriginalExtension();
+       // $extension = $request->file('profilepic')->getClientOriginalExtension();
 
         //create new file name
 //        $filenameTostore = $filename.'_'.time().'.'.$extension;
@@ -89,19 +95,21 @@ class DesignerController extends Controller
         //upload img
         $request->file('selfie_ID')->move('uploads/selfie_ID',$filenameTostore);
         $request->file('picture_IDCard')->move('uploads/picture_IDCard',$filenameTostore);
-        $request->file('picture_bookbank')->move('uploads/picture_bookbank',$filenameTostore);
+       // $request->file('profilepic')->move('uploads/profilepic',$filenameTostore);
 
-        $designer = new RegisterDesigner;
-        $designer->about = $request->input('about');
-        $designer->experience = $request->input('experience');
+        $designer = new Designer;
+        $designer->description = $request->input('description');
+        $designer->phonenumber = $request->input('phonenumber');
         // $designer->tagStyle = $request->input('tagStyle');
-        $designer->website = $request->input('website');
+        $designer->tag = $request->input('tag');
         $designer->personalID = $request->input('personalID');
         $designer->titleName = $request->input('titleName');
         $designer->name = $request->input('name');
         $designer->surname = $request->input('surname');
+        $designer->birthdate = $request->input('birthdate');
         $designer->address = $request->input('address');
         $designer->zipcode = $request->input('zipcode');
+        $designer->pricerate = $request->input('pricerate');
         $designer->bankname = $request->input('bankname');
         $designer->bankaccount = $request->input('bankaccount');
 
@@ -110,10 +118,9 @@ class DesignerController extends Controller
 //        $album->due  = $due;
         $designer->selfie_ID = $filenameTostore;
         $designer->picture_IDCard = $filenameTostore;
-        $designer->picture_bookbank = $filenameTostore;
+     //   $designer->profilepic = $filenameTostore;
 
         $designer->save();
-
         return redirect('/')->with('success','Album created');
 
     }

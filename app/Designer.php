@@ -9,10 +9,5 @@ use Spatie\Permission\Traits\HasRoles;
 class Designer extends Model
 {
     //
-    protected $fillable = [
-        'about' ,'experience' ,'tagStyle' ,'website' ,
-        'personalID' ,'titleName' ,'name' ,'surname' ,'address' ,'zipcode' ,'selfie_ID' ,'picture_IDCard' ,
-        'bankname' ,'bankaccount' ,'picture_bookbank'
-        
-    ];
+    protected $fillable = array('description','phonenumber','profilepic','tag','personalID','titleName','name','surname','birthdate','address','zipcode','selfie_ID','picture_IDCard','pricerate','bankname','bankaccount');
 }
