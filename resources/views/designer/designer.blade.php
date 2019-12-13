@@ -8,7 +8,7 @@
             กรอกข้อมูลผู้ใช้งาน
         </div>
         <div class="card-body" >
-        <form action="/login/designer/store" method="post" enctype="multipart/form-data">
+        <form action="/designer/store" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
 
 
@@ -35,6 +35,20 @@
 
                 <div class="row justify-content-center">
                     <h1 for="">กรอกข้อมูลเกี่ยวกับคุณ</h1>
+                    
+                </div>
+
+
+                <div class="form-group">
+                    <div id="preview"></div>
+
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="due" class="control-label" >Profile Pic</label>
+                            <input type="file" class="form-control" id="input_img" name="profilepic">
+                        </div>
+                    
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -60,8 +74,8 @@
                         
                         <div class="form-check">
                             <!-- <li> -->
-                                <input class="form-check-input" type="checkbox" id="checkbox" value="{{$tag->nameTag}}" name="tag">
-                                <label  class="form-check-label" for="checkbox">{{$tag->nameTag}}</label>
+                                <input class="form-check-input" type="checkbox" value="{{$tag->id}}" name="tag[]">
+                                <label  class="form-check-label" for="tagName">{{$tag->tagName}}</label>
                             <!-- </li> -->
                         </div>
 
@@ -209,3 +223,39 @@
   </div>
 </div>
 @endsection
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $(document).on("click", ".remove_field", function () {
+            $(this).parent().parent().remove();
+        });
+
+        function previewImages() {
+
+            var $preview = $('#preview').empty();
+            if (this.files) $.each(this.files, readAndPreview);
+
+            function readAndPreview(i, file) {
+
+                if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+                    return alert(file.name + " is not an image");
+                } // else...
+
+                var reader = new FileReader();
+
+                $(reader).on("load", function () {
+                    $preview.append($("<img/>", {src: this.result , style:'height: 200px;object-fit: cover;padding:5px;'}));
+                });
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        $('#input_img').on("change", previewImages);
+
+
+    });
+
+</script>

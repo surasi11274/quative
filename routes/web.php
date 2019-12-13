@@ -18,13 +18,12 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/login/designer','DesignerController@create');
-Route::post('/login/designer/store','DesignerController@store');
+Route::get('/designer','DesignerController@create');
+Route::post('/designer/store','DesignerController@store');
 
-Route::get('/login/designer',function(){
-    $tags = App\Tags::select('nameTag')->get();
-    return view('auth.registerDesigner',compact('tags'));
-});
+Route::get('/designer/show/{token}', [
+    'as' => 'designer.show',
+    'uses' => 'DesignerController@show']);
 // Route::get('/login/designer', 'RegisterDesignerController@show' );
 
 // Route::get('login/designer/{id}',function(){

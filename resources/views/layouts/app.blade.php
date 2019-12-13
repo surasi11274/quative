@@ -92,8 +92,38 @@
                             @if (Auth::guest())
                                 <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+                            @elseif (Auth::user()->role=='1')
+                             <!-- <li class="nav-item"><a class="nav-link" role="button" href="/login/designer">Register to Designer</a></li> -->
+                             <li class="dropdown nav-item">
+                                    <a href="#" class="dropdown-toggle nav-link btn btn-primary" style="color: white;" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+                                    <!-- <a class="nav-link" role="button" href="/login/designer">Register to Designer</a> -->
+                                    
+
+                                    <ul class="dropdown-menu " role="menu">
+                                    <li class="nav-item">
+                                    <a class="nav-link" role="button" href="/designer">Designer Information</a>
+
+
+                                           
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                                Logout
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
                             @else
-                                <li class="nav-item"><a class="nav-link" role="button" href="/login/designer">Register to Designer</a></li>
+                               
 
                                 <li class="dropdown nav-item">
                                     <a href="#" class="dropdown-toggle nav-link btn btn-primary" style="color: white;" data-toggle="dropdown" role="button" aria-expanded="false">

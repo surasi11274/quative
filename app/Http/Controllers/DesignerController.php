@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use App\Designer;
+use App\Tags;
+
+
+use DB;
 
 
 class DesignerController extends Controller
@@ -28,7 +34,10 @@ class DesignerController extends Controller
     public function create()
     {
         //
-        return view('auth.registerDesigner');
+        $tags = Tags::all();
+        return view('designer.designer',[
+            'tags'=>$tags
+            ]);
     }
 
     /**
@@ -42,6 +51,66 @@ class DesignerController extends Controller
         //
             //    dd($request->all());
 
+        // $isDesigner = Auth::user()->designer();
+        // if ($isDesigner){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+        //     return redirect('route('actors.edit''));
+        // }
+        DB::table('designers')->insert([
+            'description'=>$request->input('description'),
+            'phonenumber'=>$request->input('phonenumber'),
+            'tag'=>json_encode($request->input('tag')),
+            'personalID'=>$request->input('personalID'),
+            'titlename'=>$request->input('titlename'),
+            'name'=>$request->input('name'),
+            'surname'=>$request->input('surname'),
+            'birthdate'=>$request->input('birthdate'),
+            'address'=>$request->input('address'),
+            'zipcode'=>$request->input('zipcode'),
+            'pricerate'=>$request->input('pricerate'),
+            'bankname'=>$request->input('bankname'),
+            'bankaccount'=>$request->input('bankaccount'),
+            'profilepic'=>'xxxxxx',
+            'selfieID'=>'xxxxxx',
+            'pictureIDCard'=>'xxxxxx',
+            'hasjob'=>'0',
+            'rating'=>'0',
+            'userID'=>Auth::user()->id,
+            'token'=> str_random(16)
+
+
+
+
+        ]);
+
+        $designer = new Designer();
+        // $designer->user_id = Auth::user()->id;
+
+        // $tagsString = "";
+        // foreach($request->tags as $tag){
+        //     $tagcheck = Tags::where('tagName',$tag)->get();
+        //     if($tagcheck->count() == 0){ // ยังไม่มี tag สรา้งใหม่
+        //         $newtag = new Tags();
+        //         $newtag->nameTag = $tag;
+        //         $newtag->save();
+        //         $tagsString = $tagsString."|".$newtag->id;
+        //     }else{
+        //         $tagsString = $tagsString."|".$tagcheck->first()->id; // ถ้ามีแล้ว เอาเลข id ไปต่อ
+        //     }
+        // }
+        // $designer->tag = $tagsString;
+        // $designer->token = str_random(16); // token เพื่อความ secure
+
+        // dd('success');
+        // $designer->save();
+        return redirect(route('designer.show',['token'=>$designer->token]));
+
+      
+
+
+        // tags เก็บยาวเป็น String แล้วไป split ทีหลัง
+        // รูปแบบ : id|id|id
+      
+        exit();    
         $this->validate($request,[
             'description'=>'required',
             'phonenumber'=>'required',
@@ -66,7 +135,7 @@ class DesignerController extends Controller
 //            'due'=>'required',
             'selfie_ID'=>'image|max:1999',
             'picture_IDCard'=>'image|max:1999',
-          //  'profilepic'=>'image|max:1999'
+            'profilepic'=>'image|max:1999'
 
         ]);
 
@@ -121,8 +190,7 @@ class DesignerController extends Controller
         $designer->picture_IDCard = $filenameTostore;
      //   $designer->profilepic = $filenameTostore;
 
-        $designer->save();
-        return redirect('/')->with('success','Album created');
+     
 
     }
 
@@ -132,9 +200,15 @@ class DesignerController extends Controller
      * @param  \App\Designer  $designer
      * @return \Illuminate\Http\Response
      */
-    public function show(Designer $designer)
+    public function show($token)
     {
         //
+        $designer = Designer::where('token',$token)->get();
+        if ($actors->count() == 0){
+            return "หาไม่เจอ ทำอะไรดี";
+        }
+        return view('designer.show',['designer'=>$designer->first()]);
+
     }
 
     /**

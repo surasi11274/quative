@@ -18,7 +18,7 @@ class CreateDesignersTable extends Migration
             $table->text('description');
             $table->integer('phonenumber');
             $table->string('profilepic');
-            $table->string('tag');
+            $table->text('tag');
 
 
             $table->string('personalID');
@@ -28,12 +28,15 @@ class CreateDesignersTable extends Migration
             $table->datetime('birthdate');
             $table->text('address');
             $table->integer('zipcode');
-            $table->string('selfie_ID');
-            $table->string('picture_IDCard');
+            $table->string('selfieID');
+            $table->string('pictureIDCard');
 
             $table->integer('pricerate');
             $table->string('bankname');
             $table->integer('bankaccount');
+
+            $table->integer('userID')->nullable();
+            $table->string('token',16)->nullable();
 
             $table->boolean('hasjob');
             $table->integer('rating');
