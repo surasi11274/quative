@@ -92,8 +92,8 @@
                             @if (Auth::guest())
                                 <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+
                             @elseif (Auth::user()->role=='1')
-                             <!-- <li class="nav-item"><a class="nav-link" role="button" href="/login/designer">Register to Designer</a></li> -->
                              <li class="dropdown nav-item">
                                     <a href="#" class="dropdown-toggle nav-link btn btn-primary" style="color: white;" data-toggle="dropdown" role="button" aria-expanded="false">
                                         {{ Auth::user()->name }} <span class="caret"></span>
@@ -103,7 +103,9 @@
 
                                     <ul class="dropdown-menu " role="menu">
                                     <li class="nav-item">
-                                    <a class="nav-link" role="button" href="/designer">Designer Information</a>
+                                    <a class="nav-link" role="button" href="{{route('designer.designer')}}">Designer Information</a>
+                                    <!-- <a class="nav-link" role="button" href="/designer/show/{token}">Designer Information</a> -->
+
 
 
                                            
@@ -123,7 +125,8 @@
                                     </ul>
                                 </li>
                             @else
-                               
+                                <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search') }}">Find Designer</a></li>
+
 
                                 <li class="dropdown nav-item">
                                     <a href="#" class="dropdown-toggle nav-link btn btn-primary" style="color: white;" data-toggle="dropdown" role="button" aria-expanded="false">

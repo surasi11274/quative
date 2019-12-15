@@ -138,11 +138,11 @@
                     <div class="form-group">
                         <div class="form-group">
                             <label for="due" class="control-label" >Selfie</label>
-                            <input type="file" class="form-control" name="selfie_ID">
+                            <input type="file" class="form-control" name="selfieID">
                         </div>
                         <div class="form-group">
                             <label for="due" class="control-label" >Personal ID Card</label>
-                            <input type="file" class="form-control" name="picture_IDCard">
+                            <input type="file" class="form-control" name="pictureIDCard">
                         </div>
                     </div>
                 </div>

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Designer;
 use App\Tags;
+use App\User;
 
 
 use DB;
@@ -34,6 +35,10 @@ class DesignerController extends Controller
     public function create()
     {
         //
+        $designer = Auth::user()->designer();
+        if ($designer){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+            return redirect(route('designer.edit'));
+        }
         $tags = Tags::all();
         return view('designer.designer',[
             'tags'=>$tags
@@ -49,12 +54,40 @@ class DesignerController extends Controller
     public function store(Request $request)
     {
         //
+        $designer = Auth::user()->designer();
+        if ($designer){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+            return view('designer.edit');
+        }
+        // $designer = Designer::find($id);
             //    dd($request->all());
 
         // $isDesigner = Auth::user()->designer();
         // if ($isDesigner){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
         //     return redirect('route('actors.edit''));
         // }
+
+        $filenameWithExt = $request->file('profilepic')->getClientOriginalName();
+        $filenameWithExt = $request->file('selfieID')->getClientOriginalName();
+        $filenameWithExt = $request->file('pictureIDCard')->getClientOriginalName();
+
+        //get file name
+
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+        $extension = $request->file('profilepic')->getClientOriginalExtension();
+        $extension = $request->file('selfieID')->getClientOriginalExtension();
+        $extension = $request->file('pictureIDCard')->getClientOriginalExtension();
+
+        //create new file name
+//        $filenameTostore = $filename.'_'.time().'.'.$extension;
+
+        $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
+
+           //upload img
+        $request->file('profilepic')->move('uploads/profilepic',$filenameTostore);
+        $request->file('selfieID')->move('uploads/selfieID',$filenameTostore);
+        $request->file('pictureIDCard')->move('uploads/pictureIDCard',$filenameTostore);
+
         DB::table('designers')->insert([
             'description'=>$request->input('description'),
             'phonenumber'=>$request->input('phonenumber'),
@@ -69,40 +102,33 @@ class DesignerController extends Controller
             'pricerate'=>$request->input('pricerate'),
             'bankname'=>$request->input('bankname'),
             'bankaccount'=>$request->input('bankaccount'),
-            'profilepic'=>'xxxxxx',
-            'selfieID'=>'xxxxxx',
-            'pictureIDCard'=>'xxxxxx',
+            'profilepic'=>$request->file('profilepic')->getClientOriginalName(),
+            'selfieID'=>$request->file('selfieID')->getClientOriginalName(),
+            'pictureIDCard'=>$request->file('pictureIDCard')->getClientOriginalName(),
             'hasjob'=>'0',
             'rating'=>'0',
-            'userID'=>Auth::user()->id,
+            'user_id'=>Auth::user()->id,
             'token'=> str_random(16)
+
+            
 
 
 
 
         ]);
 
-        $designer = new Designer();
-        // $designer->user_id = Auth::user()->id;
+       
 
-        // $tagsString = "";
-        // foreach($request->tags as $tag){
-        //     $tagcheck = Tags::where('tagName',$tag)->get();
-        //     if($tagcheck->count() == 0){ // ยังไม่มี tag สรา้งใหม่
-        //         $newtag = new Tags();
-        //         $newtag->nameTag = $tag;
-        //         $newtag->save();
-        //         $tagsString = $tagsString."|".$newtag->id;
-        //     }else{
-        //         $tagsString = $tagsString."|".$tagcheck->first()->id; // ถ้ามีแล้ว เอาเลข id ไปต่อ
-        //     }
-        // }
-        // $designer->tag = $tagsString;
-        // $designer->token = str_random(16); // token เพื่อความ secure
-
-        // dd('success');
-        // $designer->save();
-        return redirect(route('designer.show',['token'=>$designer->token]));
+        try{
+            // สำเร็จแล้ว
+            $designer->save();
+            // เด้งไปหน้าโชว์ของใครของมันเลย
+            return redirect(route('designer.show',['token'=>$designer->token]));
+        }catch (\Exception $x){
+            // save Actor ไม่ได้ มีบางอย่างผิดพลาด คืนค่ากลับหน้าเดิม
+            return back()->withInput();
+        }
+        // return redirect('/',['token'=>$designer->token]);
 
       
 
@@ -204,9 +230,6 @@ class DesignerController extends Controller
     {
         //
         $designer = Designer::where('token',$token)->get();
-        if ($actors->count() == 0){
-            return "หาไม่เจอ ทำอะไรดี";
-        }
         return view('designer.show',['designer'=>$designer->first()]);
 
     }
@@ -220,6 +243,12 @@ class DesignerController extends Controller
     public function edit(Designer $designer)
     {
         //
+
+        $designer = Auth::user()->designer();
+        if (!$designer){ // ยังเคยสร้างโปรไฟล์ เด้งไปหน้าสร้าง
+            return redirect('/designer');
+        }
+        return view('designer.edit');;
     }
 
     /**

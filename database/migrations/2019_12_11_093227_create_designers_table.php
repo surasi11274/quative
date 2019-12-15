@@ -35,11 +35,11 @@ class CreateDesignersTable extends Migration
             $table->string('bankname');
             $table->integer('bankaccount');
 
-            $table->integer('userID')->nullable();
+            $table->integer('user_id')->nullable();
             $table->string('token',16)->nullable();
 
-            $table->boolean('hasjob');
-            $table->integer('rating');
+            $table->boolean('hasjob')->default(0);
+            $table->integer('rating')->default(0);
         });
     }
 

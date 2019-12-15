@@ -18,8 +18,31 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/designer','DesignerController@create');
-Route::post('/designer/store','DesignerController@store');
+    
+Route::get('/search', [
+    'as' => 'search',
+    'uses' => 'HomeController@search']);      
+
+    // -------------------------- Designer ---------------------------
+// Route::get('/designer','DesignerController@create');
+Route::get('/designer', [
+    'as' => 'designer.designer',
+    'uses' => 'DesignerController@create']); 
+// Route::get('/edit','DesignerController@edit');
+Route::post('/designer/store', [
+    'as' => 'designer.create.store',
+    'uses' => 'DesignerController@store']);
+
+Route::get('/designer/edit', [
+    'as' => 'designer.edit',
+    'uses' => 'DesignerController@edit']);  
+
+
+
+    
+
+// Route::get('/designer/edit','DesignerController@edit');
+
 
 Route::get('/designer/show/{token}', [
     'as' => 'designer.show',
