@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Chonburi|Prompt&display=swap');
+._box-1{
+  height: auto;
+  background: #FCF7F7;
+}
+._curve{
+
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+h1, h3{
+  font-family: 'Chonburi', cursive;
+}
+h2, h4, h5, p, a{
+  font-family: 'Prompt', sans-serif;
+}
+.shape{
+  background-color: rgba(144, 74, 232,0.125);
+  clip-path: polygon(0% 0%, 12% 57%, 45% 81%, 100% 85%, 100% 0%);
+
+  z-index:1;
+}
+._primary-btn{
+  background: #FE3A76 !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #fff !important;
+}
+._secondary-btn{
+  background: white;
+  border: 3px solid #904AE8 !important;
+  color: #904AE8 !important;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+._hilight{
+  color: mediumpurple !important;
+}
+.card:hover {
+  box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,0.225);
+  transform: scale(0.96);
+
+}
+.card{
+  transition: 0.3s;
+  width: 18rem;
+  border: 2px solid rgba(144, 74, 232,0.225) !important;
+}
+.card-text{
+  color: #444;
+}
+._footer{
+  position: static;
+  width: 100%;
+  background-color:  #904AE8;
+  color: white;
+  text-align: center;
+  height: auto;
+  z-index: 1;
+
+}
+._illust{
+  position:absolute;
+  z-index: -1;
+
+}
