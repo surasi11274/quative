@@ -33,7 +33,7 @@
                                         <div class="buttons">
                                             <div class="row">
                                                 <div class="col">
-                                                    <a class="btn _secondary-btn btn-lg btn-block">ค้นหานักออกแบบ</a>
+                                                    <a class="btn _secondary-btn btn-lg btn-block ">ค้นหานักออกแบบ</a>
                                                 </div>
                                                 <div class="col">
                                                     <a class="btn _primary-btn btn-lg btn-block">สมัครสมาชิก</a>
@@ -122,11 +122,16 @@
                                         การค้นหานักออกแบบอย่างที่คุณต้องการดูก่อนสิ</p>
 
                                     <div class="flex">
-                                        <div class="container">
+                                        <div class="container">                                            
+
                                             <div class="row">
+                                            @foreach ($designers as $designer)
+
                                                 <div class="col-3 mt-5 mb-5">
-                                                    <img src="https://picsum.photos/320" class="rounded" alt="...">
+                                                    <img src="{{$designer->profilepic}}" class="rounded" alt="...">
                                                 </div>
+                                                @endforeach
+
                                                 <div class="col-3 mt-5 mb-5">
                                                     <img src="https://picsum.photos/320" class="rounded" alt="...">
                                                 </div>
@@ -138,7 +143,7 @@
                                                 </div>
 
                                             </div>
-                                            <div class="row">
+                                            <!-- <div class="row">
                                                 <div class="col-3 mt-5 mb-5">
                                                     <img src="https://picsum.photos/320" class="rounded" alt="...">
                                                 </div>
@@ -150,9 +155,10 @@
                                                 </div>
                                                 <div class="col-3 mt-5 mb-5">
                                                     <img src="https://picsum.photos/320" class="rounded" alt="...">
-                                                </div>
+                                                </div> -->
 
                                             </div>
+
 
                                         </div>
 

@@ -13,7 +13,7 @@ border-radius: 20px;
 }
 /* Rectangle 3.4 */
 .rec{
-height: 270px;
+height: 200px;
 left: 478px;
 top: 546px;
 background: #904AE8;
@@ -232,6 +232,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     background: #FE3A76 !important;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     color: #fff !important;
+    border-radius: 10px!important;
 }
 ._secondary-btn{
     background: white;
@@ -239,12 +240,15 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     color: #904AE8 !important;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px!important;
+
 }
 ._hilight{
     color: mediumpurple !important;
 }
 .rounded-ex{
     border-radius: 2.3rem!important;
+    
 }
 ._primary-drop{
     color: #fff;

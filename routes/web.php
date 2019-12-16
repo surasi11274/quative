@@ -14,6 +14,13 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/preview', function () {
+    return view('preview.preview');
+});
+Route::get('/previewmock', function () {
+    return view('preview.previewmock');
+});
+
 
 Auth::routes();
 

@@ -78,3 +78,24 @@ div.ks-cboxtags input[type="checkbox"] {
 div.ks-cboxtags input[type="checkbox"]:focus + label {
   border: 2px solid #e9a1ff;
 }
+
+.dropzone {
+  border: 2px dashed #dedede;
+  border-radius: 5px;
+  background: #f5f5f5;
+  background-color: #E7F3F8 !important;
+  cursor:pointer;
+}
+
+.dropzone i{
+  font-size: 5rem;
+
+}
+
+.dropzone .dz-message {
+  color: rgba(0,0,0,.54);
+  font-weight: 500;
+  font-size: initial;
+  text-transform: uppercase;
+  
+}

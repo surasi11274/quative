@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+
 
 use App\Designer;
+use App\Categories;
 use App\Tags;
 use App\User;
 
@@ -33,15 +37,23 @@ class HomeController extends Controller
     
     public function index()
     {
-        return view('home');
+        $designers = Designer::all();
+        $cats = Categories::all();  
+        return view('home',[
+            'designers'=>$designers
+            ]);
     }
     public function create()
     {
         //
-       
+        $users = Auth::user(); 
+        $cats = Categories::all();             
+             
         $tags = Tags::all();
         return view('search',[
-            'tags'=>$tags
+            'cats'=>$cats,
+            'tags'=>$tags,
+            'users'=>$users
             ]);
     }
     public function search()

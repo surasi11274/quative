@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-  <div class="row justify-content-center">
+<div class="container ">
+  <div class="row justify-content-center ">
         <div class="card">
         <div class="card-header">
             กรอกข้อมูลผู้ใช้งาน

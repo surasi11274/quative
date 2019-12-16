@@ -84,9 +84,9 @@ class DesignerController extends Controller
         $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
 
            //upload img
-        $request->file('profilepic')->move('uploads/profilepic',$filenameTostore);
-        $request->file('selfieID')->move('uploads/selfieID',$filenameTostore);
-        $request->file('pictureIDCard')->move('uploads/pictureIDCard',$filenameTostore);
+        // $request->file('profilepic')->move('uploads/profilepic',$filenameTostore);
+        // $request->file('selfieID')->move('uploads/selfieID',$filenameTostore);
+        // $request->file('pictureIDCard')->move('uploads/pictureIDCard',$filenameTostore);
 
         DB::table('designers')->insert([
             'description'=>$request->input('description'),
@@ -102,9 +102,9 @@ class DesignerController extends Controller
             'pricerate'=>$request->input('pricerate'),
             'bankname'=>$request->input('bankname'),
             'bankaccount'=>$request->input('bankaccount'),
-            'profilepic'=>$request->file('profilepic')->getClientOriginalName(),
-            'selfieID'=>$request->file('selfieID')->getClientOriginalName(),
-            'pictureIDCard'=>$request->file('pictureIDCard')->getClientOriginalName(),
+            'profilepic'=>$request->file('profilepic')->move('uploads/profilepic',$filenameTostore),
+            'selfieID'=>$request->file('selfieID')->move('uploads/selfieID',$filenameTostore),
+            'pictureIDCard'=>$request->file('pictureIDCard')->move('uploads/pictureIDCard',$filenameTostore),
             'hasjob'=>'0',
             'rating'=>'0',
             'user_id'=>Auth::user()->id,
