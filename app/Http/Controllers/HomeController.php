@@ -4,6 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Designer;
+use App\Tags;
+use App\User;
+
+
+use DB;
+
+
 
 class HomeController extends Controller
 {
@@ -22,9 +30,19 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         return view('home');
+    }
+    public function create()
+    {
+        //
+       
+        $tags = Tags::all();
+        return view('search',[
+            'tags'=>$tags
+            ]);
     }
     public function search()
     {

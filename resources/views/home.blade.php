@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -15,8 +15,15 @@
                     @endif
 
                     You are logged in!
-                        <section class="content ">
-                            <hr>
+                     
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<section class="content ">
                             <div class="container  " style="margin-top: 100px;">
                                 <div class="row ">
                                     <div class="col-12 col-sm-6">
@@ -153,10 +160,4 @@
                                 </div>
                             </div>
                         </section>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
 @endsection

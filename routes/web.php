@@ -21,7 +21,7 @@ Route::get('/', 'HomeController@index')->name('home');
     
 Route::get('/search', [
     'as' => 'search',
-    'uses' => 'HomeController@search']);      
+    'uses' => 'HomeController@create']);      
 
     // -------------------------- Designer ---------------------------
 // Route::get('/designer','DesignerController@create');
