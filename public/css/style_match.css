@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css?family=Chonburi|Prompt&display=swap');
+h1, h3{
+    font-family: 'Chonburi', cursive;
+}
+h2, h4, h5, p, a{
+    font-family: 'Prompt', sans-serif;
+}
+.form-match{
+background: #FFFFFF;
+border: 3px solid #904AE8;
+box-shadow: 0px 4px 12px rgba(83, 59, 142, 0.25);
+border-radius: 20px;
+}
+/* Rectangle 3.4 */
+.rec{
+height: 270px;
+left: 478px;
+top: 546px;
+background: #904AE8;
+border-radius: 20px 20px 0px 0px;
+}
+/* กรอกข้อมูลให้ครบถ้วนเพื่อที่เราจะได้หานักออกแบบที่ใช่ที่สุดสำหรับคุณ */
+.fill{
+width:100%;
+height: 114px;
+margin-left: 10%;
+}
+/* Plaifah Pentatham */
+.titlename{
+color: #FFFFFF;
+}
+/* Entrepreneur */
+.Entrepreneur{
+/*   position: absolute; */
+color: #CCCCCC;
+}
+/* สไตล์งานที่ต้องการ */
+/* เลือกประเภทผลิตภัณฑ์ที่ต้องการจะออกแบบ */
+.selectfillter{
+font-family: Prompt;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+}
+/* บรรจุภัณฑ์ประเภทกล่อง */
+.detaill-select{
+width: 100%;
+height: 31px;
+left: 589.24px;
+top: 950px;
+
+font-family: Prompt;
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+  outline: none;
+
+color: #000000;
+/*       border-color: #f44336!important; */
+    border-bottom: 5px solid #FF3975;
+}
+
+
+
+
+
+/* Group 58 */
+
+/*position: absolute;*/
+/*width: 286px;*/
+/*height: 50px;*/
+/*left: 1040px;*/
+/*top: 938px;*/
+
+
+
+/* Vector */
+.vector-line{
+/*   position: absolute; */
+width: 546px;
+height: 0px;
+right: 783px;
+top: 988px;
+
+border: 1px solid #FF3975 !important;
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus 		{ outline:none; }
+
+
+
+/* Ellipse */
+
+/*position: absolute;*/
+/*width: 140px;*/
+/*height: 140px;*/
+/*left: 589px;*/
+/*top: 607px;*/
+
+/*background: url(12036367_957647147607293_2020658316676970669_n.png);*/
+/*border: 2px solid #FFFFFF;*/
+
+
+/* Group 64 */
+
+/*position: absolute;*/
+/*width: 854.73px;*/
+/*height: 841px;*/
+/*left: 589.48px;*/
+/*top: 1222.28px;*/
+
+
+
+/*!* Group 65 *!*/
+
+/*position: absolute;*/
+/*width: 622.8px;*/
+/*height: 84.15px;*/
+/*left: 595.91px;*/
+/*top: 1093.57px;*/
+
+
+
+.container {
+    max-width: 640px;
+  font-family: 'Prompt', sans-serif;
+
+    font-size: 13px;
+}
+
+ul.ks-cboxtags {
+    list-style: none;
+    padding: 20px;
+}
+ul.ks-cboxtags li{
+  display: inline;
+}
+ul.ks-cboxtags li label{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #adadad;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li label {
+    padding: 8px 12px;
+    cursor: pointer;
+      font-family: Prompt;
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 27px;
+text-align: center;
+}
+
+ul.ks-cboxtags li label::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    content: "\f067";
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+    content: "\f00c";
+    transform: rotate(-360deg);
+
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+    border: 2px solid #1bdbf8;
+    background-color: #FF3975;
+    font-family: Prompt;
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 27px;
+text-align: center;
+
+    color: #fff;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+  display: absolute;
+}
+ul.ks-cboxtags li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+ul.ks-cboxtags li input[type="checkbox"]:focus + label {
+  border: 2px solid #e9a1ff;
+}
+
+/*datepicker*/
+
+/*profile avatar*/
+#imageUpload
+{
+    display: none;
+}
+
+#profileImage
+{
+    cursor: pointer;
+}
+._primary-btn{
+    background: #FE3A76 !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #fff !important;
+}
+._secondary-btn{
+    background: white;
+    border: 3px solid #904AE8 !important;
+    color: #904AE8 !important;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+._hilight{
+    color: mediumpurple !important;
+}
+.rounded-ex{
+    border-radius: 2.3rem!important;
+}
+._primary-drop{
+    color: #fff;
+    outline : none;
+}
+._primary-drop:hover{
+    background: #FE3A76;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #fff !important;
+}
