@@ -214,3 +214,4 @@
         </div>
     </section>
     @endsection
+<script src="{{asset('js/datepicker.js')}}"></script>
