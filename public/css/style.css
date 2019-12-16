@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Chonburi|Prompt&display=swap');
+h1, h3{
+    font-family: 'Chonburi', cursive !important;
+}
+h2, h4, h5, p, a{
+    font-family: 'Prompt', sans-serif;
+}
 div.ks-cboxtags {
     list-style: none;
     padding: 20px;
