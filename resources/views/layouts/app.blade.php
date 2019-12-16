@@ -13,6 +13,7 @@
 
     <!-- Styles -->
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{{asset('css/reset.css')}}">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/_home_style.css')}}">
     <link rel="stylesheet" href="{{asset('css/style_match.css')}}">
