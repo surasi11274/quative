@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="{{asset('css/reset.css')}}">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/_home_style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style_match.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('css/style_match.css')}}"> -->
+    @yield('assets')
     <link rel="stylesheet" href="{{asset('css/_select.css')}}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
@@ -130,15 +131,14 @@
 
                             @elseif (Auth::user()->role=='1')
                              <li class="dropdown nav-item">
-                                    <a href="#" class="dropdown-toggle nav-link btn rounded-circle" style="background-color: #904ae8
+                                    <a href="#" class="dropdown-toggle nav-link btn" style="color:white; background-color: #904ae8
 ;" data-toggle="dropdown" role="button" aria-expanded="false">
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
                                     <!-- <a class="nav-link" role="button" href="/login/designer">Register to Designer</a> -->
                                     
 
-                                    <ul class="dropdown-menu "  style="background-color: #904ae8
-;"role="menu">
+                                    <ul class="dropdown-menu "   role="menu">
                                     <li class="nav-item">
                                     <a class="nav-link " role="button" href="{{route('designer.designer')}}">ข้อมูลนักออกแบบ</a>
                                     <!-- <a class="nav-link" role="button" href="/designer/show/{token}">Designer Information</a> -->
@@ -177,7 +177,7 @@
                                             <a class="nav-link" href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                                Logout
+                                                ออกจากระบบ
                                             </a>
 
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

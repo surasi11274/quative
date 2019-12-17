@@ -3,13 +3,18 @@
 @section('content')
 <div class="container ">
   <div class="row justify-content-center ">
-        <div class="card">
-        <div class="card-header">
-            กรอกข้อมูลผู้ใช้งาน
+  <div class="container modal-lg">
+        <div class="card" style="width:100%;">
+        <center>
+        <div class="rec pt-5">
+            <h1 class="titlename">กรอกข้อมูลผู้ใช้งาน</h1>
+            
         </div>
+        </center>
         <div class="card-body" >
         <form action="/designer/store" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
+            <div class="container p-5">
 
 
                
@@ -214,12 +219,27 @@
                     </label>
                     </div>
                 </div> -->
-                <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
-                <button type="submit" class="btn btn-secondary">ย้อนกลับ</button>
+            
 
+            </div>
         </form>
         </div>
         </div>
+            <div class="row" style="margin-top: 50px;">
+                <div class="col">
+                    <button  class="btn btn-block " style="background-color:#ff3957
+
+; color:white;">ย้อนกลับ</button>
+
+                </div>
+                <div class="col">
+                 <button type="submit" class="btn btn-block " style="background-color:#904ae8
+; color:white;">บันทึกข้อมูล</button>
+
+                </div>
+            </div>
+        
+    </div>    
   </div>
 </div>
 @endsection

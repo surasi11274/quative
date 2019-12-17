@@ -24,9 +24,9 @@
 </div> -->
 
 <section class="content ">
-                            <div class="container  " style="margin-top: 100px;">
+                            <div class="container">
                                 <div class="row ">
-                                    <div class="col-12 col-sm-6">
+                                    <div class="col-12 col-sm-6" style="margin-top: 100px;">
                                         <h1 class="header">ออกแบบ
                                             <span class="_hilight">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
                                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>

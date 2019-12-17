@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('assets')
+   <link rel="stylesheet" href="css/style_match.css">
+@endsection
 @section('content')
 <section class="content">
 
@@ -18,7 +20,7 @@
         </p>
     </div>
 
-    <div class="col-12 col-sm-12 p-3 mb-5 bg-white rounded ">
+    <div class="col-12 col-sm-12 p-3 mb-5 rounded ">
         <form class="form-match">
             <div class="rec" >
                 <div class="row">
@@ -305,7 +307,10 @@
                 <input style="border-width: 2px;" type="number" class="detaill-select mt-5 mb-5" name="FirstName" plachholder="บรรจุภัณฑ์ประเภทกล่อง">
             </div>
 
-            <button class="btn _primary-btn btn-block"  style="margin-top: 20px;" href="select.html">ถัดไป</button>
+            <button type="button" class="btn btn-lg btn-block"   style="background-color: #904ae8
+;margin-top: 20px; "  >
+            <a  style="color:white;" href="/select" >ถัดไป</a>
+            </button>
 
         </form>
     </div>

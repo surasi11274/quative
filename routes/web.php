@@ -21,6 +21,13 @@ Route::get('/previewmock', function () {
     return view('preview.previewmock');
 });
 
+Route::get('/select', function () {
+    return view('select');
+});
+Route::get('/showmatch', function () {
+    return view('showmatch');
+});
+
 
 Auth::routes();
 
@@ -42,7 +49,9 @@ Route::post('/designer/store', [
 
 Route::get('/designer/edit', [
     'as' => 'designer.edit',
-    'uses' => 'DesignerController@edit']);  
+    'uses' => 'DesignerController@edit']); 
+
+
 
 
 

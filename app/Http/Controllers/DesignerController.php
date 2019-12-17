@@ -37,7 +37,7 @@ class DesignerController extends Controller
         //
         $designer = Auth::user()->designer();
         if ($designer){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
-            return redirect(route('designer.edit'));
+            return redirect(route('designer.show',['token'=>$designer->token]));
         }
         $tags = Tags::all();
         return view('designer.designer',[
@@ -230,6 +230,9 @@ class DesignerController extends Controller
     {
         //
         $designer = Designer::where('token',$token)->get();
+        if ($designer->count() == 0){
+            return "หาไม่เจอ ทำอะไรดี";
+        }
         return view('designer.show',['designer'=>$designer->first()]);
 
     }
