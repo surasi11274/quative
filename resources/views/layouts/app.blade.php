@@ -25,6 +25,116 @@
     <script src="{{asset('js/dropzone.js')}}"></script>
 
 </head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <img class="d-inline-block align-top" width="50" height="50" src="https://sv1.picz.in.th/images/2019/12/17/ismzWW.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+                <ul class="nav navbar-nav justify-content-end">
+                    <!-- Authentication Links -->
+                    <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search') }}">ค้นหานักออกแบบ</a></li>
+                    <li class="nav-item"><a class="nav-link" role="button" href="/preview">พรีวิว</a></li>
+                    <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search') }}">ผลงาน</a></li>
+
+
+                @if (Auth::guest())
+                    <!-- <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">สมัครสมาชิก</a></li> -->
+                        <li class="dropdown nav-item">
+                            <a href="#" class="dropdown-toggle nav-link btn" style="background-color: #904ae8; color: white;" data-toggle="dropdown" role="button" aria-expanded="false">
+                                เข้าสู่ระบบ <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu " role="menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">
+                                        เข้าสู่ระบบ
+                                    </a>
+
+
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">
+                                        สมัครสมาชิก
+                                    </a>
+
+
+                                </li>
+                            </ul>
+                        </li>
+
+                    @elseif (Auth::user()->role=='1')
+                        <li class="dropdown nav-item">
+                            <a href="#" class="dropdown-toggle nav-link btn" style="color:white; background-color: #904ae8
+;" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+                            <!-- <a class="nav-link" role="button" href="/login/designer">Register to Designer</a> -->
+
+
+                            <ul class="dropdown-menu "   role="menu">
+                                <li class="nav-item">
+                                    <a class="nav-link " role="button" href="{{route('designer.designer')}}">ข้อมูลนักออกแบบ</a>
+                                    <!-- <a class="nav-link" role="button" href="/designer/show/{token}">Designer Information</a> -->
+
+
+
+
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                        ออกจากระบบ
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+
+                            </ul>
+                        </li>
+                    @else
+
+
+
+
+                        <li class="dropdown nav-item">
+                            <a href="#" class="dropdown-toggle nav-link btn "  style="background-color: #904ae8
+; color: white;" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu " role="menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                        ออกจากระบบ
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+</header>
 <body>
     <div id="app">
         <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-static-top">
@@ -86,6 +196,7 @@
             </div>
         </nav> -->
 
+<<<<<<< HEAD
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -193,6 +304,8 @@
                 </div>
             </div>
         </nav>
+=======
+>>>>>>> e6e89fa0e95dbe9e88eef7beca17f48e184a91ee
 
 
         @yield('content')
@@ -203,7 +316,7 @@
     </div>
 <footer class="page-footer font-small blue pt-4" style="background-color: #904ae8
 ;">
-    
+
   <!-- Footer Links -->
   <div class="container-fluid text-center text-md-left " >
 
@@ -211,11 +324,11 @@
     <div class="row justify-content-center">
 
       <!-- Grid column -->
-    
+
       <!-- Grid column -->
 
       <hr class="clearfix w-100 d-md-none pb-3">
-        
+
       <!-- Grid column -->
       <div class="text-center">
 
@@ -236,13 +349,13 @@
             <li>
                     <a href="#!" style="margin-left: 10px; color: white;">ค้นหานักออกแบบ</a>
             </li>
-          
+
             <li>
                     <a href="#!" style="margin-left: 10px; color: white;">ผลงานนักออกแบบ</a>
             </li>
           </div>
 
-       
+
           <!-- <div class="row" >
             <li>
                     <a href="#!" style="color: white;">เข้าสู่ระบบ |</a>
@@ -250,7 +363,7 @@
             <li>
                     <a href="#!" style="margin-left: 5px; color: white;">ค้นหานักออกแบบ</a>
             </li>
-          
+
             <li>
                     <a href="#!" style="margin-left: 5px; color: white;">ผลงานนักออกแบบ</a>
             </li>
@@ -261,7 +374,7 @@
       <!-- Grid column -->
 
       <!-- Grid column -->
-  
+
       <!-- Grid column -->
 
     </div>
