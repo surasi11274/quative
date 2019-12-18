@@ -18,8 +18,12 @@ class CreateJobsTable extends Migration
             $table->integer('user_id')->nullable();
             $table->integer('designer_id')->nullable();
 
+            $table->integer('categories_id');
             $table->text('categories');
+
             $table->text('tags');
+            $table->datetime('finishdate');
+
 
             $table->string('email');
             $table->integer('phone');
@@ -27,7 +31,7 @@ class CreateJobsTable extends Migration
 
             $table->integer('pricerate');
 
-            $table->text('reference');
+            $table->text('reference')->nullable();;
 
             $table->string('file');
             $table->boolean('status')->default(0);

@@ -40,23 +40,23 @@ Route::get('/search', [
     'as' => 'search.create',
     'uses' => 'HomeController@createSearchStep1']);  
 
-Route::post('/actors/create/store', [
+Route::post('/search/create/store1', [
     'as' => 'search.create.store',
     'uses' => 'HomeController@storeSearchStep1']);
     
-Route::post('/search/select', [
+Route::get('/search/step2', [
     'as' => 'search.create.step2',
     'uses' => 'HomeController@createSearchStep2']);
         
-Route::post('/actors/create/store', [
+Route::post('/search/create/store2', [
     'as' => 'search.create.store',
     'uses' => 'HomeController@storeSearchStep2']);
 
-    Route::post('/search/select', [
+    Route::get('/search/step3', [
         'as' => 'search.create.step3',
         'uses' => 'HomeController@createSearchStep3']);
             
-    Route::post('/actors/create/store', [
+    Route::post('/search/create/store3', [
         'as' => 'search.create.store',
         'uses' => 'HomeController@storeSearchStep3']);
     

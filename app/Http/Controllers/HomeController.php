@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Designer;
 use App\Categories;
 use App\Tags;
+use App\Jobs;
+
 use App\User;
 
 
@@ -60,26 +62,31 @@ class HomeController extends Controller
     {
         //
         $users = Auth::user();
+        $cats = Categories::all();             
+
         // if ($designer){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
         //     return view('designer.edit');
         // }
     
-            dd($request->all());
 
-        DB::table('designers')->insert([
+        DB::table('jobs')->insert([
             'categories'=>$request->input('categories'),
-            'tag'=>json_encode($request->input('tag')),
+            'categories_id'=>$request->input('categories_id'),
+
+            'tags'=>json_encode($request->input('tags')),
+            'finishdate'=>$request->input('finishdate'),
+
             'email'=>$request->input('email'),
             'phone'=>$request->input('phone'),
-            'requiement'=>$request->input('requiement'),
+            'requirement'=>$request->input('requirement'),
             'pricerate'=>$request->input('pricerate'),
-            'reference'=>$request->input('reference'),
-           
-            // 'file'=>'0',
-            // 'status'=>'0',
-            'user_id'=>Auth::user()->id,
-            'token'=> str_random(16)
+            // 'reference'=>$request->input('reference'),
 
+           
+            'file'=>'0',
+            'designer_id'=>NULL,
+            'user_id'=>Auth::user()->id,
+            
 
         ]);
 
@@ -106,15 +113,30 @@ class HomeController extends Controller
     public function createSearchStep2()
     {
         $id = \Illuminate\Support\Facades\Session::get('id'); // รับ id มาจาก step
-        $users = Job::find($id);
-        if($actor == null){
+        $users = Jobs::find($id);
+        $cats = Categories::find($id);
+        if($users == null){
             return "ERROR หา id ไม่เจอ เพราะเข้าลิงค์ตรง เด้งกลับไปหน้าไหนก็ได้";
         }
-        return view('search.create.step2',['id'=>$users->id]);
+        return view('select',[
+            'id'=>$users->id
+            ]);
         // return view('search');
     }
     public function storeSearchStep2(Request $request)
     {
+
+          
+
+        DB::table('jobs')->insert([
+  
+            'reference'=>$request->input('reference'),
+
+        
+            
+
+        ]);
+
         try{
             // สำเร็จแล้ว ส่งไป step2
             $users->save();

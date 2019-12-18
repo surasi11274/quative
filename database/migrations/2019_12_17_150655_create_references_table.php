@@ -16,7 +16,7 @@ class CreateReferencesTable extends Migration
         //
         Schema::create('references', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('categories_kindID')->nullable();
+            $table->integer('categories_id')->nullable();
             $table->string('name');
             $table->string('img');
         });

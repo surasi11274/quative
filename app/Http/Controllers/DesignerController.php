@@ -117,8 +117,7 @@ class DesignerController extends Controller
 
         ]);
 
-       
-
+      
         try{
             // สำเร็จแล้ว
             // $designer->save();

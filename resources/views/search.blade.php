@@ -21,20 +21,20 @@
     </div>
 
     <div class="col-12 col-sm-12 p-3 mb-5 rounded ">
-        <form class="form-match">
+        <form class="form-match" action="/search/create/store1" method="post" enctype="multipart/form-data">
+        {{ csrf_field() }}
+
             <div class="rec" >
                 <div class="row">
                     <div class="col-3" style="margin-left: 50px; margin-top: 20px;">
                         <image id="profileImage" class="rounded-circle" src="https://picsum.photos/140" />
-                        <input id="imageUpload" type="file"
-                               name="profile_photo" placeholder="Photo" required="" capture>
+                        
                     </div>
                     <div class="col-3 align-items-center" style="margin-top: 40px;">
                         <div class="fill">
                             <h1 class="titlename">{{$users->name}}</h1>
                             <p>Entrepreneur</p>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -43,9 +43,8 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
-                            <!-- <input style="border-width: 2px;" type="text" class="detaill-select " name="categories" plachholder="sadas" id="output"> -->
-                            <input type="text" id="output" >
-
+                            <input style="border-width: 2px;" type="text" class="detaill-select " name="categories" plachholder="sadas" id="output">
+                            <input style="display: none;" type="text"  name="categories_id" plachholder="sadas" id="output2">
                         </div>
                     </div>
                     <div class="col-6 text-right">
@@ -105,7 +104,7 @@
                                                         @if ($cat->kindID == 1)
 
                                                             <div class="col-6 p-3">
-                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" id="cat" onChange="modalSelect()" data-dismiss="modal">
+                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">
                                                                     <img class="card-img-top" src="{{$cat->catsPic}}">
                                                                     <div class="card-body">
                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
@@ -130,7 +129,7 @@
                                                         @if ($cat->kindID == 2)
 
                                                             <div class="col-6 p-3">
-                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat">
+                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}',addID('{{$cat->id}}')"  data-dismiss="modal"> 
                                                                     <img class="card-img-top" src="{{$cat->catsPic}}">
                                                                     <div class="card-body">
                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
@@ -155,7 +154,7 @@
                                                         @if ($cat->kindID == 3)
 
                                                             <div class="col-6 p-3">
-                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat">
+                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}',addID('{{$cat->id}}')"  data-dismiss="modal">
                                                                     <img class="card-img-top" src="{{$cat->catsPic}}">
                                                                     <div class="card-body">
                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
@@ -180,7 +179,7 @@
                                                         @if ($cat->kindID == 4)
 
                                                             <div class="col-6 p-3">
-                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat">
+                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}',addID('{{$cat->id}}')"  data-dismiss="modal">
                                                                     <img class="card-img-top" src="{{$cat->catsPic}}">
                                                                     <div class="card-body">
                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
@@ -205,7 +204,7 @@
                                                         @if ($cat->kindID == 5)
 
                                                             <div class="col-6 p-3">
-                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat">
+                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}',addID('{{$cat->id}}')"  data-dismiss="modal">
                                                                     <img class="card-img-top" src="{{$cat->catsPic}}">
                                                                     <div class="card-body">
                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
@@ -271,7 +270,7 @@
                     
                     <div class="form-check">
                         <!-- <li> -->
-                            <input class="form-check-input" type="checkbox" value="{{$tag->id}}" name="tag[]">
+                            <input class="form-check-input" type="checkbox" value="{{$tag->id}}" name="tags[]">
                             <label  class="form-check-label" for="tagName">{{$tag->tagName}}</label>
                         <!-- </li> -->
                     </div>
@@ -282,13 +281,13 @@
                 <h2 class="selectfillter  pt-5">วันที่ต้องการ</h2>
                 <div class="row">
                     <div class="col-6">
-                        <input type="date" id="basicDate"  placeholder="MM/DD/YY" data-input>
+                        <input type="date" id="basicDate"  name="finishdate" placeholder="MM/DD/YY" data-input>
                     </div>
                 </div>
                 <div class="row  pt-5">
                     <div class="col-6 ">
                         <h2 class="selectfillter ">อีเมล์</h2>
-                        <input type="text" class="form-control" placeholder="ex. abc@hotmail.com" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" name="email" placeholder="ex. abc@hotmail.com" aria-label="Username" aria-describedby="basic-addon1">
                         <p>
                             กรอกอีเมล์ที่ต้องการแจ้งเตือน
 
@@ -296,39 +295,48 @@
                     </div>
                     <div class="col-6 ">
                         <h2 class="selectfillter">เบอร์โทรศัพท์</h2>
-                        <input type="text" class="form-control" placeholder="ex. 029067726" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" name="phone" placeholder="ex. 029067726" aria-label="Username" aria-describedby="basic-addon1">
                         <p>
                             กรอกเบอร์โทรศัพท์เพื่อเราแจ้งข่าวสารล่วงหน้า
                         </p>
                     </div>
                 </div>
                 <h2 class="selectfillter  pt-5">สิ่งที่ต้องการจะบอกเป็นพิเศษ</h2>
-                <textarea class="form-control" placeholder="ex. need less is more" aria-label="With textarea"></textarea>
+                <textarea class="form-control" name="requirement" placeholder="ex. need less is more" aria-label="With textarea"></textarea>
                 <h2 class="selectfillter  pt-5">งบประมาณที่ต้องการจ้างงานออกแบบในครั้งนี้</h2>
                 <p>
                     *ระบบจะค้นหาจากราคาที่ใกล้มากที่สุดจากกลุ่มนักออกแบบ*
                 </p>
                 <!-- <input style="border-width: 2px;" type="number" class="detaill-select mt-5 mb-5" name="FirstName" plachholder="บรรจุภัณฑ์ประเภทกล่อง"> -->
-                <select name="pricerate"   class="detaill-select form-control mt-5 mb-5">
-                    <option value="1000">งานออกแบบฉลากติดสินค้าหน้าเดียว 
+                <select name="pricerate"  name="pricerate" class="detaill-select form-control mt-5 mb-5">
+                    <option value="2600">งานออกแบบฉลากติดสินค้าหน้าเดียว 
                                         <span style="text-color: #ff3957;">ราคา ฿2,900</span> 
                     </option>
                 </select>
+                <button type="submit" class="btn btn-block " style="background-color:#904ae8; color:white;margin-top: 20px;"  >
+                    บันทึกข้อมูล
+                </button>
             </div>
 
            
-            <button type="submit" class="btn btn-block " style="background-color:#904ae8
-; color:white;margin-top: 20px;"  >บันทึกข้อมูล</button>
+         
         </form>
     </div>
 </div>
 </section>
 @endsection
 
-<script type="text/javascript">
-	$(document).ready(function() {
-  $('#hit').click(function() {
-    alert($('#term').val());
-  });
-});
+<script>
+    function addCart(v){
+        document.getElementById('output').value = v
+        console.log(v);
+        return false;
+    }
+</script>
+<script>
+    function addID(v){
+        document.getElementById('output2').value = v
+        console.log(v);
+        return false;
+    }
 </script>

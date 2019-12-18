@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container ">
-  <div class="row justify-content-center ">
+  <div class="row justify-content-center " >
   <div class="container modal-lg">
   <form action="/designer/store" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
