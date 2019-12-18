@@ -24,76 +24,85 @@
 </div> -->
 
 <section class="content ">
-                            <div class="container">
-                                <div class="row ">
-                                    <div class="col-12 col-sm-6" style="margin-top: 100px;">
-                                        <h1 class="header">ออกแบบ
-                                            <span class="_hilight">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
-                                        <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
-                                        <div class="buttons">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <a class="btn _secondary-btn btn-lg btn-block ">ค้นหานักออกแบบ</a>
-                                                </div>
-                                                <div class="col">
-                                                    <a class="btn _primary-btn btn-lg btn-block">สมัครสมาชิก</a>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 shape rounded">
-                                        <figure class="img-fluid ">
-                                            <picture>
-                                                <img src="photo/Frame.png" alt="">
-                                            </picture>
-                                        </figure>
-                                    </div>
-                                </div>
+    <div class="shape">
+        <div class="container">
+            <div class="row ">
+                <div class="col-12 col-sm-6 mt_ex">
+                    <h1 class="header">ออกแบบ
+                        <span class="_hilight">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
+                    <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
+                    <div class="buttons">
+                        <div class="row">
+                            <div class="col">
+                                <a class="btn _secondary-btn btn-lg btn-block ">ค้นหานักออกแบบ</a>
                             </div>
-                            <div class="_box-1 text-center mt-5 p-5 _curve">
-                                <h1 class="p-5">ทำไมต้อง <span class="_hilight">QUATIVE</span> </h1>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <img src="photo/_badge.png" alt="...">
-                                                    <h3>มีคุณภาพ</h3>
-                                                    <p>สินค้าดีไซน์โดยดีไซน์เนอร์มืออาชีพ <br>
-                                                        ทำให้มีคุณภาพ ใช้งานได้ดี สวย <br>
-                                                        โดนใจตามแบบที่เราต้องการ</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <img src="photo/_light.png"alt="...">
-                                                    <h3>นักออกแบบมืออาชีพ</h3>
-                                                    <p>นักออกแบบเฉพาะทาง <br>
-                                                        มาช่วยให้งานของคุณดูดีขึ้น <br>
-                                                        สร้างประสบการณ์ที่ดีต่อใจคุณ</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col ">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <img src="photo/_vertify.png" alt="...">
-                                                    <h3>ความปลอดภัย</h3>
-                                                    <p>มีการตรวจสอบความปลอดภัย <br>
-                                                        น่าเชื่อถือสำหรับผู้ใช้งาน <br>
-                                                        และนักออกแบบ
-                                                    </p>
-                                                </div>
-                                            </div>
+                            <div class="col">
+                                <a class="btn _primary-btn btn-lg btn-block">สมัครสมาชิก</a>
 
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                            <div class="_box-2 bg-white">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 mt_ex">
+                    <figure class="img-fluid ">
+                        <picture>
+                            <img src="photo/Frame.png" alt="">
+                        </picture>
+                    </figure>
+                </div>
+            </div>
+            <div class=" text-center mt-5 mb-5 p-5 _curve">
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class=" _box-1 text-center p-5">
+        <div class="container">
+            <h1 class="p-5">ทำไมต้อง <span class="_hilight">QUATIVE</span> </h1>
+            <div class="row ">
+                <div class="col-12 col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="photo/_badge.png" alt="..." class="mt-5 mb-5">
+                            <h3 class="mt-2 mb-2">มีคุณภาพ</h3>
+                            <p >สินค้าดีไซน์โดยดีไซน์เนอร์มืออาชีพ <br>
+                                ทำให้มีคุณภาพ ใช้งานได้ดี สวย <br>
+                                โดนใจตามแบบที่เราต้องการ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="photo/_light.png"alt="..." class="mt-5 mb-5">
+                            <h3 class="mt-2 mb-2">นักออกแบบมืออาชีพ</h3>
+                            <p >นักออกแบบเฉพาะทาง <br>
+                                มาช่วยให้งานของคุณดูดีขึ้น <br>
+                                สร้างประสบการณ์ที่ดีต่อใจคุณ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 ">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="photo/_vertify.png" alt="..." class="mt-5 mb-5">
+                            <h3 class="mt-2 mb-2">ความปลอดภัย</h3>
+                            <p >มีการตรวจสอบความปลอดภัย <br>
+                                น่าเชื่อถือสำหรับผู้ใช้งาน <br>
+                                และนักออกแบบ
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="_box-2 bg-white mt_ex">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-12 col-sm-6 p-5">
@@ -122,7 +131,7 @@
                                         การค้นหานักออกแบบอย่างที่คุณต้องการดูก่อนสิ</p>
 
                                     <div class="flex">
-                                        <div class="container">                                            
+                                        <div class="container">
 
                                             <div class="row">
                                             @foreach ($designers as $designer)

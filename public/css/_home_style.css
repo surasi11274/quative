@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Chonburi|Prompt&display=swap');
 ._box-1{
-  height: auto;
-  background: #FCF7F7;
+  background-image: url("../photo/section-1.png");
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  background-position:center bottom;
+  z-index: 2;
+  height: 820px !important;
 }
-._curve{
-
+.mt_ex{
+  margin-top: 200px;
 }
 img{
   max-width: 100%;
@@ -17,9 +21,13 @@ h2, h4, h5, p, a{
   font-family: 'Prompt', sans-serif;
 }
 .shape{
-  background-color: rgba(144, 74, 232,0.125);
-  clip-path: polygon(0% 0%, 12% 57%, 45% 81%, 100% 85%, 100% 0%);
+  background-image: url("../photo/shape-home.png");
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  background-position:right;
 
+  /*background-color: rgba(144, 74, 232,0.125);*/
+  /*clip-path: polygon(0% 0%, 12% 57%, 45% 81%, 100% 85%, 100% 0%);*/
   z-index:1;
 }
 ._primary-btn{
@@ -37,11 +45,11 @@ h2, h4, h5, p, a{
 ._hilight{
   color: mediumpurple !important;
 }
-.card:hover {
-  box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,0.225);
-  transform: scale(0.96);
+/*.card:hover {*/
+  /*box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,0.225);*/
+  /*transform: scale(0.96);*/
 
-}
+/*}*/
 .card{
   transition: 0.3s;
   width: 18rem;
