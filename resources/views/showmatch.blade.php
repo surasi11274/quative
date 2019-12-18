@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-         <div class="card mt-5" style="width: 100%;padding-top: 30px;">
+<div class="container mt_ex ">
+         <div class="card mt-5 rounded-ex" style="width: 100%;padding-top: 30px;">
          	<h1 class="text-center mt-5" style="color:#904ae8
 ;"> ใช่ !! ในที่สุดเราก็พบนักออกแบบ</h1>
             <div class="row">
                <div class="col-12 mt-5">
 
-	               	<div id="carouselExampleIndicators" class="carousel slide container" data-ride="carousel">
-				  <ol class="carousel-indicators">
+	               	<div id="carouselExampleIndicators" class="carousel slide container" data-ride="touch" >
+				  <ol class="carousel-indicators sr-only">
 				    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 				    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 				    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
@@ -22,42 +22,42 @@
 
                   <div class="tabbable">
 
-                     <ul class="nav">
+                     <ul class="nav" id="myDIV">
 
 
 
-                        <li class="active col">
+                        <li class=" col">
                            <a href="#Loose" data-toggle="tab">
                               <div class="profile-img text-center ">
-                                 <img class="rounded-circle"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
+                                 <img class="rounded-circle _btn _active"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
                               </div>
                            </a>
                         </li>
                         <li class="col">
                            <a href="#Cross" data-toggle="tab">
                               <div class="profile-img text-center ">
-                                 <img class="rounded-circle"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
+                                 <img class="rounded-circle _btn"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
                               </div>
                            </a>
                         </li>
                         <li class="col">
                            <a href="#Flake" data-toggle="tab">
                               <div class="profile-img text-center ">
-                                 <img class="rounded-circle"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
+                                 <img class="rounded-circle _btn"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
                               </div>
                            </a>
                         </li>
                         <li class="col">
                            <a href="#aa" data-toggle="tab">
                               <div class="profile-img text-center ">
-                                 <img class="rounded-circle"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
+                                 <img class="rounded-circle _btn"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
                               </div>
                            </a>
                         </li>
                         <li class="col">
                            <a href="#bb" data-toggle="tab">
                               <div class="profile-img text-center ">
-                                 <img class="rounded-circle"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
+                                 <img class="rounded-circle _btn"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
                               </div>
                            </a>
                         </li>
@@ -119,7 +119,7 @@
 			  			</div> <!-- endrow -->
 					</div>
 
-<!-- 
+
 					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					    <span class="sr-only">Previous</span>
@@ -127,7 +127,7 @@
 					  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
 					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 					    <span class="sr-only">Next</span>
-					  </a> -->
+					  </a>
 
 
 				</div>
@@ -150,8 +150,8 @@
                   </div>
                   <div class="col-5 .col-sm">
                      <h5>Kritpon Klinkomut</h5>
-                     <h6><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i> <span style="color: #000000;">4.9</span> </h6>
-                     <button type="button" class="btn " style="color:#904ae8
+                     <h5 style="color:#FCD430;"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i> <span style="color: #000000;">4.9</span> </h5>
+                     <button type="button" class="btn rounded-ex" style="color:#904ae8
 ;border-color: #904ae8
 ;">ติดตามแล้ว</button>
                      <br><br>
@@ -173,7 +173,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-1 ">
+                  <div class="col-1 sr-only">
                      <div class="card text-center" style="width: 5.5rem;">
                         <div class="card-body">
                            <h5 class="card-title" style="color: #904AE8;"><img src="https://uppic.cc/d/5zcR" style="height: 20px;
@@ -187,85 +187,70 @@
                   </div>
                </div>
 
-                <div id="carouselExampleIndicators" class="carousel slide mt-5" data-ride="carousel" style="padding-bottom: 50px;">
+                            <div class="container text-center">
+                                <hr>
+                                <h2  class="_hilight mt-3">ผลงานที่เคยทำ</h2>
+                            </div>
+
+                <div id="carouselExampleIndicators1" class="carousel slide " data-ride="carousel" style="padding-bottom: 50px;">
 			  <ol class="carousel-indicators">
-		    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-		    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+		    <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+		    <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
 		    
 		  </ol>
 		  <div class="carousel-inner ">
 		    <div class="carousel-item active ">
-            <div class="container">
-               <div class="row">
-
-               <!-- <div class="col">
-               </div> -->
-
-               <div class="col">
-               <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
-               <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
+                <div class="container">
+                    <div class="row p-5">
+               <div class="col mb-1">
+               <img src="photo/corosel_1.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
+               <img src="photo/corosel_2.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
                </div>
 
-               <div class="col">
-               <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
-               <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
+               <div class="col mb-1">
+               <img src="photo/corosel_3.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
+               <img src="photo/corosel_4.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
                </div>
 
-               <div class="col">
-               <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
-               <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
+               <div class="col mb-1">
+               <img src="photo/corosel_5.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
+               <img src="photo/corosel_6.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
                </div>
 
-               <div class="col">
-               <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
-               <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
+               <div class="col mb-1">
+               <img src="photo/corosel_7.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
+               <img src="photo/corosel_8.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
                </div>
 
-               <!-- <div class="col">
-               </div> -->
-
-            </div>
-           </div>
-
+                    </div>
+               </div>
 		    </div> <!-- end carousel -->
 
 		    <div class="carousel-item">
-		     <div class="row">
-
-		     <div class="col">
+		     <div class="row p-5">
+		      <div class="col mt-1">
+		      <img src="photo/corosel_1.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
+		       <img src="photo/corosel_2.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
 		      </div>
 
-		      <div class="col">
-		      <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
-		       <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
+		      <div class="col mt-1">
+		      <img src="photo/corosel_3.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
+		       <img src="photo/corosel_4.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
 		      </div>
 
-		      <div class="col">
-		      <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
-		       <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
+		      <div class="col mt-1">
+		      <img src="photo/corosel_5.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
+		       <img src="photo/corosel_6.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
 		      </div>
 
-		      <div class="col">
-		      <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
-		       <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
+		      <div class="col mt-1">
+		      <img src="photo/corosel_7.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
+		      <img src="photo/corosel_8.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
 		      </div>
-
-		      <div class="col">
-		      <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
-		      <img src="https://www.canva.com/learn/wp-content/uploads/2016/11/yt-thumbnail-09.png" alt="..." class="img-thumbnail">
-		      </div>
-
-		       <div class="col">
-		      </div>
-
-
 		  	  </div>
 
-		    
-		  </div> <!-- end carousel inner -->
 
-
-
+		            </div> <!-- end carousel inner -->
 				</div>
 			</div>
 
@@ -311,11 +296,20 @@
            
          </div> <!-- endcard -->
          <div class="container">
-            <button type="button" class="btn btn-lg btn-block"   style=" margin-top: 50px;background-color:#904ae8
-      ;">  
-               <a href="prodesign.html"  style="color: white; ">จ้างงานเลย</a> 
-            </button>
+             <div class="d-flex justify-content-center">
+                 <button type="button" class="btn btn-lg "   style="width: 50%; margin-top: 50px;background-color:#904ae8
+      ;">
+                     <a href="prodesign.html"  style="color: white; ">จ้างงานเลย</a>
+                 </button>
+             </div>
          </div>
       </div>
       </div> <!-- ****container -->
       @endsection
+<script>
+    $('.carousel').carousel({
+        interval: false,
+        touch:true
+
+    });
+</script>
