@@ -42,7 +42,11 @@
                 <h2 class="selectfillter" >เลือกประเภทผลิตภัณฑ์ที่ต้องการจะออกแบบ</h2>
                 <div class="row">
                     <div class="col-6">
-                        <input style="border-width: 2px;" type="text" class="detaill-select " name="FirstName" plachholder="บรรจุภัณฑ์ประเภทกล่อง" id="output">
+                        <div class="form-group">
+                            <!-- <input style="border-width: 2px;" type="text" class="detaill-select " name="categories" plachholder="sadas" id="output"> -->
+                            <input type="text" id="output" >
+
+                        </div>
                     </div>
                     <div class="col-6 text-right">
                         <button type="button" class="btn _primary-btn " data-toggle="modal" data-target=".bd-example-modal-lg">เลือก</button>
@@ -101,7 +105,7 @@
                                                         @if ($cat->kindID == 1)
 
                                                             <div class="col-6 p-3">
-                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat">
+                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" id="cat" onChange="modalSelect()" data-dismiss="modal">
                                                                     <img class="card-img-top" src="{{$cat->catsPic}}">
                                                                     <div class="card-body">
                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
@@ -304,16 +308,27 @@
                 <p>
                     *ระบบจะค้นหาจากราคาที่ใกล้มากที่สุดจากกลุ่มนักออกแบบ*
                 </p>
-                <input style="border-width: 2px;" type="number" class="detaill-select mt-5 mb-5" name="FirstName" plachholder="บรรจุภัณฑ์ประเภทกล่อง">
+                <!-- <input style="border-width: 2px;" type="number" class="detaill-select mt-5 mb-5" name="FirstName" plachholder="บรรจุภัณฑ์ประเภทกล่อง"> -->
+                <select name="pricerate"   class="detaill-select form-control mt-5 mb-5">
+                    <option value="1000">งานออกแบบฉลากติดสินค้าหน้าเดียว 
+                                        <span style="text-color: #ff3957;">ราคา ฿2,900</span> 
+                    </option>
+                </select>
             </div>
 
-            <button type="button" class="btn btn-lg btn-block"   style="background-color: #904ae8
-;margin-top: 20px; "  >
-            <a  style="color:white;" href="/select" >ถัดไป</a>
-            </button>
-
+           
+            <button type="submit" class="btn btn-block " style="background-color:#904ae8
+; color:white;margin-top: 20px;"  >บันทึกข้อมูล</button>
         </form>
     </div>
 </div>
 </section>
 @endsection
+
+<script type="text/javascript">
+	$(document).ready(function() {
+  $('#hit').click(function() {
+    alert($('#term').val());
+  });
+});
+</script>

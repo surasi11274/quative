@@ -14,28 +14,53 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/preview', function () {
-    return view('preview.preview');
-});
-Route::get('/previewmock', function () {
-    return view('preview.previewmock');
-});
 
-Route::get('/select', function () {
-    return view('select');
-});
-Route::get('/showmatch', function () {
-    return view('showmatch');
-});
 
+// Route::get('/preview', function () {
+//     return view('preview.preview');
+// });
+// Route::get('/previewmock', function () {
+//     return view('preview.previewmock');
+// });
+
+// Route::get('/select', function () {
+//     return view('select');
+// });
+// Route::get('/showmatch', function () {
+//     return view('showmatch');
+// });
 
 Auth::routes();
+
+
 
 Route::get('/', 'HomeController@index')->name('home');
     
 Route::get('/search', [
-    'as' => 'search',
-    'uses' => 'HomeController@create']);      
+    'as' => 'search.create',
+    'uses' => 'HomeController@createSearchStep1']);  
+
+Route::post('/actors/create/store', [
+    'as' => 'search.create.store',
+    'uses' => 'HomeController@storeSearchStep1']);
+    
+Route::post('/search/select', [
+    'as' => 'search.create.step2',
+    'uses' => 'HomeController@createSearchStep2']);
+        
+Route::post('/actors/create/store', [
+    'as' => 'search.create.store',
+    'uses' => 'HomeController@storeSearchStep2']);
+
+    Route::post('/search/select', [
+        'as' => 'search.create.step3',
+        'uses' => 'HomeController@createSearchStep3']);
+            
+    Route::post('/actors/create/store', [
+        'as' => 'search.create.store',
+        'uses' => 'HomeController@storeSearchStep3']);
+    
+    
 
     // -------------------------- Designer ---------------------------
 // Route::get('/designer','DesignerController@create');

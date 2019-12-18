@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('assets')
+        <link rel="stylesheet" href="{{asset('css/style_match.css')}}">
+
+@endsection
 @section('content')
 <section class="content">
 
@@ -91,7 +95,12 @@
                     
                     <div class="form-check">
                         <!-- <li> -->
-                            <label  class="form-check-label" for="tagName">{{$designer->tag}}</label>
+                        @foreach($designer->tag as $tagn)
+                                @php
+                                    $tagname = \App\Tags::find($tagn)->tagName;
+                                @endphp
+                            <label  class="form-check-label" for="tagName">{{$tagname}}</label>
+                            @endforeach
                         <!-- </li> -->
                     </div>
 

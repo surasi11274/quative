@@ -199,6 +199,116 @@
             </div>
         </nav> -->
 
+<<<<<<< HEAD
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                        <img class="d-inline-block align-top" width="50" height="50" src="https://sv1.picz.in.th/images/2019/12/17/ismzWW.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+                    <ul class="nav navbar-nav justify-content-end">
+                            <!-- Authentication Links -->
+                            <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search.create') }}">ค้นหานักออกแบบ</a></li>
+                                <li class="nav-item"><a class="nav-link" role="button" href="/preview">พรีวิว</a></li>
+                                <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search.create') }}">ผลงาน</a></li>
+                                
+                  
+                            @if (Auth::guest())
+                                <!-- <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">สมัครสมาชิก</a></li> -->
+                                <li class="dropdown nav-item">
+                                    <a href="#" class="dropdown-toggle nav-link btn" style="background-color: #904ae8; color: white;" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        เข้าสู่ระบบ <span class="caret"></span>
+                                    </a>
+
+                                    <ul class="dropdown-menu " role="menu">
+                                    <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('login') }}">
+                                                เข้าสู่ระบบ
+                                            </a>
+
+                
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('register') }}">
+                                                สมัครสมาชิก
+                                            </a>
+
+                
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            @elseif (Auth::user()->role=='1')
+                             <li class="dropdown nav-item">
+                                    <a href="#" class="dropdown-toggle nav-link btn" style="color:white; background-color: #904ae8
+;" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+                                    <!-- <a class="nav-link" role="button" href="/login/designer">Register to Designer</a> -->
+                                    
+
+                                    <ul class="dropdown-menu "   role="menu">
+                                    <li class="nav-item">
+                                    <a class="nav-link " role="button" href="{{route('designer.designer')}}">ข้อมูลนักออกแบบ</a>
+                                    <!-- <a class="nav-link" role="button" href="/designer/show/{token}">Designer Information</a> -->
+
+
+
+                                           
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                                ออกจากระบบ
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+                            @else
+                              
+
+
+
+                                <li class="dropdown nav-item">
+                                    <a href="#" class="dropdown-toggle nav-link btn "  style="background-color: #904ae8
+; color: white;" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+
+                                    <ul class="dropdown-menu " role="menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                                ออกจากระบบ
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @endif
+                            
+                    </ul>
+                    
+                </div>
+            </div>
+        </nav>
+=======
+>>>>>>> e6e89fa0e95dbe9e88eef7beca17f48e184a91ee
 
 
         @yield('content')

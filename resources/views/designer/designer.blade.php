@@ -4,6 +4,8 @@
 <div class="container ">
   <div class="row justify-content-center ">
   <div class="container modal-lg">
+  <form action="/designer/store" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
         <div class="card" style="width:100%;">
         <center>
         <div class="rec pt-5">
@@ -12,8 +14,7 @@
         </div>
         </center>
         <div class="card-body" >
-        <form action="/designer/store" method="post" enctype="multipart/form-data">
-            {{ csrf_field() }}
+     
             <div class="container p-5">
 
 
@@ -222,7 +223,6 @@
             
 
             </div>
-        </form>
         </div>
         </div>
             <div class="row" style="margin-top: 50px;">
@@ -238,6 +238,8 @@
 
                 </div>
             </div>
+            </form>
+
         
     </div>    
   </div>
