@@ -121,7 +121,7 @@ class DesignerController extends Controller
 
         try{
             // สำเร็จแล้ว
-            $designer->save();
+            // $designer->save();
             // เด้งไปหน้าโชว์ของใครของมันเลย
             return redirect(route('designer.show',['token'=>$designer->token]));
         }catch (\Exception $x){
@@ -226,14 +226,23 @@ class DesignerController extends Controller
      * @param  \App\Designer  $designer
      * @return \Illuminate\Http\Response
      */
+        
     public function show($token)
     {
         //
         $designer = Designer::where('token',$token)->get();
+        $tags = Tags::all();
+
+        $designer->first()->tag = json_decode($designer->first()->tag);
+
+
         if ($designer->count() == 0){
             return "หาไม่เจอ ทำอะไรดี";
         }
-        return view('designer.show',['designer'=>$designer->first()]);
+        return view('designer.show',[
+            'designer'=>$designer->first(),
+            'tags'=>$tags
+            ]);
 
     }
 

@@ -98,9 +98,9 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
                     <ul class="nav navbar-nav justify-content-end">
                             <!-- Authentication Links -->
-                            <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search') }}">ค้นหานักออกแบบ</a></li>
+                            <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search.create') }}">ค้นหานักออกแบบ</a></li>
                                 <li class="nav-item"><a class="nav-link" role="button" href="/preview">พรีวิว</a></li>
-                                <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search') }}">ผลงาน</a></li>
+                                <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search.create') }}">ผลงาน</a></li>
                                 
                   
                             @if (Auth::guest())
