@@ -2,6 +2,7 @@
 @section('assets')
    <link rel="stylesheet" href="css/style_match.css">
 @endsection
+
 @section('content')
 <section class="content">
 
@@ -23,6 +24,7 @@
     <div class="col-12 col-sm-12 p-3 mb-5 rounded ">
         <form class="form-match" action="/search/create/store1" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div class="rec" >
                 <div class="row">
@@ -129,7 +131,7 @@
                                                         @if ($cat->kindID == 2)
 
                                                             <div class="col-6 p-3">
-                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}',addID('{{$cat->id}}')"  data-dismiss="modal"> 
+                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal"> 
                                                                     <img class="card-img-top" src="{{$cat->catsPic}}">
                                                                     <div class="card-body">
                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
@@ -154,7 +156,7 @@
                                                         @if ($cat->kindID == 3)
 
                                                             <div class="col-6 p-3">
-                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}',addID('{{$cat->id}}')"  data-dismiss="modal">
+                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">
                                                                     <img class="card-img-top" src="{{$cat->catsPic}}">
                                                                     <div class="card-body">
                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
@@ -179,7 +181,7 @@
                                                         @if ($cat->kindID == 4)
 
                                                             <div class="col-6 p-3">
-                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}',addID('{{$cat->id}}')"  data-dismiss="modal">
+                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">
                                                                     <img class="card-img-top" src="{{$cat->catsPic}}">
                                                                     <div class="card-body">
                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
@@ -204,7 +206,7 @@
                                                         @if ($cat->kindID == 5)
 
                                                             <div class="col-6 p-3">
-                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}',addID('{{$cat->id}}')"  data-dismiss="modal">
+                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">
                                                                     <img class="card-img-top" src="{{$cat->catsPic}}">
                                                                     <div class="card-body">
                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
@@ -313,6 +315,68 @@
                                         <span style="text-color: #ff3957;">ราคา ฿2,900</span> 
                     </option>
                 </select>
+
+
+                <h1 class="text-center _hilight p-5 ">
+                เลือกผลิตภัณฑ์ที่มีความใกล้เคียง<br>
+                กับแบบที่คุณต้องการ
+            </h1>
+            <div class="col-12 col-sm-12 p-3 mb-5 bg-white rounded ">
+                <div class="waterfall ">
+                    <div class="container">
+                        <div class="row  ">                           
+                             @foreach ($refs as $ref)
+                            <div class="col-12 col-sm-4 ">
+                                <div class="form-check item rounded p-3 p-3 ">
+                    
+                                        <input class="single-checkbox" type="checkbox" id="myCheckbox1" value="{{$ref->id}}" name="reference[]">
+                                        <!-- <label class="single-checkbox" for="myCheckbox1"> -->
+                                        <img style="display:block;" width="" src="{{$ref->img}}" /></label>
+                           
+                                </div>
+                              
+                                <!-- <div class="item rounded p-3 p-3">
+                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                </div>
+                                <div class="item rounded p-3 p-3">
+                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                </div> -->
+                            </div>
+                            @endforeach
+
+                            <!-- <div class="col-12 col-md-4">
+                                <div class="item rounded p-3">
+                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                </div>
+                                <div class="item rounded p-3">
+                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                </div>
+                                <div class="item rounded p-3">
+                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-4  col-sm-12">
+                                <div class="item rounded p-3">
+                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                </div>
+                                <div class="item rounded p-3">
+                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                </div>
+                                <div class="item rounded p-3">
+                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                </div>
+                            </div> -->
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
                 <button type="submit" class="btn btn-block " style="background-color:#904ae8; color:white;margin-top: 20px;"  >
                     บันทึกข้อมูล
                 </button>
@@ -339,4 +403,19 @@
         console.log(v);
         return false;
     }
+</script>
+<script>
+    function addRef([v]){
+        document.getElementById('output3').value = v
+        console.log(v);
+        return false;
+    }
+</script>
+<script>
+    var limit = 3;
+    $('input.single-checkbox').on('change', function(evt) {
+    if($(this).siblings(':checked').length >= limit) {
+        this.checked = false;
+    }
+    });
 </script>

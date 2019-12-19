@@ -106,3 +106,10 @@ div.ks-cboxtags input[type="checkbox"]:focus + label {
   text-transform: uppercase;
   
 }
+/* label::before {
+  background-image: url(../path/to/unchecked.png);
+}
+:checked + label::before {
+  background-image: url(../path/to/checked.png);
+} */
+

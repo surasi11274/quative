@@ -13,35 +13,36 @@
                         <div class="row  ">
                             <div class="col-12 col-sm-4 ">
                                 <div class="item rounded p-3 p-3 ">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+
+                                    <button><img src="https://picsum.photos/360" class="rounded" alt=""></button>
                                 </div>
                                 <div class="item rounded p-3 p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    <button><img src="https://picsum.photos/360" class="rounded" alt=""></button>
                                 </div>
                                 <div class="item rounded p-3 p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    <button><img src="https://picsum.photos/360" class="rounded" alt=""></button>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
                                 <div class="item rounded p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    <button><img src="https://picsum.photos/360" class="rounded" alt=""></button>
                                 </div>
                                 <div class="item rounded p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    <button><img src="https://picsum.photos/360" class="rounded" alt=""></button>
                                 </div>
                                 <div class="item rounded p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    <button><img src="https://picsum.photos/360" class="rounded" alt=""></button>
                                 </div>
                             </div>
                             <div class="col-md-4  col-sm-12">
                                 <div class="item rounded p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    <button><img src="https://picsum.photos/360" class="rounded" alt=""></button>
                                 </div>
                                 <div class="item rounded p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    <button><img src="https://picsum.photos/360" class="rounded" alt=""></button>
                                 </div>
                                 <div class="item rounded p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    <button><img src="https://picsum.photos/360" class="rounded" alt=""></button>
                                 </div>
                             </div>
                         </div>

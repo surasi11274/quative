@@ -31,10 +31,12 @@ class CreateJobsTable extends Migration
 
             $table->integer('pricerate');
 
-            $table->text('reference')->nullable();;
+            $table->text('reference');
 
             $table->string('file');
             $table->boolean('status')->default(0);
+            $table->string('token',16)->nullable();
+
 
             $table->timestamps();
         });
