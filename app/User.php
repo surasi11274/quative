@@ -35,7 +35,7 @@ class User extends Authenticatable
     }
     public function job()
     {
-        return $this->hasOne('App\Jobs');
+        return $this->hasMany('App\Jobs','user_id')->where('status',0)->get();
     }
   
 }

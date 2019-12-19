@@ -15,7 +15,7 @@ use App\Jobs;
 
 use App\User;
 
-use mysql_xdevapi\Session;
+use Illuminate\Support\Facades\Session;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use DB;
@@ -52,12 +52,15 @@ class HomeController extends Controller
     {
         //
         $users = Auth::user(); 
-        $cats = Categories::all();             
+        $cats = Categories::all();    
+        $refs = References::inRandomOrder()->limit(9)->get();             
+         
              
         $tags = Tags::all();
         return view('search',[
             'cats'=>$cats,
             'tags'=>$tags,
+            'refs'=>$refs,
             'users'=>$users
             ]);
     }
@@ -65,7 +68,7 @@ class HomeController extends Controller
     {
         //
         $users = Auth::user();
-        $jobs = Jobs::all();
+        // $jobs = Jobs::all();
 
         $cats = Categories::all();             
 
@@ -74,7 +77,7 @@ class HomeController extends Controller
         // }
     
 
-        DB::table('jobs')->insert([
+        $jobs = DB::table('jobs')->insert([
             'categories'=>$request->input('categories'),
             'categories_id'=>$request->input('categories_id'),
 
@@ -85,27 +88,27 @@ class HomeController extends Controller
             'phone'=>$request->input('phone'),
             'requirement'=>$request->input('requirement'),
             'pricerate'=>$request->input('pricerate'),
-            // 'reference'=>$request->input('reference'),
+            'reference'=>json_encode($request->input('reference')),
 
            
             'file'=>'0',
             'designer_id'=>NULL,
             'user_id'=>Auth::user()->id,
-            // 'token'=> str_random(16)
+            'token'=> str_random(16)
 
             
 
         ]);
 
 
+
        
 
         try{
             // สำเร็จแล้ว ส่งไป step2
-            // $users->save();
+            $jobs->save();
             return redirect(route('search.create.step2'))->with('id', $jobs->id);
         }catch (\Exception $x){
-            // สร้าง Actor ไม่ได้ มีบางอย่างผิดพลาด คืนค่ากลับหน้าเดิม
             return back()->withInput();
         }
         // return redirect('/',['token'=>$designer->token]);
@@ -139,14 +142,7 @@ class HomeController extends Controller
         if($jobs == null){
             return "ERROR หา id ไม่เจอ เพราะเข้าลิงค์ตรง เด้งกลับไปหน้าไหนก็ได้";
         }
-        return view('select',[
-            'id'=>$jobs->id,
-            // 'jobs'=>$jobs,
-            
-            // 'ref'=>$ref,
-            // 'cats'=>$cats
-
-            ]);
+        return view('showmatch',['id'=>$jobs->id]);
         // return view('search');
     }
     public function storeSearchStep2(Request $request)
@@ -179,15 +175,15 @@ class HomeController extends Controller
     }
     // เอาไอดีจาก create มาสร้าง insert Designer ที่เลือก
 
-    public function createSearchStep3()
+    // public function createSearchStep3()
     
-    {
-        return view('search');
-    }
-    public function storeSearchStep3(Request $request)
-    {
-        return view('search');
-    }
+    // {
+    //     return view('search');
+    // }
+    // public function storeSearchStep3(Request $request)
+    // {
+    //     return view('search');
+    // }
     
     public function search()
     {
