@@ -73,7 +73,7 @@
                                    </div>
                            </center>
                        </div>
-                       <div class="col-12 col-md-6">
+                       <div class="col-12 col-md-6 p-5">
                            <figure class="img-fluid">
                                <img src="photo/login.png">
                            </figure>

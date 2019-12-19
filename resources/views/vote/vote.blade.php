@@ -219,7 +219,7 @@
         </div> <!-- END ROw -->
 
         <center >
-            <a href="previewmock.html"><button type="button" class="btn btn-lg mt-5 text-center" style="background-color:#904AE8; color: #fff; width: 500px;">อัพโหลดโลโก้ของคุณ</button></a>
+            <a href="previewmock.html"><button type="button" class="btn btn-lg mt-5 text-center" style="background-color:#904AE8; color: #fff; width: 500px;">ดูเพิ่มเติม</button></a>
         </center>
 
 

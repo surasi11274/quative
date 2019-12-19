@@ -68,13 +68,85 @@
                                     <a class="nav-link" href="{{ route('register') }}">
                                         สมัครสมาชิก
                                     </a>
-
-
                                 </li>
+
+
                             </ul>
                         </li>
 
                     @elseif (Auth::user()->role=='1')
+                        <li class="dropdown nav-item mr-2">
+                            <a class="nav-link dropdown-toggle rounded-ex " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#904ae8; background-color: white;border: 2px solid #904ae8;
+;text-align: center; width: 50px; height: 80px;">
+                                <span><i class="fas fa-bell"></i><label for=""></label></span>
+                            </a>
+                            <div class="dropdown-menu rounded-ex p-5" style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);" aria-labelledby="navbarDropdownMenuLink">
+                                <div class=" overflow-noctification">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <figure class="  img-fluid">
+                                                <img class="rounded-circle w-100" src="https://picsum.photos/60">
+                                            </figure>
+                                        </div>
+                                        <div class="col-9">
+                                            <label class="font-weight-bold" for="name">ทริปสุดา พรพาน </label><small style="color:#ACACAC;">ส่งข้อความหาถึงคุณ</small>
+                                            <br>
+                                            <label for="">2</label><small>min ago</small>
+                                        </div>
+                                        <hr>
+                                        <div class="col-3">
+                                            <figure class="  img-fluid">
+                                                <img class="rounded-circle w-100" src="https://picsum.photos/60">
+                                            </figure>
+                                        </div>
+                                        <div class="col-9">
+                                            <label class="font-weight-bold" for="name">ทริปสุดา พรพาน </label><small style="color:#ACACAC;">ส่งข้อความหาถึงคุณ</small>
+                                            <br>
+                                            <label for="">2</label><small>min ago</small>
+                                        </div>
+                                        <hr>
+                                        <div class="col-3">
+                                            <figure class="  img-fluid">
+                                                <img class="rounded-circle w-100" src="https://picsum.photos/60">
+                                            </figure>
+                                        </div>
+                                        <div class="col-9">
+                                            <label class="font-weight-bold" for="name">ทริปสุดา พรพาน </label><small style="color:#ACACAC;">ส่งข้อความหาถึงคุณ</small>
+                                            <br>
+                                            <label for="">2</label><small>min ago</small>
+                                        </div>
+                                        <hr>
+                                        <div class="col-3">
+                                            <figure class="  img-fluid">
+                                                <img class="rounded-circle w-100" src="https://picsum.photos/60">
+                                            </figure>
+                                        </div>
+                                        <div class="col-9">
+                                            <label class="font-weight-bold" for="name">ทริปสุดา พรพาน </label><small style="color:#ACACAC;">ส่งข้อความหาถึงคุณ</small>
+                                            <br>
+                                            <label for="">2</label><small>min ago</small>
+                                        </div>
+                                        <hr>
+                                        <div class="col-3">
+                                            <figure class="  img-fluid">
+                                                <img class="rounded-circle w-100" src="https://picsum.photos/60">
+                                            </figure>
+                                        </div>
+                                        <div class="col-9">
+                                            <label class="font-weight-bold" for="name">ทริปสุดา พรพาน </label><small style="color:#ACACAC;">ส่งข้อความหาถึงคุณ</small>
+                                            <br>
+                                            <label for="">2</label><small>min ago</small>
+                                        </div>
+                                        <hr>
+
+                                    </div>
+
+                                </div>
+                                <a class="dropdown-item hidden" href="#">Another action</a>
+
+
+                            </div>
+                        </li>
                         <li class="dropdown nav-item">
                             <a href="#" class="dropdown-toggle nav-link btn" style="color:white; background-color: #904ae8
 ;" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -104,8 +176,10 @@
                                     </form>
                                 </li>
 
+
                             </ul>
                         </li>
+
                     @else
 
 

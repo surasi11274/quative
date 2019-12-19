@@ -107,7 +107,7 @@
 
                     <div class="container-fluid">
                         <div class="d-flex float-right" style="color:#ACACAC;">
-                            <p>16 September 2019 </p><span>&nbsp;❤️</span><small><label for="">50</label>ikes</small><span>	&nbsp;👁</span><small><label for="">16</label>view</small>
+                            <p>16 September 2019 </p><span>&nbsp;❤️</span><small><label for="">50</label>likes</small><span>	&nbsp;👁</span><small><label for="">16</label>view</small>
                         </div>
 
                         <div id="carouselExampleCaptions" class="carousel slide " data-ride="carousel">
