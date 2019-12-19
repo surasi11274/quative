@@ -13,6 +13,14 @@ class Jobs extends Model
     public function tags(){
         return $this->hasMany('App\Tags');
     }
+    public function ref()
+    {
+        return $this->hasMany('App\References');
+    }
+    public function cat()
+    {
+        return $this->belongsTo('App\Categories');
+    }
 }
 
 

@@ -3,6 +3,7 @@
 @section('content')
     <section class="content">
         <div class="container modal-lg">
+
             <h1 class="text-center _hilight p-5 ">
                 เลือกผลิตภัณฑ์ที่มีความใกล้เคียง<br>
                 กับแบบที่คุณต้องการ
@@ -11,39 +12,44 @@
                 <div class="waterfall ">
                     <div class="container">
                         <div class="row  ">
-                            <div class="col-12 col-sm-4 ">
-                                <div class="item rounded p-3 p-3 ">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                            <form action="/search/create/store2" method="post" enctype="multipart/form-data" >
+                            {{ csrf_field() }}
+
+            
+                                <div class="col-12 col-sm-4 ">
+                                {{$jobs->categories_id}}
+                              
+
+                                    <!-- <div class="item rounded p-3 p-3">
+                                        <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    </div>
+                                    <div class="item rounded p-3 p-3">
+                                        <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    </div>
                                 </div>
-                                <div class="item rounded p-3 p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                <div class="col-12 col-md-4">
+                                    <div class="item rounded p-3">
+                                        <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    </div>
+                                    <div class="item rounded p-3">
+                                        <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    </div>
+                                    <div class="item rounded p-3">
+                                        <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    </div>
                                 </div>
-                                <div class="item rounded p-3 p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
+                                <div class="col-md-4  col-sm-12">
+                                    <div class="item rounded p-3">
+                                        <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    </div>
+                                    <div class="item rounded p-3">
+                                        <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    </div>
+                                    <div class="item rounded p-3">
+                                        <img src="https://picsum.photos/360" class="rounded" alt="">
+                                    </div> -->
                                 </div>
-                            </div>
-                            <div class="col-12 col-md-4">
-                                <div class="item rounded p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
-                                </div>
-                                <div class="item rounded p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
-                                </div>
-                                <div class="item rounded p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-4  col-sm-12">
-                                <div class="item rounded p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
-                                </div>
-                                <div class="item rounded p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
-                                </div>
-                                <div class="item rounded p-3">
-                                    <img src="https://picsum.photos/360" class="rounded" alt="">
-                                </div>
-                            </div>
+                            </form>
                         </div>
 
                     </div>

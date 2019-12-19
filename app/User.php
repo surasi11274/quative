@@ -33,6 +33,9 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Designer')->first();
     }
-
+    public function job()
+    {
+        return $this->hasOne('App\User');
+    }
   
 }

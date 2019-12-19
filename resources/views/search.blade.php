@@ -23,6 +23,7 @@
     <div class="col-12 col-sm-12 p-3 mb-5 rounded ">
         <form class="form-match" action="/search/create/store1" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div class="rec" >
                 <div class="row">
@@ -129,7 +130,7 @@
                                                         @if ($cat->kindID == 2)
 
                                                             <div class="col-6 p-3">
-                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}',addID('{{$cat->id}}')"  data-dismiss="modal"> 
+                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal"> 
                                                                     <img class="card-img-top" src="{{$cat->catsPic}}">
                                                                     <div class="card-body">
                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
@@ -154,7 +155,7 @@
                                                         @if ($cat->kindID == 3)
 
                                                             <div class="col-6 p-3">
-                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}',addID('{{$cat->id}}')"  data-dismiss="modal">
+                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">
                                                                     <img class="card-img-top" src="{{$cat->catsPic}}">
                                                                     <div class="card-body">
                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
@@ -179,7 +180,7 @@
                                                         @if ($cat->kindID == 4)
 
                                                             <div class="col-6 p-3">
-                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}',addID('{{$cat->id}}')"  data-dismiss="modal">
+                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">
                                                                     <img class="card-img-top" src="{{$cat->catsPic}}">
                                                                     <div class="card-body">
                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
@@ -204,7 +205,7 @@
                                                         @if ($cat->kindID == 5)
 
                                                             <div class="col-6 p-3">
-                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}',addID('{{$cat->id}}')"  data-dismiss="modal">
+                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">
                                                                     <img class="card-img-top" src="{{$cat->catsPic}}">
                                                                     <div class="card-body">
                                                                         <h4 class="card-title"> {{$cat->name}}</h4>

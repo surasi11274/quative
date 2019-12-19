@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Designer;
 use App\Categories;
+use App\References;
 use App\Tags;
 use App\Jobs;
 
@@ -62,6 +63,7 @@ class HomeController extends Controller
     {
         //
         $users = Auth::user();
+
         $cats = Categories::all();             
 
         // if ($designer){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
@@ -90,6 +92,7 @@ class HomeController extends Controller
 
         ]);
 
+
        
 
         try{
@@ -113,20 +116,30 @@ class HomeController extends Controller
     public function createSearchStep2()
     {
         $id = \Illuminate\Support\Facades\Session::get('id'); // รับ id มาจาก step
-        $users = Jobs::find($id);
-        $cats = Categories::find($id);
-        if($users == null){
+        $jobs = Jobs::find($id);
+        $ref = References::all();
+        $cats = Categories::all();
+        if($jobs == null){
             return "ERROR หา id ไม่เจอ เพราะเข้าลิงค์ตรง เด้งกลับไปหน้าไหนก็ได้";
         }
         return view('select',[
-            'id'=>$users->id
+            'id'=>$jobs->id,
+            'jobs'=>$jobs,
+            
+            // 'ref'=>$ref,
+            // 'cats'=>$cats
+
             ]);
         // return view('search');
     }
     public function storeSearchStep2(Request $request)
     {
 
-          
+        $users = Auth::user();
+        $jobs = Jobs::find($id);
+        $cats = Categories::all();     
+        $ref = References::all();
+     
 
         DB::table('jobs')->insert([
   
@@ -150,6 +163,7 @@ class HomeController extends Controller
     // เอาไอดีจาก create มาสร้าง insert Designer ที่เลือก
 
     public function createSearchStep3()
+    
     {
         return view('search');
     }
