@@ -8,7 +8,7 @@
   height: 820px !important;
 }
 .mt_ex{
-  margin-top: 20rem;
+  margin-top: 10rem;
 }
 img{
   max-width: 100%;
@@ -52,7 +52,7 @@ h2, h4, h5, p, a{
 /*}*/
 .card{
   transition: 0.3s;
-  width: 18rem;
+  width: 100%;
   border: 2px solid rgba(144, 74, 232,0.225) !important;
 }
 .card-text{

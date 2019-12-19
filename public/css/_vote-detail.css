@@ -1,0 +1,143 @@
+.carousel-caption1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0,.15);
+    text-align: center;
+}
+.site-link{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+}
+.site-header{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    padding-left: inherit;
+    padding-right: inherit;
+}
+.card-text{
+    font-size: 0.7rem;
+}
+.site-below{
+
+    position: absolute;
+    bottom: -540px !important;
+    left: 0;
+    padding-left: inherit;
+    z-index: 2;
+}
+.carousel-caption1:hover{
+    background-color: rgba(0, 0, 0,.25);
+    transition: 0.4s;
+}
+
+.love{
+    background-color: #FF3975;
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+text-align: center;
+    transition: ease 0.4s;
+
+}
+.love:hover{
+    transform: translateY(-10px);
+    transition: ease 0.4s;
+    font-size: 30px;
+
+
+}
+.shadow-ex{
+    box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);
+}
+.follow{
+    background-color: #fff;
+    color: #904AE8;
+    width: 160px;
+    height: 40px;
+}
+button:active {
+    outline: none;
+    border: none;
+}
+.overflow-y{
+    width: 100%;
+    overflow: scroll;
+    height: 900px;
+}
+.comment-flow{
+    width: 100%;
+    overflow: scroll;
+    height: 300px;
+}
+button:focus {outline:0 !important;}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.15);
+    overflow: hidden;
+    color: white;
+    width: 100%;
+    height: 40%;
+    transition: .5s ease;
+    cursor: pointer;
+}
+
+.caption-inner:hover .overlay {
+    background-color: rgba(0,0,0,.35);
+    transform: translateY(-10);
+    transition: 0.4s ease;
+}
+.caption-inner {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+}
+/* endpang edit */
+.emp-profile{
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+
+}
+.profile-img{
+
+}
+.profile-img img{
+
+
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px -2px 12px rgba(83, 59, 142, 0.25);
+    border-radius: 50%;
+
+}
+/*****star******/
+.rating {
+    color: #FCD430;
+    font-size: 20px;
+}
+/* Just add this CSS to your project */

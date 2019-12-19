@@ -75,7 +75,7 @@
                        </div>
                        <div class="col-12 col-md-6">
                            <figure class="img-fluid">
-                               <img src="photo/preview.png">
+                               <img src="photo/login.png">
                            </figure>
                        </div>
                    </div>
