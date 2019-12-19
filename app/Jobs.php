@@ -21,6 +21,11 @@ class Jobs extends Model
     {
         return $this->belongsTo('App\Categories');
     }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
+
 
 

@@ -16,9 +16,14 @@
                             {{ csrf_field() }}
 
             
-                                <div class="col-12 col-sm-4 ">
-                                {{$jobs->categories_id}}
-                              
+                            <input style="border-width: 2px;" type="text" class="detaill-select " name="categories" plachholder="sadas" id="output">
+
+                                <div class="item rounded p-3 p-3 ">
+                                {{$jobs->id}}
+                                      
+                                </div>
+
+                                  
 
                                     <!-- <div class="item rounded p-3 p-3">
                                         <img src="https://picsum.photos/360" class="rounded" alt="">
@@ -91,3 +96,11 @@
         </div>
     </section>
     @endsection
+
+    <script>
+    function addCart(v){
+        document.getElementById('output').value = v
+        console.log(v);
+        return false;
+    }
+</script>

@@ -35,7 +35,7 @@ class User extends Authenticatable
     }
     public function job()
     {
-        return $this->hasOne('App\User');
+        return $this->hasOne('App\Jobs');
     }
   
 }

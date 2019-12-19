@@ -15,7 +15,9 @@ use App\Jobs;
 
 use App\User;
 
-
+use mysql_xdevapi\Session;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 use DB;
 
 
@@ -63,6 +65,7 @@ class HomeController extends Controller
     {
         //
         $users = Auth::user();
+        $jobs = Jobs::all();
 
         $cats = Categories::all();             
 
@@ -88,6 +91,8 @@ class HomeController extends Controller
             'file'=>'0',
             'designer_id'=>NULL,
             'user_id'=>Auth::user()->id,
+            // 'token'=> str_random(16)
+
             
 
         ]);
@@ -97,8 +102,8 @@ class HomeController extends Controller
 
         try{
             // สำเร็จแล้ว ส่งไป step2
-            $users->save();
-            return redirect(route('search.create.step2'))->with('id', $users->id);
+            // $users->save();
+            return redirect(route('search.create.step2'))->with('id', $jobs->id);
         }catch (\Exception $x){
             // สร้าง Actor ไม่ได้ มีบางอย่างผิดพลาด คืนค่ากลับหน้าเดิม
             return back()->withInput();
@@ -116,15 +121,27 @@ class HomeController extends Controller
     public function createSearchStep2()
     {
         $id = \Illuminate\Support\Facades\Session::get('id'); // รับ id มาจาก step
+        // $users = Auth::user()->job(); 
         $jobs = Jobs::find($id);
-        $ref = References::all();
-        $cats = Categories::all();
+        // $ref = References::all();
+        // $jobs->first()->categories_id = json_decode($jobs->first()->categories_id);
+
+        // $cats = Categories::all();
+        // $jobs->first()->categories_id = json_decode($jobs->first()->categories_id);
+      
+
+        // $ref = DB::table('jobs')
+        //     ->join('references', 'jobs.categories_id', '=', 'references.categories_id')
+        //     ->select('references.id','references.img')
+        //     ->limit(9)
+        //     ->get();
+
         if($jobs == null){
             return "ERROR หา id ไม่เจอ เพราะเข้าลิงค์ตรง เด้งกลับไปหน้าไหนก็ได้";
         }
         return view('select',[
             'id'=>$jobs->id,
-            'jobs'=>$jobs,
+            // 'jobs'=>$jobs,
             
             // 'ref'=>$ref,
             // 'cats'=>$cats
@@ -135,7 +152,7 @@ class HomeController extends Controller
     public function storeSearchStep2(Request $request)
     {
 
-        $users = Auth::user();
+        $users = Auth::user()->job();
         $jobs = Jobs::find($id);
         $cats = Categories::all();     
         $ref = References::all();
@@ -153,7 +170,7 @@ class HomeController extends Controller
         try{
             // สำเร็จแล้ว ส่งไป step2
             $users->save();
-            return redirect(route('search.create.step2'))->with('id', $users->id);
+            return redirect(route('search.create.step3',['token'=>$users->token]));
         }catch (\Exception $x){
             // สร้าง Actor ไม่ได้ มีบางอย่างผิดพลาด คืนค่ากลับหน้าเดิม
             return back()->withInput();

@@ -35,6 +35,8 @@ class CreateJobsTable extends Migration
 
             $table->string('file');
             $table->boolean('status')->default(0);
+            // $table->string('token',16)->nullable();
+
 
             $table->timestamps();
         });

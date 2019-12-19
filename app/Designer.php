@@ -20,7 +20,12 @@ class Designer extends Model
     {
         return $this->belongsTo('App\User');
     }
-
+    
+    public function job()
+    {
+        return $this->hasOne('App\Jobs');
+    }
+  
         
 }
 
