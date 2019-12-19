@@ -2,7 +2,7 @@
 h1, h3{
     font-family: 'Chonburi', cursive !important;
 }
-h2, h4, h5, p, a{
+h2, h4, h5, p, a,label{
     font-family: 'Prompt', sans-serif;
 }
 div.ks-cboxtags {

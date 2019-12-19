@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('assets')
+    <link rel="stylesheet" href="css/_login.css">
+@endsection
 @section('content')
 <div class="container ">
     <div class="row justify-content-center">
@@ -7,7 +9,7 @@
             <!-- <div class="panel panel-default"> -->
             <div class="col"></div>
                 <div class="col-6">
-                <div class="card" style="width: 100% ;margin-top: 100px;">
+                <div class="card rounded-ex" style="width: 100% ;margin-top: 100px;">
                     <center>
                         <div class="panel-heading" style="color: #904ae8; margin-top: 20px;margin-bottom: 20px; font-family: chonburi;">
                         <h1>สมัครสมาชิก</h1>
@@ -21,15 +23,25 @@
                         <div class="form-group">
                             <label for="role" class="col-md-4 col-form-label text-md-center"><h5>คุณคือใคร?</h5></label>
 
-                                <div class="col-md-7">
-                                        <!-- <div class="radio">
-                                                <input type="radio" name="role" value="0" checked> ผู้ประกอบการ
-                                        </div>
-                                        <div class="radio">
-                                                <input type="radio" name="role" value="1"> นักออกแบบ
-                                        </div> -->
-                                        <label class="radio-inline"><input type="radio" name="role" value="0" checked>ผู้ประกอบการ</label>
-                                        <label class="radio-inline"><input type="radio" name="role" value="1">นักออกแบบ</label>
+                                <div class="col-md-12">
+                                        {{--<div class="radio">--}}
+                                                {{--<input type="radio" name="role" value="0" checked> ผู้ประกอบการ--}}
+                                        {{--</div>--}}
+                                        {{--<div class="radio">--}}
+                                                {{--<input type="radio" name="role" value="1"> นักออกแบบ--}}
+                                        {{--</div>--}}
+                                    <section class="radio">
+                                        <input type="radio" id="1-option" name="role" value="0" checked="checked">
+                                        <label for="1-option" >ผู้ประกอบการ</label>
+                                        <div class="check"></div>
+                                    </section>
+                                    <section class="radio">
+                                        <input type="radio" id="f-option" name="role" value="1" >
+                                        <label for="f-option">นักออกแบบ</label>
+                                        <div class="check"></div>
+                                    </section>
+                                        {{--<label class="radio-inline"><input class="col-6" type="radio" name="role" value="0" checked>ผู้ประกอบการ</label>--}}
+                                        {{--<label class="radio-inline"><input class="col-6" type="radio" name="role" value="1">นักออกแบบ</label>--}}
 
 
                                    
