@@ -13,14 +13,14 @@ nav .navbar-toggle {
 
 }
 nav.navbar.shrink {
-    overflow: hidden;
+    /*overflow: hidden;*/
     background-color: white;
     padding: 20px 10px;
     transition: 0.4s;
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 99;
+    z-index: 90;
     box-shadow: 0 .5rem 1rem rgba(144, 74, 232,.15)!important;
 
 }
@@ -35,7 +35,3 @@ nav.shrink .navbar-brand {
     font-size: 25px;
 }
 
-nav.shrink .navbar-toggle {
-    padding: 4px 5px;
-    margin: 8px 15px 8px 0;
-}

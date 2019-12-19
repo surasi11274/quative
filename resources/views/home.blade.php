@@ -105,12 +105,12 @@
     <div class="_box-2 bg-white mt_ex">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-12 col-sm-6 p-5">
+                                        <div class="col-12 col-md-6 ">
                                             <figure class="img-fluid">
-                                                <img src="photo/_Pa-Box-1.png">
+                                                <img src="photo/preview.png">
                                             </figure>
                                         </div>
-                                        <div class="col-12 col-sm-6 p-5 text-right">
+                                        <div class="col-12 col-md-6 p-5 text-right">
                                             <h1><span class="_hilight" >พรีวิว</span>บรรจุภัณฑ์<br>
                                                 ลองสินค้าในแบบของคุณ
                                             </h1>
@@ -124,6 +124,13 @@
 
                                 </div>
                             </div>
+    <div class="_box-3 bg-white mt-ex mb-5">
+        <div class="container">
+            <div class="bgc rounded-ex">
+
+            </div>
+        </div>
+    </div>
                             <div class="_box-4 bg-white">
                                 <div class="text-center">
                                     <h1>นักออกแบบ ดีเด่นประจำสัปดาห์</h1>
