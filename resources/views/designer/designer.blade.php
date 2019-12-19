@@ -244,15 +244,18 @@
     </section>
 </div>
 <!-- multistep form -->
-<form   class=" msform modal-lg  rounded-ex">
+<form  action="/designer/store" method="post" enctype="multipart/form-data" class=" msform modal-lg  rounded-ex" >
+{{ csrf_field() }}
     <!-- progressbar -->
+
+
     <ul id="progressbar">
         <li class="_active_pro text-center">เกี่ยวกับคุณ</li>
         <li class="text-center">บัตรประชาชน</li>
         <li class="text-center">บัญชีและการเงิน</li>
     </ul>
     <!-- fieldsets -->
-    <fieldset >
+    <fieldset>
             <div class="text-center">
                 <h1 for="" class="_hilight">กรอกข้อมูลเกี่ยวกับคุณ</h1>
                 <p>โปรดกรอกข้อมูลให้ครบถ้วน</p>
@@ -269,7 +272,7 @@
                         <div class="avatar-upload mx-auto">
 
                             <div class="avatar-edit">
-                                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                <input type="file" id="imageUpload" name="profilepic" accept=".png, .jpg, .jpeg" >
 
                                 <label for="imageUpload"></label>
                             </div>
@@ -303,20 +306,10 @@
                     <!-- <h1>{{$tag->nameTag}}</h1> -->
 
                         <div class="form-check">
-                            {{--<ul class="ks-cboxtags">--}}
-                                {{--<li><input type="checkbox" id="checkboxOne" value="minimal"><label for="checkboxOne">มินิมอล</label></li>--}}
-                                {{--<li><input type="checkbox" id="checkboxTwo" value="Cotton Candy" checked><label for="checkboxTwo"> ทันสมัย</label></li>--}}
-                                {{--<li><input type="checkbox" id="checkboxThree" value="Rarity" checked><label for="checkboxThree">วินเทจ</label></li>--}}
-                                {{--<li><input type="checkbox" id="checkboxFour" value="Moondancer"><label for="checkboxFour">แฟนตาซี</label></li>--}}
-                                {{--<li><input type="checkbox" id="checkboxFive" value="Surprise"><label for="checkboxFive">หนักแน่น</label></li>--}}
-                                {{--<li><input type="checkbox" id="checkboxSix" value="Twilight Sparkle" checked><label for="checkboxSix">แปลกใหม่</label></li>--}}
-                                {{--<li><input type="checkbox" id="checkboxSeven" value="Fluttershy"><label for="checkboxSeven">ดอกไม้</label></li>--}}
-
-                            {{--</ul>--}}
-                            <!-- <li> -->
                             <ul class="ks-cboxtags">
                                 <li><input   class="form-check-input" type="checkbox" value="{{$tag->id}}" name="tag[]">
-                                    <label  class="form-check-label" for="tagName">{{$tag->tagName}}</label></li>
+                                    <label  class="form-check-label" for="tagName">{{$tag->tagName}}</label>
+                                </li>
                             </ul>
 
                             <!-- </li> -->
@@ -403,9 +396,12 @@
             <label for="inputUsername">เลขบัญชีธนาคาร</label>
             <input type="number" class="form-control"  name="bankaccount">
         </div>
-        <input type="button" name="previous" class="previous action-button" value="Previous" />
-        <input type="submit" name="submit" class="submit action-button" value="Submit" />
+        <button  name="previous" class="previous action-button" value="Previous"> Previous</button>
+        <button type="submit" name="submit" class="submit action-button" value="Submit"> Submit</button>
+
     </fieldset>
+
+
 </form>
 @endsection
 
