@@ -3,8 +3,10 @@
 @section('content')
 <div class="container mt_ex ">
          <div class="card mt-5 rounded-ex" style="width: 100%;padding-top: 30px;">
+         <form class="form-match" action="/search/create/store2" method="post" enctype="multipart/form-data">
+
          	<h1 class="text-center mt-5" style="color:#904ae8
-;"> ใช่ !! ในที่สุดเราก็พบนักออกแบบ</h1>
+               ;"> ใช่ !! ในที่สุดเราก็พบนักออกแบบ{{$jobs->tags}}</h1>
             <div class="row">
                <div class="col-12 mt-5">
 
@@ -21,17 +23,18 @@
 				      <div class="">
 
                   <div class="tabbable">
-
                      <ul class="nav" id="myDIV">
-
+                     
 
 
                         <li class=" col">
+                           @foreach ($designers as $designer)
                            <a href="#Loose" data-toggle="tab">
-                              <div class="profile-img text-center ">
-                                 <img class="rounded-circle _btn _active"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
+                           <div class="profile-img text-center ">
+                                 <h1>{{$designer->tag}}{{$designer->id}}</h1>
                               </div>
                            </a>
+                           @endforeach
                         </li>
                         <li class="col">
                            <a href="#Cross" data-toggle="tab">
@@ -303,6 +306,7 @@
                  </button>
              </div>
          </div>
+         </form>
       </div>
       </div> <!-- ****container -->
       @endsection

@@ -124,7 +124,6 @@ class DesignerController extends Controller
             // เด้งไปหน้าโชว์ของใครของมันเลย
             return redirect(route('designer.show',['token'=>$designer->token]));
         }catch (\Exception $x){
-            // save Actor ไม่ได้ มีบางอย่างผิดพลาด คืนค่ากลับหน้าเดิม
             return back()->withInput();
         }
         // return redirect('/',['token'=>$designer->token]);
