@@ -129,64 +129,9 @@ class HomeController extends Controller
     }
         // เอาไอดีจาก create มาสร้าง insertรูปภาพRefต่อ
 
-    public function createSearchStep2($token)
-    {
-        // $id = \Illuminate\Support\Facades\Session::get('id'); // รับ id มาจาก step
-        // // $users = Auth::user()->job(); 
-        // $jobs = Jobs::find($id);
-
-        $jobs = Jobs::where('token',$token)->get();
-
-        // $ref = References::all();
-        // $jobs->first()->categories_id = json_decode($jobs->first()->categories_id);
-
-        // $cats = Categories::all();
-        // $jobs->first()->categories_id = json_decode($jobs->first()->categories_id);
-      
-
-        // $ref = DB::table('jobs')
-        //     ->join('references', 'jobs.categories_id', '=', 'references.categories_id')
-        //     ->select('references.id','references.img')
-        //     ->limit(9)
-        //     ->get();
-
-        if($jobs == null){
-            return "ERROR หา id ไม่เจอ เพราะเข้าลิงค์ตรง เด้งกลับไปหน้าไหนก็ได้";
-        }
-        return view('showmatch',[
-            'jobs'=>$jobs->first()]
-        );
-        // return view('search');
-    }
     
-    public function storeSearchStep2(Request $request)
-    {
-
-        $users = Auth::user()->job();
-        $jobs = Jobs::find($id);
-        $cats = Categories::all();     
-        $ref = References::all();
-     
-
-        DB::table('jobs')->insert([
-  
-            'reference'=>$request->input('reference'),
-
-        
-            
-
-        ]);
-
-        try{
-            // สำเร็จแล้ว ส่งไป step2
-            $users->save();
-            return redirect(route('search.create.step3',['token'=>$users->token]));
-        }catch (\Exception $x){
-            // สร้าง Actor ไม่ได้ มีบางอย่างผิดพลาด คืนค่ากลับหน้าเดิม
-            return back()->withInput();
-        }
-        // return view('search');
-    }
+    
+   
     // เอาไอดีจาก create มาสร้าง insert Designer ที่เลือก
 
     // public function createSearchStep3()
@@ -210,28 +155,6 @@ class HomeController extends Controller
         $jobs = Jobs::where('token',$token)->get();
         // $designers = Designer::where('tag',$jobstags)->get();
 
-        // $jobstags = Jobs::where('tags',$token->tags)->pluck('tags');
-        // $designers = Designer::where('tag',$jobs->tags)->get();
-        // return $designers;        
-        // $designers = Designer::where('tag',Jobs::where('token',$token))->get();;
-
-
-        // $jobtag = $jobs->select('tags');
-        // $jobd = Designer::where('tag');
-
-        // $designers = Designer::where($jobtag = $jobd);
-        // $jobtag->first()->tags = json_decode($jobtag->first()->tags);
-        // $dtag->first()->tag = json_decode($dtag->first()->tag);
-
-        // $designers = DB::table('designers')
-        // ->whereExists(function ($query) {
-        //     $query->select(DB::raw(1))
-        //           ->from('jobs')
-        //           ->whereRaw('designers.tag = jobs.tags');
-        // })
-        // ->get();
-
-
 
     // $jobtags = Jobs::where('tags',$jobs->tags)->get();
     foreach($jobs as $record){
@@ -242,7 +165,10 @@ class HomeController extends Controller
     $designers = DB::table('designers')
                 ->when($tags, function ($query) use ($tags) {
                     return $query->where('designers.tag', $tags);
+                    
                 })
+                ->where('hasjob',0)
+                // ->limit(1)
                 ->get();
         
         
@@ -268,5 +194,56 @@ class HomeController extends Controller
             'designers'=>$designers
             ]);
 
+    }
+    public function storeSearchStep2(Request $request)
+    {
+
+        $users = Auth::user()->job();
+        $jobs = Jobs::find($id);
+        $cats = Categories::all();     
+        $ref = References::all();
+     
+
+        DB::table('jobs')->insert([
+  
+            'dsigner_id'=>$request->input('dsigner_id'),
+
+        
+            
+
+        ]);
+
+        try{
+            // สำเร็จแล้ว ส่งไป step2
+            $users->save();
+            return redirect(route('job.show',['token'=>$users->token]));
+        }catch (\Exception $x){
+            // สร้าง Actor ไม่ได้ มีบางอย่างผิดพลาด คืนค่ากลับหน้าเดิม
+            return back()->withInput();
+        }
+        // return view('search');
+    }
+    public function showjob($token)
+    {
+        $jobs = Jobs::where('token',$token)->get();
+        // $designers = Designer::where('tag',$jobstags)->get();
+
+
+ 
+
+        
+        $tags = Tags::all();
+
+
+
+        if ($jobs->count() == 0){
+            return "หาไม่เจอ ทำอะไรดี";
+        }
+        return view('showmatch',[
+            'jobs'=>$jobs->first(),
+            'tags'=>$tags,
+            'designers'=>$designers
+            ]);
+        // return view('search');
     }
 }
