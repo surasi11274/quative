@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mt_ex ">
-         <div class="card mt-5 rounded-ex" style="width: 100%;padding-top: 30px;">
+         <div class=" mt-5 rounded-ex" style="width: 100%;padding-top: 30px;">
          <form class="form-match" action="/search/create/store2" method="post" enctype="multipart/form-data">
          {{ csrf_field() }}
 
