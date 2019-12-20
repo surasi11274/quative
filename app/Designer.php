@@ -23,7 +23,7 @@ class Designer extends Model
     
     public function job()
     {
-        return $this->hasOne('App\Jobs');
+        return $this->belongsTo('App\Jobs','user_id');
     }
   
         

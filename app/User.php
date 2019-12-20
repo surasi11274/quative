@@ -33,9 +33,14 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Designer')->first();
     }
+    // public function job()
+    // {
+    //     return $this->hasMany('App\Jobs','user_id')->where('status',0)->get();
+    // }
     public function job()
     {
-        return $this->hasMany('App\Jobs','user_id')->where('status',0)->get();
+        return $this->hasMany('App\Jobs')->first();
     }
+  
   
 }

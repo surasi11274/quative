@@ -3,8 +3,11 @@
 @section('content')
 <div class="container mt_ex ">
          <div class="card mt-5 rounded-ex" style="width: 100%;padding-top: 30px;">
+         <form class="form-match" action="/search/create/store2" method="post" enctype="multipart/form-data">
+         {{ csrf_field() }}
+
          	<h1 class="text-center mt-5" style="color:#904ae8
-;"> ใช่ !! ในที่สุดเราก็พบนักออกแบบ</h1>
+               ;"> ใช่ !! ในที่สุดเราก็พบนักออกแบบ</h1>
             <div class="row">
                <div class="col-12 mt-5">
 
@@ -13,7 +16,9 @@
 				    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 				    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 				    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-				  </ol>
+              </ol>
+              <input style="display:none;" type="text" class="detaill-select " name="designer_id" plachholder="sadas" id="output">
+
 
 
 				  <div class="carousel-inner">
@@ -21,17 +26,20 @@
 				      <div class="">
 
                   <div class="tabbable">
-
                      <ul class="nav" id="myDIV">
-
+                     
 
 
                         <li class=" col">
-                           <a href="#Loose" data-toggle="tab">
-                              <div class="profile-img text-center ">
-                                 <img class="rounded-circle _btn _active"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
+                           @foreach ($designers as $designer)
+                           <a href="#Loose" data-toggle="tab" onclick="addCart('{{$designer->id}}')">
+                           <div class="profile-img text-center ">
+                                 <!-- <h1>{{$designer->tag}}{{$designer->id}}</h1> -->
+                                 <img class="rounded-circle _btn"  width="150" height="150" src="{{$designer->profilepic}}" alt=""/>
+
                               </div>
                            </a>
+                           @endforeach
                         </li>
                         <li class="col">
                            <a href="#Cross" data-toggle="tab">
@@ -143,19 +151,21 @@
                <!-- profile designer   --> 
 
                <div class="row mt-5">
+               @foreach ($designers as $designer)
+
                   <div class="col-md-3 ">
                      <div class="profile-img text-center " width="50">
-                        <img class="rounded-circle" width="200" height="200" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
+                         <img class="rounded-circle" width="200" height="200" src="{{$designer->profilepic}}" alt=""/>
                      </div>
                   </div>
                   <div class="col-5 .col-sm">
-                     <h5>Kritpon Klinkomut</h5>
+                     <h5>{{$designer->name}}</h5>
                      <h5 style="color:#FCD430;"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i> <span style="color: #000000;">4.9</span> </h5>
                      <button type="button" class="btn rounded-ex" style="color:#904ae8
 ;border-color: #904ae8
 ;">ติดตามแล้ว</button>
                      <br><br>
-                     <p>สวัสดีครับ ฉันรับออกแบบงานบรรจุภัณฑ์ และงานออกแบบอื่นๆ งานที่ถนัดจะเป็นงานออกแบบบรรจุภัณฑ์ และออกงานกราฟิกอื่นๆ เช่น โลโก้ นามบัตร</p>
+                     <p>{{$designer->description}}</p>
                   </div>
                   <div class="col-1 ">
                      <div class="card text-center" style="width: 5.5rem;">
@@ -180,6 +190,7 @@
                               width: 20px;" /></i></h5>
                            <h6 class="card-subtitle mb-2 text-muted" style="font-size: 12px;">ข้อความ</h6>
                         </div>
+                        @endforeach
                      </div>
                       <!-- profile designer   --> 
 
@@ -297,12 +308,13 @@
          </div> <!-- endcard -->
          <div class="container">
              <div class="d-flex justify-content-center">
-                 <button type="button" class="btn btn-lg "   style="width: 50%; margin-top: 50px;background-color:#904ae8
+                 <button type="submit" class="btn btn-lg "   style="color:white;width: 50%; margin-top: 50px;background-color:#904ae8
       ;">
-                     <a href="prodesign.html"  style="color: white; ">จ้างงานเลย</a>
+                     จ้างงานเลย
                  </button>
              </div>
          </div>
+         </form>
       </div>
       </div> <!-- ****container -->
       @endsection
@@ -312,4 +324,11 @@
         touch:true
 
     });
+</script>
+<script>
+    function addCart(v){
+        document.getElementById('output').value = v
+        console.log(v);
+        return false;
+    }
 </script>

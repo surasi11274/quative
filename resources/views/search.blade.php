@@ -376,7 +376,15 @@
 
 
 
-
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
                 <button type="submit" class="btn btn-block " style="background-color:#904ae8; color:white;margin-top: 20px;"  >
                     บันทึกข้อมูล
