@@ -248,8 +248,6 @@
 <form  action="/designer/store" method="post" enctype="multipart/form-data" class=" msform modal-lg  rounded-ex" >
 {{ csrf_field() }}
     <!-- progressbar -->
-
-
     <ul id="progressbar">
         <li class="_active_pro text-center">เกี่ยวกับคุณ</li>
         <li class="text-center">บัตรประชาชน</li>
@@ -292,7 +290,7 @@
             <div class="form-group">
 
                 <label for="inputUsername">หมวดหมู่ <i class="fas fa-tag icon"></i> </label>
-                <div class="row">
+                <div class="row justify-content-center">
                 @foreach ($tags as $tag)
                     <!-- <h1>{{$tag->nameTag}}</h1> -->
 
