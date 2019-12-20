@@ -8,6 +8,7 @@
 
          	<h1 class="text-center mt-5" style="color:#904ae8
                ;"> ใช่ !! ในที่สุดเราก็พบนักออกแบบ</h1>
+               
             <div class="row">
                <div class="col-12 mt-5">
 
@@ -29,19 +30,20 @@
                      <ul class="nav" id="myDIV">
                      
 
+                     @foreach ($designers as $count => $designer)
 
-                        <li class=" col">
-                           @foreach ($designers as $designer)
-                           <a href="#Loose" data-toggle="tab" onclick="addCart('{{$designer->id}}')">
+                        <li class=" col" @if($count == 0) class="active" @endif >
+                           <a href="#Loose-{{ $designer->id }}" data-toggle="tab" onclick="addCart('{{$designer->id}}')" >
                            <div class="profile-img text-center ">
                                  <!-- <h1>{{$designer->tag}}{{$designer->id}}</h1> -->
-                                 <img class="rounded-circle _btn"  width="150" height="150" src="{{$designer->profilepic}}" alt=""/>
+                                 <img class="rounded-circle _btn"  style=" object-fit: cover; width: 150px; height:150px;" src="/{{$designer->profilepic}}" alt=""/>
 
                               </div>
                            </a>
-                           @endforeach
                         </li>
-                        <li class="col">
+                        @endforeach
+
+                        <!-- <li class="col">
                            <a href="#Cross" data-toggle="tab">
                               <div class="profile-img text-center ">
                                  <img class="rounded-circle _btn"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
@@ -68,7 +70,7 @@
                                  <img class="rounded-circle _btn"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
                               </div>
                            </a>
-                        </li>
+                        </li> -->
 
                      </ul>
 
@@ -81,7 +83,7 @@
 
                   <div class="tabbable">
 
-                     <ul class="nav">
+                     <!-- <ul class="nav">
 
 
 
@@ -121,7 +123,7 @@
                            </a>
                         </li>
 
-                     </ul>
+                     </ul> -->
 
                        </div> <!-- endrow -->
 			  			</div> <!-- endrow -->
@@ -146,57 +148,69 @@
 			
 
                      <div class="tab-content">
-                        <div class="tab-pane active" id="Loose">
+                     @foreach ($designers as $count => $designer)
 
-               <!-- profile designer   --> 
+                        <div @if($count == 0) class="tab-pane active" @else class="tab-pane" @endif id="Loose-{{$designer->id}}">
 
-               <div class="row mt-5">
-               @foreach ($designers as $designer)
+                           <!-- profile designer   --> 
 
-                  <div class="col-md-3 ">
-                     <div class="profile-img text-center " width="50">
-                         <img class="rounded-circle" width="200" height="200" src="{{$designer->profilepic}}" alt=""/>
-                     </div>
-                  </div>
-                  <div class="col-5 .col-sm">
-                     <h5>{{$designer->name}}</h5>
-                     <h5 style="color:#FCD430;"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i> <span style="color: #000000;">4.9</span> </h5>
-                     <button type="button" class="btn rounded-ex" style="color:#904ae8
-;border-color: #904ae8
-;">ติดตามแล้ว</button>
-                     <br><br>
-                     <p>{{$designer->description}}</p>
-                  </div>
-                  <div class="col-1 ">
-                     <div class="card text-center" style="width: 5.5rem;">
-                        <div class="card-body">
-                           <h5 class="card-title" style="color: #904AE8;" >100</h5>
-                           <h6 class="card-subtitle mb-2 text-muted" style="font-size: 12px;">ผลงาน</h6>
+                           <div class="row mt-5">
+
+                              <div class="col-md-3 ">
+                                 <div class="profile-img text-center " width="50">
+                                    <img class="rounded-circle"  style=" object-fit: cover; width: 200; height:200px;" src="/{{$designer->profilepic}}" alt=""/>
+                                 </div>
+                              </div>
+                              <div class="col-5 .col-sm">
+                                 <h5>{{$designer->name}}</h5>
+                                 <h5 style="color:#FCD430;"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i> <span style="color: #000000;">4.9</span> </h5>
+                                 <button type="button" class="btn rounded-ex" style="color:#904ae8
+            ;border-color: #904ae8
+            ;">ติดตาม</button>
+                                 <br><br>
+                                 <p>{{$designer->description}}</p>
+                                 <br><br>
+
+                                 <p> @foreach($jobs->tags as $tagn)
+
+@php
+$tagname = \App\Tags::find($tagn)->tagName;
+@endphp{{$tagname}}                                 @endforeach
+</p>
+                              </div>
+                              <div class="col-1 ">
+                                 <div class="card text-center" style="width: 5.5rem;">
+                                    <div class="card-body">
+                                       <h5 class="card-title" style="color: #904AE8;" >0</h5>
+                                       <h6 class="card-subtitle mb-2 text-muted" style="font-size: 12px;">ผลงาน</h6>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-1 ">
+                                 <div class="card text-center" style="width: 5.5rem;">
+                                    <div class="card-body">
+                                       <h5 class="card-title" style="color: #904AE8;" >0</h5>
+                                       <h6 class="card-subtitle mb-2 text-muted" style="font-size: 12px;">รีวิว</h6>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-1 sr-only">
+                                 <div class="card text-center" style="width: 5.5rem;">
+                                    <div class="card-body">
+                                       <h5 class="card-title" style="color: #904AE8;"><img src="https://uppic.cc/d/5zcR" style="height: 20px;
+                                          width: 20px;" /></i></h5>
+                                       <h6 class="card-subtitle mb-2 text-muted" style="font-size: 12px;">ข้อความ</h6>
+                                    </div>
+                                 </div>
+                                 <!-- profile designer   --> 
+
+
+                              </div>
+</div>
                         </div>
-                     </div>
-                  </div>
-                  <div class="col-1 ">
-                     <div class="card text-center" style="width: 5.5rem;">
-                        <div class="card-body">
-                           <h5 class="card-title" style="color: #904AE8;" >100</h5>
-                           <h6 class="card-subtitle mb-2 text-muted" style="font-size: 12px;">รีวิว</h6>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-1 sr-only">
-                     <div class="card text-center" style="width: 5.5rem;">
-                        <div class="card-body">
-                           <h5 class="card-title" style="color: #904AE8;"><img src="https://uppic.cc/d/5zcR" style="height: 20px;
-                              width: 20px;" /></i></h5>
-                           <h6 class="card-subtitle mb-2 text-muted" style="font-size: 12px;">ข้อความ</h6>
-                        </div>
-                        @endforeach
-                     </div>
-                      <!-- profile designer   --> 
+                  @endforeach
+               </div>                       
 
-
-                  </div>
-               </div>
 
                             <div class="container text-center">
                                 <hr>
@@ -211,32 +225,24 @@
 		  </ol>
 		  <div class="carousel-inner ">
 		    <div class="carousel-item active ">
+                <div class="container">                  
+
                 <div class="container">
-                    <div class="row p-5">
-               <div class="col mb-1">
-               <img src="photo/corosel_1.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-               <img src="photo/corosel_2.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-               </div>
+                <div class="row justify-content-center">
+                @foreach ($refs as $ref)
 
-               <div class="col mb-1">
-               <img src="photo/corosel_3.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-               <img src="photo/corosel_4.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-               </div>
+                  <div class="column p-2" >
+                    <a href="#"><img class="img-thumbnail rounded-ex" style=" object-fit: cover; width: 200; height:200px;" src="{{$ref->img}}">
+                    </a> 
+                  </div>                    
+                  @endforeach
 
-               <div class="col mb-1">
-               <img src="photo/corosel_5.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-               <img src="photo/corosel_6.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-               </div>
+                  </div>
+                  </div>
 
-               <div class="col mb-1">
-               <img src="photo/corosel_7.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-               <img src="photo/corosel_8.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-               </div>
-
-                    </div>
                </div>
 		    </div> <!-- end carousel -->
-
+<!-- 
 		    <div class="carousel-item">
 		     <div class="row p-5">
 		      <div class="col mt-1">
@@ -261,14 +267,15 @@
 		  	  </div>
 
 
-		            </div> <!-- end carousel inner -->
+                  </div>  -->
+
 				</div>
 			</div>
 
 			<!-- end1  profile -->
 
                         </div>
-                        <div class="tab-pane" id="Cross">
+                        <!-- <div class="tab-pane" id="Cross">
                            <h1>Broad Cut</h1>
                            <p>The thickest cut, about twice as wide as a Loose cut. Commonly used with air-cured Virginia, which is then used to blend with other cuts..</p>
                         </div>
@@ -285,7 +292,7 @@
                          <div class="tab-pane" id="bb">
                            <h1>bb</h1>
                            <p>The tobacco is placed under very high pressure at varying degrees of heat. When the tobacco cake emerges, it is sliced into thin flakes, typically about 1-2 inches wide and 0.1 inches thick. Fold or lightly rub the flake to put it in a pipe.</p>
-                        </div>
+                        </div> -->
 
 
                      </div>
@@ -308,7 +315,7 @@
          </div> <!-- endcard -->
          <div class="container">
              <div class="d-flex justify-content-center">
-                 <button type="submit" class="btn btn-lg "   style="color:white;width: 50%; margin-top: 50px;background-color:#904ae8
+                 <button type="submit" class="btn btn-lg mb-5"   style="color:white;width: 50%; margin-top: 50px;background-color:#904ae8
       ;">
                      จ้างงานเลย
                  </button>

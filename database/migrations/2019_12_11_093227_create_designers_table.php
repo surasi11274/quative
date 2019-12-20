@@ -25,13 +25,13 @@ class CreateDesignersTable extends Migration
             $table->string('titleName');
             $table->string('name');
             $table->string('surname');
-            $table->datetime('birthdate');
+            $table->date('birthdate');
             $table->text('address');
             $table->integer('zipcode');
             $table->string('selfieID');
             $table->string('pictureIDCard');
 
-            $table->integer('pricerate');
+            // $table->integer('pricerate');
             $table->string('bankname');
             $table->integer('bankaccount');
 

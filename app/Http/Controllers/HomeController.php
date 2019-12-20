@@ -173,6 +173,9 @@ class HomeController extends Controller
         
         
         $tags = Tags::all();
+        $refs = References::inRandomOrder()->limit(8)->get();     
+        $jobs->first()->tags = json_decode($jobs->first()->tags);
+        
 
         // $designers = Designer::where('tag' ,'==', $jobs->tag);
 
@@ -191,7 +194,8 @@ class HomeController extends Controller
         return view('showmatch',[
             'jobs'=>$jobs->first(),
             'tags'=>$tags,
-            'designers'=>$designers
+            'designers'=>$designers,
+            'refs'=>$refs
             ]);
 
     }
