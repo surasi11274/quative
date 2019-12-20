@@ -53,15 +53,15 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
                 <ul class="nav navbar-nav justify-content-end">
                     <!-- Authentication Links -->
-                    <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search.create') }}">ค้นหานักออกแบบ</a></li>
+                   
+                @if (Auth::guest())
+                    <!-- <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">สมัครสมาชิก</a></li> -->
                     <li class="nav-item"><a class="nav-link" role="button" href="/preview">พรีวิว</a></li>
                     <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search.create') }}">ผลงาน</a></li>
 
 
-                @if (Auth::guest())
-                    <!-- <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">สมัครสมาชิก</a></li> -->
-                        <li class="dropdown nav-item">
+                            <li class="dropdown nav-item">
                             <a href="#" class="dropdown-toggle nav-link btn" style="background-color: #904ae8; color: white;" data-toggle="dropdown" role="button" aria-expanded="false">
                                 เข้าสู่ระบบ <span class="caret"></span>
                             </a>
@@ -85,6 +85,8 @@
                         </li>
 
                     @elseif (Auth::user()->role=='1')
+                    <li class="nav-item"><a class="nav-link" role="button" href="/preview">พรีวิว</a></li>
+                    <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search.create') }}">ผลงาน</a></li>
                         <li class="dropdown nav-item mr-2">
                             <a class="nav-link dropdown-toggle rounded-ex " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#904ae8; background-color: white;border: 2px solid #904ae8;
 ;text-align: center; width: 50px; height: 80px;">
@@ -194,6 +196,7 @@
 
 
 
+                    <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search.create') }}">ค้นหานักออกแบบ</a></li>
 
                         <li class="dropdown nav-item">
                             <a href="#" class="dropdown-toggle nav-link btn "  style="background-color: #904ae8
