@@ -28,10 +28,10 @@
             <div class="rec" >
                 <div class="row">
                     <div class="col-3" style="margin-left: 50px; margin-top: 20px;">
-                        {{--<image id="profileImage" class="rounded-circle" src="https://picsum.photos/140" />--}}
-                        <image id="profileImage" class="rounded-circle" src="{{$designer->profilepic}}" />
+                        <image id="profileImage" class="rounded-circle" src="https://picsum.photos/140" />
+                        {{--<image id="profileImage" class="rounded-circle" src="{{$designer->profilepic}}" />--}}
                         <input id="imageUpload" type="file"
-                               name="profile_photo" placeholder="Photo" required="" capture>
+                               name="profile_photo" placeholder="Photo" required="" capture hidden>
                     </div>
                     <div class="col-3 align-items-center" style="margin-top: 40px;">
                         <div class="fill">
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="container p-5">
-                <h2 class="selectfillter" >ข้อมูลทั่วไป</h2>
+                <h2 class="selectfillter" >ข้อมูลส่วนตัว</h2>
                 <div class="row">
                     <div class="col-6">
                     <label for="">ชื่อ : {{$designer->name}} นามสกุล : {{$designer->surname}}</label>

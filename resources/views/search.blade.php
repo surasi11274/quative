@@ -12,7 +12,7 @@
     <!--กรอกข้อมูลเรียบร้อย-->
     <!--</div>-->
 </div>
-<div class="container modal-lg">
+<div class="container modal-lg mt_ex">
     <div class="text-center p-5">
         <h1><span class="_hilight" style="font-family: chonburi;">กรอกข้อมูลตามที่กำหนด</span></h1>
         <p>
@@ -253,6 +253,7 @@
 
                     <div class="ks-cboxtags form-check">
                     @foreach ($tags as $tag)
+
 
                         <li>
                             <input type="checkbox" id="checkboxOne" value="{{$tag->id}}" name="tag[]">

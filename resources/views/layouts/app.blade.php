@@ -22,11 +22,21 @@
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('css/_navbar.css')}}">
     @yield('assets')
+    {{--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">--}}
+    <link rel="stylesheet" href="{{asset('css/flatpickr.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/_select.css')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+          crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
+
     <script src="https://kit.fontawesome.com/099b07344f.js" crossorigin="anonymous"></script>
+
     <script src="{{asset('js/dropzone.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+
+
 
 </head>
 <header>
@@ -279,8 +289,8 @@
         @yield('content')
     </div>
     <!-- Footer -->
-    <div class="row ">
-    <img src="https://sv1.picz.in.th/images/2019/12/17/i2WUub.png" alt="">
+    <div class="page-footer font-small blue pt-4">
+    <img  src="photo/footer.png" alt="" class="img-fluid">
     </div>
 <footer class="page-footer font-small blue pt-4" style="background-color: #904ae8
 ;">
@@ -374,5 +384,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <script src="{{asset('js/progess-step.js')}}"></script>
+    <script src="{{asset('js/preprofile.js')}}"></script>
+    {{--optionnal utility--}}
+    <script src="{{asset('js/inputmxlenght.js')}}"></script>
+    {{--<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>--}}
+    <script src="{{asset('js/flatpickr.js')}}"></script>
+    <script src="{{asset('js/datepicker.js')}}"></script>
+
+
+
 </body>
 </html>
