@@ -15,11 +15,12 @@
 </div>
 <div class="container modal-lg">
     <div class="text-center p-5">
-        <h1><span class="_hilight" style="font-family: chonburi;">กรอกข้อมูลตามที่กำหนด</span></h1>
+        <h1><span class="_hilight">โปรไฟล์ของคุณ</span></h1>
         <p>
-            กรอกข้อมูลให้ครบถ้วนเพื่อที่เราจะได้หานักออกแบบที่<br>
+            กรอกข้อมูลเสร็จแล้วกรุณาตรวจข้อมูลให้ครบถ้วนเพื่อที่เราจะได้หาผู้ประกอบการที่<br>
             ใช่ที่สุดสำหรับคุณ
         </p>
+
     </div>
 
     <div class="col-12 col-sm-12 p-3 mb-5 rounded ">
@@ -27,6 +28,7 @@
             <div class="rec" >
                 <div class="row">
                     <div class="col-3" style="margin-left: 50px; margin-top: 20px;">
+                        {{--<image id="profileImage" class="rounded-circle" src="https://picsum.photos/140" />--}}
                         <image id="profileImage" class="rounded-circle" src="{{$designer->profilepic}}" />
                         <input id="imageUpload" type="file"
                                name="profile_photo" placeholder="Photo" required="" capture>
@@ -34,7 +36,7 @@
                     <div class="col-3 align-items-center" style="margin-top: 40px;">
                         <div class="fill">
                             <h1 class="titlename">{{$designer->name}}</h1>
-                            <p>Designer</p>
+                            <p style="color: white;">Designer</p>
                         </div>
 
                     </div>

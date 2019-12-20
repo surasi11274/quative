@@ -35,3 +35,8 @@ nav.shrink .navbar-brand {
     font-size: 25px;
 }
 
+.overflow-noctification{
+    width: 100%;
+    overflow: scroll;
+    height: 200px;
+}

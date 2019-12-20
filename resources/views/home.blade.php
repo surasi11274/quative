@@ -26,19 +26,21 @@
 <section class="content ">
     <div class="shape">
         <div class="container">
-            <div class="row ">
-                <div class="col-12 col-sm-6 mt_ex">
-                    <h1 class="header">ออกแบบ
-                        <span class="_hilight">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
-                    <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
-                    <div class="buttons">
-                        <div class="row">
-                            <div class="col">
-                                <a class="btn _secondary-btn btn-lg btn-block ">ค้นหานักออกแบบ</a>
-                            </div>
-                            <div class="col">
-                                <a class="btn _primary-btn btn-lg btn-block">สมัครสมาชิก</a>
+            <div class="row " >
+                <div class="col-12 col-sm-6 "style="margin-top: 110px">
+                    <div class="mt-ex" style="margin-top: 10rem">
+                        <h1 class="header">ออกแบบ
+                            <span class="_hilight">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
+                        <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
+                        <div class="buttons">
+                            <div class="row">
+                                <div class="col">
+                                    <a class="btn _secondary-btn btn-lg btn-block ">ค้นหานักออกแบบ</a>
+                                </div>
+                                <div class="col">
+                                    <a class="btn _primary-btn btn-lg btn-block">สมัครสมาชิก</a>
 
+                                </div>
                             </div>
                         </div>
                     </div>
