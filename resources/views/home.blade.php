@@ -139,7 +139,7 @@
                     <div class="row">
                         <div class="col-12 col-md-4 justify-content-center">
                             <div class="card rounded-ex text-center p-5">
-                                <image id="profileImage" class="rounded-circle shadow-ex" src="photo/preprofile.png" style="width: 140px; height: 140px; margin: 0px auto;">
+                                <image id="profileImage" class="rounded-circle shadow-ex" src="https://picsum.photos/140" style="width: 140px; height: 140px; margin: 0px auto;">
                                     <h3>สิทธิชัย</h3>
                                     <div class="star1">
                                         <i class="fas fa-star"></i>
@@ -155,7 +155,7 @@
                         </div>
                         <div class="col-12 col-md-4 justify-content-center">
                             <div class="card rounded-ex text-center p-5">
-                                <image id="profileImage" class="rounded-circle shadow-ex" src="photo/preprofile.png" style="width: 140px; height: 140px; margin: 0px auto;">
+                                <image id="profileImage" class="rounded-circle shadow-ex" src="https://picsum.photos/139" style="width: 140px; height: 140px; margin: 0px auto;">
                                     <h3>สิทธิชัย</h3>
                                     <div class=" star1">
                                         <i class="fas fa-star"></i>
@@ -170,7 +170,7 @@
                         </div>
                         <div class="col-12 col-md-4 justify-content-center">
                             <div class="card rounded-ex text-center p-5">
-                                <image id="profileImage" class="rounded-circle shadow-ex" src="photo/preprofile.png" style="width: 140px; height: 140px; margin: 0px auto;">
+                                <image id="profileImage" class="rounded-circle shadow-ex" src="https://picsum.photos/141" style="width: 140px; height: 140px; margin: 0px auto;">
                                     <h3>สิทธิชัย</h3>
                                     <div class=" star1">
                                         <i class="fas fa-star"></i>
