@@ -75,6 +75,7 @@ h2, h4, h5, p, a{
 }
 .bgc{
   background-color: rgba(144, 74, 232, 0.1);
+  /*background-color: #fff;*/
   width: 100%;
   height: auto;
 

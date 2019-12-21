@@ -134,7 +134,7 @@
                             </div>
     <div class="_box-3 bg-white mt-ex mb-5">
         <div class="container">
-            <div class="bgc p-5 rounded-ex">
+            <div class="bgc p-5 rounded-ex " style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-md-4 justify-content-center">
