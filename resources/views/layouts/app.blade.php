@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <script src="https://kit.fontawesome.com/099b07344f.js" crossorigin="anonymous"></script>
 
@@ -394,8 +395,10 @@
     {{--<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>--}}
     <script src="{{asset('js/flatpickr.js')}}"></script>
     <script src="{{asset('js/datepicker.js')}}"></script>
-
-
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"  ></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
+
 </html>

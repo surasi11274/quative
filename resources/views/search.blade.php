@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('assets')
-   <link rel="stylesheet" href="css/style_match.css">
-   {{--<link rel="stylesheet" href="css/_designer.css">--}}
+   <link rel="stylesheet" href="css/style_match.css">s
    <link rel="stylesheet" href="{{asset('css/flatpickr.min.css')}}">
 @endsection
 
