@@ -197,7 +197,8 @@
 
 
                     <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search.create') }}">ค้นหานักออกแบบ</a></li>
-
+                    <li class="nav-item"><a class="nav-link" role="button" href="/preview">พรีวิว</a></li>
+                    <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search.create') }}">ผลงาน</a></li>
                         <li class="dropdown nav-item">
                             <a href="#" class="dropdown-toggle nav-link btn "  style="background-color: #904ae8
 ; color: white;" data-toggle="dropdown" role="button" aria-expanded="false">

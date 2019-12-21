@@ -235,17 +235,56 @@
                                     @foreach ($tags as $tag)
 
 
-                                        <div class="form-check">
-                                            <ul class="ks-cboxtags">
-                                                <li>
-                                                    <input type="checkbox"  value="{{$tag->id}}" name="tags[]">
-                                                    <label for="checkboxOne">{{$tag->tagName}}</label>
-                                                </li>
-                                            </ul>
-                                        </div>
+                        </p>
+                    </div>
+                    <div class="col-6 ">
+                        <h2 class="selectfillter">เบอร์โทรศัพท์</h2>
+                        <input type="text" class="form-control" name="phone" placeholder="ex. 029067726" aria-label="Username" aria-describedby="basic-addon1">
+                        <p>
+                            กรอกเบอร์โทรศัพท์เพื่อเราแจ้งข่าวสารล่วงหน้า
+                        </p>
+                    </div>
+                </div>
+                <h2 class="selectfillter  pt-5">สิ่งที่ต้องการจะบอกเป็นพิเศษ</h2>
+                <textarea class="form-control" name="requirement" placeholder="ex. need less is more" aria-label="With textarea"></textarea>
+                <h2 class="selectfillter  pt-5">งบประมาณที่ต้องการจ้างงานออกแบบในครั้งนี้</h2>
+                <p>
+                    *ระบบจะค้นหาจากราคาที่ใกล้มากที่สุดจากกลุ่มนักออกแบบ*
+                </p>
+                <!-- <input style="border-width: 2px;" type="number" class="detaill-select mt-5 mb-5" name="FirstName" plachholder="บรรจุภัณฑ์ประเภทกล่อง"> -->
+                <select name="pricerate"  name="pricerate" class="detaill-select form-control mt-5 mb-5">
+                    <option value="2900">งานออกแบบฉลากติดสินค้าหน้าเดียว 
+                                        <span style="text-color: #ff3957;">ราคา ฿2,900</span> 
+                    </option>
+                    <option value="4500">ออกแบบกล่องแพคเกจ  
+                                        <span style="text-color: #ff3957;">ราคา ฿4,500 </span> 
+                    </option>
+                    <option value="7900">ออกแบบฉลากติดสินค้า พร้อม กล่องแพคเกจ
+                                        <span style="text-color: #ff3957;"> ราคา ฿7,900</span> 
+                    </option>
+                </select>
 
 
-                                    @endforeach
+                <h1 class="text-center _hilight p-5 ">
+                เลือกผลิตภัณฑ์ที่มีความใกล้เคียง<br>
+                กับแบบที่คุณต้องการ
+            </h1>
+            <div class="col-12 col-sm-12 p-3 mb-5 bg-white rounded ">
+                <div class="waterfall ">
+                    <div class="container">
+                        <div class="row  ">                           
+                             @foreach ($refs as $ref)
+                            <div class="col-12 col-sm-4 ">
+                                <div class="form-check item rounded p-3 p-3 ">
+                    
+                                        <input class="single-checkbox" type="checkbox" id="myCheckbox1" value="{{$ref->id}}" name="reference[]">
+                                        <!-- <label class="single-checkbox" for="myCheckbox1"> -->
+                                        <img style="display:block;" width="" src="{{$ref->img}}" /></label>
+                           
+                                </div>
+                              
+                                <!-- <div class="item rounded p-3 p-3">
+                                    <img src="https://picsum.photos/360" class="rounded" alt="">
                                 </div>
                             </div>
 

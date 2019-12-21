@@ -1,4 +1,4 @@
 $("#basicDate").flatpickr({
     enableTime: true,
-    dateFormat: "F, d Y "
+    dateFormat: "Y-m-d"
 });

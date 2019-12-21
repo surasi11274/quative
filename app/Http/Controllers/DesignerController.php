@@ -99,7 +99,7 @@ class DesignerController extends Controller
             'birthdate'=>$request->input('birthdate'),
             'address'=>$request->input('address'),
             'zipcode'=>$request->input('zipcode'),
-            'pricerate'=>$request->input('pricerate'),
+            // 'pricerate'=>$request->input('pricerate'),
             'bankname'=>$request->input('bankname'),
             'bankaccount'=>$request->input('bankaccount'),
             'profilepic'=>$request->file('profilepic')->move('uploads/profilepic',$filenameTostore),
@@ -147,7 +147,10 @@ class DesignerController extends Controller
     public function show($token)
     {
         //
+
         $designer = Designer::where('token',$token)->get();
+        $users = Auth::user()->designer();
+
         $tags = Tags::all();
 
         $designer->first()->tag = json_decode($designer->first()->tag);
@@ -158,7 +161,8 @@ class DesignerController extends Controller
         }
         return view('designer.show',[
             'designer'=>$designer->first(),
-            'tags'=>$tags
+            'tags'=>$tags,
+            'users'=>$users
             ]);
 
     }

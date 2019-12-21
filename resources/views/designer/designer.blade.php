@@ -415,20 +415,26 @@
         <div class="row justify-content-center">
             <h1 for="" class="_hilight p-5">กรอกข้อมูลบัญชี</h1>
         </div>
-        <div class="form-group pl-5 pr-5">
+        <!-- <div class="form-group pl-5 pr-5">
             <label for="inputUsername">ราคาที่ต้องการจะได้รับ 1:ชิ้นงาน </label>
             <div class="input-icons">
                 <i class="fas fa-dollar-sign icon"></i>
                 <input type="text" class="form-control" name="pricerate" >
             </div>
-        </div>
+        </div> -->
 
         <div class="form-group pl-5 pr-5">
+
             <label for="inputUsername">ธนาคาร</label>
-                <input type="text" class="form-control"  name="bankname">
-            <label for="inputUsername">เลขบัญชีธนาคาร</label>
-        <div class="input-icons">
+            <div class="input-icons">
         <i class="fas fa-money-check icon"></i>
+
+        <input type="text" class="form-control"  name="bankname">
+        </div>
+           
+                <label for="inputUsername">เลขบัญชีธนาคาร</label>
+        <div class="input-icons">
+        <!-- <i class="fas fa-money-check icon"></i> -->
 
             <input type="number" class="form-control"  name="bankaccount">
         </div>
