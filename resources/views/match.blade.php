@@ -23,7 +23,7 @@
                     <div class="rec">
                         <div class="row">
                             <div class="col-2 p-5">
-                                <image id="profileImage" class="rounded-circle" src="https://picsum.photos/140" />
+                                <image id="profileImage" class="rounded-circle" src="https://picsum.photos/140">
                                 <input id="imageUpload" type="file"
                                        name="profile_photo" placeholder="Photo" required="" capture>
                             </div>
