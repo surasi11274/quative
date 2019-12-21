@@ -27,6 +27,7 @@
 				      <div class="">
 
                   <div class="tabbable">
+                     
                      <ul class="nav" id="myDIV">
                      
 
@@ -36,7 +37,7 @@
                            <a href="#Loose-{{ $designer->id }}" data-toggle="tab" onclick="addCart('{{$designer->id}}')" >
                            <div class="profile-img text-center ">
                                  <!-- <h1>{{$designer->tag}}{{$designer->id}}</h1> -->
-                                 <img class="rounded-circle _btn"  style=" object-fit: cover; width: 150px; height:150px;" src="/{{$designer->profilepic}}" alt=""/>
+                                 <img class="rounded-circle _btn"  style=" object-fit: cover; width: 150px; height:150px; " src="/{{$designer->profilepic}}" alt=""/>
 
                               </div>
                            </a>
@@ -128,7 +129,7 @@
                        </div> <!-- endrow -->
 			  			</div> <!-- endrow -->
 					</div>
-
+<!-- 
 
 					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -137,7 +138,7 @@
 					  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
 					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 					    <span class="sr-only">Next</span>
-					  </a>
+					  </a> -->
 
 
 				</div>
@@ -148,29 +149,42 @@
 			
 
                      <div class="tab-content">
+                        <div class="container mt-5">
+                        <hr>
+
+                        </div>
+
                      @foreach ($designers as $count => $designer)
+                     
 
                         <div @if($count == 0) class="tab-pane active" @else class="tab-pane" @endif id="Loose-{{$designer->id}}">
 
                            <!-- profile designer   --> 
 
                            <div class="row mt-5">
+                              
+                              <div class="col-1 ml-5">
 
-                              <div class="col-md-3 ">
-                                 <div class="profile-img text-center " width="50">
-                                    <img class="rounded-circle"  style=" object-fit: cover; width: 200; height:200px;" src="/{{$designer->profilepic}}" alt=""/>
+                              </div>
+                              <div class="col-md-2 ">
+                                 <div class="profile-img" width="50">
+                                    <img class="rounded-circle"  style=" object-fit: cover; width: 150; height: 150; border: 2px solid #904AE8;" src="/{{$designer->profilepic}}" alt=""/>
                                  </div>
                               </div>
-                              <div class="col-5 .col-sm">
-                                 <h5>{{$designer->name}}</h5>
+                              <div class="col-4 .col-sm">
+                                 <h4 style="font-weight:900;">{{$designer->name}}</h4>
                                  <h5 style="color:#FCD430;"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i> <span style="color: #000000;">4.9</span> </h5>
                                  <button type="button" class="btn rounded-ex" style="color:#904ae8
             ;border-color: #904ae8
             ;">ติดตาม</button>
                                  <br><br>
-                                 <p>{{$designer->description}}</p>
-                                 <br><br>
+                                 <label style="font-weight:900; color:#ff3957
+;">แนะนำเกี่ยวกับนักออกแบบ</label >
 
+                                 <p>{{$designer->description}}</p>
+                                 <label style="font-weight:900; color:#ff3957
+;">แนวงานออกแบบ</label>
+                                 
                                  <p> @foreach($jobs->tags as $tagn)
 
 @php
@@ -212,9 +226,18 @@ $tagname = \App\Tags::find($tagn)->tagName;
                </div>                       
 
 
-                            <div class="container text-center">
+                            <div class="container ">
                                 <hr>
-                                <h2  class="_hilight mt-3">ผลงานที่เคยทำ</h2>
+                                <div class="row">
+                                 <div class="col-1 ml-4">
+
+                                 </div>
+                                 <div class="col">
+                                 <h2  class="_hilight mt-3 " style="font-family: chonburi;    color: #904ae8;
+" >ผลงานที่เคยทำ</h2>
+
+                                 </div>
+                                </div>
                             </div>
 
                 <div id="carouselExampleIndicators1" class="carousel slide " data-ride="carousel" style="padding-bottom: 50px;">

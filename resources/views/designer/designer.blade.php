@@ -408,7 +408,8 @@
 
 
         </div>
-            <input type="button" name="previous" class=" previous action-button btn-block btn-lg  rounded" value="Previous"/>
+            <input type="button" name="previous" style="background-color:#ff3957
+;" class=" previous action-button btn-block btn-lg  rounded" value="Previous"/>
             <input type="button" name="next" class=" next action-button btn-block btn-lg  rounded" value="Next"  />
     </fieldset>
     <fieldset>
@@ -441,7 +442,8 @@
 
         </div>
 
-        <input type="button" name="previous" class=" previous action-button btn-block btn-lg  rounded" value="Previous"/>
+        <input type="button" name="previous" style="background-color:#ff3957
+;" class=" previous action-button btn-block btn-lg  rounded" value="Previous"/>
         <button type="submit" name="submit" class="submit action-button" value="Submit"> Submit</button>
 
     </fieldset>

@@ -236,6 +236,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 ._btn {
     transition: 0.3s;
+    border: 2px solid #904AE8;
 }
 
 /* Style the active class, and buttons on mouse-over */

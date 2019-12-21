@@ -16,7 +16,7 @@
                 <div class="carousel-item active">
                     <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption1 d-none d-md-block">
-                        <a href="#" class="site-link"></a>
+                        <a href="/votedetail" class="site-link"></a>
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-12 text-left p-5">
@@ -35,7 +35,7 @@
                 <div class="carousel-item">
                     <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption1 d-none d-md-block">
-                        <a href="#" class="site-link"></a>
+                        <a href="/votedetail" class="site-link"></a>
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-12 text-left p-5">
@@ -54,7 +54,7 @@
                 <div class="carousel-item">
                     <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption1 d-none d-md-block">
-                        <a href="#" class="site-link"></a>
+                        <a href="/votedetail" class="site-link"></a>
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-12 text-left p-5">
