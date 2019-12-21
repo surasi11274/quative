@@ -69,7 +69,7 @@
             <div class="row ">
 
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
-                    <div class="card _card">
+                    <div class="card _card shadow-ex" style="cursor: pointer;">
                         <div class="card-body ">
                             <img src="photo/_badge.png" alt="..." class="mt-5 mb-5">
                             <h3 class="mt-2 mb-2">มีคุณภาพ</h3>
@@ -80,7 +80,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
-                    <div class="card _card">
+                    <div class="card _card shadow-ex"  style="cursor: pointer;">
                         <div class="card-body">
                             <img src="photo/_light.png"alt="..." class="mt-5 mb-5">
                             <h3 class="mt-2 mb-2">นักออกแบบมืออาชีพ</h3>
@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
-                    <div class="card _card">
+                    <div class="card _card shadow-ex"  style="cursor: pointer;">
                         <div class="card-body">
                             <img src="photo/_vertify.png" alt="..." class="mt-5 mb-5">
                             <h3 class="mt-2 mb-2">ความปลอดภัย</h3>

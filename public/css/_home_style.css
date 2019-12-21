@@ -78,7 +78,9 @@ h2, h4, h5, p, a{
   /*background-color: #fff;*/
   width: 100%;
   height: auto;
-
+}
+.shadow-ex{
+  box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);
 }
 .star1 {
   color: #FCD430;
