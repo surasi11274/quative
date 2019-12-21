@@ -46,11 +46,14 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 mt_ex">
-                    <figure class="img-fluid ">
-                        <picture>
-                            <img src="photo/Frame.png" alt="">
-                        </picture>
-                    </figure>
+                    <div data-aos="fade-up" data-aos-duration="300">
+                        <figure class="img-fluid ">
+                            <picture>
+                                <img src="photo/Frame.png" alt="">
+                            </picture>
+                        </figure>
+                    </div>
+
                 </div>
             </div>
             <div class=" text-center mt-5 mb-5 p-5 _curve">
@@ -62,11 +65,12 @@
     </div>
     <div class=" _box-1 text-center p-5">
         <div class="container">
-            <h1 class="p-5">ทำไมต้อง <span class="_hilight">QUATIVE</span> </h1>
+            <h1 class="p-5 text-center">ทำไมต้อง <span class="_hilight">QUATIVE</span> </h1>
             <div class="row ">
-                <div class="col-12 col-md-4">
-                    <div class="card">
-                        <div class="card-body">
+
+                <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
+                    <div class="card _card">
+                        <div class="card-body ">
                             <img src="photo/_badge.png" alt="..." class="mt-5 mb-5">
                             <h3 class="mt-2 mb-2">มีคุณภาพ</h3>
                             <p >สินค้าดีไซน์โดยดีไซน์เนอร์มืออาชีพ <br>
@@ -75,8 +79,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="card">
+                <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
+                    <div class="card _card">
                         <div class="card-body">
                             <img src="photo/_light.png"alt="..." class="mt-5 mb-5">
                             <h3 class="mt-2 mb-2">นักออกแบบมืออาชีพ</h3>
@@ -86,8 +90,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 ">
-                    <div class="card">
+                <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
+                    <div class="card _card">
                         <div class="card-body">
                             <img src="photo/_vertify.png" alt="..." class="mt-5 mb-5">
                             <h3 class="mt-2 mb-2">ความปลอดภัย</h3>
@@ -108,9 +112,11 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-12 col-md-6 ">
-                                            <figure class="img-fluid">
-                                                <img src="photo/preview.png">
-                                            </figure>
+                                            <div data-aos="fade-right" data-aos-duration="1000">
+                                                <figure class="img-fluid">
+                                                    <img src="photo/preview.png">
+                                                </figure>
+                                            </div>
                                         </div>
                                         <div class="col-12 col-md-6 p-5 text-right">
                                             <h1><span class="_hilight" >พรีวิว</span>บรรจุภัณฑ์<br>

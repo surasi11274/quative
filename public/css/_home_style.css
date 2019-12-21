@@ -87,3 +87,7 @@ h2, h4, h5, p, a{
   width: 100%;
   height: 370px;
 }
+._card:hover{
+  transition: 0.4s;
+  transform: translateY(-20px);
+}
