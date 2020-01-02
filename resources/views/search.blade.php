@@ -1,8 +1,11 @@
 @extends('layouts.app')
 @section('assets')
-   <link rel="stylesheet" href="css/style_match.css">s
+   <link rel="stylesheet" href="css/style_match.css">
    <link rel="stylesheet" href="{{asset('css/flatpickr.min.css')}}">
 @endsection
+<body style="font-family: prompt;">
+    
+</body>
 
 @section('content')
 <section class="content">
@@ -101,11 +104,11 @@
                                                                         @if ($cat->kindID == 1)
 
                                                                             <div class="col-6 p-3">
-                                                                                <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">
-                                                                                    <img class="card-img-top" src="{{$cat->catsPic}}">
+                                                                                <button class="card" style="border: 2px solid #904AE8;"  type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">
+                                                                                    <img class="card-img-top" style=" object-fit: cover; width: 200; height:200px;" src="{{$cat->catsPic}}">
                                                                                     <div class="card-body">
                                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
-                                                                                        <small class="card-text">{{$cat->size}}</small>
+                                                                                        <!-- <small class="card-text">{{$cat->size}}</small> -->
 
 
                                                                                     </div>
@@ -124,10 +127,10 @@
                                                                         @if ($cat->kindID == 2)
                                                                             <div class="col-6 p-3">
                                                                                 <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">
-                                                                                    <img class="card-img-top" src="{{$cat->catsPic}}">
+                                                                                    <img class="card-img-top" style=" object-fit: cover; width: 200; height:200px;" src="{{$cat->catsPic}}">
                                                                                     <div class="card-body">
                                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
-                                                                                        <small class="card-text">{{$cat->size}}</small>
+                                                                                        <!-- <small class="card-text">{{$cat->size}}</small> -->
 
 
                                                                                     </div>
@@ -146,10 +149,10 @@
 
                                                                             <div class="col-6 p-3">
                                                                                 <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">
-                                                                                    <img class="card-img-top" src="{{$cat->catsPic}}">
+                                                                                    <img class="card-img-top" style=" object-fit: cover; width: 200; height:200px;" src="{{$cat->catsPic}}">
                                                                                     <div class="card-body">
                                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
-                                                                                        <small class="card-text">{{$cat->size}}</small>
+                                                                                        <!-- <small class="card-text">{{$cat->size}}</small> -->
 
 
                                                                                     </div>
@@ -169,10 +172,10 @@
 
                                                                             <div class="col-6 p-3">
                                                                                 <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">
-                                                                                    <img class="card-img-top" src="{{$cat->catsPic}}">
+                                                                                    <img class="card-img-top " style=" object-fit: cover; width: 200; height:200px;" src="{{$cat->catsPic}}">
                                                                                     <div class="card-body">
                                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
-                                                                                        <small class="card-text">{{$cat->size}}</small>
+                                                                                        <!-- <small class="card-text">{{$cat->size}}</small> -->
 
 
                                                                                     </div>
@@ -193,10 +196,10 @@
 
                                                                             <div class="col-6 p-3">
                                                                                 <button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">
-                                                                                    <img class="card-img-top" src="{{$cat->catsPic}}">
+                                                                                    <img class="card-img-top" style=" object-fit: cover; width: 200; height:200px;" src="{{$cat->catsPic}}">
                                                                                     <div class="card-body">
                                                                                         <h4 class="card-title"> {{$cat->name}}</h4>
-                                                                                        <small class="card-text">{{$cat->size}}</small>
+                                                                                        <!-- <small class="card-text">{{$cat->size}}</small> -->
 
 
                                                                                     </div>

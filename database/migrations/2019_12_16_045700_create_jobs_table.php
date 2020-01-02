@@ -34,6 +34,7 @@ class CreateJobsTable extends Migration
             $table->text('reference');
 
             $table->string('file');
+            $table->integer('rating');
             $table->boolean('status')->default(0);
             $table->string('token',16)->nullable();
 

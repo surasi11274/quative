@@ -4,6 +4,9 @@
         <link rel="stylesheet" href="{{asset('css/style_match.css')}}">
 
 @endsection
+<body style="font-family: prompt;">
+    
+</body>
 @section('content')
 <section class="content mt_ex">
 

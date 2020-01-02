@@ -2,6 +2,9 @@
 @section('assets')
     <link rel="stylesheet" href="css/_vote-detail.css">
 @endsection
+<body style="font-family: prompt;">
+    
+</body>
 @section('content')
     <div class="bd-example shadow-ex">
         <div id="carouselExampleCaptions3" class="carousel slide" data-ride="pause">

@@ -2,6 +2,9 @@
 @section('assets')
     <link rel="stylesheet" href="css/_vote-detail.css">
 @endsection
+<body style="font-family: prompt;">
+    
+</body>
 @section('content')
 
 

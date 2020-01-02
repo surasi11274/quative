@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+<body style="font-family: prompt;">
+    
+</body>
 @section('content')
 <div class="container mt_ex ">
          <div class=" mt-5 rounded-ex" style="width: 100%;padding-top: 30px;">
