@@ -31,8 +31,7 @@ color: #CCCCCC;
 /* สไตล์งานที่ต้องการ */
 /* เลือกประเภทผลิตภัณฑ์ที่ต้องการจะออกแบบ */
 .selectfillter{
-font-family: Prompt;
-font-style: normal;
+/*font-style: normal;*/
 font-weight: bold;
 font-size: 24px;
 }
@@ -94,7 +93,7 @@ ul.ks-cboxtags li label{
     background-color: rgba(255, 255, 255, .9);
     border: 2px solid rgba(139, 139, 139, .3);
     color: #adadad;
-    border-radius: 25px;
+    border-radius: .25rem!important;
     white-space: nowrap;
     margin: 3px 0px;
     -webkit-touch-callout: none;
@@ -139,7 +138,7 @@ ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
 
 ul.ks-cboxtags li input[type="checkbox"]:checked + label {
     border: 2px solid mediumpurple;
-    background-color: #FF3975;
+    background-color: #523EE8;
     font-family: Prompt;
 font-style: normal;
 font-weight: 500;
@@ -162,7 +161,7 @@ ul.ks-cboxtags li input[type="checkbox"] {
     right: 10px;
 }
 ul.ks-cboxtags li input[type="checkbox"]:focus + label {
-  border: 2px solid #e9a1ff;
+  border: 2px solid #523EE8;
 }
 
 /*datepicker*/
@@ -382,4 +381,33 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     transform: rotate(45deg);
     transition: 0.4s;
 
+}
+.input-picture {
+
+    background: #FFFFFF;
+    border: 2px dashed #523EE8;
+    border-radius: 5px;
+    width: 180px;height: 180px;
+    color: #C9C3C3;
+
+}
+.p-icons{
+    padding: 80px 80px 80px 80px;
+}
+.total-price{
+    width: 280px;
+    height: 294px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.overflow-gallery{
+
+    height: 600px;
+    overflow: scroll;
+}
+.grid-gallery img{
+    width: 100%;
+    height: auto;
 }

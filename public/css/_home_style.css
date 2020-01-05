@@ -47,6 +47,11 @@ h2, h4, h5, p, a{
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+._primary-black{
+  background: black !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #fff !important;
+}
 ._hilight{
   color: #523EE8 !important;
 }
