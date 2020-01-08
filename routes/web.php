@@ -59,9 +59,11 @@ Route::get('/search/show/{token}', [
     'as' => 'search.show',
     'uses' => 'HomeController@show']);
 
-Route::post('/search/create/store2', [
-    'as' => 'search.create.store',
-    'uses' => 'HomeController@storeSearchStep2']);
+//Route::post('/search/create/store2/{token}', [
+  //  'as' => 'search.create.store',
+    //'uses' => 'HomeController@storeSearchStep2']);
+Route::post('/search/create/store2', 
+    'HomeController@storeSearchStep2');
     
     
 Route::get('/showjob/{token}', [

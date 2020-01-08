@@ -195,37 +195,46 @@ class HomeController extends Controller
             'jobs'=>$jobs->first(),
             'tags'=>$tags,
             'designers'=>$designers,
-            'refs'=>$refs
+            'refs'=>$refs,
             ]);
 
     }
     public function storeSearchStep2(Request $request)
     {
-
-        $users = Auth::user()->job();
-        $jobs = Jobs::find($id);
-        $cats = Categories::all();     
-        $ref = References::all();
-     
-
-        DB::table('jobs')->insert([
-  
-            'dsigner_id'=>$request->input('dsigner_id'),
-
+    //    dd($request->all());
+    // echo $request->designer_id;
+// exit;
+        // $users = Auth::user()->job();
         
-            
+        // $cats = Categories::all();     
+        // $ref = References::all();
+     
+        // $jobs = Jobs::find($token);
+        // $jobs->designer_id = $request->input('designer_id');
 
-        ]);
+        $updateJob = Jobs::find($request->job_id);
+        $updateJob->designer_id = $request->designer_id;
+        $updateJob->save();
 
-        try{
-            // สำเร็จแล้ว ส่งไป step2
-            $users->save();
-            return redirect(route('job.show',['token'=>$users->token]));
-        }catch (\Exception $x){
-            // สร้าง Actor ไม่ได้ มีบางอย่างผิดพลาด คืนค่ากลับหน้าเดิม
-            return back()->withInput();
-        }
-        // return view('search');
+
+        // $jobs = DB::table('jobs')->update([
+        //     'designer_id'=>$request->designer_id,
+        //     // $jobs->designer_id = $request->input('designer_id');
+        // ]);
+
+        // try{
+        //     // สำเร็จแล้ว ส่งไป step2
+        //     $jobs->save();
+        //     return redirect(route('job.show',[
+        //         // 'token'=>$users->token,
+        //         'jobs'=>$jobs->token
+        //         ]));
+        // }catch (\Exception $x){
+        //     // สร้าง Actor ไม่ได้ มีบางอย่างผิดพลาด คืนค่ากลับหน้าเดิม
+        //     return back()->withInput();
+        // }
+        // // return view('search');
+        echo 'success';
     }
     public function showjob($token)
     {
@@ -246,7 +255,7 @@ class HomeController extends Controller
         return view('showmatch',[
             'jobs'=>$jobs->first(),
             'tags'=>$tags,
-            'designers'=>$designers
+           // 'designers'=>$designers
             ]);
         // return view('search');
     }
