@@ -2,6 +2,8 @@
 @section('assets')
    <link rel="stylesheet" href="css/style_match.css">
    <link rel="stylesheet" href="{{asset('css/flatpickr.min.css')}}">
+
+   
 @endsection
 <body style="font-family: prompt;">
     
@@ -38,13 +40,16 @@
                     <div class="container bg-white rounded  p-5">
                         <h2 class="selectfillter"  style="font-weight: 800;">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h2>
                         <div class="row">
+                                   <input style="border-width: 2px;" type="text" class="detaill-select " name="categories" plachholder="sadas" id="output">
+                                   <input  type="text"  name="categories_id" plachholder="sadas" id="output2">
                             @foreach ($cats as $cat)
-                                
+                               
                             <div class="col">
                                <div class="body-below text-center">
-                                   <a href="#">
+                                   <button type="button" class="btn" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
                                        <img src="{{ $cat->catsPic}}"  class="rounded" alt="">
-                                   </a>
+                                   </button>
+                                   
                                    <p>{{ $cat->name}}</p>
                                </div>
                             </div>
@@ -266,19 +271,25 @@
                            {{--</div>--}}
                        </section>
                         <h2 class="selectfillter pt-5"  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2>
+                       
+
+
                         <div class="row">
-                             <input id="file-input" type="file" multiple>
-                                    <div id="preview"></div>
+                         
                             <div class="col">
                                 <div class="input-picture">
-                                   
+
+
+                                    <input type="file" id="file-input"  name="productPic"  multiple />
+{{-- <input type="button" onclick="removeAllImage()" value="Remove All Image" clas="remove">  --}}
+                                    <div id="thumb-output"></div>
                                     <i class="fas fa-plus p-icons"></i>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <h2 class="selectfillter pt-5"  style="font-weight: 800;">URL<small>(ที่เกี่ยวข้องกับผลิตภัณฑ์)</small></h2>
-                            <input type="text" class="form-control" name="url-link" placeholder="เช่น เว็บไซต์, เฟสบุ๊ค เพื่อให้นักออกแบบทำงานได้ง่ายขึ้น ">
+                            <input type="text" class="form-control" name="url" placeholder="เช่น เว็บไซต์, เฟสบุ๊ค เพื่อให้นักออกแบบทำงานได้ง่ายขึ้น ">
                         </div>
                         <div class="form-group">
                             <h2 class="selectfillter  pt-5">สไตล์งานที่ต้องการ</h2>
@@ -320,7 +331,7 @@
                             {{--</div>--}}
                         {{--</div>--}}
                         <h2 class="selectfillter  pt-5">ระบุรายละเอียดสำคัญ ( ปัญหา + ผลกระทบ + เป้าหมายทางธุรกิจ )</h2>
-                        <textarea class="form-control"  placeholder="ระบุรายละเอียดสำคัญ เช่น สินค้าไม่น่าดึงดูด, สินค้าทำยอดไม่ไ่ด้" aria-label="With textarea"></textarea>
+                        <textarea class="form-control" name="requirement" placeholder="ระบุรายละเอียดสำคัญ เช่น สินค้าไม่น่าดึงดูด, สินค้าทำยอดไม่ไ่ด้" aria-label="With textarea"></textarea>
                        <div class="row">
                            <div class="col-12 col-md-6">
                                <h2 class="selectfillter  pt-5">ขอบเขตที่ต้องการงาน</h2>
@@ -359,19 +370,19 @@
                              <div class="row">
                                  <div class="col-4">
                                      <div class="select-date">
-                                         <ul class="box-tag d-flex">
+                                         <ul class="box-tag d-flex" name="finishdate">
                                              <li class="m-5">
-                                                 <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                                                 <input type="radio" id="customRadioInline1" name="finishdate" class="custom-control-input">
                                                  <label class="custom-control-label" for="customRadioInline1">ธรรมดา</label>
                                                  <h5>15 <small>วัน</small></h5>
                                              </li>
                                              <li class="m-5">
-                                                 <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                                 <input type="radio" id="customRadioInline2" name="finishdate" class="custom-control-input">
                                                  <label class="custom-control-label" for="customRadioInline2">ด่วน</label>
                                                  <h5>7 <small>วัน (+฿5000)</small></h5>
                                              </li>
                                              <li class="m-5">
-                                                 <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+                                                 <input type="radio" id="customRadioInline3" name="finishdate" class="custom-control-input">
                                                  <label class="custom-control-label" for="customRadioInline3">ด่วนมาก</label>
                                                  <h5>5 <small>วัน (+฿1,000)</small></h5>
                                              </li>
@@ -438,6 +449,10 @@
         <h2 class="selectfillter  pt-5">รูปภาพงานใกล้เคียงกับงานที่ต้องการ *ถ้ามี</h2>
         <div class="col">
             <div class="input-picture">
+
+                <input type="file" id="file-input2" name="refpicbyUser" multiple />
+                {{-- <input type="button" onclick="removeAllImage()" value="Remove All Image" clas="remove">  --}}
+                                                    <div id="thumb-output2"></div>
                 <i class="fas fa-plus p-icons"></i>
             </div>
         </div>
@@ -475,291 +490,7 @@
     </div>
 </form>
 
-    <div class="container bg-white mt-5 p-5">
-        <h1 class=" text-center selectfillter  pt-5">ผลการ <span class="_hilight">Matching</span></h1>
-
-        <h2 class="selectfillter  pt-5">เลือกนักออกแบบที่ตรงใจกับคุณ</h2>
-        <div class="row">
-            <div class="col-12 col-md-4">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
-                       <span class="row">
-                           <span class="col-3">
-                                <img src="https://picsum.photos/50" class="rounded-circle" alt="...">
-                           </span>
-                           <span class="col-9">
-                               <p style="color: #000;">ปลายฟ้า
-                            เป็นตาธรรม</p>
-                        <span class="d-flex">
-                            <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                            <small>(4.6)</small>
-
-                        </span>
-                           </span>
-                       </span>
-                    </a>
-                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-                        <span class="row">
-                           <span class="col-3">
-                                <img src="https://picsum.photos/50" class="rounded-circle" alt="...">
-                           </span>
-                           <span class="col-9">
-                               <p style="color: #000;">การดา ราทอง</p>
-                        <span class="d-flex">
-                            <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                            <small>(4.6)</small>
-
-                        </span>
-                           </span>
-                       </span>
-                    </a>
-                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
-                            <span class="row">
-                           <span class="col-3">
-                                <img src="https://picsum.photos/50" class="rounded-circle" alt="...">
-                           </span>
-                           <span class="col-9">
-                               <p style="color: #000;">ภาวณา เมตจิต</p>
-                        <span class="d-flex">
-                            <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                            <small>(4.6)</small>
-
-                        </span>
-                           </span>
-                       </span>
-                    </a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                              <span class="row">
-                           <span class="col-3">
-                                <img src="https://picsum.photos/50" class="rounded-circle" alt="...">
-                           </span>
-                           <span class="col-9">
-                               <p style="color: #000;">แสงสา อูทอง</p>
-                        <span class="d-flex">
-                            <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                            <small>(4.6)</small>
-                        </span>
-                           </span>
-                       </span>
-                    </a>
-                    <a class="nav-link" id="v-pills-designers-6-tab" data-toggle="pill" href="#v-pills-designer-6" role="tab" aria-controls="v-pills-designers" aria-selected="false">
-                         <span class="row">
-                           <span class="col-3">
-                                <img src="https://picsum.photos/50" class="rounded-circle" alt="...">
-                           </span>
-                           <span class="col-9">
-                               <p style="color: #000;">ปิ่นเกล้า อิ่มนา</p>
-                        <span class="d-flex">
-                            <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                               <i class="fas fa-star star1"></i>
-                            <small>(4.6)</small>
-                        </span>
-                           </span>
-                       </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-md-8">
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                        <h2 class="selectfillter ">  ผลงานบรรณจุภันฑ์ (<small>8</small>)</h2>
-                        <div class="overflow-gallery grid-gallery">
-                        <div class="row">
-                            <div class="col-7 mt-3">
-                                <img class="rounded"  style=" object-fit: cover;"src="photo/@product-8.png" />
-                            </div>
-                            <div class="col-5 mt-3">
-                                <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
-                            </div>
-
-                            <div class="col-5 mt-3">
-                                <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
-                            </div>
-                            <div class="col-7 mt-3">
-                                <img class="rounded" style=" object-fit: cover;"src="photo/@product-4.png" />
-                            </div>
-                            <div class="col-7 mt-3">
-                                <img class="rounded"  style=" object-fit: cover;"src="photo/@product-6.png" />
-                            </div>
-                            <div class="col-5 mt-3">
-                                <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
-                            </div>
-
-                            <div class="col-5 mt-3">
-                                <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
-                            </div>
-                            <div class="col-7 mt-3">
-                                <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
-                            </div>
-
-                        </div>
-                        </div>
-
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                        <h2 class="selectfillter  ">  ผลงานบรรณจุภันฑ์ (<small>8</small>)</h2>
-                        <div class="overflow-gallery grid-gallery">
-                            <div class="row">
-                                <div class="col-7 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-8.png" />
-                                </div>
-                                <div class="col-5 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
-                                </div>
-
-                                <div class="col-5 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
-                                </div>
-                                <div class="col-7 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-4.png" />
-                                </div>
-                                <div class="col-7 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-6.png" />
-                                </div>
-                                <div class="col-5 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
-                                </div>
-
-                                <div class="col-5 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
-                                </div>
-                                <div class="col-7 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                        <h2 class="selectfillter  pt-5">  ผลงานบรรณจุภันฑ์ (<small>8</small>)</h2>
-                        <div class="overflow-gallery grid-gallery">
-                            <div class="row">
-                                <div class="col-7 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-8.png" />
-                                </div>
-                                <div class="col-5 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
-                                </div>
-
-                                <div class="col-5 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
-                                </div>
-                                <div class="col-7 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-4.png" />
-                                </div>
-                                <div class="col-7 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-6.png" />
-                                </div>
-                                <div class="col-5 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
-                                </div>
-
-                                <div class="col-5 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
-                                </div>
-                                <div class="col-7 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                        <h2 class="selectfillter  pt-5">  ผลงานบรรณจุภันฑ์ (<small>8</small>)</h2>
-                        <div class="overflow-gallery grid-gallery">
-                            <div class="row">
-                                <div class="col-7 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-8.png" />
-                                </div>
-                                <div class="col-5 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
-                                </div>
-
-                                <div class="col-5 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
-                                </div>
-                                <div class="col-7 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-4.png" />
-                                </div>
-                                <div class="col-7 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-6.png" />
-                                </div>
-                                <div class="col-5 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
-                                </div>
-
-                                <div class="col-5 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
-                                </div>
-                                <div class="col-7 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-designer-6" role="tabpanel" aria-labelledby="v-pills-designers-6-tab">
-                        <h2 class="selectfillter  pt-5">  ผลงานบรรณจุภันฑ์ (<small>8</small>)</h2>
-                        <div class="overflow-gallery grid-gallery">
-                            <div class="row">
-                                <div class="col-7 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-8.png" />
-                                </div>
-                                <div class="col-5 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
-                                </div>
-
-                                <div class="col-5 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
-                                </div>
-                                <div class="col-7 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-4.png" />
-                                </div>
-                                <div class="col-7 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-6.png" />
-                                </div>
-                                <div class="col-5 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
-                                </div>
-
-                                <div class="col-5 mt-3">
-                                    <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
-                                </div>
-                                <div class="col-7 mt-3">
-                                    <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="d-flex mt-5">
-            <a href="#" class="btn _secondary-btn btn-lg btn-block m-1 ">ย้อนกลับ</a>
-            <a href="#"  class="btn _primary-black btn-lg btn-block m-1">จ้างเลย</a>
-        </div>
-
-    </div>
+    
 
 </section>
 
@@ -796,37 +527,5 @@
     });
 </script>
 <script src="{{asset('js/flatpickr.js')}}"></script>
-<script>
-    function previewImages() {
+<script src="js/previewmultiple.js"></script>
 
-    var preview = document.querySelector('#preview');
-
-    if (this.files) {
-    [].forEach.call(this.files, readAndPreview);
-    }
-
-    function readAndPreview(file) {
-
-    // Make sure `file.name` matches our extensions criteria
-    if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
-        return alert(file.name + " is not an image");
-    } // else...
-    
-    var reader = new FileReader();
-    
-    reader.addEventListener("load", function() {
-        var image = new Image();
-        image.height = 100;
-        image.title  = file.name;
-        image.src    = this.result;
-        preview.appendChild(image);
-    });
-    
-    reader.readAsDataURL(file);
-    
-    }
-
-    }
-
-    document.querySelector('#file-input').addEventListener("change", previewImages);
-</script>

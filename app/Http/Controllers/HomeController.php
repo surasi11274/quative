@@ -80,18 +80,41 @@ class HomeController extends Controller
 
         // if ($designer){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
         //     return view('designer.edit');
-        // }
+        // } $filenameWithExt = $request->file('profilepic')->getClientOriginalName();
+        $filenameWithExt = $request->file('productPic')->getClientOriginalName();
+        $filenameWithExt = $request->file('refpicbyUser')->getClientOriginalName();
+
+        //get file name
+
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+        $extension = $request->file('productPic')->getClientOriginalExtension();
+        $extension = $request->file('refpicbyUser')->getClientOriginalExtension();
+
+        //create new file name
+//        $filenameTostore = $filename.'_'.time().'.'.$extension;
+
+        $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
     
 
         $jobs = DB::table('jobs')->insert([
             'categories'=>$request->input('categories'),
-            'categories_id'=>$request->input('categories_id'),
+            // 'categories'=>'0',
+            // 'categories_id'=>'0',
+            // 'url'=>'0',
+            // 'finishdate'=>'1111/11/11',
 
+
+
+
+            'categories_id'=>$request->input('categories_id'),
+            'productPic'=>$request->file('productPic')->move('uploads/productPic',$filenameTostore),
             'tags'=>json_encode($request->input('tags')),
+            'url'=>$request->input('url'),
+
             'finishdate'=>$request->input('finishdate'),
 
-            'email'=>$request->input('email'),
-            'phone'=>$request->input('phone'),
+            'refpicbyUser'=>$request->file('refpicbyUser')->move('uploads/refpicbyUser',$filenameTostore),
             'requirement'=>$request->input('requirement'),
             'pricerate'=>$request->input('pricerate'),
             'reference'=>json_encode($request->input('reference')),
@@ -100,7 +123,8 @@ class HomeController extends Controller
             'file'=>'0',
             'designer_id'=>NULL,
             'user_id'=>Auth::user()->id,
-            'token'=> str_random(16)
+            'token'=> str_random(16),
+            
 
             
 
@@ -205,7 +229,7 @@ class HomeController extends Controller
     // echo $request->designer_id;
 // exit;
         // $users = Auth::user()->job();
-        
+        // $jobs = Jobs::where('token',$token)->get();
         // $cats = Categories::all();     
         // $ref = References::all();
      
@@ -234,7 +258,16 @@ class HomeController extends Controller
         //     return back()->withInput();
         // }
         // // return view('search');
-        echo 'success';
+        // echo 'success';
+        try{
+            // สำเร็จแล้ว ส่งไป step2
+            // $jobs->save();
+            // return redirect(route('search.create.step2'))->with('id', $jobs->id);
+            return redirect(route('job.show',['token'=>$updateJob->token]));
+
+        }catch (\Exception $x){
+            return back()->withInput();
+        }
     }
     public function showjob($token)
     {
@@ -252,7 +285,7 @@ class HomeController extends Controller
         if ($jobs->count() == 0){
             return "หาไม่เจอ ทำอะไรดี";
         }
-        return view('showmatch',[
+        return view('showjob',[
             'jobs'=>$jobs->first(),
             'tags'=>$tags,
            // 'designers'=>$designers

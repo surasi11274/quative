@@ -8,7 +8,7 @@ class Jobs extends Model
 {
     //
     protected $table =  'jobs';
-    protected $fillable = ['categories','tags','designer_id','email','phone','requirement','pricerate','reference','file','status'];
+    protected $fillable = ['categories','categories_id','tags','designer_id','url','productPic','refpicbyUser','requirement','pricerate','reference','file','status'];
 
     public function tags(){
         return $this->hasMany('App\Tags');

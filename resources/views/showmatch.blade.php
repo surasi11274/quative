@@ -8,346 +8,229 @@
          <form class="form-match" action="/search/create/store2" method="post" enctype="multipart/form-data">
          {{ csrf_field() }}
 
-         	<h1 class="text-center mt-5" style="color:#904ae8
-               ;"> ใช่ !! ในที่สุดเราก็พบนักออกแบบ</h1>
-               
-            <div class="row">
-               <div class="col-12 mt-5">
+            <div class="containerbg-white mt-5 p-5">
+               <h1 class=" text-center selectfillter  pt-5">ผลการ <span class="_hilight">Matching</span></h1>
+      
+               <h2 class="selectfillter  pt-5">เลือกนักออกแบบที่ตรงใจกับคุณ</h2>
+               <div class="row">
 
-	               	<div id="carouselExampleIndicators" class="carousel slide container" data-ride="touch" >
-				  <ol class="carousel-indicators sr-only">
-				    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-				    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              </ol>
-            {{-- <label>{{$jobs->id}}</label> --}}
+                  <input  type="hidden" class="detaill-select " name="designer_id" plachholder="sadas" id="output">
 
-              <input  type="hidden" class="detaill-select " name="designer_id" plachholder="sadas" id="output">
+                  <div class="col-12 col-md-4">
+                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        @foreach ($designers as $count => $designer)
+                           <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home-{{ $designer->id }}" onclick="addCart('{{$designer->id}}')" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                              <span class="row">
+                                 <span class="col-3">
+                                       <img src="/{{$designer->profilepic}}" class="rounded-circle" alt="...">
+                                 </span>
+                                 <span class="col-9">
+                                    <p style="color: #000;">{{$designer->name}}</p>
+                              <span class="d-flex">
+                                 <i class="fas fa-star star1"></i>
+                                    <i class="fas fa-star star1"></i>
+                                    <i class="fas fa-star star1"></i>
+                                    <i class="fas fa-star star1"></i>
+                                    <i class="fas fa-star star1"></i>
+                                 <small>(4.6)</small>
+      
+                              </span>
+                                 </span>
+                              </span>
+                           </a>
+                           @endforeach
 
-
-				  <div class="carousel-inner">
-				    <div class="carousel-item active ">
-				      <div class="">
-
-                  <div class="tabbable">
                      
-                     <ul class="nav" id="myDIV">
-                     
-
-                     @foreach ($designers as $count => $designer)
-
-                        <li class=" col" @if($count == 0) class="active" @endif >
-                           <a href="#Loose-{{ $designer->id }}" data-toggle="tab" onclick="addCart('{{$designer->id}}')" >
-                           <div class="profile-img text-center ">
-                                 {{-- <h1>{{$designer->tag}}{{$designer->id}}</h1> --}}
-                                 <img class="rounded-circle _btn"  style=" object-fit: cover; width: 150px; height:150px; " src="/{{$designer->profilepic}}" alt=""/>
-
-                              </div>
-                           </a>
-                        </li>
-                        @endforeach
-
-                        <!-- <li class="col">
-                           <a href="#Cross" data-toggle="tab">
-                              <div class="profile-img text-center ">
-                                 <img class="rounded-circle _btn"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
-                              </div>
-                           </a>
-                        </li>
-                        <li class="col">
-                           <a href="#Flake" data-toggle="tab">
-                              <div class="profile-img text-center ">
-                                 <img class="rounded-circle _btn"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
-                              </div>
-                           </a>
-                        </li>
-                        <li class="col">
-                           <a href="#aa" data-toggle="tab">
-                              <div class="profile-img text-center ">
-                                 <img class="rounded-circle _btn"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
-                              </div>
-                           </a>
-                        </li>
-                        <li class="col">
-                           <a href="#bb" data-toggle="tab">
-                              <div class="profile-img text-center ">
-                                 <img class="rounded-circle _btn"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
-                              </div>
-                           </a>
-                        </li> -->
-
-                     </ul>
-
-                       </div> <!-- endrow -->
-			  			</div> <!-- endrow -->
-					</div>
-
-					<div class="carousel-item ">
-				      <div class="">
-
-                  <div class="tabbable">
-
-                     <!-- <ul class="nav">
-
-
-
-                        <li class=" col">
-                           <a href="#Loose" data-toggle="tab">
-                              <div class="profile-img text-center ">
-                                 <img class="rounded-circle"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
-                              </div>
-                           </a>
-                        </li>
-                        <li class="col">
-                           <a href="#Cross" data-toggle="tab">
-                              <div class="profile-img text-center ">
-                                 <img class="rounded-circle"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
-                              </div>
-                           </a>
-                        </li>
-                        <li class="col">
-                           <a href="#Flake" data-toggle="tab">
-                              <div class="profile-img text-center ">
-                                 <img class="rounded-circle"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
-                              </div>
-                           </a>
-                        </li>
-                        <li class="col">
-                           <a href="#aa" data-toggle="tab">
-                              <div class="profile-img text-center ">
-                                 <img class="rounded-circle"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
-                              </div>
-                           </a>
-                        </li>
-                        <li class="col">
-                           <a href="#bb" data-toggle="tab">
-                              <div class="profile-img text-center ">
-                                 <img class="rounded-circle"  width="150" height="150" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
-                              </div>
-                           </a>
-                        </li>
-
-                     </ul> -->
-
-                       </div> <!-- endrow -->
-			  			</div> <!-- endrow -->
-					</div>
-<!-- 
-
-					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					    <span class="sr-only">Previous</span>
-					  </a>
-					  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-					    <span class="sr-only">Next</span>
-					  </a> -->
-
-
-				</div>
-				<!-- carousel-inner -->
-
-			</div> 
-			<!-- carouselExampleIndicators -->
-			
-
-                     <div class="tab-content">
-                        <div class="container mt-5">
-                        <hr>
-
-                        </div>
-
-                     @foreach ($designers as $count => $designer)
-                     
-
-                        <div @if($count == 0) class="tab-pane active" @else class="tab-pane" @endif id="Loose-{{$designer->id}}">
-
-                           <!-- profile designer   --> 
-
-                           <div class="row mt-5">
-                              
-                              <div class="col-1 ml-5">
-
-                              </div>
-                              <div class="col-md-2 ">
-                                 <div class="profile-img" width="50">
-                                    <img class="rounded-circle"  style=" object-fit: cover; width: 150; height: 150; border: 2px solid #904AE8;" src="/{{$designer->profilepic}}" alt=""/>
-                                 </div>
-                              </div>
-                              <div class="col-4 .col-sm">
-                                 <h4 style="font-weight:900;">{{$designer->name}}</h4>
-                                 <h5 style="color:#FCD430;"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i> <span style="color: #000000;">4.9</span> </h5>
-                                 <button type="button" class="btn rounded-ex" style="color:#904ae8
-            ;border-color: #904ae8
-            ;">ติดตาม</button>
-                                 <br><br>
-                                 <label style="font-weight:900; color:#ff3957
-;">แนะนำเกี่ยวกับนักออกแบบ</label >
-
-                                 <p>{{$designer->description}}</p>
-                                 <label style="font-weight:900; color:#ff3957
-;">แนวงานออกแบบ</label>
-                                 
-                                 <p> @foreach($jobs->tags as $tagn)
-
-@php
-$tagname = \App\Tags::find($tagn)->tagName;
-@endphp{{$tagname}}                                 @endforeach
-</p>
-                              </div>
-                              <div class="col-1 ">
-                                 <div class="card text-center" style="width: 5.5rem;">
-                                    <div class="card-body">
-                                       <h5 class="card-title" style="color: #904AE8;" >0</h5>
-                                       <h6 class="card-subtitle mb-2 text-muted" style="font-size: 12px;">ผลงาน</h6>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="col-1 ">
-                                 <div class="card text-center" style="width: 5.5rem;">
-                                    <div class="card-body">
-                                       <h5 class="card-title" style="color: #904AE8;" >0</h5>
-                                       <h6 class="card-subtitle mb-2 text-muted" style="font-size: 12px;">รีวิว</h6>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="col-1 sr-only">
-                                 <div class="card text-center" style="width: 5.5rem;">
-                                    <div class="card-body">
-                                       <h5 class="card-title" style="color: #904AE8;"><img src="https://uppic.cc/d/5zcR" style="height: 20px;
-                                          width: 20px;" /></i></h5>
-                                       <h6 class="card-subtitle mb-2 text-muted" style="font-size: 12px;">ข้อความ</h6>
-                                    </div>
-                                 </div>
-                                 <!-- profile designer   --> 
-
-
-                              </div>
-</div>
-                        </div>
-                  @endforeach
-               </div>                       
-
-
-                            <div class="container ">
-                                <hr>
-                                <div class="row">
-                                 <div class="col-1 ml-4">
-
-                                 </div>
-                                 <div class="col">
-                                 <h2  class="_hilight mt-3 " style="font-family: chonburi;    color: #904ae8;
-" >ผลงานที่เคยทำ</h2>
-
-                                 </div>
-                                </div>
-                            </div>
-
-                <div id="carouselExampleIndicators1" class="carousel slide " data-ride="carousel" style="padding-bottom: 50px;">
-			  <ol class="carousel-indicators">
-		    <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
-		    <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
-		    
-		  </ol>
-		  <div class="carousel-inner ">
-		    <div class="carousel-item active ">
-                <div class="container">                  
-
-                <div class="container">
-                <div class="row justify-content-center">
-                @foreach ($refs as $ref)
-
-                  <div class="column p-2" >
-                    <a href="#"><img class="img-thumbnail rounded-ex" style=" object-fit: cover; width: 200; height:200px;" src="{{$ref->img}}">
-                    </a> 
-                  </div>                    
-                  @endforeach
-
+                          
+                     </div>
                   </div>
-                  </div>
+                  <div class="col-12 col-md-8">
+                     <div class="tab-content" id="v-pills-tabContent">
+                        @foreach ($designers as $count => $designer)
 
-               </div>
-		    </div> <!-- end carousel -->
-<!-- 
-		    <div class="carousel-item">
-		     <div class="row p-5">
-		      <div class="col mt-1">
-		      <img src="photo/corosel_1.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-		       <img src="photo/corosel_2.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-		      </div>
-
-		      <div class="col mt-1">
-		      <img src="photo/corosel_3.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-		       <img src="photo/corosel_4.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-		      </div>
-
-		      <div class="col mt-1">
-		      <img src="photo/corosel_5.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-		       <img src="photo/corosel_6.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-		      </div>
-
-		      <div class="col mt-1">
-		      <img src="photo/corosel_7.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-		      <img src="photo/corosel_8.jpg" alt="..." class="img-thumbnail rounded-ex" width="270" height="270">
-		      </div>
-		  	  </div>
-
-
-                  </div>  -->
-
-				</div>
-			</div>
-
-			<!-- end1  profile -->
-
-                        </div>
-                        <!-- <div class="tab-pane" id="Cross">
-                           <h1>Broad Cut</h1>
-                           <p>The thickest cut, about twice as wide as a Loose cut. Commonly used with air-cured Virginia, which is then used to blend with other cuts..</p>
-                        </div>
-                        <div class="tab-pane" id="Flake">
-                           <h1>Flake</h1>
-                           <p>The tobacco is placed under very high pressure at varying degrees of heat. When the tobacco cake emerges, it is sliced into thin flakes, typically about 1-2 inches wide and 0.1 inches thick. Fold or lightly rub the flake to put it in a pipe.</p>
-                        </div>
-
-                         <div class="tab-pane" id="aa">
-                           <h1>aa</h1>
-                           <p>The tobacco is placed under very high pressure at varying degrees of heat. When the tobacco cake emerges, it is sliced into thin flakes, typically about 1-2 inches wide and 0.1 inches thick. Fold or lightly rub the flake to put it in a pipe.</p>
-                        </div>
-
-                         <div class="tab-pane" id="bb">
-                           <h1>bb</h1>
-                           <p>The tobacco is placed under very high pressure at varying degrees of heat. When the tobacco cake emerges, it is sliced into thin flakes, typically about 1-2 inches wide and 0.1 inches thick. Fold or lightly rub the flake to put it in a pipe.</p>
-                        </div> -->
-
-
+                           <div @if($count == 0) class="tab-pane fade show active"  @else class="tab-pane" @endif  id="v-pills-home-{{$designer->id}}" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                              <h2 class="selectfillter ">  ผลงานบรรณจุภันฑ์ (<small>{{ $designer->id}}</small>)</h2>
+                              <div class="overflow-gallery grid-gallery">
+                              <div class="row">
+                                 @foreach ($refs as $ref)
+                                 <div class="col-7 mt-3">
+                                       <img class="rounded"  style=" object-fit: cover;"src="{{ $ref->img}}" />
+                                 </div>
+                                 @endforeach
+                                 {{-- <div class="col-5 mt-3">
+                                       <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
+                                 </div>
+      
+                                 <div class="col-5 mt-3">
+                                       <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
+                                 </div>
+                                 <div class="col-7 mt-3">
+                                       <img class="rounded" style=" object-fit: cover;"src="photo/@product-4.png" />
+                                 </div>
+                                 <div class="col-7 mt-3">
+                                       <img class="rounded"  style=" object-fit: cover;"src="photo/@product-6.png" />
+                                 </div>
+                                 <div class="col-5 mt-3">
+                                       <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
+                                 </div>
+      
+                                 <div class="col-5 mt-3">
+                                       <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
+                                 </div>
+                                 <div class="col-7 mt-3">
+                                       <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
+                                 </div> --}}
+      
+                              </div>
+                              </div>
+      
+                           </div>
+                           @endforeach
+                           {{-- <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                              <h2 class="selectfillter  ">  ผลงานบรรณจุภันฑ์ (<small>8</small>)</h2>
+                              <div class="overflow-gallery grid-gallery">
+                                 <div class="row">
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-8.png" />
+                                       </div>
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
+                                       </div>
+      
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
+                                       </div>
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-4.png" />
+                                       </div>
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-6.png" />
+                                       </div>
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
+                                       </div>
+      
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
+                                       </div>
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
+                                       </div>
+      
+                                 </div>
+                              </div>
+                           </div> --}}
+                           {{-- <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                              <h2 class="selectfillter  pt-5">  ผลงานบรรณจุภันฑ์ (<small>8</small>)</h2>
+                              <div class="overflow-gallery grid-gallery">
+                                 <div class="row">
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-8.png" />
+                                       </div>
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
+                                       </div>
+      
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
+                                       </div>
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-4.png" />
+                                       </div>
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-6.png" />
+                                       </div>
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
+                                       </div>
+      
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
+                                       </div>
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
+                                       </div>
+      
+                                 </div>
+                              </div>
+                           </div> --}}
+                           {{-- <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                              <h2 class="selectfillter  pt-5">  ผลงานบรรณจุภันฑ์ (<small>0</small>)</h2>
+                              <div class="overflow-gallery grid-gallery">
+                                 <div class="row">
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-8.png" />
+                                       </div>
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
+                                       </div>
+      
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
+                                       </div>
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-4.png" />
+                                       </div>
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-6.png" />
+                                       </div>
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
+                                       </div>
+      
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
+                                       </div>
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
+                                       </div>
+      
+                                 </div>
+                              </div>
+                           </div> --}}
+                           {{-- <div class="tab-pane fade" id="v-pills-designer-6" role="tabpanel" aria-labelledby="v-pills-designers-6-tab">
+                              <h2 class="selectfillter  pt-5">  ผลงานบรรณจุภันฑ์ (<small>8</small>)</h2>
+                              <div class="overflow-gallery grid-gallery">
+                                 <div class="row">
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-8.png" />
+                                       </div>
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
+                                       </div>
+      
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
+                                       </div>
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-4.png" />
+                                       </div>
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-6.png" />
+                                       </div>
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
+                                       </div>
+      
+                                       <div class="col-5 mt-3">
+                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
+                                       </div>
+                                       <div class="col-7 mt-3">
+                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
+                                       </div>
+      
+                                 </div>
+                              </div>
+                           </div> --}}
                      </div>
                   </div>
                </div>
-
-               	<center>
-               		
-					
-				 </center>
-             
-
-               
-                     <!-- end carousel inner -->
-
-               </div>
-
-       			
-           
-         </div> <!-- endcard -->
-         <div class="container">
-             <div class="d-flex justify-content-center">
-            <input type="hidden" id="designerId" name="designerId">
-            <input type="hidden" id="job_id" name="job_id" value="{{$jobs->id}}">
-                 <button type="submit" class="btn btn-lg mb-5"   style="color:white;width: 50%; margin-top: 50px;background-color:#904ae8
-      ;">
-                     จ้างงานเลย
-                 </button>
-             </div>
+               <input type="text" id="designerId" name="output">
+            <input type="text" id="job_id" name="job_id" value="{{$jobs->id}}">
+               <button type="submit" class="btn btn-lg mb-5"   style="color:white;width: 50%; margin-top: 50px;background-color:#904ae8
+               ;">
+                              จ้างงานเลย
+                          </button>
          </div>
          </form>
       </div>
