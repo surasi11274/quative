@@ -35,6 +35,9 @@ Route::get('/vote', function () {
 Route::get('/votedetail', function () {
     return view('vote.votedetail');
 });
+Route::get('/showjob', function () {
+    return view('showjob');
+});
 
 Auth::routes();
 
@@ -59,14 +62,16 @@ Route::get('/search/show/{token}', [
     'as' => 'search.show',
     'uses' => 'HomeController@show']);
 
-Route::post('/search/create/store2', [
-    'as' => 'search.create.store',
-    'uses' => 'HomeController@storeSearchStep2']);
+//Route::post('/search/create/store2/{token}', [
+  //  'as' => 'search.create.store',
+    //'uses' => 'HomeController@storeSearchStep2']);
+Route::post('/search/create/store2', 
+    'HomeController@storeSearchStep2');
     
     
-Route::get('/showjob/{token}', [
-    'as' => 'job.show',
-    'uses' => 'HomeController@showjob']);
+// Route::get('/showjob/{token}', [
+//     'as' => 'job.show',
+//     'uses' => 'HomeController@showjob']);
 
 
     

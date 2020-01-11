@@ -20,8 +20,9 @@
 				    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 				    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
               </ol>
-              <input style="display:none;" type="text" class="detaill-select " name="designer_id" plachholder="sadas" id="output">
+            {{-- <label>{{$jobs->id}}</label> --}}
 
+              <input  type="hidden" class="detaill-select " name="designer_id" plachholder="sadas" id="output">
 
 
 				  <div class="carousel-inner">
@@ -38,7 +39,7 @@
                         <li class=" col" @if($count == 0) class="active" @endif >
                            <a href="#Loose-{{ $designer->id }}" data-toggle="tab" onclick="addCart('{{$designer->id}}')" >
                            <div class="profile-img text-center ">
-                                 <!-- <h1>{{$designer->tag}}{{$designer->id}}</h1> -->
+                                 {{-- <h1>{{$designer->tag}}{{$designer->id}}</h1> --}}
                                  <img class="rounded-circle _btn"  style=" object-fit: cover; width: 150px; height:150px; " src="/{{$designer->profilepic}}" alt=""/>
 
                               </div>
@@ -340,6 +341,8 @@ $tagname = \App\Tags::find($tagn)->tagName;
          </div> <!-- endcard -->
          <div class="container">
              <div class="d-flex justify-content-center">
+            <input type="hidden" id="designerId" name="designerId">
+            <input type="hidden" id="job_id" name="job_id" value="{{$jobs->id}}">
                  <button type="submit" class="btn btn-lg mb-5"   style="color:white;width: 50%; margin-top: 50px;background-color:#904ae8
       ;">
                      จ้างงานเลย
@@ -360,6 +363,7 @@ $tagname = \App\Tags::find($tagn)->tagName;
 <script>
     function addCart(v){
         document.getElementById('output').value = v
+        document.getElementById('designerId').value = v
         console.log(v);
         return false;
     }

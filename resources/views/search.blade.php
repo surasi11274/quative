@@ -38,15 +38,19 @@
                     <div class="container bg-white rounded  p-5">
                         <h2 class="selectfillter"  style="font-weight: 800;">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h2>
                         <div class="row">
+                            @foreach ($cats as $cat)
+                                
                             <div class="col">
                                <div class="body-below text-center">
                                    <a href="#">
-                                       <img src="photo/@box.png"  class="rounded" alt="">
+                                       <img src="{{ $cat->catsPic}}"  class="rounded" alt="">
                                    </a>
-                                   <p>กล่อง</p>
+                                   <p>{{ $cat->name}}</p>
                                </div>
                             </div>
-                            <div class="col">
+                            @endforeach
+
+                            {{-- <div class="col">
                                 <div class="body-below text-center">
                                     <a href="#">
                                         <img src="photo/@bottle.png"  class="rounded" alt="">
@@ -78,7 +82,7 @@
                                     </a>
                                     <p>กล่อง</p>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         {{--old version--}}
                        <section class="old select">
@@ -263,9 +267,11 @@
                        </section>
                         <h2 class="selectfillter pt-5"  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2>
                         <div class="row">
+                             <input id="file-input" type="file" multiple>
+                                    <div id="preview"></div>
                             <div class="col">
                                 <div class="input-picture">
-
+                                   
                                     <i class="fas fa-plus p-icons"></i>
                                 </div>
                             </div>
@@ -402,8 +408,8 @@
                                  </table>
                              </div>
                             <div class="d-flex mt-5">
-                                <a href="#" class="btn _secondary-btn btn-lg btn-block m-1 ">ยกเลิก</a>
-                                <a href="#"  class="btn _primary-black btn-lg btn-block m-1">ถัดไป</a>
+                                <button href="#" class="btn _secondary-btn btn-lg btn-block m-1 ">ยกเลิก</button>
+                                <button href="#"  class="btn _primary-black btn-lg btn-block m-1">ถัดไป</button>
                             </div>
                          </div>
                          </div>
@@ -427,7 +433,6 @@
 
 
 
-            </form>
 
     <div class="container bg-white mt-5 p-5">
         <h2 class="selectfillter  pt-5">รูปภาพงานใกล้เคียงกับงานที่ต้องการ *ถ้ามี</h2>
@@ -464,10 +469,12 @@
             </div>
         </div>
         <div class="d-flex mt-5">
-            <a href="#" class="btn _secondary-btn btn-lg btn-block m-1 ">ย้อนกลับ</a>
-            <a href="#"  class="btn _primary-black btn-lg btn-block m-1">ถัดไป</a>
+            <button href="#" class="btn _secondary-btn btn-lg btn-block m-1 ">ย้อนกลับ</button>
+            <button type="submit" href="#"  class="btn _primary-black btn-lg btn-block m-1">ถัดไป</button>
         </div>
     </div>
+</form>
+
     <div class="container bg-white mt-5 p-5">
         <h1 class=" text-center selectfillter  pt-5">ผลการ <span class="_hilight">Matching</span></h1>
 
@@ -747,12 +754,17 @@
                 </div>
             </div>
         </div>
+        <div class="d-flex mt-5">
+            <a href="#" class="btn _secondary-btn btn-lg btn-block m-1 ">ย้อนกลับ</a>
+            <a href="#"  class="btn _primary-black btn-lg btn-block m-1">จ้างเลย</a>
+        </div>
 
     </div>
 
 </section>
 
 @endsection
+
 
 <script>
     function addCart(v){
@@ -784,3 +796,37 @@
     });
 </script>
 <script src="{{asset('js/flatpickr.js')}}"></script>
+<script>
+    function previewImages() {
+
+    var preview = document.querySelector('#preview');
+
+    if (this.files) {
+    [].forEach.call(this.files, readAndPreview);
+    }
+
+    function readAndPreview(file) {
+
+    // Make sure `file.name` matches our extensions criteria
+    if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+        return alert(file.name + " is not an image");
+    } // else...
+    
+    var reader = new FileReader();
+    
+    reader.addEventListener("load", function() {
+        var image = new Image();
+        image.height = 100;
+        image.title  = file.name;
+        image.src    = this.result;
+        preview.appendChild(image);
+    });
+    
+    reader.readAsDataURL(file);
+    
+    }
+
+    }
+
+    document.querySelector('#file-input').addEventListener("change", previewImages);
+</script>
