@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Chonburi|Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Prompt:400,800i&display=swap');
+
 ._box-1{
-  background-image: url("../photo/section-1.png");
+  /*background-image: url("../photo/section-1.png");*/
   background-repeat: no-repeat;
   /*background-attachment: fixed;*/
   background-position:center bottom;
   z-index: 2;
-  height: 820px !important;
+  /*height: 820px !important;*/
+  background-color: #fff;
 }
 .mt_ex{
   margin-top: 10rem;
@@ -14,15 +16,18 @@ img{
   max-width: 100%;
   height: auto;
 }
-h1, h3{
-  font-family: 'Chonburi', cursive;
+h1, h3,h5{
+  font-family: 'Prompt', sans-serif !important;
+  font-weight: 800;
+  font-style: italic;
 }
 h2, h4, h5, p, a{
   font-family: 'Prompt', sans-serif;
 }
 .shape{
-  background-image: url("../photo/shape-home.png");
+  background-image: url("../photo/@product.png");
   background-repeat: no-repeat;
+  background-color: #F9F9F9;
   /*background-attachment: fixed;*/
   background-position:right;
 
@@ -31,19 +36,24 @@ h2, h4, h5, p, a{
   z-index:1;
 }
 ._primary-btn{
-  background: #FE3A76 !important;
+  background: #523EE8 !important;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #fff !important;
 }
 ._secondary-btn{
   background: white;
-  border: 3px solid #904AE8 !important;
-  color: #904AE8 !important;
+  border: 1px solid black !important;
+  color: black !important;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+._primary-black{
+  background: black !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #fff !important;
+}
 ._hilight{
-  color: mediumpurple !important;
+  color: #523EE8 !important;
 }
 /*.card:hover {*/
   /*box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,0.225);*/
@@ -93,4 +103,7 @@ h2, h4, h5, p, a{
 ._card:hover{
   transition: 0.4s;
   transform: translateY(-20px);
+}
+._box-2{
+  background-color: #F9F9F9;
 }

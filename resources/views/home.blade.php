@@ -83,11 +83,11 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 mt_ex">
-                    <figure class="img-fluid ">
-                        <picture>
-                            <img src="photo/Frame.png" alt="">
-                        </picture>
-                    </figure>
+                    {{--<figure class="img-fluid ">--}}
+                        {{--<picture>--}}
+                            {{--<img src="photo/Frame.png" alt="">--}}
+                        {{--</picture>--}}
+                    {{--</figure>--}}
                 </div>
             </div>
             <div class=" text-center mt-5 mb-5 p-5 _curve">
@@ -117,13 +117,13 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 mt_ex">
-                    <div data-aos="fade-up" data-aos-duration="300">
-                        <figure class="img-fluid ">
-                            <picture>
-                                <img src="photo/Frame.png" alt="">
-                            </picture>
-                        </figure>
-                    </div>
+                    {{--<div data-aos="fade-up" data-aos-duration="300">--}}
+                        {{--<figure class="img-fluid ">--}}
+                            {{--<picture>--}}
+                                {{--<img src="photo/Frame.png" alt="">--}}
+                            {{--</picture>--}}
+                        {{--</figure>--}}
+                    {{--</div>--}}
 
                 </div>
             </div>
@@ -182,7 +182,7 @@
 
     </div>
 
-    <div class="_box-2 bg-white mt_ex">
+    <div class="_box-2  mt_ex">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-12 col-md-6 ">
@@ -206,9 +206,7 @@
 
                                 </div>
                             </div>
-    <div class="_box-3 bg-white mt-ex mb-5">
-        <div class="container">
-            <div class="bgc p-5 rounded-ex " style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);">
+    <div class="_box-3 bg-white mt-ex p-5 mb-5">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-md-4 justify-content-center">
@@ -261,12 +259,12 @@
                     </div>
                     </div>
 
-            </div>
-        </div>
+
+
     </div>
                             <div class="_box-4 bg-white">
                                 <div class="text-center">
-                                    <h1>นักออกแบบ ดีเด่นประจำสัปดาห์</h1>
+                                    <h1><span class="_hilight">ผลงาน</span>นักออกแบบ </h1>
                                     <p>ต้องการค้นหานักออกแบบใช่มั้ย ? สมัครสมาชิกแล้วลองใช้งาน
                                         การค้นหานักออกแบบอย่างที่คุณต้องการดูก่อนสิ</p>
 
@@ -276,9 +274,62 @@
                                             <div class="row">
                                             @foreach ($designers as $designer)
 
-                                                <div class="col-3 mt-5 mb-5">
-                                                    <img style=" object-fit: cover; width: 150px; height:150px;" src="{{$designer->profilepic}}" class="rounded" alt="...">
+                                                <div class="col-12 col-md-6 mt-5 mb-5">
+
+                                                    <div class="card">
+                                                        <img src="https://picsum.photos/320" class="rounded" alt="...">
+                                                        <div class="card-body text-left">
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <img src="{{$designer->profilepic}}" style=" object-fit: cover; width: 90px;height: 90px;" class="rounded-circle" alt="...">
+                                                                </div>
+                                                                <div class="col-9">
+                                                                    <h5>ภาวิณี ดุจดวง</h5>
+                                                                    <p class="card-text">บรรจุภัณฑ์ประเภทกล่องวัสดุมาตรฐาน</p>
+                                                                    <small>กล่อง,มินิมอล</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12 col-md-6 mt-5 mb-5">
+                                                            <img src="https://picsum.photos/320" class="rounded" alt="...">
+                                                        </div>
+                                                        <div class="col-12 col-md-6 mt-5 mb-5">
+                                                            <img src="https://picsum.photos/320" class="rounded" alt="...">
+                                                        </div>
+
+                                                    </div>
+
                                                 </div>
+                                                    <div class="col-12 col-md-6 mt-5 mb-5">
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-6 mt-5 mb-5">
+                                                                <img src="https://picsum.photos/320" class="rounded" alt="...">
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-5 mb-5">
+                                                                <img src="https://picsum.photos/320" class="rounded" alt="...">
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="card">
+                                                            <img src="https://picsum.photos/320" class="rounded" alt="...">
+                                                            <div class="card-body text-left">
+                                                                <div class="row">
+                                                                    <div class="col-3">
+                                                                        <img src="{{$designer->profilepic}}" style=" object-fit: cover; width: 90px;height: 90px;" class="rounded-circle" alt="...">
+                                                                    </div>
+                                                                    <div class="col-9">
+                                                                        <h5>ภาวิณี ดุจดวง</h5>
+                                                                        <p class="card-text">บรรจุภัณฑ์ประเภทกล่องวัสดุมาตรฐาน</p>
+                                                                        <small>กล่อง,มินิมอล</small>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
                                                 @endforeach
 
                                          
