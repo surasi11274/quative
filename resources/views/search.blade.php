@@ -91,7 +91,7 @@
                         </div>
                         {{--old version--}}
                        <section class="old select">
-                           {{--<div class="row">--}}
+                           {{-- <div class="row">--}}
                                {{--<div class="col-9">--}}
                                    {{--<div class="form-group">--}}
                                        {{--<input style="border-width: 2px;" type="text" class="detaill-select " name="categories" plachholder="sadas" id="output">--}}
@@ -268,7 +268,7 @@
                                        {{--</form>--}}
                                    {{--</div>--}}
                                {{--</div>--}}
-                           {{--</div>--}}
+                           {{-- </div> --}}
                        </section>
                         <h2 class="selectfillter pt-5"  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2>
                        

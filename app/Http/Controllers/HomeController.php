@@ -279,6 +279,8 @@ class HomeController extends Controller
 
         
         $tags = Tags::all();
+        $jobs->first()->tags = json_decode($jobs->first()->tags);
+
 
 
 
