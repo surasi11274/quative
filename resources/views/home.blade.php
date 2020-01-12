@@ -181,6 +181,51 @@
         </div>
 
     </div>
+    <div class="container-fluid totorial mt_ex p-5">
+            <div class="container ">
+                    <div class="text-center"> 
+                            <h1 class="content-dark">Quative <span class="_hilight">ใช้ยังไง?</span></h1>
+            
+                        <div class="row p-5">
+                            <div class="col-12 col-md-3">
+                                    <img src="photo/@progess_1.png" alt="">
+                                    <h5 class="content-dark mt-5">ขั้นตอนที่ 1</h5>
+                                    <small class="content-dark mt-3">เลือกผลิตภัณฑ์ <br>
+                                         ที่คุณต้องการใช้
+                                    </small>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                    <img src="photo/@progess_2.png" alt="">
+                                    <h5 class="content-dark mt-5">ขั้นตอนที่ 2</h5>
+                                    <small class="content-dark mt-3">เลือกนักออกแบบ <br>
+                                            จากระบบที่คัดเลือกมาให้
+                                    </small>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                    <img src="photo/@progess_3.png" alt="">
+                                    <h5 class="content-dark mt-5">ขั้นตอนที่ 3</h5>
+                                    <small class="content-dark mt-3">ชำระเงินโดยโอนผ่านธนาคาร <br>
+                                            และเเจ้งใบเสร็จ
+                                    </small>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                    <img src="photo/@progess_4.png" alt="">
+                                    <h5 class="content-dark mt-5">ขั้นตอนที่ 4</h5>
+                                    <small class="content-dark mt-3"> รับไฟล์งาน <br>
+                                            จากนักออกแบบ
+                                    </small>
+                            </div>
+                        </div>
+                            
+                            
+                            {{-- <div class="d-flex">
+                                    <hr class="_dash">
+                            </div> --}}
+            
+                    </div>
+                </div>
+    </div>
+    
 
     <div class="_box-2  mt_ex">
                                 <div class="container">
