@@ -15,14 +15,7 @@
                         <div class="col-9">
                             
 
-                            @foreach($jobs->designer_id as $deid)
-
-                            @php
-                                            $deids = \App\Designer::find($deid)->id;
-                                        @endphp
-                                             <p class="content-bg">{{$dids}}</p>
-    
-                                                            @endforeach
+                      
                                 <p class="content-bg">{{$jobs->designer_id}}</p>
                                 <button class="btn _primary-bg-dark">คุยกับนักออกแบบ</button>
                         </div>
