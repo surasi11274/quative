@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('assets')
+   <link rel="stylesheet" href="css/_select.css">
+@endsection
 @section('content')
     <section class="content">
         <div class="container modal-lg">
