@@ -35,6 +35,12 @@ Route::get('/vote', function () {
 Route::get('/votedetail', function () {
     return view('vote.votedetail');
 });
+Route::get('/requestjob', function () {
+    return view('designer.requestjob');
+});
+Route::get('/jobdetail', function () {
+    return view('designer.jobdetail');
+});
 // Route::get('/showjob', function () {
 //     return view('showjob');
 // });

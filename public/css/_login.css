@@ -57,17 +57,17 @@
 }
 
 input[type=radio]:checked ~ .check {
-    border: 5px solid mediumpurple;
+    border: 5px solid #523EE8;
     transform: translateY(-10px);
     transition: 0.3s;
 
 }
 
 input[type=radio]:checked ~ .check::before{
-    background: mediumpurple;
+    background:  #523EE8;
     margin: 1px;
 }
 
 input[type=radio]:checked ~ label{
-    color: mediumpurple;
+    color:  #523EE8;
 }

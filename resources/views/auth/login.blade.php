@@ -4,11 +4,13 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <!-- <div class="col-md-6 col-md-offset-2"> -->
-                <div class="col-12 card rounded-ex" style="width: 100% ;margin-top: 100px;">
-                   <div class="row">
-                       <div class="col-12 col-md-6 mt-5">
+                <div class="col-12 card " style="width: 100% ;margin-top: 100px;">
+                   <div class="row"> 
+                       <div class="col-2"></div>
+                       <div class="col-8 mt-5">
+                           <div class="row"></div>
                                <center>
-                                   <div class="panel-heading" style="color: #904ae8; margin-top: 20px;margin-bottom: 20px; font-family: chonburi;">
+                                   <div class="panel-heading" style=" margin-top: 20px;margin-bottom: 20px; font-family: chonburi;">
                                        <h1>เข้าสู่ระบบ</h1>
                                    </div>
 
@@ -43,6 +45,28 @@
                                                    @endif
                                                </div>
                                            </div>
+                                           
+                                           <div class="container">
+                                               
+                                            <div class="row">
+                                                <div class="col">
+
+                                                </div>
+                                                <div class="col-8 text-left">
+                                                    <a class="btn btn-link text-left" href="{{ route('password.request') }}" style="color:#ACACAC
+    
+                                                ;">
+                                                                                                  ลืมรหัสผ่าน?
+                                                                                              </a>
+                                                </div>
+                                                <div class="col">
+                                                    
+                                                </div>
+                                                
+                                               </div>
+                                           </div>
+                                           
+                                           
 
                                        <!-- <div class="form-group">
                                     <div class="col-md-6 ">
@@ -56,28 +80,29 @@
 
                                            <div class="form-group">
                                                <div class="col-md-8 col-md-offset-4">
-                                                   <button type="submit" class="col-12 btn " style="background-color: #ff3975ff
+                                                   {{-- <button type="submit" class="col-12 btn " style="background-color: #ff3975ff
 ; color: white;">
                                                        เข้าสู่ระบบ
-                                                   </button>
-
+                                                   </button> --}}
+                                                   <center>
+                                                    <div class="mt-3 mb-5 text-right">
+                                                        <a href="/register">
+                                                     <button  type="button" class="btn btn-outline-dark mt-1" style="width: 150px; height: 50px;">สมัครสมาชิก</button>
+                                                    </a>
+                                                     <button  type="submit" class="btn btn-dark mt-1" style="width:  150px; height: 50px; background: #000000;">เข้าสู่ระบบ</button>
+                                                    </div>
+                                                   </center>
 
                                                </div>
-                                               <a class="btn btn-link" href="{{ route('password.request') }}" style="color:#533b8e
-
- ;">
-                                                   ลืมรหัสผ่าน?
-                                               </a>
+                                               
                                            </div>
                                        </form>
                                    </div>
                            </center>
                        </div>
-                       <div class="col-12 col-md-6 p-5">
-                           <figure class="img-fluid">
-                               <img src="photo/login.png">
-                           </figure>
-                       </div>
+                       <div class="col-2"></div>
+
+                    
                    </div>
                 </div>
 

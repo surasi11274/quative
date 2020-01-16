@@ -40,8 +40,8 @@
                     <div class="container bg-white rounded  p-5">
                         <h2 class="selectfillter"  style="font-weight: 800;">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h2>
                         <div class="row">
-                                   <input style="border-width: 2px;" type="text" class="detaill-select " name="categories" plachholder="sadas" id="output">
-                                   <input  type="text"  name="categories_id" plachholder="sadas" id="output2">
+                                   <input style="border-width: 2px;" type="hidden" class="detaill-select " name="categories" plachholder="sadas" id="output">
+                                   <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2">
                             @foreach ($cats as $cat)
                                
                             <div class="col">
@@ -349,7 +349,7 @@
                                {{--<button class="dropdown-item" type="button">Something else here</button>--}}
                                {{--</div>--}}
                                {{--</div>--}}
-                               <select name="pricerate"  name="pricerate" class=" detaill-select form-control mt-5 mb-5">
+                               <select name="pricerate"  class=" detaill-select form-control mt-5 mb-5">
                                    <option class="dropdown-item" value="2900">งานออกแบบฉลากติดสินค้าหน้าเดียว
                                        <span style="text-color: #ff3957;">ราคา ฿2,900</span>
                                    </option>
@@ -370,7 +370,7 @@
                              <div class="row">
                                  <div class="col-4">
                                      <div class="select-date">
-                                         <ul class="box-tag d-flex" name="finishdate">
+                                         <ul class="box-tag d-flex">
                                              <li class="m-5">
                                                  <input type="radio" id="customRadioInline1" name="finishdate" class="custom-control-input">
                                                  <label class="custom-control-label" for="customRadioInline1">ธรรมดา</label>

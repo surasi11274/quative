@@ -38,6 +38,11 @@ class CreateJobsTable extends Migration
             $table->boolean('status')->default(0);
             $table->string('token',16)->nullable();
 
+            $table->integer('reviews_id')->nullable();
+            $table->integer('jobstatus_id')->nullable();
+
+            
+
 
             $table->timestamps();
         });
