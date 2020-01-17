@@ -1,11 +1,11 @@
 
 var current_fs, next_fs, previous_fs; //fieldsets ตัวฟิลฟอร์มที่จะใส่
 var left, opacity, scale; //fieldset properties which we will animate ตัวตั้งการเคลื่อรไหว
-var animating; //flag to prevent quick multi-click glitches คลิกเพื่ออนิเมท
+// var animating; //flag to prevent quick multi-click glitches คลิกเพื่ออนิเมท
 
 $(".next").click(function(){
-    if(animating) return false;
-    animating = true;
+    // if(animating) return false;
+    // animating = true;
 
     current_fs = $(this).parent();
     next_fs = $(this).parent().next();
@@ -20,20 +20,18 @@ $(".next").click(function(){
         step: function(now, mx) {
             //as the opacity of current_fs reduces to 0 - stored in "now"
             //1. scale current_fs down to 80%
-            scale = 1 - (1 - now) * 0; //0.2 old value
+            scale = 1 - (1 - now) * 0.2;
             //2. bring next_fs from the right(50%)
-            left = (now * 0)+"%"; //50 old value
+            left = (now * 50)+"%";
             //3. increase opacity of next_fs to 1 as it moves in
             opacity = 1 - now;
             current_fs.css({
                 'transform': 'scale('+scale+')',
-                'position': 'relative' //absolute
+                'position': 'absolute'
             });
-            // next_fs.css({'left': left, 'opacity': opacity});
-            next_fs.css({'opacity': opacity});
-
+            next_fs.css({'left': left, 'opacity': opacity});
         },
-        duration: 200,
+        duration: 800,
         complete: function(){
             current_fs.hide();
             animating = false;
@@ -60,18 +58,15 @@ $(".previous").click(function(){
         step: function(now, mx) {
             //as the opacity of current_fs reduces to 0 - stored in "now"
             //1. scale previous_fs from 80% to 100%
-            scale = 1 + (1 - now) * 0; // 0.8 scale and 0.2  minus old value 
+            scale = 0.8 + (1 - now) * 0.2;
             //2. take current_fs to the right(50%) - from 0%
-            left = ((1-now) * 0)+"%"; //50 old value
+            left = ((1-now) * 50)+"%";
             //3. increase opacity of previous_fs to 1 as it moves in
             opacity = 1 - now;
-            // current_fs.css({'left': left});
-            // previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
-            previous_fs.css({'opacity': opacity});
-
-           
+            current_fs.css({'left': left});
+            previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
         },
-        duration: 200,
+        duration: 800,
         complete: function(){
             current_fs.hide();
             animating = false;

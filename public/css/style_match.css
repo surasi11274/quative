@@ -411,4 +411,41 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     width: 100%;
     height: auto;
 }
+/* progress-search */
+.multi-step-form{
+    width: 100%;
+    margin: 50px auto;
+    position: relative;
+}
+.multi-step-form fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);
+    /* padding: 20px 30px; */
+    box-sizing: border-box;
+    /* width: 80%; */
+    /* margin: 0 10%; */
+
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+/* if not first field just hidden them  */
+.multi-step-form fieldset:not(:first-of-type) {
+    display: none;
+}
+.progress-bar{
+    background-color:#523EE8 !important;
+
+}
+._circle-progress{
+    width: 40px;
+height: 40px;
+background: #523EE8;
+color: #fff;
+margin: auto;
+border-radius: 100%;
+padding: 5px;
+margin-bottom: 20px;
+}
 
