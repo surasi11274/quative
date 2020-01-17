@@ -50,10 +50,21 @@ class HomeController extends Controller
     public function createSearchStep1()
     {
         //
+        $isdesigner = Auth::user()->role;
+
         $jobs = Auth::user()->job();
         if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
             // return redirect(route('designer.show',['token'=>$jobs->token]));
             return redirect(route('search.show',['token'=>$jobs->token]));
+
+        }
+        if ($isdesigner == 1){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+            // return redirect(route('designer.show',['token'=>$jobs->token]));
+            $designers = Designer::all();
+
+            return view('home',[
+                'designers'=>$designers
+                ]);
 
         }
 

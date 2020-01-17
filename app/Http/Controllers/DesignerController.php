@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Designer;
 use App\Tags;
 use App\User;
+use App\Jobs;
+
 
 
 use DB;
@@ -116,6 +118,12 @@ class DesignerController extends Controller
 
 
         ]);
+        DB::table('designers')->insert([
+            
+            'tag'=>json_encode($request->input('tag')),
+
+
+        ]);
 
       
         try{
@@ -182,6 +190,52 @@ class DesignerController extends Controller
             return redirect('/designer');
         }
         return view('designer.edit');;
+    }
+
+    public function requestjob(Designer $designer)
+    {
+        //
+
+        $designer = Auth::user()->designer();
+        
+
+        $jobs = Jobs::where('jobs.designer_id',$designer->id)->get();
+        ;
+
+
+        
+
+
+        return view('designer.requestjob',[
+            'designer'=>$designer,
+            'jobs'=>$jobs,
+            ]);
+    }
+    
+    public function showjobdetail($id)
+    {
+        $jobs = Jobs::where('id',$id)->get();
+        // $jobs = Jobs::find($id);
+
+        // $designers = Designer::where('tag',$jobstags)->get();
+
+
+        $tags = Tags::all();
+
+        $jobs->first()->tags = json_decode($jobs->first()->tags);
+
+
+
+        
+        return view('designer.jobdetail',[
+            'jobs'=>$jobs,
+            'tags'=>$tags,
+
+            
+
+           // 'designers'=>$designers
+            ]);
+        // return view('search');
     }
 
     /**

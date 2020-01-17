@@ -35,12 +35,8 @@ Route::get('/vote', function () {
 Route::get('/votedetail', function () {
     return view('vote.votedetail');
 });
-Route::get('/requestjob', function () {
-    return view('designer.requestjob');
-});
-Route::get('/jobdetail', function () {
-    return view('designer.jobdetail');
-});
+
+
 // Route::get('/showjob', function () {
 //     return view('showjob');
 // });
@@ -108,6 +104,14 @@ Route::get('/designer/edit', [
 Route::get('/designer/show/{token}', [
     'as' => 'designer.show',
     'uses' => 'DesignerController@show']);
+    
+ Route::get('/requestjob', [
+    'as' => 'designer.requestjob',
+    'uses' => 'DesignerController@requestjob']);
+
+Route::get('/jobdetail/{id}', [
+    'as' => 'designer.jobdetail',
+    'uses' => 'DesignerController@showjobdetail']);
 // Route::get('/login/designer', 'RegisterDesignerController@show' );
 
 // Route::get('login/designer/{id}',function(){

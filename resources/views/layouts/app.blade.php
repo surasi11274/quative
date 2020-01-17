@@ -170,6 +170,14 @@
 
                                 <ul class="dropdown-menu "   role="menu">
                                     <li class="nav-item">
+                                        <a class="nav-link " role="button" href="/requestjob">การจ้างงาน</a>
+                                        <!-- <a class="nav-link" role="button" href="/designer/show/{token}">Designer Information</a> -->
+
+
+
+
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link " role="button" href="{{route('designer.designer')}}">ข้อมูลนักออกแบบ</a>
                                         <!-- <a class="nav-link" role="button" href="/designer/show/{token}">Designer Information</a> -->
 
