@@ -150,7 +150,9 @@
                             <p >สินค้าดีไซน์โดยดีไซน์เนอร์มืออาชีพ <br>
                                 ทำให้มีคุณภาพ ใช้งานได้ดี สวย <br>
                                 โดนใจตามแบบที่เราต้องการ</p>
+                                
                         </div>
+                        <div class="pallete"></div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
@@ -162,6 +164,7 @@
                                 มาช่วยให้งานของคุณดูดีขึ้น <br>
                                 สร้างประสบการณ์ที่ดีต่อใจคุณ</p>
                         </div>
+                        <div class="pallete"></div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
@@ -174,6 +177,7 @@
                                 และนักออกแบบ
                             </p>
                         </div>
+                        <div class="pallete"></div>
                     </div>
 
                 </div>
