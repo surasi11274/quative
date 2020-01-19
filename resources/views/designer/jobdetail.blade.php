@@ -27,11 +27,23 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="text-right">
+                    @php
+                    $jobstatusid = \App\Jobstatus::find($job->jobstatus_id)->statusName;
+                @endphp
+                        @if ($jobs->jobstatus_id = 1)
+                        <h1 style="color:yellow;">{{$jobstatusid}}</h1>
+
+                        @endif   
                         <label for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</label><br>
                         <label for=""class="content-bg" >วันที่เริ่มงาน :<span> {{ $job->updated_at}} </span></label> <br>
                         <label for=""class="content-bg" >วันที่ต้องการงาน :<span> 01 มกราคม 2563 </span>  </label><br>
-                        <button class="btn _primary-btn">โอนเงิน</button>
-                    <button class="btn _primary-btn">โหลดไฟล์</button>
+                        <form action="/search/create/store2" method="post" enctype="multipart/form-data">
+                            
+                            <button type="button" class="btn _primary-btn" onclick="addCart('2')">รับงาน</button>
+                            <input type="text" id="output" name="output">
+                            <input type="text" id="job_id" name="job_id" value="{{$job->id}}">
+                        </form>
+                    <button class="btn _primary-btn">อัพโหลดไฟล์</button>
                 </div>
             </div>
         </div>
@@ -115,3 +127,11 @@
 
 
 @endsection
+<script>
+    function addCart(v){
+        document.getElementById('output').value = v
+        document.getElementById('jobstatus_id').value = v
+        console.log(v);
+        return false;
+    }
+</script>

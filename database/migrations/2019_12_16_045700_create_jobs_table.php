@@ -22,14 +22,17 @@ class CreateJobsTable extends Migration
             $table->text('categories');
 
             $table->text('tags');
-            $table->datetime('finishdate');
 
 
             $table->string('email');
             $table->integer('phone');
             $table->text('requirement');
 
-            $table->integer('pricerate');
+            $table->datetime('finishdate')->nullable();
+            $table->integer('pricerate')->nullable();
+            $table->datetime('productPic');
+
+            $table->datetime('refpicbyUser');
 
             $table->text('reference');
 

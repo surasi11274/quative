@@ -12,6 +12,7 @@ use App\Categories;
 use App\References;
 use App\Tags;
 use App\Jobs;
+use App\Jobstatus;
 use App\User;
 
 use Illuminate\Support\Facades\Session;
@@ -123,16 +124,17 @@ class HomeController extends Controller
             'tags'=>json_encode($request->input('tags')),
             'url'=>$request->input('url'),
 
-            'finishdate'=>$request->input('finishdate'),
+            // 'finishdate'=>$request->input('finishdate'),
 
             'refpicbyUser'=>$request->file('refpicbyUser')->move('uploads/refpicbyUser',$filenameTostore),
             'requirement'=>$request->input('requirement'),
-            'pricerate'=>$request->input('pricerate'),
+            // 'pricerate'=>$request->input('pricerate'),
             'reference'=>json_encode($request->input('reference')),
 
            
             'file'=>'0',
-            'designer_id'=>NULL,
+            
+            // 'designer_id'=>NULL,
             'user_id'=>Auth::user()->id,
             'token'=> str_random(16),
             
@@ -162,6 +164,19 @@ class HomeController extends Controller
 
 
     }
+    public function deleteStoreStep1($id){
+
+        // $deleteJob = Jobs::find($request->job_id);
+        // Jobs::where('token',$token)->delete();
+        $deleteJob = Jobs::find($id);
+        $deleteJob->delete();
+       
+
+        
+        return view('search');
+    }
+
+
         // เอาไอดีจาก create มาสร้าง insertรูปภาพRefต่อ
 
     
@@ -179,11 +194,7 @@ class HomeController extends Controller
     //     return view('search');
     // }
     
-    public function search()
-    {
-        return view('search');
-    }
-
+  
     public function show($token)
     {
         //
@@ -252,34 +263,81 @@ class HomeController extends Controller
         $updateJob->save();
 
 
-        // $jobs = DB::table('jobs')->update([
-        //     'designer_id'=>$request->designer_id,
-        //     // $jobs->designer_id = $request->input('designer_id');
-        // ]);
-
-        // try{
-        //     // สำเร็จแล้ว ส่งไป step2
-        //     $jobs->save();
-        //     return redirect(route('job.show',[
-        //         // 'token'=>$users->token,
-        //         'jobs'=>$jobs->token
-        //         ]));
-        // }catch (\Exception $x){
-        //     // สร้าง Actor ไม่ได้ มีบางอย่างผิดพลาด คืนค่ากลับหน้าเดิม
-        //     return back()->withInput();
-        // }
-        // // return view('search');
-        // echo 'success';
+      
         try{
-            // สำเร็จแล้ว ส่งไป step2
-            // $jobs->save();
-            // return redirect(route('search.create.step2'))->with('id', $jobs->id);
+          
+            return redirect(route('search.showfinal',['token'=>$updateJob->token]));
+
+        }catch (\Exception $x){
+            return back()->withInput();
+        }
+    }
+
+    public function searchstep3($token)
+    {
+        //
+        $jobs = Jobs::where('token',$token)->get();
+
+
+ 
+        
+        
+        $tags = Tags::all();
+        $refs = References::inRandomOrder()->limit(8)->get();     
+        $jobs->first()->tags = json_decode($jobs->first()->tags);
+        
+
+      
+
+
+        if ($jobs->count() == 0){
+            return "หาไม่เจอ ทำอะไรดี";
+        }
+        return view('showmatchfinal',[
+            'jobs'=>$jobs->first(),
+            'tags'=>$tags,
+            // 'designers'=>$designers,
+            'refs'=>$refs,
+            ]);
+
+    }
+    public function storeSearchStep3(Request $request)
+    {
+   
+
+        $updateJob = Jobs::find($request->job_id);
+        $updateJob->jobstatus_id = $request->jobstatus_id;
+        $updateJob->finishdate = $request->finishdate;
+        $updateJob->pricerate = $request->pricerate;
+        $updateJob->save();
+
+
+      
+        try{
+            
             return redirect(route('job.show',['token'=>$updateJob->token]));
 
         }catch (\Exception $x){
             return back()->withInput();
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function showjob($token)
     {
         $jobs = Jobs::where('token',$token)->get();
@@ -288,9 +346,11 @@ class HomeController extends Controller
 
  
 
-        
+        $jobstatus = Jobstatus::all();
         $tags = Tags::all();
         $jobs->first()->tags = json_decode($jobs->first()->tags);
+        // $jobs->first()->tags = json_decode($jobs->first()->tags);
+        // $jobs->jobstatus_id = json_decode($jobs->jobstatus_id);
 
 
 
@@ -301,6 +361,7 @@ class HomeController extends Controller
         return view('showjob',[
             'jobs'=>$jobs->first(),
             'tags'=>$tags,
+            'jobstatus'=>$jobstatus
            // 'designers'=>$designers
             ]);
         // return view('search');

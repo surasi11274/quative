@@ -23,6 +23,26 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="text-right">
+                    {{-- @foreach($jobs->jobstatus_id as $statusid) --}}
+
+                    @php
+                                    $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusName;
+                                @endphp
+                                        @if ($jobs->jobstatus_id = 1)
+                                        <h1 style="color:yellow;">{{$jobstatusid}}</h1>
+
+                                        @endif                {{-- <div class="btn _primary-btn">{{$tagname}}</div> --}}
+
+                                                    {{-- @endforeach --}}
+                    {{-- @foreach($jobs->tags as $tagn)
+
+                    @php
+                                    $tagname = \App\Tags::find($tagn)->tagName;
+                                @endphp
+                             <div class="btn _primary-btn">{{$tagname}}</div>
+                            
+                                                    @endforeach --}}
+
                         <label for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</label><br>
                         <label for=""class="content-bg" >วันที่เริ่มงาน :<span> {{ $jobs->updated_at}} </span></label> <br>
                         <label for=""class="content-bg" >วันที่ต้องการงาน :<span> 01 มกราคม 2563 </span>  </label><br>

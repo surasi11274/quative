@@ -54,6 +54,9 @@ Route::get('/search', [
 Route::post('/search/create/store1', [
     'as' => 'search.create.store',
     'uses' => 'HomeController@storeSearchStep1']);
+
+Route::delete('/search/show/delete/{token}',
+    'HomeController@deleteStoreStep1');
     
 // Route::get('/search/step2/{token}', [
 //     'as' => 'search.create.step2',
@@ -71,6 +74,17 @@ Route::post('/search/create/store2',
     'HomeController@storeSearchStep2');
     
     
+Route::get('/showsearchfinal/{token}', [
+    'as' => 'search.showfinal',
+    'uses' => 'HomeController@searchstep3']);
+
+
+
+Route::post('/search/create/store3', 
+    'HomeController@storeSearchStep3');
+
+// --------show finish search-------
+
 Route::get('/showjob/{token}', [
     'as' => 'job.show',
     'uses' => 'HomeController@showjob']);

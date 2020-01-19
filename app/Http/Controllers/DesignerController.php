@@ -9,6 +9,7 @@ use App\Designer;
 use App\Tags;
 use App\User;
 use App\Jobs;
+use App\Jobstatus;
 
 
 
@@ -201,6 +202,7 @@ class DesignerController extends Controller
 
         $jobs = Jobs::where('jobs.designer_id',$designer->id)->get();
         ;
+        // $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusName;
 
 
         
@@ -209,6 +211,7 @@ class DesignerController extends Controller
         return view('designer.requestjob',[
             'designer'=>$designer,
             'jobs'=>$jobs,
+            // 'jobstatusid'=>$jobstatusid
             ]);
     }
     

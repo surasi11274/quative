@@ -86,153 +86,23 @@
       
                            </div>
                            @endforeach
-                           {{-- <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                              <h2 class="selectfillter  ">  ผลงานบรรณจุภันฑ์ (<small>8</small>)</h2>
-                              <div class="overflow-gallery grid-gallery">
-                                 <div class="row">
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-8.png" />
-                                       </div>
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
-                                       </div>
-      
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
-                                       </div>
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-4.png" />
-                                       </div>
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-6.png" />
-                                       </div>
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
-                                       </div>
-      
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
-                                       </div>
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
-                                       </div>
-      
-                                 </div>
-                              </div>
-                           </div> --}}
-                           {{-- <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                              <h2 class="selectfillter  pt-5">  ผลงานบรรณจุภันฑ์ (<small>8</small>)</h2>
-                              <div class="overflow-gallery grid-gallery">
-                                 <div class="row">
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-8.png" />
-                                       </div>
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
-                                       </div>
-      
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
-                                       </div>
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-4.png" />
-                                       </div>
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-6.png" />
-                                       </div>
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
-                                       </div>
-      
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
-                                       </div>
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
-                                       </div>
-      
-                                 </div>
-                              </div>
-                           </div> --}}
-                           {{-- <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                              <h2 class="selectfillter  pt-5">  ผลงานบรรณจุภันฑ์ (<small>0</small>)</h2>
-                              <div class="overflow-gallery grid-gallery">
-                                 <div class="row">
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-8.png" />
-                                       </div>
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
-                                       </div>
-      
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
-                                       </div>
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-4.png" />
-                                       </div>
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-6.png" />
-                                       </div>
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
-                                       </div>
-      
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
-                                       </div>
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
-                                       </div>
-      
-                                 </div>
-                              </div>
-                           </div> --}}
-                           {{-- <div class="tab-pane fade" id="v-pills-designer-6" role="tabpanel" aria-labelledby="v-pills-designers-6-tab">
-                              <h2 class="selectfillter  pt-5">  ผลงานบรรณจุภันฑ์ (<small>8</small>)</h2>
-                              <div class="overflow-gallery grid-gallery">
-                                 <div class="row">
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-8.png" />
-                                       </div>
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
-                                       </div>
-      
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
-                                       </div>
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-4.png" />
-                                       </div>
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-6.png" />
-                                       </div>
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
-                                       </div>
-      
-                                       <div class="col-5 mt-3">
-                                          <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
-                                       </div>
-                                       <div class="col-7 mt-3">
-                                          <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
-                                       </div>
-      
-                                 </div>
-                              </div>
-                           </div> --}}
+                           
                      </div>
                   </div>
                </div>
                <input type="text" id="designerId" name="output">
             <input type="text" id="job_id" name="job_id" value="{{$jobs->id}}">
-               <button type="submit" class="btn btn-lg mb-5"   style="color:white;width: 50%; margin-top: 50px;background-color:#904ae8
-               ;">
-                              จ้างงานเลย
-                          </button>
+              
+   
+            {{-- <a href="{{URL::to('/search/show/delete/'.$jobs->id) }}"> --}}
+               
+               <input type="button" name="previous" class=" previous _secondary-btn  btn-block btn-lg" value="Previous"/>
+            {{-- </a> --}}
+                            <input type="submit" name="next" class=" next  _primary-black  btn-block btn-lg  rounded" value="Next"  />
          </div>
+
          </form>
+         
       </div>
       </div> <!-- ****container -->
       @endsection
