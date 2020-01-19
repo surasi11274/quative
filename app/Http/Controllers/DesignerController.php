@@ -159,6 +159,8 @@ class DesignerController extends Controller
 
         $designer = Designer::where('token',$token)->get();
         $users = Auth::user()->designer();
+        // return $this->show()->where('designer','=','confirmed');
+    
 
         $tags = Tags::all();
 
