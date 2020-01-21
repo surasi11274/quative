@@ -137,7 +137,7 @@
 
 
     </div>
-    <div class=" _box-1 text-center p-5">
+    <div class=" _box-1 text-center">
         <div class="container">
             <h1 class="p-5 text-center">ทำไมต้อง <span class="_hilight">QUATIVE</span> </h1>
             <div class="row ">
@@ -150,7 +150,9 @@
                             <p >สินค้าดีไซน์โดยดีไซน์เนอร์มืออาชีพ <br>
                                 ทำให้มีคุณภาพ ใช้งานได้ดี สวย <br>
                                 โดนใจตามแบบที่เราต้องการ</p>
+                                
                         </div>
+                        <div class="pallete"></div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
@@ -162,6 +164,7 @@
                                 มาช่วยให้งานของคุณดูดีขึ้น <br>
                                 สร้างประสบการณ์ที่ดีต่อใจคุณ</p>
                         </div>
+                        <div class="pallete"></div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
@@ -174,6 +177,7 @@
                                 และนักออกแบบ
                             </p>
                         </div>
+                        <div class="pallete"></div>
                     </div>
 
                 </div>
@@ -186,7 +190,7 @@
                     <div class="text-center"> 
                             <h1 class="content-dark">Quative <span class="_hilight">ใช้ยังไง?</span></h1>
             
-                        <div class="row p-5">
+                        <div class="row">
                             <div class="col-12 col-md-3">
                                     <img src="photo/@progess_1.png" alt="">
                                     <h5 class="content-dark mt-5">ขั้นตอนที่ 1</h5>
@@ -251,11 +255,11 @@
 
                                 </div>
                             </div>
-    <div class="_box-3 bg-white mt-ex p-5 mb-5">
+    <div class="_box-3 bg-white mt-ex  mb-5">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-md-4 justify-content-center">
-                            <div class="card rounded-ex text-center p-5">
+                            <div class="card rounded-ex text-center p-5 mb-3">
                                 <image id="profileImage" class="rounded-circle shadow-ex" src="https://picsum.photos/140" style="width: 140px; height: 140px; margin: 0px auto;">
                                     <h3>สิทธิชัย</h3>
                                     <div class="star1">
@@ -271,7 +275,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-4 justify-content-center">
-                            <div class="card rounded-ex text-center p-5">
+                            <div class="card rounded-ex text-center p-5 mb-3">
                                 <image id="profileImage" class="rounded-circle shadow-ex" src="https://picsum.photos/139" style="width: 140px; height: 140px; margin: 0px auto;">
                                     <h3>สิทธิชัย</h3>
                                     <div class=" star1">
@@ -286,7 +290,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-4 justify-content-center">
-                            <div class="card rounded-ex text-center p-5">
+                            <div class="card rounded-ex text-center p-5 mb-3">
                                 <image id="profileImage" class="rounded-circle shadow-ex" src="https://picsum.photos/141" style="width: 140px; height: 140px; margin: 0px auto;">
                                     <h3>สิทธิชัย</h3>
                                     <div class=" star1">
