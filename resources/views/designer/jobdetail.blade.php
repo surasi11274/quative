@@ -39,13 +39,14 @@
                         <h1 style="color:green;">{{$jobstatusid}}</h1>
                         @elseif ($job->jobstatus_id == '9')  
                         <h1 style="color:blue;">{{$jobstatusid}}</h1>
+                        @else 
+                        <h1 style="color:Red;">{{$jobstatusid}}</h1>
                         @endif
                          
                         <label for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</label><br>
                         <label for=""class="content-bg" >วันที่เริ่มงาน :<span> {{ $job->updated_at}} </span></label> <br>
                         <label for=""class="content-bg" >วันที่ต้องการงาน :<span> 01 มกราคม 2563 </span>  </label><br>
-                        <form action="/jobdetail/jobstatus/store" method="post" enctype="multipart/form-data">
-                            {{ csrf_field() }}
+                       
                             <div class="row">
                                 @if ($job->jobstatus_id == '1')
                                 <button type="button" class="btn _primary-btn mr-5" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">
@@ -56,30 +57,7 @@
                                     รับงาน
                                 </button>
                                 @endif
-                           
-
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                    </div>
-                                    <div class="modal-body">
-                                      คุณต้องการยืนยันที่จะรับงานนี้หรือไม่?
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                                      <button type="submit" class="btn btn-primary">ยืนยันรับงาน</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            <input type="hidden" id="output" name="jobstatus_id">
-                            <input type="hidden" id="job_id" name="job_id" value="{{$job->id}}">
-                        </form>
+                              
                     <button class="btn _primary-btn">อัพโหลดไฟล์</button>
                 </div>
 
@@ -150,17 +128,20 @@
                         <h5>วันที่ต้องการงาน</h5>
                         <p>15 วัน (ธรรมดา)</p>
                         <div class="text-right">
-                                <button class="btn _secondary-btn">ยกเลิกงาน</button>
-                        <form action="/jobdetail/jobstatus/store" method="post" enctype="multipart/form-data">
-                            {{ csrf_field() }}
-                                <button class="btn _primary-black" onclick="addCart('9')" data-toggle="modal1" data-target="#exampleModal1">เสร็จสิ้นงาน</button>
+                            <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                            <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target="#exampleModal">เสร็จสิ้นงาน</button>
 
-                                <div class="modal fade" id="exampleModal"1 tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                        {{-- <form action="/jobdetail/jobstatus/store" method="post" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+                            <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                          <button type="button" class="close" data-dismiss="modal1" aria-label="Close">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                           </button>
                                         </div>
@@ -174,9 +155,40 @@
                                       </div>
                                     </div>
                                   </div>
-                                <input type="text" id="output1" name="jobstatus_id">
+                                <input type="text" id="output" name="jobstatus_id">
                                 <input type="text" id="job_id" name="job_id" value="{{$job->id}}">
-                        </form>
+                        </form> --}}
+
+
+
+                                
+                        {{-- <form action="/jobdetail/jobstatus/store" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                                <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target="#exampleModal">เสร็จสิ้นงาน</button>
+
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          คุณต้องการยืนยันที่จะรับงานนี้หรือไม่?
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                                          <button type="submit" class="btn btn-primary">ยืนยันยกเลิกงาน</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                                <input type="text" id="output" name="jobstatus_id">
+                                <input type="text" id="job_id" name="job_id" value="{{$job->id}}">
+                        </form> --}}
 
                         </div>
                         
@@ -184,7 +196,33 @@
 
             {{--  --}}
 
+{{-- --------------------------Modal --------------------------------------}}
+                <form action="/jobdetail/jobstatus/store" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
 
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    คุณต้องการยืนยันที่จะรับงานนี้หรือไม่?
+                    <input type="text" id="output" name="jobstatus_id">
+                    <input type="text" id="job_id" name="job_id" value="{{$job->id}}">
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                    <button type="submit" class="btn btn-primary">ยืนยันรับงาน</button>
+                    </div>
+                </div>
+                </div>
+                </div>
+
+                </form>
         </div>
     </div>
 </div>
@@ -196,9 +234,14 @@
     function addCart(v){
         document.getElementById('output').value = v
         document.getElementById('output1').value = v
+        document.getElementById('outputCancel').value = v
+
 
         document.getElementById('jobstatus_id').value = v
         console.log(v);
         return false;
     }
+
+ 
 </script>
+
