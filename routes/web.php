@@ -126,6 +126,9 @@ Route::get('/designer/show/{token}', [
 Route::get('/jobdetail/{id}', [
     'as' => 'designer.jobdetail',
     'uses' => 'DesignerController@showjobdetail']);
+
+Route::post('/jobdetail/jobstatus/store', 
+    'DesignerController@jobStatusStore');
 // Route::get('/login/designer', 'RegisterDesignerController@show' );
 
 // Route::get('login/designer/{id}',function(){

@@ -23,6 +23,11 @@ class DesignerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //        return view('auth.registerDesigner');
@@ -219,6 +224,7 @@ class DesignerController extends Controller
     
     public function showjobdetail($id)
     {
+            
         $jobs = Jobs::where('id',$id)->get();
         // $jobs = Jobs::find($id);
 
@@ -241,6 +247,25 @@ class DesignerController extends Controller
            // 'designers'=>$designers
             ]);
         // return view('search');
+    }
+
+    public function jobStatusStore(Request $request)
+    {
+   
+
+        $updateJob = Jobs::find($request->job_id);
+        $updateJob->jobstatus_id = $request->jobstatus_id;
+        $updateJob->save();
+
+
+      
+        try{
+            
+            return redirect(route('designer.jobdetail',['id'=>$updateJob->id]));
+
+        }catch (\Exception $x){
+            return back()->withInput();
+        }
     }
 
     /**
