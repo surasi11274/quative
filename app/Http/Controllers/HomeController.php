@@ -56,7 +56,7 @@ class HomeController extends Controller
         $jobs = Auth::user()->job();
         if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
             // return redirect(route('designer.show',['token'=>$jobs->token]));
-            return redirect(route('search.show',['token'=>$jobs->token]));
+            return redirect(route('job.show',['token'=>$jobs->token]));
 
         }
         if ($isdesigner == 1){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
@@ -132,7 +132,7 @@ class HomeController extends Controller
             'reference'=>json_encode($request->input('reference')),
 
            
-            'file'=>'0',
+            // 'file'=>'0',
             
             // 'designer_id'=>NULL,
             'user_id'=>Auth::user()->id,
@@ -198,7 +198,15 @@ class HomeController extends Controller
     public function show($token)
     {
         //
+        $jobs = Auth::user()->job();
+
+        if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+            // return redirect(route('designer.show',['token'=>$jobs->token]));
+            return redirect(route('job.show',['token'=>$jobs->token]));
+
+        }
         $jobs = Jobs::where('token',$token)->get();
+        
         // $designers = Designer::where('tag',$jobstags)->get();
 
 
@@ -250,6 +258,7 @@ class HomeController extends Controller
     //    dd($request->all());
     // echo $request->designer_id;
 // exit;
+
         // $users = Auth::user()->job();
         // $jobs = Jobs::where('token',$token)->get();
         // $cats = Categories::all();     
@@ -276,6 +285,13 @@ class HomeController extends Controller
     public function searchstep3($token)
     {
         //
+        $jobs = Auth::user()->job();
+
+        if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+            // return redirect(route('designer.show',['token'=>$jobs->token]));
+            return redirect(route('job.show',['token'=>$jobs->token]));
+
+        }
         $jobs = Jobs::where('token',$token)->get();
 
 

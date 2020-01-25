@@ -114,17 +114,56 @@
                         <h5>วันที่ต้องการงาน</h5>
                         <p>15 วัน (ธรรมดา)</p>
                         <div class="text-right">
-                                <button class="btn _secondary-btn">ยกเลิกงาน</button>
-                                <button class="btn _primary-black">เสร็จสิ้นงาน</button>
+                            <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                            <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target="#exampleModal">เสร็จสิ้นงาน</button>
                         </div>
                         
             </div>
             {{--  --}}
 
+            <form action="/search/create/store3" method="post" enctype="multipart/form-data">
+                {{ csrf_field() }}
 
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                คุณต้องการยืนยันที่จะรับงานนี้หรือไม่?
+                <input type="text" id="output" name="jobstatus_id">
+                <input type="text" id="job_id" name="job_id" value="{{$jobs->id}}">
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                <button type="submit" class="btn btn-primary">ยืนยันรับงาน</button>
+                </div>
+            </div>
+            </div>
+            </div>
+
+            </form>
         </div>
     </div>
 </div>
 
     
 @endsection
+<script>
+    function addCart(v){
+        document.getElementById('output').value = v
+        // document.getElementById('output1').value = v
+        // document.getElementById('outputCancel').value = v
+
+
+        document.getElementById('jobstatus_id').value = v
+        console.log(v);
+        return false;
+    }
+
+ 
+</script>

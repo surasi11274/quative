@@ -58,7 +58,25 @@
                                 </button>
                                 @endif
                               
-                    <button class="btn _primary-btn">อัพโหลดไฟล์</button>
+                    <button type="button" class="btn _primary-btn" data-toggle="modal" data-target=".bd-example-modal-lg">อัพโหลดไฟล์</button>
+                    <!-- Large modal -->
+
+                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                              <h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              ...
+                            </div>
+                          </div>
+                    </div>
+                    </div>
                 </div>
 
                 </div>
@@ -129,7 +147,7 @@
                         <p>15 วัน (ธรรมดา)</p>
                         <div class="text-right">
                             <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
-                            <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target="#exampleModal">เสร็จสิ้นงาน</button>
+                            <button type="button"  class="btn _primary-black" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">เสร็จสิ้นงาน</button>
 
 
                         {{-- <form action="/jobdetail/jobstatus/store" method="post" enctype="multipart/form-data">
@@ -197,32 +215,32 @@
             {{--  --}}
 
 {{-- --------------------------Modal --------------------------------------}}
-                <form action="/jobdetail/jobstatus/store" method="post" enctype="multipart/form-data">
-                    {{ csrf_field() }}
+            <form action="/jobdetail/jobstatus/store" method="post" enctype="multipart/form-data">
+                {{ csrf_field() }}
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body">
-                    คุณต้องการยืนยันที่จะรับงานนี้หรือไม่?
-                    <input type="text" id="output" name="jobstatus_id">
-                    <input type="text" id="job_id" name="job_id" value="{{$job->id}}">
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                    <button type="submit" class="btn btn-primary">ยืนยันรับงาน</button>
-                    </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
                 </div>
+                <div class="modal-body">
+                คุณต้องการยืนยันที่จะรับงานนี้หรือไม่?
+                <input type="text" id="output" name="jobstatus_id">
+                <input type="text" id="job_id" name="job_id" value="{{$job->id}}">
                 </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                <button type="submit" class="btn btn-primary">ยืนยันรับงาน</button>
                 </div>
+            </div>
+            </div>
+            </div>
 
-                </form>
+            </form>
         </div>
     </div>
 </div>
