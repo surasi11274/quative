@@ -263,7 +263,7 @@
                        </section>
                         <h2 class="selectfillter pt-5"  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2>
                         <div class="row">
-                            <div class="col d-flex">
+                            <div class="col">
                                 <div class="input-picture">
                                     <div id="thumb-output" style="display:flex; width:180px;height:180px;margin-left: 180px;"></div>
                                     <input type="file" id="file-input"  name="productPic"  multiple />

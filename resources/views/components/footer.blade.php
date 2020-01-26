@@ -1,81 +1,88 @@
-@extends('layouts.app')
-@section('content')
-    <footer class="page-footer font-small blue pt-4" style="background-color: #904ae8
-;">
 
-        <!-- Footer Links -->
-        <div class="container-fluid text-center text-md-left " >
 
-            <!-- Grid row -->
-            <div class="row justify-content-center">
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left " >
 
-                <!-- Grid column -->
+        <!-- Grid row -->
+        <div class="row justify-content-center p-5">
 
-                <!-- Grid column -->
+            <!-- Grid column -->
 
-                <hr class="clearfix w-100 d-md-none pb-3">
+            <!-- Grid column -->
 
-                <!-- Grid column -->
-                <div class="text-center">
+            <hr class="clearfix w-100 d-md-none pb-3">
 
-                    <!-- Links -->
-                    <!-- <h5 class="text-uppercase"></h5> -->
+            <!-- Grid column -->
+           <div class="col-12 col-md-8">
+               <div class="text-left">
 
-                    <ul class="list-unstyled mx-auto">
+                   <!-- Links -->
+                   <!-- <h5 class="text-uppercase"></h5> -->
+
+                   <ul class="list-unstyled mx-auto">
+                       <li>
+                           <a><img src="photo/@logo.png" width="50" height="50" alt=""></a>
+                       </li>
+                       <li>
+                           <a href="#" style="font-family: prompt; font-weight: 400;  color: #523EE8; font-size: 24px;">Quative</a>
+                       </li>
+                           <li>
+                               <p style="color: #523EE8;">
+                                   เป็นเว็บไซต์ที่จะเข้ามาเพื่อแก้ไขปัญหาสำหรับผู้ใช้เพื่อพัฒนาผลิตภัณฑ์ไทย <br>
+                                   โดยนักออกแบบสร้างสรรค์ พัฒนาฝืมือ และช่วยเหลือกลุ่มสินค้า
+                               </p>
+                           </li>
+
+
+
+                   </ul>
+
+               </div>
+           </div>
+            <div class="col-12 col-md-2">
+                <ul class="list-unstyled mx-auto">
+                    <li>
+                        <h5 class="_hilight">Site Navigation</h5>
+                    </li>
+                    <li>
+                        <a href="#"  style="font-family: prompt; font-weight: 400;  color: #523EE8; font-size: 24px;">ค้นหานักออกแบบ</a>
+                    </li>
                         <li>
-                            <a><img src="https://sv1.picz.in.th/images/2019/12/17/isMg0I.png" width="50" height="50" alt=""></a>
+                            <a href="#!" style="color: #523EE8;">ผลงานนักออกแบบ</a>
                         </li>
                         <li>
-                            <a href="#" style="font-family: prompt; font-weight: 400;  color: white; font-size: 24px;">Quative</a>
+                            <a href="#!" style="; color: #523EE8;">พรีวิวโลโก้</a>
                         </li>
-                        <div class="row" >
-                            <li>
-                                <a href="#!" style="color: white;">หน้าแรก</a>
-                            </li>
-                            <li>
-                                <a href="#!" style="margin-left: 10px; color: white;">ค้นหานักออกแบบ</a>
-                            </li>
-
-                            <li>
-                                <a href="#!" style="margin-left: 10px; color: white;">ผลงานนักออกแบบ</a>
-                            </li>
-                        </div>
-
-
-                        <!-- <div class="row" >
-                          <li>
-                                  <a href="#!" style="color: white;">เข้าสู่ระบบ |</a>
-                          </li>
-                          <li>
-                                  <a href="#!" style="margin-left: 5px; color: white;">ค้นหานักออกแบบ</a>
-                          </li>
-
-                          <li>
-                                  <a href="#!" style="margin-left: 5px; color: white;">ผลงานนักออกแบบ</a>
-                          </li>
-                        </div> -->
-                    </ul>
-
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-
+                </ul>
             </div>
-            <!-- Grid row -->
+            <div class="col-12 col-md-2">
+                <ul class="list-unstyled mx-auto">
+                    <li>
+                        <h5 class="_hilight">Support</h5>
+                    </li>
+                    <li>
+                        <a href="#" style="font-family: prompt; font-weight: 400;  color: #523EE8; font-size: 24px;">ติดต่อเรา</a>
+                    </li>
+                    <li>
+                        <a href="#!" style="color: #523EE8;">Quative ใช้ยังไง</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+
+            <!-- Grid column -->
 
         </div>
-        <!-- Footer Links -->
+        <!-- Grid row -->
 
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3" style="background-color: white; color:#904ae8
-;">    <a href="#" style="color:#904ae8
-;"> quative</a>
-            © copyright 2019. All rights reserved.
-        </div>
-        <!-- Copyright -->
+    </div>
+    <!-- Footer Links -->
 
-    </footer>
-    @endsection
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="background-color: #523EE8; color:white;">
+        <a href="#" style="color:white;"> quative</a>
+        © copyright 2019. All rights reserved.
+    </div>
+    <!-- Copyright -->
