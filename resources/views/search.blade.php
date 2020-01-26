@@ -263,14 +263,16 @@
                        </section>
                         <h2 class="selectfillter pt-5"  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2>
                         <div class="row">
-                            <div class="col">
+                            <div class="col d-flex">
                                 <div class="input-picture">
+                                    <div id="thumb-output" style="display:flex; width:180px;height:180px;margin-left: 180px;"></div>
                                     <input type="file" id="file-input"  name="productPic"  multiple />
-                                    <div id="thumb-output"></div>
                                     <i class="fas fa-plus p-icons"></i>
                                 </div>
                             </div>
+
                         </div>
+                        
                         <div class="form-group">
                             <h2 class="selectfillter pt-5"  style="font-weight: 800;">URL<small>(ที่เกี่ยวข้องกับผลิตภัณฑ์)</small></h2>
                             <input type="text" class="form-control" name="url" placeholder="เช่น เว็บไซต์, เฟสบุ๊ค เพื่อให้นักออกแบบทำงานได้ง่ายขึ้น ">
