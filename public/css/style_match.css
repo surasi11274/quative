@@ -391,6 +391,11 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     color: #C9C3C3;
 
 }
+.thumb{
+    padding-right: 1em;
+    padding-left: 1em;
+    border-radius: 10px;
+}
 .p-icons{
     padding: 80px 80px 80px 80px;
 }
@@ -448,4 +453,5 @@ border-radius: 100%;
 padding: 5px;
 margin-bottom: 20px;
 }
+
 
