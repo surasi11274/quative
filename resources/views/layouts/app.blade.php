@@ -215,6 +215,14 @@
 
                                 <ul class="dropdown-menu " role="menu">
                                     <li class="nav-item">
+                                        <a class="nav-link " role="button" href="/alljob">การจ้างงาน</a>
+                                        <!-- <a class="nav-link" role="button" href="/designer/show/{token}">Designer Information</a> -->
+
+
+
+
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">

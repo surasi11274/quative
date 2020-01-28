@@ -74,7 +74,7 @@ Route::post('/search/create/store2',
     'HomeController@storeSearchStep2');
     
     
-Route::get('/showsearchfinal/{token}', [
+Route::get('search/showfinal/{token}', [
     'as' => 'search.showfinal',
     'uses' => 'HomeController@searchstep3']);
 
@@ -88,6 +88,25 @@ Route::post('/search/create/store3',
 Route::get('/showjob/{token}', [
     'as' => 'job.show',
     'uses' => 'HomeController@showjob']);
+
+Route::post('/showjob/store', 
+    'HomeController@storeShowJob');
+
+Route::get('/reviewjob/{token}', [
+    'as' => 'job.review',
+    'uses' => 'HomeController@reviewJob']);
+
+Route::post('/reviewjob/store', 
+    'HomeController@storeReviewJob');
+    
+Route::post('/reviewjob2/store',[
+    'as' => 'job.review2.store', 
+   'user' => 'HomeController@storeReviewToJobs']);
+
+
+Route::get('/alljob', [
+        'as' => 'show.alljob',
+        'uses' => 'HomeController@alljob']);
 
 
     

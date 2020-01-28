@@ -13,6 +13,7 @@ use App\References;
 use App\Tags;
 use App\Jobs;
 use App\Jobstatus;
+use App\Review;
 use App\User;
 
 use Illuminate\Support\Facades\Session;
@@ -54,11 +55,11 @@ class HomeController extends Controller
         $isdesigner = Auth::user()->role;
 
         $jobs = Auth::user()->job();
-        if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
-            // return redirect(route('designer.show',['token'=>$jobs->token]));
-            return redirect(route('job.show',['token'=>$jobs->token]));
+        // if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+        //     // return redirect(route('designer.show',['token'=>$jobs->token]));
+        //     return redirect(route('job.show',['token'=>$jobs->token]));
 
-        }
+        // }
         if ($isdesigner == 1){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
             // return redirect(route('designer.show',['token'=>$jobs->token]));
             $designers = Designer::all();
@@ -85,7 +86,7 @@ class HomeController extends Controller
     public function storeSearchStep1(Request $request)
     {
         //$jobs = Auth::user()->job();
-        $users = Auth::user()->job();
+        // $users = Auth::user()->job();
         // $jobs = Jobs::all();
 
         $cats = Categories::all();             
@@ -109,7 +110,7 @@ class HomeController extends Controller
         $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
     
 
-        $jobs = DB::table('jobs')->insert([
+        $jobs = Jobs::create([
             'categories'=>$request->input('categories'),
             // 'categories'=>'0',
             // 'categories_id'=>'0',
@@ -143,15 +144,20 @@ class HomeController extends Controller
 
         ]);
 
+        // $jobb = DB::getPdo()->lastInsertId();;
+        // dd($jobs->token); // $jobs->save();
 
-
+        // exit();
        
 
         try{
             // สำเร็จแล้ว ส่งไป step2
-            // $jobs->save();
             // return redirect(route('search.create.step2'))->with('id', $jobs->id);
-            return redirect(route('search.create.step2',['token'=>$users->token]));
+            return redirect(route('search.show',
+            [
+                'jobs'=>$jobs->token,
+                
+            ]));
 
         }catch (\Exception $x){
             return back()->withInput();
@@ -194,17 +200,17 @@ class HomeController extends Controller
     //     return view('search');
     // }
     
-  
+//   ------------ this is show match ----------------- //
     public function show($token)
     {
         //
         $jobs = Auth::user()->job();
 
-        if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
-            // return redirect(route('designer.show',['token'=>$jobs->token]));
-            return redirect(route('job.show',['token'=>$jobs->token]));
+        // if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+        //     // return redirect(route('designer.show',['token'=>$jobs->token]));
+        //     return redirect(route('job.show',['token'=>$jobs->token]));
 
-        }
+        // }
         $jobs = Jobs::where('token',$token)->get();
         
         // $designers = Designer::where('tag',$jobstags)->get();
@@ -287,11 +293,11 @@ class HomeController extends Controller
         //
         $jobs = Auth::user()->job();
 
-        if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
-            // return redirect(route('designer.show',['token'=>$jobs->token]));
-            return redirect(route('job.show',['token'=>$jobs->token]));
+        // if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+        //     // return redirect(route('designer.show',['token'=>$jobs->token]));
+        //     return redirect(route('job.show',['token'=>$jobs->token]));
 
-        }
+        // }
         $jobs = Jobs::where('token',$token)->get();
 
 
@@ -381,5 +387,154 @@ class HomeController extends Controller
            // 'designers'=>$designers
             ]);
         // return view('search');
+    }
+    public function storeShowJob(Request $request)
+    {
+   
+
+        $updateJob = Jobs::find($request->job_id);
+        $updateJob->jobstatus_id = $request->jobstatus_id;
+    
+        $updateJob->save();
+
+
+      
+        try{
+            
+            return redirect(route('job.review',['token'=>$updateJob->token]));
+
+        }catch (\Exception $x){
+            return back()->withInput();
+        }
+    }
+
+    // 
+
+    public function reviewJob($token)
+    {
+        //
+        $jobs = Auth::user()->job();
+
+
+        // if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+        //     // return redirect(route('designer.show',['token'=>$jobs->token]));
+        //     return redirect(route('job.show',['token'=>$jobs->token]));
+
+        // }
+        $jobs = Jobs::where('token',$token)->first();
+        // $designer = Designer::all();
+        // $designer = Auth::user()->designer();
+        // dd($jobs);
+
+    // exit();
+
+        $designer = Designer::where('designers.id',$jobs->designer_id)->get();
+
+
+ 
+        
+        
+        $tags = Tags::all();
+        // $refs = References::inRandomOrder()->limit(8)->get();     
+        $designer->first()->tag = json_decode($designer->first()->tag);
+        
+
+      
+
+
+        if ($jobs->count() == 0){
+            return "หาไม่เจอ ทำอะไรดี";
+        }
+        return view('reviewjob',[
+            'jobs'=>$jobs,
+            'tags'=>$tags,
+            'designer'=>$designer,
+            // 'designers'=>$designers,
+            // 'refs'=>$refs,
+            ]);
+
+    }
+    public function storeReviewJob(Request $request)
+    {
+        $reviews = Review::create([
+            'rating'=>$request->input('rating'),
+
+            'reviewdescription'=>$request->input('reviewdescription'),
+            'complacency'=>$request->input('complacency'),
+            'reasonableprice'=>$request->input('reasonableprice'),
+            'skillandexpertise'=>$request->input('skillandexpertise'),
+            
+            'user_id'=>Auth::user()->id,
+            'designer_id'=>$request->input('designer_id'),
+            'jobs_id'=>$request->input('jobs_id'),
+
+        ]);
+        
+        // $updateJob = Jobs::update('update users set votes = 100 where name = ?', ['John']);
+        $updateJob = DB::table('jobs')->where('id', $reviews->jobs_id)->update([
+            'reviews_id' => $reviews->id
+            ]);
+        // $updateJob = Jobs::find($request->$reviews->jobs_id);
+        // $updateJob->reviews_id = $reviews->id;
+    
+        // $updateJob->save();
+        dd($updateJob);
+        exit();
+
+        return 'success';
+        exit();
+        try{
+            
+            return redirect(route('job.review2.store',[
+                'reviews'=>$reviews
+                ]));
+
+        }catch (\Exception $x){
+            return back()->withInput();
+        }
+
+    }
+    // public function storeReviewToJobs(Request $request, $reviews)
+    // {
+   
+
+    //     $updateJob = Jobs::find($request->$reviews->jobs_id);
+    //     $updateJob->reviews_id = $reviews->id;
+    
+    //     $updateJob->save();
+
+    //     dd($updateJob->id);
+    //         exit();
+      
+    //     try{
+            
+    //         return redirect(route('job.review',['token'=>$updateJob->token]));
+
+    //     }catch (\Exception $x){
+    //         return back()->withInput();
+    //     }
+    // }
+
+
+    public function alljob(Designer $designer)
+    {
+        //
+
+        $user = Auth::user();
+        
+
+        $jobs = Jobs::where('jobs.user_id',$user->id)->get();
+        ;
+        // $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusName;
+
+
+        
+
+
+        return view('alljob',[
+            'user'=>$user,
+            'jobs'=>$jobs,
+            // 'jobstatusid'=>$jobstatusid
+            ]);
     }
 }

@@ -115,13 +115,15 @@
                         <p>15 วัน (ธรรมดา)</p>
                         <div class="text-right">
                             <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
-                            <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target="#exampleModal">เสร็จสิ้นงาน</button>
+                                <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target="#exampleModal">
+                                  เสร็จสิ้นงาน
+                                </button>
                         </div>
                         
             </div>
             {{--  --}}
 
-            <form action="/search/create/store3" method="post" enctype="multipart/form-data">
+            <form action="/showjob/store" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
 
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -140,7 +142,10 @@
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary">ยืนยันรับงาน</button>
+                <a href="{{ route('job.review', $jobs->token) }}">
+                    <button type="submit" class="btn btn-primary">ยืนยันรับงาน</button>
+                </a>
+
                 </div>
             </div>
             </div>
