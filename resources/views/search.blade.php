@@ -10,32 +10,32 @@
 </body>
 
 @section('content')
+
 <section class="content ">
     <div class="container">
+        
         <div class="text-center mt_ex p-5">
-            <div class="row">
-                <div class="col">
-                    <div class="_circle-progress"> <p>1</p></div>
-                    <h5 class="_hilight">ระบุความต้องการ</h5>
-                </div>
-                <div class="col">
-                    <div class="_circle-progress"> <p>1</p></div>
-                    <h5>เลือกรูปตัวอย่างงาน</h5>
-                </div>
-                <div class="col">
-                    <div class="_circle-progress"> <p>1</p></div>
-                    <h5>เลือกนักออกแบบที่ตรงใจ</h5>
-                </div>
-                <div class="col">
-                    <div class="_circle-progress"> <p>1</p></div>
-                    <h5>เลือกขอบเขตงาน</h5>
-                </div>
+            <div id="wizard-progress">
+                <ol class="step-indicator">
+                    <li class="complete">
+                        <div class="step">1</div>
+                        <div class="caption hidden-xs hidden-sm">ระบุความต้องการ</div>
+                    </li>
+                    <li class="complete">
+                        <div class="step">2</div>
+                        <div class="caption hidden-xs hidden-sm">เลือกรูปตัวอย่างงาน</div>
+                    </li>
+                    <li class="complete">
+                        <div class="step">3</div>
+                        <div class="caption hidden-xs hidden-sm">เลือกนักออกแบบที่ตรงใจ</div>
+                    </li>
+                    <li class="active">
+                        <div class="step">4</div>
+                        <div class="caption hidden-xs hidden-sm">เลือกขอบเขตงาน</div>
+                    </li>
+                </ol>
             </div>
-            <div class="progress">
-                
-                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            
+        
         </div>
     </div>
     
@@ -44,23 +44,8 @@
                
                 {{ csrf_field() }}
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                    {{--<div class="rec" >--}}
-                        {{--<div class="row">--}}
-                            {{--<div class="col-3" style="margin-left: 50px; margin-top: 20px;">--}}
-                                {{--<image id="profileImage" class="rounded-circle" src="https://picsum.photos/140" />--}}
-                            {{--</div>--}}
-                            {{--<div class="col-3 align-items-center" style="margin-top: 40px;">--}}
-                                {{--<div class="fill">--}}
-                                    {{--<h1 class="titlename">{{$users->name}}</h1>--}}
-                                    {{--<p>Entrepreneur</p>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
                     <div class="container">
-                        field-one
-                        <fieldset class="p-5" style="border: 1px #F00 solid;">                
+                        <fieldset class="p-5">                
                             <h2 class="selectfillter"  style="font-weight: 800;">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h2>
                         <div class="row">
                                    <input style="border-width: 2px;" type="hidden" class="detaill-select " name="categories" plachholder="sadas" id="output">
@@ -69,9 +54,33 @@
                                
                             <div class="col">
                                <div class="body-below text-center">
-                                   <button type="button" class="btn" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
-                                       <img src="{{ $cat->catsPic}}"  class="rounded" alt="">
-                                   </button>
+                                <label class="fillter">
+                                    <input type="checkbox" checked="checked"  onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
+                                    <img src="{{ $cat->catsPic}}" alt="">
+                                    <span class="checkmark-pic">
+                                     
+                                    </span>
+                                  </label>
+                              {{-- <div class="active-color">
+                                <input type="radio" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
+                                <img src="{{ $cat->catsPic}}" alt="Avatar" class="image">
+                                <div class="overlay">
+                                  <span class="icon correct"></span>
+                                </div>
+                              </div> --}}
+
+                                {{-- <ul class="purple-active">
+                                    <li>
+                                        <input type="checkbox" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
+                                        <img src="{{ $cat->catsPic}}"  class="rounded" alt="">
+                            
+                                    </li>
+                                </ul> --}}
+                                
+                        
+                                   {{-- <button type="button" class="btn purple-active" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
+                                    <img src="{{ $cat->catsPic}}"  class="rounded" alt="">
+                                   </button> --}}
                                    
                                    <p>{{ $cat->name}}</p>
                                </div>
@@ -264,13 +273,14 @@
                         <h2 class="selectfillter pt-5"  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2>
                         <div class="row">
                             <div class="col">
-                                <div class="input-picture">
-                                    <div id="thumb-output" style="display:flex; width:180px;height:180px;margin-left: 180px;"></div>
-                                    <input type="file" id="file-input"  name="productPic"  multiple />
-                                    <i class="fas fa-plus p-icons"></i>
+                                <div  id="thumb-output" style="display:flex; width:180px;height:180px;">
+                                
                                 </div>
-                            </div>
-
+                                 <div class="upload-btn-wrapper-">
+                                        <button class="_btn-upload-"><i class="fas fa-plus"></i></button>
+                                        <input type="file" id="file-input"  name="productPic"  multiple />
+                                 </div>
+                             </div>
                         </div>
                         
                         <div class="form-group">
@@ -307,19 +317,30 @@
                         </div>
                         <input type="button" name="next" class=" next  _primary-black  btn-block btn-lg  rounded" value="Next"  />
                         </fieldset>
-                        field-two
-                        <fieldset class="p-5" style="border: 1px #F00 solid;">
-                            <div class="container bg-white mt-5 p-5">
-                                <h2 class="selectfillter  pt-5">รูปภาพงานใกล้เคียงกับงานที่ต้องการ *ถ้ามี</h2>
-                            <div class="col">
+                        {{-- field-two --}}
+                        <fieldset>
+                            <div class="container bg-white p-5">
+                                <h2 class="selectfillter">รูปภาพงานใกล้เคียงกับงานที่ต้องการ *ถ้ามี</h2>
+                                <div class="row">
+                                    <div class="col">
+                                        <div  id="thumb-output2" style="display:flex; width:180px;height:180px;">
+                                        
+                                        </div>
+                                         <div class="upload-btn-wrapper-">
+                                                <button class="_btn-upload-"><i class="fas fa-plus"></i></button>
+                                                <input type="file" id="file-input2" name="refpicbyUser" multiple />
+                                         </div>
+                                     </div>
+                                </div>
+                            {{-- <div class="col">
                                 <div class="input-picture">
                     
                                     <input type="file" id="file-input2" name="refpicbyUser" multiple />
-                                    {{-- <input type="button" onclick="removeAllImage()" value="Remove All Image" clas="remove">  --}}
+                                    <input type="button" onclick="removeAllImage()" value="Remove All Image" clas="remove"> 
                                                                         <div id="thumb-output2"></div>
                                     <i class="fas fa-plus p-icons"></i>
                                 </div>
-                            </div>
+                            </div> --}}
                             <h2 class="selectfillter  pt-5">เลือกผลิตภัณฑ์ที่มีความใกล้เคียงกับแบบที่คุณต้องการ</h2>
                             <div class="col-12 col-sm-12 p-3 mb-5 bg-white rounded ">
                                 <div class="waterfall ">

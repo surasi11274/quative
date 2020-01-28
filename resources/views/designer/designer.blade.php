@@ -245,7 +245,7 @@
     </section>
 </div>
 <!-- multistep form -->
-<form  action="/designer/store" method="post" enctype="multipart/form-data" class=" msform modal-lg  rounded-ex" >
+<form  action="/designer/store" method="post" enctype="multipart/form-data" class="msform modal-lg  rounded-ex" >
 {{ csrf_field() }}
     <!-- progressbar -->
     <ul id="progressbar">

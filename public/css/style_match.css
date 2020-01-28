@@ -66,9 +66,7 @@ input 				{
   font-size:18px;
   padding:10px 10px 10px 5px;
   display:block;
-  width:300px;
   border:none;
-  border-bottom:1px solid #757575;
 }
 input:focus 		{ outline:none; }
 
@@ -261,57 +259,6 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
         transform: translate3d(0, -4px, 0);
     }
 }
-/*match*/
-
-/*.msform {*/
-    /*width: 100%;*/
-    /*margin: 50px auto;*/
-    /*text-align: left;*/
-    /*position: relative;*/
-/*}*/
-/*.msform fieldset {*/
-    /*background: white;*/
-    /*border: 0 none;*/
-    /*border-radius: 3px;*/
-    /*box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);*/
-    /*padding: 20px 30px;*/
-    /*box-sizing: border-box;*/
-    /*width: 80%;*/
-    /*margin: 0 10%;*/
-
-    /*!*stacking fieldsets above each other*!*/
-    /*position: relative;*/
-/*}*/
-/*!*Hide all except first fieldset*!*/
-/*.msform fieldset:not(:first-of-type) {*/
-    /*display: none;*/
-/*}*/
-/*!*inputs*!*/
-/*.msform input, .msform textarea {*/
-    /*padding: 15px;*/
-    /*border: 1px solid #ccc;*/
-    /*border-radius: 3px;*/
-    /*margin-bottom: 10px;*/
-    /*width: 100%;*/
-    /*box-sizing: border-box;*/
-    /*color: #2C3E50;*/
-    /*font-size: 13px;*/
-/*}*/
-/*!*buttons*!*/
-/*.msform .action-button {*/
-    /*width: 100%;*/
-    /*background: #904AE8;*/
-    /*font-weight: bold;*/
-    /*color: white;*/
-    /*border: 0 none;*/
-    /*border-radius: 1px;*/
-    /*cursor: pointer;*/
-    /*padding: 10px 5px;*/
-    /*margin: 10px 5px;*/
-/*}*/
-/*.msform .action-button:hover, .msform .action-button:focus {*/
-    /*box-shadow: 0 0 0 2px white, 0 0 0 3px #904AE8;*/
-/*}*/
 ._area {
     display: block;
     position: absolute;
@@ -338,17 +285,19 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 .checkmark {
     position: absolute;
     top: 0;
-    right: 0;
-    height: 25px;
-    width: 25px;
-    border-radius: 100%;
+    left: 0;
+    height: 320px;
+    width: 265px;
+    /* border-radius: 100%; */
     background-color: rgba(255,255,255,.15);
+    opacity: 0.8;
     transition: 0.4s;
+    border-radius: 5px;
 }
 
 /* On mouse-over, add a grey background color */
 ._area:hover input ~ .checkmark {
-    background-color: #ccc;
+    background-color: rgba(255,255,255,.15);
 }
 
 /* When the checkbox is checked, add a blue background */
@@ -370,12 +319,13 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 /* Style the checkmark/indicator */
 ._area .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
+    left: 120px;
+    top: 110px;
+    width: 42px;
+    height: 64px;
     border: solid white;
-    border-width: 0 3px 3px 0;
+    border-width: 0 10px 10px 0;
+    border-radius: 5px;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -441,7 +391,6 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 .progress-bar{
     background-color:#523EE8 !important;
-
 }
 ._circle-progress{
     width: 40px;
@@ -453,5 +402,288 @@ border-radius: 100%;
 padding: 5px;
 margin-bottom: 20px;
 }
+ /* btn active purple */
+ /* .purple-active:focus {
+    background: rgba(82, 62, 232, 0.8);
+    width: 180px;
+    height: 180px;
+    z-index: 1;
+    position: relative;
+    transition: 0.4s;
 
+  } */
+  ul.purple-active {
+    list-style: none;
+    /*padding: 20px;*/
+}
+ul.purple-active li{
+  display: inline;
+}
 
+ul.purple-active li img{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #adadad;
+    border-radius: .25rem!important;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+ul.purple-active li img {
+    cursor: pointer;
+}
+ul.purple-active li img::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    content: "\f067";
+    transition: transform .3s ease-in-out;
+}
+
+ul.purple-active li input[type="checkbox"]:checked + img::before {
+    content: "\f00c";
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
+
+ul.purple-active li input[type="checkbox"]:checked + img {
+    border: 2px solid mediumpurple;
+    background-color: #523EE8;
+    transition: all .2s;
+}
+
+ul.purple-active li input[type="checkbox"] {
+    position: absolute;
+}
+ul.purple-active li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+    width: 180px;
+    margin: 0px auto;
+    height: 180px;
+    right: 10px;
+}
+ul.purple-active li input[type="checkbox"]:focus + img {
+  border: 2px solid #523EE8;
+}
+.icon::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+  .correct::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+    font-weight: 900;
+    font-size: 37px;
+    color: #fff;
+    margin-top: 60px;
+    /* position: absolute; */
+  }
+  .plus::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f067";
+    background-color: #C9C3C3;
+  }
+.overlay-1 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #523EE8;
+  }
+  
+  .active-color:hover .overlay {
+    opacity: 0.8;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .fillter input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark-pic{
+    position: absolute;
+    border-radius: 5px;
+    top: 0;
+    bottom: 0;
+    left: 10;
+    right: 0;
+    width: 180px;
+    height: 180px;
+    /* opacity: 0; */
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.01);
+    
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .fillter:hover input ~ .checkmark-pic {
+    background-color: #523EE8;
+    opacity: 0.8;
+
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .fillter input:checked ~ .checkmark-pic {
+    background-color: rgba(0, 0, 0, 0.01);
+    
+
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .fillter:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .fillter input:checked ~ .checkmark-pic:after {
+    display: block;
+  }
+  .fillter .checkmark-pic:after {
+      
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+    font-weight: 900;
+    font-size: 37px;
+    color: #fff;
+    margin-top: 60px;
+  }
+  
+  /* hidden */
+  .upload-btn-wrapper- {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+   
+}
+
+._btn-upload-{
+    border: 2px solid rgba(144, 74, 232,.15);
+    color: gray;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    width: 180px;
+    height: 180px;
+    border: 2px dashed #523EE8;
+    text-align: center;
+    font-weight: bold;
+}
+
+.upload-btn-wrapper- input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+/* progress */
+
+ #wizard-progress {
+	 width: 100%;
+	 margin: 20px auto 0 auto;
+}
+ #wizard-progress .step-indicator {
+	 border-collapse: separate;
+	 display: table;
+	 margin-left: 0px;
+	 position: relative;
+	 table-layout: fixed;
+	 text-align: center;
+	 vertical-align: middle;
+	 padding-left: 0;
+}
+ #wizard-progress .step-indicator li {
+	 display: table-cell;
+	 position: relative;
+	 float: none;
+	 padding: 0;
+	 width: 1%;
+}
+ #wizard-progress .step-indicator li:after {
+	 background-color: #ccc;
+	 content: "";
+	 display: block;
+	 height: 4px;
+	 position: absolute;
+	 width: 100%;
+	 top: 32px;
+}
+ #wizard-progress .step-indicator li:after {
+	 left: 50%;
+}
+ #wizard-progress .step-indicator li:last-child:after {
+	 display: none;
+}
+ #wizard-progress .step-indicator li.active .step {
+	 border-color: #C4C4C4;
+	 color: #C4C4C4;
+}
+ #wizard-progress .step-indicator li.active .caption {
+	 color: #C4C4C4;
+}
+ #wizard-progress .step-indicator li.complete:after {
+	 background-color: #523EE8;
+}
+ #wizard-progress .step-indicator li.complete .step {
+	 border-color: #523EE8;
+     color: #fff;
+     background-color: #523EE8;
+}
+ #wizard-progress .step-indicator li.complete .caption {
+	 color: #523EE8;
+}
+ #wizard-progress .step-indicator .step {
+	 background-color: #fff;
+	 border-radius: 50%;
+	 border: 4px solid #ccc;
+	 color: #ccc;
+	 font-size: 24px;
+	 height: 64px;
+	 line-height: 64px;
+	 margin: 0 auto;
+	 position: relative;
+	 width: 64px;
+	 z-index: 1;
+}
+ #wizard-progress .step-indicator .step:hover {
+	 cursor: pointer;
+}
+ #wizard-progress .step-indicator .caption {
+	 color: #ccc;
+	 padding: 11px 16px;
+}
+ 
