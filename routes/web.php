@@ -35,6 +35,9 @@ Route::get('/vote', function () {
 Route::get('/votedetail', function () {
     return view('vote.votedetail');
 });
+Route::get('/payment', function () {
+    return view('payment');
+});
 
 
 // Route::get('/showjob', function () {
