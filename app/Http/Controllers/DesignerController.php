@@ -113,8 +113,8 @@ class DesignerController extends Controller
             'profilepic'=>$request->file('profilepic')->move('uploads/profilepic',$filenameTostore),
             'selfieID'=>$request->file('selfieID')->move('uploads/selfieID',$filenameTostore),
             'pictureIDCard'=>$request->file('pictureIDCard')->move('uploads/pictureIDCard',$filenameTostore),
-            'hasjob'=>'0',
-            'rating'=>'0',
+            // 'hasjob'=>'0',
+            // 'rating'=>'0',
             'user_id'=>Auth::user()->id,
             'token'=> str_random(16)
 

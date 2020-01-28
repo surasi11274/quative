@@ -30,7 +30,7 @@ class CreateJobsTable extends Migration
 
             $table->datetime('finishdate')->nullable();
             $table->integer('pricerate')->nullable();
-            $table->datetime('productPic');
+            $table->text('productPic');
 
             $table->datetime('refpicbyUser');
 
@@ -38,7 +38,7 @@ class CreateJobsTable extends Migration
 
             $table->string('file');
             $table->integer('rating');
-            $table->boolean('status')->default(0);
+            $table->boolean('canshow')->default(0);
             $table->string('token',16)->nullable();
 
             $table->integer('reviews_id')->nullable();
