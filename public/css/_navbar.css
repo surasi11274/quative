@@ -38,5 +38,28 @@ nav.shrink .navbar-brand {
 .overflow-noctification{
     width: 100%;
     overflow: scroll;
-    height: 200px;
+    height: 440px;
 }
+.active-notification{
+    background-color: #FE3A76;
+    width: 20px;
+    height: 20px;
+    position:absolute;
+    left: 70px;
+    right: 0;
+}
+.wrapper-profile{
+    width: 322px;
+  }
+  .wrapper-notification{
+    width: 420px;
+  }
+  .profile-color{
+    margin: 0px auto;
+    height: 76px;
+    color: #fff;
+    background: #523EE8;
+  }
+  .dropdown-menu{
+    padding: 0 !important;
+  }
