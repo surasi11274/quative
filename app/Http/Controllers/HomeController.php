@@ -494,27 +494,7 @@ class HomeController extends Controller
         }
 
     }
-    // public function storeReviewToJobs(Request $request, $reviews)
-    // {
-   
-
-    //     $updateJob = Jobs::find($request->$reviews->jobs_id);
-    //     $updateJob->reviews_id = $reviews->id;
-    
-    //     $updateJob->save();
-
-    //     dd($updateJob->id);
-    //         exit();
-      
-    //     try{
-            
-    //         return redirect(route('job.review',['token'=>$updateJob->token]));
-
-    //     }catch (\Exception $x){
-    //         return back()->withInput();
-    //     }
-    // }
-
+  
 
     public function alljob(Designer $designer)
     {
