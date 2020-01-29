@@ -46,7 +46,21 @@
                         <label for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</label><br>
                         <label for=""class="content-bg" >วันที่เริ่มงาน :<span> {{ $jobs->updated_at}} </span></label> <br>
                         <label for=""class="content-bg" >วันที่ต้องการงาน :<span> 01 มกราคม 2563 </span>  </label><br>
-                        <button class="btn _primary-btn">โอนเงิน</button>
+                        @if ($job->jobstatus_id =! NULL)
+                        {{-- <a href="{{ route('job.payment', $jobs->token) }}"> --}}
+                            <button class="btn disabled _primary-btn">โอนเงิน</button>
+                        {{-- </a> --}}
+                        @else ($job->jobstatus_id == '2') 
+                                {{-- <button type="button" class="btn disabled btn-secondary mr-5" onclick="addCart('2')" >
+                                    รับงาน
+                                </button> --}}
+                                <a href="{{ route('job.payment', $jobs->token) }}">
+                                    <button class="btn _primary-btn">โอนเงิน</button>
+                                </a>
+                        @endif
+                        <a href="{{ route('job.payment', $jobs->token) }}">
+                            <button class="btn _primary-btn">โอนเงิน</button>
+                        </a>
                     <button class="btn _primary-btn">โหลดไฟล์</button>
                 </div>
             </div>

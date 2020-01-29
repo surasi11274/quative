@@ -13,6 +13,7 @@ use App\References;
 use App\Tags;
 use App\Jobs;
 use App\Jobstatus;
+use App\Payment;
 use App\Review;
 use App\User;
 
@@ -49,6 +50,8 @@ class HomeController extends Controller
             'designers'=>$designers
             ]);
     }
+
+
     public function createSearchStep1()
     {
         //
@@ -495,6 +498,107 @@ class HomeController extends Controller
 
     }
   
+
+    public function paymentJob($token)
+    {
+        //
+        $jobs = Auth::user()->job();
+
+
+        // if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+        //     // return redirect(route('designer.show',['token'=>$jobs->token]));
+        //     return redirect(route('job.show',['token'=>$jobs->token]));
+
+        // }
+        $jobs = Jobs::where('token',$token)->first();
+        // $designer = Designer::all();
+        // $designer = Auth::user()->designer();
+        // dd($jobs);
+
+    // exit();
+
+        $designer = Designer::where('designers.id',$jobs->designer_id)->get();
+
+
+ 
+        
+        
+        $tags = Tags::all();
+        // $refs = References::inRandomOrder()->limit(8)->get();     
+        $designer->first()->tag = json_decode($designer->first()->tag);
+        
+
+      
+
+
+        if ($jobs->count() == 0){
+            return "หาไม่เจอ ทำอะไรดี";
+        }
+        return view('payment',[
+            'jobs'=>$jobs,
+            'tags'=>$tags,
+            'designer'=>$designer,
+            // 'designers'=>$designers,
+            // 'refs'=>$refs,
+            ]);
+
+    }
+    public function storePaymentJob(Request $request)
+    {
+        $filenameWithExt = $request->file('fileTransfer')->getClientOriginalName();
+
+        //get file name
+
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+        $extension = $request->file('fileTransfer')->getClientOriginalExtension();
+
+        //create new file name
+
+        $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
+
+        $reviews = Payment::create([
+            'name'=>$request->input('name'),
+            'surname'=>$request->input('surname'),
+
+            'price'=>$request->input('price'),
+            'bank'=>$request->input('bank'),
+            'dateatTransfer'=>$request->input('dateatTransfer'),
+            'timeatTransfer'=>$request->input('timeatTransfer'),
+            'description'=>$request->input('description'),
+            'fileTransfer'=>$request->file('fileTransfer')->move('uploads/paymentPic',$filenameTostore),
+
+            
+            'user_id'=>Auth::user()->id,
+            'designer_id'=>$request->input('designer_id'),
+            'jobs_id'=>$request->input('jobs_id'),
+
+        ]);
+        
+        // $updateJob = Jobs::update('update users set votes = 100 where name = ?', ['John']);
+        $updateJob = DB::table('jobs')->where('id', $reviews->jobs_id)->update([
+            'reviews_id' => $reviews->id
+            ]);
+        // $updateJob = Jobs::find($request->$reviews->jobs_id);
+        // $updateJob->reviews_id = $reviews->id;
+    
+        // $updateJob->save();
+        dd($updateJob);
+        exit();
+
+        return 'success';
+        exit();
+        try{
+            
+            return redirect(route('job.review2.store',[
+                'reviews'=>$reviews
+                ]));
+
+        }catch (\Exception $x){
+            return back()->withInput();
+        }
+
+    }
 
     public function alljob(Designer $designer)
     {

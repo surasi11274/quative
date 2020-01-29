@@ -35,9 +35,9 @@ Route::get('/vote', function () {
 Route::get('/votedetail', function () {
     return view('vote.votedetail');
 });
-Route::get('/payment', function () {
-    return view('payment');
-});
+// Route::get('/payment', function () {
+//     return view('payment');
+// });
 
 
 // Route::get('/showjob', function () {
@@ -101,6 +101,13 @@ Route::get('/reviewjob/{token}', [
 
 Route::post('/reviewjob/store', 
     'HomeController@storeReviewJob');
+
+Route::get('/payment/{token}', [
+        'as' => 'job.payment',
+        'uses' => 'HomeController@paymentJob']);
+    
+Route::post('/reviewjob/store', 
+        'HomeController@storePaymentJob');
     
 
 
