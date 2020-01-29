@@ -106,7 +106,7 @@ Route::get('/payment/{token}', [
         'as' => 'job.payment',
         'uses' => 'HomeController@paymentJob']);
     
-Route::post('/reviewjob/store', 
+Route::post('/payment/store', 
         'HomeController@storePaymentJob');
     
 

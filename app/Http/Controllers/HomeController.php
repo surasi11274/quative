@@ -21,8 +21,7 @@ use Illuminate\Support\Facades\Session;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use DB;
-
-
+use SebastianBergmann\Environment\Console;
 
 class HomeController extends Controller
 {
@@ -545,6 +544,11 @@ class HomeController extends Controller
     }
     public function storePaymentJob(Request $request)
     {
+        // $jobs = Jobs::where('token',$token)->get();
+
+
+
+
         $filenameWithExt = $request->file('fileTransfer')->getClientOriginalName();
 
         //get file name
@@ -557,7 +561,7 @@ class HomeController extends Controller
 
         $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
 
-        $reviews = Payment::create([
+        $payment = Payment::create([
             'name'=>$request->input('name'),
             'surname'=>$request->input('surname'),
 
@@ -571,29 +575,32 @@ class HomeController extends Controller
             
             'user_id'=>Auth::user()->id,
             'designer_id'=>$request->input('designer_id'),
-            'jobs_id'=>$request->input('jobs_id'),
+            'job_id'=>$request->input('job_id'),
 
         ]);
         
         // $updateJob = Jobs::update('update users set votes = 100 where name = ?', ['John']);
-        $updateJob = DB::table('jobs')->where('id', $reviews->jobs_id)->update([
-            'reviews_id' => $reviews->id
+
+        $updateJob = DB::table('jobs')->where('id', $payment->job_id)->update([
+            'payment_id' => $payment->id
             ]);
-        // $updateJob = Jobs::find($request->$reviews->jobs_id);
+            
+        $jobs = Jobs::where('id',$payment->job_id)->first();
+
+
+    // $updateJob2 = Jobs::find($request->$reviews->jobs_id);
         // $updateJob->reviews_id = $reviews->id;
     
         // $updateJob->save();
-        dd($updateJob);
-        exit();
+        // dd($jobs->token);
+        // exit();
 
-        return 'success';
-        exit();
+        // return 'success';
+        // exit();
         try{
             
-            return redirect(route('job.review2.store',[
-                'reviews'=>$reviews
-                ]));
-
+            return redirect(route('job.show',['token'=>$jobs->token]));
+            
         }catch (\Exception $x){
             return back()->withInput();
         }

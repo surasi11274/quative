@@ -10,17 +10,17 @@
                 <h1>แจ้งการโอนเงิน</h1>
                 <h4>ใบรหัสการจ้างงาน No. W0001</h4>
             </div>
-            <form class="multi-step-form  rounded-ex" action="/search/create/store1" method="post" enctype="multipart/form-data">
+            <form class="multi-step-form  rounded-ex" action="/payment/store" method="post" enctype="multipart/form-data">
                
                 {{ csrf_field() }}
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputEmail4">ชื่อ</label>
-                        <input type="email" class="form-control" id="inputEmail4" name="name">
+                        <input type="name" class="form-control" id="inputEmail4" name="name">
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputPassword4">นามสกุล</label>
-                        <input type="password" class="form-control" id="inputPassword4" name="surname">
+                        <input type="name" class="form-control" id="inputPassword4" name="surname">
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputAddress">จำนวนเงิน</label>
@@ -38,11 +38,11 @@
                     <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputCity">วันที่โอนเงิน</label>
-                                <input type="datetime" class="form-control" id="inputCity" name="dateatTransfer">
+                                <input type="text" class="form-control" id="inputCity" name="dateatTransfer">
                               </div>
                               <div class="form-group col-md-6">
                                 <label for="inputZip">เวลาที่ทำรายการ</label>
-                                <input type="text" class="form-control" id="inputZip" name="timeatTransfer">
+                                <input type="text"  class="form-control" id="timepicker5" name="timeatTransfer">
                               </div>
                             </div>
                         </div>
@@ -58,6 +58,7 @@
                                             <button class="_btn-upload-"><i class="fas fa-plus"></i></button>
                                             <input type="file" id="file-input"  name="fileTransfer"  multiple />
                                      </div>
+                                     
                                  {{-- </div> --}}
                             </div>
                               <div class="form-group col-md-12">
@@ -70,7 +71,9 @@
                         </div>
                       
                         
-                     
+                        <input type="text" id="job_id" name="job_id" value="{{$jobs->id}}">
+                        <input type="text" id="designer_id" name="designer_id" value="{{$jobs->designer_id}}">
+                        <input type="text" id="user_id" name="user_id" value="{{$jobs->user_id}}">
                    
                         <div class="text-right">
                             <button type="button" class="btn btn-outline-dark text-center mb-5 ">ยกเลิกงาน</button>
@@ -80,3 +83,10 @@
         </div>
     </section>
 @endsection
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker3').datetimepicker({
+            format: 'LT'
+        });
+    });
+</script>
