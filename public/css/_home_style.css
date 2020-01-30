@@ -175,3 +175,11 @@ h2, h4, h5, p, a,small{
   font-size: 29px;
   color: #C4C4C4; 
 }
+.calendar::before{
+  
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content:"\f133";
+  font-size: 29px;
+  color: #C4C4C4; 
+}
