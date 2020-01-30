@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Designer;
+use App\Jobfiles;
 use App\Tags;
 use App\User;
 use App\Jobs;
@@ -268,6 +269,123 @@ class DesignerController extends Controller
         }
     }
 
+    public function storeFilesJob(Request $request)
+    {
+        // $jobs = Jobs::where('token',$token)->get();
+
+
+
+
+       $filesimg = $request->file('fileimgname');
+       $filesartwork = $request->file('fileartworkname');
+       if(!empty($filesimg)) :
+
+        foreach ($filesimg as $fileimg ):
+            $filenameWithExt = $fileimg->getClientOriginalName();
+
+            //get file name
+    
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+    
+            $extension = $fileimg->getClientOriginalExtension();
+    
+            //create new file name
+    
+            $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
+
+            $fileinput = Jobfiles::create([
+                // foreach (file as $file){
+
+                'fileimgname'=>$fileimg->move('uploads/Files',$filenameTostore),
+    
+              
+    
+                
+                'user_id'=>$request->input('user_id'),
+                'designer_id'=>$request->input('designer_id'),
+                'job_id'=>$request->input('job_id'),
+    
+            ]);
+        endforeach;
+        endif;
+
+        if(!empty($filesartwork)) :
+            foreach ($filesartwork as $fileartwork ):
+                $filenameWithExt = $fileartwork->getClientOriginalName();
+
+                //get file name
+        
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        
+                $extension = $fileartwork->getClientOriginalExtension();
+        
+                //create new file name
+        
+                $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
+
+                $fileinput = Jobfiles::create([
+                    // foreach (file as $file){
+
+                    'fileartworkname'=>$fileartwork->move('uploads/ArtworkFiles',$filenameTostore),
+        
+                
+        
+                    
+                    'user_id'=>$request->input('user_id'),
+                    'designer_id'=>$request->input('designer_id'),
+                    'job_id'=>$request->input('job_id'),
+        
+                ]);
+            endforeach;
+
+    endif;
+    $query = DB::table('jobfiles')->select('id')->where('job_id', $fileinput->job_id)->get();
+    $updateJob = DB::table('jobs')->where('id', $fileinput->job_id)->update([
+        'file' => json_encode($query)
+        // 'reference'=>json_encode($request->input('reference')),
+
+        ]);
+        // dd($query);
+        // exit();
+    return 'success';
+    exit();
+
+       
+
+                // $jobs = Jobs::where('id',$files->job_id)->first();
+
+        // }
+       
+        
+
+        // $updateJob = DB::table('jobs')->where('id', $files->job_id)->update([
+        //     'payment_id' => $files->id
+        //     ]);
+            
+
+
+    // $updateJob2 = Jobs::find($request->$reviews->jobs_id);
+        // $updateJob->reviews_id = $reviews->id;
+    
+        // $updateJob->save();
+        // dd($files);
+        exit();
+
+        // return 'success';
+        // exit();
+        try{
+            
+            return redirect(route('job.show',['id'=>$jobs->id]));
+            
+        }catch (\Exception $x){
+            return back()->withInput();
+        }
+
+    }
+
+
+
+
     /**
      * Update the specified resource in storage.
      *
@@ -275,6 +393,8 @@ class DesignerController extends Controller
      * @param  \App\Designer  $designer
      * @return \Illuminate\Http\Response
      */
+
+
     public function update(Request $request, Designer $designer)
     {
         //

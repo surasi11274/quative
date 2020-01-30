@@ -156,6 +156,9 @@ Route::get('/jobdetail/{id}', [
 
 Route::post('/jobdetail/jobstatus/store', 
     'DesignerController@jobStatusStore');
+
+Route::post('/jobdetail/file/store', 
+    'DesignerController@storeFilesJob');
 // Route::get('/login/designer', 'RegisterDesignerController@show' );
 
 // Route::get('login/designer/{id}',function(){

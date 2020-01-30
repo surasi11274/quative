@@ -60,24 +60,67 @@
                               
                     <button type="button" class="btn _primary-btn" data-toggle="modal" data-target=".bd-example-modal-lg">อัพโหลดไฟล์</button>
                     <!-- Large modal -->
+                    <form action="/jobdetail/file/store" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
 
-                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
+                                    <div class="modal-header " style="text-align:center;">
+                                    <h4 class="modal-title "  id="myLargeModalLabel">อัพโหลดไฟล์งาน</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h2 class="selectfillter pt-5"  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2>
+                                        <div class="row">
+                                            <div class="col">
+                                                <br/>Please input img files here:
 
-                            <div class="modal-header">
-                              <h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                              </button>
+                                                <div  id="thumb-output" style="display:flex; width:180px;height:180px;">
+                                                
+                                                </div>
+
+                                                 <div class="upload-btn-wrapper-">
+                                                        <button class="_btn-upload-"><i class="fas fa-plus"></i></button>
+                                                        <input type="file" id="file-input"  name="fileimgname[]"  multiple />
+                                                 </div>
+
+                                             </div>
+                                            
+                                             
+                                        </div>
+                                        <div class="row">
+                                            <input type="file" name="fileartworkname[]" id="file" multiple 
+                                            onchange="javascript:updateList()" />
+                                            <br/>Please input artwork(ai) files here:
+
+                                        </div>
+                                        <div class="row">
+                                            <div id="fileList"></div>
+
+                                        </div>
+                                        
+                                          
+                                        <div class="form-group">
+                                            <h2 class="selectfillter pt-5"  style="font-weight: 800;">URL<small>(ที่เกี่ยวข้องกับผลิตภัณฑ์)</small></h2>
+                                            <input type="text" class="form-control" name="url" placeholder="เช่น เว็บไซต์, เฟสบุ๊ค เพื่อให้นักออกแบบทำงานได้ง่ายขึ้น ">
+                                        </div>
+                                    </div>
+                                     <input type="text" id="job_id" name="job_id" value="{{$job->id}}">
+                                            <input type="text" id="designer_id" name="designer_id" value="{{$job->designer_id}}">
+                                            <input type="text" id="user_id" name="user_id" value="{{$job->user_id}}">
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                                        <button type="submit" class="btn btn-primary">ยืนยันรับงาน</button>
+                                        </div>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                              ...
-                            </div>
-                          </div>
-                    </div>
-                    </div>
+                        </div>
+                    </form>
                 </div>
+                
 
                 </div>
             </div>
@@ -260,6 +303,18 @@
         return false;
     }
 
- 
+   
 </script>
+<script>
+updateList = function() {
+  var input = document.getElementById('file');
+  var output = document.getElementById('fileList');
 
+  output.innerHTML = '<ul>';
+  for (var i = 0; i < input.files.length; ++i) {
+    output.innerHTML += '<li>' + input.files.item(i).name + '</li>';
+  }
+  output.innerHTML += '</ul>';
+}
+
+</script>
