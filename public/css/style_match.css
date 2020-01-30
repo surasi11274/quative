@@ -1,9 +1,10 @@
 
 .form-match{
 background: #FFFFFF;
-border: 3px solid #904AE8;
+/* border: 3px solid #904AE8; */
 box-shadow: 0px 4px 12px rgba(83, 59, 142, 0.25);
-border-radius: 20px;
+border-radius: 5px;
+height: auto;
 }
 /* Rectangle 3.4 */
 .rec{
@@ -541,45 +542,47 @@ ul.purple-active li input[type="checkbox"]:focus + img {
     height: 180px;
     /* opacity: 0; */
     transition: .5s ease;
-    background-color: rgba(0, 0, 0, 0.01);
-    
+   
   }
   
   /* On mouse-over, add a grey background color */
-  .fillter:hover input ~ .checkmark-pic {
-    background-color: #523EE8;
+  .fillter:hover input ~ .checkmark-pix {
+    background-color: rgba(255,255,255,.15);
+}
+
+/* When the checkbox is checked, add a blue background */
+.fillter input:checked ~ .checkmark-pic {
+    background-color: mediumpurple;
     opacity: 0.8;
-
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .fillter input:checked ~ .checkmark-pic {
-    background-color: rgba(0, 0, 0, 0.01);
-    
-
-  }
+}
   
   /* Create the checkmark/indicator (hidden when not checked) */
-  .fillter:after {
+  .checkmark-pic:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .fillter input:checked ~ .checkmark-pic:after {
+}
+
+/* Show the checkmark when checked */
+.fillter input:checked ~ .checkmark-pic:after {
     display: block;
-  }
-  .fillter .checkmark-pic:after {
-      
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f00c";
-    font-weight: 900;
-    font-size: 37px;
-    color: #fff;
-    margin-top: 60px;
-  }
+}
+
+/* Style the checkmark/indicator */
+.fillter .checkmark-pic:after {
+    left: 70px;
+    top: 50px;
+    width: 42px;
+    height: 64px;
+    border: solid white;
+    border-width: 0 10px 10px 0;
+    border-radius: 5px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: 0.4s;
+
+}
   
   /* hidden */
   .upload-btn-wrapper- {
@@ -588,6 +591,31 @@ ul.purple-active li input[type="checkbox"]:focus + img {
     display: inline-block;
    
 }
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 320px;
+    width: 265px;
+    /* border-radius: 100%; */
+    background-color: rgba(255,255,255,.15);
+    opacity: 0.8;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+
+/* On mouse-over, add a grey background color */
+._area:hover input ~ .checkmark {
+    background-color: rgba(255,255,255,.15);
+}
+
+/* When the checkbox is checked, add a blue background */
+._area input:checked ~ .checkmark {
+    background-color: mediumpurple;
+}
+
 
 ._btn-upload-{
     border: 2px solid rgba(144, 74, 232,.15);
@@ -686,4 +714,107 @@ ul.purple-active li input[type="checkbox"]:focus + img {
 	 color: #ccc;
 	 padding: 11px 16px;
 }
- 
+
+.middle {
+    width: 100%;
+    text-align: center;
+   /* Made by */
+}
+.middle h1 {
+    font-family: 'Dax', sans-serif;
+    color: #fff;
+}
+.middle input[type="radio"] {
+    display: none;
+}
+.middle input[type="radio"]:checked + .box {
+    background-color: #523EE8;
+}
+.middle input[type="radio"]:checked + .box span {
+    color: white;
+    /* transform: translateY(70px); */
+    transform: translateY(0px);
+}
+.middle input[type="radio"]:checked + .box p {
+    color: white;
+    /* transform: translateY(70px); */
+    transform: translateY(0px);
+}
+.middle input[type="radio"]:checked + .box span:before {
+    transform: translateY(0px);
+    opacity: 1;
+}
+.middle .box {
+    width: 200px;
+    height: 100px;
+    background-color: #fff;
+    transition: all 250ms ease;
+    will-change: transition;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 5px;
+    font-family: 'Prompt', sans-serif !important;
+    font-style: italic;
+    font-weight: 900;
+    
+}
+.middle .box:active {
+    /* transform: translateY(10px); */
+    transform: translateY(0px);
+}
+.middle .box p{
+    color: #c4c4c4;
+}
+.middle .box span{
+    border-radius: 5px;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    /* transform: translate(0, 60px); */
+    transform: translate(0, 0px);
+    left: 0;
+    right: 0;
+    transition: all 300ms ease;
+    font-size: 1.5em;
+    user-select: none;
+    color: #c4c4c4;
+    border:2px solid #c4c4c4;
+}
+.middle .box span:before {
+    font-size: 1.2em;
+    font-family: FontAwesome;
+    display: block;
+    /* transform: translateY(-80px); */
+    transform: translateY(0px);
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+    font-weight: normal;
+    color: white;
+}
+.middle .front-end span:before {
+    /* content: '\f00c'; */
+
+}
+.middle .back-end span:before {
+    /* content: '\f00c'; */
+}
+.middle p {
+    color: #fff;
+    /* font-family: 'Dax', sans-serif; */
+    font-family: 'Prompt', sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+    /* font-weight: 800; */
+}
+.middle p a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #fff;
+}
+.middle p span:after {
+    content: '\f0e7';
+    font-family: FontAwesome;
+    color: yellow;
+}

@@ -176,7 +176,7 @@
                                     <span class="caret icon notification"></span>
                                 </a>
                                 <div class="dropdown-menu"style="border: 3px solid #523EE8;"  aria-labelledby="navbarDropdownMenuLink">
-                                    <div class="wrapper-notification">
+                                    <div class="wrapper-notification p-3">
                                         <div class=" overflow-noctification p-2">
                                             <div class="row">
                                             
