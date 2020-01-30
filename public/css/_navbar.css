@@ -63,3 +63,9 @@ nav.shrink .navbar-brand {
   .dropdown-menu{
     padding: 0 !important;
   }
+  .nav{
+    
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+
+  }

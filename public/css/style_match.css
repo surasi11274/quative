@@ -3,7 +3,8 @@
 background: #FFFFFF;
 border: 3px solid #904AE8;
 box-shadow: 0px 4px 12px rgba(83, 59, 142, 0.25);
-border-radius: 20px;
+border-radius: 5px;
+height: 1200px;
 }
 /* Rectangle 3.4 */
 .rec{
@@ -541,45 +542,47 @@ ul.purple-active li input[type="checkbox"]:focus + img {
     height: 180px;
     /* opacity: 0; */
     transition: .5s ease;
-    background-color: rgba(0, 0, 0, 0.01);
-    
+   
   }
   
   /* On mouse-over, add a grey background color */
-  .fillter:hover input ~ .checkmark-pic {
-    background-color: #523EE8;
+  .fillter:hover input ~ .checkmark-pix {
+    background-color: rgba(255,255,255,.15);
+}
+
+/* When the checkbox is checked, add a blue background */
+.fillter input:checked ~ .checkmark-pic {
+    background-color: mediumpurple;
     opacity: 0.8;
-
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .fillter input:checked ~ .checkmark-pic {
-    background-color: rgba(0, 0, 0, 0.01);
-    
-
-  }
+}
   
   /* Create the checkmark/indicator (hidden when not checked) */
-  .fillter:after {
+  .checkmark-pic:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .fillter input:checked ~ .checkmark-pic:after {
+}
+
+/* Show the checkmark when checked */
+.fillter input:checked ~ .checkmark-pic:after {
     display: block;
-  }
-  .fillter .checkmark-pic:after {
-      
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f00c";
-    font-weight: 900;
-    font-size: 37px;
-    color: #fff;
-    margin-top: 60px;
-  }
+}
+
+/* Style the checkmark/indicator */
+.fillter .checkmark-pic:after {
+    left: 70px;
+    top: 50px;
+    width: 42px;
+    height: 64px;
+    border: solid white;
+    border-width: 0 10px 10px 0;
+    border-radius: 5px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: 0.4s;
+
+}
   
   /* hidden */
   .upload-btn-wrapper- {
@@ -588,6 +591,31 @@ ul.purple-active li input[type="checkbox"]:focus + img {
     display: inline-block;
    
 }
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 320px;
+    width: 265px;
+    /* border-radius: 100%; */
+    background-color: rgba(255,255,255,.15);
+    opacity: 0.8;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+
+/* On mouse-over, add a grey background color */
+._area:hover input ~ .checkmark {
+    background-color: rgba(255,255,255,.15);
+}
+
+/* When the checkbox is checked, add a blue background */
+._area input:checked ~ .checkmark {
+    background-color: mediumpurple;
+}
+
 
 ._btn-upload-{
     border: 2px solid rgba(144, 74, 232,.15);

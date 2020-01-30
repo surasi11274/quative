@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="{{asset('css/style_match.css')}}">
 <link rel="stylesheet" href="{{asset('css/animate.css')}}">
 <link rel="stylesheet" href="{{asset('css/_navbar.css')}}">
+<link rel="stylesheet" href="{{asset('css/base.css')}}">
 @yield('assets')
 {{--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">--}}
 <link rel="stylesheet" href="{{asset('css/flatpickr.min.css')}}">

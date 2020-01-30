@@ -17,15 +17,15 @@
         <div class="text-center mt_ex p-5">
             <div id="wizard-progress">
                 <ol class="step-indicator">
-                    <li class="complete">
+                    <li class="active">
                         <div class="step">1</div>
                         <div class="caption hidden-xs hidden-sm">ระบุความต้องการ</div>
                     </li>
-                    <li class="complete">
+                    <li class="active">
                         <div class="step">2</div>
                         <div class="caption hidden-xs hidden-sm">เลือกรูปตัวอย่างงาน</div>
                     </li>
-                    <li class="complete">
+                    <li class="active">
                         <div class="step">3</div>
                         <div class="caption hidden-xs hidden-sm">เลือกนักออกแบบที่ตรงใจ</div>
                     </li>
@@ -57,9 +57,7 @@
                                 <label class="fillter">
                                     <input type="checkbox" checked="checked"  onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
                                     <img src="{{ $cat->catsPic}}" alt="">
-                                    <span class="checkmark-pic">
-                                     
-                                    </span>
+                                    <span class="checkmark-pic"></span>
                                   </label>
                               {{-- <div class="active-color">
                                 <input type="radio" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
