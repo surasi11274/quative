@@ -772,27 +772,58 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
 
-                        <div class="modal-header " style="text-align:center;">
-                        <h4 class="modal-title "  id="myLargeModalLabel">อัพโหลดไฟล์งาน</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                        </div>
-                        <div class="modal-body">
+                        {{-- <div class="modal-header " >
+                            <div class="row">
+
+                            </div>
+                            <h4 class="modal-title text-center"  id="myLargeModalLabel">คุณต้องการเสร็จสิ้นงานใช่ไหม?</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div> --}}
+                        <div class="modal-body text-center">
+                            <div class="container">
+                                <h2 class="modal-title text-center mt-5 mb-5"  id="myLargeModalLabel">คุณต้องการเสร็จสิ้นงานใช่ไหม?</h2>
+                                <hr>
+                                <h5>ช่วยนักออกแบบสร้าง Profile</h5>
+                                <span>นักออกแบบสามารถนำผลงานของคุณไปแสดงในโปรไฟล์เพื่อ
+                                 ช่วยสร้าง Portfolio บนเว็บไซต์เราได้หรือไม่</span>
+     
+                                 <div class="row  ">
+                                     <div class="col-3"></div>
+                                     <div class="col-6 mt-5 mb-5">
+                                         <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" name="canshow">
+                                         <label class="form-check-label" for="defaultCheck1">
+                                             อนุญาตให้นักออกแบบนำงานคุณไปแสดงในโปรไฟล์
+                                         </label>
+                                     </div>
+                                     <div class="col-3"></div>
+     
+                                     
+                                 </div>
+                                 <hr>
+                                 <hr>
+                                <div class="mt-5 mb-5">
+                                    <button type="button" class="btn btn-secondary"  data-dismiss="modal">ยกเลิก</button>
+                                    <a href="{{ route('job.review', $jobs->token) }}">
+            
+                                        <button type="submit" class="btn btn-primary" style="background-color:black;">ยืนยันการเสร็จสิ้นงาน</button>
+                                    </a>
+                                </div>
+                                 
+         
+                            </div>
                             
-                            <input type="text" id="output2" name="jobstatus_id" >
-                            <input type="text" id="job_id" name="job_id" value="{{$jobs->id}}">
+                            
+
+                            <input type="hidden" id="output2" name="jobstatus_id" >
+                            <input type="hidden" id="job_id" name="job_id" value="{{$jobs->id}}">
                             
                         </div>
                          
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                        <a href="{{ route('job.review', $jobs->token) }}">
-
-                            <button type="submit" class="btn btn-primary" >ยืนยันการเสร็จสิ้นงาน</button>
-                        </a>
-
-                            </div>
+                        {{-- <div class="modal-footer text-center">
+                            
+                            </div> --}}
                     </div>
                 </div>
             </div>

@@ -423,6 +423,8 @@ class HomeController extends Controller
 
         $updateJob = Jobs::find($request->job_id);
         $updateJob->jobstatus_id = $request->jobstatus_id;
+        $updateJob->canshow = $request->canshow;
+
     
         $updateJob->save();
 
@@ -507,14 +509,14 @@ class HomeController extends Controller
         // $updateJob->reviews_id = $reviews->id;
     
         // $updateJob->save();
-        dd($updateJob);
-        exit();
+        // dd($updateJob);
+        // exit();
 
-        return 'success';
-        exit();
+        // return 'success';
+        // exit();
         try{
             
-            return redirect(route('job.review2.store',[
+            return redirect(route('show.alljob',[
                 'reviews'=>$reviews
                 ]));
 
