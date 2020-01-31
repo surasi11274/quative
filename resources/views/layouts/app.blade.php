@@ -7,8 +7,9 @@
         @include('components.header')
     </header>
 </header>
+
 <body >
-    <div id="app">
+    <div id="app" >
         <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-static-top">
             <div class="container">
                 <div class="navbar-header"> -->

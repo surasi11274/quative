@@ -21,7 +21,8 @@
 
                    <ul class="list-unstyled mx-auto">
                        <li>
-                           <a><img src="photo/@logo.png" width="50" height="50" alt=""></a>
+                           <a href="{{ url('/') }}"><img src="https://sv1.picz.in.th/images/2020/02/01/RyM1Aa.png"  width="50" height="50" alt=""></a>
+                           
                        </li>
                        <li>
                            <a href="#" class="_hilight"><h3>Quative</h3></a>
