@@ -12,7 +12,7 @@
 @section('content')
 
 <section class="content ">
-    <div class="container">
+    <div class="container d-none d-lg-block">
         
         <div class="text-center mt_ex p-5">
             <div id="wizard-progress">
@@ -54,11 +54,12 @@
                                
                             <div class="col">
                                <div class="body-below text-center">
-                                <label class="fillter">
+                                {{-- <label class="fillter">
                                     <input type="checkbox" checked="checked"  onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
                                     <img src="{{ $cat->catsPic}}" alt="">
                                     <span class="checkmark-pic"></span>
-                                  </label>
+                                  </label> --}}
+
                               {{-- <div class="active-color">
                                 <input type="radio" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
                                 <img src="{{ $cat->catsPic}}" alt="Avatar" class="image">
@@ -79,8 +80,19 @@
                                    {{-- <button type="button" class="btn purple-active" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
                                     <img src="{{ $cat->catsPic}}"  class="rounded" alt="">
                                    </button> --}}
-                                   
-                                   <p>{{ $cat->name}}</p>
+                                  
+                                    {{-- <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark"></span> --}}
+                                 
+                                 
+                                   {{-- <p>{{ $cat->name}}</p> --}}
+                                   <label class="container-radio">
+                                    <input type="radio" checked="checked" name="radio">
+                                    <img src="{{ $cat->catsPic}}"  class="rounded" alt="" >
+                                    <span class="checkmark-radio"></span>
+                                    <p>{{ $cat->name}}</p>
+
+                                  </label>
                                </div>
                             </div>
                             @endforeach
