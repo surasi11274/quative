@@ -52,56 +52,57 @@
                         {{ csrf_field() }}
                         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
+                                <div class="modal-content p-5">
 
                                     <div class="modal-header " style="text-align:center;">
-                                    <h4 class="modal-title "  id="myLargeModalLabel">อัพโหลดไฟล์งาน</h4>
+                                    <h1 class="modal-title "  id="myLargeModalLabel">อัพโหลดไฟล์งาน</h1>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                     </button>
                                     </div>
                                     <div class="modal-body">
-                                        <h2 class="selectfillter pt-5"  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2>
+                                        {{-- <h2 class="selectfillter pt-5 text-left"  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2> --}}
                                         <div class="row">
-                                            <div class="col">
-                                                <br/>Please input img files here:
+                                            <div class="col-12">
+                                                <br>
+                                                <h5 class="text-left"> อัพโหลดไฟล์งานของคุณ:</h5>
 
-                                                <div  id="thumb-output" style="display:flex; width:180px;height:180px;">
+                                                <div  id="thumb-output" class="pt-2 pb-2" style="display:flex; width:180px;height:180px;">
                                                 
                                                 </div>
 
                                                  <div class="upload-btn-wrapper-">
-                                                        <button class="_btn-upload-"><i class="fas fa-plus"></i></button>
+                                                        <button class="_btn-upload- " style="width: 670px;"><i class="fas fa-plus"></i></button>
                                                         <input type="file" id="file-input"  name="fileimgname[]"  multiple />
                                                  </div>
 
                                              </div>
+                                             <div class="col-12 col-md-6">
+                                                <h5 class="text-left"> อัพโหลดไฟล์งาน Ai ของคุณ:</h5>
+                                                <div class="upload-btn-wrapper-work">
+                                                    <button class="btn-work _primary-black btn-lg btn-block">อัพโหลดไฟล์</button>
+                                                    <input type="file" name="fileartworkname[]" id="file" multiple  onchange="javascript:updateList()" />
+        
+                                                  </div>
+                                             </div>
+                                             <div class="col-12 col-md-6">
+                                                <small id="fileList" class="text-left _hilight"></small>
+                                             </div>
                                             
                                              
                                         </div>
-                                        <div class="row">
-                                            <input type="file" name="fileartworkname[]" id="file" multiple 
-                                            onchange="javascript:updateList()" />
-                                            <br/>Please input artwork(ai) files here:
 
-                                        </div>
-                                        <div class="row">
-                                            <div id="fileList"></div>
-
-                                        </div>
-                                        
-                                          
                                         <div class="form-group">
-                                            <h2 class="selectfillter pt-5"  style="font-weight: 800;">URL<small>(ที่เกี่ยวข้องกับผลิตภัณฑ์)</small></h2>
+                                            <h5 class="selectfillter text-left pt-5"  style="font-weight: 800;">URL :<small> (ที่เกี่ยวข้องกับผลิตภัณฑ์)</small></h5>
                                             <input type="text" class="form-control" name="url" placeholder="เช่น เว็บไซต์, เฟสบุ๊ค เพื่อให้นักออกแบบทำงานได้ง่ายขึ้น ">
                                         </div>
                                     </div>
-                                     <input type="text" id="job_id" name="job_id" value="{{$job->id}}">
-                                            <input type="text" id="designer_id" name="designer_id" value="{{$job->designer_id}}">
-                                            <input type="text" id="user_id" name="user_id" value="{{$job->user_id}}">
+                                     <input hidden type="text" id="job_id" name="job_id" value="{{$job->id}}">
+                                    <input hidden type="text" id="designer_id" name="designer_id" value="{{$job->designer_id}}">
+                                    <input hidden type="text" id="user_id" name="user_id" value="{{$job->user_id}}">
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                                        <button type="submit" class="btn btn-primary">ยืนยันรับงาน</button>
+                                        <button type="button" class="btn _secondary-btn" data-dismiss="modal">ยกเลิก</button>
+                                        <button type="submit" class="btn _primary-black">ยืนยันรับงาน</button>
                                         </div>
                                 </div>
                             </div>

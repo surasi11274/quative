@@ -249,3 +249,28 @@ input.remove
 .multi-step-status fieldset:not(:first-of-type) {
   display: none;
 }
+.upload-btn-wrapper-work {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+.btn-work {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+.upload-btn-wrapper-work input[type=file] {
+  font-size: 46px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
