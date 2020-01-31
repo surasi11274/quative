@@ -120,7 +120,6 @@
          <tbody class="table-light">
 
            <tr >
-             
              <td><a href="#"><button type="button" class="btn _primary-btn">No. W0003</button></a></td>
              <td>15 วัน</td>
              <td>25 / 12 / 2562</td>
@@ -128,6 +127,22 @@
              <td class=" _hilight">●   เรื่มจ้างงาน</td>
              <td><span class="text-warning">●  </span>ยังไม่ได้ชำระเงิน</td>
            </tr>
+           <tr >
+            <td><a href="#"><button type="button" class="btn _primary-btn">No. W0003</button></a></td>
+            <td>15 วัน</td>
+            <td>25 / 12 / 2562</td>
+            <td>01 / 01 / 2563</td>
+            <td class=" _hilight">●   เสร็จสิ้นงาน</td>
+            <td><span class="text-success">●  </span>ชำระเงินแล้ว</td>
+          </tr>
+          <tr >
+            <td><a href="#"><button type="button" class="btn _primary-btn">No. W0003</button></a></td>
+            <td>15 วัน</td>
+            <td>25 / 12 / 2562</td>
+            <td>01 / 01 / 2563</td>
+            <td class=" _hilight">●   ตรวจสอบ การชำระเงิน</td>
+            <td><span class="text-warning">●  </span>ตรวจสอบ</td>
+          </tr>
            
 
          
