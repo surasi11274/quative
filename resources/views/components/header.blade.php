@@ -1,7 +1,7 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed-top ">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img class="d-inline-block align-top" width="50" height="50" src="photo/@logo.png" alt="">
+                    <img class="d-inline-block align-top" width="50" height="50" src="https://sv1.picz.in.th/images/2020/02/01/RyM1Aa.png" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
