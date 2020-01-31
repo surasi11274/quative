@@ -570,7 +570,7 @@
                                 <button class="btn _secondary-btn">ดาวน์โหลดไฟล์</button>
                                 <button type="button" class="btn _primary-btn" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
                             @elseif ($jobs->jobstatus_id == 8)
-                            <button type="button" class="btn _primary-btn" onclick="addCart('9')" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
+                            <button type="button" class="btn _primary-btn" onclick="addCart2('9')" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
 
                             @endif
 
@@ -789,7 +789,7 @@
                         </div>
                         <div class="modal-body">
                             
-                            <input type="text" id="output" name="jobstatus_id" value="9">
+                            <input type="text" id="output2" name="jobstatus_id" >
                             <input type="text" id="job_id" name="job_id" value="{{$jobs->id}}">
                             
                         </div>
@@ -816,6 +816,16 @@
 <script>
     function addCart(v){
         document.getElementById('output').value = v
+        // document.getElementById('output1').value = v
+        // document.getElementById('outputCancel').value = v
+
+
+        document.getElementById('jobstatus_id').value = v
+        console.log(v);
+        return false;
+    }
+    function addCart2(v){
+        document.getElementById('output2').value = v
         // document.getElementById('output1').value = v
         // document.getElementById('outputCancel').value = v
 
