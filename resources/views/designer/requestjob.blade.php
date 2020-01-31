@@ -102,7 +102,7 @@
    
     
 
-      <table class="table">
+      <table class="table table-hover">
 
          <thead class="thead-dark">
            <tr>
@@ -120,28 +120,28 @@
          <tbody class="table-light">
 
            <tr >
-             <td><a href="#"><button type="button" class="btn _primary-btn">No. W0003</button></a></td>
-             <td>15 วัน</td>
-             <td>25 / 12 / 2562</td>
-             <td>01 / 01 / 2563</td>
-             <td class=" _hilight">●   เรื่มจ้างงาน</td>
-             <td><span class="text-warning">●  </span>ยังไม่ได้ชำระเงิน</td>
+             <td class="pt-4 pb-4"><a href="#"><button type="button" class="btn _primary-btn">No. W0003</button></a></td>
+             <td class="pt-4 pb-4">15 วัน</td>
+             <td class="pt-4 pb-4">25 / 12 / 2562</td>
+             <td class="pt-4 pb-4">01 / 01 / 2563</td>
+             <td class="pt-4 pb-4 _hilight">●   เรื่มจ้างงาน</td>
+             <td class="pt-4 pb-4"><span class="text-warning">●  </span>ยังไม่ได้ชำระเงิน</td>
            </tr>
            <tr >
-            <td><a href="#"><button type="button" class="btn _primary-btn">No. W0003</button></a></td>
-            <td>15 วัน</td>
-            <td>25 / 12 / 2562</td>
-            <td>01 / 01 / 2563</td>
-            <td class=" _hilight">●   เสร็จสิ้นงาน</td>
-            <td><span class="text-success">●  </span>ชำระเงินแล้ว</td>
+            <td class="pt-4 pb-4"><a href="#"><button type="button" class="btn _primary-btn">No. W0003</button></a></td>
+            <td class="pt-4 pb-4">15 วัน</td>
+            <td class="pt-4 pb-4">25 / 12 / 2562</td>
+            <td class="pt-4 pb-4">01 / 01 / 2563</td>
+            <td class="pt-4 pb-4 _hilight">●   เสร็จสิ้นงาน</td>
+            <td class="pt-4 pb-4"><span class="text-success">●  </span>ชำระเงินแล้ว</td>
           </tr>
           <tr >
-            <td><a href="#"><button type="button" class="btn _primary-btn">No. W0003</button></a></td>
-            <td>15 วัน</td>
-            <td>25 / 12 / 2562</td>
-            <td>01 / 01 / 2563</td>
-            <td class=" _hilight">●   ตรวจสอบ การชำระเงิน</td>
-            <td><span class="text-warning">●  </span>ตรวจสอบ</td>
+            <td class="pt-4 pb-4"><a href="#"><button type="button" class="btn _primary-btn">No. W0003</button></a></td>
+            <td class="pt-4 pb-4">15 วัน</td>
+            <td class="pt-4 pb-4">25 / 12 / 2562</td>
+            <td class="pt-4 pb-4">01 / 01 / 2563</td>
+            <td class="pt-4 pb-4 _hilight">●   ตรวจสอบ การชำระเงิน</td>
+            <td class="pt-4 pb-4"><span class="text-warning">●  </span>ตรวจสอบ</td>
           </tr>
            
 
@@ -152,8 +152,59 @@
 
 </div> <!-- endnav -->
 
- <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+ <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+  <table class="table table-hover">
+
+    <thead class="thead-dark">
+      <tr>
+
+        <th scope="col">รหัสการจ้าง</th>
+        <th scope="col">แพ็คเกจ</th>
+        <th scope="col">วันที่เริ่มงาน</th>
+        <th scope="col">วันที่ต้องการงาน</th>
+        <th scope="col">สถานะการทำงาน</th>
+        <th scope="col">สถานะการชำระเงิน</th>
+       
+      </tr>
+    </thead>
+
+    <tbody class="table-light">
+
+      <tr >
+        <td class="pt-4 pb-4"><a href="#"><button type="button" class="btn _primary-btn">No. W0003</button></a></td>
+        <td class="pt-4 pb-4">15 วัน</td>
+        <td class="pt-4 pb-4">25 / 12 / 2562</td>
+        <td class="pt-4 pb-4">01 / 01 / 2563</td>
+        <td class="pt-4 pb-4"  style="color:#c4c4c4;">●   ยกเลิกงาน</td>
+        <td class="pt-4 pb-4" ><span class="text-warning">●  </span>ยังไม่ได้ชำระเงิน</td>
+      </tr>
+      <tr >
+       <td class="pt-4 pb-4"><a href="#"><button type="button" class="btn _primary-btn">No. W0003</button></a></td>
+       <td class="pt-4 pb-4" >15 วัน</td>
+       <td class="pt-4 pb-4">25 / 12 / 2562</td>
+       <td class="pt-4 pb-4">01 / 01 / 2563</td>
+       <td class="pt-4 pb-4 _hilight">●   เสร็จสิ้นงาน</td>
+       <td class="pt-4 pb-4"><span class="text-success">●  </span>ชำระเงินแล้ว</td>
+     </tr>
+     <tr >
+       <td class="pt-4 pb-4"><a href="#"><button type="button" class="btn _primary-btn">No. W0003</button></a></td>
+       <td class="pt-4 pb-4">15 วัน</td>
+       <td class="pt-4 pb-4">25 / 12 / 2562</td>
+       <td class="pt-4 pb-4">01 / 01 / 2563</td>
+       <td class="pt-4 pb-4 _hilight">●   เสร็จสิ้นงาน</td>
+       <td class="pt-4 pb-4"><span class="text-success">●  </span>ชำระเงินแล้ว</td>
+     </tr>
+      
+
+    
+    </tbody>
+
+  </table>
+
+  </div>
+     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+       ...
+      </div>
 
 
 </div>
