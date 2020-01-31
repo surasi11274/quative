@@ -559,7 +559,7 @@
                            </div>
                            <div class="float-right d-flex">
                             @if ($jobs->jobstatus_id == 1)
-                                <button type="button" class="btn disabled _primary-btn" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">แจ้งชำระเงิน</button>
+                                <button type="button" class="btn disabled _primary-btn" data-toggle="modal" data-target="#exampleModal">แจ้งชำระเงิน</button>
                                 <button type="button"class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                             @elseif ($jobs->jobstatus_id == 2)
                                 <a href="{{ route('job.payment', $jobs->token) }}" style="text-decoration:none;">
@@ -683,7 +683,7 @@
                 </div>
                 </div>
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 p-5"> 
                 <h5><i class="fas fa-boxes input-icons icon "></i>ข้อมูลผลิตภัณฑ์ของคุณ</h5>
                <hr>
                <p>บรรจุภัณฑ์ประเภท</p>
