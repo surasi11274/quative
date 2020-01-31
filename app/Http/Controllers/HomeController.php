@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Designer;
 use App\Categories;
+use App\Jobfiles;
 use App\References;
 use App\Tags;
 use App\Jobs;
@@ -372,7 +373,11 @@ class HomeController extends Controller
 
         $jobstatus = Jobstatus::all();
         $tags = Tags::all();
+        $file = Jobfiles::all();
+
         $jobs->first()->tags = json_decode($jobs->first()->tags);
+        $jobs->first()->file = json_decode($jobs->first()->file,true);
+
         // $jobs->first()->tags = json_decode($jobs->first()->tags);
         // $jobs->jobstatus_id = json_decode($jobs->jobstatus_id);
 
@@ -385,12 +390,34 @@ class HomeController extends Controller
         return view('showjob',[
             'jobs'=>$jobs->first(),
             'tags'=>$tags,
+            'file'=>$file,
             'jobstatus'=>$jobstatus
            // 'designers'=>$designers
             ]);
         // return view('search');
     }
+
     public function storeShowJob(Request $request)
+    {
+   
+
+        $updateJob = Jobs::find($request->job_id);
+        $updateJob->jobstatus_id = $request->jobstatus_id;
+    
+        $updateJob->save();
+
+
+      
+        try{
+            
+            return redirect(route('job.show',['token'=>$updateJob->token]));
+
+        }catch (\Exception $x){
+            return back()->withInput();
+        }
+    }
+
+    public function storeShowJob2(Request $request)
     {
    
 

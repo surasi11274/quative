@@ -95,6 +95,9 @@ Route::get('/showjob/{token}', [
 Route::post('/showjob/store', 
     'HomeController@storeShowJob');
 
+    Route::post('/showjob/store2', 
+    'HomeController@storeShowJob2');
+
 Route::get('/reviewjob/{token}', [
     'as' => 'job.review',
     'uses' => 'HomeController@reviewJob']);
@@ -159,6 +162,9 @@ Route::post('/jobdetail/jobstatus/store',
 
 Route::post('/jobdetail/file/store', 
     'DesignerController@storeFilesJob');
+
+Route::get('/jobdetail/file/download/{id}', 
+    'DesignerController@downloadFile')->name('downloadfile');
 // Route::get('/login/designer', 'RegisterDesignerController@show' );
 
 // Route::get('login/designer/{id}',function(){

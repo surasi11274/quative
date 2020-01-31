@@ -15,7 +15,7 @@ use App\Jobstatus;
 
 
 use DB;
-
+use Illuminate\Support\Facades\Storage;
 
 class DesignerController extends Controller
 {
@@ -249,6 +249,11 @@ class DesignerController extends Controller
             ]);
         // return view('search');
     }
+    public function downloadFile($id){
+        // $dl = Jobfiles::find($id);
+        // return Storage::download($dl->fileimgname); 
+        return  response()->download(public_path('uploads/ArtworkFiles/'.$id));
+    }
 
     public function jobStatusStore(Request $request)
     {
@@ -341,7 +346,8 @@ class DesignerController extends Controller
     endif;
     $query = DB::table('jobfiles')->select('id')->where('job_id', $fileinput->job_id)->get();
     $updateJob = DB::table('jobs')->where('id', $fileinput->job_id)->update([
-        'file' => json_encode($query)
+        'file' => json_encode($query),
+        'jobstatus_id' => '5'
         // 'reference'=>json_encode($request->input('reference')),
 
         ]);
