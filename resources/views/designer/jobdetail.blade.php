@@ -16,9 +16,12 @@
                         </div>
                         <div class="col-9">
                             
+                            @php
+                            $user = \App\User::find($job->user_id)->name;
 
+                        @endphp
                       
-                                <p class="content-bg">{{$job->designer_id}} name</p>
+                                <p class="content-bg">{{$user}}</p>
                                 <button class="btn _primary-bg-dark">คุยกับผู้ประกอบการ</button>
                         </div>
                     </div>
@@ -569,9 +572,15 @@
                            </div>
                            <div class="float-right d-flex">
                             @if ($job->jobstatus_id == 1)
-                                <button type="button" class="btn disabled _primary-btn" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">แจ้งชำระเงิน</button>
+                                <button type="button" class="btn _primary-btn" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
                                 <button type="button"class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
-                            @elseif ($job->jobstatus_id == 2)
+                            @elseif ($job->jobstatus_id == 4)
+                                <button type="button" class="btn _primary-btn" onclick="addCart('3')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
+                                <button type="button"class="btn _secondary-btn" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                            @elseif ($job->jobstatus_id == 3)
+                                <button type="button" class="btn _primary-btn" data-toggle="modal" data-target=".bd-example-modal-lg">อัพโหลดไฟล์</button>
+                                <button type="button"class="btn _secondary-btn" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                
                             @endif
                            
                            </div>
