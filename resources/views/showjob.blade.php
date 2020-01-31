@@ -7,7 +7,7 @@
     <div class="_black-bg mt_ex p-5">
         <div class="row">
             <div class="col-12 col-md-6 ">
-            <p  class="content-bg mb-5" >ข้อมูลการจ้างงาน <span>no. W0{{$jobs->id}}</span></p>
+            <h3 class="content-bg mb-5" >ข้อมูลการจ้างงาน <span>no. W0{{$jobs->id}}</span></h3>
                     <div class="row">
                         <div class="col-3">
                                 <img class="rounded-circle " src="https://picsum.photos/120" alt="">
@@ -16,8 +16,8 @@
                             
 
                       
-                                <p class="content-bg">{{$jobs->designer_id}}</p>
-                                <button class="btn _primary-bg-dark">คุยกับนักออกแบบ</button>
+                                <p class="content-bg">{{$jobs->designer_id}} name</p> 
+                                <button class="btn _primary-bg-dark btn-lg">คุยกับนักออกแบบ</button>
                         </div>
                     </div>
             </div>
@@ -29,7 +29,7 @@
                                     $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusName;
                                 @endphp
                                         @if ($jobs->jobstatus_id = 1)
-                                        <h1 style="color:yellow;">{{$jobstatusid}}</h1>
+                                        {{-- <h1 style="color:yellow;">{{$jobstatusid}}</h1> --}}
 
                                         @endif                {{-- <div class="btn _primary-btn">{{$tagname}}</div> --}}
 
@@ -43,25 +43,25 @@
                             
                                                     @endforeach --}}
 
-                        <label for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</label><br>
+                        <h3 for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</h3><br>
                         <label for=""class="content-bg" >วันที่เริ่มงาน :<span> {{ $jobs->updated_at}} </span></label> <br>
                         <label for=""class="content-bg" >วันที่ต้องการงาน :<span> 01 มกราคม 2563 </span>  </label><br>
                         @if ($jobs->payment_id ==! NULL)
                         {{-- <a href="{{ route('job.payment', $jobs->token) }}"> --}}
-                            <button class="btn disabled _primary-btn">โอนเงิน</button>
+                            <button hidden class="btn disabled _primary-btn">โอนเงิน</button>
                         {{-- </a> --}}
                         @else ($job->jobstatus_id == '2') 
                                 {{-- <button type="button" class="btn disabled btn-secondary mr-5" onclick="addCart('2')" >
                                     รับงาน
                                 </button> --}}
                                 <a href="{{ route('job.payment', $jobs->token) }}">
-                                    <button class="btn _primary-btn">โอนเงิน</button>
+                                    <button hidden class="btn _primary-btn">โอนเงิน</button>
                                 </a>
                         @endif
                         {{-- <a href="{{ route('job.payment', $jobs->token) }}">
                             <button class="btn _primary-btn">โอนเงิน</button>
                         </a> --}}
-                    <button class="btn _primary-btn">โหลดไฟล์</button>
+                    <button hidden class="btn _primary-btn">โหลดไฟล์</button>
                 </div>
             </div>
             
@@ -89,8 +89,141 @@
 
     </div>
     <hr>
-    <div class="card bg-whte p-5 mt-3">
+    <div class="shadow-sm bg-white mt-3">
         <div class="row">
+            <div class="container">
+        
+                <div class="text-center  p-5">
+                    <div id="wizard-progress">
+                        <ol class="step-indicator">
+                            <li class="complete">
+                                <div class="step">1</div>
+                                <div class="caption hidden-xs hidden-sm"> 
+                                    <h5>เริ่มจ้างงาน</h5> <br>
+                                    <p>นักออกแบบรับงานแล้ว</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">2</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ชำระเงิน</h5> <br>
+                                    <p>ตรวจสอบการชำระเงิน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">3</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ดำเนินการออกแบบ</h5> <br>
+                                    <p>กำลังออกแบบงาน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">4</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ส่งมอบงาน</h5> <br>
+                                    <p>ตรวจสอบงาน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">5</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>เสร็จสิ้นงาน</h5> <br>
+                                    <p>ให้คะแนนและรีวิว</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                
+                </div>
+            </div>
+            <div class="container-fluid">
+                <form action="" class="multi-step-status">
+                    {{-- 1 --}}
+                    <fieldset>
+                        <div class="process-job shadow-sm p-5">
+                            <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
+                           <div class="d-flex">
+                            <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;เริ่มจ้างงาน</h3>
+                           </div>
+                           <div class="float-right d-flex">
+                            <button class="btn _primary-btn">แจ้งชำระเงิน</button>
+                            <button class="btn _secondary-btn">ยกเลิกงาน</button>
+                           
+                           </div>
+                           
+                        </div>
+                        {{-- <input type="button" name="next" class=" next  _primary-btn " value="แจ้งชำระเงิน"  />
+                        <input type="button" name="previous" class=" previous _secondary-btn " value="ยกเลิกงาน"/> --}}
+                    </fieldset>
+                    {{-- 2 --}}
+                    <fieldset>
+                        <div class="process-job shadow-sm p-5">
+                            <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
+                           <div class="d-flex">
+                            <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;ชำระเงิน</h3>
+                           </div>
+                           <div class="float-right">
+                            <button class="btn _primary-btn">แจ้งชำระเงิน</button>
+                            <button class="btn _secondary-btn">ยกเลิกงาน</button>
+                            
+                           </div>
+                        
+                        </div>
+                        {{-- <input type="button" name="next" class=" next  _primary-btn " value="แจ้งชำระเงิน"  />
+                            <input type="button" name="previous" class=" previous _secondary-btn " value="ยกเลิกงาน"/> --}}
+                        
+                    </fieldset>
+                    {{-- 3 --}}
+                    <fieldset >
+                        <div class="process-job shadow-sm p-5">
+                            <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
+                           <div class="d-flex">
+                            <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;ดำเนินการออกแบบ</h3>
+                           </div>
+                           <div class="float-right">
+                            <button class=" btn _secondary-btn">อัพโหลดไฟล์</button>
+                            <button class="btn _primary-btn">รับมอบงานสำเร็จ</button>
+                           
+                           </div>
+                        
+                        </div>
+                        {{-- <input type="input" name="previous" class=" previous _secondary-btn  " value="อัพโหลดไฟล์"/>
+                        <input type="button" name="next" class=" next  _primary-btn " value="รับมอบงานสำเร็จ"  /> --}}
+                    </fieldset>
+                    {{-- 4 --}}
+                    <fieldset >
+                        <div class="process-job shadow-sm p-5">
+                            <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
+                           <div class="d-flex">
+                            <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;ส่งมอบงาน</h3>
+                           </div>
+                           <div class="float-right">
+                            <button class="btn _secondary-btn">ดาวน์โหลดไฟล์</button>
+                            <button class="btn _primary-btn">รับมอบงานสำเร็จ</button>
+                           </div>
+                        
+                        </div>
+                        {{-- <input type="input" name="previous" class=" previous _secondary-btn  " value="ดาวน์โหลดไฟล์"/>
+                        <input type="button" name="next" class=" next  _primary-btn " value="รับมอบงานสำเร็จ"  /> --}}
+                    </fieldset>
+                    {{-- 5 --}}
+                    <fieldset >
+                        <div class="process-job shadow-sm p-5">
+                            <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
+                           <div class="d-flex">
+                            <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;เสร็จสิ้นงาน</h3>
+                           </div>
+                           <div class="float-right">
+                            <button class="btn _primary-btn">เสร็จสิ้นงาน</button>
+                           </div>
+                        
+                        </div>
+                       
+                        {{-- <input type="submit" name="next" class=" next  _primary-btn" value="เสร็จสิ้นงาน"  /> --}}
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-12 col-md-6 p-5">
             <div class="col">
                 {{-- @foreach ($jobs->file['3']  as $item)
 
@@ -141,32 +274,32 @@
                <p>รูปภาพผลิตภัณฑ์เดิมของคุณ</p>
                <div class="row">
                    <div class="col-4">
-                    <img class="rounded" src="photo/@product-blue.png" alt="">
+                    <img class="rounded" src="/photo/@product-blue.png" alt="">
                    </div>
                    <div class="col-4">
-                        <img class="rounded" src="photo/@product-blue.png" alt="">
+                        <img class="rounded" src="/photo/@product-blue.png" alt="">
                    </div>
                    <div class="col-4">
-                        <img class="rounded" src="photo/@product-blue.png" alt="">
+                        <img class="rounded" src="/photo/@product-blue.png" alt="">
                    </div>
                </div>
-               <label for="" class=" mt-3">URL : <small>{{$jobs->url}}</small></label>
+               <label for="" class=" mt-3">URL : <a href="{{$jobs->url}}" target="_blank">{{$jobs->url}}</a></label>
                <h5>รูปภาพตัวอย่างงาน</h5>
                <hr>
                <h5>รูปภาพงานใกล้เคียงกับงาน</h5>
-               <div class="row">
+               <div class="row ">
                     <div class="col-4">
-                     <img class="rounded" src="photo/@product-8.png" alt="">
+                     <img class="rounded" src="/photo/@product-8.png" alt="">
                     </div>
                     <div class="col-4">
-                         <img class="rounded" src="photo/@product-8.png" alt="">
+                         <img class="rounded" src="/photo/@product-8.png" alt="">
                     </div>
                     <div class="col-4">
-                         <img class="rounded" src="photo/@product-8.png" alt="">
+                         <img class="rounded" src="/photo/@product-8.png" alt="">
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 p-5">
                 <h5>ข้อมูลงานที่ต้องการ</h5>
                 <hr>
                 <label for="">รายละเอียด</label>
@@ -178,7 +311,7 @@
                         @php
                                         $tagname = \App\Tags::find($tagn)->tagName;
                                     @endphp
-                                                            <div class="btn _primary-btn">{{$tagname}}</div>
+                                                            <div class="btn _primary-btn" style="background-color:black !important; ">{{$tagname}}</div>
 
                                                         @endforeach
                         <hr>

@@ -1,5 +1,5 @@
 
-var current_fs, next_fs, previous_fs; //fieldsets ตัวฟิลฟอร์มที่จะใส่
+var current_fs, next_fs, previous_fs ; //fieldsets ตัวฟิลฟอร์มที่จะใส่
 var left, opacity, scale; //fieldset properties which we will animate ตัวตั้งการเคลื่อรไหว
 var animating; //flag to prevent quick multi-click glitches คลิกเพื่ออนิเมท
 
