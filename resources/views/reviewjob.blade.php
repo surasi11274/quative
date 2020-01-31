@@ -28,8 +28,8 @@
 
       <div class="col-4">
           <div class="card" style="padding-bottom: 45px; background-color: #000;" >
-              <div class="profile-img text-center mt-5" style="width:120px;height:120px;margin:auto;">
-                <img id="profileImage" class="rounded-circle" src="/{{$designers->profilepic}}" />
+              <div class="profile-img text-center mt-5" >
+                <img id="profileImage" class="rounded-circle" src="/{{$designers->profilepic}}" style="width:120px;height:120px;margin:auto;"/>
             </div>
               {{-- <h5 class="text-center mt-5 text-white">ปลายฟ้า เป็นตาธรรม</h5> --}}
               <h5 class="titlename text-center text-white mt-5">{{$designers->name}} {{$designers->surname}}</h5>
@@ -96,7 +96,7 @@
 
 <div class="row mt-3 mb-5">
     <div class="col-sm-12">
-      <div class="card">
+      <div class="shadow-sm">
         <div class="card-body ">
           <h1 class="card-title mt-5 text-center">ให้คะแนนนักออกแบบ</h1>
           {{-- <h3 class="mt-5 text-center"><i class="fas fa-star star1" id="">
@@ -116,6 +116,7 @@
 		--><input name="stars" id="e1" type="radio" value="5"></a><label for="e1">★</label>
 	</div> --}}
             <fieldset class="rating">
+                
                 <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"><i class="fas fa-star"></i></label>
                 {{-- <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label> --}}
                 <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"><i class="fas fa-star"></i></label>
@@ -138,17 +139,17 @@
                 <div class="form-group mt-3">
                     <div id="result">
                   <label for="exampleFormControlTextarea1">หัวข้อรีวิว </label>
-                    <span id="totalChars" style="float: right;">0</span>
+                    {{-- <span id="totalChars" style="float: right;">0</span> --}}
                   <textarea class="form-control track" id="textcount" rows="3" name="reviewdescription"></textarea>
                   </div>
-                   <br/> 
+                   <br> 
 
                   
               </div>
 
               <div class="row">
 
-                  <div class="col">
+                  <div class="col-12 col-md-4">
                       <label >ความพึงพอใจ</label>
                       <select class="track form-control" name="complacency">
                         <option value="">Choose One</option>
@@ -160,7 +161,7 @@
                       </select>
                   </div>
 
-                  <div class="col">
+                  <div class="col-12 col-md-4">
                       <label >ราคาเหมาะสมกับคุณภาพ</label>
                       <select class="track form-control" name="reasonableprice">
                         <option value="">Choose One</option>
@@ -172,7 +173,7 @@
                       </select>				    
                   </div>
 
-                   <div class="col">
+                   <div class="col-12 col-md-4">
                       <label >ฝีมือและความเชี่ยวชาญ</label>
                       <select class="track form-control" name="skillandexpertise">
                         <option value="">Choose One</option>
@@ -183,13 +184,17 @@
                         <option value="5">น้อยมาก</option>
                       </select>				    
                   </div>
+                   <div class="col-12">
+                    <button type="submit  " class="btn btn-dark btn-lg mt-5 mb-5 text-center w-100"  >บันทึกรีวิว</button>
 
-              </div> <!-- end row -->
-              
-              <button type="submit " class="btn btn-dark btn-lg mt-5 mb-5 text-center" style="float: right;" >บันทึกรีวิว</button>
+                   </div>
+
+              </div>
+            </div>
+          </div>
+          </form>
+     
         
-
-                </form>
 
                  {{-- <a href="prodesign.html"> --}}
                     {{-- </a>  --}}
@@ -197,9 +202,9 @@
                   </div>
 
                   {{-- <input type="text" id="output" name="jobstatus_id"> --}}
-                  <input type="text" id="jobs_id" name="jobs_id" value="{{$jobs->id}}">
-                  <input type="text" id="designer_id" name="designer_id" value="{{$jobs->designer_id}}">
-                  <input type="text" id="user_id" name="user_id" value="{{$jobs->user_id}}">
+                  <input hidden type="text" id="jobs_id" name="jobs_id" value="{{$jobs->id}}">
+                  <input hidden type="text" id="designer_id" name="designer_id" value="{{$jobs->designer_id}}">
+                  <input hidden type="text" id="user_id" name="user_id" value="{{$jobs->user_id}}">
 
 
 
