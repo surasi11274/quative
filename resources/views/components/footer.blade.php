@@ -1,7 +1,7 @@
 
 
     <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left " >
+    <div class="container text-center text-md-left " >
 
         <!-- Grid row -->
         <div class="row justify-content-center p-5">
@@ -24,7 +24,7 @@
                            <a><img src="photo/@logo.png" width="50" height="50" alt=""></a>
                        </li>
                        <li>
-                           <a href="#" style="font-family: prompt; font-weight: 400;  color: #523EE8; font-size: 24px;">Quative</a>
+                           <a href="#" class="_hilight"><h3>Quative</h3></a>
                        </li>
                            <li>
                                <p style="color: #523EE8;">
@@ -42,29 +42,31 @@
             <div class="col-12 col-md-2">
                 <ul class="list-unstyled mx-auto">
                     <li>
-                        <h5 class="_hilight">Site Navigation</h5>
+                        <p class="_hilight">Site Navigation</p>
+                        <hr>
                     </li>
                     <li>
-                        <a href="#"  style="font-family: prompt; font-weight: 400;  color: #523EE8; font-size: 24px;">ค้นหานักออกแบบ</a>
+                        <a href="#"  class="_hilight">ค้นหานักออกแบบ</a>
                     </li>
                         <li>
-                            <a href="#!" style="color: #523EE8;">ผลงานนักออกแบบ</a>
+                            <a href="#!" class="_hilight">ผลงานนักออกแบบ</a>
                         </li>
                         <li>
-                            <a href="#!" style="; color: #523EE8;">พรีวิวโลโก้</a>
+                            <a href="#!" class="_hilight">พรีวิวโลโก้</a>
                         </li>
                 </ul>
             </div>
             <div class="col-12 col-md-2">
                 <ul class="list-unstyled mx-auto">
                     <li>
-                        <h5 class="_hilight">Support</h5>
+                        <p class="_hilight">Support</p>
+                        <hr>
                     </li>
                     <li>
-                        <a href="#" style="font-family: prompt; font-weight: 400;  color: #523EE8; font-size: 24px;">ติดต่อเรา</a>
+                        <a href="#" class="_hilight">ติดต่อเรา</a>
                     </li>
                     <li>
-                        <a href="#!" style="color: #523EE8;">Quative ใช้ยังไง</a>
+                        <a href="#!" class="_hilight">Quative ใช้ยังไง</a>
                     </li>
                 </ul>
             </div>
@@ -81,8 +83,5 @@
     <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3" style="background-color: #523EE8; color:white;">
-        <a href="#" style="color:white;"> quative</a>
-        © copyright 2019. All rights reserved.
-    </div>
+    
     <!-- Copyright -->

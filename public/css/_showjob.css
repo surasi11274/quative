@@ -223,3 +223,29 @@ input.remove
     display:block;
     margin:5px;
 }
+.process-job{
+  background: rgba(196, 196, 196, 0.1);
+  height: 200px;
+}
+.multi-step-status{
+  width: 100%;
+  /* margin: 50px auto; */
+  position: relative;
+}
+.multi-step-status fieldset {
+  /* background: white; */
+  border: 0 none;
+  border-radius: 3px;
+  /* box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15); */
+  /* padding: 20px 30px; */
+  box-sizing: border-box;
+  /* width: 80%; */
+  /* margin: 0 10%; */
+
+  /*stacking fieldsets above each other*/
+  position: relative;
+}
+/* if not first field just hidden them  */
+.multi-step-status fieldset:not(:first-of-type) {
+  display: none;
+}

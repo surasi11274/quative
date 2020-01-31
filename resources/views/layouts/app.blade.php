@@ -73,9 +73,15 @@
     {{--<div class="page-footer font-small blue pt-4">--}}
     {{--<img  src="photo/footer.png" alt="" class="img-fluid">--}}
     {{--</div>--}}
-    <footer class="page-footer bg-white font-small blue pt-4">
+    <footer class="container-fluid page-footer bg-white font-small ">
         @include('components.footer')
+       
     </footer>
+    <div class="footer-copyright text-center py-3" style="background-color: black; color:white;">
+        <a href="#" style="color:white !important;"> quative</a>
+        © copyright 2019. All rights reserved.
+    </div>
+    
 <!-- Footer -->
 @yield('myjsfile')
   @include('components.footerLinks')
