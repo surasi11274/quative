@@ -249,7 +249,7 @@ class DesignerController extends Controller
             ]);
         // return view('search');
     }
-    public function downloadFile($id){
+    public function storeDownloadFile($id){
         // $dl = Jobfiles::find($id);
         // return Storage::download($dl->fileimgname); 
         return  response()->download(public_path('uploads/ArtworkFiles/'.$id));
