@@ -650,16 +650,7 @@
 
                     // $convert = json_decode($json, true);
 
-                    $jobsfileimg = \App\Jobfiles::find($item)->fileimgname;
-                    
-
-                    // endforeach;
-                    
-                    $jobsfileartwork = \App\Jobfiles::find($item)->fileartworkname;
-                    
-
-                    @endphp
-                    
+                 
                                 
                             <div class="row">
                                 <p  >{{$jobsfileimg}}</p>

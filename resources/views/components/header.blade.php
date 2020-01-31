@@ -19,7 +19,7 @@
 
 
                             <li class="dropdown nav-item">
-                                <a href="#" class="dropdown-toggle nav-link btn" style="background-color: #523EE8; color: white;" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a href="#" class="dropdown-toggle nav-link btn" style="background-color: #523EE8; color: white !important;" data-toggle="dropdown" role="button" aria-expanded="false">
                                     เข้าสู่ระบบ <span class="caret"></span>
                                 </a>
 
