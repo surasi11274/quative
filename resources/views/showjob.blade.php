@@ -64,6 +64,24 @@
                     <button class="btn _primary-btn">โหลดไฟล์</button>
                 </div>
             </div>
+            
+        </div>
+        <div class="row" style="background-color:green; height:1000px;"> 
+            {{-- @php
+                //  $json = $jobs->file;
+
+                // $convert = json_decode($json);
+                // $convert = json_decode($json, true);
+            @endphp --}}
+
+            {{-- @foreach($convert as $files) --}} 
+            
+
+                {{-- @endif  --}}
+
+                {{-- @foreach ($jobs->file['0'] as $files)
+                <h1>{{$files}}</h1> 
+             @endforeach --}}
         </div>
         
        
@@ -72,6 +90,48 @@
     </div>
     <hr>
     <div class="card bg-whte p-5 mt-3">
+        <div class="row">
+            <div class="col">
+                {{-- @foreach ($jobs->file['3']  as $item)
+
+                    @php
+                    
+                    // $json = $jobs->file;
+
+                    // $convert = json_decode($json, true);
+
+                    $jobsfileimg = \App\Jobfiles::find($item)->fileimgname;
+                    
+
+                    // endforeach;
+                    
+                    $jobsfileartwork = \App\Jobfiles::find($item)->fileartworkname;
+                    
+
+                    @endphp
+                    
+                                
+                            <div class="row">
+                                <p  >{{$jobsfileimg}}</p>
+                                <p  >{{$jobsfileartwork}}</p>
+
+                            <a href="{{route('downloadfile',$jobsfileartwork)}}" ">
+                                    <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-download">download</i></button>
+                                </a>
+
+                            </div>
+
+                                
+                                
+
+                            
+                @endforeach --}}
+                </div>
+                <div class="col">
+                    {{-- <p style="color:yellow;">{{$jobsfileartwork}}</p> --}}
+
+                </div>
+                </div>
         <div class="row">
             <div class="col-12 col-md-6">
                 <h5><i class="fas fa-boxes input-icons icon "></i>ข้อมูลผลิตภัณฑ์ของคุณ</h5>

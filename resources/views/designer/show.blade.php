@@ -59,9 +59,9 @@
             <h5 class="btn text-white" style="background-color: #523EE8;" for="">
                 @foreach($designer->tag as $tagn)
 
-@php
-$tagname = \App\Tags::find($tagn)->tagName;
-@endphp
+                    @php
+                    $tagname = \App\Tags::find($tagn)->tagName;
+                    @endphp
                     {{$tagname}},
                 </h5>
                 @endforeach

@@ -159,6 +159,9 @@ Route::post('/jobdetail/jobstatus/store',
 
 Route::post('/jobdetail/file/store', 
     'DesignerController@storeFilesJob');
+
+Route::get('/jobdetail/file/download/{id}', 
+    'DesignerController@downloadFile')->name('downloadfile');
 // Route::get('/login/designer', 'RegisterDesignerController@show' );
 
 // Route::get('login/designer/{id}',function(){
