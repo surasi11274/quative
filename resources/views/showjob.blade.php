@@ -10,13 +10,20 @@
             <h3 class="content-bg mb-5" >ข้อมูลการจ้างงาน <span>no. W0{{$jobs->id}}</span></h3>
                     <div class="row">
                         <div class="col-3">
-                                <img class="rounded-circle " src="https://picsum.photos/120" alt="">
+                            @php
+                            $designerpic = \App\Designer::find($jobs->designer_id)->profilepic;
+
+                        @endphp
+                                <img class="rounded-circle " src="/{{$designerpic}}" alt="">
                         </div>
                         <div class="col-9">
                             
 
-                      
-                                <p class="content-bg">{{$jobs->designer_id}} name</p> 
+                            @php
+                            $designer = \App\Designer::find($jobs->designer_id)->name;
+
+                        @endphp
+                                <p class="content-bg">{{$designer}}</p> 
                                 <button class="btn _primary-bg-dark btn-lg">คุยกับนักออกแบบ</button>
                         </div>
                     </div>
@@ -66,7 +73,6 @@
             </div>
             
         </div>
-        <div class="row" style="background-color:green; height:1000px;"> 
             {{-- @php
                 //  $json = $jobs->file;
 
@@ -82,7 +88,6 @@
                 {{-- @foreach ($jobs->file['0'] as $files)
                 <h1>{{$files}}</h1> 
              @endforeach --}}
-        </div>
         
        
        
@@ -139,32 +144,33 @@
             <div class="container-fluid">
                 <form action="" class="multi-step-status">
                     {{-- 1 --}}
-                    <fieldset>
-                        <div class="process-job shadow-sm p-5">
+                    @if ($jobs->jobstatus_id == '1') 
+                     <div class="process-job shadow-sm p-5">
                             <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
                            <div class="d-flex">
                             <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;เริ่มจ้างงาน</h3>
                            </div>
                            <div class="float-right d-flex">
-                            <button class="btn _primary-btn">แจ้งชำระเงิน</button>
-                            <button class="btn _secondary-btn">ยกเลิกงาน</button>
+                            <button type="button" class="btn disabled _primary-btn" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">แจ้งชำระเงิน</button>
+                            <button type="button"class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                            
                            </div>
                            
                         </div>
+                    @endif
                         {{-- <input type="button" name="next" class=" next  _primary-btn " value="แจ้งชำระเงิน"  />
                         <input type="button" name="previous" class=" previous _secondary-btn " value="ยกเลิกงาน"/> --}}
-                    </fieldset>
                     {{-- 2 --}}
-                    <fieldset>
-                        <div class="process-job shadow-sm p-5">
+                                           <div class="process-job shadow-sm p-5">
                             <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
                            <div class="d-flex">
                             <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;ชำระเงิน</h3>
                            </div>
                            <div class="float-right">
-                            <button class="btn _primary-btn">แจ้งชำระเงิน</button>
-                            <button class="btn _secondary-btn">ยกเลิกงาน</button>
+                            <a href="{{ route('job.payment', $jobs->token) }}" style="text-decoration:none;">
+                                <button type="button" class="btn _primary-btn" >แจ้งชำระเงิน</button>
+                             </a>
+                             <button type="button"class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                             
                            </div>
                         
@@ -172,10 +178,8 @@
                         {{-- <input type="button" name="next" class=" next  _primary-btn " value="แจ้งชำระเงิน"  />
                             <input type="button" name="previous" class=" previous _secondary-btn " value="ยกเลิกงาน"/> --}}
                         
-                    </fieldset>
                     {{-- 3 --}}
-                    <fieldset >
-                        <div class="process-job shadow-sm p-5">
+                                            {{-- <div class="process-job shadow-sm p-5">
                             <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
                            <div class="d-flex">
                             <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;ดำเนินการออกแบบ</h3>
@@ -186,41 +190,36 @@
                            
                            </div>
                         
-                        </div>
+                        </div> --}}
                         {{-- <input type="input" name="previous" class=" previous _secondary-btn  " value="อัพโหลดไฟล์"/>
                         <input type="button" name="next" class=" next  _primary-btn " value="รับมอบงานสำเร็จ"  /> --}}
-                    </fieldset>
                     {{-- 4 --}}
-                    <fieldset >
-                        <div class="process-job shadow-sm p-5">
+                                            <div class="process-job shadow-sm p-5">
                             <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
                            <div class="d-flex">
                             <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;ส่งมอบงาน</h3>
                            </div>
                            <div class="float-right">
                             <button class="btn _secondary-btn">ดาวน์โหลดไฟล์</button>
-                            <button class="btn _primary-btn">รับมอบงานสำเร็จ</button>
+                            <button type="button" class="btn _primary-btn" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
                            </div>
                         
                         </div>
                         {{-- <input type="input" name="previous" class=" previous _secondary-btn  " value="ดาวน์โหลดไฟล์"/>
                         <input type="button" name="next" class=" next  _primary-btn " value="รับมอบงานสำเร็จ"  /> --}}
-                    </fieldset>
                     {{-- 5 --}}
-                    <fieldset >
-                        <div class="process-job shadow-sm p-5">
+                                            <div class="process-job shadow-sm p-5">
                             <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
                            <div class="d-flex">
                             <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;เสร็จสิ้นงาน</h3>
                            </div>
                            <div class="float-right">
-                            <button class="btn _primary-btn">เสร็จสิ้นงาน</button>
+                            <button type="button" class="btn _primary-btn" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
                            </div>
                         
                         </div>
                        
                         {{-- <input type="submit" name="next" class=" next  _primary-btn" value="เสร็จสิ้นงาน"  /> --}}
-                    </fieldset>
                 </form>
             </div>
             <div class="col-12 col-md-6 p-5">
@@ -322,7 +321,7 @@
                         <p>15 วัน (ธรรมดา)</p>
                         <div class="text-right">
                             <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
-                                <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target="#exampleModal">
+                                <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target=".bd-example-modal-lg">
                                   เสร็จสิ้นงาน
                                 </button>
                         </div>
@@ -349,9 +348,7 @@
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                <a href="{{ route('job.review', $jobs->token) }}">
-                    <button type="submit" class="btn btn-primary">ยืนยันรับงาน</button>
-                </a>
+                <button type="submit" class="btn btn-primary">ยืนยันการทำรายการ</button>
 
                 </div>
             </div>
@@ -359,6 +356,38 @@
             </div>
 
             </form>
+            
+            <form action="/showjob/store2" method="post" enctype="multipart/form-data">
+                {{ csrf_field() }}
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <div class="modal-header " style="text-align:center;">
+                        <h4 class="modal-title "  id="myLargeModalLabel">อัพโหลดไฟล์งาน</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            
+                            
+                            
+                        </div>
+                         
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                        <a href="{{ route('job.review', $jobs->token) }}">
+
+                            <button type="submit" class="btn btn-primary">ยืนยันการเสร็จสิ้นงาน</button>
+                        </a>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
         </div>
     </div>
 </div>

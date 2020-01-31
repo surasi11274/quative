@@ -95,6 +95,9 @@ Route::get('/showjob/{token}', [
 Route::post('/showjob/store', 
     'HomeController@storeShowJob');
 
+    Route::post('/showjob/store2', 
+    'HomeController@storeShowJob2');
+
 Route::get('/reviewjob/{token}', [
     'as' => 'job.review',
     'uses' => 'HomeController@reviewJob']);

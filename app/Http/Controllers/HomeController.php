@@ -397,9 +397,27 @@ class HomeController extends Controller
         // return view('search');
     }
 
+    public function storeShowJob(Request $request)
+    {
    
 
-    public function storeShowJob(Request $request)
+        $updateJob = Jobs::find($request->job_id);
+        $updateJob->jobstatus_id = $request->jobstatus_id;
+    
+        $updateJob->save();
+
+
+      
+        try{
+            
+            return redirect(route('job.show',['token'=>$updateJob->token]));
+
+        }catch (\Exception $x){
+            return back()->withInput();
+        }
+    }
+
+    public function storeShowJob2(Request $request)
     {
    
 
