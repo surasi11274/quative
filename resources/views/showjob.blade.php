@@ -570,7 +570,7 @@
                                 <button class="btn _secondary-btn">ดาวน์โหลดไฟล์</button>
                                 <button type="button" class="btn _primary-btn" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
                             @elseif ($jobs->jobstatus_id == 8)
-                            <button type="button" class="btn _primary-btn" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
+                            <button type="button" class="btn _primary-btn" onclick="addCart('9')" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
 
                             @endif
 
@@ -789,7 +789,8 @@
                         </div>
                         <div class="modal-body">
                             
-                            
+                            <input type="text" id="output" name="jobstatus_id" value="9">
+                            <input type="text" id="job_id" name="job_id" value="{{$jobs->id}}">
                             
                         </div>
                          
@@ -797,7 +798,7 @@
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
                         <a href="{{ route('job.review', $jobs->token) }}">
 
-                            <button type="submit" class="btn btn-primary">ยืนยันการเสร็จสิ้นงาน</button>
+                            <button type="submit" class="btn btn-primary" >ยืนยันการเสร็จสิ้นงาน</button>
                         </a>
 
                             </div>

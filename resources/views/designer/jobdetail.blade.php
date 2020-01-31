@@ -25,26 +25,15 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="text-right">
-                    @php
-                    $jobstatusid = \App\Jobstatus::find($job->jobstatus_id)->statusName;
-                @endphp
-                        @if ($job->jobstatus_id == '1')
-                        {{-- <h1 style="color:yellow;">{{$jobstatusid}}</h1> --}}
-
-                        @elseif ($job->jobstatus_id == '2')  
-                        <h1 style="color:green;">{{$jobstatusid}}</h1>
-                        @elseif ($job->jobstatus_id == '9')  
-                        <h1 style="color:blue;">{{$jobstatusid}}</h1>
-                        @else 
-                        <h1 style="color:Red;">{{$jobstatusid}}</h1>
-                        @endif
+                    
+                        
                          
                         <h3 for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</h3><br>
                         <label for=""class="content-bg" >วันที่เริ่มงาน :<span> {{ $job->updated_at}} </span></label> <br>
                         <label for=""class="content-bg" >วันที่ต้องการงาน :<span> 01 มกราคม 2563 </span>  </label><br>
                        
                             <div class="row">
-                                @if ($job->jobstatus_id == '1')
+                                {{-- @if ($job->jobstatus_id == '1')
                                 <button hidden type="button" class="btn _primary-btn mr-5" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">
                                     รับงาน
                                 </button>
@@ -52,7 +41,7 @@
                                 <button type="button" class="btn disabled btn-secondary mr-5" onclick="addCart('2')" >
                                     รับงาน
                                 </button>
-                                @endif
+                                @endif --}}
                                
                     <button hidden type="button" class="btn _primary-btn" data-toggle="modal" data-target=".bd-example-modal-lg">อัพโหลดไฟล์</button>
                     <!-- Large modal -->
@@ -131,6 +120,222 @@
         <div class="row">
             <div class="container">
         
+                @if ($job->jobstatus_id == 1)
+                <div class="text-center  p-5">
+                    <div id="wizard-progress">
+                        <ol class="step-indicator">
+                            <li class="complete">
+                                <div class="step">1</div>
+                                <div class="caption hidden-xs hidden-sm"> 
+                                    <h5>เริ่มจ้างงาน</h5> <br>
+                                    <p style="color:#C4C4C4;">นักออกแบบรับงานแล้ว</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">2</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ชำระเงิน</h5> <br>
+                                    <p>ตรวจสอบการชำระเงิน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">3</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ดำเนินการออกแบบ</h5> <br>
+                                    <p>กำลังออกแบบงาน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">4</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ส่งมอบงาน</h5> <br>
+                                    <p>ตรวจสอบงาน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">5</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>เสร็จสิ้นงาน</h5> <br>
+                                    <p>ให้คะแนนและรีวิว</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                
+                </div>
+                @elseif ($job->jobstatus_id == 2)
+                <div class="text-center  p-5">
+                    <div id="wizard-progress">
+                        <ol class="step-indicator">
+                            <li class="complete">
+                                <div class="step">1</div>
+                                <div class="caption hidden-xs hidden-sm"> 
+                                    <h5>เริ่มจ้างงาน</h5> <br>
+                                    <p >นักออกแบบรับงานแล้ว</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">2</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ชำระเงิน</h5> <br>
+                                    <p style="color:#C4C4C4;">ตรวจสอบการชำระเงิน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">3</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ดำเนินการออกแบบ</h5> <br>
+                                    <p>กำลังออกแบบงาน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">4</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ส่งมอบงาน</h5> <br>
+                                    <p>ตรวจสอบงาน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">5</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>เสร็จสิ้นงาน</h5> <br>
+                                    <p>ให้คะแนนและรีวิว</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                
+                </div>
+                @elseif($job->jobstatus_id == '3')
+                <div class="text-center  p-5">
+                    <div id="wizard-progress">
+                        <ol class="step-indicator">
+                            <li class="complete">
+                                <div class="step">1</div>
+                                <div class="caption hidden-xs hidden-sm"> 
+                                    <h5>เริ่มจ้างงาน</h5> <br>
+                                    <p>นักออกแบบรับงานแล้ว</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">2</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ชำระเงิน</h5> <br>
+                                    <p >ตรวจสอบการชำระเงิน</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">3</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ดำเนินการออกแบบ</h5> <br>
+                                    <p>กำลังออกแบบงาน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">4</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ส่งมอบงาน</h5> <br>
+                                    <p>ตรวจสอบงาน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">5</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>เสร็จสิ้นงาน</h5> <br>
+                                    <p>ให้คะแนนและรีวิว</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                
+                </div>
+                @elseif($job->jobstatus_id == '4')
+                <div class="text-center  p-5">
+                    <div id="wizard-progress">
+                        <ol class="step-indicator">
+                            <li class="complete">
+                                <div class="step">1</div>
+                                <div class="caption hidden-xs hidden-sm"> 
+                                    <h5>เริ่มจ้างงาน</h5> <br>
+                                    <p>นักออกแบบรับงานแล้ว</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">2</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ชำระเงิน</h5> <br>
+                                    <p style="color:#C4C4C4;">ตรวจสอบการชำระเงิน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">3</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ดำเนินการออกแบบ</h5> <br>
+                                    <p>กำลังออกแบบงาน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">4</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ส่งมอบงาน</h5> <br>
+                                    <p>ตรวจสอบงาน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">5</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>เสร็จสิ้นงาน</h5> <br>
+                                    <p>ให้คะแนนและรีวิว</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                
+                </div>
+                @elseif($job->jobstatus_id == '5')
+                <div class="text-center  p-5">
+                    <div id="wizard-progress">
+                        <ol class="step-indicator">
+                            <li class="complete">
+                                <div class="complete">1</div>
+                                <div class="caption hidden-xs hidden-sm"> 
+                                    <h5>เริ่มจ้างงาน</h5> <br>
+                                    <p>นักออกแบบรับงานแล้ว</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">2</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ชำระเงิน</h5> <br>
+                                    <p>ตรวจสอบการชำระเงิน</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">3</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ดำเนินการออกแบบ</h5> <br>
+                                    <p>กำลังออกแบบงาน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">4</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ส่งมอบงาน</h5> <br>
+                                    <p>ตรวจสอบงาน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">5</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>เสร็จสิ้นงาน</h5> <br>
+                                    <p>ให้คะแนนและรีวิว</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                
+                </div>
+                {{-- @elseif($job->jobstatus_id == '6')
                 <div class="text-center  p-5">
                     <div id="wizard-progress">
                         <ol class="step-indicator">
@@ -172,7 +377,181 @@
                         </ol>
                     </div>
                 
+                </div> --}}
+                @elseif($job->jobstatus_id == '7')
+                <div class="text-center  p-5">
+                    <div id="wizard-progress">
+                        <ol class="step-indicator">
+                            <li class="complete">
+                                <div class="step">1</div>
+                                <div class="caption hidden-xs hidden-sm"> 
+                                    <h5>เริ่มจ้างงาน</h5> <br>
+                                    <p>นักออกแบบรับงานแล้ว</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">2</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ชำระเงิน</h5> <br>
+                                    <p>ตรวจสอบการชำระเงิน</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">3</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ดำเนินการออกแบบ</h5> <br>
+                                    <p>กำลังออกแบบงาน</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">4</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ส่งมอบงาน</h5> <br>
+                                    <p  style="color:#C4C4C4;">ตรวจสอบงาน</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">5</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5  style="color:#C4C4C4;">เสร็จสิ้นงาน</h5> <br>
+                                    <p  style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                
                 </div>
+                @elseif($job->jobstatus_id == '8')
+                <div class="text-center  p-5">
+                    <div id="wizard-progress">
+                        <ol class="step-indicator">
+                            <li class="complete">
+                                <div class="step">1</div>
+                                <div class="caption hidden-xs hidden-sm"> 
+                                    <h5>เริ่มจ้างงาน</h5> <br>
+                                    <p>นักออกแบบรับงานแล้ว</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">2</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ชำระเงิน</h5> <br>
+                                    <p>ตรวจสอบการชำระเงิน</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">3</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ดำเนินการออกแบบ</h5> <br>
+                                    <p>กำลังออกแบบงาน</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">4</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ส่งมอบงาน</h5> <br>
+                                    <p>ตรวจสอบงาน</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">5</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5  style="color:#C4C4C4;">เสร็จสิ้นงาน</h5> <br>
+                                    <p  style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                
+                </div>
+                @elseif($job->jobstatus_id == '9')
+                <div class="text-center  p-5">
+                    <div id="wizard-progress">
+                        <ol class="step-indicator">
+                            <li class="complete">
+                                <div class="step">1</div>
+                                <div class="caption hidden-xs hidden-sm"> 
+                                    <h5>เริ่มจ้างงาน</h5> <br>
+                                    <p>นักออกแบบรับงานแล้ว</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">2</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ชำระเงิน</h5> <br>
+                                    <p>ตรวจสอบการชำระเงิน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">3</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ดำเนินการออกแบบ</h5> <br>
+                                    <p>กำลังออกแบบงาน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">4</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ส่งมอบงาน</h5> <br>
+                                    <p>ตรวจสอบงาน</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step">5</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>เสร็จสิ้นงาน</h5> <br>
+                                    <p  style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                
+                </div>
+                @elseif($job->jobstatus_id == '10')
+                <div class="text-center  p-5">
+                    <div id="wizard-progress">
+                        <ol class="step-indicator">
+                            <li class="complete">
+                                <div class="step">1</div>
+                                <div class="caption hidden-xs hidden-sm"> 
+                                    <h5>เริ่มจ้างงาน</h5> <br>
+                                    <p>นักออกแบบรับงานแล้ว</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">2</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ชำระเงิน</h5> <br>
+                                    <p>ตรวจสอบการชำระเงิน</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">3</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ดำเนินการออกแบบ</h5> <br>
+                                    <p>กำลังออกแบบงาน</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">4</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>ส่งมอบงาน</h5> <br>
+                                    <p>ตรวจสอบงาน</p>
+                                </div>
+                            </li>
+                            <li class="complete">
+                                <div class="step">5</div>
+                                <div class="caption hidden-xs hidden-sm">
+                                    <h5>เสร็จสิ้นงาน</h5> <br>
+                                    <p>ให้คะแนนและรีวิว</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                
+                </div>
+                
+                @endif
             </div>
             <div class="container-fluid">
                 <form action="" class="multi-step-status">
@@ -181,11 +560,19 @@
                         <div class="process-job shadow-sm p-5">
                             <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
                            <div class="d-flex">
-                            <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;เริ่มจ้างงาน</h3>
+                            @php
+                            $jobstatusid = \App\Jobstatus::find($job->jobstatus_id)->statusName;
+                             @endphp
+                            {{-- @if ($jobs->jobstatus_id == 1) --}}
+
+                            <h4>สถานะปัจจุบัน : </h4><h4 class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</h4>
                            </div>
                            <div class="float-right d-flex">
-                            <button class="btn _primary-btn">รับงาน</button>
-                            <button class="btn _secondary-btn">ยกเลิกงาน</button>
+                            @if ($job->jobstatus_id == 1)
+                                <button type="button" class="btn disabled _primary-btn" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">แจ้งชำระเงิน</button>
+                                <button type="button"class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                            @elseif ($job->jobstatus_id == 2)
+                            @endif
                            
                            </div>
                            
@@ -318,8 +705,8 @@
                         <h5>วันที่ต้องการงาน</h5>
                         <p>15 วัน (ธรรมดา)</p>
                         <div class="text-right">
-                            <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
-                            <button type="button"  class="btn _primary-black" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">เสร็จสิ้นงาน</button>
+                            {{-- <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                            <button type="button"  class="btn _primary-black" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">เสร็จสิ้นงาน</button> --}}
 
 
                         {{-- <form action="/jobdetail/jobstatus/store" method="post" enctype="multipart/form-data">
