@@ -640,46 +640,14 @@
                         {{-- <input type="submit" name="next" class=" next  _primary-btn" value="เสร็จสิ้นงาน"  /> --}}
                 {{-- </form> --}}
             </div>
-            <div class="col-12 col-md-6 p-5">
-            <div class="col">
-                {{-- @foreach ($jobs->file['3']  as $item)
-
-                    @php
-                    
-                    // $json = $jobs->file;
-
-                    // $convert = json_decode($json, true);
-
-                 
-                                
-                            <div class="row">
-                                <p  >{{$jobsfileimg}}</p>
-                                <p  >{{$jobsfileartwork}}</p>
-
-                            <a href="{{route('downloadfile',$jobsfileartwork)}}" ">
-                                    <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-download">download</i></button>
-                                </a>
-
-                            </div>
-
-                                
-                                
-
-                            
-                @endforeach --}}
-                </div>
-                <div class="col">
-                    {{-- <p style="color:yellow;">{{$jobsfileartwork}}</p> --}}
-
-                </div>
-                </div>
+            
         <div class="row">
             <div class="col-12 col-md-6 p-5"> 
-                <h5><i class="fas fa-boxes input-icons icon "></i>ข้อมูลผลิตภัณฑ์ของคุณ</h5>
+                <h5 style="font-weight:bold;">ข้อมูลผลิตภัณฑ์ของคุณ</h5>
                <hr>
-               <p>บรรจุภัณฑ์ประเภท</p>
-            <small>{{ $jobs->categories}}</small>
-               <p>รูปภาพผลิตภัณฑ์เดิมของคุณ</p>
+               <p style="font-weight:bold;">บรรจุภัณฑ์ประเภท</p>
+                <small>{{ $jobs->categories}}</small>
+               <p style="font-weight:bold; margin-top:50px;">รูปภาพผลิตภัณฑ์เดิมของคุณ</p>
                <div class="row">
                    <div class="col-4">
                     <img class="rounded" src="/{{$jobs->productPic}}" alt="">
@@ -691,10 +659,10 @@
                         <img class="rounded" src="/photo/@product-blue.png" alt="">
                    </div>
                </div>
-               <label for="" class=" mt-3">URL : <a href="{{$jobs->url}}" target="_blank">{{$jobs->url}}</a></label>
-               <h5>รูปภาพตัวอย่างงาน</h5>
+               <label for="" class=" mt-5">URL : <a href="{{$jobs->url}}" target="_blank">{{$jobs->url}}</a></label>
+               <h5 style="font-weight:bold; margin-top:50px;">รูปภาพตัวอย่างงาน</h5>
                <hr>
-               <h5>รูปภาพงานใกล้เคียงกับงาน</h5>
+               <small style="font-weight:bold; margin-top:50px;">รูปภาพงานใกล้เคียงกับงาน</small>
                <div class="row ">
                     <div class="col-4">
                      <img class="rounded" src="/{{$jobs->refpicbyUser}}" alt="">
@@ -708,11 +676,11 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 p-5">
-                <h5>ข้อมูลงานที่ต้องการ</h5>
+                <h5 style="font-weight:bold;">ข้อมูลงานที่ต้องการ</h5>
                 <hr>
-                <label for="">รายละเอียด</label>
-                <p>{{ $jobs->requirement}}</p>
-                        <h5>ลักษณะหรือสไตล์งานที่ต้องการ</h5>
+                <p for="" style="font-weight:bold;">รายละเอียด</p>
+                <small>{{ $jobs->requirement}}</small>
+                        <p style="font-weight:bold; margin-top:50px;">ลักษณะหรือสไตล์งานที่ต้องการ</p>
                         <hr>
                         @foreach($jobs->tags as $tagn)
 
@@ -723,11 +691,11 @@
 
                                                         @endforeach
                         <hr>
-                        <h5 class="mt-5">ขอบเขตการจ้างงาน</h5>
+                        <h5 class="mt-5" style="font-weight:bold;">ขอบเขตการจ้างงาน</h5>
                         <hr>
-                        <p>01 - งานออกแบบฉลากติดสินค้าหน้าเดียว</p>
+                        <p style="font-weight:bold;">01 - งานออกแบบฉลากติดสินค้าหน้าเดียว</p>
                         <h5>วันที่ต้องการงาน</h5>
-                        <p>15 วัน (ธรรมดา)</p>
+                        <p style="font-weight:bold;">15 วัน (ธรรมดา)</p>
                         <div class="text-right">
                             {{-- <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                                 <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target=".bd-example-modal-lg">
@@ -745,19 +713,19 @@
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">ยืนยันการทำรายการ</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                คุณต้องการยืนยันที่จะรับงานนี้หรือไม่?
-                <input type="text" id="output" name="jobstatus_id">
-                <input type="text" id="job_id" name="job_id" value="{{$jobs->id}}">
+                    คุณต้องการยืนยันที่จะทำรายการหรือไม่?
+                <input type="hidden" id="output" name="jobstatus_id">
+                <input type="hidden" id="job_id" name="job_id" value="{{$jobs->id}}">
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary">ยืนยันการทำรายการ</button>
+                <button type="submit" class="btn btn-primary" style="background-color:black;">ยืนยันการทำรายการ</button>
 
                 </div>
             </div>

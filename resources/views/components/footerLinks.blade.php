@@ -14,9 +14,11 @@
     <script src="{{asset('js/inputmxlenght.js')}}"></script>
     {{--<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>--}}
     <script src="{{asset('js/flatpickr.js')}}"></script>
-    <script src="{{asset('js/datepicker.js')}}"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"  ></script>
     <script src="js/progress-bar-1.js"></script>
+    {{-- <script src="js/formcalculations.js"></script> --}}
+    <script src="{{asset('js/formcalculations.js')}}"></script>
+
     <script>
         AOS.init();
     </script>

@@ -589,72 +589,8 @@
                         {{-- <input type="button" name="next" class=" next  _primary-btn " value="แจ้งชำระเงิน"  />
                         <input type="button" name="previous" class=" previous _secondary-btn " value="ยกเลิกงาน"/> --}}
                     </fieldset>
-                    {{-- 2 --}}
-                    <fieldset>
-                        <div class="process-job shadow-sm p-5">
-                            <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
-                           <div class="d-flex">
-                            <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;ชำระเงิน</h3>
-                           </div>
-                           <div class="float-right">
-                            <button class="btn _primary-btn">ยืนยัน</button>
-                            <button class="btn _secondary-btn">ยกเลิกงาน</button>
-                            
-                           </div>
-                        
-                        </div>
-                        {{-- <input type="button" name="next" class=" next  _primary-btn " value="แจ้งชำระเงิน"  />
-                            <input type="button" name="previous" class=" previous _secondary-btn " value="ยกเลิกงาน"/> --}}
-                        
-                    </fieldset>
-                    {{-- 3 --}}
-                    <fieldset >
-                        <div class="process-job shadow-sm p-5">
-                            <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
-                           <div class="d-flex">
-                            <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;ดำเนินการออกแบบ</h3>
-                           </div>
-                           <div class="float-right">
-                            <button class=" btn _secondary-btn">อัพโหลดไฟล์</button>
-                            <button class="btn _primary-btn">ส่งมอบงาน</button>
-                           
-                           </div>
-                        
-                        </div>
-                        {{-- <input type="input" name="previous" class=" previous _secondary-btn  " value="อัพโหลดไฟล์"/>
-                        <input type="button" name="next" class=" next  _primary-btn " value="รับมอบงานสำเร็จ"  /> --}}
-                    </fieldset>
-                    {{-- 4 --}}
-                    <fieldset >
-                        <div class="process-job shadow-sm p-5">
-                            <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
-                           <div class="d-flex">
-                            <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;ดำเนินการออกแบบ</h3>
-                           </div>
-                           <div class="float-right">
-                            {{-- <button class="btn _secondary-btn">ดาวน์โหลดไฟล์</button>
-                            <button class="btn _primary-btn">รับมอบงานสำเร็จ</button> --}}
-                           </div>
-                        
-                        </div>
-                        {{-- <input type="input" name="previous" class=" previous _secondary-btn  " value="ดาวน์โหลดไฟล์"/>
-                        <input type="button" name="next" class=" next  _primary-btn " value="รับมอบงานสำเร็จ"  /> --}}
-                    </fieldset>
-                    {{-- 5 --}}
-                    <fieldset >
-                        <div class="process-job shadow-sm p-5">
-                            <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
-                           <div class="d-flex">
-                            <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;เสร็จสิ้นงาน</h3>
-                           </div>
-                           <div class="float-right">
-                            {{-- <button class="btn _primary-btn">เสร็จสิ้นงาน</button> --}}
-                           </div>
-                        
-                        </div>
-                       
-                        {{-- <input type="submit" name="next" class=" next  _primary-btn" value="เสร็จสิ้นงาน"  /> --}}
-                    </fieldset>
+                    
+                    
                 </form>
             </div>
 
@@ -790,19 +726,19 @@
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">ยืนยันการทำรายการ</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                คุณต้องการยืนยันที่จะรับงานนี้หรือไม่?
-                <input type="text" id="output" name="jobstatus_id">
-                <input type="text" id="job_id" name="job_id" value="{{$job->id}}">
+                คุณต้องการยืนยันที่จะทำรายการหรือไม่?
+                <input type="hidden" id="output" name="jobstatus_id">
+                <input type="hidden" id="job_id" name="job_id" value="{{$job->id}}">
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary">ยืนยันรับงาน</button>
+                <button type="submit" class="btn btn-primary" style="background-color:black;">ยืนยัน</button>
                 </div>
             </div>
             </div>

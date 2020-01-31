@@ -212,6 +212,7 @@ class DesignerController extends Controller
         ;
         // $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusName;
 
+        $jobs->first()->tags = json_decode($jobs->first()->tags);
 
         
 

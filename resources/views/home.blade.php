@@ -321,7 +321,7 @@
                                         <div class="container">
 
                                             <div class="row">
-                                            @foreach ($designers as $designer)
+                                            {{-- @foreach ($designers as $designer) --}}
 
                                                 <div class="col-12 col-md-6 mt-5 mb-5">
 
@@ -330,7 +330,7 @@
                                                         <div class="card-body text-left">
                                                             <div class="row">
                                                                 <div class="col-3">
-                                                                    <img src="{{$designer->profilepic}}" style=" object-fit: cover; width: 90px;height: 90px;" class="rounded-circle" alt="...">
+                                                                    <img src="" style=" object-fit: cover; width: 90px;height: 90px;" class="rounded-circle" alt="...">
                                                                 </div>
                                                                 <div class="col-9">
                                                                     <h5>ภาวิณี ดุจดวง</h5>
@@ -366,7 +366,7 @@
                                                             <div class="card-body text-left">
                                                                 <div class="row">
                                                                     <div class="col-3">
-                                                                        <img src="{{$designer->profilepic}}" style=" object-fit: cover; width: 90px;height: 90px;" class="rounded-circle" alt="...">
+                                                                        <img src="" style=" object-fit: cover; width: 90px;height: 90px;" class="rounded-circle" alt="...">
                                                                     </div>
                                                                     <div class="col-9">
                                                                         <h5>ภาวิณี ดุจดวง</h5>
@@ -379,7 +379,7 @@
                                                     </div>
 
 
-                                                @endforeach
+                                                {{-- @endforeach --}}
 
                                          
 
