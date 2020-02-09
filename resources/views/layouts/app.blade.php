@@ -3,7 +3,7 @@
     <head>
         @include('components.headLinks')
     </head>
-    <header>
+    <header style="margin-top:100px;">
         @include('components.header')
     </header>
 </header>

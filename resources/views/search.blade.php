@@ -12,10 +12,10 @@
 @section('content')
 
 <section class="content ">
-    <div class="container ">
+    <div class="container d-none d-md-block">
         
         <div class="text-center mt_ex p-5">
-            <div id="wizard-progress">
+            <div id="wizard-progress" >
                 <ol class="step-indicator">
                     <li class="complete">
                         <div class="step">1</div>
@@ -44,14 +44,36 @@
                
                 {{ csrf_field() }}
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <div class="container">
-                        <fieldset class="p-5">                
+                {{-- mobile  --}}
+               
+                {{-- end mobile  --}}
+                    <div class="container  ">
+                        <fieldset class=" p-3 p-md-5  ">    
+                           
+                                     
                             <h2 class="selectfillter"  style="font-weight: 800;">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h2>
                         <div class="row">
-                                   {{-- <input style="border-width: 2px;" type="hidden" class="detaill-select " name="categories" plachholder="sadas" id="output"> --}}
+                                   <input style="border-width: 2px;" type="hidden" class="detaill-select " name="categories" plachholder="sadas" id="output">
+                                   <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2">
+                                   <div class="col-12 d-md-none ">
+                                    <div class="form-group">
+                                     
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                          <option>กล่อง</option>
+                                          <option>ขวด</option>
+                                          <option>แก้ว</option>
+                                          <option>ถุง</option>
+                                          <option>กระป๋อง</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group">
+                                        <h2 class="selectfillter pt-5"  style="font-weight: 800;">URL<small>(ที่เกี่ยวข้องกับผลิตภัณฑ์)</small></h2>
+                                        <input type="text" class="form-control" name="url" placeholder="เช่น เว็บไซต์, เฟสบุ๊ค เพื่อให้นักออกแบบทำงานได้ง่ายขึ้น ">
+                                    </div>
+                                </div> 
                             @foreach ($cats as $cat)
-                               
-                            <div class="col">
+                           
+                            <div class="col  d-none d-md-block">
                                <div class="body-below text-center">
                                 {{-- <label class="fillter">
                                     <input type="checkbox" checked="checked"  onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
@@ -280,8 +302,9 @@
                                {{--</div>--}}
                            {{-- </div> --}}
                        </section>
-                        <h2 class="selectfillter pt-5"  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2>
-                        <div class="row">
+                        
+                        <div class="row d-none d-md-block">
+                            <h2 class="selectfillter pt-5 "  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2>
                             <div class="col">
                                 <div  id="thumb-output" style="display:flex; width:180px;height:180px;">
                                 
@@ -293,7 +316,7 @@
                              </div>
                         </div>
                         
-                        <div class="form-group">
+                        <div class="form-group d-none d-md-block">
                             <h2 class="selectfillter pt-5"  style="font-weight: 800;">URL<small>(ที่เกี่ยวข้องกับผลิตภัณฑ์)</small></h2>
                             <input type="text" class="form-control" name="url" placeholder="เช่น เว็บไซต์, เฟสบุ๊ค เพื่อให้นักออกแบบทำงานได้ง่ายขึ้น ">
                         </div>
@@ -319,6 +342,14 @@
                             </div>
 
                         </div>
+                        
+                            <div class="custom-file  d-md-none ">
+                              <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+                              <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                            </div>
+                           
+                         
+                        
                         <h2 class="selectfillter  pt-5">ระบุรายละเอียดสำคัญ ( ปัญหา + ผลกระทบ + เป้าหมายทางธุรกิจ )</h2>
                         <textarea class="form-control" name="requirement" placeholder="ระบุรายละเอียดสำคัญ เช่น สินค้าไม่น่าดึงดูด, สินค้าทำยอดไม่ไ่ด้" aria-label="With textarea"></textarea>
                         <div class="d-flex mt-5">
@@ -329,9 +360,10 @@
                         </fieldset>
                         {{-- field-two --}}
                         <fieldset>
-                            <div class="container bg-white p-5">
-                                <h2 class="selectfillter">รูปภาพงานใกล้เคียงกับงานที่ต้องการ *ถ้ามี</h2>
-                                <div class="row">
+                            <div class="container bg-white  p-3 p-md-5">
+                               
+                                <div class="row d-none d-md-block">
+                                    <h2 class="selectfillter">รูปภาพงานใกล้เคียงกับงานที่ต้องการ *ถ้ามี</h2>
                                     <div class="col">
                                         <div  id="thumb-output2" style="display:flex; width:180px;height:180px;">
                                         
@@ -352,13 +384,13 @@
                                 </div>
                             </div> --}}
                             <h2 class="selectfillter  pt-5">เลือกผลิตภัณฑ์ที่มีความใกล้เคียงกับแบบที่คุณต้องการ</h2>
-                            <div class="col-12 col-sm-12 p-3 mb-5 bg-white rounded ">
+                            <div class="smb-5 bg-white rounded ">
                                 <div class="waterfall ">
                                     <div class="container">
                                         <div class="row  ">
                                             @foreach ($refs as $ref)
-                                                <div class="col-12 col-sm-4 ">
-                                                    <div class="form-check item rounded p-3 p-3 ">
+                                                <div class="col-4 col-md-4 pt-2 pb-2 ">
+                                                    <div class="form-check-1 item rounded ">
                                                         <label class="_area">
                     
                                                             <input  type="checkbox"  id="myCheckbox1" value="{{$ref->id}}" name="reference[]">
@@ -366,7 +398,13 @@
                                                         </label>
                     
                                                         <!-- <label class="single-checkbox" for="myCheckbox1"> -->
-                                                        <img class="rounded" style=" object-fit: cover; width: 320px; height:320px;"  style="display:block;" width="" src="{{$ref->img}}" />
+                                                            
+                                                             <picture>
+                                                                {{-- <source media="(min-width: 650px)" srcset="{{$ref->img}}"> --}}
+                                                                <source class="img-fluid" media="(min-width: 375px)" srcset="{{$ref->img}}">
+                                                                <img class="rounded " src="{{$ref->img}}" alt="Flowers" style=" width: 320px; height:320px;">
+                                                              </picture>
+                                                              {{-- <img class="rounded" style=" object-fit: cover; width: 320px; height:320px;"  style="display:block;" width="" src="{{$ref->img}}" /> --}}
                     
                     
                                                     </div>

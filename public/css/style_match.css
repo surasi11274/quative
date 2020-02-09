@@ -288,7 +288,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     top: 0;
     left: 0;
     height: 320px;
-    width: 265px;
+    width: 310px;
     /* border-radius: 100%; */
     background-color: rgba(255,255,255,.15);
     opacity: 0.8;
@@ -593,28 +593,7 @@ ul.purple-active li input[type="checkbox"]:focus + img {
 }
 
 /* Create a custom checkbox */
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 320px;
-    width: 265px;
-    /* border-radius: 100%; */
-    background-color: rgba(255,255,255,.15);
-    opacity: 0.8;
-    transition: 0.4s;
-    border-radius: 5px;
-}
 
-/* On mouse-over, add a grey background color */
-._area:hover input ~ .checkmark {
-    background-color: rgba(255,255,255,.15);
-}
-
-/* When the checkbox is checked, add a blue background */
-._area input:checked ~ .checkmark {
-    background-color: mediumpurple;
-}
 
 
 ._btn-upload-{
@@ -888,4 +867,7 @@ ul.purple-active li input[type="checkbox"]:focus + img {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
     transition: 0.4s;
+  }
+  .form-check-1{
+     padding-left: 0 !important;
   }
