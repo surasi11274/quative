@@ -611,7 +611,8 @@ class HomeController extends Controller
         // $updateJob = Jobs::update('update users set votes = 100 where name = ?', ['John']);
 
         $updateJob = DB::table('jobs')->where('id', $payment->job_id)->update([
-            'payment_id' => $payment->id
+            'payment_id' => $payment->id,
+            'jobstatus_id' => 3
             ]);
             
         $jobs = Jobs::where('id',$payment->job_id)->first();

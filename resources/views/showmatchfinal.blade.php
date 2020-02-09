@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container " onload='hideTotal()'>
+<div class="container " >
     <div class="container mt-5">
         
         <div class="text-center pt-5 p-5">
@@ -175,7 +175,7 @@
                                      </div>
                                  @endif
                                  <input type="button" name="previous" class="previous _secondary-btn  btn-block btn-lg mt-5" value="ย้อนกลับ"/>
-                                  <button type="submit" name="submit" class="submit _primary-black  btn-block btn-lg  rounded" value="Submit"> ถัดไป</button>
+                                  <button type="submit" name="submit" class="submit _primary-black  btn-block btn-lg  rounded" value="Submit"> เสร็จสิ้น</button>
 
                                     </div>
                     </form>

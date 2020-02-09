@@ -5,10 +5,10 @@
 
 @section('content')
     <section class="payment">
-        <div class="container mt_ex shadow-sm p-5">
+        <div class="container shadow-sm p-5">
             <div class="text-center p-5">
                 <h1>แจ้งการโอนเงิน</h1>
-                <h4>ใบรหัสการจ้างงาน No. W0001</h4>
+                <h4>ใบรหัสการจ้างงาน No. W0{{$jobs->id}}</h4>
             </div>
             <form class="multi-step-form  rounded-ex" action="/payment/store" method="post" enctype="multipart/form-data">
                
@@ -24,7 +24,7 @@
                       </div>
                       <div class="form-group col-md-12">
                         <label for="inputAddress">จำนวนเงิน</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="price">
+                        <input type="text" class="form-control" id="inputAddress" placeholder="ระบุจำนวนเงิน" name="price">
                       </div>
                       <div class="form-group col-md-12">
                         <label for="inputAddress2">บัญชีธนาคาร</label>
@@ -75,7 +75,7 @@
                    
                         <div class="text-right">
                             <button type="button" class="btn btn-outline-dark text-center mb-5 ">ยกเลิกงาน</button>
-                            <button type="submit" class="btn btn-dark text-center mb-5">เสร็จสิ้นงาน</button>
+                            <button type="submit" class="btn btn-dark text-center mb-5">ยืนยัน</button>
                         </div>
             </form>
         </div>

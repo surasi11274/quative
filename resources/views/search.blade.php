@@ -12,12 +12,12 @@
 @section('content')
 
 <section class="content ">
-    <div class="container d-none d-lg-block">
+    <div class="container ">
         
         <div class="text-center mt_ex p-5">
             <div id="wizard-progress">
                 <ol class="step-indicator">
-                    <li class="active">
+                    <li class="complete">
                         <div class="step">1</div>
                         <div class="caption hidden-xs hidden-sm">ระบุความต้องการ</div>
                     </li>
@@ -48,8 +48,7 @@
                         <fieldset class="p-5">                
                             <h2 class="selectfillter"  style="font-weight: 800;">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h2>
                         <div class="row">
-                                   <input style="border-width: 2px;" type="hidden" class="detaill-select " name="categories" plachholder="sadas" id="output">
-                                   <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2">
+                                   {{-- <input style="border-width: 2px;" type="hidden" class="detaill-select " name="categories" plachholder="sadas" id="output"> --}}
                             @foreach ($cats as $cat)
                                
                             <div class="col">
@@ -87,10 +86,11 @@
                                  
                                    {{-- <p>{{ $cat->name}}</p> --}}
                                    <label class="container-radio">
-                                    <input type="radio" checked="checked" name="radio">
+                                    <input type="radio" checked="checked" name="categories" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
                                     <img src="{{ $cat->catsPic}}"  class="rounded" alt="" >
                                     <span class="checkmark-radio"></span>
                                     <p>{{ $cat->name}}</p>
+                                   {{-- <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2"> --}}
 
                                   </label>
                                </div>
