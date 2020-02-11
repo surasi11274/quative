@@ -18,5 +18,7 @@
     "lodash": "^4.17.4",
     "vue": "^2.1.10"
   },
-  "dependencies": {}
+  "dependencies": {
+    "file-upload-with-preview": "^4.0.8"
+  }
 }

@@ -26,10 +26,10 @@
       crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
 <script src="https://kit.fontawesome.com/099b07344f.js" crossorigin="anonymous"></script>
 
 <script src="{{asset('js/dropzone.js')}}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+<script src="{{asset('js/file-upload-with-preview.js')}}"></script>
+{{-- <script src="https://unpkg.com/file-upload-with-preview@4.0.2/dist/file-upload-with-preview.min.js"></script> --}}
 {{-- @include('componets.headLinks') --}}

@@ -22,3 +22,6 @@
     <script>
         AOS.init();
     </script>
+    <script>
+      var upload = new FileUploadWithPreview('myUniqueUploadId')
+  </script> 
