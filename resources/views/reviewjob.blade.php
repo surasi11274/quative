@@ -192,6 +192,9 @@
               </div>
             </div>
           </div>
+          <input  type="text" id="jobs_id" name="jobs_id" value="{{$jobs->id}}">
+          <input  type="text" id="designer_id" name="designer_id" value="{{$jobs->designer_id}}">
+          <input  type="text" id="user_id" name="user_id" value="{{$jobs->user_id}}">
           </form>
      
         
@@ -202,9 +205,7 @@
                   </div>
 
                   {{-- <input type="text" id="output" name="jobstatus_id"> --}}
-                  <input hidden type="text" id="jobs_id" name="jobs_id" value="{{$jobs->id}}">
-                  <input hidden type="text" id="designer_id" name="designer_id" value="{{$jobs->designer_id}}">
-                  <input hidden type="text" id="user_id" name="user_id" value="{{$jobs->user_id}}">
+                
 
 
 
