@@ -301,7 +301,7 @@
                     <div id="wizard-progress">
                         <ol class="step-indicator">
                             <li class="complete">
-                                <div class="complete">1</div>
+                                <div class="step">1</div>
                                 <div class="caption hidden-xs hidden-sm"> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
                                     <p>นักออกแบบรับงานแล้ว</p>
@@ -641,7 +641,7 @@
                         @php
                                         $tagname = \App\Tags::find($tagn)->tagName;
                                     @endphp
-                                                            <div class="btn _primary-btn">{{$tagname}}</div>
+                                                            <div class="btn _primary-black" >{{$tagname}}</div>
 
                                                         @endforeach
                         <hr>

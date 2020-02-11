@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
+<div class="container mt-5">
         
-   <div class="text-center mt_ex p-5">
+   <div class="text-center pt-5 p-5">
        <div id="wizard-progress">
            <ol class="step-indicator">
                <li class="complete">

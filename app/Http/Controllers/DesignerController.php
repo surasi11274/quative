@@ -354,8 +354,8 @@ class DesignerController extends Controller
         ]);
         // dd($query);
         // exit();
-    return 'success';
-    exit();
+    // return 'success';
+    // exit();
 
        
 
@@ -376,7 +376,7 @@ class DesignerController extends Controller
     
         // $updateJob->save();
         // dd($files);
-        exit();
+        // exit();
 
         // return 'success';
         // exit();

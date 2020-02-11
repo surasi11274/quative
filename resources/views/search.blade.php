@@ -17,7 +17,7 @@
         <div class="text-center mt_ex p-5">
             <div id="wizard-progress" >
                 <ol class="step-indicator">
-                    <li class="active">
+                    <li class="complete">
                         <div class="step">1</div>
                         <div class="caption hidden-xs hidden-sm">ระบุความต้องการ</div>
                     </li>
@@ -50,28 +50,28 @@
                     <div class="container  ">
                         <fieldset class=" p-3 p-md-5  ">    
                            
-                                     
+    
                             <h2 class="selectfillter"  style="font-weight: 800;">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h2>
                         <div class="row">
-                                   <input style="border-width: 2px;" type="hidden" class="detaill-select " name="categories" plachholder="sadas" id="output">
-                                   <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2">
-                                   <div class="col-12 d-md-none ">
-                                    <div class="form-group">
+                            @foreach ($cats as $cat)
+
+                                   
+                                   {{-- <div class="col-12 d-md-none "> --}}
+                                    {{-- <div class="form-group">
                                      
-                                        <select class="form-control" id="exampleFormControlSelect1">
+                                        <select class="form-control" id="exampleFormControlSelect1"  onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
                                           <option>กล่อง</option>
                                           <option>ขวด</option>
                                           <option>แก้ว</option>
                                           <option>ถุง</option>
                                           <option>กระป๋อง</option>
                                         </select>
-                                      </div>
-                                      <div class="form-group">
+                                      </div> --}}
+                                      {{-- <div class="form-group">
                                         <h2 class="selectfillter pt-5"  style="font-weight: 800;">URL<small>(ที่เกี่ยวข้องกับผลิตภัณฑ์)</small></h2>
                                         <input type="text" class="form-control" name="url" placeholder="เช่น เว็บไซต์, เฟสบุ๊ค เพื่อให้นักออกแบบทำงานได้ง่ายขึ้น ">
                                     </div>
-                                </div> 
-                            @foreach ($cats as $cat)
+                                </div>  --}}
                            
                             <div class="col  d-none d-md-block">
                                <div class="body-below text-center">
@@ -108,10 +108,11 @@
                                  
                                    {{-- <p>{{ $cat->name}}</p> --}}
                                    <label class="container-radio">
-                                    <input type="radio" checked="checked" name="radio">
+                                    <input type="radio"  onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
                                     <img src="{{ $cat->catsPic}}"  class="rounded" alt="" >
                                     <span class="checkmark-radio"></span>
                                     <p>{{ $cat->name}}</p>
+                                   {{-- <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2"> --}}
 
                                   </label>
                                </div>
@@ -430,6 +431,8 @@
                                 </div>
                             </div>
                             </div>
+                            <input style="border-width: 2px;" type="hidden" class="detaill-select" name="categories" plachholder="sadas" id="output">
+                            <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2">
                             <input type="button" name="previous" class=" previous _secondary-btn  btn-block btn-lg" value="Previous"/>
                             <input type="submit" name="next" class=" next  _primary-black  btn-block btn-lg  rounded" value="Next"  />
                         </fieldset>
