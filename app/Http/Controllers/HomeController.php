@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Session;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use DB;
+use Illuminate\Support\Facades\Storage;
 use SebastianBergmann\Environment\Console;
 
 class HomeController extends Controller
@@ -635,6 +636,19 @@ class HomeController extends Controller
             return back()->withInput();
         }
 
+    }
+    public function getDownload($fileimgname)
+    {
+    
+        //PDF file is stored under project/public/download/info.pdf
+    
+        $dl= Jobfiles::find($fileimgname);
+    
+     
+
+    // return Storage::download($dl->path,$dl->title);
+    return response()->download(public_path('uploads/Files/'.$fileimgname));
+    
     }
 
     public function alljob(Designer $designer)

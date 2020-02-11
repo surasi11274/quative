@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container " style="margin-top:150px; margin-bottom:150px;height:200px;">
+
+<div class="container " >
   <div class="row ml-1 mb-3">
     <h3>การจ้างงาน</h3>
   </div>

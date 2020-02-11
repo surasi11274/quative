@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container " style="margin-bottom:20px;height:200px;">
-    
-</div>
+
 <div class="container">
   {{-- <nav> --}}
   {{-- <div class="card text-center" style="background-color: black;">
