@@ -24,9 +24,10 @@
                             <div class="row">
                                 <div class="col-12 text-left p-5">
                                     <div class="site-header">
-                                        <h1 class=" d-flex float-left mt-5">ผลงานที่ได้รับการโหวตมากที่สุด</h1>
+                                        {{-- <h1 class=" d-flex float-left mt-5">ผลงานที่ได้รับการโหวตมากที่สุด</h1> --}}
                                     </div>
                                     <div class="site-below">
+                                        <h1 class=" d-flex float-left mt-5" style="color:black;">ผลงานที่ได้รับการโหวตมากที่สุด</h1>
                                         <h3 class="mt-5">Package colorlista</h3>
                                         <span class="mt-5">Design by&nbsp;<label> กิตติพร บุญดี</label></span>
                                     </div>
@@ -80,7 +81,7 @@
     <div class="container">
 
 
-        <h1 style="color: #904AE8;" class="mt-5">ผลงานนักออกแบบทั้งหมด</h1>
+        <h1 class="mt-5">ผลงานนักออกแบบ<span class="_hilight">ทั้งหมด</span></h1>
         <div class="row">
 
             <div class="col mt-5">
@@ -222,7 +223,7 @@
         </div> <!-- END ROw -->
 
         <center >
-            <a href="previewmock.html"><button type="button" class="btn btn-lg mt-5 text-center" style="background-color:#904AE8; color: #fff; width: 500px;">ดูเพิ่มเติม</button></a>
+            <a href="previewmock.html"><button type="button" class="btn btn-lg mt-5 text-center bg-dark" style="color: #fff; width: 500px;">ดูเพิ่มเติม</button></a>
         </center>
 
 
