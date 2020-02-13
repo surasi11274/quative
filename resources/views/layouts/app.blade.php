@@ -78,7 +78,7 @@
         @include('components.footer')
        
     </footer>
-    <div class="footer-copyright text-center py-3" style="background-color: black; color:white;">
+    <div class="footer-copyright text-center p-3" style="background-color: black; color:white;">
         <a href="#" style="color:white !important;"> quative</a>
         © copyright 2019. All rights reserved.
     </div>

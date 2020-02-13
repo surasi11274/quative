@@ -87,21 +87,21 @@
             {{-- <button class="btn "> --}}
             <tr >
 
-             <td class="pt-4 pb-4"><a href="#">
+             <td class="pt-4 pb-4 text-center"><a href="#">
               <a href="{{ route('designer.jobdetail', $job->id) }}">
                <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button>
               </a>
             </td>
-             <td class="pt-4 pb-4">{{$job->price}}</td>
-             {{-- <td class="pt-4 pb-4">{{$job->finishdate}}</td> --}}
-             <td class="pt-4 pb-4">{{$job->finishdate}}</td>
+             <td class="pt-4 pb-4 text-center">{{$job->price}}</td>
+             {{-- <td class="pt-4 pb-4 text-center">{{$job->finishdate}}</td> --}}
+             <td class="pt-4 pb-4 text-center">{{$job->finishdate}}</td>
              {{-- @foreach ($job->jobstatus_id as $item) --}}
              @php
              $jobstatusid = \App\Jobstatus::find($job->jobstatus_id)->statusName;
               @endphp
-             <td class="pt-4 pb-4 _hilight">{{$jobstatusid}}</td>
+             <td class="pt-4 pb-4 text-center _hilight">{{$jobstatusid}}</td>
              {{-- @endforeach --}}
-             <td class="pt-4 pb-4"><span class="text-warning"●  </span>
+             <td class="pt-4 pb-4 text-center"><span class="text-warning"●  </span>
               @if ($job->payment_id ==! NULL)
               ชำระเงินแล้ว
               @else
