@@ -577,7 +577,7 @@
                                             @endphp
                                                                    <a href="{{route('downloadfile',$filework)}}">
                                                                     <div class="btn _primary-btn" style="background-color:black !important; ">{{$filework}}</div>
-                                                                       </a> 
+                                                                    </a> 
         
                                 {{-- @endforeach --}}
                                 
