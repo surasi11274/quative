@@ -223,10 +223,17 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     transform-origin: center bottom;
 }
 .carousel-indicators .active {
-    background-color: #FE3A76 !important;
+    background-color: #904AE8 !important;
     width: 10px;
     height: 10px;
     border-radius: 100%;
+}
+.carousel-indicators li{
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 100%;
+    background-color: #fff !important;
+
 }
 @keyframes bounce {
     from,

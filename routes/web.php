@@ -32,9 +32,9 @@
 // Route::get('/vote', function () {
 //     return view('vote.vote');
 // });
-// Route::get('/votedetail', function () {
-//     return view('vote.votedetail');
-// });
+Route::get('/votedetail', function () {
+    return view('vote.votedetail');
+});
 // Route::get('/payment', function () {
 //     return view('payment');
 // });
