@@ -164,6 +164,12 @@ Route::post('/jobdetail/jobstatus/store',
 Route::post('/jobdetail/file/store', 
     'DesignerController@storeFilesJob');
 
+
+    // -------------------------- Gallery ---------------------------
+
+Route::get('/gallery', 'GalleryController@gallery');
+
+
 // Route::get('/jobdetail/file/download/{id}', 
 //     'DesignerController@downloadFile')->name('downloadfile');
 

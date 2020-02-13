@@ -642,12 +642,13 @@ class HomeController extends Controller
     
         //PDF file is stored under project/public/download/info.pdf
     
-        $dl= Jobfiles::find($fileimgname);
+        // $dl= Jobfiles::find($fileimgname);
     
      
 
     // return Storage::download($dl->path,$dl->title);
-    return response()->download(public_path('uploads/Files/'.$fileimgname));
+    return response()->download(public_path('/uploads/Files/'.$fileimgname));
+    // return response()->download(public_path('/uploads/Files/', $fileimgname, $headers));
     
     }
 
