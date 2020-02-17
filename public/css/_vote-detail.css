@@ -45,8 +45,24 @@
     background-color: rgba(0, 0, 0,.25);
     transition: 0.4s;
 }
-
 .love{
+    background-color: white;
+    color: #523EE8;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+text-align: center;
+    transition: ease 0.4s;
+
+}
+.love:hover{
+    transform: translateY(-10px);
+    transition: ease 0.4s;
+    font-size: 30px;
+
+
+}
+.love-after{
     background-color: #523EE8;
     color: white;
     width: 50px;
@@ -56,7 +72,7 @@ text-align: center;
     transition: ease 0.4s;
 
 }
-.love:hover{
+.love-after:hover{
     transform: translateY(-10px);
     transition: ease 0.4s;
     font-size: 30px;

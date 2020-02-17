@@ -30,6 +30,10 @@ class Jobs extends Model
     {
         return $this->hasMany('App\Designer','user_id');
     }
+    public function likes()
+    {
+        return $this->belongsTo('App\Like');
+    }
 }
 
 

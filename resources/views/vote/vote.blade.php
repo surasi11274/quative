@@ -83,25 +83,64 @@
 
         <h1 class="mt-5">ผลงานนักออกแบบ<span class="_hilight">ทั้งหมด</span></h1>
         <div class="row">
+            @foreach ($jobs as $job)
+            @php
+                $designerid = \App\Designer::find($job->designer_id);
+             @endphp
+                <div class="col-3 mt-5">
 
-            <div class="col mt-5">
+                    <div class="card" data-jobid="{{ $job->id }}">
 
-                <div class="card" >
-
-                    <img src="https://image.freepik.com/free-photo/zero-waste-concept-with-paper-cups_1220-4494.jpg" class="card-img-top" alt="..." style="height: 50%;">
-                    <div class="card-body">
-                               <div class="text-left position-absolute">
-                                   <h4 class="_hilight">Package</h4>
-                                   <p class="card-text">Design by Surasi  Chorjong</p>
-                               </div>
-                        <button class="love text-center rounded float-right" type="button" name="button"><i class="fas fa-heart"></i></button>
-
+                        <img src="https://image.freepik.com/free-photo/zero-waste-concept-with-paper-cups_1220-4494.jpg" class="card-img-top" alt="..." style="height: 50%;">
+                        <div class="card-body">
+                                <div class="text-left position-absolute">
+                                    <h4 class="_hilight" >Package</h4>
+                                <p class="card-text">Design by {{$designerid->name}} {{$designerid->surname}}</p>
+                                    {{-- <p>{{$job->id}}</p> --}}
+                                </div>
+                            @php
+                               $isuser = Auth::user(); 
+                            @endphp    
+                            @if(!$isuser)
+                            <a href="/login" >
+                                <button class="love text-center rounded float-right" type="button" name="button">
+                                    </i><i class="far fa-heart"></i>
+                                </button>
+                            </a>
+                            {{-- <a href="/login" class="like btn btn-xs btn-danger text-decoration-none" > --}}
+                                {{-- {{ ::user()->likes()->where('job_id', $job->id)->first() ? Auth::user()->likes()->where('job_id', $job->id)->first()->like == 0 ? 'You dont like this post' : 'Dislike' : 'Dislike'  }} --}}
+                                {{-- <button class="love text-center rounded float-right" type="button" name="button">
+                                    </i><i class="far fa-heart"></i>
+                                </button> --}}
+                            {{-- </a> --}}
+                            {{-- <button class="love text-center rounded float-right" type="button" name="button">
+                                <i class="fas fa-heart">
+                            </button> --}}
+                            @else
+                            <a href="#" class="like btn btn-xs btn-warning text-decoration-none">
+                                {{ Auth::user()->likes()->where('job_id', $job->id)->first() ? Auth::user()->likes()->where('job_id', $job->id)->first()->like == 1 ? 'You like this post' : 'Like' : 'Like'  }}
+                                {{-- <button class="love text-center rounded float-right" type="button" name="button">
+                                    </i><i class="far fa-heart"></i>
+                                </button> --}}
+                            </a>
+                            <a href="#" class="like btn btn-xs btn-danger text-decoration-none" >
+                                {{ Auth::user()->likes()->where('job_id', $job->id)->first() ? Auth::user()->likes()->where('job_id', $job->id)->first()->like == 0 ? 'You dont like this post' : 'Dislike' : 'Dislike'  }}
+                                {{-- <button class="love text-center rounded float-right" type="button" name="button">
+                                    </i><i class="far fa-heart"></i>
+                                </button> --}}
+                            </a>
+                            {{-- <button class="love text-center rounded float-right" type="button" name="button">
+                                <i class="fas fa-heart">
+                            </button> --}}
+                            @endif
+                        </div>
                     </div>
+
                 </div>
+            @endforeach
 
-            </div>
 
-            <div class="col mt-5">
+            {{-- <div class="col mt-5">
 
                 <div class="card" >
                     <img src="https://image.freepik.com/free-photo/zero-waste-concept-with-paper-cups_1220-4494.jpg" class="card-img-top" alt="..." style="height: 50%;">
@@ -147,80 +186,10 @@
                     </div>
                 </div>
 
-            </div>
+            </div> --}}
 
         </div> <!-- END ROw -->
 
-        <div class="row">
-
-            <div class="col mt-5">
-
-                <div class="card" >
-                    <img src="https://image.freepik.com/free-photo/zero-waste-concept-with-paper-cups_1220-4494.jpg" class="card-img-top" alt="..." style="height: 50%;">
-                    <div class="card-body">
-                               <div class="text-left position-absolute">
-                                   <h4 class="_hilight">Package</h4>
-                                   <p class="card-text">Design by Surasi  Chorjong</p>
-                               </div>
-                        <button class="love text-center rounded float-right" type="button" name="button"><i class="fas fa-heart"></i></button>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col mt-5">
-
-                <div class="card" >
-                    <img src="https://image.freepik.com/free-photo/zero-waste-concept-with-paper-cups_1220-4494.jpg" class="card-img-top" alt="..." style="height: 50%;">
-                    <div class="card-body">
-                               <div class="text-left position-absolute">
-                                   <h4 class="_hilight">Package</h4>
-                                   <p class="card-text">Design by Surasi  Chorjong</p>
-                               </div>
-                        <button class="love text-center rounded float-right" type="button" name="button"><i class="fas fa-heart"></i></button>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col mt-5">
-
-                <div class="card" >
-                    <img src="https://image.freepik.com/free-photo/zero-waste-concept-with-paper-cups_1220-4494.jpg" class="card-img-top" alt="..." style="height: 50%;">
-                    <div class="card-body">
-                               <div class="text-left position-absolute">
-                                   <h4 class="_hilight">Package</h4>
-                                   <p class="card-text">Design by Surasi  Chorjong</p>
-                               </div>
-                        <button class="love text-center rounded float-right" type="button" name="button"><i class="fas fa-heart"></i></button>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col mt-5">
-
-                <div class="card" >
-                    <img src="https://image.freepik.com/free-photo/zero-waste-concept-with-paper-cups_1220-4494.jpg" class="card-img-top" alt="..." style="height: 50%;">
-                    <div class="card-body">
-                               <div class="text-left position-absolute">
-                                   <h4 class="_hilight">Package</h4>
-                                   <p class="card-text">Design by Surasi  Chorjong</p>
-                               </div>
-                        <button class="love text-center rounded float-right" type="button" name="button"><i class="fas fa-heart"></i></button>
-
-                    </div>
-                </div>
-
-            </div>
-
-
-
-
-        </div> <!-- END ROw -->
 
         <center >
             <a href="previewmock.html"><button type="button" class="btn btn-lg mt-5 text-center bg-dark" style="color: #fff; width: 500px;">ดูเพิ่มเติม</button></a>
@@ -234,5 +203,13 @@
 
 
 
-    </div>
+    </div>    
+    
+    <script src="{{asset('js/like.js')}}"></script>
+    <script type="text/javascript">
+        var token = '{{ Session::token() }}';
+        var urlLike = '{{ route('like') }}';
+
+    </script>
+
     @endsection
