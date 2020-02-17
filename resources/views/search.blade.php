@@ -309,7 +309,7 @@
                                  <div class="custom-file-container" data-upload-id="myUniqueUploadId">
                                     <label><a href="javascript:void(0)" class="custom-file-container__image-clear" hidden title="Clear Image">&times;</a></label>
                                     <label class="custom-file-container__custom-file" >
-                                        <input type="file" class="custom-file-container__custom-file__custom-file-input" accept="*" multiple aria-label="Choose File">
+                                        <input type="file" class="custom-file-container__custom-file__custom-file-input" name="productPic" accept="*" multiple aria-label="Choose File">
                                         <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
                                         <span class="custom-file-container__custom-file__custom-file-control"></span>
                                     </label>
@@ -324,8 +324,8 @@
                                 </div>
                                
                                  <div class="upload-btn-wrapper-">
-                                        <button class="_btn-upload-"><i class="fas fa-plus"></i></button>
-                                        <input type="file" id="file-input"  name="productPic"  multiple />
+                                        {{-- <button class="_btn-upload-"><i class="fas fa-plus"></i></button> --}}
+                                        {{-- <input type="file" id="file-input"  name="productPic"  multiple /> --}}
                                  </div>
                              </div>
                         </div>

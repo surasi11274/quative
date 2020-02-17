@@ -168,7 +168,7 @@ Route::post('/jobdetail/file/store',
     // -------------------------- Gallery ---------------------------
 
 Route::get('/gallery', 'GalleryController@gallery');
-
+Route::post('/gallery/like' , 'GalleryController@likepost')->name('like');
 
 // Route::get('/jobdetail/file/download/{id}', 
 //     'DesignerController@downloadFile')->name('downloadfile');
