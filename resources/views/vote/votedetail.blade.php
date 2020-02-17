@@ -76,7 +76,7 @@
     </div>
 
     <div class="container mt-5 ">
-        <div class=" rounded-ex bg-white p-5 shadow-ex card">
+        <div class="  bg-white shadow-ex card">
             <div class="container content-profile" >
                 <div class="row">
                     <div class=" col-12 col-md-2 text-left">
@@ -108,7 +108,8 @@
 
 
 
-                    <div class="container-fluid">
+                    <div class="container-fluid" style="    padding-right: 0px !important;
+                    padding-left: 0px !important;">
                         <div class="d-flex float-right" style="color:#ACACAC;">
                             <p>16 September 2019 </p><span>&nbsp;❤️</span><small><label for="">50</label>likes</small><span>	&nbsp;👁</span><small><label for="">16</label>view</small>
                         </div>
@@ -119,7 +120,7 @@
                                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                                 <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
                             </ol>
-                            <div class="carousel-inner rounded-ex mt-5">
+                            <div class="carousel-inner  mt-5">
                                 <div class="carousel-item active">
                                     <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
@@ -165,7 +166,7 @@
     <div class="container mt-5 ">
         <div class="row">
             <div class="col-12 col-md-7 ">
-                <div class="card  p-5 shadow-ex rounded-ex">
+                <div class="card  p-5 shadow-ex ">
                     <p class="text-left">
                         Coralist is a cosmedical skincare brand which uses natural <br>
                         ingredients of coral from Jeju Island. This is the first brand in <br>
@@ -269,7 +270,7 @@
 
             </div>
             <div class="col-12 col-md-5">
-                <div class="card rounded-ex p-5 shadow-ex overflow-y">
+                <div class="card  p-5 shadow-ex overflow-y">
                     <label class="text-right" for="">ผลงานของ Kritpon Klinkomut </label>
                     <hr>
                     <div class="caption-inner mt-3 mb-3">
