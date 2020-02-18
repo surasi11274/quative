@@ -377,7 +377,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 /* progress-search */
 .multi-step-form{
     width: 100%;
-    margin: 50px auto;
+    /* margin: 50px auto; */
     position: relative;
 }
 .multi-step-form fieldset {

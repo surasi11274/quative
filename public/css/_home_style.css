@@ -57,7 +57,7 @@ h2, h4, h5, p, a,small,button,div{
 .card{
   transition: 0.3s;
   width: 100%;
-  /* border: 2px solid rgba(144, 74, 232,0.225) !important; */
+  border: 0px solid rgba(255, 255, 255,0.225) !important;
 }
 .card-text{
   color: #444;

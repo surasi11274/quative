@@ -370,7 +370,7 @@
                             {{-- <button href="javascript:void(0)" class="btn _secondary-btn btn-lg btn-block m-1 ">ยกเลิก</button>
                             <input type="button" name="next" class="btn _primary-black btn-lg btn-block m-1" value="Next"/> --}}
                         </div>
-                        <input type="button" name="next" class=" next  _primary-black  btn-block btn-lg  rounded" value="Next"  />
+                        <input type="button" name="next" class=" next  _primary-black  btn-block btn-lg  rounded" value="ถัดไป"  />
                         </fieldset>
                         {{-- field-two --}}
                         <fieldset>
@@ -433,8 +433,22 @@
                             </div>
                             <input style="border-width: 2px;" type="hidden" class="detaill-select" name="categories" plachholder="sadas" id="output">
                             <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2">
-                            <input type="button" name="previous" class=" previous _secondary-btn  btn-block btn-lg" value="Previous"/>
-                            <input type="submit" name="next" class=" next  _primary-black  btn-block btn-lg  rounded" value="Next"  />
+                           <div class="row">
+                               <div class="col-6">
+
+                               </div>
+                               <div class="col-6">
+                                <div class="row m-3">
+                                    <div class="col-6">
+                                        <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded" value="ย้อนกลับ"/>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="submit" name="next" class=" next  _primary-black  btn-block rounded " value="ถัดไป"/>
+
+                                    </div>
+                                </div>
+                               </div>
+                           </div>
                         </fieldset>
                         
                     </div>
