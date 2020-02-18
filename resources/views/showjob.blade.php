@@ -705,10 +705,10 @@
 
                         @php
                                         $tagname = \App\Tags::find($tagn)->tagName;
-                                    @endphp
+                        @endphp
                                                             <div class="btn _primary-btn" style="background-color:black !important; ">{{$tagname}}</div>
 
-                                                        @endforeach
+                        @endforeach
                         <hr>
                         <h5 class="mt-5" style="font-weight:bold;">ขอบเขตการจ้างงาน</h5>
                         <hr>

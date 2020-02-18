@@ -3,10 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Overtrue\LaravelFollow\Traits\CanBeLiked;
+
 
 class Jobs extends Model
 {
     //
+    use CanBeLiked;
     protected $table =  'jobs';
     protected $fillable = ['categories','categories_id','tags','designer_id','url','productPic','refpicbyUser','requirement','pricerate','reference','file','canshow','jobstatus_id','token','user_id'];
 
@@ -29,6 +32,10 @@ class Jobs extends Model
     public function designer()
     {
         return $this->hasMany('App\Designer','user_id');
+    }
+    public function likes()
+    {
+        return $this->belongsTo('App\Like');
     }
 }
 
