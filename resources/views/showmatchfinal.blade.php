@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('assets')
+<link rel="stylesheet" href="{{asset('css/flatpickr.min.css')}}">
+@endsection
 @section('content')
 <div class="container " >
     <div class="container mt-5">
@@ -118,8 +121,9 @@
                                       <div class=" form-group  mt-5">
                                         <h5>หรือต้องการระบุวันเป็นพิเศษ *ถ้ามี</h5>
                                         <div class="col-4 input-icons">
-                                           
-                                            <input class="form-control " type="date" id="basicDate" name="birthdate"  placeholder="MM/DD/YY" data-input>
+                                            {{-- <input type="text" id="anotherSelector" name="birthdate" placeholder="Please select Date Time" data-input> --}}
+                                            {{-- <input class="form-control anotherSelector" type="date"  name="birthdate"  placeholder="MM/DD/YY" data-input> --}}
+                                            <input type="date" id="basicDate" name="birthdate"  placeholder="MM/DD/YY" data-input>
                                             {{-- <span class="icon calendar"></span> --}}
                                         </div>
                                     </div>
@@ -174,8 +178,25 @@
                                          </ul>
                                      </div>
                                  @endif
-                                 <input type="button" name="previous" class="previous _secondary-btn  btn-block btn-lg mt-5" value="ย้อนกลับ"/>
-                                  <button type="submit" name="submit" class="submit _primary-black  btn-block btn-lg  rounded" value="Submit"> เสร็จสิ้น</button>
+                                 <div class="mt_ex"></div>
+                                 <div class="row">
+                                    <div class="col-6">
+     
+                                    </div>
+                                    <div class="col-6">
+                                     <div class="row m-3">
+                                         <div class="col-6">
+                                             <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded" value="ย้อนกลับ"/>
+                                         </div>
+                                         <div class="col-6">
+                                             <input type="submit" name="submit" class="submit  _primary-black  btn-block rounded " value="เสร็จสิ้น"/>
+     
+                                         </div>
+                                     </div>
+                                    </div>
+                                </div>
+                                 {{-- <input type="button" name="previous" class="previous _secondary-btn  btn-block btn-lg mt-5" value="ย้อนกลับ"/>
+                                  <button type="submit" name="submit" class="submit _primary-black  btn-block btn-lg  rounded" value="Submit"> เสร็จสิ้น</button> --}}
 
                                     </div>
                     </form>
@@ -209,3 +230,5 @@
         return false;
     }
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{asset('js/flatpickr.js')}}"></script>

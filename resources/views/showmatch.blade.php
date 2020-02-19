@@ -175,19 +175,22 @@
    
             {{-- <a href="{{URL::to('/search/show/delete/'.$jobs->id) }}"> --}}
                <div class="mt_ex"></div>
-               <div class=" ">
-                  <div class="row">
-                     <div class="col-12 col-md-6">
-                        <input type="button" name="previous" class=" previous _secondary-btn  btn-block btn-lg " value="ย้อนกลับ"/>
+               <div class="row">
+                  <div class="col-6">
 
-                     </div>
-                     <div class="col-12 col-md-6">
-                        <input type="submit" name="next" class=" next  _primary-black  btn-block btn-lg  rounded" value="จ้างนักออกแบบ"  />
-
-                     </div>
                   </div>
-                  {{-- </a> --}}
-               </div>
+                  <div class="col-6">
+                   <div class="row m-3">
+                       <div class="col-6">
+                           <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded" value="ย้อนกลับ"/>
+                       </div>
+                       <div class="col-6">
+                           <input type="submit" name="next" class=" next  _primary-black  btn-block rounded " value="ถัดไป"/>
+
+                       </div>
+                   </div>
+                  </div>
+              </div>
                
          </div>
 
