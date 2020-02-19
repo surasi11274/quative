@@ -15,7 +15,7 @@
                         <!-- <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">สมัครสมาชิก</a></li> -->
                             <li class="nav-item"><a class="nav-link" role="button" href="/preview">พรีวิว</a></li>
-                            <li class="nav-item"><a class="nav-link" role="button" href="/vote">ผลงาน</a></li>
+                            <li class="nav-item"><a class="nav-link" role="button" href="/gallery">ผลงาน</a></li>
 
 
                             <li class="dropdown nav-item">
@@ -43,7 +43,7 @@
                                
                         @elseif (Auth::user()->role=='1') 
                             <li class="nav-item"><a class="nav-link" role="button" href="/preview">พรีวิว</a></li>
-                            <li class="nav-item"><a class="nav-link" role="button" href="/vote">ผลงาน</a></li>
+                            <li class="nav-item"><a class="nav-link" role="button" href="/gallery">ผลงาน</a></li>
                             <li class="dropdown nav-item mr-2">
                                 <a class="nav-link  " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#523EE8;text-align: center; width: 50px; height: 80px;">
                                     <span class="icon notification"></span>

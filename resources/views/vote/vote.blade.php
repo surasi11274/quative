@@ -84,17 +84,33 @@
         <h1 class="mt-5">ผลงานนักออกแบบ<span class="_hilight">ทั้งหมด</span></h1>
         <div class="row">
             @foreach ($jobs as $job)
+            {{-- @foreach ($jobfiles as $jobfile) --}}
+
             @php
                 $designerid = \App\Designer::find($job->designer_id);
+
+                // $jobfiles = json_decode($job->file);
+                $jobdilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+
+
              @endphp
                 <div class="col-3 mt-5">
 
                         <div class="card" data-jobid="{{ $job->id }}">
+                            {{-- @foreach($job->file as $files)
+                            @php
 
-                            <img src="https://image.freepik.com/free-photo/zero-waste-concept-with-paper-cups_1220-4494.jpg" class="card-img-top" alt="..." style="height: 50%;">
-                            <a href="#" class="text-decoration-none">
+                            $fileimg = \App\Jobfiles::find($files)->fileimgname;
+                            @endphp
 
-                                <div class="card-body">
+                            @endforeach --}}
+                            {{-- @if ($job->id == $jobfiles->job_id) --}}
+                            <p >{{$jobdilee->id}}</p>
+
+                            <img class="card-img-top" src="{{$jobdilee->fileimgname}}"  alt="..." style="height: 50%;">
+
+                            {{-- @endif --}}
+                                <div class="card-body border">
                                         <div class="text-left position-absolute">
                                             <h4 class="_hilight" hidden >Package</h4>
                                         <p class="card-text">Design by {{$designerid->name}} {{$designerid->surname}}</p>
@@ -137,12 +153,16 @@
                                         <i class="fas fa-heart">
                                     </button> --}}
                                     @endif
+                                <a href="{{ route('galleryDetail', $job->id) }}" class="stretched-link"></a>
+
                                 </div>
-                            </a>
 
                         </div>
 
+
                 </div>
+                {{-- @endforeach --}}
+
             @endforeach
 
 

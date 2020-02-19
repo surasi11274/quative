@@ -345,14 +345,15 @@ class DesignerController extends Controller
             endforeach;
 
     endif;
-    $query = DB::table('jobfiles')->select('id')->where('job_id', $fileinput->job_id)->get();
-    $updateJob = DB::table('jobs')->where('id', $fileinput->job_id)->update([
+    $query = DB::table('jobfiles')->select('id')->where('job_id', $fileinput->job_id)->pluck('id')->toarray();
+    
+    DB::table('jobs')->where('id', $fileinput->job_id)->update([
         'file' => json_encode($query),
         'jobstatus_id' => '5'
         // 'reference'=>json_encode($request->input('reference')),
 
         ]);
-        // dd($query);
+        // dd($updateJob);
         // exit();
     // return 'success';
     // exit();

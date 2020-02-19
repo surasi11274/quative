@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobfiles;
 use App\Jobs;
 use App\Like;
 
@@ -14,17 +15,37 @@ class GalleryController extends Controller
     //
     public function gallery()
     {
+        // $jobs = DB::table('jobs')->where('canshow',1)->get();
+
         $jobs = Jobs::where('canshow',1)->get();
+        // $jobfiles = $jobs->find()->file;
+        // $jobfiles = json_decode($jobfiles,true);
+        // $jobs->first()->file = json_decode($jobs->first()->file);
+        
+        // $jobfiles = \App\Jobfiles::where('job_id',$job->id)->get();
+        $jobfiles = Jobfiles::all();
+
+
+        // foreach($jobs as $record){
+        //     $jobid = $record->id;
+        //     // ....
+        //     }
+
+        // $file = Jobfiles::where('job_id',$jobid)->pluck('job_id')->toarray();
+
+        
+
 
         // $cats = Categories::all();  
         return view('vote.vote',[
-            'jobs'=>$jobs
+            'jobs'=>$jobs,
+            'jobfiles'=>$jobfiles
             ]);
     }
     public function galleryDetail($id)
     {
-        $jobs = Jobs::find($id)->first();
-        dd($jobs);
+        $jobs = Jobs::find($id);
+        // dd($jobs);
 
         // $cats = Categories::all();  
         return view('vote.votedetail',[
