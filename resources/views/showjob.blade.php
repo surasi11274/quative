@@ -559,8 +559,8 @@
                            </div>
                            <div class="float-right d-flex">
                             @if ($jobs->jobstatus_id == 1)
-                                <button type="button" class="btn disabled _primary-btn" data-toggle="modal" data-target="#exampleModal">แจ้งชำระเงิน</button>
-                                <button type="button"class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                <button type="button" class="btn disabled _btn-dis m-1" data-toggle="modal" data-target="#exampleModal">แจ้งชำระเงิน</button>
+                                <button type="button"class="btn _secondary-btn m-1" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                             @elseif ($jobs->jobstatus_id == 2)
                                 <a href="{{ route('job.payment', $jobs->token) }}" style="text-decoration:none;">
                                     <button type="button" class="btn _primary-btn" >แจ้งชำระเงิน</button>

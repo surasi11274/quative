@@ -1,5 +1,7 @@
 <?php
-
+Route::get('/matchfinish', function () {
+    return view('matchfinish');
+});
 /*
 |--------------------------------------------------------------------------
 | Web Routes

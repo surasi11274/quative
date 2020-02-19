@@ -989,3 +989,6 @@ ul.purple-active li input[type="checkbox"]:focus + img {
     border-radius: 5px;
     margin: 5px;
   }
+  .border-avatar{
+    border: 2px solid #523EE8;
+  }
