@@ -21,6 +21,16 @@ class GalleryController extends Controller
             'jobs'=>$jobs
             ]);
     }
+    public function galleryDetail($id)
+    {
+        $jobs = Jobs::find($id)->first();
+        dd($jobs);
+
+        // $cats = Categories::all();  
+        return view('vote.votedetail',[
+            'jobs'=>$jobs
+            ]);
+    }
 
     public function likepost(Request $request)
     {

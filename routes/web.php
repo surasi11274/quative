@@ -32,9 +32,9 @@
 // Route::get('/vote', function () {
 //     return view('vote.vote');
 // });
-Route::get('/votedetail', function () {
-    return view('vote.votedetail');
-});
+// Route::get('/votedetail', function () {
+//     return view('vote.votedetail');
+// });
 // Route::get('/payment', function () {
 //     return view('payment');
 // });
@@ -168,6 +168,8 @@ Route::post('/jobdetail/file/store',
     // -------------------------- Gallery ---------------------------
 
 Route::get('/gallery', 'GalleryController@gallery');
+Route::get('/gallery/{id}', 'GalleryController@galleryDetail');
+
 Route::post('/gallery/like' , 'GalleryController@likepost')->name('like');
 
 // Route::get('/jobdetail/file/download/{id}', 
