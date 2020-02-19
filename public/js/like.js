@@ -11,7 +11,7 @@ $('.like').on('click',function(event){
         data : {isLike: isLike, jobId: jobId, _token: token}
     })
     .done(function() {
-            event.target.innerText = isLike ? event.target.innerHTML == 'Like' ? 'You like this post' : 'Like' : event.target.innerHTML == 'Like' ? 'Unlike' : 'Like' =1;
+            event.target.innerText = isLike ? event.target.innerHTML == 'Like' ? 'You like this post' : 'Like' : event.target.innerHTML == 'Like' ? 'Unlike' : 'Like' ;
         if (isLike) {
             event.target.nextElementSibling.innerHTML = 'Like';
         } else {

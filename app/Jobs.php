@@ -37,6 +37,10 @@ class Jobs extends Model
     {
         return $this->belongsTo('App\Like');
     }
+    public function files()
+{
+    return $this->hasMany('App\Jobfiles', 'job_id');
+}
 }
 
 
