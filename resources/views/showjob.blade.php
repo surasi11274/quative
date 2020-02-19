@@ -108,7 +108,7 @@
                                 <div class="step">1</div>
                                 <div class="caption hidden-xs hidden-sm"> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
-                                    <p style="color:#C4C4C4;">นักออกแบบรับงานแล้ว</p>
+                                    <p class="complete">นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
                             <li class="active">
@@ -154,11 +154,11 @@
                                     <p >นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
-                            <li class="active">
+                            <li class="complete">
                                 <div class="step">2</div>
                                 <div class="caption hidden-xs hidden-sm">
                                     <h5>ชำระเงิน</h5> <br>
-                                    <p style="color:#C4C4C4;">ตรวจสอบการชำระเงิน</p>
+                                    <p class="complete">ตรวจสอบการชำระเงิน</p>
                                 </div>
                             </li>
                             <li class="active">
@@ -563,9 +563,9 @@
                                 <button type="button"class="btn _secondary-btn m-1" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                             @elseif ($jobs->jobstatus_id == 2)
                                 <a href="{{ route('job.payment', $jobs->token) }}" style="text-decoration:none;">
-                                    <button type="button" class="btn _primary-btn" >แจ้งชำระเงิน</button>
+                                    <button type="button" class="btn _primary-btn m-1" >แจ้งชำระเงิน</button>
                                 </a>
-                                <button type="button"class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                <button type="button"class="btn _secondary-btn m-1" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                             @elseif ($jobs->jobstatus_id == 7)
                   
 
@@ -586,10 +586,10 @@
                                     {{-- <h1>{{$files}}</h1>  --}}
                                 @endforeach
 
-                                <button class="btn _secondary-btn">ดาวน์โหลดไฟล์</button>
-                                <button type="button" class="btn _primary-btn" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
+                                <button class="btn _secondary-btn m-1">ดาวน์โหลดไฟล์</button>
+                                <button type="button" class="btn _primary-btn m-1" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
                             @elseif ($jobs->jobstatus_id == 8)
-                            <button type="button" class="btn _primary-btn" onclick="addCart2('9')" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
+                            <button type="button" class="btn _primary-btn m-1" onclick="addCart2('9')" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
 
                             @endif
 
@@ -681,7 +681,7 @@
                            <h3 class="mt-5">รูปภาพตัวอย่างงาน</h3>
                            <hr>
                            <p class="mt-2 text-header">รูปภาพงานใกล้เคียงกับงาน</p>
-                           <div class="row mt-5 ">
+                           <div class="row mt-3 ">
                                 <div class="col-4">
                                  <img class="rounded" src="/{{$jobs->refpicbyUser}}" alt="">
                                 </div>

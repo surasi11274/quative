@@ -125,7 +125,7 @@
             <div class="container">
         
                 @if ($job->jobstatus_id == 1)
-                <div class="text-center  p-5">
+                <div class="text-center  p-5 bg-white">
                     <div id="wizard-progress">
                         <ol class="step-indicator">
                             <li class="complete">
@@ -168,7 +168,7 @@
                 
                 </div>
                 @elseif ($job->jobstatus_id == 2)
-                <div class="text-center  p-5">
+                <div class="text-center  p-5 bg-white">
                     <div id="wizard-progress">
                         <ol class="step-indicator">
                             <li class="complete">
@@ -211,7 +211,7 @@
                 
                 </div>
                 @elseif($job->jobstatus_id == '3')
-                <div class="text-center  p-5">
+                <div class="text-center  p-5 bg-white">
                     <div id="wizard-progress">
                         <ol class="step-indicator">
                             <li class="complete">
@@ -254,7 +254,7 @@
                 
                 </div>
                 @elseif($job->jobstatus_id == '4')
-                <div class="text-center  p-5">
+                <div class="text-center  p-5 bg-white">
                     <div id="wizard-progress">
                         <ol class="step-indicator">
                             <li class="complete">
@@ -297,7 +297,7 @@
                 
                 </div>
                 @elseif($job->jobstatus_id == '5')
-                <div class="text-center  p-5">
+                <div class="text-center  p-5 bg-white">
                     <div id="wizard-progress">
                         <ol class="step-indicator">
                             <li class="complete">
@@ -340,7 +340,7 @@
                 
                 </div>
                 {{-- @elseif($job->jobstatus_id == '6')
-                <div class="text-center  p-5">
+                <div class="text-center  p-5 bg-white">
                     <div id="wizard-progress">
                         <ol class="step-indicator">
                             <li class="complete">
@@ -383,7 +383,7 @@
                 
                 </div> --}}
                 @elseif($job->jobstatus_id == '7')
-                <div class="text-center  p-5">
+                <div class="text-center  p-5 bg-white">
                     <div id="wizard-progress">
                         <ol class="step-indicator">
                             <li class="complete">
@@ -426,7 +426,7 @@
                 
                 </div>
                 @elseif($job->jobstatus_id == '8')
-                <div class="text-center  p-5">
+                <div class="text-center  p-5 bg-white">
                     <div id="wizard-progress">
                         <ol class="step-indicator">
                             <li class="complete">
@@ -469,7 +469,7 @@
                 
                 </div>
                 @elseif($job->jobstatus_id == '9')
-                <div class="text-center  p-5">
+                <div class="text-center  p-5 bg-white">
                     <div id="wizard-progress">
                         <ol class="step-indicator">
                             <li class="complete">
@@ -512,7 +512,7 @@
                 
                 </div>
                 @elseif($job->jobstatus_id == '10')
-                <div class="text-center  p-5">
+                <div class="text-center  p-5 bg-white">
                     <div id="wizard-progress">
                         <ol class="step-indicator">
                             <li class="complete">
@@ -573,14 +573,14 @@
                            </div>
                            <div class="float-right d-flex">
                             @if ($job->jobstatus_id == 1)
-                                <button type="button" class="btn _primary-btn" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
-                                <button type="button"class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                <button type="button" class="btn _primary-btn m-1" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
+                                <button type="button"class="btn _secondary-btn m-1" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                             @elseif ($job->jobstatus_id == 4)
-                                <button type="button" class="btn _primary-btn" onclick="addCart('3')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
-                                <button type="button"class="btn _secondary-btn" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                <button type="button" class="btn _primary-btn m-1" onclick="addCart('3')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
+                                <button type="button"class="btn _secondary-btn m-1" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                             @elseif ($job->jobstatus_id == 3)
-                                <button type="button" class="btn _primary-btn" data-toggle="modal" data-target=".bd-example-modal-lg">อัพโหลดไฟล์</button>
-                                <button type="button"class="btn _secondary-btn" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                <button type="button" class="btn _primary-btn m-1" data-toggle="modal" data-target=".bd-example-modal-lg">อัพโหลดไฟล์</button>
+                                <button type="button"class="btn _secondary-btn m-1" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                                 
                             @endif
                            
@@ -593,130 +593,140 @@
                     
                     
                 </form>
-            </div>
-
-            <div class="col-12 col-md-6 p-5">
-                <h5><i class="fas fa-boxes input-icons icon "></i>ข้อมูลผลิตภัณฑ์ของคุณ</h5>
-               <hr>
-               <p>บรรจุภัณฑ์ประเภท</p>
-            <small>{{ $job->categories}}</small>
-               <p>รูปภาพผลิตภัณฑ์เดิมของคุณ</p>
-               <div class="row">
-                   <div class="col-4">
-                    <img class="rounded" src="/photo/@product-blue.png" alt="">
-                   </div>
-                   <div class="col-4">
-                        <img class="rounded" src="/photo/@product-blue.png" alt="">
-                   </div>
-                   <div class="col-4">
-                        <img class="rounded" src="/photo/@product-blue.png" alt="">
-                   </div>
-               </div>
-               <label for="" class=" mt-3">URL : <small>{{$job->url}}</small></label>
-               <h5>รูปภาพตัวอย่างงาน</h5>
-               <hr>
-               <h5>รูปภาพงานใกล้เคียงกับงาน</h5>
-               <div class="row">
-                    <div class="col-4">
-                     <img class="rounded" src="/photo/@product-8.png" alt="">
-                    </div>
-                    <div class="col-4">
-                         <img class="rounded" src="/photo/@product-8.png" alt="">
-                    </div>
-                    <div class="col-4">
-                         <img class="rounded" src="/photo/@product-8.png" alt="">
+                <div class="container-fluid bg-white">
+                    <div class="row">
+                        <div class="col-12 col-md-6 p-5">
+                            <h3>ข้อมูลผลิตภัณฑ์ของคุณ</h3>
+                           <hr>
+                           <p class="text-header">บรรจุภัณฑ์ประเภท</p>
+                        <p class="mt-3">{{ $job->categories}}</p>
+                           <p class="text-header mt-3">รูปภาพผลิตภัณฑ์เดิมของคุณ</p>
+                           <div class="row mt-3">
+                               <div class="col-4">
+                                <img class="rounded" src="/photo/@product-blue.png" alt="">
+                               </div>
+                               <div class="col-4">
+                                    <img class="rounded" src="/photo/@product-blue.png" alt="">
+                               </div>
+                               <div class="col-4">
+                                    <img class="rounded" src="/photo/@product-blue.png" alt="">
+                               </div>
+                           </div>
+                           <label for="" class=" mt-3">URL : <small>{{$job->url}}</small></label>
+                           <h3>รูปภาพตัวอย่างงาน</h3>
+                           <hr>
+                           <p class="mt-3 text-header">รูปภาพงานใกล้เคียงกับงาน</p>
+                           <div class="row mt-3">
+                                <div class="col-4">
+                                 <img class="rounded" src="/photo/@product-8.png" alt="">
+                                </div>
+                                <div class="col-4">
+                                     <img class="rounded" src="/photo/@product-8.png" alt="">
+                                </div>
+                                <div class="col-4">
+                                     <img class="rounded" src="/photo/@product-8.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 p-5">
+                            <h3>ข้อมูลงานที่ต้องการ</h3>
+                            <hr>
+                            <p class="text-header">รายละเอียด</p>
+                            <p class="mt-3">{{ $job->requirement}}</p>
+                                    <p class="mt-3 text-header">ลักษณะหรือสไตล์งานที่ต้องการ</p>
+                                    <hr>
+                                    {{-- {{ $job->tags}} --}}
+                                    @foreach($job->tags as $tagn)
+                
+                                    @php
+                                                    $tagname = \App\Tags::find($tagn)->tagName;
+                                                @endphp
+                                                                        <div class="btn _primary-black" >{{$tagname}}</div>
+                
+                                                                    @endforeach
+                                    <hr>
+                                    <h3 class="mt-5">ขอบเขตการจ้างงาน</h3>
+                                    <hr>
+                                    <div class="col-12 mt-3">
+                                        <h5> ขอบเขตการจ้างงาน</h5>
+                                    <small>01 - งานออกแบบฉลากติดสินค้าหน้าเดียว</small>
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <h5>วันที่ต้องการงาน</h5>
+                                        <small>15 วัน (ธรรมดา)</small>
+                                    </div>
+                                    <div class="text-right">
+                                        {{-- <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                        <button type="button"  class="btn _primary-black" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">เสร็จสิ้นงาน</button> --}}
+                
+                
+                                    {{-- <form action="/jobdetail/jobstatus/store" method="post" enctype="multipart/form-data">
+                                            {{ csrf_field() }}
+                                        <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                      </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                      คุณต้องการยืนยันที่จะรับงานนี้หรือไม่?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                                                      <button type="submit" class="btn btn-primary">ยืนยันยกเลิกงาน</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            <input type="text" id="output" name="jobstatus_id">
+                                            <input type="text" id="job_id" name="job_id" value="{{$job->id}}">
+                                    </form> --}}
+                
+                
+                
+                                            
+                                    {{-- <form action="/jobdetail/jobstatus/store" method="post" enctype="multipart/form-data">
+                                        {{ csrf_field() }}
+                                            <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target="#exampleModal">เสร็จสิ้นงาน</button>
+                
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                      </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                      คุณต้องการยืนยันที่จะรับงานนี้หรือไม่?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                                                      <button type="submit" class="btn btn-primary">ยืนยันยกเลิกงาน</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              
+                                            <input type="text" id="output" name="jobstatus_id">
+                                            <input type="text" id="job_id" name="job_id" value="{{$job->id}}">
+                                    </form> --}}
+                
+                                    </div>
+                                    
+                        </div>
+                
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 p-5">
-                <h5>ข้อมูลงานที่ต้องการ</h5>
-                <hr>
-                <label for="">รายละเอียด</label>
-                <p>{{ $job->requirement}}</p>
-                        <h5>ลักษณะหรือสไตล์งานที่ต้องการ</h5>
-                        <hr>
-                        {{-- {{ $job->tags}} --}}
-                        @foreach($job->tags as $tagn)
 
-                        @php
-                                        $tagname = \App\Tags::find($tagn)->tagName;
-                                    @endphp
-                                                            <div class="btn _primary-black" >{{$tagname}}</div>
-
-                                                        @endforeach
-                        <hr>
-                        <h5 class="mt-5">ขอบเขตการจ้างงาน</h5>
-                        <hr>
-                        <p>01 - งานออกแบบฉลากติดสินค้าหน้าเดียว</p>
-                        <h5>วันที่ต้องการงาน</h5>
-                        <p>15 วัน (ธรรมดา)</p>
-                        <div class="text-right">
-                            {{-- <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
-                            <button type="button"  class="btn _primary-black" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">เสร็จสิ้นงาน</button> --}}
-
-
-                        {{-- <form action="/jobdetail/jobstatus/store" method="post" enctype="multipart/form-data">
-                                {{ csrf_field() }}
-                            <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
-
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        </div>
-                                        <div class="modal-body">
-                                          คุณต้องการยืนยันที่จะรับงานนี้หรือไม่?
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                                          <button type="submit" class="btn btn-primary">ยืนยันยกเลิกงาน</button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                <input type="text" id="output" name="jobstatus_id">
-                                <input type="text" id="job_id" name="job_id" value="{{$job->id}}">
-                        </form> --}}
-
-
-
-                                
-                        {{-- <form action="/jobdetail/jobstatus/store" method="post" enctype="multipart/form-data">
-                            {{ csrf_field() }}
-                                <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target="#exampleModal">เสร็จสิ้นงาน</button>
-
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        </div>
-                                        <div class="modal-body">
-                                          คุณต้องการยืนยันที่จะรับงานนี้หรือไม่?
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                                          <button type="submit" class="btn btn-primary">ยืนยันยกเลิกงาน</button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  
-                                <input type="text" id="output" name="jobstatus_id">
-                                <input type="text" id="job_id" name="job_id" value="{{$job->id}}">
-                        </form> --}}
-
-                        </div>
-                        
-            </div>
-
+           
             {{--  --}}
 
 {{-- --------------------------Modal --------------------------------------}}
