@@ -94,7 +94,7 @@
 
 
              @endphp
-                <div class="col-3 mt-5">
+                <div class="col-4 mt-5">
 
                         <div class="card" data-jobid="{{ $job->id }}">
                             {{-- @foreach($job->file as $files)
@@ -105,9 +105,8 @@
 
                             @endforeach --}}
                             {{-- @if ($job->id == $jobfiles->job_id) --}}
-                            <p >{{$jobdilee->id}}</p>
 
-                            <img class="card-img-top" src="{{$jobdilee->fileimgname}}"  alt="..." style="height: 50%;">
+                            <img class="card-img-top" src="{{$jobdilee->fileimgname}}"  alt="..." style="height: 267px;">
 
                             {{-- @endif --}}
                                 <div class="card-body border">
@@ -144,7 +143,7 @@
                                     </a>
                                     <a href="#" class="like btn text-center rounded float-right border" >
                                         {{-- <button class="love text-center rounded float-right" type="button" name="button"> --}}
-                                        {{ Auth::user()->likes()->where('job_id', $job->id)->first() ? Auth::user()->likes()->where('job_id', $job->id)->first()->like == 0 ? 'Unlike' : 'Like' : 'Like'  }}
+                                        {!! Auth::user()->likes()->where('job_id', $job->id)->first() ? Auth::user()->likes()->where('job_id', $job->id)->first()->like == 0 ? "<i class='fas fa-heart'></i>" : "<i class='far fa-heart'></i>" : "<i class='far fa-heart'></i>" !!}
 
                                             {{-- </i><i class="far fa-heart"></i> --}}
                                         {{-- </button> --}}
@@ -153,7 +152,7 @@
                                         <i class="fas fa-heart">
                                     </button> --}}
                                     @endif
-                                <a href="{{ route('galleryDetail', $job->id) }}" class="stretched-link"></a>
+                                {{-- <a href="{{ route('galleryDetail', $job->id) }}" class="stretched-link"></a> --}}
 
                                 </div>
 
