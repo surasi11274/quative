@@ -20,10 +20,11 @@
                             
 
                             @php
-                            $designer = \App\Designer::find($jobs->designer_id)->name;
+                            $designer = \App\Designer::find($jobs->designer_id);
+                            
 
                         @endphp
-                                <p class="content-bg">{{$designer}}</p> 
+                                <h5 class="content-bg">{{$designer->name}} &nbsp;{{$designer->surname}}</h5> 
                                 <button class="btn _primary-bg-dark btn-lg">คุยกับนักออกแบบ</button>
                         </div>
                     </div>
@@ -98,7 +99,6 @@
     <hr>
     <div class="shadow-sm bg-white mt-3">
         <div class="row">
-
             <div class="container">
                 @if ($jobs->jobstatus_id == 1)
                 <div class="text-center  p-5">
@@ -108,7 +108,7 @@
                                 <div class="step">1</div>
                                 <div class="caption hidden-xs hidden-sm"> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
-                                    <p style="color:#C4C4C4;">นักออกแบบรับงานแล้ว</p>
+                                    <p class="complete">นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
                             <li class="active">
@@ -154,11 +154,11 @@
                                     <p >นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
-                            <li class="active">
+                            <li class="complete">
                                 <div class="step">2</div>
                                 <div class="caption hidden-xs hidden-sm">
                                     <h5>ชำระเงิน</h5> <br>
-                                    <p style="color:#C4C4C4;">ตรวจสอบการชำระเงิน</p>
+                                    <p class="complete">ตรวจสอบการชำระเงิน</p>
                                 </div>
                             </li>
                             <li class="active">
@@ -563,9 +563,9 @@
                                 <button type="button"class="btn _secondary-btn m-1" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                             @elseif ($jobs->jobstatus_id == 2)
                                 <a href="{{ route('job.payment', $jobs->token) }}" style="text-decoration:none;">
-                                    <button type="button" class="btn _primary-btn" >แจ้งชำระเงิน</button>
+                                    <button type="button" class="btn _primary-btn m-1" >แจ้งชำระเงิน</button>
                                 </a>
-                                <button type="button"class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                <button type="button"class="btn _secondary-btn m-1" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                             @elseif ($jobs->jobstatus_id == 7)
                   
 
@@ -586,10 +586,10 @@
                                     {{-- <h1>{{$files}}</h1>  --}}
                                 @endforeach
 
-                                <button class="btn _secondary-btn">ดาวน์โหลดไฟล์</button>
-                                <button type="button" class="btn _primary-btn" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
+                                <button class="btn _secondary-btn m-1">ดาวน์โหลดไฟล์</button>
+                                <button type="button" class="btn _primary-btn m-1" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
                             @elseif ($jobs->jobstatus_id == 8)
-                            <button type="button" class="btn _primary-btn" onclick="addCart2('9')" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
+                            <button type="button" class="btn _primary-btn m-1" onclick="addCart2('9')" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
 
                             @endif
 
@@ -658,165 +658,173 @@
                        
                         {{-- <input type="submit" name="next" class=" next  _primary-btn" value="เสร็จสิ้นงาน"  /> --}}
                 {{-- </form> --}}
-            </div>
-            
-        <div class="row">
-            <div class="col-12 col-md-6 p-5"> 
-                <h5 style="font-weight:bold;">ข้อมูลผลิตภัณฑ์ของคุณ</h5>
-               <hr>
-               <p style="font-weight:bold;">บรรจุภัณฑ์ประเภท</p>
-                <small>{{ $jobs->categories}}</small>
-               <p style="font-weight:bold; margin-top:50px;">รูปภาพผลิตภัณฑ์เดิมของคุณ</p>
-               <div class="row">
-                   <div class="col-4">
-                    <img class="rounded" src="/{{$jobs->productPic}}" alt="">
-                   </div>
-                   <div class="col-4">
-                        <img class="rounded" src="/photo/@product-blue.png" alt="">
-                   </div>
-                   <div class="col-4">
-                        <img class="rounded" src="/photo/@product-blue.png" alt="">
-                   </div>
-               </div>
-               <label for="" class=" mt-5">URL : <a href="{{$jobs->url}}" target="_blank">{{$jobs->url}}</a></label>
-               <h5 style="font-weight:bold; margin-top:50px;">รูปภาพตัวอย่างงาน</h5>
-               <hr>
-               <small style="font-weight:bold; margin-top:50px;">รูปภาพงานใกล้เคียงกับงาน</small>
-               <div class="row ">
-                    <div class="col-4">
-                     <img class="rounded" src="/{{$jobs->refpicbyUser}}" alt="">
-                    </div>
-                    <div class="col-4">
-                         <img class="rounded" src="/photo/@product-8.png" alt="">
-                    </div>
-                    <div class="col-4">
-                         <img class="rounded" src="/photo/@product-8.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 p-5">
-                <h5 style="font-weight:bold;">ข้อมูลงานที่ต้องการ</h5>
-                <hr>
-                <p for="" style="font-weight:bold;">รายละเอียด</p>
-                <small>{{ $jobs->requirement}}</small>
-                        <p style="font-weight:bold; margin-top:50px;">ลักษณะหรือสไตล์งานที่ต้องการ</p>
-                        <hr>
-                        @foreach($jobs->tags as $tagn)
-
-                        @php
-                                        $tagname = \App\Tags::find($tagn)->tagName;
-                        @endphp
-                                                            <div class="btn _primary-btn" style="background-color:black !important; ">{{$tagname}}</div>
-
-                        @endforeach
-                        <hr>
-                        <h5 class="mt-5" style="font-weight:bold;">ขอบเขตการจ้างงาน</h5>
-                        <hr>
-                        <p style="font-weight:bold;">01 - งานออกแบบฉลากติดสินค้าหน้าเดียว</p>
-                        <h5>วันที่ต้องการงาน</h5>
-                        <p style="font-weight:bold;">15 วัน (ธรรมดา)</p>
-                        <div class="text-right">
-                            {{-- <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
-                                <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target=".bd-example-modal-lg">
-                                  เสร็จสิ้นงาน
-                                </button> --}}
-                        </div>
-                        
-            </div>
-            {{--  --}}
-
-            <form action="/showjob/store" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
-
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">ยืนยันการทำรายการ</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    คุณต้องการยืนยันที่จะทำรายการหรือไม่?
-                <input type="hidden" id="output" name="jobstatus_id">
-                <input type="hidden" id="job_id" name="job_id" value="{{$jobs->id}}">
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary" style="background-color:black;">ยืนยันการทำรายการ</button>
-
-                </div>
-            </div>
-            </div>
-            </div>
-
-            </form>
-            
-            <form action="/showjob/store2" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
-            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-
-                        {{-- <div class="modal-header " >
-                            <div class="row">
-
-                            </div>
-                            <h4 class="modal-title text-center"  id="myLargeModalLabel">คุณต้องการเสร็จสิ้นงานใช่ไหม?</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div> --}}
-                        <div class="modal-body text-center">
-                            <div class="container">
-                                <h2 class="modal-title text-center mt-5 mb-5"  id="myLargeModalLabel">คุณต้องการเสร็จสิ้นงานใช่ไหม?</h2>
-                                <hr>
-                                <h5>ช่วยนักออกแบบสร้าง Profile</h5>
-                                <span>นักออกแบบสามารถนำผลงานของคุณไปแสดงในโปรไฟล์เพื่อ
-                                 ช่วยสร้าง Portfolio บนเว็บไซต์เราได้หรือไม่</span>
-     
-                                 <div class="row  ">
-                                     <div class="col-3"></div>
-                                     <div class="col-6 mt-5 mb-5">
-                                         <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" name="canshow">
-                                         <label class="form-check-label" for="defaultCheck1">
-                                             อนุญาตให้นักออกแบบนำงานคุณไปแสดงในโปรไฟล์
-                                         </label>
-                                     </div>
-                                     <div class="col-3"></div>
-     
-                                     
-                                 </div>
-                                 <hr>
-                                 <hr>
-                                <div class="mt-5 mb-5">
-                                    <button type="button" class="btn btn-secondary"  data-dismiss="modal">ยกเลิก</button>
-                                    <a href="{{ route('job.review', $jobs->token) }}">
-            
-                                        <button type="submit" class="btn btn-primary" style="background-color:black;">ยืนยันการเสร็จสิ้นงาน</button>
-                                    </a>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-md-6 p-5"> 
+                            <h3>ข้อมูลผลิตภัณฑ์ของคุณ</h3>
+                           <hr>
+                           <p class="text-header">บรรจุภัณฑ์ประเภท</p>
+                            <p class="mt-3">{{ $jobs->categories}}</p>
+                           <p class="mt-3 text-header">รูปภาพผลิตภัณฑ์เดิมของคุณ</p>
+                           <div class="row mt-3">
+                               <div class="col-4">
+                                <img class="rounded" src="/{{$jobs->productPic}}" alt="">
+                               </div>
+                               <div class="col-4">
+                                    <img class="rounded" src="/photo/@product-blue.png" alt="">
+                               </div>
+                               <div class="col-4">
+                                    <img class="rounded" src="/photo/@product-blue.png" alt="">
+                               </div>
+                           </div>
+                           <label for="" class=" mt-3">URL : <a href="{{$jobs->url}}" target="_blank">{{$jobs->url}}</a></label>
+                           <h3 class="mt-5">รูปภาพตัวอย่างงาน</h3>
+                           <hr>
+                           <p class="mt-2 text-header">รูปภาพงานใกล้เคียงกับงาน</p>
+                           <div class="row mt-3 ">
+                                <div class="col-4">
+                                 <img class="rounded" src="/{{$jobs->refpicbyUser}}" alt="">
                                 </div>
-                                 
-         
+                                <div class="col-4">
+                                     <img class="rounded" src="/photo/@product-8.png" alt="">
+                                </div>
+                                <div class="col-4">
+                                     <img class="rounded" src="/photo/@product-8.png" alt="">
+                                </div>
                             </div>
-                            
-                            
-
-                            <input type="hidden" id="output2" name="jobstatus_id" >
-                            <input type="hidden" id="job_id" name="job_id" value="{{$jobs->id}}">
-                            
                         </div>
-                         
-                        {{-- <div class="modal-footer text-center">
-                            
-                            </div> --}}
-                    </div>
+                        <div class="col-12 col-md-6 p-5">
+                            <h3>ข้อมูลงานที่ต้องการ</h3>
+                            <hr>
+                            <p class="text-header">รายละเอียด</p>
+                            <p class="mt-2">{{ $jobs->requirement}}</p>
+                                    <p class="text-header mt-3">ลักษณะหรือสไตล์งานที่ต้องการ</p>
+                                    <hr>
+                                    @foreach($jobs->tags as $tagn)
+            
+                                    @php
+                                                    $tagname = \App\Tags::find($tagn)->tagName;
+                                    @endphp
+                                                                        <div class="btn _primary-btn" style="background-color:black !important; ">{{$tagname}}</div>
+            
+                                    @endforeach
+                                    <hr>
+                                    <h3 class="mt-5">ขอบเขตการจ้างงาน</h3>
+                                    <hr>
+                                    <div class="col-12 mt-3">
+                                        <h5> ขอบเขตการจ้างงาน</h5>
+                                    <small>01 - งานออกแบบฉลากติดสินค้าหน้าเดียว</small>
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <h5>วันที่ต้องการงาน</h5>
+                                        <small>15 วัน (ธรรมดา)</small>
+                                    </div>
+                                  
+                                    <div class="text-right">
+                                        {{-- <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                            <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target=".bd-example-modal-lg">
+                                              เสร็จสิ้นงาน
+                                            </button> --}}
+                                    </div>
+                                    
+                        </div>
+                        {{--  --}}
+            
+                        <form action="/showjob/store" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+            
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">ยืนยันการทำรายการ</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                คุณต้องการยืนยันที่จะทำรายการหรือไม่?
+                            <input type="hidden" id="output" name="jobstatus_id">
+                            <input type="hidden" id="job_id" name="job_id" value="{{$jobs->id}}">
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                            <button type="submit" class="btn btn-primary" style="background-color:black;">ยืนยันการทำรายการ</button>
+            
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+            
+                        </form>
+                        
+                        <form action="/showjob/store2" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+            
+                                    {{-- <div class="modal-header " >
+                                        <div class="row">
+            
+                                        </div>
+                                        <h4 class="modal-title text-center"  id="myLargeModalLabel">คุณต้องการเสร็จสิ้นงานใช่ไหม?</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div> --}}
+                                    <div class="modal-body text-center">
+                                        <div class="container">
+                                            <h2 class="modal-title text-center mt-5 mb-5"  id="myLargeModalLabel">คุณต้องการเสร็จสิ้นงานใช่ไหม?</h2>
+                                            <hr>
+                                            <h5>ช่วยนักออกแบบสร้าง Profile</h5>
+                                            <span>นักออกแบบสามารถนำผลงานของคุณไปแสดงในโปรไฟล์เพื่อ
+                                             ช่วยสร้าง Portfolio บนเว็บไซต์เราได้หรือไม่</span>
+                 
+                                             <div class="row  ">
+                                                 <div class="col-3"></div>
+                                                 <div class="col-6 mt-5 mb-5">
+                                                     <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" name="canshow">
+                                                     <label class="form-check-label" for="defaultCheck1">
+                                                         อนุญาตให้นักออกแบบนำงานคุณไปแสดงในโปรไฟล์
+                                                     </label>
+                                                 </div>
+                                                 <div class="col-3"></div>
+                 
+                                                 
+                                             </div>
+                                             <hr>
+                                             <hr>
+                                            <div class="mt-5 mb-5">
+                                                <button type="button" class="btn btn-secondary"  data-dismiss="modal">ยกเลิก</button>
+                                                <a href="{{ route('job.review', $jobs->token) }}">
+                        
+                                                    <button type="submit" class="btn btn-primary" style="background-color:black;">ยืนยันการเสร็จสิ้นงาน</button>
+                                                </a>
+                                            </div>
+                                             
+                     
+                                        </div>
+                                        
+                                        
+            
+                                        <input type="hidden" id="output2" name="jobstatus_id" >
+                                        <input type="hidden" id="job_id" name="job_id" value="{{$jobs->id}}">
+                                        
+                                    </div>
+                                     
+                                    {{-- <div class="modal-footer text-center">
+                                        
+                                        </div> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    </div> 
                 </div>
             </div>
-        </form>
-
-        </div>
+            
+           
     </div>
 </div>
 
