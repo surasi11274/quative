@@ -92,4 +92,11 @@ class GalleryController extends Controller
         
         
     }
+    public function ajaxRequest(Request $request){
+
+        $jobs = Jobs::find($request->id);
+        $response = auth()->user()->toggleLike($jobs);
+
+        return response()->json(['success'=>$response]);
+    }
 }

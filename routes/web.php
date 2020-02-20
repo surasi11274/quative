@@ -172,7 +172,8 @@ Route::post('/jobdetail/file/store',
 Route::get('/gallery', 'GalleryController@gallery');
 Route::get('/gallery/{id}', 'GalleryController@galleryDetail')->name('galleryDetail');
 
-Route::post('/gallery/like' , 'GalleryController@likepost')->name('like');
+// Route::post('/gallery/like' , 'GalleryController@likepost')->name('like');
+Route::post('ajaxRequest', 'GalleryController@ajaxRequest')->name('ajaxRequest');
 
 // Route::get('/jobdetail/file/download/{id}', 
 //     'DesignerController@downloadFile')->name('downloadfile');

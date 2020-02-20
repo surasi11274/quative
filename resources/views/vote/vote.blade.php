@@ -6,6 +6,8 @@
     
 </body>
 @section('content')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 
     <div class="bd-example shadow-ex">
@@ -83,6 +85,8 @@
 
         <h1 class="mt-5">ผลงานนักออกแบบ<span class="_hilight">ทั้งหมด</span></h1>
         <div class="row">
+            @if($jobs->count())
+
             @foreach ($jobs as $job)
             {{-- @foreach ($jobfiles as $jobfile) --}}
 
@@ -96,7 +100,7 @@
              @endphp
                 <div class="col-4 mt-5">
 
-                        <div class="card" data-jobid="{{ $job->id }}">
+                        <div class="card" data-id="{{ $job->id }}">
                             {{-- @foreach($job->file as $files)
                             @php
 
@@ -112,7 +116,7 @@
                                 <div class="card-body border">
                                         <div class="text-left position-absolute">
                                             <h4 class="_hilight" hidden >Package</h4>
-                                        <p class="card-text">Design by {{$designerid->name}} {{$designerid->surname}}</p>
+                                        {{-- <p class="card-text">Design by {{$designerid->name}} {{$designerid->surname}}</p> --}}
                                             {{-- <p>{{$job->id}}</p> --}}
                                         </div>
                                     @php
@@ -134,20 +138,24 @@
                                         <i class="fas fa-heart">
                                     </button> --}}
                                     @else
-                                    <a hidden href="#" class="like btn btn-sm btn-warning text-decoration-none">
-                                        {{ Auth::user()->likes()->where('job_id', $job->id)->first() ? Auth::user()->likes()->where('job_id', $job->id)->first()->like == 1 ? 'You like this post' : 'Like' : 'Like'  }} 
+                                    {{-- <a hidden href="#" class="like btn btn-sm btn-warning text-decoration-none"> --}}
+                                        {{-- {{ Auth::user()->likes()->where('job_id', $job->id)->first() ? Auth::user()->likes()->where('job_id', $job->id)->first()->like == 1 ? 'You like this post' : 'Like' : 'Like'  }}  --}}
                                         {{-- <button class="love text-center rounded float-right" type="button" name="button">
                                             </i><i class="far fa-heart"></i>
                                         </button> --}}
                                         
-                                    </a>
-                                    <a href="#" class="like btn text-center rounded float-right border" >
+                                    {{-- </a> --}}
+                                    {{-- <a href="#" class="like btn text-center rounded float-right border" > --}}
                                         {{-- <button class="love text-center rounded float-right" type="button" name="button"> --}}
-                                        {!! Auth::user()->likes()->where('job_id', $job->id)->first() ? Auth::user()->likes()->where('job_id', $job->id)->first()->like == 0 ? "<i class='fas fa-heart'></i>" : "<i class='far fa-heart'></i>" : "<i class='far fa-heart'></i>" !!}
+                                        {{-- {!! Auth::user()->likes()->where('job_id', $job->id)->first() ? Auth::user()->likes()->where('job_id', $job->id)->first()->like == 0 ? "<div class='heartclose'><i class='fas fa-heart'></i></div>" : "<div class='heartopen'><i class='far fa-heart'></i></div>" : "<div class='heartopen'><i class='far fa-heart'></i></div>" !!} --}}
 
                                             {{-- </i><i class="far fa-heart"></i> --}}
                                         {{-- </button> --}}
-                                    </a>
+                                    {{-- </a> --}}
+                                    <span class="btn btn-dark">
+                                        <i id="like{{$job->id}}" class="far fa-heart {{ auth()->user()->hasLiked($job) ? 'like-post' : '' }}"></i> 
+                                        <div id="like{{$job->id}}-bs3">{{ $job->likers()->get()->count() }}</div>
+                                    </span>
                                     {{-- <button class="love text-center rounded float-right" type="button" name="button">
                                         <i class="fas fa-heart">
                                     </button> --}}
@@ -163,6 +171,7 @@
                 {{-- @endforeach --}}
 
             @endforeach
+            @endif
 
 
             {{-- <div class="col mt-5">
@@ -230,11 +239,49 @@
 
     </div>    
     
-    <script src="{{asset('js/like.js')}}"></script>
+    {{-- <script src="{{asset('js/like.js')}}"></script>
     <script type="text/javascript">
         var token = '{{ Session::token() }}';
         var urlLike = '{{ route('like') }}';
 
-    </script>
+    </script> --}}
 
+<script type="text/javascript">
+    $(document).ready(function() {     
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $('i.far fa-heart, i.fas fa-heart').click(function(){    
+            var id = $(this).parents(".card").data('id');
+            var c = $('#'+this.id+'-bs3').html();
+            var cObjId = this.id;
+            var cObj = $(this);
+
+            $.ajax({
+               type:'POST',
+               url:'/ajaxRequest',
+               data:{id:id},
+               success:function(data){
+                  if(jQuery.isEmptyObject(data.success.attached)){
+                    $('#'+cObjId+'-bs3').html(parseInt(c)-1);
+                    $(cObj).removeClass("like-post");
+                  }else{
+                    $('#'+cObjId+'-bs3').html(parseInt(c)+1);
+                    $(cObj).addClass("like-post");
+                  }
+               }
+            });
+
+        });      
+
+        $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });                                        
+    }); 
+</script>
     @endsection

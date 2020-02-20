@@ -11,9 +11,9 @@ $('.like').on('click',function(event){
         data : {isLike: isLike, jobId: jobId, _token: token}
     })
     .done(function() {
-            event.target.innerText = isLike ? event.target.innerHTML == 'Like' ? 'You like this post' : 'Like' : event.target.innerHTML == "<i></i>" ? "<i></i>" : "<i></i>" ;
+            event.target.innerText = isLike ? event.target.innerHTML == 'Like' ? 'You like this post' : 'Like' : event.target.className == "heartopen" ? "heartclose" : "heartopen" ;
         if (isLike) {
-            event.target.nextElementSibling.innerHTML = "<i class='far fa-heart'></i>";
+            event.target.nextElementSibling.className = "heartopen";
         } else {
             event.target.previousElementSibling.innerHTML = 'Like';
         }
