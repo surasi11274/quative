@@ -1,0 +1,25 @@
+
+
+/* Mobile section  */
+/* @media (min-width: 576px){
+
+} */
+/* end Mobile section  */
+
+/* Desktop section  */
+@media (min-width: 768px) {
+    /* .pr-md-5, .px-md-5 {
+        padding-right: 3rem!important;
+        } */
+}
+@media (min-width: 960px) {
+    .pl-pr-lg-_ex{
+        padding-left: 13rem!important;
+        padding-right: 13rem!important;
+      }
+}
+/*end Desktop section  */
+
+/* @media (min-width: 992px) {
+
+} */
