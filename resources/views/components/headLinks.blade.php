@@ -13,6 +13,7 @@
 <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 <link rel="stylesheet" href="{{asset('css/reset.css')}}">
 <link rel="stylesheet" href="{{asset('css/base.css')}}">
+<link rel="stylesheet" href="{{asset('css/_Responsive.css')}}">
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('css/_home_style.css')}}">
 <link rel="stylesheet" href="{{asset('css/style_match.css')}}">
@@ -34,4 +35,3 @@
 
 <script src="{{asset('js/file-upload-with-preview.js')}}"></script>
 {{-- <script src="https://unpkg.com/file-upload-with-preview@4.0.2/dist/file-upload-with-preview.min.js"></script> --}}
-{{-- @include('componets.headLinks') --}}
