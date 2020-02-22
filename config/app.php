@@ -162,6 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Overtrue\LaravelFollow\FollowServiceProvider::class,  /* Like Follow */
 
         /*
          * Package Service Providers...
@@ -179,8 +180,8 @@ return [
         // Laravel\Socialite\SocialiteServiceProvider::class,
         \SocialiteProviders\Manager\ServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
-        Overtrue\LaravelFollow\FollowServiceProvider::class,  /* Like Follow */
 
+        ChristianKuri\LaravelFavorite\FavoriteServiceProvider::class,
 
     ],
 

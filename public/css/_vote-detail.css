@@ -233,7 +233,11 @@ button:focus {outline:0 !important;}
     padding: 7px 5px 3px 3px; 
     margin-top: -5px;
   }
-
+  h2 {
+    padding: 15px;
+    font-family: calibri;
+    display: inline-block;
+  }
   .panel .panel-body a { 
     overflow: hidden; 
   }
@@ -270,7 +274,8 @@ button:focus {outline:0 !important;}
   .panel .panel-footer h4 { 
     display: inline; 
     font: 400 normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
-    color: #34495e margin: 0 !important; 
+    color: #34495e ;
+    margin: 0 !important; 
     padding: 0 !important; 
     font-size: 12px;
   }

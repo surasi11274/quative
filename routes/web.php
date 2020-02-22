@@ -169,7 +169,7 @@ Route::post('/jobdetail/file/store',
 
     // -------------------------- Gallery ---------------------------
 
-Route::get('/gallery', 'GalleryController@gallery');
+Route::get('gallery', 'GalleryController@gallery');
 Route::get('/gallery/{id}', 'GalleryController@galleryDetail')->name('galleryDetail');
 
 // Route::post('/gallery/like' , 'GalleryController@likepost')->name('like');

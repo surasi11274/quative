@@ -3,13 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Overtrue\LaravelFollow\Traits\CanBeLiked;
+use ChristianKuri\LaravelFavorite\Traits\Favoriteable;
 
 
 class Jobs extends Model
 {
     //
-    use CanBeLiked;
+    use Favoriteable;
     
     protected $table =  'jobs';
     protected $fillable = ['categories','categories_id','tags','designer_id','url','productPic','refpicbyUser','requirement','pricerate','reference','file','canshow','jobstatus_id','token','user_id'];
