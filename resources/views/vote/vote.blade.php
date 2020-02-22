@@ -6,10 +6,11 @@
 <body style="font-family: prompt;">
     
 </body>
-@section('content')
-{{-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+@section('content')
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 
@@ -96,7 +97,6 @@
 
                                 $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
 
-                                $isuser = Auth::user(); 
 
                             @endphp
 
@@ -112,9 +112,29 @@
                                         </div>
                                         <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
                                         <span class="pull-right">
-                                            <span class="btn btn-light text-center rounded float-right border">
-                                                <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i> <div id="like{{$job->id}}-bs3">{{ $job->favoritedBy()->get()->count() }}</div>
-                                            </span>
+                                          
+                                                @guest
+
+                                                <a href="javascript:void(0);" onclick="toastr.info('To add favorite list. You need to login first.','Info',{
+                                                    closeButton:true,
+                                                    progressBar: true,
+                                                })" class="love btn btn-light text-center rounded float-right border">    
+                                                    <i class="far fa-heart"></i> {{
+                                                    $job->favorite_to_users->count()}}                                
+                                                </a>
+
+                                                @else
+                                            <a href="javascript:void(0);" onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love btn btn-light text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}"> 
+
+                                                    <i class="far fa-heart"></i> {{$job->favorite_to_users->count()}}                 </a>
+                                                     <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                                        style="display:none;">
+                                                    @csrf
+                                                    </form>
+
+                                                @endguest
+                                                {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i> 
+                                                <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
                                         </span>
                                     </div>
                                 </div>
@@ -125,7 +145,7 @@
 </div>
 
 
-<script type="text/javascript">
+{{-- <script type="text/javascript">
     $(document).ready(function() {     
 
 
@@ -162,10 +182,7 @@
         });      
 
 
-        $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
-            event.preventDefault();
-            $(this).ekkoLightbox();
-        });                                        
+                                            
     }); 
-</script>
+</script> --}}
 @endsection

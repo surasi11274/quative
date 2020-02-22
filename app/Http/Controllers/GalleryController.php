@@ -6,7 +6,7 @@ use App\Jobfiles;
 use App\Jobs;
 use App\Like;
 use App\User;
-
+use Brian2694\Toastr\Facades\Toastr;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -96,11 +96,20 @@ class GalleryController extends Controller
         
         
     // }
-    public function ajaxRequest(Request $request){
 
-        $job = Jobs::find($request->id);
-        $response = auth()->user()->toggleFavorite($job);
+    public function add($job){
 
-        return response()->json(['success'=>$response]);
+        $user = Auth::user();
+        $isFavorite = $user->favorite_jobs()->where('jobs_id',$job)->count();
+        
+        if($isFavorite == 0) {
+            $user->favorite_jobs()->attach($job);
+            Toastr::success('Job successfully added to your favorite list :)','Success');
+            return redirect()->back();
+        } else {
+            $user->favorite_jobs()->detach($job);
+            Toastr::success('Job successfully remove from your favorite list :)','Success');
+            return redirect()->back();
+        }
     }
 }

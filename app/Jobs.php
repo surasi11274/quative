@@ -34,9 +34,9 @@ class Jobs extends Model
     {
         return $this->hasMany('App\Designer','user_id');
     }
-    public function likes()
+    public function favorite_to_users()
     {
-        return $this->belongsTo('App\Like');
+        return $this->belongsToMany('App\User')->withTimestamps();
     }
     public function files()
 {
