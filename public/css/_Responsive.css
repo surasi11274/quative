@@ -1,9 +1,11 @@
 
 
 /* Mobile section  */
-/* @media (min-width: 576px){
-
-} */
+@media (min-width: 320px){
+    .text-xm-center{
+        text-align: center;
+    }
+}
 /* end Mobile section  */
 
 /* Desktop section  */
@@ -17,6 +19,29 @@
         padding-left: 13rem!important;
         padding-right: 13rem!important;
       }
+      .carousel-indicators .active {
+        /* background-color: #523EE8 !important; */
+        background-image: url(https://picsum.photos/160/120);
+        width: 160px;
+        height: 120px;
+        border: 3px solid #523EE8;
+       /* opacity: 1; */
+    }
+    .carousel-indicators li{
+        width: 160px !important;
+        height: 120px !important;
+        border-radius: 5px;
+        /* opacity: 0.7; */
+        background-image: url(https://picsum.photos/160/120);
+        /* background-color: #fff !important; */
+    
+    }
+    .carousel-indicators {
+        bottom: -180px !important;
+    }
+    .carousel-indicators-p-lg{
+        padding-top: 200px;
+    }
 }
 /*end Desktop section  */
 

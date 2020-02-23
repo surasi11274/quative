@@ -150,9 +150,7 @@ button:focus {outline:0 !important;}
     background: #fff;
 
 }
-.profile-img{
 
-}
 .profile-img img{
 
 
@@ -326,3 +324,17 @@ button:focus {outline:0 !important;}
   .like-post{
     color: #e21309 !important;
   }
+  .input-icons i {
+    position: absolute;
+}
+
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.icon {
+    padding: 10px;
+    min-width: 40px;
+    left: 40px;
+    color: #904AE8;
+}
