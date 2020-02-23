@@ -86,7 +86,7 @@
     </div>
 </div>
 <div class="container">
-    <h1 class="mt-5">ผลงานนักออกแบบ<span class="_hilight">ทั้งหมด</span></h1>
+    <h1 class="mt-5">ผลงานที่คุณถูกใจ<span class="_hilight">ทั้งหมด</span></h1>
     <div class="row">
 
                     @if($jobs->count())
@@ -140,7 +140,6 @@
                                             </span>
                                             <span class="pl-3">
                                                 <i class="fas fa-eye"></i>
-                                                {{$job->view_count}}
                                             </span>
 
                                         

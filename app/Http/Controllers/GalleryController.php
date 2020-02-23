@@ -29,7 +29,12 @@ class GalleryController extends Controller
         // $jobfiles = \App\Jobfiles::where('job_id',$job->id)->get();
         $jobfiles = Jobfiles::all();
 
+        foreach ($jobs as $jobtags){
+            // $object->title 
+            $jobtag = json_decode($jobtags->tags,true);
 
+
+        }
         // foreach($jobs as $record){
         //     $jobid = $record->id;
         //     // ....
@@ -43,14 +48,19 @@ class GalleryController extends Controller
         // $cats = Categories::all();  
         return view('vote.vote',[
             'jobs'=>$jobs,
-            'jobfiles'=>$jobfiles
+            'jobfiles'=>$jobfiles,
+            'jobtag'=>$jobtag
             ]);
     }
     public function galleryDetail($id)
     {
         $jobs = Jobs::find($id);
         // dd($jobs);
-
+        $jobkey = 'job_' . $jobs->id;
+        if(!Session::has($jobkey)){
+            $jobs->increment('view_count');
+            Session::put($jobkey,1);
+        }
         // $cats = Categories::all();  
         return view('vote.votedetail',[
             'jobs'=>$jobs
@@ -111,5 +121,23 @@ class GalleryController extends Controller
             Toastr::success('Job successfully remove from your favorite list :)','Success');
             return redirect()->back();
         }
+    }
+    public function favList(){
+        $user = Auth::user();
+        $jobs = $user->favorite_jobs()->get();
+
+        $jobfiles = Jobfiles::all();
+
+        foreach ($jobs as $jobtags){
+            // $object->title 
+            $jobtag = json_decode($jobtags->tags,true);
+
+
+        }
+        return view('vote.favoritelist',[
+            'jobs'=>$jobs,
+            'jobfiles'=>$jobfiles,
+            'jobtag'=>$jobtag
+            ]);
     }
 }

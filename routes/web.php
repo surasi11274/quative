@@ -176,6 +176,8 @@ Route::group(['middlewere' => 'auth'], function () {
     Route::post('vote/{job}/add','GalleryController@add')->name('job.vote');
 });
 
+Route::get('/favouritelist', 'GalleryController@favList');
+
 // Route::post('/gallery/like' , 'GalleryController@likepost')->name('like');
 // Route::post('ajaxRequest', 'GalleryController@ajaxRequest')->name('ajaxRequest');
 
