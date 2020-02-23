@@ -255,7 +255,7 @@ class HomeController extends Controller
         if ($jobs->count() == 0){
             return "หาไม่เจอ ทำอะไรดี";
         }
-        return view('showmatch',[
+        return view('matching.showmatch',[
             'jobs'=>$jobs->first(),
             'tags'=>$tags,
             'designers'=>$designers,
@@ -488,7 +488,7 @@ class HomeController extends Controller
     }
     public function storeReviewJob(Request $request)
     {
-        $reviews = Review::create([
+        $jobs = Review::create([
             'rating'=>$request->input('rating'),
 
             'reviewdescription'=>$request->input('reviewdescription'),
@@ -503,8 +503,8 @@ class HomeController extends Controller
         ]);
         
         // $updateJob = Jobs::update('update users set votes = 100 where name = ?', ['John']);
-        $updateJob = DB::table('jobs')->where('id', $reviews->jobs_id)->update([
-            'reviews_id' => $reviews->id
+        $updateJob = DB::table('jobs')->where('id', $jobs->jobs_id)->update([
+            'reviews_id' => $jobs->id
             ]);
         // $updateJob = Jobs::find($request->$reviews->jobs_id);
         // $updateJob->reviews_id = $reviews->id;
@@ -517,8 +517,8 @@ class HomeController extends Controller
         // exit();
         try{
             
-            return redirect(route('show.alljob',[
-                'reviews'=>$reviews
+            return redirect(route('home',[
+                // 'jobs'=>$jobsalljob
                 ]));
 
         }catch (\Exception $x){
@@ -652,7 +652,7 @@ class HomeController extends Controller
     
     }
 
-    public function alljob(Designer $designer)
+    public function alljob()
     {
         //
 

@@ -32,7 +32,7 @@
                         
                          
                         <h3 for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</h3><br>
-                        <label for=""class="content-bg" >วันที่เริ่มงาน :<span> {{ $job->updated_at}} </span></label> <br>
+                        <label for=""class="content-bg" >วันที่เริ่มงาน :<span> {{date('F d,Y',strtotime($job->created_at))}}</span></label> <br>
                         <label for=""class="content-bg" >วันที่ต้องการงาน :<span> 01 มกราคม 2563 </span>  </label><br>
                        
                             <div class="row">

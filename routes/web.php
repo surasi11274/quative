@@ -1,4 +1,7 @@
 <?php
+
+use App\Http\Controllers\GalleryController;
+
 Route::get('/matchfinish', function () {
     return view('matching.matchfinish');
 });
@@ -174,6 +177,7 @@ Route::get('/gallery/{id}', 'GalleryController@galleryDetail')->name('galleryDet
 
 Route::group(['middlewere' => 'auth'], function () {
     Route::post('vote/{job}/add','GalleryController@add')->name('job.vote');
+    Route::post('comment/{job}','GalleryController@store')->name('comment.store');
 });
 
 Route::get('/favouritelist', 'GalleryController@favList');

@@ -89,7 +89,7 @@
                                        <div class="form-tags ">
                                           <ul class=" d-flex">
                                        <i class="fas fa-tag icons p-1"></i>
-                                             
+                                       
                                              <li>
                                                 <div class="box-tags p-1">
                                                    <small>
@@ -107,7 +107,7 @@
                                              <li>
                                                 <div class="box-tags p-1">
                                                    <small>
-                                                      วินเทจ
+                                                      แปลกใหม่
                                                    </small>
                                                 </div>
                                              </li>

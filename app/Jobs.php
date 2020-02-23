@@ -39,9 +39,13 @@ class Jobs extends Model
         return $this->belongsToMany('App\User')->withTimestamps();
     }
     public function files()
-{
+    {
     return $this->hasMany('App\Jobfiles', 'job_id');
-}
+    }
+    public function comments()
+    {
+        return $this->hasMany('App\Comments');
+    }
 }
 
 

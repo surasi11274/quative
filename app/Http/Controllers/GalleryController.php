@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comments;
 use App\Jobfiles;
 use App\Jobs;
 use App\Like;
@@ -21,7 +22,7 @@ class GalleryController extends Controller
     {
         // $jobs = DB::table('jobs')->where('canshow',1)->get();
 
-        $jobs = Jobs::where('canshow',1)->get();
+        $jobs = Jobs::where('canshow',1)->orderBy('id', 'DESC')->get();
         // $jobfiles = $jobs->find()->file;
         // $jobfiles = json_decode($jobfiles,true);
         // $jobs->first()->file = json_decode($jobs->first()->file);
@@ -56,14 +57,23 @@ class GalleryController extends Controller
     {
         $jobs = Jobs::find($id);
         // dd($jobs);
+            // $object->title 
+            $jobtag = json_decode($jobs->tags,true);
+            $jobfile = json_decode($jobs->file,true);
+
+
         $jobkey = 'job_' . $jobs->id;
         if(!Session::has($jobkey)){
             $jobs->increment('view_count');
             Session::put($jobkey,1);
         }
+
+      
         // $cats = Categories::all();  
         return view('vote.votedetail',[
-            'jobs'=>$jobs
+            'jobs'=>$jobs,
+            'jobtag'=>$jobtag,
+            'jobfile'=>$jobfile
             ]);
     }
 
@@ -124,7 +134,7 @@ class GalleryController extends Controller
     }
     public function favList(){
         $user = Auth::user();
-        $jobs = $user->favorite_jobs()->get();
+        $jobs = $user->favorite_jobs()->orderBy('id', 'DESC')->get();
 
         $jobfiles = Jobfiles::all();
 
@@ -139,5 +149,19 @@ class GalleryController extends Controller
             'jobfiles'=>$jobfiles,
             'jobtag'=>$jobtag
             ]);
+    }
+
+    public function store(Request $request,$job){
+        $this->validate($request,[
+            'comment' => 'required'
+        ]);
+
+        $comment = New Comments();
+        $comment->user_id = Auth::id();
+        $comment->jobs_id = $job;
+        $comment->comment = $request->comment;
+        $comment->save();
+        Toastr::success('Comment Successfully Publish  :)','Success');
+        return redirect()->back();
     }
 }

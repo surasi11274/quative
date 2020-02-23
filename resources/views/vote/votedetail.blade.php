@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('assets')
-    <link rel="stylesheet" href="css/_vote-detail.css">
     <link rel="stylesheet" href="{{asset('css/_Responsive.css')}}">
 @endsection
 @section('content')
+<link href="{{ asset('css/_vote-detail.css') }}" rel="stylesheet">
+
     {{-- <div class="bd-example shadow-ex">
         <div id="carouselExampleCaptions3" class="carousel slide" data-ride="pause">
             <ol class="carousel-indicators">
@@ -75,25 +76,55 @@
     </div> --}}
 
     <div class="container mt-5 ">
-        <div class="  bg-white ">
+        <div class="shadow-sm  bg-white ">
             <div class="container content-profile" >
                 <div class="row">
                     <div class=" col-12 col-md-2  p-5">
                         <div class="">
+                            @php
+                            $designerid = \App\Designer::find($jobs->designer_id);
+    
+    
+    
+                        @endphp
                             
                             <figure class="img-fluid">
-                                <img class="rounded-circle" src="https://picsum.photos/140">
+                                <img class="rounded-circle" src="/{{$designerid->profilepic}}">
                             </figure>
                         </div>
                     </div>
                     <div class="col-12 col-md-7 p-md-5 text-md-left text-xm-center ">
-                        <h3 class="_hilight ">Package  Coralist</h3>
-                        <span class="mt-5">Design by&nbsp;<label> กิตติพร บุญดี</label></span>
+                        {{-- <h3 class="_hilight ">Package  Coralist</h3> --}}
+                      
+                        <h3 >ออกแบบ โดย&nbsp;<label> {{$designerid->name}}</label></h3>
                     </div>
-                    <div class="col-12 col-md-3 p-3">
+                    <div class="col-12 col-md-3 p-5">
                         <div class="float-right">
-                            <button class="love text-center rounded float-right" type="button" name="button"><i class="fas fa-heart"></i></button>
-                        </div>
+                            @guest
+
+                            <a href="javascript:void(0);" >
+                            <button onclick="toastr.info('To add favorite list. You need to login first.','Info',{
+                                closeButton:true,
+                                progressBar: true,
+                            })" class="love btn btn-light text-center rounded float-right border">
+                                <i class="fas fa-heart"></i>
+                                {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                            </button>
+                            </a>
+
+                            @else
+                            <a href="javascript:void(0);" >
+                                <button onclick="document.getElementById('vote-form-{{$jobs->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobs->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                    <i class="fas fa-heart"></i>
+                                    {{-- {{$job->favorite_to_users->count()}}   --}}
+                                </button>
+                            </a>
+                                 <form id="vote-form-{{$jobs->id}}" method="POST" action="{{route('job.vote',$jobs->id)}}"
+                                    style="display:none;">
+                                @csrf
+                                </form>
+
+                            @endguest                        </div>
                     </div>
 
 
@@ -109,12 +140,21 @@
                             </ol>
                             <div class="carousel-inner  mt-5">
                                 <div class="carousel-item active">
-                                    <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        {{-- <h5>First slide label</h5>
-                                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> --}}
-                                    </div>
-                                </div>
+
+                                @foreach ($jobfile as $jobf)
+                                @php
+                                $filename = \App\Jobfiles::find($jobf)->fileimgname;
+    
+                                @endphp
+                               
+                                <img src="/{{$filename}}" class="d-block w-100" height="100px" alt="...">
+                               
+                            @endforeach
+                            <div class="carousel-caption d-none d-md-block">
+                                {{-- <h5>First slide label</h5>
+                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> --}}
+                            </div>
+                        </div>
                                 <div class="carousel-item">
                                     <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
@@ -142,77 +182,73 @@
                     </div>
                     <div class="col-12 col-md-12  carousel-indicators-p-lg">
                         <p class="text-justify p-md-5 p-3">
-                            Coralist is a cosmedical skincare brand which uses natural 
-                            ingredients of coral from Jeju Island. This is the first brand in 
-                            Korea to use natural coral as the main ingredient in cosmedical 
-                            skincare product. From this project, we’ve developed brand identity and package design of 3 product lines: Ultimate effect 
-                            toner, emulsion and cream.
+                            {{$jobs->requirement}}
                         </p>
                     <hr>
-                    <div class="row p-5">
+                    <div class="row p-5 ">
                         <div class="col-12 col-md-7">
-                            <h3>ความคิดเห็น</h3>
-                            <div class=" container-fluid" >
-                              <div class="row">
-                                <div class="col-3">
-                                    <figure class="img-fluid  mr-3 ml-3">
-                                        <img class="rounded-circle" src="https://picsum.photos/70">
-                                    </figure>
-                                   </div>
-                                   <div class="col-9">
-                                    <textarea class="form-control" id="validationTextarea" placeholder="แสดงความคิดเห็น" required></textarea>
-    
-                                   </div>
-                              </div>
-                                    <input class="mt-3 btn _primary-black float-right btn-lg" type="submit" value="โพสต์">
-                            </div>
+                        <h3>ความคิดเห็น ({{$jobs->comments()->count()}})</h3>
+                                @guest
+                                    <p>For a new comment.You need to login first.
+                                    <a href="{{route('login')}}">Login </a>
+                                    </p>
+                                @else 
+                                <form action="{{ route('comment.store',$jobs->id)}}" method="POST">
+                                    @csrf
+                                <div class=" container-fluid" >
+                                <div class="row mt-4">
+                                    <div class="col-3">
+                                        <figure class="img-fluid  mr-3 ml-3">
+                                            <img class="rounded-circle" src="https://picsum.photos/70">
+                                        </figure>
+                                    </div>
+                                    <div class="col-9">
+                                        <textarea name="comment" class="form-control" id="validationTextarea" placeholder="แสดงความคิดเห็น" required></textarea>
+        
+                                    </div>
+                                </div>
+                                        <button class="mt-3 btn _primary-black float-right btn-lg" type="submit" >โพสต์</button>
+                                </div>
+                            </form>
+                            @endguest
                         </div>    
                     <div class="col-12 col-md-5 ">
                             <div class="form-tags ">
                                <ul class=" d-flex">
                             <i class="fas fa-tag icons m-1"></i>
-                                  <li class="m-1">
-                                     <div class="box-tags ">
-                                        <small>มินิมอล</small>
-                                     </div>
-                                  </li>
-                                  <li class="m-1">
-                                     <div class="box-tags">
-                                        <small>ทันสมัย</small>
-                                     </div>
-                                  </li>
-                                  <li class="m-1">
-                                     <div class="box-tags">
-                                        <small>วินเทจ</small>
-                                     </div>
-                                  </li>
-                                  <li class="m-1">
-                                    <div class="box-tags">
-                                        <small>แฟนตาซี</small>
-                                     </div>
-                                  </li>
-                                  <li class="m-1">
-                                    <div class="box-tags">
-                                        <small>หนักแน่น</small>
-                                     </div>
-                                  </li>
+                            @foreach ($jobtag as $jobt)
+                            @php
+                            $tagname = \App\Tags::find($jobt)->tagName;
+
+                            @endphp
+                            <p>
+
+                                
+                                <li class="m-1">
+                                    <div class="box-tags ">
+                                       <small>{{$tagname}}</small>
+                                    </div>
+                                 </li>
+                            </p>
+                        @endforeach
+                                 
 
                                </ul>
                             </div>
                             <div class="d-flex">
                                 <i class="fas fa-heart m-1"></i>
-                                <span class="m-1">205</span>
+                                <span class="m-1">{{$jobs->favorite_to_users->count()}}</span>
                                 <p class="m-1">Likes</p>
                             </div>
                             <div class="d-flex">
                                 <i class="far fa-eye m-1"></i>
-                                <span class="m-1">5,000</span>
+                            <span class="m-1">{{$jobs->view_count}}</span>
                                 <p class="m-1">Views</p>
                                 
                             </div>
                             <div class="d-flex">
                                 <i class="fas fa-calendar-week m-1"></i>
-                                <p class="m-1">Feb 15, 2020</p>
+                                <p class="m-1">{{date('F d,Y',strtotime($jobs->created_at))}}</p>
                             </div>
                             <hr>
                             
@@ -220,6 +256,10 @@
                          </div> 
                          <div class="col-12 col-md-7 ">
                             <div class="comment-flow mt-5">
+                               
+                                @if ($jobs->comments->count() > 0)
+                                @foreach ($jobs->comments->sortByDesc('id') as $comment)
+
                                 <div class="row d-flex">
                                     <div class="col-2">
                                         <figure class=" img-fluid">
@@ -227,13 +267,21 @@
                                         </figure>
                                     </div>
                                     <div class="col-7">
-                                        <label for="name">กมลเทพ อัครเดช</label> <br>
-                                        <p>Quative มีแต่นักออกแบบอย่างเทพ</p>
+                                        <label for="name">{{$comment->user->name}}</label> <br>
+                                        <p>{{$comment->comment}}</p>
                                     </div>
                                     <div class="col-3 ">
-                                        <small>11/06/2019</small>
+                                        <small>{{$comment->created_at->diffForHumans()}}</small>
                                     </div>
                                 </div>
+                                @endforeach
+
+                                @else
+                                <p>No Comment yet. Be the first.</p>
+
+                                @endif
+                                    
+
                                 <hr>
                             </div>
                         </div> 
