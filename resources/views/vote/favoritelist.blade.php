@@ -101,7 +101,7 @@
                             @endphp
 
                             <article class="col-4 mt-5">
-                                <div class="card" data-id="{{ $job->id }}">
+                                <div class="card shadow-sm" data-id="{{ $job->id }}">
                                     
                                 <img class="card-img-top" src="{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
  
@@ -133,13 +133,13 @@
                                         </p>
                                     @endforeach
                                      </div>
-                                     <div class="row pl-3">
+                                     <div class="row pl-3 color-grey">
                                             <span>                                                    
                                                 <i class="fas fa-heart"></i> 
                                                 {{$job->favorite_to_users->count()}}  
                                             </span>
                                             <span class="pl-3">
-                                                <i class="fas fa-eye"></i>
+                                                <i class="far fa-eye"></i>
                                             </span>
 
                                         
