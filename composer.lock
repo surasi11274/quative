@@ -4,47 +4,45 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "99777459cdc67939394b3433c97ec5d7",
+    "content-hash": "a2a1ac392f189743123adf5d05a6121f",
     "packages": [
         {
-            "name": "christiankuri/laravel-favorite",
-            "version": "v1.4.0",
+            "name": "brian2694/laravel-toastr",
+            "version": "5.5.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ChristianKuri/laravel-favorite.git",
-                "reference": "e3e0b9cfc8bbbb5efbf6e6e78ee31cd9646f1b51"
+                "url": "https://github.com/brian2694/laravel-toastr.git",
+                "reference": "3173d5bdd31fbcfe2756984063a509ef1da0dc48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ChristianKuri/laravel-favorite/zipball/e3e0b9cfc8bbbb5efbf6e6e78ee31cd9646f1b51",
-                "reference": "e3e0b9cfc8bbbb5efbf6e6e78ee31cd9646f1b51",
+                "url": "https://api.github.com/repos/brian2694/laravel-toastr/zipball/3173d5bdd31fbcfe2756984063a509ef1da0dc48",
+                "reference": "3173d5bdd31fbcfe2756984063a509ef1da0dc48",
                 "shasum": ""
             },
             "require": {
-                "illuminate/database": ">=5.4",
-                "illuminate/support": ">=5.4",
-                "php": ">=5.6.4"
-            },
-            "require-dev": {
-                "orchestra/database": "~3.4",
-                "orchestra/testbench": "~3.4",
-                "phpunit/phpunit": "~5.7"
+                "illuminate/session": ">=5.2.7",
+                "illuminate/support": ">=5.2.7",
+                "php": ">=5.5.0"
             },
             "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
-                        "ChristianKuri\\LaravelFavorite\\FavoriteServiceProvider"
-                    ]
-                },
-                "branch-alias": {
-                    "dev-master": "1.3.x-dev"
+                        "Brian2694\\Toastr\\ToastrServiceProvider"
+                    ],
+                    "aliases": {
+                        "Toastr": "Brian2694\\Toastr\\Facades\\Toastr"
+                    }
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "ChristianKuri\\LaravelFavorite\\": "src/"
-                }
+                    "Brian2694\\Toastr\\": "src/"
+                },
+                "files": [
+                    "src/helper.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -52,25 +50,19 @@
             ],
             "authors": [
                 {
-                    "name": "Christian Kuri",
-                    "email": "christian.kuri.martinez@gmail.com",
-                    "role": "Developer"
+                    "name": "brian2694",
+                    "email": "briansanchez2694@gmail.com"
                 }
             ],
-            "description": "Allows Laravel Eloquent models to implement a 'favorite' or 'remember' or 'follow' feature.",
-            "homepage": "https://github.com/ChristianKuri/laravel-favorite",
+            "description": "toastr.js for laravel 5.5",
+            "homepage": "https://github.com/brian2694/laravel-toastr",
             "keywords": [
-                "ChristianKuri",
-                "Follow",
-                "favoritable",
-                "favorite",
-                "favourite",
                 "laravel",
-                "laravel-favorite",
-                "package",
-                "remember"
+                "notification",
+                "php",
+                "toastr"
             ],
-            "time": "2019-10-28T22:37:14+00:00"
+            "time": "2017-09-27T02:19:46+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3548,6 +3540,72 @@
     ],
     "packages-dev": [
         {
+            "name": "christiankuri/laravel-favorite",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ChristianKuri/laravel-favorite.git",
+                "reference": "e3e0b9cfc8bbbb5efbf6e6e78ee31cd9646f1b51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ChristianKuri/laravel-favorite/zipball/e3e0b9cfc8bbbb5efbf6e6e78ee31cd9646f1b51",
+                "reference": "e3e0b9cfc8bbbb5efbf6e6e78ee31cd9646f1b51",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": ">=5.4",
+                "illuminate/support": ">=5.4",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "orchestra/database": "~3.4",
+                "orchestra/testbench": "~3.4",
+                "phpunit/phpunit": "~5.7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ChristianKuri\\LaravelFavorite\\FavoriteServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ChristianKuri\\LaravelFavorite\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Kuri",
+                    "email": "christian.kuri.martinez@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Allows Laravel Eloquent models to implement a 'favorite' or 'remember' or 'follow' feature.",
+            "homepage": "https://github.com/ChristianKuri/laravel-favorite",
+            "keywords": [
+                "ChristianKuri",
+                "Follow",
+                "favoritable",
+                "favorite",
+                "favourite",
+                "laravel",
+                "laravel-favorite",
+                "package",
+                "remember"
+            ],
+            "time": "2019-10-28T22:37:14+00:00"
+        },
+        {
             "name": "doctrine/instantiator",
             "version": "1.3.0",
             "source": {
@@ -3813,6 +3871,55 @@
                 "object graph"
             ],
             "time": "2020-01-17T21:11:47+00:00"
+        },
+        {
+            "name": "nilsenj/toastr-5.1-laravel",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nilsenj/toastr-5.1-laravel.git",
+                "reference": "fd6681000b55fb6b482a3ef21f22836d663cdbca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nilsenj/toastr-5.1-laravel/zipball/fd6681000b55fb6b482a3ef21f22836d663cdbca",
+                "reference": "fd6681000b55fb6b482a3ef21f22836d663cdbca",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/session": ">=5.0.0",
+                "illuminate/support": ">=5.0.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "nilsenj\\Toastr\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kamal Nasser",
+                    "email": "kamal@kamalnasser.net"
+                },
+                {
+                    "name": "Ivan Nikolenko",
+                    "email": "nikoleivan@gmail.com"
+                }
+            ],
+            "description": "toastr.js for Laravel 5.1/5.2 easy notification like growl for example",
+            "homepage": "https://github.com/nilsenj/toastr-5.1-laravel",
+            "keywords": [
+                "laravel",
+                "notification",
+                "php",
+                "toastr"
+            ],
+            "time": "2016-03-13T02:03:53+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -5123,7 +5230,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "nilsenj/toastr-5.1-laravel": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

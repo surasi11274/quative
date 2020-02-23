@@ -43,6 +43,8 @@ class CreateJobsTable extends Migration
 
             $table->integer('reviews_id')->nullable();
             $table->integer('jobstatus_id')->nullable();
+            $table->integer('view_count')->default(0);
+
 
             
 

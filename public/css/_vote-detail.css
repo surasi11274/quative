@@ -62,7 +62,7 @@ text-align: center;
 
 
 }
-.love-after{
+.favorite_jobs{
     background-color: #523EE8;
     color: white;
     width: 50px;
@@ -72,11 +72,22 @@ text-align: center;
     transition: ease 0.4s;
 
 }
-.love-after:hover{
+.favorite_jobs i{
+  color: white;
+
+
+}
+.favorite_jobs:hover{
     transform: translateY(-10px);
     transition: ease 0.4s;
     font-size: 30px;
+    background-color: #523EE8;
 
+
+
+}
+.favorite_jobs:hover i{
+  color: white;
 
 }
 .shadow-ex{

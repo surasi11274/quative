@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="css/_vote-detail.css">
 @endsection --}}
 <body style="font-family: prompt;">
-
+    
 </body>
 
 @section('content')
@@ -86,7 +86,7 @@
     </div>
 </div>
 <div class="container">
-    <h1 class="mt-5">ผลงานนักออกแบบ<span class="_hilight">ทั้งหมด</span></h1>
+    <h1 class="mt-5">ผลงานที่คุณถูกใจ<span class="_hilight">ทั้งหมด</span></h1>
     <div class="row">
 
                     @if($jobs->count())
@@ -102,20 +102,20 @@
 
                             <article class="col-4 mt-5">
                                 <div class="card" data-id="{{ $job->id }}">
-
+                                    
                                 <img class="card-img-top" src="{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
-
+ 
                                     <div class="card-body">
                                         <div class="text-left position-absolute">
                                             <div class="row pl-3">
-                                                <p class="font-weight-bold">ออกแบบโดย
+                                                <p class="font-weight-bold">ออกแบบโดย 
                                                     {{$designerid->name}}
                                                 </p>
                                             </div>
-
+                                       
                                         {{-- @foreach($job->tags as $tagn)
 
-
+                                           
                                             <p>
                                                 {{$tagname}},
                                             </p>
@@ -128,25 +128,24 @@
 
                                         @endphp
                                         <p>
-
-                                            {{$tagname}},
+                                            
+                                            {{$tagname}}, 
                                         </p>
                                     @endforeach
                                      </div>
                                      <div class="row pl-3">
-                                            <span>
-                                                <i class="fas fa-heart"></i>
-                                                {{$job->favorite_to_users->count()}}
+                                            <span>                                                    
+                                                <i class="fas fa-heart"></i> 
+                                                {{$job->favorite_to_users->count()}}  
                                             </span>
                                             <span class="pl-3">
                                                 <i class="fas fa-eye"></i>
-                                                {{$job->view_count}}
                                             </span>
 
+                                        
+                                        
 
-
-
-
+                                       
                                     </div>
 
 
@@ -154,25 +153,25 @@
                                         </div>
                                         <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
                                         <span class="pull-right">
-
+                                          
                                                 @guest
 
-                                                <a href="javascript:void(0);" >
+                                                <a href="javascript:void(0);" >  
                                                 <button onclick="toastr.info('To add favorite list. You need to login first.','Info',{
                                                     closeButton:true,
                                                     progressBar: true,
                                                 })" class="love btn btn-light text-center rounded float-right border">
-                                                    <i class="fas fa-heart"></i>
+                                                    <i class="fas fa-heart"></i> 
                                                     {{-- {{$job->favorite_to_users->count()}}                                 --}}
-                                                </button>
+                                                </button>  
                                                 </a>
 
                                                 @else
-                                                <a href="javascript:void(0);" >
+                                                <a href="javascript:void(0);" > 
                                                     <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
-                                                        <i class="fas fa-heart"></i>
+                                                        <i class="fas fa-heart"></i> 
                                                         {{-- {{$job->favorite_to_users->count()}}   --}}
-                                                    </button>
+                                                    </button>          
                                                 </a>
                                                      <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
                                                         style="display:none;">
@@ -180,7 +179,7 @@
                                                     </form>
 
                                                 @endguest
-                                                {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
+                                                {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i> 
                                                 <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
                                         </span>
                                     </div>
@@ -188,12 +187,12 @@
                             </article>
                         @endforeach
                     @endif
-
+                
 </div>
 
 
 {{-- <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function() {     
 
 
         $.ajaxSetup({
@@ -203,7 +202,7 @@
         });
 
 
-        $('i.fa-heart, i.fa-heart').click(function(){
+        $('i.fa-heart, i.fa-heart').click(function(){    
             var id = $(this).parents(".card").data('id');
             var c = $('#'+this.id+'-bs3').html();
             var cObjId = this.id;
@@ -226,10 +225,10 @@
             });
 
 
-        });
+        });      
 
 
-
-    });
+                                            
+    }); 
 </script> --}}
 @endsection

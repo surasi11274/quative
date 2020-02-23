@@ -80,7 +80,7 @@ class HomeController extends Controller
          
              
         $tags = Tags::all();
-        return view('search',[
+        return view('matching.search',[
             'cats'=>$cats,
             'tags'=>$tags,
             'refs'=>$refs,
@@ -183,7 +183,7 @@ class HomeController extends Controller
        
 
         
-        return view('search');
+        return view('matching.search');
     }
 
 
@@ -319,7 +319,7 @@ class HomeController extends Controller
         if ($jobs->count() == 0){
             return "หาไม่เจอ ทำอะไรดี";
         }
-        return view('showmatchfinal',[
+        return view('matching.showmatchfinal',[
             'jobs'=>$jobs->first(),
             'tags'=>$tags,
             // 'designers'=>$designers,
@@ -388,7 +388,7 @@ class HomeController extends Controller
         if ($jobs->count() == 0){
             return "หาไม่เจอ ทำอะไรดี";
         }
-        return view('showjob',[
+        return view('jobs.showjob',[
             'jobs'=>$jobs->first(),
             'tags'=>$tags,
             'file'=>$file,
@@ -477,7 +477,7 @@ class HomeController extends Controller
         if ($jobs->count() == 0){
             return "หาไม่เจอ ทำอะไรดี";
         }
-        return view('reviewjob',[
+        return view('jobs.reviewjob',[
             'jobs'=>$jobs,
             'tags'=>$tags,
             'designer'=>$designer,
@@ -563,7 +563,7 @@ class HomeController extends Controller
         if ($jobs->count() == 0){
             return "หาไม่เจอ ทำอะไรดี";
         }
-        return view('payment',[
+        return view('jobs.payment',[
             'jobs'=>$jobs,
             'tags'=>$tags,
             'designer'=>$designer,
@@ -667,7 +667,7 @@ class HomeController extends Controller
         
 
 
-        return view('alljob',[
+        return view('jobs.alljob',[
             'user'=>$user,
             'jobs'=>$jobs,
             // 'jobstatusid'=>$jobstatusid

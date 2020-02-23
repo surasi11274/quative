@@ -1,6 +1,6 @@
 <?php
 Route::get('/matchfinish', function () {
-    return view('matchfinish');
+    return view('matching.matchfinish');
 });
 /*
 |--------------------------------------------------------------------------
@@ -172,8 +172,14 @@ Route::post('/jobdetail/file/store',
 Route::get('gallery', 'GalleryController@gallery');
 Route::get('/gallery/{id}', 'GalleryController@galleryDetail')->name('galleryDetail');
 
+Route::group(['middlewere' => 'auth'], function () {
+    Route::post('vote/{job}/add','GalleryController@add')->name('job.vote');
+});
+
+Route::get('/favouritelist', 'GalleryController@favList');
+
 // Route::post('/gallery/like' , 'GalleryController@likepost')->name('like');
-Route::post('ajaxRequest', 'GalleryController@ajaxRequest')->name('ajaxRequest');
+// Route::post('ajaxRequest', 'GalleryController@ajaxRequest')->name('ajaxRequest');
 
 // Route::get('/jobdetail/file/download/{id}', 
 //     'DesignerController@downloadFile')->name('downloadfile');

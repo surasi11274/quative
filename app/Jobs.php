@@ -12,7 +12,7 @@ class Jobs extends Model
     use Favoriteable;
     
     protected $table =  'jobs';
-    protected $fillable = ['categories','categories_id','tags','designer_id','url','productPic','refpicbyUser','requirement','pricerate','reference','file','canshow','jobstatus_id','token','user_id'];
+    protected $fillable = ['categories','categories_id','tags','designer_id','url','productPic','refpicbyUser','requirement','pricerate','reference','file','canshow','jobstatus_id','token','user_id','view_count'];
 
     public function tags(){
         return $this->hasMany('App\Tags');
@@ -34,9 +34,9 @@ class Jobs extends Model
     {
         return $this->hasMany('App\Designer','user_id');
     }
-    public function likes()
+    public function favorite_to_users()
     {
-        return $this->belongsTo('App\Like');
+        return $this->belongsToMany('App\User')->withTimestamps();
     }
     public function files()
 {
