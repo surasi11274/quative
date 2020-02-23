@@ -119,14 +119,16 @@
                                                     closeButton:true,
                                                     progressBar: true,
                                                 })" class="love btn btn-light text-center rounded float-right border">    
-                                                    <i class="far fa-heart"></i> {{
-                                                    $job->favorite_to_users->count()}}                                
+                                                    <i class="far fa-heart"></i> 
+                                                    {{-- {{$job->favorite_to_users->count()}}                                 --}}
                                                 </a>
 
                                                 @else
-                                            <a href="javascript:void(0);" onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love btn btn-light text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}"> 
+                                            <a href="javascript:void(0);" onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love btn text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}"> 
 
-                                                    <i class="far fa-heart"></i> {{$job->favorite_to_users->count()}}                 </a>
+                                                    <i class="far fa-heart"></i> 
+                                                    {{-- {{$job->favorite_to_users->count()}}   --}}
+                                                               </a>
                                                      <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
                                                         style="display:none;">
                                                     @csrf

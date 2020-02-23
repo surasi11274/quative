@@ -1,6 +1,6 @@
 <?php
 Route::get('/matchfinish', function () {
-    return view('matchfinish');
+    return view('matching.matchfinish');
 });
 /*
 |--------------------------------------------------------------------------
