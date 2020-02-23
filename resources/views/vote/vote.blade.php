@@ -113,7 +113,7 @@
                                         <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
                                         <span class="pull-right">
                                             <span class="btn btn-light text-center rounded float-right border">
-                                                <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i> <div id="like{{$job->id}}-bs3">{{ $job->favoritedBy()->get()->count() }}</div>
+                                                
                                             </span>
                                         </span>
                                     </div>

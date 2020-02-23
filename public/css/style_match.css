@@ -195,7 +195,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     color: #fff;
     text-align: center;
     opacity: .5;
-    background-color: mediumpurple;
+    background-color: #523EE8;
     border-radius: 20px;
 }
 .nav {
@@ -210,12 +210,12 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 ._btn {
     transition: 0.3s;
-    border: 2px solid #904AE8;
+    border: 2px solid #523EE8;
 }
 
 /* Style the active class, and buttons on mouse-over */
 ._active, ._btn:hover {
-    border: 10px solid #904AE8;
+    border: 10px solid #523EE8;
     transform: scale(0.9);
     -webkit-animation-name: bounce;
     animation-name: bounce;
@@ -223,16 +223,16 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     transform-origin: center bottom;
 }
 .carousel-indicators .active {
-    background-color: #904AE8 !important;
+    /* background-color: #523EE8 !important; */
     width: 10px;
     height: 10px;
-    border-radius: 100%;
+   
 }
 .carousel-indicators li{
     width: 10px !important;
     height: 10px !important;
     border-radius: 100%;
-    background-color: #fff !important;
+    /* background-color: #fff !important; */
 
 }
 @keyframes bounce {
@@ -524,7 +524,7 @@ ul.purple-active li input[type="checkbox"]:focus + img {
     background-color: #523EE8;
   }
   
-  .active-color:hover .overlay {
+  .active-color:hover .overlay-1 {
     opacity: 0.8;
     border-radius: 5px;
     cursor: pointer;
@@ -987,7 +987,10 @@ ul.purple-active li input[type="checkbox"]:focus + img {
     background: #FFFFFF;
     border: 1px solid #C4C4C4;
     border-radius: 5px;
-    margin: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+    width: 100%;
+    text-align: center;
   }
   .border-avatar{
     border: 2px solid #523EE8;
