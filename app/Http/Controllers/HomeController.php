@@ -374,13 +374,10 @@ class HomeController extends Controller
 
         $jobstatus = Jobstatus::all();
         $tags = Tags::all();
-        $file = Jobfiles::all();
 
         $jobs->first()->tags = json_decode($jobs->first()->tags);
-        $jobs->first()->file = json_decode($jobs->first()->file,true);
+        $jobfile = json_decode($jobs->first()->file,true);
 
-        // $jobs->first()->tags = json_decode($jobs->first()->tags);
-        // $jobs->jobstatus_id = json_decode($jobs->jobstatus_id);
 
 
 
@@ -391,7 +388,7 @@ class HomeController extends Controller
         return view('jobs.showjob',[
             'jobs'=>$jobs->first(),
             'tags'=>$tags,
-            'file'=>$file,
+            'jobfile'=>$jobfile,
             'jobstatus'=>$jobstatus
            // 'designers'=>$designers
             ]);

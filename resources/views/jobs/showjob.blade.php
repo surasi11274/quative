@@ -568,23 +568,33 @@
                                 <button type="button"class="btn _secondary-btn m-1" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                             @elseif ($jobs->jobstatus_id == 7)
                   
-
-                                @foreach($jobs->file['1'] as $files) 
-                                {{-- @foreach($jobs->tags as $tagn) --}}
-
-                                @php
-                                                $filework = \App\Jobfiles::find($files)->fileimgname;
-                                            @endphp
-                                                                   <a href="{{route('downloadfile',$filework)}}">
-                                                                    <div class="btn _primary-btn" style="background-color:black !important; ">{{$filework}}</div>
-                                                                    </a> 
-        
-                                {{-- @endforeach --}}
+                                                                    
+                                @foreach ($jobfile as $jobf)
+                                    @php
+                                        $filename = \App\Jobfiles::find($jobf)->fileimgname;
+                                        $fileartname = \App\Jobfiles::find($jobf)->fileartworkname;
+                                    @endphp 
                                 
+                                    {{-- <img src="/{{$filename}}" class="d-block w-100" height="100px" alt="..."> --}}
+                                            @if ($filename != NULL)
+                                            
+                                            <a href="/{{$filename}}" download="/{{$filename}}">
+                                                have a img file
+                                            </a>
+                                        @endif
+                                 |
+                                            @if ($fileartname != NULL)
+                                            
+                                            <a href="/{{$fileartname}}" download="/{{$fileartname}}">
+                                                have a artwork file
+                                            </a>
+                                        @endif
+                                        
+                                    
+                                    
 
-
-                                    {{-- <h1>{{$files}}</h1>  --}}
                                 @endforeach
+            
 
                                 <button class="btn _secondary-btn m-1">ดาวน์โหลดไฟล์</button>
                                 <button type="button" class="btn _primary-btn m-1" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>

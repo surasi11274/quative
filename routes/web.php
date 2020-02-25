@@ -116,6 +116,7 @@ Route::get('/payment/{token}', [
     
 Route::post('/payment/store', 
         'HomeController@storePaymentJob');
+        
 Route::get('/file/download/{fileimgname}',
             'Homecontroller@getDownload')->name('downloadfile');
 
