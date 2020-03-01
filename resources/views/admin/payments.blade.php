@@ -6,7 +6,7 @@
         <div class="shadow-sm bg-white">
             <div class="container pt-5 pb-5" style="height:auto;">
                 <div class="row ml-1 mb-3">
-                    <h3>การจ้างงาน</h3>
+                    <h3>ตรวจสอบการโอนเงิน</h3>
                   </div>
                   <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -50,7 +50,14 @@
                             {{-- @php
                             $jobstatusid = \App\Jobstatus::find($payment->jobstatus_id)->statusName;
                              @endphp --}}
+                             @if($payment->payments_status == 'รออนุมัติ')
                             <td class="pt-4 pb-4 text-warning">{{$payment->payments_status}}</td>
+                            @elseif($payment->payments_status == 'อนุมัติการโอนเงินเรียบร้อย')
+                            <td class="pt-4 pb-4 text-success">{{$payment->payments_status}}</td>
+                            @else
+                            <td class="pt-4 pb-4 text-danger">{{$payment->payments_status}}</td>
+
+                            @endif
                             {{-- @endforeach --}}
                             {{-- <td class="pt-4 pb-4"><span class="text-warning"●  </span>
                              @if ($payment->payment_id ==! NULL)

@@ -46,4 +46,21 @@ class AdminController extends Controller
             // 'jobstatusid'=>$jobstatusid
             ]);
     }
+    public function storeUpdatePayment(Request $request)
+    {
+        $updatePayment = Payment::find($request->id);
+        $updatePayment->payments_status = $request->payments_status;
+        $updatePayment->problem_note = $request->problem_note;
+        $updatePayment->save();
+
+
+      
+        try{
+          
+            return redirect(route('admin.paymentsdetail',['id'=>$updatePayment->id]));
+
+        }catch (\Exception $x){
+            return back()->withInput();
+        }
+    }
 }

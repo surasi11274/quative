@@ -804,7 +804,6 @@
                                                  
                                              </div>
                                              <hr>
-                                             <hr>
                                             <div class="mt-5 mb-5">
                                                 <button type="button" class="btn btn-secondary"  data-dismiss="modal">ยกเลิก</button>
                                                 <a href="{{ route('job.review', $jobs->token) }}">
