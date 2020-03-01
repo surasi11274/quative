@@ -6,8 +6,8 @@
 @section('content')
     <section class="payment">
         <div class="container bg-white mt-5 shadow-sm ">
-            <div class="text-center pt-5  ">
-                <h1>แจ้งการโอนเงิน</h1>
+            <div class="text-center pt-5 mb-md-5">
+                <h1 class="_hilight">แจ้งการโอนเงิน</h1>
                 <h4>ใบรหัสการจ้างงาน No. W0{{$jobs->id}}</h4>
             </div>
            <div class="container">
@@ -16,21 +16,18 @@
               {{ csrf_field() }}
                   <div class="form-row pl-pr-lg-_ex ">
                     <div class="form-group col-md-12">
-                      <label for="inputEmail4">ชื่อ</label>
-                      <input type="name" class="form-control" id="inputEmail4" name="name">
+                     <h5 class="font-weight-bold">ยอดที่ชำระ</h5>
+                      <div class="row text-center show-payment shadow-sm">
+                        <p class="col-md-6">ยอดชำระเงินทั้งหมด</p>
+                        <p class="col-md-6 _hilight">{{3400}} บาท</p> 
+                      </div>
+                     
                     </div>
+                   
                     <div class="form-group col-md-12">
-                      <label for="inputPassword4">นามสกุล</label>
-                      <input type="name" class="form-control" id="inputPassword4" name="surname">
-                    </div>
-                    <div class="form-group col-md-12">
-                      <label for="inputAddress">จำนวนเงิน</label>
-                      <input type="text" class="form-control" id="inputAddress" placeholder="ระบุจำนวนเงิน" name="price">
-                    </div>
-                    <div class="form-group col-md-12">
-                      <label for="inputAddress2">บัญชีธนาคาร</label>
+                    <h5 class="font-weight-bold">โอนเข้าบัญชีของธนาคาร</h5>
                       <select id="inputState" class="form-control" name="bank">
-                        <option selected value="NULL">Choose...</option>
+                        <option selected value="NULL">ธนาคารกสิกรไทย</option>
                         <option value="SCB">ธนาคารไทยพาณิชย์</option>
                       </select>
                     </div>
@@ -42,18 +39,18 @@
                       </div>
                   </div> --}}
                     <div class="form-group col-md-6">
-                      <label for="inputCity">วันที่โอนเงิน</label>
+                    <h5 class="font-weight-bold">วันที่โอนเงิน</h5>
                       <input type="date" id="basicDate" class="form-control" name="dateatTransfer"  placeholder="MM/DD/YY" data-input>
                       
                     </div>
                     <div class="form-group col-md-6">
-                      <label for="inputZip">เวลาที่ทำรายการ</label>
-                      <input type="date" id="anotherSelector"" class="form-control" name="timeatTransfer"  placeholder="MM/DD/YY" data-input>
+                    <h5 class="font-weight-bold">เวลาที่ทำรายการ</h5>
+                      <input type="date" id="anotherSelector"" class="form-control" name="timeatTransfer"  placeholder="เลือกเวลาทำรายการ" data-input>
                      
                     </div>
                     <div class="form-row">
                       <label for="">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ
-
+                       
                       <div class="row">
                           {{-- <div class="col"> --}}
                             <div class="mt-5"></div>
@@ -71,7 +68,7 @@
                   
                      
                             <div class="form-group col-md-12">
-                              <label for="validationTextarea">ข้อความเพิ่มเติม (ถ้ามี)</label>
+                              <h5 class="font-weight-bold">ข้อความเพิ่มเติม (ถ้ามี)</h5>
                               <textarea class="form-control" id="validationTextarea" name="description" placeholder="Required example textarea" ></textarea>
                                 </div>
                       </div>
@@ -89,6 +86,7 @@
            </div>
         </div>
     </section>
+
 @endsection
 {{-- <script type="text/javascript">
     $(function () {

@@ -3,7 +3,7 @@ $("#basicDate").flatpickr({
     dateFormat: "Y-m-d"
 });
 $("#anotherSelector").flatpickr({
-    altInput: true,
-    altFormat: "F j, Y",
-    dateFormat: "Y-m-d",
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
 });

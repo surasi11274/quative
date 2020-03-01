@@ -42,7 +42,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+    public function showbilling(){
+    return view('jobs.showpayment');
+    }
     public function index()
     {
         $designers = Designer::all();
@@ -51,6 +53,7 @@ class HomeController extends Controller
             'designers'=>$designers
             ]);
     }
+
 
 
     public function createSearchStep1()
@@ -524,7 +527,8 @@ class HomeController extends Controller
 
     }
   
-
+   
+   
     public function paymentJob($token)
     {
         //
