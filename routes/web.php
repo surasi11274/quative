@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GalleryController;
 
 Route::get('/matchfinish', function () {
@@ -116,7 +117,7 @@ Route::get('/payment/{token}', [
     
 Route::post('/payment/store', 
         'HomeController@storePaymentJob');
-        
+
 Route::get('/file/download/{fileimgname}',
             'Homecontroller@getDownload')->name('downloadfile');
 
@@ -196,8 +197,23 @@ Route::get('/favouritelist', 'GalleryController@favList');
 //     return view('auth.registerDesigner',compact('users'));
 // });
 
+    
+Route::group(['middleware' => ['auth','admin']], function () {
+    Route::get('/admin', 'AdminController@index' );
+    Route::get('/admin/payments', 'AdminController@payments' );
+    Route::get('/admin/payments/{id}', 'AdminController@paymentsdetail' )->name('payments.detail');
+});
 
-Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
+
+// Route::get('admin','Admin\LoginController@showLoginForm')->name('admin.login');
+// Route::post('admin','Admin\LoginController@login');
+// Route::post('admin-password/email','Admin\ForgotPasswordController@sentResetLinkEmail')->name('admin.password.email');
+// Route::get('admin-password/reset','Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+// Route::post('admin-password/reset','Admin\PasswordController@reset');
+// Route::get('admin-password/reset/{token}','Admin\ResetPasswordController@showResetForm')->name('admin.password.reset');
+
+
+
 
 

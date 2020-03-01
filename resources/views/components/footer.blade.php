@@ -1,7 +1,7 @@
 
 
     <!-- Footer Links -->
-    <div class="container text-center text-md-left mt-5" >
+    <div class="container text-center text-md-left mt-5 " >
 
         <!-- Grid row -->
         <div class="row justify-content-center p-5">
