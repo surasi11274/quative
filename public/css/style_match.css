@@ -995,3 +995,10 @@ ul.purple-active li input[type="checkbox"]:focus + img {
   .border-avatar{
     border: 2px solid #523EE8;
   }
+  .show-payment{
+    background: rgba(196, 196, 196, 0.5);
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 1rem;
+  }

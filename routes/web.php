@@ -44,7 +44,10 @@ Route::get('/matchfinish', function () {
 // Route::get('/payment', function () {
 //     return view('payment');
 // });
-
+ Route::get('/showpayment', function () {
+     // 
+     return view('jobs.showpayment');
+ });
 
 // Route::get('/showjob', function () {
 //     return view('showjob');
