@@ -44,6 +44,10 @@ Route::get('/matchfinish', function () {
 // Route::get('/payment', function () {
 //     return view('payment');
 // });
+// pang edit 
+Route::get('/billingdesigner',function (){
+    return view('designer.billing');
+});
  Route::get('/showpayment', function () {
      // 
      return view('jobs.showpayment');

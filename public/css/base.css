@@ -18,6 +18,9 @@
   ._hilight {
     color: #523EE8 !important;
   }
+  ._gray{
+color: #C4C4C4;
+  }
   .nav-pills .nav-link.active, .nav-pills .show>.nav-link p{
     /* color: #fff !important; */
     background-color: #fff !important;
