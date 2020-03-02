@@ -49,7 +49,7 @@
              @endphp
             <td class="pt-4 pb-4 _hilight">{{$jobstatusid}}</td>
             {{-- @endforeach --}}
-            <td class="pt-4 pb-4"><span class="text-warning"●  </span>
+            <td class="pt-4 pb-4"><span class="text-warning">●  </span>
              @if ($job->payment_id ==! NULL)
              ชำระเงินแล้ว
              @else

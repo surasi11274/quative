@@ -42,6 +42,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // pang edit 
+    public function billing (){
+        return view('designer.billing');
+    }
     public function showbilling(){
     return view('jobs.showpayment');
     }
