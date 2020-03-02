@@ -163,7 +163,56 @@
                              
                             {{-- 2 --}}
                            
+                        @elseif(Auth::user()->role=='2')
+                        <li class="nav-item"><a class="nav-link" role="button" href="/admin/payments">ตรวจสอบการชำระเงิน</a></li>
+                        {{-- <li class="nav-item"><a class="nav-link" role="button" href="/gallery">ผลงาน</a></li> --}}
                         
+                        <li class="dropdown nav-item" >
+                            <a  href="#" class="dropdown-toggle nav-link btn" style="color:#523EE8;" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <span class="caret icon profile"></span>
+                            </a>
+                            {{-- {{ Auth::user()->name }} --}}
+                            <!-- <a class="nav-link" role="button" href="/login/designer">Register to Designer</a> -->
+                            <ul class="dropdown-menu "   role="menu">
+                                <li class="nav-item">
+                                    <div class="wrapper-profile">
+                                      <div class="profile-color d-flex p-2">
+                                          {{-- <img class="ml-3 rounded-circle" src="https://picsum.photos/50" alt="" style="width:50px;height:50px;"> --}}
+                                       <h5 class="ml-2">{{ Auth::user()->name }}</h5>
+                                      </div> 
+                                    </div>
+                                   </li>
+                                   {{-- <li class="nav-item">
+                                       <a class="ml-2 nav-link" href="#">ข้อความและการจ้างงาน  <span class="icon chat float-right mr-2"></span></a>
+                                       
+                                   </li> --}}
+                                   {{-- <li class="nav-link">
+                                       <a class="ml-2 nav-link" role="button" href="/requestjob">ตรวจสอบการจ้างงาน  <span class="icon list-ul float-right mr-2"></span></a>
+                                   </li> --}}
+                                   {{-- <li class="nav-link">
+                                       <a class="ml-2 nav-link" href="#">อัพโหลดผลงาน  <span class="icon file-import float-right mr-2"></span></a>
+                                   </li> --}}
+                                   {{-- <li class="nav-link">
+                                       <a class="ml-2 nav-link" href="/favouritelist">ผลงานที่ถูกใจ  <span class="icon love-sym float-right mr-2"></span></a>
+                                   </li> --}}
+                                   {{-- <li class="nav-link">
+                                       <a class="ml-2 nav-link" href="{{ route('designer.designer') }}">แก้ไขโปรไฟล์ส่วนตัว  <span class="icon cog float-right mr-2"></span></a>
+                                   </li> --}}
+                                   <li class="nav-link">
+                                       <hr>
+                                       <a class="ml-2 nav-link"  href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">ออกจากระบบ  <span class="icon sign-out float-right mr-2"></span>
+                                       </a>
+                                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                           {{ csrf_field() }}
+                                       </form>
+                                   </li>
+                            </ul>
+                        </li>
+                          {{-- 1 --}}
+                         
+                        {{-- 2 --}}
                         @else
 
 

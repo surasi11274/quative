@@ -202,7 +202,7 @@ Route::get('/favouritelist', 'GalleryController@favList');
 
     
 Route::group(['middleware' => ['auth','admin']], function () {
-    Route::get('/admin', 'AdminController@index' );
+    Route::get('/admin', 'AdminController@index' )->name('admin');
     Route::get('/admin/payments', 'AdminController@payments' );
     Route::get('/admin/payments/{id}', 'AdminController@paymentsdetail' )->name('payments.detail');
     Route::post('/admin/payments/store', 'AdminController@storeUpdatePayment' );
