@@ -46,7 +46,13 @@ Route::get('/matchfinish', function () {
 // });
 // pang edit 
 
- 
+Route::get('/billingdesigner',function (){
+    return view('designer.billing');
+});
+ Route::get('/showpayment', function () {
+     // 
+     return view('jobs.showpayment');
+ });
 
 // Route::get('/showjob', function () {
 //     return view('showjob');
@@ -113,10 +119,6 @@ Route::get('/reviewjob/{token}', [
 Route::post('/reviewjob/store', 
     'HomeController@storeReviewJob');
 
-Route::get('/showpayment/{token}', [
-    'as' => 'job.showpayment',
-    'uses' => 'HomeController@showpayment']);
-
 Route::get('/payment/{token}', [
         'as' => 'job.payment',
         'uses' => 'HomeController@paymentJob']);
@@ -177,8 +179,6 @@ Route::post('/jobdetail/jobstatus/store',
 Route::post('/jobdetail/file/store', 
     'DesignerController@storeFilesJob');
 
-Route::get('/designer/billing', 
-    'DesignerController@billing')->name('designer.billing');
 
     // -------------------------- Gallery ---------------------------
 
