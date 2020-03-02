@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddProblemnoteToPayments extends Migration
+class AddCoursesTables extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,11 @@ class AddProblemnoteToPayments extends Migration
     public function up()
     {
         //
-        Schema::table('payments',function($table) {
-            $table->string('problem_note')->after('payments_status')->nullable();
+        Schema::create('courses', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('course');
+            $table->string('description');
+            $table->integer('default_rate');
         });
     }
 
@@ -27,8 +30,7 @@ class AddProblemnoteToPayments extends Migration
     public function down()
     {
         //
-        Schema::table('payments',function($table) {
-            $table->dropColum('problem_note');
-        });
+        Schema::dropIfExists('courses');
+
     }
 }

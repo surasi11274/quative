@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddProblemnoteToPayments extends Migration
+class AddCourseToDesigner extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class AddProblemnoteToPayments extends Migration
     public function up()
     {
         //
-        Schema::table('payments',function($table) {
-            $table->string('problem_note')->after('payments_status')->nullable();
+        Schema::table('designers',function($table) {
+            $table->integer('designers_courses_id')->after('bankaccount')->nullable();
         });
     }
 
@@ -27,7 +27,7 @@ class AddProblemnoteToPayments extends Migration
     public function down()
     {
         //
-        Schema::table('payments',function($table) {
+        Schema::table('designers',function($table) {
             $table->dropColum('problem_note');
         });
     }
