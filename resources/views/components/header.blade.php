@@ -145,6 +145,9 @@
                                            <a class="ml-2 nav-link" href="#">อัพโหลดผลงาน  <span class="icon file-import float-right mr-2"></span></a>
                                        </li>
                                        <li class="nav-link">
+                                        <a class="ml-2 nav-link" href="#">ภาพรวมรายรับของฉัน  <span class="icon dollar-sign float-right mr-2"></span></a>
+                                        </li>
+                                       <li class="nav-link">
                                            <a class="ml-2 nav-link" href="/favouritelist">ผลงานที่ถูกใจ  <span class="icon love-sym float-right mr-2"></span></a>
                                        </li>
                                        <li class="nav-link">
