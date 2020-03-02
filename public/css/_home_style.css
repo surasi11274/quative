@@ -166,6 +166,13 @@ h2, h4, h5, p, a,small,button,div{
   font-size: 29px;
   color: #C4C4C4; 
 }
+.dollar-sign::before{
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f155";
+  font-size: 29px;
+  color: #C4C4C4;
+}
 
 .cog::before{
   font-family: "Font Awesome 5 Free";
