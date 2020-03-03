@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Designer;
 use App\Categories;
+use App\Courses;
 use App\Jobfiles;
 use App\References;
 use App\Tags;
@@ -314,6 +315,8 @@ class HomeController extends Controller
         // }
         $jobs = Jobs::where('token',$token)->get();
 
+        $designer = Designer::where('id',$jobs->first()->designer_id)->get();
+        $courses = Courses::where('id',$designer->first()->designers_courses_id)->get();
 
  
         
@@ -323,8 +326,8 @@ class HomeController extends Controller
         $jobs->first()->tags = json_decode($jobs->first()->tags);
         
 
-      
-
+      dd($courses);
+      exit();
 
         if ($jobs->count() == 0){
             return "หาไม่เจอ ทำอะไรดี";
@@ -332,7 +335,7 @@ class HomeController extends Controller
         return view('matching.showmatchfinal',[
             'jobs'=>$jobs->first(),
             'tags'=>$tags,
-            // 'designers'=>$designers,
+            'courses'=>$courses,
             'refs'=>$refs,
             ]);
 
@@ -667,7 +670,7 @@ class HomeController extends Controller
         $user = Auth::user();
         
 
-        $jobs = Jobs::where('jobs.user_id',$user->id)->get();
+        $jobs = Jobs::where('jobs.user_id',$user->id)->orderBy('id', 'DESC')->get();
         ;
         // $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusName;
 

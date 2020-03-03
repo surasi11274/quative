@@ -44,11 +44,12 @@ Route::get('/matchfinish', function () {
 // Route::get('/payment', function () {
 //     return view('payment');
 // });
-// pang edit 
+// pang edit
 Route::get('/includecourse',function (){
     return view('designer.includecourse');
 });
- 
+
+
 
 // Route::get('/showjob', function () {
 //     return view('showjob');
@@ -59,10 +60,10 @@ Auth::routes();
 
 
 Route::get('/', 'HomeController@index')->name('home');
-    
+
 Route::get('/search', [
     'as' => 'search.create',
-    'uses' => 'HomeController@createSearchStep1']);  
+    'uses' => 'HomeController@createSearchStep1']);
 
 Route::post('/search/create/store1', [
     'as' => 'search.create.store',
@@ -70,11 +71,11 @@ Route::post('/search/create/store1', [
 
 Route::delete('/search/show/delete/{token}',
     'HomeController@deleteStoreStep1');
-    
+
 // Route::get('/search/step2/{token}', [
 //     'as' => 'search.create.step2',
 //     'uses' => 'HomeController@createSearchStep2']);
-        
+
 
 Route::get('/search/show/{token}', [
     'as' => 'search.show',
@@ -83,17 +84,17 @@ Route::get('/search/show/{token}', [
 //Route::post('/search/create/store2/{token}', [
   //  'as' => 'search.create.store',
     //'uses' => 'HomeController@storeSearchStep2']);
-Route::post('/search/create/store2', 
+Route::post('/search/create/store2',
     'HomeController@storeSearchStep2');
-    
-    
+
+
 Route::get('search/showfinal/{token}', [
     'as' => 'search.showfinal',
     'uses' => 'HomeController@searchstep3']);
 
 
 
-Route::post('/search/create/store3', 
+Route::post('/search/create/store3',
     'HomeController@storeSearchStep3');
 
 // --------show finish search-------
@@ -102,28 +103,27 @@ Route::get('/showjob/{token}', [
     'as' => 'job.show',
     'uses' => 'HomeController@showjob']);
 
-Route::post('/showjob/store', 
+Route::post('/showjob/store',
     'HomeController@storeShowJob');
 
-    Route::post('/showjob/store2', 
+    Route::post('/showjob/store2',
     'HomeController@storeShowJob2');
 
 Route::get('/reviewjob/{token}', [
     'as' => 'job.review',
     'uses' => 'HomeController@reviewJob']);
 
-Route::post('/reviewjob/store', 
+Route::post('/reviewjob/store',
     'HomeController@storeReviewJob');
 
-Route::get('/showpayment/{token}', [
-    'as' => 'job.showpayment',
-    'uses' => 'HomeController@showpayment']);
+    Route::get('/showpayment/{token}', [
+        'as' => 'job.showpayment',
+        'uses' => 'HomeController@showpayment']);
 
 Route::get('/payment/{token}', [
         'as' => 'job.payment',
         'uses' => 'HomeController@paymentJob']);
-    
-Route::post('/payment/store', 
+Route::post('/payment/store',
         'HomeController@storePaymentJob');
 
 Route::get('/file/download/{fileimgname}',
@@ -136,13 +136,13 @@ Route::get('/alljob', [
         'uses' => 'HomeController@alljob']);
 
 
-    
+
 
     // -------------------------- Designer ---------------------------
 // Route::get('/designer','DesignerController@create');
 Route::get('/designer', [
     'as' => 'designer.designer',
-    'uses' => 'DesignerController@create']); 
+    'uses' => 'DesignerController@create']);
 // Route::get('/edit','DesignerController@edit');
 Route::post('/designer/store', [
     'as' => 'designer.create.store',
@@ -150,13 +150,16 @@ Route::post('/designer/store', [
 
 Route::get('/designer/edit', [
     'as' => 'designer.edit',
-    'uses' => 'DesignerController@edit']); 
+    'uses' => 'DesignerController@edit']);
+
+
+Route::get('/designer/billing', [
+        'as' => 'designer.billing',
+        'uses' => 'DesignerController@billing']);
 
 
 
 
-
-    
 
 // Route::get('/designer/edit','DesignerController@edit');
 
@@ -164,7 +167,7 @@ Route::get('/designer/edit', [
 Route::get('/designer/show/{token}', [
     'as' => 'designer.show',
     'uses' => 'DesignerController@show']);
-    
+
  Route::get('/requestjob', [
     'as' => 'designer.requestjob',
     'uses' => 'DesignerController@requestjob']);
@@ -173,13 +176,13 @@ Route::get('/jobdetail/{id}', [
     'as' => 'designer.jobdetail',
     'uses' => 'DesignerController@showjobdetail']);
 
-Route::post('/jobdetail/jobstatus/store', 
+Route::post('/jobdetail/jobstatus/store',
     'DesignerController@jobStatusStore');
 
-Route::post('/jobdetail/file/store', 
+Route::post('/jobdetail/file/store',
     'DesignerController@storeFilesJob');
 
-Route::get('/designer/billing', 
+Route::get('/designer/billing',
     'DesignerController@billing')->name('designer.billing');
 
     // -------------------------- Gallery ---------------------------
@@ -197,7 +200,7 @@ Route::get('/favouritelist', 'GalleryController@favList');
 // Route::post('/gallery/like' , 'GalleryController@likepost')->name('like');
 // Route::post('ajaxRequest', 'GalleryController@ajaxRequest')->name('ajaxRequest');
 
-// Route::get('/jobdetail/file/download/{id}', 
+// Route::get('/jobdetail/file/download/{id}',
 //     'DesignerController@downloadFile')->name('downloadfile');
 
 // Route::get('/login/designer', 'RegisterDesignerController@show' );
@@ -207,7 +210,7 @@ Route::get('/favouritelist', 'GalleryController@favList');
 //     return view('auth.registerDesigner',compact('users'));
 // });
 
-    
+
 Route::group(['middleware' => ['auth','admin']], function () {
     Route::get('/admin', 'AdminController@index' )->name('admin');
     Route::get('/admin/payments', 'AdminController@payments' );
@@ -224,8 +227,3 @@ Route::group(['middleware' => ['auth','admin']], function () {
 // Route::get('admin-password/reset','Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
 // Route::post('admin-password/reset','Admin\PasswordController@reset');
 // Route::get('admin-password/reset/{token}','Admin\ResetPasswordController@showResetForm')->name('admin.password.reset');
-
-
-
-
-
