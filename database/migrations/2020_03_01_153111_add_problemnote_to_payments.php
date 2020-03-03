@@ -15,7 +15,7 @@ class AddProblemnoteToPayments extends Migration
     {
         //
         Schema::table('payments',function($table) {
-            $table->string('problem_note')->after('payments_status')->nullable();
+            $table->string('problem_note')->after('payments_status')->nullable();;
         });
     }
 

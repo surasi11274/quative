@@ -196,3 +196,7 @@ h2, h4, h5, p, a,small,button,div{
   font-size: 29px;
   color: #C4C4C4; 
 }
+.bg-purple{
+  background-color: #523EE8 !important;
+  color: white !important;
+}
