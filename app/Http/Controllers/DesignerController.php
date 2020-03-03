@@ -208,7 +208,7 @@ class DesignerController extends Controller
         $designer = Auth::user()->designer();
         
 
-        $jobs = Jobs::where('jobs.designer_id',$designer->id)->get();
+        $jobs = Jobs::where('jobs.designer_id',$designer->id)->orderBy('id', 'DESC')->get();
         ;
         // $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusName;
 

@@ -664,7 +664,7 @@ class HomeController extends Controller
         $user = Auth::user();
         
 
-        $jobs = Jobs::where('jobs.user_id',$user->id)->get();
+        $jobs = Jobs::where('jobs.user_id',$user->id)->orderBy('id', 'DESC')->get();
         ;
         // $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusName;
 
