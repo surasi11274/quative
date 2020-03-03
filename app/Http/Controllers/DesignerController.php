@@ -391,8 +391,13 @@ class DesignerController extends Controller
 
     }
 
+    public function course() {
+        return view('designer.includecourse');
+    }
 
-
+    public function billing() {
+        return view('designer.billing');
+    }
 
     /**
      * Update the specified resource in storage.

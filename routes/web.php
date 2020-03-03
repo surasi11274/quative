@@ -45,9 +45,7 @@ Route::get('/matchfinish', function () {
 //     return view('payment');
 // });
 // pang edit
-Route::get('/includecourse',function (){
-    return view('designer.includecourse');
-});
+
 
 
 
@@ -181,6 +179,9 @@ Route::post('/jobdetail/jobstatus/store',
 
 Route::post('/jobdetail/file/store',
     'DesignerController@storeFilesJob');
+
+Route::get('/designer/course',
+    'DesignerController@course')->name('designer.course');
 
 Route::get('/designer/billing',
     'DesignerController@billing')->name('designer.billing');
