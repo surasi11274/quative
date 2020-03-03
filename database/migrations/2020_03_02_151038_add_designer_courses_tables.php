@@ -18,8 +18,9 @@ class AddDesignerCoursesTables extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('designer_id')->unsigned();
-            $table->text('course');
+            $table->text('course_id');
             $table->text('course_rate');
+            $table->text('course_duration_id');
             $table->text('course_duration');
             $table->text('course_duration_rate');
             $table->timestamps();

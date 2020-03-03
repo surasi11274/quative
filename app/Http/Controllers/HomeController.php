@@ -317,10 +317,22 @@ class HomeController extends Controller
         $tags = Tags::all();
         $refs = References::inRandomOrder()->limit(8)->get();     
         $jobs->first()->tags = json_decode($jobs->first()->tags);
-        
 
-      dd($courses);
-      exit();
+
+        
+        
+        // $coursesid = json_decode($courses->first()->courses_id,true);
+        // $coursesrate = json_decode($courses->first()->courses_rate,true);
+
+        // $coursesdurationid = json_decode($courses->first()->courses_duration_id,true);
+        // $coursesduration = json_decode($courses->first()->courses_duration,true);
+        // $coursesdurationrate = json_decode($courses->first()->courses_duration_rate,true);
+
+        dd($courses->first()->courses_id);
+        exit();
+
+        // dd($coursesid,$coursesrate,$coursesdurationid,$coursesduration,$coursesdurationrate);
+        // exit();
 
         if ($jobs->count() == 0){
             return "หาไม่เจอ ทำอะไรดี";
@@ -328,7 +340,15 @@ class HomeController extends Controller
         return view('matching.showmatchfinal',[
             'jobs'=>$jobs->first(),
             'tags'=>$tags,
-            'courses'=>$courses,
+            // 'courses'=>$courses,
+            'coursesid'=>$coursesid,
+            'coursesrate'=>$coursesrate,
+            'coursesdurationid'=>$coursesdurationid,
+            'coursesduration'=>$coursesduration,
+            'coursesdurationrate'=>$coursesdurationrate,
+
+            
+
             'refs'=>$refs,
             ]);
 
