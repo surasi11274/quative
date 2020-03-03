@@ -319,9 +319,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div  id="thumb-output" style="display:flex; width:180px;height:180px;">
+                                {{-- <div  id="thumb-output" style="display:flex; width:180px;height:180px;">
                                 
-                                </div>
+                                </div> --}}
                                
                                  <div class="upload-btn-wrapper-">
                                         {{-- <button class="_btn-upload-"><i class="fas fa-plus"></i></button> --}}
