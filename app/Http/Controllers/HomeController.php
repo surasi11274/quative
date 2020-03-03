@@ -43,8 +43,15 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     // pang edit 
-    
-    
+    public function includecourse (){
+        return view('designer.includecourse');
+    }
+    public function billing (){
+        return view('designer.billing');
+    }
+    public function showbilling(){
+    return view('jobs.showpayment');
+    }
     public function index()
     {
         $designers = Designer::all();
@@ -527,11 +534,7 @@ class HomeController extends Controller
 
     }
   
-    public function showpayment($token){
-        $jobs = Jobs::where('token',$token)->first();
-
-        return view('jobs.showpayment',['jobs'=>$jobs]);
-        }
+   
    
     public function paymentJob($token)
     {
