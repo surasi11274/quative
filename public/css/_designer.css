@@ -12,8 +12,8 @@
     box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);
     padding: 20px 30px;
     box-sizing: border-box;
-    width: 80%;
-    margin: 0 10%;
+    width: 100%;
+    /* margin: 0 10%; */
 
     /*stacking fieldsets above each other*/
     position: relative;

@@ -36,7 +36,7 @@
                             <span class="_hilight">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
-                            <div class="row">
+                            <div class="row mt-md-5">
                                 <div class="col">
                                     <a href="/preview" class="btn _secondary-btn btn-lg btn-block ">พรีวิวงานออกแบบ</a>
                                 </div>
@@ -70,7 +70,7 @@
                             <span class="_hilight">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
-                            <div class="row">
+                            <div class="row mt-md-5">
                                 <div class="col">
                                     <a href="/preview" class="btn _secondary-btn btn-lg btn-block ">พรีวิวงานออกแบบ</a>
                                 </div>
@@ -137,16 +137,16 @@
 
 
     </div>
-    <div class=" _box-1 text-center">
+    <div class=" _box-1 text-center _p-md-5 ">
         <div class="container">
-            <h1 class="p-5 text-center">ทำไมต้อง <span class="_hilight">QUATIVE</span> </h1>
+            <h1 class="p-5 text-center">ทำไมต้อง<span class="_hilight">QUATIVE</span> </h1>
             <div class="row ">
 
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
-                    <div class="card _card shadow-ex" style="cursor: pointer;">
+                    <div class="card _card border shadow-sm" style="cursor: pointer;">
                         <div class="card-body ">
-                            <img src="photo/_badge.png" alt="..." class="mt-5 mb-5">
-                            <h3 class="mt-2 mb-2">มีคุณภาพ</h3>
+                            <img src="photo/badge.png" alt="..." class="mt-5 mb-3">
+                            <h5 class="mt-3 mb-3 font-weight-bold">มีคุณภาพ</h5>
                             <p >สินค้าดีไซน์โดยดีไซน์เนอร์มืออาชีพ <br>
                                 ทำให้มีคุณภาพ ใช้งานได้ดี สวย <br>
                                 โดนใจตามแบบที่เราต้องการ</p>
@@ -156,10 +156,10 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
-                    <div class="card _card shadow-ex"  style="cursor: pointer;">
+                    <div class="card _card border shadow-sm"  style="cursor: pointer;">
                         <div class="card-body">
-                            <img src="photo/_light.png"alt="..." class="mt-5 mb-5">
-                            <h3 class="mt-2 mb-2">นักออกแบบมืออาชีพ</h3>
+                            <img src="photo/lightpop.png"alt="..." class="mt-5 mb-3">
+                            <h5 class="mt-3 mb-3 font-weight-bold">นักออกแบบมืออาชีพ</h5>
                             <p >นักออกแบบเฉพาะทาง <br>
                                 มาช่วยให้งานของคุณดูดีขึ้น <br>
                                 สร้างประสบการณ์ที่ดีต่อใจคุณ</p>
@@ -168,10 +168,10 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
-                    <div class="card _card shadow-ex"  style="cursor: pointer;">
+                    <div class="card _card border shadow-sm"  style="cursor: pointer;">
                         <div class="card-body">
-                            <img src="photo/_vertify.png" alt="..." class="mt-5 mb-5">
-                            <h3 class="mt-2 mb-2">ความปลอดภัย</h3>
+                            <img src="photo/verify.png" alt="..." class="mt-5 mb-3">
+                            <h5 class="mt-3 mb-3 font-weight-bold">ความปลอดภัย</h5>
                             <p >มีการตรวจสอบความปลอดภัย <br>
                                 น่าเชื่อถือสำหรับผู้ใช้งาน <br>
                                 และนักออกแบบ
@@ -185,10 +185,10 @@
         </div>
 
     </div>
-    <div class="container-fluid totorial mt_ex p-5">
-            <div class="container ">
+    <div class="container-fluid totorial ">
+            <div class="container  _p-md-5 ">
                     <div class="text-center"> 
-                            <h1 class="content-dark">Quative <span class="_hilight">ใช้ยังไง?</span></h1>
+                            <h1 class="content-dark pb-5">Quative <span class="_hilight">ใช้ยังไง?</span></h1>
             
                         <div class="row">
                             <div class="col-12 col-md-3">
@@ -231,13 +231,13 @@
     </div>
     
 
-    <div class="_box-2 ">
+    <div class="_box-2 _p-md-5">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-12 col-md-6 ">
                                             <div data-aos="fade-right" data-aos-duration="1000">
                                                 <figure class="img-fluid">
-                                                    <img src="photo/preview.png">
+                                                    <img src="photo/Packaging-3.png">
                                                 </figure>
                                             </div>
                                         </div>
@@ -245,63 +245,52 @@
                                             <h1><span class="_hilight" >พรีวิว</span>บรรจุภัณฑ์<br>
                                                 ลองสินค้าในแบบของคุณ
                                             </h1>
-                                            <p>ลองออกแบบบรรจุภัณฑ์ในรูปแบบหลายๆแบบ โดยใช้โลโก้<br>
-                                                ของคุณระบบจะทำการสร้างบรรจุภัณฑ์ให้คุณทดลองพรีวิวก่อนค้นหาดีไซน์เนอร์
+                                            <p>ลองออกแบบบรรจุภัณฑ์ในรูปแบบหลายๆแบบ โดยใช้โลโก้ของคุณระบบจะทำการสร้างบรรจุภัณฑ์ให้คุณทดลองพรีวิวก่อนค้นหาดีไซน์เนอร์
                                             </p>
-                                            <button class="btn _primary-btn btn-lg btn-block">พรีวิว</button>
+                                            <div class="row">
+                                                <div class="col">
 
+                                                </div>
+                                                <div class="col">
+                                                    <button class="btn _primary-btn btn-lg btn-block mt-5">พรีวิวโลโก้</button>
+
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
-    <div class="_box-3 bg-white mt-ex  mb-5">
+    <div class="_box-3 bg-white _p-md-5  mb-5">
                 <div class="container">
+                    <h1 class="p-5 text-center"> รีวิว<span class="_hilight">จากผู้ใช้งาน</span> </h1>
+                   
                     <div class="row">
                         <div class="col-12 col-md-4 justify-content-center">
-                            <div class="card rounded-ex text-center p-5 mb-3">
-                                <image id="profileImage" class="rounded-circle shadow-ex" src="https://picsum.photos/140" style="width: 140px; height: 140px; margin: 0px auto;">
-                                    <h3>สิทธิชัย</h3>
-                                    <div class="star1">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p>
-                                        การออกแบบมาได้ตรง <br>
+                            <div class="card border  text-center p-5 mb-3">
+                                <img id="profileImage" class="rounded-circle" src="https://picsum.photos/90" style="width: 90px; height: 90px; margin: 0px auto;">
+                                    <h5 class="font-weight-bold mt-3 mb-5">สิทธิชัย อยู่ถาวร</h5>
+                                   
+                                    <p>Quative ดีมากเลย</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 justify-content-center">
+                            <div class="card border  text-center p-5 mb-3">
+                                <img id="profileImage" class="rounded-circle " src="https://picsum.photos/90" style="width: 90px; height: 90px; margin: 0px auto;">
+                                    <h5 class="font-weight-bold mt-3 mb-5">เนตรดวง ตาแก้ว</h5>
+                                   
+                                    <p>นักออกแบบทำงาน
+                                        ให้ตรงตามใจมาก 
                                         ตามใจมากครับ</p>
                             </div>
                         </div>
                         <div class="col-12 col-md-4 justify-content-center">
-                            <div class="card rounded-ex text-center p-5 mb-3">
-                                <image id="profileImage" class="rounded-circle shadow-ex" src="https://picsum.photos/139" style="width: 140px; height: 140px; margin: 0px auto;">
-                                    <h3>สิทธิชัย</h3>
-                                    <div class=" star1">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p>การออกแบบมาได้ตรง <br>
-                                        ตามใจมากครับ</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 justify-content-center">
-                            <div class="card rounded-ex text-center p-5 mb-3">
-                                <image id="profileImage" class="rounded-circle shadow-ex" src="https://picsum.photos/141" style="width: 140px; height: 140px; margin: 0px auto;">
-                                    <h3>สิทธิชัย</h3>
-                                    <div class=" star1">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p>การออกแบบมาได้ตรง <br>
-                                        ตามใจมากครับ</p>
+                            <div class="card border text-center p-5 mb-3">
+                                <img id="profileImage" class="rounded-circle " src="https://picsum.photos/90" style="width: 90px; height: 90px; margin: 0px auto;">
+                                    <h5 class="font-weight-bold mt-3 mb-5">ดวงใจ ดวงนภา</h5>
+                                   
+                                    <p>ตรงต่อเวลา งานขายได้
+                                        ต้อง Quative เลย</p>
                             </div>
                         </div>
 
@@ -311,26 +300,26 @@
 
 
     </div>
-                            <div class="_box-4 bg-white">
+                            <div class="_box-4 _p-md-5">
                                 <div class="text-center">
                                     <h1><span class="_hilight">ผลงาน</span>นักออกแบบ </h1>
-                                    <p>ต้องการค้นหานักออกแบบใช่มั้ย ? สมัครสมาชิกแล้วลองใช้งาน
+                                    <p>ต้องการค้นหานักออกแบบใช่มั้ย ? สมัครสมาชิกแล้วลองใช้งาน <br>
                                         การค้นหานักออกแบบอย่างที่คุณต้องการดูก่อนสิ</p>
 
                                     <div class="flex">
                                         <div class="container">
 
-                                            <div class="row">
+                                            <div class="row mt-5">
                                             {{-- @foreach ($designers as $designer) --}}
 
-                                                <div class="col-12 col-md-6 mt-5 mb-5">
+                                                <div class="col-12 col-md-6 mb-5">
 
                                                     <div class="card">
                                                         <img src="https://picsum.photos/320" class="rounded" alt="...">
                                                         <div class="card-body text-left">
                                                             <div class="row">
                                                                 <div class="col-3">
-                                                                    <img src="" style=" object-fit: cover; width: 90px;height: 90px;" class="rounded-circle" alt="...">
+                                                                    <img src="https://picsum.photos/90" style=" object-fit: cover; width: 90px;height: 90px;" class="rounded-circle" alt="...">
                                                                 </div>
                                                                 <div class="col-9">
                                                                     <h5>ภาวิณี ดุจดวง</h5>
@@ -341,22 +330,22 @@
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-12 col-md-6 mt-5 mb-5">
+                                                        <div class="col-12 col-md-6 mt-5">
                                                             <img src="https://picsum.photos/320" class="rounded" alt="...">
                                                         </div>
-                                                        <div class="col-12 col-md-6 mt-5 mb-5">
+                                                        <div class="col-12 col-md-6 mt-5">
                                                             <img src="https://picsum.photos/320" class="rounded" alt="...">
                                                         </div>
 
                                                     </div>
 
                                                 </div>
-                                                    <div class="col-12 col-md-6 mt-5 mb-5">
+                                                    <div class="col-12 col-md-6  mb-5">
                                                         <div class="row">
-                                                            <div class="col-12 col-md-6 mt-5 mb-5">
+                                                            <div class="col-12 col-md-6  mb-5">
                                                                 <img src="https://picsum.photos/320" class="rounded" alt="...">
                                                             </div>
-                                                            <div class="col-12 col-md-6 mt-5 mb-5">
+                                                            <div class="col-12 col-md-6  mb-5">
                                                                 <img src="https://picsum.photos/320" class="rounded" alt="...">
                                                             </div>
 
@@ -366,7 +355,7 @@
                                                             <div class="card-body text-left">
                                                                 <div class="row">
                                                                     <div class="col-3">
-                                                                        <img src="" style=" object-fit: cover; width: 90px;height: 90px;" class="rounded-circle" alt="...">
+                                                                        <img src="https://picsum.photos/90" style=" object-fit: cover; width: 90px;height: 90px;" class="rounded-circle" alt="...">
                                                                     </div>
                                                                     <div class="col-9">
                                                                         <h5>ภาวิณี ดุจดวง</h5>
