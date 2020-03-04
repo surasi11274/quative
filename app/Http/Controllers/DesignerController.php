@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Courses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -97,12 +98,12 @@ class DesignerController extends Controller
         // $request->file('selfieID')->move('uploads/selfieID',$filenameTostore);
         // $request->file('pictureIDCard')->move('uploads/pictureIDCard',$filenameTostore);
 
-        DB::table('designers')->insert([
+        $designers = Designer::create([
             'description'=>$request->input('description'),
             'phonenumber'=>$request->input('phonenumber'),
             'tag'=>json_encode($request->input('tag')),
             'personalID'=>$request->input('personalID'),
-            'titlename'=>$request->input('titlename'),
+            'titleName'=>$request->input('titleName'),
             'name'=>$request->input('name'),
             'surname'=>$request->input('surname'),
             'birthdate'=>$request->input('birthdate'),
@@ -119,18 +120,45 @@ class DesignerController extends Controller
             'user_id'=>Auth::user()->id,
             'token'=> str_random(16)
 
-            
-
-
-
 
         ]);
-        DB::table('designers')->insert([
-            
-            'tag'=>json_encode($request->input('tag')),
+        
+        
+        $courses = DB::table('courses')->get();
+        $coursesdurations = DB::table('courses_duration')->get();
 
+        foreach ($courses as $cl) {
+            $clid[] = $cl->id;
+            $clr[] = $cl->default_rate;
+
+        }
+        foreach ($coursesdurations as $cdl) {
+            $cdlid[] = $cdl->id;
+            $cdlcd[] = $cdl->course_duration;
+            $cdlr[] = $cdl->default_rate;
+
+        }
+        // dd($clid);
+        // exit();
+        $course = Courses::create([
+            'designer_id'=>$designers->id,
+            'user_id'=>$designers->user_id,
+            
+            'course_id'=>json_encode($clid),
+            'course_rate'=>json_encode($clr),
+            'course_duration_id'=>json_encode($cdlid),
+            'course_duration'=>json_encode($cdlcd),
+            'course_duration_rate'=>json_encode($cdlr),
 
         ]);
+        $updatecourse = DB::table('designers')->where('id', $course->designer_id)->update([
+            'designers_courses_id' => $course->id,
+    
+            ]);
+        // dd($updatecourse);
+        // exit();
+        
+        
 
       
         try{
@@ -391,7 +419,75 @@ class DesignerController extends Controller
 
     }
 
-    public function course() {
+    public function course($token) {
+
+
+        $designer = Designer::where('token',$token)->get();
+        
+
+        // $users = Auth::user()->designer();
+
+        // $courses = DB::table('courses')->get();
+        // $coursesdurations = DB::table('courses_duration')->get();
+
+        return view('designer.course',[
+            // 'courses'=>$courses,
+            // 'coursesdurations'=>$coursesdurations,
+            'designer'=>$designer->first()
+            ]);
+    }
+    public function includecourse($token) {
+
+        // $hascourse = designer()->courses();
+        // if ($hascourse){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+        //     return redirect('/');
+        // }
+
+        $designer = Designer::where('token',$token)->get();
+        
+
+        // $users = Auth::user()->designer();
+
+        $courses = DB::table('courses')->get();
+        $coursesdurations = DB::table('courses_duration')->get();
+
+        return view('designer.includecourse',[
+            'courses'=>$courses,
+            'coursesdurations'=>$coursesdurations,
+            'designer'=>$designer->first()
+            ]);
+    }
+
+    public function courseStore(Request $request) {
+        // $courses = DB::table('courses')->get();
+        // $coursesdurations = DB::table('courses_duration')->get();
+
+        $courses = Courses::create([
+            // foreach (file as $file){
+
+
+            
+            'user_id'=>$request->input('user_id'),
+            'designer_id'=>$request->input('designer_id'),
+            'course_id'=>json_encode($request->input('course_id')),
+            'course_rate'=>json_encode($request->input('course_rate')),
+            'course_duration_id'=>json_encode($request->input('course_duration_id')),
+            'course_duration'=>json_encode($request->input('course_duration')),
+            'course_duration_rate'=>json_encode($request->input('course_duration_rate')),
+
+
+
+
+        ]);
+        $query = DB::table('designer_courses')->select('id')->where('id', $courses->id)->get();
+       
+        $update = DB::table('designers')->where('id', $courses->designer_id)->update([
+            'designers_courses_id' => $query,
+    
+            ]);
+            dd($update);
+            exit();
+        
         return view('designer.includecourse');
     }
 
