@@ -115,8 +115,8 @@
               </div>
               <div class="col-12 text-right mb-5">
                 <div class="flex-nowrap">
-                    <a href="#" class="btn _secondary-btn m-1">ย้อนกลับ</a>
-                      <button type="submit" class="btn _primary-black ">บันทึกข้อมูล</button>
+                    {{-- <a href="#" class="btn _secondary-btn m-1">ย้อนกลับ</a> --}}
+                      <button type="submit" class="btn _primary-black ">แก้ไขข้อมูล</button>
                   </div>
               </div>
               

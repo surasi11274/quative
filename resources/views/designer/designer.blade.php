@@ -325,7 +325,7 @@
             <label for="due" >คำนำหน้าชื่อ</label>                    <i class="fas fa-venus-mars icon"></i>
 
 
-            <select class="form-control" name="titlename" id="month" >
+            <select class="form-control" name="titleName" id="month" >
                         <option selected="selected" value="นาย">นาย</option>
                         <option value="นาง">นาง</option>
                         <option value="นางสาว">นางสาว</option>
