@@ -113,6 +113,7 @@ font-weight: 500;
 font-size: 13px;
 line-height: 27px;
 text-align: center;
+margin: 5px;
 }
 
 ul.ks-cboxtags li label::before {
@@ -310,7 +311,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 /* When the checkbox is checked, add a blue background */
 ._area input:checked ~ .checkmark {
-    background-color: mediumpurple;
+    background-color: #523EE8;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -367,7 +368,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 .overflow-gallery{
 
-    height: 600px;
+    height: 1200px;
     overflow: scroll;
 }
 .grid-gallery img{
@@ -384,7 +385,7 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
     background: white;
     border: 0 none;
     border-radius: 3px;
-    box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);
+    /* box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15); */
     /* padding: 20px 30px; */
     box-sizing: border-box;
     /* width: 80%; */
@@ -875,8 +876,9 @@ ul.purple-active li input[type="checkbox"]:focus + img {
     transform: rotate(45deg);
     transition: 0.4s;
   }
-  .form-check-1{
+  .form-check{
      padding-left: 0 !important;
+     cursor: pointer;
   }
   /* multifile */
   .custom-file-container {
