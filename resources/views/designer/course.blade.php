@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('assets')
 <section class="includecourse">
-  <form action="/designer/coursestore" method="post">
-    {{ csrf_field() }}
+  
 
     <div class="container bg-white mt_ex shadow-sm ">
         <div class="text-center pt-5  ">
@@ -16,29 +15,33 @@
             <h5 class="font-weight-bold">ขอบเขตการจ้างงาน</h5>
            
             <div class="row text-center text-md-left">
-              @foreach ($courses as $course)
-                  
+              {{-- @foreach ($courses_course_id as $coursecourseid) --}}
+              {{-- @foreach ($courses_course_rate as $ccr) --}}
+
                 <div class="col-12 col-md-4 ">
                   <div class="show-payment bg-white">
                     <div class="form-group">
                         <p class="font-weight-bold">งานออกแบบฉลากติดสินค้าหน้าเดียว</p>
                         <small>ฉลากหน้าเดียวสำหรับติด หรือ แปะบนผลิตภัณฑ์ (Design a single-page product label)</small>
                         <small class="_gray">แก้ไขราคา</small>
-                        <input type="hidden"  name="course_id[]" value="{{$course->id}}">
+                        <input type="hidden"  name="course_id[]" value="">
+                            
+                        <input disabled type="num" class="form-control _hilight font-weight-bold" id="editprice" name="course_rate[]" value="{{$courses->course_rate['0']}}">
 
-                        <input type="num" class="form-control _hilight font-weight-bold" id="editprice" name="course_rate[]" value="{{$course->default_rate}}">
                     </div>
                   </div>
                 </div>
-                @endforeach
+                {{-- @endforeach --}}
 
-                {{-- <div class="col-12 col-md-4 bg-white">
+                {{-- @endforeach --}}
+
+                <div class="col-12 col-md-4 bg-white">
                     <div class="show-payment bg-white">
                         <div class="form-group">
                             <p class="font-weight-bold">ออกแบบกล่องแพคเกจ </p>
                             <small>ขึ้นรูปกล่อง, ซองหรือบรรจุภัณฑ์ (Design for forming boxes, Packaging, sachets or packaging) <br></small>
                             <small class="_gray">แก้ไขราคา</small>
-                            <input type="num" class="form-control _hilight font-weight-bold" id="editprice" name="course_rate[]">
+                            <input disabled type="num" class="form-control _hilight font-weight-bold" id="editprice" name="course_rate[]" value="{{$courses->course_rate['1']}}">
                         </div>
                       </div>
                 </div>
@@ -48,75 +51,80 @@
                             <p class="font-weight-bold">ออกแบบฉลากติดสินค้า พร้อมกล่องแพคเกจ</p>
                             <small>ฉลากหน้าเดียวสำหรับติด หรือ แปะ บนผลิตภัณฑ์ และขึ้นรูป กล่อง, ซองหรือบรรจุภัณฑ์</small>
                             <small class="_gray">แก้ไขราคา</small>
-                            <input type="num" class="form-control _hilight font-weight-bold" id="editprice" name="course_rate[]">
+                            <input disabled type="num" class="form-control _hilight font-weight-bold" id="editprice" name="course_rate[]" value="{{$courses->course_rate['2']}}">
                         </div>
                       </div>
-                </div> --}}
+                </div>
               </div>
              
             </div>
             <h5 class="font-weight-bold">ระยะเวลาการทำงาน</h5>
            
             <div class="row text-center text-md-left  mb-5">
-                {{-- <div class="col-12 col-md-4 ">
+                <div class="col-12 col-md-4 ">
                     <div class="show-payment bg-purple">
                         <p class="font-weight-bold">ธรรมดา</p>
                         
                         <small class="_gray">ระยะเวลา</small>
                         <div class="input-group">
                        
-                        <input type="text" class="form-control font-weight-bold _hilight" aria-label="Amount (to the nearest dollar)">
+                        <input disabled type="text" class="form-control font-weight-bold _hilight" aria-label="Amount (to the nearest dollar)" name="course_duration[]" value="{{$courses->course_duration['0']}}">
                         <div class="input-group-append">
                           <span class="input-group-text bg-white font-weight-bold _hilight">วัน</span>
                         </div>
                       </div>
                     </div>
-                </div> --}}
-                @foreach ($coursesdurations as $coursesduration)
-
+                </div>
+                {{-- @foreach ($courses_course_duration as $ccd )
+                @foreach ($courses_course_duration_rate as $ccdr) --}}
+                    
                 <div class="col-12 col-md-4 bg-white">
                     <div class="show-payment bg-purple">
                         <p class="font-weight-bold">ด่วน</p>
-                        <input type="hidden"  name="course_duration_id[]" value="{{$coursesduration->id}}">
+                        <input type="hidden"  name="course_duration_id[]" value="">
 
                         <small class="_gray">ระยะเวลา</small>
                         <div class="input-group">                
-                        <input type="text" class="form-control font-weight-bold _hilight" aria-label="Amount (to the nearest dollar)" name="course_duration[]" value="{{$coursesduration->course_duration}}">
+                        <input disabled type="text" class="form-control font-weight-bold _hilight" aria-label="Amount (to the nearest dollar)" name="course_duration[]" value="{{$courses->course_duration['1']}}">
                         <div class="input-group-append">
                           <span class="input-group-text bg-white font-weight-bold _hilight">วัน</span>
                         </div>
                         <div class="form-group">
                             <small class="_gray">แก้ไขราคา</small>
-                        <input type="num" class="form-control _hilight font-weight-bold" id="editprice" name="course_duration_rate[]" value="{{$coursesduration->default_rate}}">
+                        <input disabled type="num" class="form-control _hilight font-weight-bold" id="editprice" name="course_duration_rate[]" value="{{$courses->course_duration_rate['1']}}">
                         </div>
                       </div>
                     </div>
                 </div>
-                @endforeach
-                {{-- <div class="col-12 col-md-4">
+                {{-- @endforeach
+
+                @endforeach --}}
+                <div class="col-12 col-md-4">
                     <div class="show-payment bg-purple">
                         <p class="font-weight-bold">ด่วนมาก</p>
                         
                         <small class="_gray">ระยะเวลา</small>
                         <div class="input-group">
                        
-                        <input type="text" class="form-control font-weight-bold _hilight" aria-label="Amount (to the nearest dollar)" name="course_duration[]">
+                        <input disabled type="text" class="form-control font-weight-bold _hilight" aria-label="Amount (to the nearest dollar)" name="course_duration[]" value="{{$courses->course_duration['2']}}">
                         <div class="input-group-append">
                           <span class="input-group-text bg-white font-weight-bold _hilight">วัน</span>
                         </div>
                         <div class="form-group">
                             <small class="_gray">แก้ไขราคา</small>
-                            <input type="num" class="form-control _hilight font-weight-bold" id="editprice" name="course_duration_rate[]">
+                            <input disabled type="num" class="form-control _hilight font-weight-bold" id="editprice" name="course_duration_rate[]" value="{{$courses->course_duration_rate['2']}}">
                         </div>
                       </div>
                     </div>
-                </div> --}}
+                </div>
                 
               </div>
               <div class="col-12 text-right mb-5">
                 <div class="flex-nowrap">
                     {{-- <a href="#" class="btn _secondary-btn m-1">ย้อนกลับ</a> --}}
-                      <button type="submit" class="btn _primary-black ">แก้ไขข้อมูล</button>
+                <a href="{{route('designer.includecourse',$courses->id)}}">
+                      <button type="submit" class="btn _primary-black">แก้ไขข้อมูล</button>
+                </a>
                   </div>
               </div>
               
@@ -130,10 +138,9 @@
        </div>
     </div>
 
-  <input type="text" name="user_id" value="{{$designer->user_id}}">
-  <input type="text" name="designer_id" value="{{$designer->id}}">
+  {{-- <input type="text" name="user_id" value="{{$designer->user_id}}"> --}}
+  {{-- <input type="text" name="designer_id" value="{{$designer->id}}"> --}}
 
-  </form>
 </section>
 @endsection
 @section('content')

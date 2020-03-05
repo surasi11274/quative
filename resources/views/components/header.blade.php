@@ -142,7 +142,13 @@
                                        <a class="ml-2 nav-link" role="button" href="{{route('designer.billing')}}">ภาพรวมรายรับของฉัน  <span class="icon dollar-sign  float-right mr-2"></span></a>
                                         </li>
                                        <li class="nav-link">
-                                           <a class="ml-2 nav-link" href="#">อัพโหลดผลงาน  <span class="icon file-import float-right mr-2"></span></a>
+                                           @if (!Auth::user()->designer())
+                                           <a class="ml-2 nav-link" href="#">เรทและราคางานของฉัน  <span class="icon file-import float-right mr-2"></span></a>
+
+                                           @elseif (Auth::user()->designer())
+                                           <a class="ml-2 nav-link" href="{{ route('designer.course', Auth::user()->designer()->token) }}">เรทและราคางานของฉัน  <span class="icon file-import float-right mr-2"></span></a>
+                                           @endif
+
                                        </li>
                                       
                                        <li class="nav-link">

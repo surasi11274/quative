@@ -13,7 +13,7 @@
                             @php
                             $designerpic = \App\Designer::find($jobs->designer_id)->profilepic;
 
-                        @endphp
+                            @endphp
                                 <img class="rounded-circle " src="/{{$designerpic}}" alt="">
                         </div>
                         <div class="col-9">
@@ -21,9 +21,7 @@
 
                             @php
                             $designer = \App\Designer::find($jobs->designer_id);
-                            
-
-                        @endphp
+                            @endphp
                                 <h5 class="content-bg">{{$designer->name}} &nbsp;{{$designer->surname}}</h5> 
                                 <button class="btn _primary-bg-dark btn-lg">คุยกับนักออกแบบ</button>
                         </div>
