@@ -424,36 +424,79 @@ class DesignerController extends Controller
 
         $designer = Designer::where('token',$token)->get();
         
+        $courses = Courses::where('designer_id',$designer->first()->id)->get();
 
+       
+
+        // foreach ($courses as $course){
+            // $jobtag = json_decode($jobtags->tags,true);
+            $courses->first()->course_id = json_decode($courses->first()->course_id);
+            $courses->first()->course_rate = json_decode($courses->first()->course_rate);
+    
+            $courses->first()->course_duration_id = json_decode($courses->first()->course_duration_id);
+            $courses->first()->course_duration = json_decode($courses->first()->course_duration);
+            $courses->first()->course_duration_rate = json_decode($courses->first()->course_duration_rate);
+        // }
+
+        // foreach($courses_course_id as $ccid) {
+        //     $ccid_decode = DB::table('courses')->select('course')->where('id', $ccid)->get();
+        //     $ccid_decode_description = DB::table('courses')->select('description')->where('id', $ccid)->get();
+
+        // }
+        // foreach($courses_course_duration_id as $ccdid) {
+        //     $ccdid_decode = DB::table('courses_duration')->where('id', $ccdid)->get();
+
+        // }
+        // foreach($courses_course_duration as $ccd) {
+        //     $ccd_decode = DB::table('courses_duration')->where('id', $ccd)->get();
+
+        // }
+
+        
+
+        // dd($courses);
+        // exit();
         // $users = Auth::user()->designer();
 
         // $courses = DB::table('courses')->get();
         // $coursesdurations = DB::table('courses_duration')->get();
 
         return view('designer.course',[
-            // 'courses'=>$courses,
-            // 'coursesdurations'=>$coursesdurations,
+            // 'courses_course_rate'=>$courses_course_rate,
+            // 'courses_course_duration'=>$courses_course_duration,
+            // 'courses_course_duration_rate'=>$courses_course_duration_rate,
+            'courses'=>$courses->first(),
             'designer'=>$designer->first()
             ]);
     }
-    public function includecourse($token) {
+    public function includecourse($id) {
 
         // $hascourse = designer()->courses();
+
         // if ($hascourse){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
         //     return redirect('/');
         // }
+        $courses = Courses::find($id);
+        $designer = Designer::where('id',$courses->designer_id)->get();
 
-        $designer = Designer::where('token',$token)->get();
+
+        $courses->course_id = json_decode($courses->course_id);
+        $courses->course_rate = json_decode($courses->course_rate);
+
+        $courses->course_duration_id = json_decode($courses->course_duration_id);
+        $courses->course_duration = json_decode($courses->course_duration);
+        $courses->course_duration_rate = json_decode($courses->course_duration_rate);
+        // $designer = Designer::where('token',$token)->get();
         
 
         // $users = Auth::user()->designer();
 
-        $courses = DB::table('courses')->get();
-        $coursesdurations = DB::table('courses_duration')->get();
+        // $courses = DB::table('courses')->get();
+        // $coursesdurations = DB::table('courses_duration')->get();
 
         return view('designer.includecourse',[
             'courses'=>$courses,
-            'coursesdurations'=>$coursesdurations,
+            // 'coursesdurations'=>$coursesdurations,
             'designer'=>$designer->first()
             ]);
     }
@@ -461,34 +504,53 @@ class DesignerController extends Controller
     public function courseStore(Request $request) {
         // $courses = DB::table('courses')->get();
         // $coursesdurations = DB::table('courses_duration')->get();
+        // $designer = Designer::where('id',$courses->designer_id)->get();
 
-        $courses = Courses::create([
-            // foreach (file as $file){
+        $courses = Courses::find($request->id);
+        // $courses->designer_id = $request->designer_id;
+        $courses->course_rate = json_encode($request->course_rate);
+        $courses->course_duration = json_encode($request->course_duration);
+        $courses->course_duration_rate = json_encode($request->course_duration_rate);
 
+        $courses->save();
+
+        $designer = Designer::where('id',$courses->designer_id)->get();
+    //  dd($designer);
+    //         exit();
+        
+        // $courses = Courses::create([
+            // $courses = Courses::where('id', $request->designer_id)->update([
+            //     'course_rate' => json_encode($request->course_rate),
+            //     // 'jobstatus_id' => '5'
+            //     // 'reference'=>json_encode($request->input('reference')),
+        
+            //     ]);
+                
 
             
-            'user_id'=>$request->input('user_id'),
-            'designer_id'=>$request->input('designer_id'),
-            'course_id'=>json_encode($request->input('course_id')),
-            'course_rate'=>json_encode($request->input('course_rate')),
-            'course_duration_id'=>json_encode($request->input('course_duration_id')),
-            'course_duration'=>json_encode($request->input('course_duration')),
-            'course_duration_rate'=>json_encode($request->input('course_duration_rate')),
+        //     'user_id'=>$request->input('user_id'),
+        //     'designer_id'=>$request->input('designer_id'),
+        //     'course_id'=>json_encode($request->input('course_id')),
+        //     'course_rate'=>json_encode($request->input('course_rate')),
+        //     'course_duration_id'=>json_encode($request->input('course_duration_id')),
+        //     'course_duration'=>json_encode($request->input('course_duration')),
+        //     'course_duration_rate'=>json_encode($request->input('course_duration_rate')),
 
 
 
 
-        ]);
-        $query = DB::table('designer_courses')->select('id')->where('id', $courses->id)->get();
+        // ]);
+
+        // $query = DB::table('designer_courses')->select('id')->where('id', $courses->id)->get();
        
-        $update = DB::table('designers')->where('id', $courses->designer_id)->update([
-            'designers_courses_id' => $query,
+        // $update = DB::table('designers')->where('id', $courses->designer_id)->update([
+        //     'designers_courses_id' => $query,
     
-            ]);
-            dd($update);
-            exit();
+        //     ]);
+        //     dd($update);
+        //     exit();
         
-        return view('designer.includecourse');
+        return redirect()->route('designer.course',$designer->first()->token);
     }
 
     public function billing() {

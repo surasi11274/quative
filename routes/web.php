@@ -183,8 +183,8 @@ Route::post('/jobdetail/file/store',
 Route::get('/designer/course/{token}',
     'DesignerController@course')->name('designer.course');
 
-Route::get('/designer/includecourse/{token}',
-    'DesignerController@includecourse')->name('designer.course');
+Route::get('/designer/includecourse/{id}',
+    'DesignerController@includecourse')->name('designer.includecourse');
 
 Route::post('/designer/coursestore',
     'DesignerController@courseStore');
