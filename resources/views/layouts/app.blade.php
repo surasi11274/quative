@@ -18,7 +18,7 @@
     </div>
     
 </body>
-<footer class="container-fluid page-footer bg-white font-small " >
+<footer class="container-fluid page-footer bg-white font-small mt_ex " >
     @include('components.footer')
    
 </footer>

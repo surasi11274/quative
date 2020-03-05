@@ -14,7 +14,7 @@
 <section class="content ">
     <div class="container d-none d-md-block">
         
-        <div class="text-center mt_ex p-5">
+        <div class="text-center p-5">
             <div id="wizard-progress" >
                 <ol class="step-indicator">
                     <li class="complete">
@@ -40,7 +40,7 @@
     </div>
     
 
-            <form class="multi-step-form  rounded-ex" action="/search/create/store1" method="post" enctype="multipart/form-data">
+            <form class="multi-step-form" action="/search/create/store1" method="post" enctype="multipart/form-data">
                
                 {{ csrf_field() }}
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -108,7 +108,8 @@
                                  
                                    {{-- <p>{{ $cat->name}}</p> --}}
                                    <label class="container-radio">
-                                    <input type="radio"  onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
+                                    <input type="radio" name="radio" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
+                                    {{-- <input type="radio" name="radio"> --}}
                                     <img src="{{ $cat->catsPic}}"  class="rounded" alt="" >
                                     <span class="checkmark-radio"></span>
                                     <p>{{ $cat->name}}</p>
@@ -319,9 +320,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{-- <div  id="thumb-output" style="display:flex; width:180px;height:180px;">
-                                
-                                </div> --}}
+                                {{-- <div  id="thumb-output" style="display:flex; width:180px;height:180px;"></div> --}}
                                
                                  <div class="upload-btn-wrapper-">
                                         {{-- <button class="_btn-upload-"><i class="fas fa-plus"></i></button> --}}
@@ -340,7 +339,7 @@
 
 
                             <div class="container text-center">
-                                <div class="row justify-content-center">
+                                <div class="row ">
 
                                     @foreach ($tags as $tag)
                                         <div class="form-check">
@@ -364,20 +363,33 @@
                            
                          
                         
-                        <h2 class="selectfillter  pt-5">ระบุรายละเอียดสำคัญ ( ปัญหา + ผลกระทบ + เป้าหมายทางธุรกิจ )</h2>
+                        <h2 class="selectfillter">ระบุรายละเอียดสำคัญ</h2>
                         <textarea class="form-control" name="requirement" placeholder="ระบุรายละเอียดสำคัญ เช่น สินค้าไม่น่าดึงดูด, สินค้าทำยอดไม่ไ่ด้" aria-label="With textarea"></textarea>
-                        <div class="d-flex mt-5">
-                            {{-- <button href="javascript:void(0)" class="btn _secondary-btn btn-lg btn-block m-1 ">ยกเลิก</button>
-                            <input type="button" name="next" class="btn _primary-black btn-lg btn-block m-1" value="Next"/> --}}
-                        </div>
+                        
                         <input type="button" name="next" class=" next  _primary-black  btn-block btn-lg  rounded" value="ถัดไป"  />
+                        <div class="row">
+                            <div class="col-6">
+
+                            </div>
+                            <div class="col-6">
+                             <div class="row mt_ex">
+                                 <div class="col-6">
+                                     <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ"/>
+                                 </div>
+                                 <div class="col-6">
+                                     <input type="submit" name="next" class=" next  _primary-black  btn-block rounded btn-lg" value="ถัดไป"/>
+
+                                 </div>
+                             </div>
+                            </div>
+                        </div>
                         </fieldset>
                         {{-- field-two --}}
                         <fieldset>
                             <div class="container bg-white  p-3 p-md-5">
+                                <h2 class="selectfillter">รูปภาพงานใกล้เคียงกับงานที่ต้องการ *ถ้ามี</h2>
                                
                                 <div class="row d-none d-md-block">
-                                    <h2 class="selectfillter">รูปภาพงานใกล้เคียงกับงานที่ต้องการ *ถ้ามี</h2>
                                     <div class="col">
                                         <div  id="thumb-output2" style="display:flex; width:180px;height:180px;">
                                         
@@ -406,7 +418,6 @@
                                                 <div class="col-4 col-md-4 pt-2 pb-2 ">
                                                     <div class="form-check-1 item rounded ">
                                                         <label class="_area">
-                    
                                                             <input  type="checkbox"  id="myCheckbox1" value="{{$ref->id}}" name="reference[]">
                                                             <span class="checkmark"></span>
                                                         </label>
@@ -430,25 +441,26 @@
                     
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-6">
+ 
+                                </div>
+                                <div class="col-6">
+                                 <div class="row mt_ex">
+                                     <div class="col-6">
+                                         <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded" value="ย้อนกลับ"/>
+                                     </div>
+                                     <div class="col-6">
+                                         <input type="submit" name="next" class=" next  _primary-black  btn-block rounded " value="ถัดไป"/>
+ 
+                                     </div>
+                                 </div>
+                                </div>
+                            </div>
                             </div>
                             <input style="border-width: 2px;" type="hidden" class="detaill-select" name="categories" plachholder="sadas" id="output">
                             <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2">
-                           <div class="row">
-                               <div class="col-6">
-
-                               </div>
-                               <div class="col-6">
-                                <div class="row m-3">
-                                    <div class="col-6">
-                                        <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded" value="ย้อนกลับ"/>
-                                    </div>
-                                    <div class="col-6">
-                                        <input type="submit" name="next" class=" next  _primary-black  btn-block rounded " value="ถัดไป"/>
-
-                                    </div>
-                                </div>
-                               </div>
-                           </div>
+                         
                         </fieldset>
                         
                     </div>
@@ -493,3 +505,4 @@
 <script src="{{asset('js/flatpickr.js')}}"></script>
 <script src="js/previewmultiple.js"></script>
 
+<script src="{{asset('js/file-upload-with-preview.js')}}"></script>

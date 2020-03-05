@@ -27,15 +27,15 @@
    </div>
 </div>
 <div class="container ">
-         <div class=" mt-5" style="width: 100%;padding-top: 30px;">
+         <div style="width: 100%;">
          <form class="form-match" action="/search/create/store2" method="post" enctype="multipart/form-data">
          {{ csrf_field() }}
 
-            <div class="containerbg-white  p-5">
+            <div class="container bg-white  p-5">
                <h1 class=" text-center selectfillter  pt-5">ผลการ <span class="_hilight">Matching</span></h1>
       
                <h2 class="selectfillter  pt-5">เลือกนักออกแบบที่ตรงใจกับคุณ</h2>
-               <div class="row">
+               <div class="row mt-md-5">
 
                   <input  type="hidden" class="detaill-select " name="designer_id" plachholder="sadas" id="output">
 
@@ -71,41 +71,41 @@
                      </div>
                      
                   </div>
-                  <div class="col-12 col-md-8 shadow-sm">
+                  <div class="col-12 col-md-8 card p-3 shadow-sm border">
                      <div class="tab-content" id="v-pills-tabContent">
                         @foreach ($designers as $count => $designer)
 
                            <div @if($count == 0) class="tab-pane fade show active"  @else class="tab-pane" @endif  id="v-pills-home-{{$designer->id}}" role="tabpanel" aria-labelledby="v-pills-home-tab">
                               <div class="overflow-gallery grid-gallery">
-                              <div class="row">
+                              <div class="row mt-md-3">
                                  <div class="col-auto">
                                     <img src="/{{$designer->profilepic}}" class="rounded-circle" alt="..." style="width: 50px;height:50px;">
                                  </div>
                                     <div class="col-9">
-                                 <h1>{{$designer->name}}</h1>
-                                    <h5 style="color: #C4C4C4;">นักออกแบบ</h5>   
+                                 <h2 class="font-weight-bold">{{$designer->name}}</h2>
+                                    <p class="_gray mb-md-3">นักออกแบบ<p>   
                                     </div>             
                                     <div class="col-12">
                                        <div class="form-tags ">
                                           <ul class=" d-flex">
-                                       <i class="fas fa-tag icons p-1"></i>
+                                       <i class="fas fa-tag icons p-1 m-1"></i>
                                        
-                                             <li>
-                                                <div class="box-tags p-1">
+                                             <li class="m-1">
+                                                <div class="box-tags p-1 ">
                                                    <small>
                                                       มินิมอล
                                                    </small>
                                                 </div>
                                              </li>
-                                             <li>
-                                                <div class="box-tags p-1">
+                                             <li class="m-1">
+                                                <div class="box-tags p-1  ">
                                                    <small>
                                                       ทันสมัย
                                                    </small>
                                                 </div>
                                              </li>
-                                             <li>
-                                                <div class="box-tags p-1">
+                                             <li class="m-1">
+                                                <div class="box-tags p-1 ">
                                                    <small>
                                                       แปลกใหม่
                                                    </small>
@@ -117,7 +117,7 @@
                                        
                                     </div>            
                                     <div class="col-12">
-                                       <p>{{$designer->description}}</p>
+                                       <p class="mb-md-3">{{$designer->description}}</p>
                                        <h2 class="selectfillter ">  ผลงานบรรณจุภันฑ์ (<small>{{ $designer->id}}</small>)</h2>   
                                     </div>        
                                     

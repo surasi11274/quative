@@ -13,6 +13,9 @@
     /* .pr-md-5, .px-md-5 {
         padding-right: 3rem!important;
         } */
+        ._p-md-5 {
+            padding: 5rem!important;
+        }
 }
 @media (min-width: 960px) {
     .pl-pr-lg-_ex{

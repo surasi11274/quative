@@ -12,8 +12,8 @@
     box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);
     padding: 20px 30px;
     box-sizing: border-box;
-    width: 80%;
-    margin: 0 10%;
+    width: 100%;
+    /* margin: 0 10%; */
 
     /*stacking fieldsets above each other*/
     position: relative;
@@ -36,7 +36,7 @@
 /*buttons*/
 .msform .action-button {
     width: 100%;
-    background: #904AE8;
+    background: #523EE8;
     font-weight: bold;
     color: white;
     border: 0 none;
@@ -46,7 +46,7 @@
     margin: 10px 5px;
 }
 .msform .action-button:hover, .msform .action-button:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #904AE8;
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #523EE8;
 }
 /*headings*/
 .fs-title {
@@ -147,7 +147,7 @@
 
 ._btn-persona {
     border: 2px solid rgba(144, 74, 232,.15);
-    color: mediumpurple;
+    color: #523EE8;
     background-color: white;
     padding: 8px 20px;
     border-radius: 8px;
@@ -181,7 +181,7 @@
     padding: 10px;
     min-width: 40px;
     left: 40px;
-    color: #904AE8;
+    color: #523EE8;
 }
 /*placholder color*/
 textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
