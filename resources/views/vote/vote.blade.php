@@ -86,7 +86,7 @@
     </div>
 </div>
 <div class="container">
-    <h1 class="mt-5">ผลงานนักออกแบบ<span class="_hilight">ทั้งหมด</span></h1>
+    <h2 class="font-weight-bold mt-5">ผลงานนักออกแบบทั้งหมด</h2>
     <div class="row">
 
                     @if($jobs->count())

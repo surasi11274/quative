@@ -79,7 +79,7 @@
         <div class="shadow-sm  bg-white ">
             <div class="container content-profile" >
                 <div class="row">
-                    <div class=" col-12 col-md-2  p-5">
+                    <div class=" col-12 col-md-2 m-auto">
                         <div class="">
                             @php
                             $designerid = \App\Designer::find($jobs->designer_id);
@@ -88,15 +88,16 @@
     
                         @endphp
                             
-                            <figure class="img-fluid">
-                                <img class="rounded-circle" src="/{{$designerid->profilepic}}">
+                            <figure class="img-fluid float-right m-auto">
+                                <img class="rounded-circle" src="/{{$designerid->profilepic}}" style="width:70px; height:70px;">
                             </figure>
                         </div>
                     </div>
                     <div class="col-12 col-md-7 p-md-5 text-md-left text-xm-center ">
                         {{-- <h3 class="_hilight ">Package  Coralist</h3> --}}
                       
-                        <h3 >ออกแบบ โดย&nbsp;<label> {{$designerid->name}}</label></h3>
+                        <h3 >ออกแบบโดย&nbsp;<label> {{$designerid->name}}</label></h3>
+                        <p class="_gray">ออกแบบบรรจุภัณฑ์ประเภท ขวด</p>
                     </div>
                     <div class="col-12 col-md-3 p-5">
                         <div class="float-right">
@@ -130,7 +131,7 @@
 
 
                     <div class="container-fluid" style="    padding-right: 0px !important;
-                    padding-left: 0px !important;">
+                    padding-left: 0px !important;     margin-top: -60px;">
                 
                         <div id="carouselExampleCaptions" class="carousel slide " data-ride="carousel">
                             <ol class="carousel-indicators">
@@ -187,7 +188,7 @@
                     <hr>
                     <div class="row p-5 ">
                         <div class="col-12 col-md-7">
-                        <h3>ความคิดเห็น ({{$jobs->comments()->count()}})</h3>
+                        <h5 class="font-weight-bold">ความคิดเห็น ({{$jobs->comments()->count()}})</h5>
                                 @guest
                                     <p>For a new comment.You need to login first.
                                     <a href="{{route('login')}}">Login </a>
@@ -203,16 +204,18 @@
                                         </figure>
                                     </div>
                                     <div class="col-9">
-                                        <textarea name="comment" class="form-control" id="validationTextarea" placeholder="แสดงความคิดเห็น" required></textarea>
+                                        <textarea name="comment" rows="5" class="form-control" id="validationTextarea" placeholder="แสดงความคิดเห็น" required></textarea>
         
                                     </div>
                                 </div>
-                                        <button class="mt-3 btn _primary-black float-right btn-lg" type="submit" >โพสต์</button>
+                                        <button class="mt-3 btn _primary-black float-right btn-lg" style="    display: block;
+                                        width: 30%;
+                                    " type="submit" >โพสต์</button>
                                 </div>
                             </form>
                             @endguest
                         </div>    
-                    <div class="col-12 col-md-5 ">
+                    <div class="col-12 col-md-5 mt-5">
                             <div class="form-tags ">
                                <ul class=" d-flex">
                             <i class="fas fa-tag icons m-1"></i>
@@ -255,7 +258,8 @@
                             
                          </div> 
                          <div class="col-12 col-md-7 ">
-                            <div class="comment-flow mt-5">
+                            {{-- <div class="comment-flow mt-5"> --}}
+                                <div class="mt-5">
                                
                                 @if ($jobs->comments->count() > 0)
                                 @foreach ($jobs->comments->sortByDesc('id') as $comment)
@@ -274,6 +278,7 @@
                                         <small>{{$comment->created_at->diffForHumans()}}</small>
                                     </div>
                                 </div>
+                                <hr>
                                 @endforeach
 
                                 @else
@@ -282,41 +287,45 @@
                                 @endif
                                     
 
-                                <hr>
+                                
                             </div>
                         </div> 
+                        
+    
+            
+                </div>
+                <div class="container" style="padding: 0rem 3rem 3rem!important;">
+                    <h5 class="font-weight-bold">ผลงานอื่นๆของ การดา ราทอง</h5>
                         <div class="row">
                             <div class="col-12 col-md-4 ">
                                 <div class="caption-inner mt-3 mb-3">
                                     <img src="https://picsum.photos/320/200" alt="Avatar" class="rounded w-100 shadow">
-                                    <div class="overlay  rounded p-3">
+                                    {{-- <div class="overlay  rounded p-3">
                                         <h1>Paper Bag</h1>
                                         <small>Design by Kritpon Klinkomut</small>
-                                    </div>
+                                    </div> --}}
                                 </div>
                              </div>
                              <div class="col-12 col-md-4">
                                 <div class="caption-inner mt-3 mb-3">
                                     <img src="https://picsum.photos/320/200" alt="Avatar" class="rounded w-100 shadow">
-                                    <div class="overlay  rounded p-3">
+                                    {{-- <div class="overlay  rounded p-3">
                                         <h1>Paper Bag</h1>
                                         <small>Design by Kritpon Klinkomut</small>
-                                    </div>
+                                    </div> --}}
                                 </div>
                              </div>
                              <div class="col-12 col-md-4">
                                 <div class="caption-inner mt-3 mb-3">
                                     <img src="https://picsum.photos/320/200" alt="Avatar" class="rounded w-100 shadow">
-                                    <div class="overlay  rounded p-3">
+                                    {{-- <div class="overlay  rounded p-3">
                                         <h1>Paper Bag</h1>
                                         <small>Design by Kritpon Klinkomut</small>
-                                    </div>
+                                    </div> --}}
                                 </div>
                              </div>
                        
                         </div>
-    
-            
                 </div>
                     </div>
                
