@@ -41,15 +41,17 @@
                                         <small>
                                             *ระบบจะค้นหาจากราคาที่ใกล้มากที่สุดจากกลุ่มนักออกแบบ*
                                         </small>
-                                        <select name="pricerate" id="filling" class=" detaill-select form-control mt-3 mb-5" onclick="calculate0(value)">
-                                            <option class="dropdown-item" value="2900" >งานออกแบบฉลากติดสินค้าหน้าเดียว
-                                                <span style="text-color: #ff3957;">ราคา ฿2,900</span>
+                                        <select name="package_price" id="value1" class="detaill-select form-control mt-3 mb-5 " onchange="calculateAmount(this.value)">
+                                            <option class="dropdown-item"  >กรุณาเลือก package
                                             </option>
-                                            <option class="dropdown-item" value="4500" >ออกแบบกล่องแพคเกจ
-                                                <span style="text-color: #ff3957;">ราคา ฿4,500</span>
+                                            <option class="dropdown-item" value="{{$courses->course_rate['0']}}" >งานออกแบบฉลากติดสินค้าหน้าเดียว
+                                                <span style="text-color: #ff3957;">ราคา ฿{{$courses->course_rate['0']}}</span>
                                             </option>
-                                            <option class="dropdown-item" value="7900" o>ออกแบบฉลากติดสินค้า พร้อม กล่องแพคเกจ
-                                                <span style="text-color: #ff3957;">ราคา ฿7,900</span>
+                                            <option class="dropdown-item" value="{{$courses->course_rate['1']}}" >ออกแบบกล่องแพคเกจ
+                                                <span style="text-color: #ff3957;">ราคา ฿{{$courses->course_rate['1']}}</span>
+                                            </option>
+                                            <option class="dropdown-item" value="{{$courses->course_rate['2']}}" o>ออกแบบฉลากติดสินค้า พร้อม กล่องแพคเกจ
+                                                <span style="text-color: #ff3957;">ราคา ฿{{$courses->course_rate['2']}}</span>
                                             </option>
                                         </select>
                                     </div>
@@ -63,28 +65,28 @@
                                               <div class="select-date">
                                                 <div class="middle text-left">
                                                     <label>
-                                                    <input type="radio" name="finishdate" value="Normal" checked  onclick="calculate1('0')"/>
+                                                    <input id="value2" type="radio" name="dateextra_price" onchange="calculateAmount2(this.value)"  value="0" checked  />
                                                     <div class="front-end box">
                                                       <span>ธรรมดา <br>
-                                                    <p>  15 วัน</p>
+                                                    <p>  {{$courses->course_duration['0']}} วัน</p>
                                                     </span>
                                                      
                                                     </div>
                                                   </label>
                                                   
                                                     <label>
-                                                    <input type="radio" name="finishdate" value="Quick"  onclick="calculate1('500')"/>
+                                                    <input id="value2" type="radio" name="dateextra_price" onchange="calculateAmount2(this.value)" value="{{$courses->course_duration_rate['1']}}"  />
                                                     <div class="back-end box">
                                                         <span>ด่วน <br>
-                                                            <p>7 วัน (+฿500)</p>
+                                                            <p>{{$courses->course_duration['1']}} วัน (+฿{{$courses->course_duration_rate['1']}})</p>
                                                           </span>
                                                     </div>
                                                   </label>
                                                   <label>
-                                                    <input type="radio" name="finishdate" value="VeryQuick"  onclick="calculate1('1000')"/>
+                                                    <input id="value2" type="radio" name="dateextra_price" onchange="calculateAmount2(this.value)" value="{{$courses->course_duration_rate['2']}}"  />
                                                     <div class="front-end box">
                                                         <span>ด่วนมาก <br>
-                                                           <p>5 วัน (+฿1,000)</p> 
+                                                           <p>{{$courses->course_duration['2']}} วัน (+฿{{$courses->course_duration_rate['2']}})</p> 
                                                           </span>
                                                     </div>
                                                   </label>
@@ -141,22 +143,39 @@
                                               <tbody>
                                               <tr>
                                                   <th scope="row">01</th>
-                                                  <td>฿</td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input style="width:100px;"  id="package" class="form-control " name="package" type="text"   />
+
+                                                        </div>
+                                                  </td>
                                               </tr>
                                               <tr>
                                                   <th scope="row">วันที่ต้องการงาน</th>
                                                   <td >+ ฿
+                                                      <div class="form-group">
+                                                        <input style="width:100px;"  id="date" class="form-control " name="date"  type="text"   />
+
+                                                      </div>
                                                   </td>
                                               </tr>
                                               <tr>
                                                   <th scope="row">ราคาทั้งหมด</th>
-                                                  <td style=" text-decoration: underline;" id="totalPrice">     
-                                                      
+                                                  <td style=" text-decoration: underline;" >     
+                                                    <div class="form-group">
+                                                        {{-- <input style="width:100px;"  id="result" type="text" onkeyup="calculate()" readonly> --}}
+                                                       {{-- <a href="bankurl" id="total">$</a>  --}}
+                                                        <input style="width:100px;" id="sum" type="text"  readonly>
+
+                                                        {{-- <output id="result"></output> --}}
+
+                                                    </div>
                                                   </td>
                                               </tr>
                                               </tbody>
                                           </table>
                                       </div>
+                                      
                                      {{-- <div class="d-flex mt-5">
                                          <button href="#" class="btn _secondary-btn btn-lg btn-block m-1 ">ยกเลิก</button>
                                          <button href="#"  class="btn _primary-black btn-lg btn-block m-1">ถัดไป</button>
@@ -204,6 +223,8 @@
             </div>
 
  @endsection
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
  <script>
     function addCart(v){
         document.getElementById('output').value = v
@@ -211,24 +232,33 @@
         console.log(v);
         return false;
     }
-    function calculate0(v){
-        document.getElementById('outputCal0').value = v
-        // document.getElementById('designerId').value = v
-        console.log(v);
-        return false;
-    }
-    function calculate1(v){
-        document.getElementById('outputCal1').value = v
-        // document.getElementById('designerId').value = v
-        console.log(v);
-        return false;
-    }
-    function toTal(v){
-        document.getElementById('outputCal2').value = calculate0(v) + calculate1(v);
-        // document.getElementById('designerId').value = v
-        console.log(v);
-        return false;
-    }
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    function calculateAmount(val) {
+        var tot_price = val ;
+        /*display the result*/
+        var divobj = document.getElementById('package');
+
+        divobj.value  = tot_price;
+    }
+    function calculateAmount2(val) {
+        var tot_date = val ;
+        /*display the result*/
+        var divobj2 = document.getElementById('date');
+
+        divobj2.value = tot_date;
+    }
+
+</script>
+<script>
+    // we used jQuery 'keyup' to trigger the computation as the user type
+    $(function(){
+            $('#package, #date').keyup(function(){
+               var value1 = parseFloat($('#package').val()) || 0;
+               var value2 = parseFloat($('#date').val()) || 0;
+               $('#sum').val(value1 + value2);
+            });
+         });
+         
+</script>
 <script src="{{asset('js/flatpickr.js')}}"></script>

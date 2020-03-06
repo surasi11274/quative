@@ -48,7 +48,7 @@
                
                 {{-- end mobile  --}}
                     <div class="container  ">
-                        <fieldset class=" p-3 p-md-5  ">    
+                    <fieldset class="p-3 p-md-5  ">    
                            
     
                             <h2 class="selectfillter"  style="font-weight: 800;">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h2>
@@ -56,55 +56,11 @@
                             @foreach ($cats as $cat)
 
                                    
-                                   {{-- <div class="col-12 d-md-none "> --}}
-                                    {{-- <div class="form-group">
-                                     
-                                        <select class="form-control" id="exampleFormControlSelect1"  onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
-                                          <option>กล่อง</option>
-                                          <option>ขวด</option>
-                                          <option>แก้ว</option>
-                                          <option>ถุง</option>
-                                          <option>กระป๋อง</option>
-                                        </select>
-                                      </div> --}}
-                                      {{-- <div class="form-group">
-                                        <h2 class="selectfillter pt-5"  style="font-weight: 800;">URL<small>(ที่เกี่ยวข้องกับผลิตภัณฑ์)</small></h2>
-                                        <input type="text" class="form-control" name="url" placeholder="เช่น เว็บไซต์, เฟสบุ๊ค เพื่อให้นักออกแบบทำงานได้ง่ายขึ้น ">
-                                    </div>
-                                </div>  --}}
+                                 
                            
                             <div class="col  d-none d-md-block">
                                <div class="body-below text-center">
-                                {{-- <label class="fillter">
-                                    <input type="checkbox" checked="checked"  onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
-                                    <img src="{{ $cat->catsPic}}" alt="">
-                                    <span class="checkmark-pic"></span>
-                                  </label> --}}
-
-                              {{-- <div class="active-color">
-                                <input type="radio" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
-                                <img src="{{ $cat->catsPic}}" alt="Avatar" class="image">
-                                <div class="overlay">
-                                  <span class="icon correct"></span>
-                                </div>
-                              </div> --}}
-
-                                {{-- <ul class="purple-active">
-                                    <li>
-                                        <input type="checkbox" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
-                                        <img src="{{ $cat->catsPic}}"  class="rounded" alt="">
-                            
-                                    </li>
-                                </ul> --}}
-                                
-                        
-                                   {{-- <button type="button" class="btn purple-active" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
-                                    <img src="{{ $cat->catsPic}}"  class="rounded" alt="">
-                                   </button> --}}
-                                  
-                                    {{-- <input type="radio" checked="checked" name="radio">
-                                    <span class="checkmark"></span> --}}
-                                 
+                       
                                  
                                    {{-- <p>{{ $cat->name}}</p> --}}
                                    <label class="container-radio">
@@ -123,186 +79,7 @@
                 
                         </div>
                         {{--old version--}}
-                       <section class="old select">
-                           {{-- <div class="row">--}}
-                               {{--<div class="col-9">--}}
-                                   {{--<div class="form-group">--}}
-                                       {{--<input style="border-width: 2px;" type="text" class="detaill-select " name="categories" plachholder="sadas" id="output">--}}
-                                       {{--<input style="display: none;" type="text"  name="categories_id" plachholder="sadas" id="output2">--}}
-                                   {{--</div>--}}
-                               {{--</div>--}}
-                               {{--<div class="col-3 text-right">--}}
-                                   {{--<button type="button" class="btn _primary-btn btn-block " data-toggle="modal" data-target=".bd-example-modal-lg">เลือก</button>--}}
-                               {{--</div>--}}
-                           {{--</div>--}}
-                           {{--<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">--}}
-                               {{--<div class="modal-dialog modal-xl" role="document" style="    max-width: 1140px;">--}}
-                                   {{--<div class="modal-content p-5 mb-5 form-match rounded-ex">--}}
-
-                                       {{--<form>--}}
-                                           {{--<div class="tab-content" id="myTabContent">--}}
-                                               {{--<button type="button" class="close" style="    font-size: 3.5rem;" data-dismiss="modal" aria-label="Close">--}}
-                                                   {{--<span aria-hidden="true">&times;</span>--}}
-                                               {{--</button>--}}
-                                               {{--<div class="form-group">--}}
-                                                   {{--<h1 ><span class="_hilight">เลือกประเภเทการออกแบบ</span></h1>--}}
-
-                                                   {{--<div class="row">--}}
-                                                       {{--<div class="col-6 rounded-ex p-5" style="border: #C4C4C4 solid 1px; background: #F9F9F9;">--}}
-                                                           {{--<div class="list-group" id="list-tab" role="tablist">--}}
-                                                               {{--<h4>แนวทางการออกแบบ</h4>--}}
-                                                               {{--<div class="mt-3 ">--}}
-                                                                   {{--<div>--}}
-                                                                       {{--<ul class="nav nav-tabs card-header-tabs d-block" id="myTab" role="tablist">--}}
-                                                                           {{--<li class="nav-item">--}}
-                                                                               {{--<a class="btn _primary-drop m-1" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">บรรจุภัณฑ์ประเภท กล่อง</a>--}}
-                                                                           {{--</li>--}}
-                                                                           {{--<li class="nav-item">--}}
-                                                                               {{--<a class="btn _primary-drop m-1" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false">บรรจุภัณฑ์ประเภท แก้ว</a>--}}
-                                                                           {{--</li>--}}
-                                                                           {{--<li class="nav-item">--}}
-                                                                               {{--<a class="btn _primary-drop m-1" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three" aria-selected="false">บรรจุภัณฑ์ประเภท ขวด</a>--}}
-                                                                           {{--</li>--}}
-                                                                           {{--<li class="nav-item">--}}
-                                                                               {{--<a class="btn _primary-drop m-1" id="four-tab" data-toggle="tab" href="#four" role="tab" aria-controls="four" aria-selected="false">บรรจุภัณฑ์ประเภท ถุง</a>--}}
-                                                                           {{--</li>--}}
-                                                                           {{--<li class="nav-item">--}}
-                                                                               {{--<a class="btn _primary-drop m-1" id="five-tab" data-toggle="tab" href="#five" role="tab" aria-controls="five" aria-selected="false">บรรจุภัณฑ์ประเภท กระป๋อง</a>--}}
-                                                                           {{--</li>--}}
-                                                                       {{--</ul>--}}
-                                                                   {{--</div>--}}
-                                                               {{--</div>--}}
-                                                           {{--</div>--}}
-
-                                                       {{--</div>--}}
-                                                       {{--<div class="col-6">--}}
-                                                           {{--<div class="tab-content" id="nav-tabContent">--}}
-                                                               {{--<div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">--}}
-                                                                   {{--<h5>เลือกรายละเอียด</h5>--}}
-                                                                   {{--<div class="row">--}}
-
-                                                                       {{--@foreach ($cats as $cat)--}}
-                                                                           {{--@if ($cat->kindID == 1)--}}
-
-                                                                               {{--<div class="col-6 p-3">--}}
-                                                                                   {{--<button class="card" style="border: 2px solid #904AE8;"  type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">--}}
-                                                                                       {{--<img class="card-img-top" style=" object-fit: cover; width: 200; height:200px;" src="{{$cat->catsPic}}">--}}
-                                                                                       {{--<div class="card-body">--}}
-                                                                                           {{--<h4 class="card-title"> {{$cat->name}}</h4>--}}
-                                                                                       {{--<!-- <small class="card-text">{{$cat->size}}</small> -->--}}
-
-
-                                                                                       {{--</div>--}}
-                                                                                   {{--</button>--}}
-                                                                               {{--</div>--}}
-                                                                           {{--@endif--}}
-                                                                       {{--@endforeach--}}
-
-
-                                                                   {{--</div>--}}
-                                                               {{--</div>--}}
-                                                               {{--<div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">--}}
-                                                                   {{--<h5>เลือกรายละเอียด</h5>--}}
-                                                                   {{--<div class="row">--}}
-                                                                       {{--@foreach ($cats as $cat)--}}
-                                                                           {{--@if ($cat->kindID == 2)--}}
-                                                                               {{--<div class="col-6 p-3">--}}
-                                                                                   {{--<button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">--}}
-                                                                                       {{--<img class="card-img-top" style=" object-fit: cover; width: 200; height:200px;" src="{{$cat->catsPic}}">--}}
-                                                                                       {{--<div class="card-body">--}}
-                                                                                           {{--<h4 class="card-title"> {{$cat->name}}</h4>--}}
-                                                                                       {{--<!-- <small class="card-text">{{$cat->size}}</small> -->--}}
-
-
-                                                                                       {{--</div>--}}
-                                                                                   {{--</button>--}}
-                                                                               {{--</div>--}}
-                                                                           {{--@endif--}}
-                                                                       {{--@endforeach--}}
-                                                                   {{--</div>--}}
-                                                               {{--</div>--}}
-                                                               {{--<div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">--}}
-                                                                   {{--<h5>เลือกรายละเอียด</h5>--}}
-                                                                   {{--<div class="row">--}}
-
-                                                                       {{--@foreach ($cats as $cat)--}}
-                                                                           {{--@if ($cat->kindID == 3)--}}
-
-                                                                               {{--<div class="col-6 p-3">--}}
-                                                                                   {{--<button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">--}}
-                                                                                       {{--<img class="card-img-top" style=" object-fit: cover; width: 200; height:200px;" src="{{$cat->catsPic}}">--}}
-                                                                                       {{--<div class="card-body">--}}
-                                                                                           {{--<h4 class="card-title"> {{$cat->name}}</h4>--}}
-                                                                                       {{--<!-- <small class="card-text">{{$cat->size}}</small> -->--}}
-
-
-                                                                                       {{--</div>--}}
-                                                                                   {{--</button>--}}
-                                                                               {{--</div>--}}
-                                                                           {{--@endif--}}
-                                                                       {{--@endforeach--}}
-
-
-                                                                   {{--</div>--}}
-                                                               {{--</div>--}}
-                                                               {{--<div class="tab-pane fade p-3" id="four" role="tabpanel" aria-labelledby="four-tab">--}}
-                                                                   {{--<h5>เลือกรายละเอียด</h5>--}}
-                                                                   {{--<div class="row">--}}
-                                                                       {{--@foreach ($cats as $cat)--}}
-                                                                           {{--@if ($cat->kindID == 4)--}}
-
-                                                                               {{--<div class="col-6 p-3">--}}
-                                                                                   {{--<button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">--}}
-                                                                                       {{--<img class="card-img-top " style=" object-fit: cover; width: 200; height:200px;" src="{{$cat->catsPic}}">--}}
-                                                                                       {{--<div class="card-body">--}}
-                                                                                           {{--<h4 class="card-title"> {{$cat->name}}</h4>--}}
-                                                                                       {{--<!-- <small class="card-text">{{$cat->size}}</small> -->--}}
-
-
-                                                                                       {{--</div>--}}
-                                                                                   {{--</button>--}}
-                                                                               {{--</div>--}}
-                                                                           {{--@endif--}}
-                                                                       {{--@endforeach--}}
-
-
-                                                                   {{--</div>--}}
-                                                               {{--</div>--}}
-                                                               {{--<div class="tab-pane fade p-3" id="five" role="tabpanel" aria-labelledby="five-tab">--}}
-                                                                   {{--<h5>เลือกรายละเอียด</h5>--}}
-                                                                   {{--<div class="row">--}}
-
-                                                                       {{--@foreach ($cats as $cat)--}}
-                                                                           {{--@if ($cat->kindID == 5)--}}
-
-                                                                               {{--<div class="col-6 p-3">--}}
-                                                                                   {{--<button class="card" type="button" value="{{$cat->id}}" name="cat" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')"  data-dismiss="modal">--}}
-                                                                                       {{--<img class="card-img-top" style=" object-fit: cover; width: 200; height:200px;" src="{{$cat->catsPic}}">--}}
-                                                                                       {{--<div class="card-body">--}}
-                                                                                           {{--<h4 class="card-title"> {{$cat->name}}</h4>--}}
-                                                                                       {{--<!-- <small class="card-text">{{$cat->size}}</small> -->--}}
-
-
-                                                                                       {{--</div>--}}
-                                                                                   {{--</button>--}}
-                                                                               {{--</div>--}}
-                                                                           {{--@endif--}}
-                                                                       {{--@endforeach--}}
-
-
-                                                                   {{--</div>--}}
-                                                               {{--</div>--}}
-                                                           {{--</div>--}}
-
-                                                       {{--</div>--}}
-                                                   {{--</div>--}}
-                                               {{--</div>--}}
-                                           {{--</div>--}}
-                                       {{--</form>--}}
-                                   {{--</div>--}}
-                               {{--</div>--}}
-                           {{-- </div> --}}
-                       </section>
+                     
                         
                         <div class="row d-none d-md-block">
                             <h2 class="selectfillter pt-5 "  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2>
@@ -333,28 +110,28 @@
                             <h2 class="selectfillter pt-5"  style="font-weight: 800;">URL<small>(ที่เกี่ยวข้องกับผลิตภัณฑ์)</small></h2>
                             <input type="text" class="form-control" name="url" placeholder="เช่น เว็บไซต์, เฟสบุ๊ค เพื่อให้นักออกแบบทำงานได้ง่ายขึ้น ">
                         </div>
-                        <div class="form-group">
-                            <h2 class="selectfillter  pt-5">สไตล์งานที่ต้องการ</h2>
+                            <div class="form-group">
+                                <h2 class="selectfillter  pt-5">สไตล์งานที่ต้องการ</h2>
 
 
 
-                            <div class="container text-center">
-                                <div class="row ">
+                                <div class="container text-center">
+                                    <div class="row ">
 
-                                    @foreach ($tags as $tag)
-                                        <div class="form-check">
-                                            <ul class="ks-cboxtags">
-                                                <li>
-                                                    <input type="checkbox"  value="{{$tag->id}}" name="tags[]">
-                                                    <label for="checkboxOne">{{$tag->tagName}}</label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    @endforeach
+                                        @foreach ($tags as $tag)
+                                            <div class="form-check">
+                                                <ul class="ks-cboxtags">
+                                                    <li>
+                                                        <input type="checkbox"  value="{{$tag->id}}" name="tags[]">
+                                                        <label for="checkboxOne">{{$tag->tagName}}</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        @endforeach
+                                    </div>
                                 </div>
-                            </div>
 
-                        </div>
+                            </div>
                         
                             <div class="custom-file  d-md-none ">
                               <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
@@ -366,23 +143,26 @@
                         <h2 class="selectfillter">ระบุรายละเอียดสำคัญ</h2>
                         <textarea class="form-control" name="requirement" placeholder="ระบุรายละเอียดสำคัญ เช่น สินค้าไม่น่าดึงดูด, สินค้าทำยอดไม่ไ่ด้" aria-label="With textarea"></textarea>
                         
-                        <input type="button" name="next" class=" next  _primary-black  btn-block btn-lg  rounded" value="ถัดไป"  />
-                        <div class="row">
-                            <div class="col-6">
+                        {{-- <input type="button" name="next" class=" next  _primary-black  btn-block btn-lg  rounded" value="ถัดไป"  /> --}}
+                        {{-- <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" />
 
-                            </div>
-                            <div class="col-6">
-                             <div class="row mt_ex">
-                                 <div class="col-6">
-                                     <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ"/>
-                                 </div>
-                                 <div class="col-6">
-                                     <input type="submit" name="next" class=" next  _primary-black  btn-block rounded btn-lg" value="ถัดไป"/>
+                        <input type="button" name="next" class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" /> --}}
 
-                                 </div>
-                             </div>
-                            </div>
-                        </div>
+                            {{-- <div class="row"> --}}
+                                {{-- <div class="col-6">
+
+                                </div>
+                                <div class="col-6">
+                                <div class="row mt_ex">
+                                    <div class="col-6"> --}}
+                                        <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/>
+                                    {{-- </div>
+                                    <div class="col-6"> --}}
+                                        <input type="button" name="next" class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
+                                    {{-- </div>
+                                </div>
+                                </div> --}}
+                            {{-- </div> --}}
                         </fieldset>
                         {{-- field-two --}}
                         <fieldset>
@@ -441,23 +221,23 @@
                     
                                 </div>
                             </div>
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="col-6">
  
-                                </div>
-                                <div class="col-6">
+                                </div> --}}
+                                {{-- <div class="col-6">
                                  <div class="row mt_ex">
-                                     <div class="col-6">
-                                         <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded" value="ย้อนกลับ"/>
-                                     </div>
-                                     <div class="col-6">
-                                         <input type="submit" name="next" class=" next  _primary-black  btn-block rounded " value="ถัดไป"/>
- 
+                                     <div class="col-6"> --}}
+                                        <input type="button" name="previous" class="previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/>
+                                     {{-- </div>
+                                     <div class="col-6"> --}}
+                                        <input type="submit"  class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
+{{--  
                                      </div>
                                  </div>
                                 </div>
-                            </div>
-                            </div>
+                            </div> --}}
+                            {{-- </div> --}}
                             <input style="border-width: 2px;" type="hidden" class="detaill-select" name="categories" plachholder="sadas" id="output">
                             <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2">
                          
