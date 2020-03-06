@@ -12,9 +12,7 @@ use App\Tags;
 use App\User;
 use App\Jobs;
 use App\Jobstatus;
-
-
-
+use App\Payment;
 use DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -553,8 +551,28 @@ class DesignerController extends Controller
         return redirect()->route('designer.course',$designer->first()->token);
     }
 
-    public function billing() {
-        return view('designer.billing');
+    public function billing($token) {
+
+        $designers = Designer::where('token',$token)->get();
+        $payments = Payment::where('designer_id',$designers->first()->id)->get();
+
+        $wtransfer = Payment::where('designer_id',$designers->first()->id)->where('payments_status' , 'รออนุมัติ')->sum('total_price');
+        $transfered = Payment::where('designer_id',$designers->first()->id )->where('payments_status' , 'อนุมัติการโอนเงินเรียบร้อย')->sum('total_price');
+
+        // foreach ($payments as $payment) {
+        //     $wtransfer = $payment->payments_status == 'รออนุมัติ' ;
+
+        // }
+
+        // dd($wtransfer);
+        // exit();
+
+        return view('designer.billing',[
+            'designers'=>$designers,
+            'payments'=>$payments,
+            'wtransfer'=>$wtransfer,
+            'transfered'=>$transfered
+            ]);
     }
 
     /**

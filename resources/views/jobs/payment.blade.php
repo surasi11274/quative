@@ -16,10 +16,11 @@
               {{ csrf_field() }}
                   <div class="form-row pl-pr-lg-_ex ">
                     <div class="form-group col-md-12">
-                     <h5 class="font-weight-bold">ยอดที่ชำระ</h5>
+                     <h5 class="font-weight-bold">ยอดที่ต้องชำระ</h5>
                       <div class="row text-center show-payment shadow-sm">
                         <p class="col-md-6">ยอดชำระเงินทั้งหมด</p>
-                        <p class="col-md-6 _hilight">{{3400}} บาท</p> 
+                        <p class="col-md-6 _hilight">{{$jobs->pricerate}} บาท</p> 
+                        <input hidden type="text" name="total_price" value="{{$jobs->pricerate}}">
                       </div>
                      
                     </div>
@@ -27,8 +28,8 @@
                     <div class="form-group col-md-12">
                     <h5 class="font-weight-bold">โอนเข้าบัญชีของธนาคาร</h5>
                       <select id="inputState" class="form-control" name="bank">
-                        <option selected value="NULL">ธนาคารกสิกรไทย</option>
-                        <option value="SCB">ธนาคารไทยพาณิชย์</option>
+                        <option selected value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</option>
+                        <option value="ธนาคารกรุงไทย">ธนาคารกรุงไทย</option>
                       </select>
                     </div>
                     {{-- <div class="form-group col-md-6">

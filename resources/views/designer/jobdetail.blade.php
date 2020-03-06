@@ -33,7 +33,7 @@
                          
                         <h3 for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</h3><br>
                         <label for=""class="content-bg" >วันที่เริ่มงาน :<span> {{date('F d,Y',strtotime($job->created_at))}}</span></label> <br>
-                        <label for=""class="content-bg" >วันที่ต้องการงาน :<span> 01 มกราคม 2563 </span>  </label><br>
+                        <label for=""class="content-bg" >วันที่ต้องการงาน :<span> {{date('F d,Y',strtotime($job->finishdate))}}</span>  </label><br>
                        
                             <div class="row">
                                 {{-- @if ($job->jobstatus_id == '1')
@@ -653,7 +653,7 @@
                                     </div>
                                     <div class="col-12 mt-3">
                                         <h5>วันที่ต้องการงาน</h5>
-                                        <small>15 วัน (ธรรมดา)</small>
+                                        <small>{{date('F d,Y',strtotime($job->finishdate))}}</small>
                                     </div>
                                     <div class="text-right">
                                         {{-- <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>

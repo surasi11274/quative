@@ -139,7 +139,13 @@
                                            <a class="ml-2 nav-link" role="button" href="/requestjob">ตรวจสอบการจ้างงาน  <span class="icon list-ul float-right mr-2"></span></a>
                                        </li>
                                        <li class="nav-link">
-                                       <a class="ml-2 nav-link" role="button" href="{{route('designer.billing')}}">ภาพรวมรายรับของฉัน  <span class="icon dollar-sign  float-right mr-2"></span></a>
+                                        @if (!Auth::user()->designer())
+                                        <a class="ml-2 nav-link" role="button" href="#">ภาพรวมรายรับของฉัน  <span class="icon dollar-sign  float-right mr-2"></span></a>
+
+                                        @elseif (Auth::user()->designer())
+                                            <a class="ml-2 nav-link" role="button" href="{{route('designer.billing',Auth::user()->designer()->token)}}">ภาพรวมรายรับของฉัน  <span class="icon dollar-sign  float-right mr-2"></span></a>
+                                        @endif
+
                                         </li>
                                        <li class="nav-link">
                                            @if (!Auth::user()->designer())

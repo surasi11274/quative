@@ -18,7 +18,7 @@ use App\Jobstatus;
 use App\Payment;
 use App\Review;
 use App\User;
-
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
@@ -50,9 +50,7 @@ class HomeController extends Controller
     public function billing (){
         return view('designer.billing');
     }
-    public function showbilling(){
-    return view('jobs.showpayment');
-    }
+    
     public function index()
     {
         $designers = Designer::all();
@@ -373,7 +371,7 @@ class HomeController extends Controller
 
         $updateJob = Jobs::find($request->job_id);
         $updateJob->jobstatus_id = $request->jobstatus_id;
-        $updateJob->finishdate = strtotime("+7 day");
+        $updateJob->finishdate = Carbon::today()->addDay($request->finishdate);
         $updateJob->package_price = $request->package_price;
         $updateJob->dateextra_price = $request->dateextra_price;
 
@@ -567,7 +565,11 @@ class HomeController extends Controller
 
     }
   
-   
+    public function showpayment($token){
+        $jobs = Jobs::where('token',$token)->get();
+
+    return view('jobs.showpayment',['jobs'=>$jobs->first()]);
+    }
    
     public function paymentJob($token)
     {
@@ -633,10 +635,9 @@ class HomeController extends Controller
         $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
 
         $payment = Payment::create([
-            'name'=>$request->input('name'),
-            'surname'=>$request->input('surname'),
+           
 
-            'price'=>$request->input('price'),
+            'total_price'=>$request->input('total_price'),
             'bank'=>$request->input('bank'),
             'dateatTransfer'=>$request->input('dateatTransfer'),
             'timeatTransfer'=>$request->input('timeatTransfer'),

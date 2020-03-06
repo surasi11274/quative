@@ -65,7 +65,7 @@
                                               <div class="select-date">
                                                 <div class="middle text-left">
                                                     <label>
-                                                    <input id="value2" type="radio" name="dateextra_price" onchange="calculateAmount2(this.value)"  value="0" checked  />
+                                                    <input id="value2" type="radio" name="dateextra_price" onclick="addCart('{{$courses->course_duration['0']}}')" onchange="calculateAmount2(this.value)"  value="0" checked  />
                                                     <div class="front-end box">
                                                       <span>ธรรมดา <br>
                                                     <p>  {{$courses->course_duration['0']}} วัน</p>
@@ -75,7 +75,7 @@
                                                   </label>
                                                   
                                                     <label>
-                                                    <input id="value2" type="radio" name="dateextra_price" onchange="calculateAmount2(this.value)" value="{{$courses->course_duration_rate['1']}}"  />
+                                                    <input id="value2" type="radio" name="dateextra_price" onclick="addCart('{{$courses->course_duration['1']}}')"  onchange="calculateAmount2(this.value)" value="{{$courses->course_duration_rate['1']}}"  />
                                                     <div class="back-end box">
                                                         <span>ด่วน <br>
                                                             <p>{{$courses->course_duration['1']}} วัน (+฿{{$courses->course_duration_rate['1']}})</p>
@@ -83,7 +83,7 @@
                                                     </div>
                                                   </label>
                                                   <label>
-                                                    <input id="value2" type="radio" name="dateextra_price" onchange="calculateAmount2(this.value)" value="{{$courses->course_duration_rate['2']}}"  />
+                                                    <input id="value2" type="radio" name="dateextra_price" onclick="addCart('{{$courses->course_duration['2']}}')" onchange="calculateAmount2(this.value)" value="{{$courses->course_duration_rate['2']}}"  />
                                                     <div class="front-end box">
                                                         <span>ด่วนมาก <br>
                                                            <p>{{$courses->course_duration['2']}} วัน (+฿{{$courses->course_duration_rate['2']}})</p> 
@@ -183,7 +183,8 @@
                                   </div>
                                   </div>
                                   
-                                 
+                                  <input hidden type="text" id="output" name="finishdate" >
+
                                   <input hidden type="text" id="job_id" name="jobstatus_id" value="1">
                                   <input hidden type="text" id="job_id" name="job_id" value="{{$jobs->id}}">
 

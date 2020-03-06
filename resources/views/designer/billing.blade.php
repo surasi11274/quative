@@ -12,12 +12,12 @@
             <div class="col-12 col-md-4">
                 <p>เตรียมการโอนเงิน</p>
                 <small class="_gray">รวม</small>
-            <h4 class="font-weight-bold _hilight">฿{{6000}}</h4>
+            <h4 class="font-weight-bold _hilight">฿{{$wtransfer}}</h4>
             </div>
             <div class="col-12 col-md-4">
                 <p>รับเงินแล้วทั้งหมด</p>
                 <small class="_gray">รวม</small>
-            <h4 class="font-weight-bold _hilight">฿{{1000}}</h4>
+            <h4 class="font-weight-bold _hilight">฿{{$transfered}}</h4>
             </div>
             <div class="col-12 col-md-auto">
 
@@ -60,38 +60,30 @@
                             </tr>
                           </thead>
                           <tbody class="table-light">
-                            <tr >
-                                <td class="pt-4 pb-4">
-                                    <a href="#">
-                                        <button type="button" class="btn _primary-btn btn-block">No. 123</button>
-                                        {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
-                                    </a>
                                     
-                                </td>
-                                <td class="pt-4 pb-4">25 / 12 / 2562</td>
-                                {{-- <td class="pt-4 pb-4">{{$job->price}}</td> --}}
-                                <td class="pt-4 pb-4">15:20</td>
-                                <td class="pt-4 pb-4 _hilight">5,000</td>
-                                <td class="pt-4 pb-4">
-                                    <span class="text-warning">● ยังไม่ได้ชำระเงิน</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="pt-4 pb-4">
-                                    <a href="#">
-                                        <button type="button" class="btn _primary-btn btn-block">No. 124</button>
-                                        {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
-                                    </a>
-                                    
-                                </td>
-                                <td class="pt-4 pb-4">25 / 12 / 2562</td>
-                                {{-- <td class="pt-4 pb-4">{{$job->price}}</td> --}}
-                                <td class="pt-4 pb-4">15:20</td>
-                                <td class="pt-4 pb-4 _hilight">5,000</td>
-                                <td class="pt-4 pb-4">
-                                    <span class="text-success">● ยังไม่ได้ชำระเงิน</span>
-                                </td>  
-                            </tr>
+                                @foreach ($payments as $payment)
+                                @if ($payment->payments_status == 'รออนุมัติ')
+
+                                <tr >
+                                    <td class="pt-4 pb-4">
+                                        <a href="#">
+                                            <button type="button" class="btn _primary-btn btn-block">No. {{$payment->job_id}}</button>
+                                            {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
+                                        </a>
+                                        
+                                    </td>
+                                    <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td>
+                                    {{-- <td class="pt-4 pb-4">{{$job->price}}</td> --}}
+                                    <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td>
+                                    <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td>
+                                    <td class="pt-4 pb-4">
+                                        <span class="text-warning">{{$payment->payments_status}}</span>
+                                    </td>
+                                </tr>
+                                @endif
+
+                                @endforeach
+
                           </tbody>
                     </table>
                 </div>
@@ -111,38 +103,28 @@
                             </tr>
                           </thead>
                           <tbody class="table-light">
-                            <tr >
-                                <td class="pt-4 pb-4">
-                                    <a href="#">
-                                        <button type="button" class="btn _primary-btn btn-block">No. 123</button>
-                                        {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
-                                    </a>
-                                    
-                                </td>
-                                <td class="pt-4 pb-4">25 / 12 / 2562</td>
-                                {{-- <td class="pt-4 pb-4">{{$job->price}}</td> --}}
-                                <td class="pt-4 pb-4">15:20</td>
-                                <td class="pt-4 pb-4 _hilight">5,000</td>
-                                <td class="pt-4 pb-4">
-                                    <span class="text-success">● ระบบโอนเงินให้นักออกแบบแล้ว</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="pt-4 pb-4">
-                                    <a href="#">
-                                        <button type="button" class="btn _primary-btn btn-block">No. 124</button>
-                                        {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
-                                    </a>
-                                    
-                                </td>
-                                <td class="pt-4 pb-4">25 / 12 / 2562</td>
-                                {{-- <td class="pt-4 pb-4">{{$job->price}}</td> --}}
-                                <td class="pt-4 pb-4">15:20</td>
-                                <td class="pt-4 pb-4 _hilight">5,000</td>
-                                <td class="pt-4 pb-4">
-                                    <span class="text-success">● ระบบโอนเงินให้นักออกแบบแล้ว</span>
-                                </td>  
-                            </tr>
+                            @foreach ($payments as $payment)
+                                @if ($payment->payments_status == 'อนุมัติการโอนเงินเรียบร้อย')
+
+                                <tr >
+                                    <td class="pt-4 pb-4">
+                                        <a href="#">
+                                            <button type="button" class="btn _primary-btn btn-block">No. {{$payment->job_id}}</button>
+                                            {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
+                                        </a>
+                                        
+                                    </td>
+                                    <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td>
+                                    {{-- <td class="pt-4 pb-4">{{$job->price}}</td> --}}
+                                    <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td>
+                                    <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td>
+                                    <td class="pt-4 pb-4">
+                                        <span class="text-warning">{{$payment->payments_status}}</span>
+                                    </td>
+                                </tr>
+                                @endif
+
+                                @endforeach
                           </tbody>
                     </table>
                 </div>

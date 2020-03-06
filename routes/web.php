@@ -189,7 +189,7 @@ Route::get('/designer/includecourse/{id}',
 Route::post('/designer/coursestore',
     'DesignerController@courseStore');
 
-Route::get('/designer/billing',
+Route::get('/designer/billing/{token}',
     'DesignerController@billing')->name('designer.billing');
 
     // -------------------------- Gallery ---------------------------
