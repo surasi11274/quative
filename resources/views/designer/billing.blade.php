@@ -4,9 +4,9 @@
 @endsection
 @section('content')
 <section class="billing">
-    <div class="container bg-white mt-5 shadow-sm pb-5">
+    <div class="container bg-white mt-5 shadow-sm p-md-5">
       <div class="text-center text-md-left">
-        <h5 class=" font-weight-bold pt-5 "> ภาพรวมรายรับของฉัน</h5>
+        <h5 class=" font-weight-bold"> ภาพรวมรายรับของฉัน</h5>
         <hr>
         <div class="row mt-5">
             <div class="col-12 col-md-4">
@@ -27,9 +27,9 @@
             
         
     </div>
-    <div class="container bg-white mt-5 shadow-sm pb-5">
+    <div class="container bg-white mt-3 shadow-sm p-md-5">
         <div class="text-center text-md-left">
-            <h5 class=" font-weight-bold pt-5 "> รายละเอียดรายรับของฉัน</h5>
+            <h5 class=" font-weight-bold mb-2 "> รายละเอียดรายรับของฉัน</h5>
             <p>อัตราค่าธรรมเนียมการใช้ Quative 5% สำหรับการจ้างงานในแต่ละครั้ง </p>
             <small class="_hilight">
                 หมายเหตุ: โดยคิดจากยอดการจ้างสุทธิในแต่ละการจ้างของราคาก่อนที่จะทำการโอนยอดเงินทั้งหมดเข้าไปที่นักออกแบบ
@@ -63,7 +63,7 @@
                             <tr >
                                 <td class="pt-4 pb-4">
                                     <a href="#">
-                                        <button type="button" class="btn _primary-btn">No. 123</button>
+                                        <button type="button" class="btn _primary-btn btn-block">No. 123</button>
                                         {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
                                     </a>
                                     
@@ -79,7 +79,7 @@
                             <tr>
                                 <td class="pt-4 pb-4">
                                     <a href="#">
-                                        <button type="button" class="btn _primary-btn">No. 124</button>
+                                        <button type="button" class="btn _primary-btn btn-block">No. 124</button>
                                         {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
                                     </a>
                                     
@@ -102,7 +102,7 @@
                             <tr>
                   
                               <th scope="col">รหัสการจ้าง</th>
-                              <th scope="col">นักออกแบบ</th>
+                              <th scope="col">วันที่</th>
                               {{-- <th scope="col">วันที่เริ่มงาน</th> --}}
                               <th scope="col">เวลา</th>
                               <th scope="col">ยอดเงินที่ได้รับ</th>
@@ -114,12 +114,12 @@
                             <tr >
                                 <td class="pt-4 pb-4">
                                     <a href="#">
-                                        <button type="button" class="btn _primary-btn">No. 123</button>
+                                        <button type="button" class="btn _primary-btn btn-block">No. 123</button>
                                         {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
                                     </a>
                                     
                                 </td>
-                                <td class="pt-4 pb-4">นาคกรอง  สายบัว</td>
+                                <td class="pt-4 pb-4">25 / 12 / 2562</td>
                                 {{-- <td class="pt-4 pb-4">{{$job->price}}</td> --}}
                                 <td class="pt-4 pb-4">15:20</td>
                                 <td class="pt-4 pb-4 _hilight">5,000</td>
@@ -130,12 +130,12 @@
                             <tr>
                                 <td class="pt-4 pb-4">
                                     <a href="#">
-                                        <button type="button" class="btn _primary-btn">No. 124</button>
+                                        <button type="button" class="btn _primary-btn btn-block">No. 124</button>
                                         {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
                                     </a>
                                     
                                 </td>
-                                <td class="pt-4 pb-4">นาคกรอง  สายบัว</td>
+                                <td class="pt-4 pb-4">25 / 12 / 2562</td>
                                 {{-- <td class="pt-4 pb-4">{{$job->price}}</td> --}}
                                 <td class="pt-4 pb-4">15:20</td>
                                 <td class="pt-4 pb-4 _hilight">5,000</td>
