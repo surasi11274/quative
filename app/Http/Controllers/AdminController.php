@@ -31,7 +31,7 @@ class AdminController extends Controller
     public function payments()
     {
        
-        $payments = Payment::all();
+        $payments = Payment::orderBy('id', 'DESC')->get();
         return view('admin.payments',[
             'payments'=>$payments,
             // 'jobstatusid'=>$jobstatusid

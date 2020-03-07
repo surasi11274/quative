@@ -41,7 +41,7 @@
                                 <p>ยอดชำระเงินทั้งหมด</p>
                             </div>
                             <div class="col text-right _hilight">
-                                <p>{{$payments->price}} บาท</p>
+                                <p>{{$payments->total_price}} บาท</p>
                             </div>
                         </div>
 

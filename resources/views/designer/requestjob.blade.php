@@ -94,7 +94,7 @@
             </td>
              <td class="pt-4 pb-4 text-center">{{$job->price}}</td>
              {{-- <td class="pt-4 pb-4 text-center">{{$job->finishdate}}</td> --}}
-             <td class="pt-4 pb-4 text-center">{{$job->finishdate}}</td>
+             <td class="pt-4 pb-4 text-center">{{date('F d,Y',strtotime($job->finishdate))}}</td>
              {{-- @foreach ($job->jobstatus_id as $item) --}}
              @php
              $jobstatusid = \App\Jobstatus::find($job->jobstatus_id)->statusName;

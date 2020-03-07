@@ -134,8 +134,8 @@
        </div>
     </div>
 
-  <input type="text" name="id" value="{{$courses->id}}">
-  <input type="text" name="designer_id" value="{{$courses->designer_id}}">
+  <input type="hidden" name="id" value="{{$courses->id}}">
+  <input type="hidden" name="designer_id" value="{{$courses->designer_id}}">
 
   </form>
 </section>

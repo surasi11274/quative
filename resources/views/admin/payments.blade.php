@@ -44,7 +44,7 @@
                              </a>
                            </td>
                             <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td>
-                            <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->timeatTransfer))}}</td>
+                            <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td>
                             <td class="pt-4 pb-4 _hilight">{{$payment->price}}</td>
 
                             {{-- @php

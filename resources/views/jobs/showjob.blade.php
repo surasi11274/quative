@@ -21,6 +21,8 @@
 
                             @php
                             $designer = \App\Designer::find($jobs->designer_id);
+                            
+
                             @endphp
                                 <h5 class="content-bg">{{$designer->name}} &nbsp;{{$designer->surname}}</h5> 
                                 <button class="btn _primary-bg-dark btn-lg">คุยกับนักออกแบบ</button>
@@ -49,7 +51,7 @@
 
                         <h3 for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</h3><br>
                         <label for=""class="content-bg" >วันที่เริ่มงาน :<span> {{date('F d,Y',strtotime($jobs->created_at))}} </span></label> <br>
-                        <label for=""class="content-bg" >วันที่ต้องการงาน :<span> 01 มกราคม 2563 </span>  </label><br>
+                        <label for=""class="content-bg" >วันที่ต้องการงาน :<span> {{date('F d,Y',strtotime($jobs->finishdate))}} </span>  </label><br>
                         @if ($jobs->payment_id ==! NULL)
                         {{-- <a href="{{ route('job.payment', $jobs->token) }}"> --}}
                             <button hidden class="btn disabled _primary-btn">โอนเงิน</button>
@@ -560,7 +562,7 @@
                                 <button type="button" class="btn disabled _btn-dis m-1" data-toggle="modal" data-target="#exampleModal">แจ้งชำระเงิน</button>
                                 <button type="button"class="btn _secondary-btn m-1" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                             @elseif ($jobs->jobstatus_id == 2)
-                                <a href="{{ route('job.payment', $jobs->token) }}" style="text-decoration:none;">
+                                <a href="{{ route('job.showpayment', $jobs->token) }}" style="text-decoration:none;">
                                     <button type="button" class="btn _primary-btn m-1" >แจ้งชำระเงิน</button>
                                 </a>
                                 <button type="button"class="btn _secondary-btn m-1" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
@@ -725,7 +727,7 @@
                                     </div>
                                     <div class="col-12 mt-3">
                                         <h5>วันที่ต้องการงาน</h5>
-                                        <small>15 วัน (ธรรมดา)</small>
+                                        <small>{{date('F d,Y',strtotime($jobs->finishdate))}}</small>
                                     </div>
                                   
                                     <div class="text-right">
