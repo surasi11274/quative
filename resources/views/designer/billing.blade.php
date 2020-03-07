@@ -12,12 +12,12 @@
             <div class="col-12 col-md-4">
                 <p>เตรียมการโอนเงิน</p>
                 <small class="_gray">รวม</small>
-            <h4 class="font-weight-bold _hilight">฿{{$wtransfer}}</h4>
+            <h4 class="font-weight-bold _hilight">฿{{$wtransfer - ($wtransfer * 0.05)}}</h4>
             </div>
             <div class="col-12 col-md-4">
                 <p>รับเงินแล้วทั้งหมด</p>
                 <small class="_gray">รวม</small>
-            <h4 class="font-weight-bold _hilight">฿{{$transfered}}</h4>
+            <h4 class="font-weight-bold _hilight">฿{{$transfered - ($transfered * 0.05)}}</h4>
             </div>
             <div class="col-12 col-md-auto">
 
@@ -75,7 +75,7 @@
                                     <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td>
                                     {{-- <td class="pt-4 pb-4">{{$job->price}}</td> --}}
                                     <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td>
-                                    <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td>
+                                    <td class="pt-4 pb-4 _hilight">{{($payment->total_price - ($payment->total_price * 0.05))}}</td>
                                     <td class="pt-4 pb-4">
                                         <span class="text-warning">{{$payment->payments_status}}</span>
                                     </td>
@@ -117,7 +117,7 @@
                                     <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td>
                                     {{-- <td class="pt-4 pb-4">{{$job->price}}</td> --}}
                                     <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td>
-                                    <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td>
+                                    <td class="pt-4 pb-4 _hilight">{{($payment->total_price - ($payment->total_price * 0.05))}}</td>
                                     <td class="pt-4 pb-4">
                                         <span class="text-warning">{{$payment->payments_status}}</span>
                                     </td>

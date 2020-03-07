@@ -241,6 +241,7 @@ class HomeController extends Controller
                     
                 })
                 ->where('hasjob',0)
+                ->orderBy('rating','DESC')
                 // ->limit(1)
                 ->get();
         
@@ -540,10 +541,16 @@ class HomeController extends Controller
 
         ]);
         
+        $updateDesigner = Designer::where('id', $jobs->designer_id)->update([
+                'rating' => Review::where('designer_id',$jobs->designer_id)->avg('rating')
+            ]);
+
         // $updateJob = Jobs::update('update users set votes = 100 where name = ?', ['John']);
         $updateJob = DB::table('jobs')->where('id', $jobs->jobs_id)->update([
-            'reviews_id' => $jobs->id
+                'reviews_id' => $jobs->id
             ]);
+
+       
         // $updateJob = Jobs::find($request->$reviews->jobs_id);
         // $updateJob->reviews_id = $reviews->id;
     
