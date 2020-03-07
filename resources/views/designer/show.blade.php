@@ -7,42 +7,34 @@
 
 <div class="container">		
     <div class="row mt-3">
-        
-      <div class="col-4">
-          <div class="card" style="padding-bottom: 45px; background-color: #000;" >
+      <div class="col-12 col-md-4 card pb-md-5"  style=" background-color: #000;">
               <div class="profile-img text-center mt-5" style="width:120px;height:120px;margin:auto;">
                 <img id="profileImage" class="rounded-circle" src="/{{$designer->profilepic}}" />
             </div>
               {{-- <h5 class="text-center mt-5 text-white">ปลายฟ้า เป็นตาธรรม</h5> --}}
-              <h5 class="titlename text-center text-white mt-5">{{$designer->name}} {{$designer->surname}}</h5>
+              <h5 class="titlename text-center text-white mt-5 font-weight-bold">{{$designer->name}} {{$designer->surname}}</h5>
             <p class="mt text-center"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><span class="text-white">  (4.9)</span></p>
-            <center><button type="button" class="btn btn-outline-light text-center mb-5">ติดตาม</button></center>
-          </div>
-          
-
       </div>
-
-      <div class="col-8">
-          			
-          <div class="card-body">
+      <div class="col-12 col-md-8">		
+          <div class="card-body bg-white">
 
               <div class="row">
-              <div class="col-3">
-            <h5 >ข้อมูลเบื้องต้น</h5>
+              <div class="col-md-3">
+            <h5 class="font-weight-bold" >ข้อมูลเบื้องต้น</h5>
             <p>เป็นสมาชิกเมื่อ </p>
             <p>ออกแบบงานเมื่อ</p>
             <p>อัตรางานสำเร็จ</p>
             </div>
 
-            <div class="col-3">
-            <h5 >  .</h5>
-            <p>xxxxxxxx </p>
-            <p>xxxxxxxx</p>
-            <p>xxxxxxxx</p>
+            <div class="col-md-3">
+           <br>
+            <p> {{21/01/2019}} </p>
+            <p>{{212 }} ครั้ง</p>
+            <p>{{100%100}}</p>
             </div>
 
-            <div class="col">
-            <h5>ยืนยันตัวตน</h5>
+            <div class="col-md-3">
+            <h5 class="font-weight-bold">ยืนยันตัวตน</h5>
             <p><i class="fas fa-envelope-square"></i>  อีเมล   <i class="fas fa-check" style="color: #523EE8;"></i></p> 
             <p><i class="fas fa-id-card"></i>  ประชาชน   <i class="fas fa-check" style="color: #523EE8;"></i></p>
             <p><i class="fas fa-phone-square-alt"></i>  เบอร์โทรศัพท์   <i class="fas fa-check" style="color: #523EE8;"></i></p>
@@ -51,19 +43,21 @@
 
             <hr>
 
-            <h5 >ข้อมูลเบื้องต้น</h5>
-            <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="font-weight-bold">ข้อมูลเบื้องต้น</h5>
+            <p>{{$designer->description}}</p>
             
             <hr>
-            <h5 >Tag</h5>
-            <h5 class="btn text-white" style="background-color: #523EE8;" for="">
-                @foreach($designer->tag as $tagn)
+            <h5 class="font-weight-bold" >Tag</h5>
+            @foreach($designer->tag as $tagn)
+            <h5 class="btn box-tagse border" for="">
+          
 
                     @php
                     $tagname = \App\Tags::find($tagn)->tagName;
                     @endphp
-                    {{$tagname}},
+                    {{$tagname}}
                 </h5>
+                
                 @endforeach
             </h5>
           </div>
@@ -74,14 +68,50 @@
 </div>
 <div class="container">
 <div class="row mt-3">
-      <div class="col-4">
-          
+      <div class="col-md-4 " style="    padding-right: 0px !important;
+      padding-left: 0px !important;">
           <div class="card" style="padding-bottom: 45px;">
               <div class="card-body">
-                  <h5 class="mt-3">รีวิวจากผู้ประกอบการ</h5>
-
-                      <div class="row">
-
+                  <h5 class=" font-weight-bold mt-3">รีวิวจากผู้ประกอบการ</h5>
+                      <div class="row mt-3">
+                         <div class="col-md-3">
+                            <div class="text-center mt-3">
+                                <h3 class="font-weight-bold">4.9</h3>
+                                    <small class="_gray">จาก 5.0</small>
+                            </div>
+                         </div>
+                         <div class="col-md-9">
+                            <p>ความพึงพอใจ</p>
+                           <div class="d-flex">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star1"></i> 
+                            <i class="fas fa-star star1"></i> 
+                            <i class="fas fa-star star1"></i> 
+                            <i class="fas fa-star star1"></i>  
+                            <p class="_gray ml-2 mr-2">(ดีมาก)</p>
+                           </div>
+                           <p>ราคาเหมาะสมกับคุณภาพ</p>
+                           <div class="d-flex">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star1"></i> 
+                            <i class="fas fa-star star1"></i> 
+                            <i class="fas fa-star star1"></i> 
+                            <i class="fas fa-star star1"></i>  
+                            <p class="_gray ml-2 mr-2">(ดีมาก)</p>
+                           </div>
+                           <p>ฝีมือและความเชี่ยวชาญ</p>
+                           <div class="d-flex">
+                            <i class="fas fa-star star1"></i>
+                            <i class="fas fa-star star1"></i> 
+                            <i class="fas fa-star star1"></i> 
+                            <i class="fas fa-star star1"></i> 
+                            <i class="fas fa-star star1"></i>  
+                            <p class="_gray ml-2 mr-2">(ดีมาก)</p>
+                           </div>
+                        
+                         </div>
+                      
+                         
                       
                       <div class="col-2">
                           <div class="profile-img2 mt-3">
@@ -98,6 +128,7 @@
                     </div>
                     <h5 class="mt-3">ทำงานตรงใจเราเลย</h5>
                     <hr>
+                    
                     <!-- comment -->
 
                     <div class="row">
@@ -131,36 +162,35 @@
 <div class="col-8">
           <div class="card">					
           <div class="card-body">
-              <h5 class="mt-3">ผลงานบรรณจุภันฑ์ (8)</h5>
               <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                    <h2 class="selectfillter ">  ผลงานบรรณจุภันฑ์ (<small>8</small>)</h2>
+                    <h5 class="font-weight-bold ">  ผลงานบรรณจุภันฑ์ (<small>8</small>)</h5>
                     <div class="overflow-gallery grid-gallery">
                     <div class="row">
-                        <div class="col-7 mt-3">
+                        <div class="col-12 mt-3">
                             <img class="rounded"  style=" object-fit: cover;"src="/photo/@product-8.png" />
                         </div>
-                        <div class="col-5 mt-3">
+                        <div class="col-12 mt-3">
                             <img class="rounded" style=" object-fit: cover;"src="/photo/@product-7.png" />
                         </div>
     
-                        <div class="col-5 mt-3">
+                        <div class="col-12 mt-3">
                             <img class="rounded"  style=" object-fit: cover;"src="/photo/@product-3.png" />
                         </div>
-                        <div class="col-7 mt-3">
+                        <div class="col-12 mt-3">
                             <img class="rounded" style=" object-fit: cover;"src="/photo/@product-4.png" />
                         </div>
-                        <div class="col-7 mt-3">
+                        <div class="col-12 mt-3">
                             <img class="rounded"  style=" object-fit: cover;"src="/photo/@product-6.png" />
                         </div>
-                        <div class="col-5 mt-3">
+                        <div class="col-12 mt-3">
                             <img class="rounded" style=" object-fit: cover;"src="/photo/@product-5.png" />
                         </div>
     
-                        <div class="col-5 mt-3">
+                        <div class="col-12 mt-3">
                             <img class="rounded"  style=" object-fit: cover;"src="/photo/@product-1.png" />
                         </div>
-                        <div class="col-7 mt-3">
+                        <div class="col-12 mt-3">
                             <img class="rounded" style=" object-fit: cover;"src="/photo/@product-2.png" />
                         </div>
     

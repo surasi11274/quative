@@ -119,7 +119,7 @@
        
 
     </div>
-    <hr>
+    
     <div class="shadow-sm bg-whte mt-3">
         <div class="row">
             <div class="container">
@@ -562,8 +562,7 @@
                     {{-- 1 --}}
                     <fieldset>
                         <div class="process-job shadow-sm p-5">
-                            <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
-                           <div class="d-flex">
+                           <div class="d-flex mt-5">
                             @php
                             $jobstatusid = \App\Jobstatus::find($job->jobstatus_id)->statusName;
                              @endphp
@@ -596,14 +595,14 @@
                 <div class="container-fluid bg-white">
                     <div class="row">
                         <div class="col-12 col-md-6 p-5">
-                            <h3>ข้อมูลผลิตภัณฑ์ของคุณ</h3>
+                            <h4 class="font-weight-bold">ข้อมูลผลิตภัณฑ์ของคุณ</h4>
                            <hr>
-                           <p class="text-header">บรรจุภัณฑ์ประเภท</p>
-                        <p class="mt-3">{{ $job->categories}}</p>
-                           <p class="text-header mt-3">รูปภาพผลิตภัณฑ์เดิมของคุณ</p>
+                           <h5 class="font-weight-bold">บรรจุภัณฑ์ประเภท</h5>
+                        <h5 class="mt-3">{{ $job->categories}}</h5>
+                           <h5 class="font-weight-bold mt-3">รูปภาพผลิตภัณฑ์เดิมของคุณ</p>
                            <div class="row mt-3">
                                <div class="col-4">
-                                <img class="rounded" src="/photo/@product-blue.png" alt="">
+                                <img class="rounded" src="/{{$job->productPic}}" alt="">
                                </div>
                                <div class="col-4">
                                     <img class="rounded" src="/photo/@product-blue.png" alt="">
@@ -613,9 +612,9 @@
                                </div>
                            </div>
                            <label for="" class=" mt-3">URL : <small>{{$job->url}}</small></label>
-                           <h3>รูปภาพตัวอย่างงาน</h3>
+                           <h4 class="font-weight-bold">รูปภาพตัวอย่างงาน</h3>
                            <hr>
-                           <p class="mt-3 text-header">รูปภาพงานใกล้เคียงกับงาน</p>
+                           <h5 class="mt-3 font-weight-bold">รูปภาพงานใกล้เคียงกับงาน</h5>
                            <div class="row mt-3">
                                 <div class="col-4">
                                  <img class="rounded" src="/photo/@product-8.png" alt="">
@@ -629,31 +628,31 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6 p-5">
-                            <h3>ข้อมูลงานที่ต้องการ</h3>
+                            <h4 class="font-weight-bold">ข้อมูลงานที่ต้องการ</h4>
                             <hr>
-                            <p class="text-header">รายละเอียด</p>
-                            <p class="mt-3">{{ $job->requirement}}</p>
-                                    <p class="mt-3 text-header">ลักษณะหรือสไตล์งานที่ต้องการ</p>
-                                    <hr>
+                            <h5 class="font-weight-bold">รายละเอียด</h5>
+                            <h5 class="mt-3">{{ $job->requirement}}</h5>
+                                    <h5 class="mt-3 font-weight-bold">ลักษณะหรือสไตล์งานที่ต้องการ</h5>
+                                   
                                     {{-- {{ $job->tags}} --}}
                                     @foreach($job->tags as $tagn)
                 
                                     @php
-                                                    $tagname = \App\Tags::find($tagn)->tagName;
-                                                @endphp
-                                                                        <div class="btn _primary-black" >{{$tagname}}</div>
+                                         $tagname = \App\Tags::find($tagn)->tagName;
+                                     @endphp
+                                        <div class="btn box-tagse border" >{{$tagname}}</div>
                 
-                                                                    @endforeach
-                                    <hr>
-                                    <h3 class="mt-5">ขอบเขตการจ้างงาน</h3>
+                                    @endforeach
+                                    
+                                    <h4 class="mt-5 font-weight-bold">ขอบเขตการจ้างงาน</h4>
                                     <hr>
                                     <div class="col-12 mt-3">
-                                        <h5> ขอบเขตการจ้างงาน</h5>
-                                    <small>01 - งานออกแบบฉลากติดสินค้าหน้าเดียว</small>
+                                        <h5 class="font-weight-bold"> ขอบเขตการจ้างงาน</h5>
+                                    <p>01 - งานออกแบบฉลากติดสินค้าหน้าเดียว ({{9000}})</p>
                                     </div>
                                     <div class="col-12 mt-3">
-                                        <h5>วันที่ต้องการงาน</h5>
-                                        <small>{{date('F d,Y',strtotime($job->finishdate))}}</small>
+                                        <h5 class="font-weight-bold">วันที่ต้องการงาน</h5>
+                                        <p>{{date('F d,Y',strtotime($job->finishdate))}} ({{2900}})</p>
                                     </div>
                                     <div class="text-right">
                                         {{-- <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>

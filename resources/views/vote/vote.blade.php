@@ -1,11 +1,8 @@
 @extends('layouts.app')
 
-{{-- @section('assets')
+@section('assets')
     <link rel="stylesheet" href="css/_vote-detail.css">
-@endsection --}}
-<body style="font-family: prompt;">
-
-</body>
+@endsection
 
 @section('content')
 
@@ -86,7 +83,29 @@
     </div>
 </div>
 <div class="container">
-    <h2 class="font-weight-bold mt-5">ผลงานนักออกแบบทั้งหมด</h2>
+   
+    <div class="form-row mt-5">
+        <div class="form-group col-md-6">
+            <h2 class="font-weight-bold mt-3">ผลงานนักออกแบบทั้งหมด</h2>
+        </div>
+        <div class="form-group col-md-3">
+            <label for=""></label>
+            <input type="text" name="" id="" class="form-control" placeholder="Search" aria-describedby="helpId">
+            
+        </div>
+       <div class="form-group col-md-3">
+         <label for=""></label>
+         <select class="form-control">
+            <option>Default select</option>
+            <option value="box">บรรจุภัณฑ์ประเภท กล่อง</option>
+            <option value="cup">บรรจุภัณฑ์ประเภท แก้ว</option>
+            <option value="bottle">บรรจุภัณฑ์ประเภท ขวด</option>
+            <option value="bag">บรรจุภัณฑ์ประเภท ถุง</option>
+            <option value="can">บรรจุภัณฑ์ประเภท กระป๋อง</option>
+          </select>
+       
+       </div>
+    </div>
     <div class="row">
 
                     @if($jobs->count())
