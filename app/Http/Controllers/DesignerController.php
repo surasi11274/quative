@@ -205,6 +205,7 @@ class DesignerController extends Controller
         return view('designer.show',[
             'designer'=>$designer->first(),
             'tags'=>$tags,
+            
             'users'=>$users
             ]);
 
