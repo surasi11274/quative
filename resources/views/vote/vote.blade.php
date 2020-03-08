@@ -15,11 +15,11 @@
 <link href="{{ asset('css/_vote-detail.css') }}" rel="stylesheet">
 <div class="bd-example shadow-ex">
     <div id="carouselExampleCaptions3" class="carousel slide" data-ride="pause">
-        <ol class="carousel-indicators">
+        {{-- <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions3" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleCaptions3" data-slide-to="1"></li>
             <li data-target="#carouselExampleCaptions3" data-slide-to="2"></li>
-        </ol>
+        </ol> --}}
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
@@ -90,7 +90,23 @@
         </div>
         <div class="form-group col-md-3">
             <label for=""></label>
-            <input type="text" name="" id="" class="form-control" placeholder="Search" aria-describedby="helpId">
+            {{-- <form action="/gallery/search" method="get">
+                <div class="input-group row ">
+                    
+                    <div class="col-8"> --}}
+                        <input  type="text" name="" id="" class="form-control filter-input" data-column="" placeholder="Search" aria-describedby="helpId">
+
+                    {{-- </div>
+                    <div class="col-2">                    
+                        <button type="submit" class="btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="col-2"></div>
+
+                </div>
+                
+            </form> --}}
             
         </div>
        <div class="form-group col-md-3">
@@ -123,7 +139,7 @@
                                 <div class="card shadow-sm" data-id="{{ $job->id }}">
                                     
                                 <a href="{{ route('galleryDetail', $job->id) }}">
-                                    <img class="card-img-top" src="{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
+                                    <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
                                 </a>
  
                                     <div class="card-body">
@@ -143,13 +159,13 @@
 
                                         @endforeach --}}
                                         <div class="row pl-3">
-                                    @foreach ($jobtag as $jobt)
+                                    @foreach ($jobtags as $jobt)
                                         @php
+                                        
                                         $tagname = \App\Tags::find($jobt)->tagName;
 
                                         @endphp
                                         <p>
-
                                             {{$tagname}},
                                         </p>
                                     @endforeach
@@ -254,3 +270,21 @@
     });
 </script> --}}
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="public/js/isotope.pkgd.min.js"></script>
+{{-- <script src="https://cdnjs.cloundflare.com/ajax/libs/select2/4.0.3/jquery.min.js"></script>
+--}}
+<script>
+    
+
+var $isotope_container = $('.isotope_container').isotope({ // กำหนด container ที่ครอบไอเทมทั้งหมดอยู่
+  itemSelector: '.element-item' // กำหนด element class ที่จะให้สามารถ filter ได้
+});
+ 
+$('#isotope_category').on('change', function() { // จับ event change ของ select option
+  var selected = $(this).find('option:selected'); // ตรวจสอบว่าเลือกไปที่หมวดหมู่อาหารอะไร
+  var filterValue = selected.attr('data-filter'); // เก็บข้อมูล attribute data-filter
+  $isotope_container.isotope({ filter: filterValue }); // ใช้คำสั่ง filter ของ isotope
+});
+
+</script> 

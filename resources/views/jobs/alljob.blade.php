@@ -4,7 +4,7 @@
 
 <div class="container " >
   <div class="row ml-1 mb-3">
-    <h3>การจ้างงาน</h3>
+    <h3 class="mt-5">การจ้างงาน</h3>
   </div>
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -45,7 +45,7 @@
             <td class="pt-4 pb-4">{{date('F d,Y',strtotime($job->finishdate))}}</td>
             {{-- @foreach ($job->jobstatus_id as $item) --}}
             @php
-            $jobstatusid = \App\Jobstatus::find($job->jobstatus_id)->statusName;
+            $jobstatusid = \App\Jobstatus::find($job->jobstatus_id)->statusUserName;
              @endphp
             <td class="pt-4 pb-4 _hilight">{{$jobstatusid}}</td>
             {{-- @endforeach --}}

@@ -97,12 +97,14 @@
                                             <input type="text" class="form-control" name="url" placeholder="เช่น เว็บไซต์, เฟสบุ๊ค เพื่อให้นักออกแบบทำงานได้ง่ายขึ้น ">
                                         </div>
                                     </div>
+                                    {{-- <input type="text" id="output" name="jobstatus_id"> --}}
+
                                      <input hidden type="text" id="job_id" name="job_id" value="{{$job->id}}">
                                     <input hidden type="text" id="designer_id" name="designer_id" value="{{$job->designer_id}}">
                                     <input hidden type="text" id="user_id" name="user_id" value="{{$job->user_id}}">
                                     <div class="modal-footer">
                                         <button type="button" class="btn _secondary-btn" data-dismiss="modal">ยกเลิก</button>
-                                        <button type="submit" class="btn _primary-black">ยืนยันรับงาน</button>
+                                        <button type="submit" class="btn _primary-black">ยืนยันร</button>
                                         </div>
                                 </div>
                             </div>

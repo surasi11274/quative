@@ -32,7 +32,7 @@
          {{ csrf_field() }}
 
             <div class="container bg-white  p-5">
-               <h1 class=" text-center selectfillter  pt-5">ผลการ <span class="_hilight">Matching</span></h1>
+               <h1 class=" text-center   pt-5">ผลการ <span class="_hilight">Matching</span></h1>
       
                <h2 class="selectfillter  pt-5">เลือกนักออกแบบที่ตรงใจกับคุณ</h2>
                <div class="row mt-md-5">
@@ -51,12 +51,45 @@
                                  <span class="col-9">
                                     <p>{{$designer->name}}</p>
                                     {{-- <p>{{$designer->surname}}</p> --}}
-                                 <i class="fas fa-star star1"></i>
+                                    @if ($designer->rating == 1)
+                                    <i class="fas fa-star star1"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    @elseif ($designer->rating == 2)
+                                    <i class="fas fa-star star1"></i>
+                                    <i class="fas fa-star star1"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    @elseif ($designer->rating == 3)
+                                    <i class="fas fa-star star1"></i>
+                                    <i class="fas fa-star star1"></i>
+                                    <i class="fas fa-star star1"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    @elseif ($designer->rating == 4)
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
-                                 <small>(4.6)</small>
+                                    <i class="fas fa-star star"></i>
+                                    @elseif ($designer->rating == 5)
+                                    <i class="fas fa-star star1"></i>
+                                    <i class="fas fa-star star1"></i>
+                                    <i class="fas fa-star star1"></i>
+                                    <i class="fas fa-star star1"></i>
+                                    <i class="fas fa-star star1"></i>
+                                    @else
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    @endif
+
+                                 <small>{{$designer->rating}}</small>
                                  {{-- <button href="" class="btn _primary-btn" style="height:50px; width:189px; margin:0px auto;">ดูโปรไฟล์</button> --}}
                            
                                  </span>

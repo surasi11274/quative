@@ -33,7 +33,7 @@
                 <div class="col-12 col-sm-6 "style="margin-top: 110px">
                     <div class="mt-ex" style="margin-top: 10rem">
                         <h1 class="header">ออกแบบ
-                            <span class="_hilight">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
+                            <span class="_hilight font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
                             <div class="row mt-md-5">
@@ -67,7 +67,7 @@
                 <div class="col-12 col-sm-6 "style="margin-top: 110px">
                     <div class="mt-ex" style="margin-top: 10rem">
                         <h1 class="header">ออกแบบ
-                            <span class="_hilight">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
+                            <span class="_hilight font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
                             <div class="row mt-md-5">
@@ -101,7 +101,7 @@
                 <div class="col-12 col-sm-6 "style="margin-top: 110px">
                     <div class="mt-ex" style="margin-top: 10rem">
                         <h1 class="header">ออกแบบ
-                            <span class="_hilight">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
+                            <span class="_hilight  font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
                             <div class="row">
@@ -139,7 +139,7 @@
     </div>
     <div class=" _box-1 text-center _p-md-5 ">
         <div class="container">
-            <h1 class="p-5 text-center">ทำไมต้อง<span class="_hilight">QUATIVE</span> </h1>
+            <h1 class="p-5 text-center">ทำไมต้อง<span class="_hilight  font-weight-bold">QUATIVE</span> </h1>
             <div class="row ">
 
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
@@ -188,7 +188,7 @@
     <div class="container-fluid totorial ">
             <div class="container  _p-md-5 ">
                     <div class="text-center"> 
-                            <h1 class="content-dark pb-5">Quative <span class="_hilight">ใช้ยังไง?</span></h1>
+                            <h1 class="content-dark pb-5">Quative <span class="_hilight  font-weight-bold">ใช้ยังไง?</span></h1>
             
                         <div class="row">
                             <div class="col-12 col-md-3">
@@ -242,7 +242,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 p-5 text-right">
-                                            <h1><span class="_hilight" >พรีวิว</span>บรรจุภัณฑ์<br>
+                                            <h1><span class="_hilight  font-weight-bold" >พรีวิว</span>บรรจุภัณฑ์<br>
                                                 ลองสินค้าในแบบของคุณ
                                             </h1>
                                             <p>ลองออกแบบบรรจุภัณฑ์ในรูปแบบหลายๆแบบ โดยใช้โลโก้ของคุณระบบจะทำการสร้างบรรจุภัณฑ์ให้คุณทดลองพรีวิวก่อนค้นหาดีไซน์เนอร์
@@ -263,7 +263,7 @@
                             </div>
     <div class="_box-3 bg-white _p-md-5  mb-5">
                 <div class="container">
-                    <h1 class="p-5 text-center"> รีวิว<span class="_hilight">จากผู้ใช้งาน</span> </h1>
+                    <h1 class="p-5 text-center"> รีวิว<span class="_hilight  font-weight-bold">จากผู้ใช้งาน</span> </h1>
                    
                     <div class="row">
                         <div class="col-12 col-md-4 justify-content-center">
@@ -302,7 +302,7 @@
     </div>
                             <div class="_box-4 _p-md-5">
                                 <div class="text-center">
-                                    <h1><span class="_hilight">ผลงาน</span>นักออกแบบ </h1>
+                                    <h1><span class="_hilight  font-weight-bold">ผลงาน</span>นักออกแบบ </h1>
                                     <p>ต้องการค้นหานักออกแบบใช่มั้ย ? สมัครสมาชิกแล้วลองใช้งาน <br>
                                         การค้นหานักออกแบบอย่างที่คุณต้องการดูก่อนสิ</p>
 
