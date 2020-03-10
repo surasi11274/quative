@@ -127,6 +127,14 @@ h2, h4, h5, p, a,small,button,div,span{
   color: #523EE8;
   /* position: absolute; */
 }
+.user-1::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f007";
+  font-size: 29x;
+  color: #523EE8;
+  /* position: absolute; */
+}
 .notification::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;

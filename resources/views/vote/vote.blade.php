@@ -15,202 +15,261 @@
 <link href="{{ asset('css/_vote-detail.css') }}" rel="stylesheet">
 <div class="bd-example shadow-ex">
     <div id="carouselExampleCaptions3" class="carousel slide" data-ride="pause">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions3" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions3" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions3" data-slide-to="2"></li>
-        </ol>
+
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
+                <img src="photo/bg-vote.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption1 d-none d-md-block">
                     <a href="/votedetail" class="site-link"></a>
-                    <div class="container-fluid">
+                    <div class="container">
                         <div class="row">
-                            <div class="col-12 text-left p-5">
+                            <div class="col-12 text-left">
                                 <div class="site-header">
-                                    {{-- <h1 class=" d-flex float-left mt-5">ผลงานที่ได้รับการโหวตมากที่สุด</h1> --}}
+                                    <h1 class="_hilight mt-5">ผลงานที่ได้รับการโหวตมากที่สุด</h1>
+                                    <p style="color:black;">รวบรวมผลงานของนักออกแบบบรรจุภัณฑ์ที่สร้างสรรค์ผลงาน <br>
+                                        บรรจุภัณฑ์ในรูปแบบต่างๆผ่านทางเว็บไซต์ Quative</p>
                                 </div>
                                 <div class="site-below">
-                                    <h1 class=" d-flex float-left mt-5" style="color:black;">ผลงานที่ได้รับการโหวตมากที่สุด</h1>
-                                    <h3 class="mt-5">Package colorlista</h3>
-                                    <span class="mt-5">Design by&nbsp;<label> กิตติพร บุญดี</label></span>
+                                    {{-- <h1 class="_hilight float-left mt-5">ผลงานที่ได้รับการโหวตมากที่สุด</h1>
+                                    <p>รวบรวมผลงานของนักออกแบบบรรจุภัณฑ์ที่สร้างสรรค์ผลงาน <br>
+                                        บรรจุภัณฑ์ในรูปแบบต่างๆผ่านทางเว็บไซต์ Quative</p> --}}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption1 d-none d-md-block">
-                    <a href="/votedetail" class="site-link"></a>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 text-left p-5">
-                                <div class="site-header">
-                                    <h1 class=" d-flex float-left mt-5">ผลงานที่ได้รับการโหวตมากที่สุด</h1>
-                                </div>
-                                <div class="site-below">
-                                    <h3 class="mt-5">Package colorlista</h3>
-                                    <span class="mt-5">Design by&nbsp;<label> กิตติพร บุญดี</label></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption1 d-none d-md-block">
-                    <a href="/votedetail" class="site-link"></a>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 text-left p-5">
-                                <div class="site-header">
-                                    <h1 class=" d-flex float-left mt-5">ผลงานที่ได้รับการโหวตมากที่สุด</h1>
-                                </div>
-                                <div class="site-below">
-                                    <h3 class="mt-5">Package colorlista</h3>
-                                    <span class="mt-5">Design by&nbsp;<label> กิตติพร บุญดี</label></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          
+           
         </div>
     </div>
 </div>
 <div class="container">
    
     <div class="form-row mt-5">
-        <div class="form-group col-md-6">
-            <h2 class="font-weight-bold mt-3">ผลงานนักออกแบบทั้งหมด</h2>
+        <div class="form-group col-md-9">
+            <ul class="nav nav-pills mt-3" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link-1 border bg-white rounded m-2 active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ทั้งหมด</a>
+                </li>
+                <li class="nav-item border bg-white rounded m-2">
+                  <a class="nav-link-1" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">กล่อง</a>
+                </li>
+                <li class="nav-item border bg-white m-2 rounded">
+                  <a class="nav-link-1" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">ขวด</a>
+                </li>
+                <li class="nav-item border bg-white m-2 rounded">
+                    <a class="nav-link-1" id="pills-glass-tab" data-toggle="pill" href="#pills-glass" role="tab" aria-controls="pills-glass" aria-selected="false">แก้ว</a>
+                  </li>
+                  <li class="nav-item border bg-white m-2 rounded">
+                    <a class="nav-link-1" id="pills-bag-tab" data-toggle="pill" href="#pills-bag" role="tab" aria-controls="pills-bag" aria-selected="false">ถุง</a>
+                  </li>
+                  <li class="nav-item border bg-white m-2 rounded">
+                    <a class="nav-link-1" id="pills-can-tab" data-toggle="pill" href="#pills-can" role="tab" aria-controls="pills-can" aria-selected="false">กระป๋อง</a>
+                  </li>
+              </ul>
+             
         </div>
-        <div class="form-group col-md-3">
-            <label for=""></label>
-            <input type="text" name="" id="" class="form-control" placeholder="Search" aria-describedby="helpId">
-            
-        </div>
+         
        <div class="form-group col-md-3">
          <label for=""></label>
          <select class="form-control">
-            <option>Default select</option>
-            <option value="box">บรรจุภัณฑ์ประเภท กล่อง</option>
-            <option value="cup">บรรจุภัณฑ์ประเภท แก้ว</option>
-            <option value="bottle">บรรจุภัณฑ์ประเภท ขวด</option>
-            <option value="bag">บรรจุภัณฑ์ประเภท ถุง</option>
-            <option value="can">บรรจุภัณฑ์ประเภท กระป๋อง</option>
+            <option value="most">ผลงานที่ถูกชื่นชอบมากที่สุด</option>
+            <option value="newone">เรียงผลงานตามลำดับ ใหม่-เก่า</option>
+           
           </select>
        
        </div>
     </div>
-    <div class="row">
-
-                    @if($jobs->count())
-                        @foreach($jobs as $job)
-
-                            @php
-                                $designerid = \App\Designer::find($job->designer_id);
-
-                                $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
-
-
-                            @endphp
-
-                            <article class="col-4 mt-5">
-                                <div class="card shadow-sm" data-id="{{ $job->id }}">
-                                    
-                                <a href="{{ route('galleryDetail', $job->id) }}">
-                                    <img class="card-img-top" src="{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
-                                </a>
- 
-                                    <div class="card-body">
-                                        <div class="text-left position-absolute">
-                                            <div class="row pl-3">
-                                                <p class="font-weight-bold">ออกแบบโดย
-                                                    {{$designerid->name}}
-                                                </p>
-                                            </div>
-
-                                        {{-- @foreach($job->tags as $tagn)
-
-
-                                            <p>
-                                                {{$tagname}},
-                                            </p>
-
-                                        @endforeach --}}
+</div>
+   {{-- <div class="container-fluid">
+    <div class="container-1 mt-5">
+        
+           <img class="item1 " src="https://picsum.photos/200/200" alt="">
+           <img class="item2 " src="https://picsum.photos/200/200" alt="">
+           <img class="item3 " src="https://picsum.photos/200/200" alt="">
+           <img class="item4 " src="https://picsum.photos/200/200" alt="">
+           <img class="item5 " src="https://picsum.photos/200/200" alt="">
+           <img class="item6 " src="https://picsum.photos/200/200" alt="">
+           <img class="item7 " src="https://picsum.photos/200/200" alt="">
+           <img class="item8 " src="https://picsum.photos/200/200" alt="">
+           <img class="item9 " src="https://picsum.photos/200/200" alt="">
+           <img class="item10 " src="https://picsum.photos/200/200" alt="">
+           <img class="item11 " src="https://picsum.photos/200/200" alt="">
+           <div class="item1 hoverliked"> 1</div>
+           <div class="item2">2</div>
+           <div class="item3">3</div>
+           <div class="item4">4</div>
+           <div class="item5">5</div>
+           <div class="item6">6</div>
+           <div class="item7">7</div>
+           <div class="item8">8</div>
+           <div class="item9">9</div>
+           <div class="item10">10</div>
+           <div class="item11">11</div>
+           <div class="item12">12</div>
+           <div class="item13">13</div>
+      </div>
+   </div> --}}
+   <div class="container">
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="row">
+                @if($jobs->count())
+                    @foreach($jobs as $job)
+        
+                        @php
+                            $designerid = \App\Designer::find($job->designer_id);
+        
+                            $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+        
+        
+                        @endphp
+        
+                        <article class="col-12 col-md-4 mt-5">
+                           
+                            <div class="card shadow-sm" data-id="{{ $job->id }}">
+                                
+                            <a href="{{ route('galleryDetail', $job->id) }}">
+                                <img class="card-img-top" src="{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
+                            </a>
+        
+                                <div class="card-body">
+                                    <div class="text-left position-absolute">
                                         <div class="row pl-3">
-                                    @foreach ($jobtag as $jobt)
-                                        @php
-                                        $tagname = \App\Tags::find($jobt)->tagName;
-
-                                        @endphp
+                                            <p class="font-weight-bold">ออกแบบโดย
+                                                {{$designerid->name}}
+                                            </p>
+                                        </div>
+        
+                                    {{-- @foreach($job->tags as $tagn)
+        
+        
                                         <p>
-
                                             {{$tagname}},
                                         </p>
-                                    @endforeach
-                                     </div>
-                                     <div class="row pl-3 color-grey">
-                                            <span>                                                    
-                                                <i class="fas fa-heart"></i> 
-                                                {{$job->favorite_to_users->count()}}  
-                                            </span>
-                                            <span class="pl-3">
-                                                <i class="far fa-eye"></i>
-                                                {{$job->view_count}}
-                                            </span>
-
-
-
-
-
-                                    </div>
-
-
-
-                                        </div>
-                                        <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
-                                        <span class="pull-right">
-
-                                                @guest
-
-                                                <a href="javascript:void(0);" >
-                                                <button onclick="toastr.info('To add favorite list. You need to login first.','Info',{
-                                                    closeButton:true,
-                                                    progressBar: true,
-                                                })" class="love btn btn-light text-center rounded float-right border">
-                                                    <i class="fas fa-heart"></i>
-                                                    {{-- {{$job->favorite_to_users->count()}}                                 --}}
-                                                </button>
-                                                </a>
-
-                                                @else
-                                                <a href="javascript:void(0);" >
-                                                    <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
-                                                        <i class="fas fa-heart"></i>
-                                                        {{-- {{$job->favorite_to_users->count()}}   --}}
-                                                    </button>
-                                                </a>
-                                                     <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
-                                                        style="display:none;">
-                                                    @csrf
-                                                    </form>
-
-                                                @endguest
-                                                {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
-                                                <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
+        
+                                    @endforeach --}}
+                                    <div class="row pl-3">
+                                @foreach ($jobtag as $jobt)
+                                    @php
+                                    $tagname = \App\Tags::find($jobt)->tagName;
+        
+                                    @endphp
+                                    <p>
+        
+                                        {{$tagname}},
+                                    </p>
+                                @endforeach
+                                 </div>
+                                 <div class="row pl-3 color-grey">
+                                        <span>                                                    
+                                            <i class="fas fa-heart"></i> 
+                                            {{$job->favorite_to_users->count()}}  
                                         </span>
-                                    </div>
+                                        <span class="pl-3">
+                                            <i class="far fa-eye"></i>
+                                            {{$job->view_count}}
+                                        </span>
+        
+        
+        
+        
+        
                                 </div>
-                            </article>
-                        @endforeach
-                    @endif
+        
+        
+        
+                                    </div>
+                                    <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
+                                    <span class="pull-right">
+        
+                                            @guest
+        
+                                            <a href="javascript:void(0);" >
+                                            <button onclick="toastr.info('To add favorite list. You need to login first.','Info',{
+                                                closeButton:true,
+                                                progressBar: true,
+                                            })" class="love btn btn-light text-center rounded float-right border">
+                                                <i class="fas fa-heart"></i>
+                                                {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                            </button>
+                                            </a>
+        
+                                            @else
+                                            <a href="javascript:void(0);" >
+                                                <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                                    <i class="fas fa-heart"></i>
+                                                    
+                                                    {{-- {{$job->favorite_to_users->count()}}   --}}
+                                                </button>
+                                            </a>
+                                                 <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                                    style="display:none;">
+                                                @csrf
+                                                </form>
+        
+                                            @endguest
+                                            {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
+                                            <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    @endforeach
+                @endif
+        
+            </div>
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">กล่อง</div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">ขวด</div>
+        <div class="tab-pane fade" id="pills-glass" role="tabpanel" aria-labelledby="pills-contact-tab">แก้ว</div>
+        <div class="tab-pane fade" id="pills-bag" role="tabpanel" aria-labelledby="pills-contact-tab">ถุง</div>
+        <div class="tab-pane fade" id="pills-can" role="tabpanel" aria-labelledby="pills-contact-tab">กระป๋อง</div>
+    </div>
+    
+   </div>
+{{-- <style>
+    .container-1 div {
+      width: 280px;
+      height: 500px;
+      background-color: antiquewhite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+ 
+      
+    }
+    .container-1 .hoverliked:hover{
+        background-color:rgba(0, 0, 0, .15);
+        transform: translateY(-20px,0px) 2ms all;
+    }
+    
 
-</div>
+    .container-1 .item1 { height: 200px; }
+    .container-1 .item4 { height: 600px; }
+    .container-1 .item2 { height: 600px; }
+    .container-1 .item3 { height: 400px; }
+    
+    .container-1 .item5 { height: 200px; }
+    .container-1 .item8 { height: 200px; }
+    .container-1 .item6 { height: 600px; }
+    .container-1 .item11 { height: 400px; }
+  </style> --}}
+  {{-- <script src="js/magic-grid.min.js"></script> --}}
+{{-- <script>
+let magicGrid = new MagicGrid({
+  container: '.container-1',
+  animate: true,
+  gutter: 30,
+  static: true,
+  useMin: true
+});
+    magicGrid.listen();
+
+</script> --}}
+
 
 
 {{-- <script type="text/javascript">

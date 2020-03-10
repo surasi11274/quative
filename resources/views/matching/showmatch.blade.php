@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('assets')
+<link rel="stylesheet" href="{{asset('css/base.css')}}">
+@endsection
 @section('content')
 <div class="container mt-5">
         
@@ -32,7 +35,7 @@
          {{ csrf_field() }}
 
             <div class="container bg-white  p-5">
-               <h1 class=" text-center selectfillter  pt-5">ผลการ <span class="_hilight">Matching</span></h1>
+               <h1 class=" text-center   pt-5">ผลการ <span class="_hilight font-weight-bold">Matching</span></h1>
       
                <h2 class="selectfillter  pt-5">เลือกนักออกแบบที่ตรงใจกับคุณ</h2>
                <div class="row mt-md-5">
