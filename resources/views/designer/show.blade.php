@@ -13,7 +13,27 @@
             </div>
               {{-- <h5 class="text-center mt-5 text-white">ปลายฟ้า เป็นตาธรรม</h5> --}}
               <h5 class="titlename text-center text-white mt-5 font-weight-bold">{{$designer->name}} {{$designer->surname}}</h5>
-            <p class="mt text-center"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><span class="text-white">  (4.9)</span></p>
+              @if ($designer->rating == 1)
+              <p class="mt text-center"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i>
+
+              @elseif ($designer->rating == 2) 
+              <p class="mt text-center"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i>
+
+              @elseif ($designer->rating == 3) 
+              <p class="mt text-center"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i>
+
+              @elseif ($designer->rating == 4) 
+              <p class="mt text-center"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star"></i>
+
+              @elseif ($designer->rating == 5) 
+                <p class="mt text-center"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i>
+                    
+                    @else
+                    <p class="mt text-center"><i class="fas fa-star star" id=""></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i>
+
+              @endif
+              <span class="text-white">  ({{$designer->rating}})</span></p>
+
       </div>
       <div class="col-12 col-md-8">		
           <div class="card-body bg-white">
@@ -28,7 +48,7 @@
 
             <div class="col-md-3">
            <br>
-            <p> {{21/01/2019}} </p>
+            <p> {{date('F d,Y',strtotime($designer->create_at))}}</p>
             <p>{{212 }} ครั้ง</p>
             <p>{{100%100}}</p>
             </div>
@@ -76,7 +96,7 @@
                       <div class="row mt-3">
                          <div class="col-md-3">
                             <div class="text-center mt-3">
-                                <h3 class="font-weight-bold">4.9</h3>
+                                <h3 class="font-weight-bold">{{$designer->rating}}</h3>
                                     <small class="_gray">จาก 5.0</small>
                             </div>
                          </div>
@@ -119,18 +139,27 @@
                         </div>
                     </div>
 
+                    @foreach ($reviews as $review)
+                        
                     <div class="col">
+                    @php
+                        $username = Auth::user()->find($review->user_id)->name;
+                    @endphp
+                      <h5 class="mt-3">{{$username}} <span>
+                          
+                          <i class="fas fa-star star1" style="float: right;"> 
+                             <span style="color: #000;">{{$review->rating}}</span>
+                          </i> </span></h5>
+                          <p class="text-black-50">{{date('F d,Y',strtotime($review->create_at))}}</p>
+                    </div>
+                    </div>
+                    <h5 class="mt-3">{{$review->reviewdescription}}</h5>
+                    @endforeach
 
-                      <h5 class="mt-3">เจตผล <span><i class="fas fa-star star1" style="float: right;"> 
-                          <span style="color: #000;">(4.9)</span></i> </span></h5>
-                          <p class="text-black-50">วันที่รีวิว 07/12/2019</p>
-                    </div>
-                    </div>
-                    <h5 class="mt-3">ทำงานตรงใจเราเลย</h5>
                     <hr>
                     
                     <!-- comment -->
-
+{{-- 
                     <div class="row">
 
                       <!-- comment -->
@@ -146,9 +175,9 @@
                           <span style="color: #000;">(4.9)</span></i> </span></h5>
                           <p class="text-black-50">วันที่รีวิว 07/12/2019</p>
                     </div>
-                    </div>
-                    <h5 class="mt-3">ทำงานตรงใจเราเลย</h5>
-                    <hr>
+                    </div> --}}
+                    {{-- <h5 class="mt-3">ทำงานตรงใจเราเลย</h5> --}}
+                    {{-- <hr> --}}
                     <!-- comment -->
 
 

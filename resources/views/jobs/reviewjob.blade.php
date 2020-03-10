@@ -13,15 +13,15 @@
     </div>
 </div> --}}
 <div class="container ">
-    <div class="text-center p-5">
+    {{-- <div class="text-center p-5">
         <h1><span class="_hilight">โปรไฟล์ของคุณ</span></h1>
         <p>
             กรอกข้อมูลเสร็จแล้วกรุณาตรวจข้อมูลให้ครบถ้วนเพื่อที่เราจะได้หาผู้ประกอบการที่<br>
             ใช่ที่สุดสำหรับคุณ
         </p>
     </div>
-    Review        
-@foreach ($designer as $designers)
+    Review         --}}
+{{-- @foreach ($designer as $designers)
 
 <div class="container">		
     <div class="row mt-3">
@@ -31,7 +31,6 @@
               <div class="profile-img text-center mt-5" >
                 <img id="profileImage" class="rounded-circle" src="/{{$designers->profilepic}}" style="width:120px;height:120px;margin:auto;"/>
             </div>
-              {{-- <h5 class="text-center mt-5 text-white">ปลายฟ้า เป็นตาธรรม</h5> --}}
               <h5 class="titlename text-center text-white mt-5">{{$designers->name}} {{$designers->surname}}</h5>
             <p class="mt text-center"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><span class="text-white">  (4.9)</span></p>
             <center><button type="button" class="btn btn-outline-light text-center mb-5">ติดตาม</button></center>
@@ -91,14 +90,28 @@
 
     </div>
 </div>
-@endforeach
+@endforeach --}}
 
 
 <div class="row mt-3 mb-5">
+    
+
     <div class="col-sm-12">
       <div class="shadow-sm">
-        <div class="card-body ">
-          <h1 class="card-title mt-5 text-center">ให้คะแนนนักออกแบบ</h1>
+        <div class="card-body bg-white">
+            @foreach ($designer as $designers)
+        
+            <div class="col text-center">
+                <h1 class="mt-5">เขียนรีวิวนักออกแบบ</h1>
+                <div class="profile-img text-center mt-5" >
+                    <img id="profileImage" class="rounded-circle" src="/{{$designers->profilepic}}" style="width:120px;height:120px;margin:auto;"/>
+                </div>
+                <h5 class="titlename text-center mt-5 pb-5" style="color:black;">{{$designers->name}} {{$designers->surname}}</h5>
+
+            </div>
+            @endforeach
+            <hr>
+          <h2 class="card-title mt-5 text-center">ให้คะแนนนักออกแบบ</h2>
           {{-- <h3 class="mt-5 text-center"><i class="fas fa-star star1" id="">
               </i><i class="fas fa-star star1"></i>
               <i class="fas fa-star star1"></i>
@@ -184,17 +197,17 @@
                         <option value="5">น้อยมาก</option>
                       </select>				    
                   </div>
-                   <div class="col-12">
-                    <button type="submit  " class="btn btn-dark btn-lg mt-5 mb-5 text-center w-100"  >บันทึกรีวิว</button>
+                   <div class="col-12 text-right">
+                    <button type="submit  " class="btn _primary-btn m-1 mt-5"  >บันทึกรีวิว</button>
 
                    </div>
 
               </div>
             </div>
           </div>
-          <input  type="text" id="jobs_id" name="jobs_id" value="{{$jobs->id}}">
-          <input  type="text" id="designer_id" name="designer_id" value="{{$jobs->designer_id}}">
-          <input  type="text" id="user_id" name="user_id" value="{{$jobs->user_id}}">
+          <input hidden  type="text" id="jobs_id" name="jobs_id" value="{{$jobs->id}}">
+          <input hidden type="text" id="designer_id" name="designer_id" value="{{$jobs->designer_id}}">
+          <input hidden type="text" id="user_id" name="user_id" value="{{$jobs->user_id}}">
           </form>
      
         

@@ -195,6 +195,8 @@ Route::get('/designer/billing/{token}',
     // -------------------------- Gallery ---------------------------
 
 Route::get('gallery', 'GalleryController@gallery');
+Route::get('/gallery/search', 'GalleryController@search');
+
 Route::get('/gallery/{id}', 'GalleryController@galleryDetail')->name('galleryDetail');
 
 Route::group(['middlewere' => 'auth'], function () {

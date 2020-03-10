@@ -46,6 +46,17 @@
                         </div>
 
                     </div>
+                    <div class="text-left">
+                        <div class="row alert alert-secondary" role="alert">
+                            <div class="col">
+                                <p>ยอดที่ต้องโอนให้นักออกแบบโดยหัก 5% แล้ว </p>
+                            </div>
+                            <div class="col text-right text-success">
+                                <p>{{$payments->total_price - ($payments->total_price * 0.05)}} บาท</p>
+                            </div>
+                        </div>
+
+                    </div>
                     <div class="text-left pt-4">
                         <h4>โอนเข้าบัญชีของธนาคาร</h4>
                         <p>{{$payments->bank}}</p>

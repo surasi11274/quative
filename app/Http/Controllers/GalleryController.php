@@ -6,11 +6,13 @@ use App\Comments;
 use App\Jobfiles;
 use App\Jobs;
 use App\Like;
+use App\Tags;
 use App\User;
 use Brian2694\Toastr\Facades\Toastr;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class GalleryController extends Controller
@@ -30,9 +32,9 @@ class GalleryController extends Controller
         // $jobfiles = \App\Jobfiles::where('job_id',$job->id)->get();
         $jobfiles = Jobfiles::all();
 
-        foreach ($jobs as $jobtags){
+        foreach ($jobs as $job){
             // $object->title 
-            $jobtag = json_decode($jobtags->tags,true);
+            $jobtags = json_decode($job->tags,true);
 
 
         }
@@ -50,9 +52,37 @@ class GalleryController extends Controller
         return view('vote.vote',[
             'jobs'=>$jobs,
             'jobfiles'=>$jobfiles,
-            'jobtag'=>$jobtag
+            'jobtags'=>$jobtags
             ]);
     }
+
+    // public function search(Request $request)
+    // {
+    //     $jobfiles = Jobfiles::all();
+
+    //     $search = $request->get('search');
+
+    //     $jobs = Jobs::where('canshow',1)->orderBy('id', 'DESC')->get();
+    //     foreach($jobs as $job){
+    //         $jobtags = json_decode($job->tags,true);
+    //         foreach($jobtags as $jobtag) {
+    //             $tagname = Tags::find($jobtag)->tagName;
+
+    //         }
+
+    //     }
+
+
+    //     $searchjobs = DB::table('jobs')->where($tagname,'like','%'.$search.'%');
+    //     return view('vote.vote',[
+    //         'searchjobs'=>$searchjobs,
+    //         'jobs'=>$jobs,
+    //         'jobfiles'=>$jobfiles,
+
+    //         'jobtags'=>$jobtags
+
+    //     ]);
+    // }
     public function galleryDetail($id)
     {
         $jobs = Jobs::find($id);

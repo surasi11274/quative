@@ -13,6 +13,7 @@ use App\User;
 use App\Jobs;
 use App\Jobstatus;
 use App\Payment;
+use App\Review;
 use DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -191,6 +192,8 @@ class DesignerController extends Controller
 
         $designer = Designer::where('token',$token)->get();
         $users = Auth::user()->designer();
+
+        $reviews = Review::where('designer_id',$designer->first()->id)->get();
         // return $this->show()->where('designer','=','confirmed');
     
 
@@ -205,8 +208,8 @@ class DesignerController extends Controller
         return view('designer.show',[
             'designer'=>$designer->first(),
             'tags'=>$tags,
-            
-            'users'=>$users
+            'reviews'=>$reviews,
+            'users'=>$users,
             ]);
 
     }
@@ -376,7 +379,7 @@ class DesignerController extends Controller
     
     DB::table('jobs')->where('id', $fileinput->job_id)->update([
         'file' => json_encode($query),
-        'jobstatus_id' => '5'
+        'jobstatus_id' => '7'
         // 'reference'=>json_encode($request->input('reference')),
 
         ]);

@@ -39,13 +39,13 @@
                     </div>
                 </div>
             </div>
-          
-           
+
+
         </div>
     </div>
 </div>
 <div class="container">
-   
+
     <div class="form-row mt-5">
         <div class="form-group col-md-9">
             <ul class="nav nav-pills mt-3" id="pills-tab" role="tablist">
@@ -68,124 +68,103 @@
                     <a class="nav-link-1" id="pills-can-tab" data-toggle="pill" href="#pills-can" role="tab" aria-controls="pills-can" aria-selected="false">กระป๋อง</a>
                   </li>
               </ul>
-             
+
         </div>
-         
+
        <div class="form-group col-md-3">
          <label for=""></label>
          <select class="form-control">
             <option value="most">ผลงานที่ถูกชื่นชอบมากที่สุด</option>
             <option value="newone">เรียงผลงานตามลำดับ ใหม่-เก่า</option>
-           
+
           </select>
-       
+
        </div>
     </div>
-</div>
-   {{-- <div class="container-fluid">
-    <div class="container-1 mt-5">
-        
-           <img class="item1 " src="https://picsum.photos/200/200" alt="">
-           <img class="item2 " src="https://picsum.photos/200/200" alt="">
-           <img class="item3 " src="https://picsum.photos/200/200" alt="">
-           <img class="item4 " src="https://picsum.photos/200/200" alt="">
-           <img class="item5 " src="https://picsum.photos/200/200" alt="">
-           <img class="item6 " src="https://picsum.photos/200/200" alt="">
-           <img class="item7 " src="https://picsum.photos/200/200" alt="">
-           <img class="item8 " src="https://picsum.photos/200/200" alt="">
-           <img class="item9 " src="https://picsum.photos/200/200" alt="">
-           <img class="item10 " src="https://picsum.photos/200/200" alt="">
-           <img class="item11 " src="https://picsum.photos/200/200" alt="">
-           <div class="item1 hoverliked"> 1</div>
-           <div class="item2">2</div>
-           <div class="item3">3</div>
-           <div class="item4">4</div>
-           <div class="item5">5</div>
-           <div class="item6">6</div>
-           <div class="item7">7</div>
-           <div class="item8">8</div>
-           <div class="item9">9</div>
-           <div class="item10">10</div>
-           <div class="item11">11</div>
-           <div class="item12">12</div>
-           <div class="item13">13</div>
-      </div>
-   </div> --}}
-   <div class="container">
-    <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <div class="row">
-                @if($jobs->count())
-                    @foreach($jobs as $job)
-        
-                        @php
-                            $designerid = \App\Designer::find($job->designer_id);
-        
-                            $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
-        
-        
-                        @endphp
-        
-                        <article class="col-12 col-md-4 mt-5">
-                           
-                            <div class="card shadow-sm" data-id="{{ $job->id }}">
-                                
-                            <a href="{{ route('galleryDetail', $job->id) }}">
-                                <img class="card-img-top" src="{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
-                            </a>
-        
-                                <div class="card-body">
-                                    <div class="text-left position-absolute">
-                                        <div class="row pl-3">
-                                            <p class="font-weight-bold">ออกแบบโดย
-                                                {{$designerid->name}}
+    <div class="row">
+
+                    @if($jobs->count())
+                        @foreach($jobs as $job)
+
+                            @php
+                                $designerid = \App\Designer::find($job->designer_id);
+
+                                $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+
+
+                            @endphp
+
+                            <article class="col-4 mt-5">
+                                <div class="card shadow-sm" data-id="{{ $job->id }}">
+
+                                <a href="{{ route('galleryDetail', $job->id) }}">
+                                    <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
+                                </a>
+
+                                    <div class="card-body">
+                                        <div class="text-left position-absolute">
+                                            <div class="row pl-3">
+                                                <p class="font-weight-bold">ออกแบบโดย
+                                                    {{$designerid->name}}
+                                                </p>
+                                            </div>
+
+                                        {{-- @foreach($job->tags as $tagn)
+
+
+                                            <p>
+                                                {{$tagname}},
                                             </p>
-                                        </div>
-        
-                                    {{-- @foreach($job->tags as $tagn)
-        
-        
+
+                                        @endforeach --}}
+                                        <div class="row pl-3">
+                                    @foreach ($jobtags as $jobt)
+                                        @php
+
+                                        $tagname = \App\Tags::find($jobt)->tagName;
+
+                                        @endphp
                                         <p>
                                             {{$tagname}},
                                         </p>
-        
+
                                     @endforeach --}}
                                     <div class="row pl-3">
                                 @foreach ($jobtag as $jobt)
                                     @php
                                     $tagname = \App\Tags::find($jobt)->tagName;
-        
+
                                     @endphp
                                     <p>
-        
+
                                         {{$tagname}},
                                     </p>
                                 @endforeach
                                  </div>
                                  <div class="row pl-3 color-grey">
-                                        <span>                                                    
-                                            <i class="fas fa-heart"></i> 
-                                            {{$job->favorite_to_users->count()}}  
+                                        <span>
+                                            <i class="fas fa-heart"></i>
+                                            {{$job->favorite_to_users->count()}}
                                         </span>
                                         <span class="pl-3">
                                             <i class="far fa-eye"></i>
                                             {{$job->view_count}}
                                         </span>
-        
-        
-        
-        
-        
+
+
+
+
+
                                 </div>
-        
-        
-        
+
+
+
                                     </div>
                                     <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
                                     <span class="pull-right">
-        
+
                                             @guest
-        
+
                                             <a href="javascript:void(0);" >
                                             <button onclick="toastr.info('To add favorite list. You need to login first.','Info',{
                                                 closeButton:true,
@@ -195,12 +174,12 @@
                                                 {{-- {{$job->favorite_to_users->count()}}                                 --}}
                                             </button>
                                             </a>
-        
+
                                             @else
                                             <a href="javascript:void(0);" >
                                                 <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
                                                     <i class="fas fa-heart"></i>
-                                                    
+
                                                     {{-- {{$job->favorite_to_users->count()}}   --}}
                                                 </button>
                                             </a>
@@ -208,7 +187,7 @@
                                                     style="display:none;">
                                                 @csrf
                                                 </form>
-        
+
                                             @endguest
                                             {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
                                             <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
@@ -218,7 +197,7 @@
                         </article>
                     @endforeach
                 @endif
-        
+
             </div>
         </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">กล่อง</div>
@@ -227,7 +206,7 @@
         <div class="tab-pane fade" id="pills-bag" role="tabpanel" aria-labelledby="pills-contact-tab">ถุง</div>
         <div class="tab-pane fade" id="pills-can" role="tabpanel" aria-labelledby="pills-contact-tab">กระป๋อง</div>
     </div>
-    
+
    </div>
 {{-- <style>
     .container-1 div {
@@ -238,20 +217,20 @@
       justify-content: center;
       align-items: center;
       border-radius: 8px;
- 
-      
+
+
     }
     .container-1 .hoverliked:hover{
         background-color:rgba(0, 0, 0, .15);
         transform: translateY(-20px,0px) 2ms all;
     }
-    
+
 
     .container-1 .item1 { height: 200px; }
     .container-1 .item4 { height: 600px; }
     .container-1 .item2 { height: 600px; }
     .container-1 .item3 { height: 400px; }
-    
+
     .container-1 .item5 { height: 200px; }
     .container-1 .item8 { height: 200px; }
     .container-1 .item6 { height: 600px; }
@@ -313,3 +292,21 @@ let magicGrid = new MagicGrid({
     });
 </script> --}}
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="public/js/isotope.pkgd.min.js"></script>
+{{-- <script src="https://cdnjs.cloundflare.com/ajax/libs/select2/4.0.3/jquery.min.js"></script>
+--}}
+<script>
+
+
+var $isotope_container = $('.isotope_container').isotope({ // กำหนด container ที่ครอบไอเทมทั้งหมดอยู่
+  itemSelector: '.element-item' // กำหนด element class ที่จะให้สามารถ filter ได้
+});
+
+$('#isotope_category').on('change', function() { // จับ event change ของ select option
+  var selected = $(this).find('option:selected'); // ตรวจสอบว่าเลือกไปที่หมวดหมู่อาหารอะไร
+  var filterValue = selected.attr('data-filter'); // เก็บข้อมูล attribute data-filter
+  $isotope_container.isotope({ filter: filterValue }); // ใช้คำสั่ง filter ของ isotope
+});
+
+</script>

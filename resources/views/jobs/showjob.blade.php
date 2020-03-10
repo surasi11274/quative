@@ -542,7 +542,7 @@
                            <div class="d-flex mt-5">
                             {{-- @foreach () --}}
                             @php
-                            $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusName;
+                            $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusUserName;
                              @endphp
                             {{-- @if ($jobs->jobstatus_id == 1) --}}
 
@@ -596,7 +596,7 @@
                                 @endforeach
             
 
-                                <button class="btn _secondary-btn m-1">ดาวน์โหลดไฟล์</button>
+                                {{-- <button class="btn _secondary-btn m-1">ดาวน์โหลดไฟล์</button> --}}
                                 <button type="button" class="btn _primary-btn m-1" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
                             @elseif ($jobs->jobstatus_id == 8)
                             <button type="button" class="btn _primary-btn m-1" onclick="addCart2('9')" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
