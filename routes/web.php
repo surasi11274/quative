@@ -45,7 +45,9 @@ Route::get('/matchfinish', function () {
 //     return view('payment');
 // });
 // pang edit
-
+ Route::get('/term&condition', function () {
+     return view('auth.term');
+ });
 
 
 

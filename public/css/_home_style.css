@@ -118,6 +118,33 @@ h2, h4, h5, p, a,small,button,div,span{
   font-variant: normal;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
+  font-size: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.angle-double-down::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f103";
+  font-size: 29x;
+  color: #523EE8;
+  /* position: absolute; */
+}
+.user-friend::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f508";
+  font-size: 29x;
+  color: #523EE8;
+  /* position: absolute; */
+}
+.user-designer::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f53f";
+  font-size: 29x;
+  color: #523EE8;
+  /* position: absolute; */
 }
 .profile::before {
   font-family: "Font Awesome 5 Free";

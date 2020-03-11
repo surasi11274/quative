@@ -50,8 +50,8 @@
                                                     @endforeach --}}
 
                         <h3 for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</h3><br>
-                        <label for=""class="content-bg" ><h5>วันที่เริ่มงาน : {{date('F d,Y',strtotime($jobs->created_at))}} </h5></label> <br>
-                        <label for=""class="content-bg" ><h5>วันที่ต้องการงาน : {{date('F d,Y',strtotime($jobs->finishdate))}} </h5>  </label><br>
+                        <label for=""class="content-bg mt-4" ><h5>วันที่เริ่มงาน : {{date('F d,Y',strtotime($jobs->created_at))}} </h5></label> <br>
+                        <label for=""class="content-bg " ><h5>วันที่ต้องการงาน : {{date('F d,Y',strtotime($jobs->finishdate))}} </h5>  </label><br>
                         @if ($jobs->payment_id ==! NULL)
                         {{-- <a href="{{ route('job.payment', $jobs->token) }}"> --}}
                             <button hidden class="btn disabled _primary-btn">โอนเงิน</button>
@@ -539,74 +539,70 @@
                     {{-- @if ($jobs->jobstatus_id == '1')  --}}
                      <div class="process-job shadow-sm p-5">
                           
-                           <div class="d-flex mt-5">
-                            {{-- @foreach () --}}
-                            @php
-                            $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusUserName;
-                             @endphp
-                            {{-- @if ($jobs->jobstatus_id == 1) --}}
-
-                            <h4>สถานะปัจจุบัน : </h4><h4 class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</h4>
-                            {{-- @endforeach --}}
-
-                            {{-- @elseif ($jobs->jobstatus_id == 2)
-                            <h5>สถานะปัจจุบัน : </h5><h5 class="_hilight">&nbsp;&nbsp;นักออกแบบรับงานแล้ว</h5>
-                            @elseif ($jobs->jobstatus_id == 3)
-                            <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;เริ่มจ้างงาน</h3>
-                            @elseif ($jobs->jobstatus_id == 4)
-                            <h5>สถานะปัจจุบัน : </h5><h3 class="_hilight">&nbsp;&nbsp;เริ่มจ้างงาน</h3>
-                            @endif --}}
-                           </div>
-                           <div class="float-right d-flex">
-                            @if ($jobs->jobstatus_id == 1)
-                                <button type="button" class="btn disabled _btn-dis m-1" data-toggle="modal" data-target="#exampleModal">แจ้งชำระเงิน</button>
-                                <button type="button"class="btn _secondary-btn m-1" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
-                            @elseif ($jobs->jobstatus_id == 2)
-                                <a href="{{ route('job.showpayment', $jobs->token) }}" style="text-decoration:none;">
-                                    <button type="button" class="btn _primary-btn m-1" >แจ้งชำระเงิน</button>
-                                </a>
-                                <button type="button"class="btn _secondary-btn m-1" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
-                            @elseif ($jobs->jobstatus_id == 7)
-                  
-                                                                    
-                                @foreach ($jobfile as $jobf)
-                                    @php
-                                        $filename = \App\Jobfiles::find($jobf)->fileimgname;
-                                        $fileartname = \App\Jobfiles::find($jobf)->fileartworkname;
-                                    @endphp 
-                                
-                                    {{-- <img src="/{{$filename}}" class="d-block w-100" height="100px" alt="..."> --}}
-                                            @if ($filename != NULL)
-                                            
-                                            <a href="/{{$filename}}" download="/{{$filename}}">
-                                                have a img file
-                                            </a>
-                                        @endif
-                                 |
-                                            @if ($fileartname != NULL)
-                                            
-                                            <a href="/{{$fileartname}}" download="/{{$fileartname}}">
-                                                have a artwork file
-                                            </a>
-                                        @endif
+                           <div class="form-row mt-5">
+                               <div class="col-md-9">
+                                @php
+                                $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusUserName;
+                                 @endphp
+                                <h4><span class=" icon pl-md-2 pr-md-2 user-friend"></span>สถานะปัจจุบัน : <label class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</label></h4>
+                               </div>
+                               <div class="col-md-3">
+                                <div class="float-right d-flex">
+                                    @if ($jobs->jobstatus_id == 1)
+                                        <button type="button" class="btn disabled _btn-dis m-1 btn-lg" data-toggle="modal" data-target="#exampleModal">แจ้งชำระเงิน</button>
+                                        <button type="button"class="btn _secondary-btn m-1 btn-lg" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                    @elseif ($jobs->jobstatus_id == 2)
+                                        <a href="{{ route('job.showpayment', $jobs->token) }}" style="text-decoration:none;">
+                                            <button type="button" class="btn _primary-btn m-1 btn-lg" >แจ้งชำระเงิน</button>
+                                        </a>
+                                        <button type="button"class="btn _secondary-btn m-1 btn-lg" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                    @elseif ($jobs->jobstatus_id == 7)
+                          
+                                                                            
+                                        @foreach ($jobfile as $jobf)
+                                            @php
+                                                $filename = \App\Jobfiles::find($jobf)->fileimgname;
+                                                $fileartname = \App\Jobfiles::find($jobf)->fileartworkname;
+                                            @endphp 
                                         
+                                            {{-- <img src="/{{$filename}}" class="d-block w-100" height="100px" alt="..."> --}}
+                                                    @if ($filename != NULL)
+                                                    
+                                                    <a href="/{{$filename}}" download="/{{$filename}}">
+                                                    
+                                                    </a>
+                                                @endif
+                                         |
+                                                    @if ($fileartname != NULL)
+                                                    
+                                                    <a href="/{{$fileartname}}" download="/{{$fileartname}}">
+                                                        have a artwork file
+                                                    </a>
+                                                @endif
+                                                
+                                            
+                                            
+        
+                                        @endforeach
+                    
+        
+                                        {{-- <button class="btn _secondary-btn m-1">ดาวน์โหลดไฟล์</button> --}}
+                                        <button type="button" class="btn _primary-btn m-1 btn-lg" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
+                                    @elseif ($jobs->jobstatus_id == 8)
+                                    <button type="button" class="btn _primary-btn m-1 btn-lg" onclick="addCart2('9')" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
+        
+                                    @endif
+        
+        
                                     
-                                    
+                                   
+                                   </div>
+                               </div>
+                               </div>
 
-                                @endforeach
-            
-
-                                {{-- <button class="btn _secondary-btn m-1">ดาวน์โหลดไฟล์</button> --}}
-                                <button type="button" class="btn _primary-btn m-1" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
-                            @elseif ($jobs->jobstatus_id == 8)
-                            <button type="button" class="btn _primary-btn m-1" onclick="addCart2('9')" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
-
-                            @endif
-
-
-                            
                            
-                           </div>
+                          
+                           
                            
                         </div>
                     {{-- @endif --}}

@@ -225,7 +225,7 @@ input.remove
 }
 .process-job{
   background: rgba(196, 196, 196, 0.1);
-  height: 200px;
+  height: auto;
 }
 .multi-step-status{
   width: 100%;

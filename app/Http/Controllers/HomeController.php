@@ -50,6 +50,9 @@ class HomeController extends Controller
     public function billing (){
         return view('designer.billing');
     }
+    public function term(){
+        return view('auth.term');
+    }
     
     public function index()
     {
