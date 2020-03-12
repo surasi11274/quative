@@ -13,3 +13,12 @@ yarn-error.log
 routes/web.php
 *.png
 *.jpg
+public/js/dropzone.js
+public/uploads/ArtworkFiles/20200312121423_13590293_ASM07_PC01_Blockchain (1).pdf
+public/uploads/ArtworkFiles/20200312121423_13590293_ASM09_PC03_KillerPresentation.pdf
+public/uploads/ArtworkFiles/20200312121423_13590293_ASM08_PC02_Agile (1).pdf
+public/uploads/ArtworkFiles/20200312121423_13590293_ASM08_PC02_Agile.pdf
+public/css/_showjob.css
+public/js/dropzone.js
+*.js
+*.js

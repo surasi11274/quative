@@ -2,12 +2,10 @@
 @section('assets')
    <link rel="stylesheet" href="css/style_match.css">
    <link rel="stylesheet" href="{{asset('css/flatpickr.min.css')}}">
+   <link rel="stylesheet" href="css/dropzone.css">
 
    
 @endsection
-<body style="font-family: prompt;">
-    
-</body>
 
 @section('content')
 
@@ -39,7 +37,6 @@
         </div>
     </div>
     
-
             <form class="multi-step-form" action="/search/create/store1" method="post" enctype="multipart/form-data">
                
                 {{ csrf_field() }}
@@ -82,7 +79,10 @@
                      
                         
                         <div class="row d-none d-md-block">
-                            <h2 class="selectfillter pt-5 "  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2>
+                            <h5 class="font-weight-bold pt-5 "  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h5>
+                           {{-- <div class="form-group">
+                            <div class="dropzone" id="drop"></div>
+                           </div> --}}
                             <div class="col">
                                  <div class="custom-file-container" data-upload-id="myUniqueUploadId">
                                     <label><a href="javascript:void(0)" class="custom-file-container__image-clear" hidden title="Clear Image">&times;</a></label>
@@ -100,8 +100,8 @@
                                 {{-- <div  id="thumb-output" style="display:flex; width:180px;height:180px;"></div> --}}
                                
                                  <div class="upload-btn-wrapper-">
-                                        {{-- <button class="_btn-upload-"><i class="fas fa-plus"></i></button> --}}
-                                        {{-- <input type="file" id="file-input"  name="productPic"  multiple /> --}}
+                                        {{-- <button class="_btn-upload-"><i class="fas fa-plus"></i></button>
+                                        <input type="file" id="file-input"  name="productPic"  multiple /> --}}
                                  </div>
                              </div>
                         </div>
@@ -284,5 +284,8 @@
 </script>
 <script src="{{asset('js/flatpickr.js')}}"></script>
 <script src="js/previewmultiple.js"></script>
+{{-- <script src="js/dropzone.js"></script>
 
-<script src="{{asset('js/file-upload-with-preview.js')}}"></script>
+<script src="js/scriptdropzone.js"></script> --}}
+
+<script src="{{asset('js/file-upload-with-preview.js')}}"></script> 
