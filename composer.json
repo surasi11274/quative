@@ -11,10 +11,15 @@
         "claviska/simpleimage": "^3.3",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
+        "laravel/passport": "^7.0",
         "laravel/tinker": "~1.0",
         "overtrue/laravel-follow": "^1.1",
         "socialiteproviders/facebook": "^1.0",
-        "spatie/laravel-permission": "^2.38"
+        "spatie/laravel-permission": "^2.38",
+        "psr/log": "^1.0",
+        "paragonie/sodium_compat": "^1.6",
+        "pusher/pusher-php-server": "^4.0"
+        
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -64,4 +69,5 @@
         },
         { "packagist": false }
       ]
+  
 }

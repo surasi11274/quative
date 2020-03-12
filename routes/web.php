@@ -3,9 +3,9 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GalleryController;
 
-Route::get('/matchfinish', function () {
-    return view('matching.matchfinish');
-});
+// Route::get('/matchfinish', function () {
+//     return view('matching.matchfinish');
+// });
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -232,7 +232,12 @@ Route::group(['middleware' => ['auth','admin']], function () {
     Route::post('/admin/payments/store', 'AdminController@storeUpdatePayment' );
 
 });
+Route::get('/message', 'MessageController@message');
+Route::get('/message/{id}', 'MessageController@getMessage')->name('message');
+Route::post('/message', 'MessageController@sendMessage');
 
+
+/*
 
 
 // Route::get('admin','Admin\LoginController@showLoginForm')->name('admin.login');
