@@ -50,7 +50,7 @@
                      
                     </div>
                     <div class="form-row">
-                      <label for="">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ
+                      <label class="font-weight-bold" style="font-size:1.25rem" for="">แนบรูปภาพการโอนเงิน
                        
                       <div class="row">
                           {{-- <div class="col"> --}}
@@ -71,18 +71,26 @@
                             <div class="form-group col-md-12">
                               <h5 class="font-weight-bold">ข้อความเพิ่มเติม (ถ้ามี)</h5>
                               <textarea class="form-control" id="validationTextarea" name="description" placeholder="Required example textarea" ></textarea>
-                                </div>
+                            </div>
+                            <div class="col-12 col-md-8">
+
+                            </div>
+                            <div class="col-12 col-md-4">
+                             <button type="button" class="btn btn-outline-dark text-center mb-5 btn-lg">ยกเลิกงาน</button>
+                             <button type="submit" class="btn btn-dark text-center mb-5 btn-lg">ยืนยัน</button>
+                            </div>
+                                
                       </div>
+                      
                     
                       
                       <input hidden type="text" id="job_id" name="job_id" value="{{$jobs->id}}">
                       <input hidden type="text" id="designer_id" name="designer_id" value="{{$jobs->designer_id}}">
                       <input hidden type="text" id="user_id" name="user_id" value="{{$jobs->user_id}}">
                  
-                      <div class="text-right">
-                          <button type="button" class="btn btn-outline-dark text-center mb-5 ">ยกเลิกงาน</button>
-                          <button type="submit" class="btn btn-dark text-center mb-5">ยืนยัน</button>
-                      </div>
+                      
+                         
+                      
           </form>
            </div>
         </div>

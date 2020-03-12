@@ -65,7 +65,7 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <br>
-                                                <h5 class="text-left"> อัพโหลดไฟล์งานของคุณ:</h5>
+                                                <h5 class="text-left font-weight-bold"> อัพโหลดไฟล์งานของคุณ</h5>
 
                                                 <div  id="thumb-output" class="pt-2 pb-2" style="display:flex; width:180px;height:180px;">
                                                 
@@ -77,15 +77,19 @@
                                                  </div>
 
                                              </div>
-                                             <div class="col-12 col-md-6">
-                                                <h5 class="text-left"> อัพโหลดไฟล์งาน Ai ของคุณ:</h5>
+                                             <div class="col-md-12">
+                                             <h5 class="text-left font-weight-bold mt-md-5 mb-md-5"> อัพโหลดไฟล์งานอื่นๆ</h5>
+
+                                             </div>
+                                             <div class="col-12 col-md-4">
+
                                                 <div class="upload-btn-wrapper-work">
                                                     <button class="btn-work _primary-black btn-lg btn-block">อัพโหลดไฟล์</button>
                                                     <input type="file" name="fileartworkname[]" id="file" multiple  onchange="javascript:updateList()" />
         
                                                   </div>
                                              </div>
-                                             <div class="col-12 col-md-6">
+                                             <div class="col-12 col-md-8">
                                                 <small id="fileList" class="text-left _hilight"></small>
                                              </div>
                                             
@@ -564,28 +568,32 @@
                     {{-- 1 --}}
                     <fieldset>
                         <div class="process-job shadow-sm p-5">
-                           <div class="d-flex mt-5">
-                            @php
-                            $jobstatusid = \App\Jobstatus::find($job->jobstatus_id)->statusName;
-                             @endphp
-                            {{-- @if ($jobs->jobstatus_id == 1) --}}
-
-                            <h4>สถานะปัจจุบัน : </h4><h4 class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</h4>
+                           <div class="form-row mt-5 text-center text-md-left">
+                               <div class="col-12 col-md-9">
+                                @php
+                                $jobstatusid = \App\Jobstatus::find($job->jobstatus_id)->statusName;
+                                 @endphp
+                                <h4><span class=" icon pl-md-2 pr-md-2 user-designer">สถานะปัจจุบัน : <label class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</label></h4>
+                               </div>
+                               <div class="col-12 col-md-3">
+                                <div class="float-right d-flex">
+                                    @if ($job->jobstatus_id == 1)
+                                        <button type="button" class="btn _primary-btn m-1 btn-lg" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
+                                        <button type="button"class="btn _secondary-btn m-1 btn-lg" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                    @elseif ($job->jobstatus_id == 4)
+                                        <button type="button" class="btn _primary-btn m-1 btn-lg" onclick="addCart('3')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
+                                        <button type="button"class="btn _secondary-btn m-1 btn-lg" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                    @elseif ($job->jobstatus_id == 3)
+                                        <button type="button" class="btn _primary-btn m-1 btn-lg" onclick="addCart('7')" data-toggle="modal" data-target=".bd-example-modal-lg">อัพโหลดไฟล์</button>
+                                        {{-- <button type="button"class="btn _secondary-btn m-1" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button> --}}
+                                        
+                                    @endif
+                                   
+                                   </div>
+                               </div>
+                            
                            </div>
-                           <div class="float-right d-flex">
-                            @if ($job->jobstatus_id == 1)
-                                <button type="button" class="btn _primary-btn m-1" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
-                                <button type="button"class="btn _secondary-btn m-1" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
-                            @elseif ($job->jobstatus_id == 4)
-                                <button type="button" class="btn _primary-btn m-1" onclick="addCart('3')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
-                                <button type="button"class="btn _secondary-btn m-1" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
-                            @elseif ($job->jobstatus_id == 3)
-                                <button type="button" class="btn _primary-btn m-1" onclick="addCart('7')" data-toggle="modal" data-target=".bd-example-modal-lg">อัพโหลดไฟล์</button>
-                                {{-- <button type="button"class="btn _secondary-btn m-1" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button> --}}
-                                
-                            @endif
                            
-                           </div>
                            
                         </div>
                         {{-- <input type="button" name="next" class=" next  _primary-btn " value="แจ้งชำระเงิน"  />
@@ -614,7 +622,7 @@
                                </div>
                            </div>
                            <label for="" class=" mt-3">URL : <small>{{$job->url}}</small></label>
-                           <h4 class="font-weight-bold">รูปภาพตัวอย่างงาน</h3>
+                           <h4 class="font-weight-bold mt-5">รูปภาพตัวอย่างงาน</h3>
                            <hr>
                            <h5 class="mt-3 font-weight-bold">รูปภาพงานใกล้เคียงกับงาน</h5>
                            <div class="row mt-3">

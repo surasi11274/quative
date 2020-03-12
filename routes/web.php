@@ -45,7 +45,9 @@ use App\Http\Controllers\GalleryController;
 //     return view('payment');
 // });
 // pang edit
-
+ Route::get('/term&condition', function () {
+     return view('auth.term');
+ });
 
 
 

@@ -139,6 +139,11 @@
     </div>
     <div class=" _box-1 text-center _p-md-5 ">
         <div class="container">
+            <div class="fadeInDown">
+                <span class=" icon pl-md-2 pr-md-2 angle-double-down">
+                    {{-- <i class="fas icon fa-angle-double-down"></i> --}}
+            </div>
+
             <h1 class="p-5 text-center">ทำไมต้อง<span class="_hilight font-weight-bold">QUATIVE</span> </h1>
             <div class="row ">
 
