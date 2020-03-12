@@ -49,7 +49,7 @@ class MessageController extends Controller
          // pusher
          $options = array(
             'cluster' => 'ap2',
-            // 'useTLS' => true
+            'useTLS' => true
         );
 
         $pusher = new Pusher(
