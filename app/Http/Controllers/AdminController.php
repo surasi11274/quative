@@ -23,6 +23,10 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // pang edit 
+    public function dashboard(){
+        return view('admin.dashboard');
+    }
     public function index()
     {
        

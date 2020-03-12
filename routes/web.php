@@ -48,6 +48,9 @@ Route::get('/matchfinish', function () {
  Route::get('/term&condition', function () {
      return view('auth.term');
  });
+ Route::get('/dashboard', function (){
+     return view('admin.dashboard');
+ });
 
 
 

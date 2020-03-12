@@ -781,9 +781,9 @@
                                     </div> --}}
                                     <div class="modal-body text-center">
                                         <div class="container">
-                                            <h2 class="modal-title text-center mt-5 mb-5"  id="myLargeModalLabel">คุณต้องการเสร็จสิ้นงานใช่ไหม?</h2>
-                                            <hr>
-                                            <h5>ช่วยนักออกแบบสร้าง Profile</h5>
+                                            
+                                            {{-- <hr> --}}
+                                            <h1 class="modal-title text-center _hilight mt-5 mb-5">ช่วยนักออกแบบสร้าง Profile</h1>
                                             <span>นักออกแบบสามารถนำผลงานของคุณไปแสดงในโปรไฟล์เพื่อ
                                              ช่วยสร้าง Portfolio บนเว็บไซต์เราได้หรือไม่</span>
                  
@@ -791,7 +791,11 @@
                                                  <div class="col-3"></div>
                                                  <div class="col-6 mt-5 mb-5">
                                                      <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" name="canshow">
-                                                     <label class="form-check-label" for="defaultCheck1">
+                                                     <label class="form-check-label _hilight" for="defaultCheck1">
+                                                         อนุญาตให้นักออกแบบนำงานคุณไปแสดงในโปรไฟล์
+                                                     </label>
+                                                     <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" name="canshow">
+                                                     <label class="form-check-label _hilight" for="defaultCheck1">
                                                          อนุญาตให้นักออกแบบนำงานคุณไปแสดงในโปรไฟล์
                                                      </label>
                                                  </div>
