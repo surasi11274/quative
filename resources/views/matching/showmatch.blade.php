@@ -1,7 +1,10 @@
 @extends('layouts.app')
+@section('assets')
+<link rel="stylesheet" href="{{asset('css/base.css')}}">
+@endsection
 @section('content')
 <div class="container mt-5">
-        
+
    <div class="text-center pt-5 p-5">
        <div id="wizard-progress">
            <ol class="step-indicator">
@@ -23,7 +26,7 @@
                </li>
            </ol>
        </div>
-   
+
    </div>
 </div>
 <div class="container ">
@@ -32,8 +35,8 @@
          {{ csrf_field() }}
 
             <div class="container bg-white  p-5">
-               <h1 class=" text-center   pt-5">ผลการ <span class="_hilight">Matching</span></h1>
-      
+               <h1 class=" text-center   pt-5">ผลการ <span class="_hilight font-weight-bold">Matching</span></h1>
+
                <h2 class="selectfillter  pt-5">เลือกนักออกแบบที่ตรงใจกับคุณ</h2>
                <div class="row mt-md-5">
 
@@ -43,7 +46,7 @@
                      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         @foreach ($designers as $count => $designer)
                            <a class="nav-link shadow-sm m-1"  id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home-{{ $designer->id }}" onclick="addCart('{{$designer->id}}')" role="tab" aria-controls="v-pills-home" aria-selected="true">
-                              
+
                               <span class="row">
                                  <span class="col-3">
                                        <img src="/{{$designer->profilepic}}" class="rounded-circle" alt="..." style="width: 50px;height:50px;">
@@ -91,18 +94,18 @@
 
                                  <small>{{$designer->rating}}</small>
                                  {{-- <button href="" class="btn _primary-btn" style="height:50px; width:189px; margin:0px auto;">ดูโปรไฟล์</button> --}}
-                           
+
                                  </span>
                               </span>
                            </a>
-            
+
                            @endforeach
 
-                     
-                          
-                          
+
+
+
                      </div>
-                     
+
                   </div>
                   <div class="col-12 col-md-8 card p-3 shadow-sm border">
                      <div class="tab-content" id="v-pills-tabContent">
@@ -116,13 +119,13 @@
                                  </div>
                                     <div class="col-9">
                                  <h2 class="font-weight-bold">{{$designer->name}}</h2>
-                                    <p class="_gray mb-md-3">นักออกแบบ<p>   
-                                    </div>             
+                                    <p class="_gray mb-md-3">นักออกแบบ<p>
+                                    </div>
                                     <div class="col-12">
                                        <div class="form-tags ">
                                           <ul class=" d-flex">
                                        <i class="fas fa-tag icons p-1 m-1"></i>
-                                       
+
                                              <li class="m-1">
                                                 <div class="box-tags p-1 ">
                                                    <small>
@@ -146,17 +149,17 @@
                                              </li>
                                           </ul>
                                        </div>
-                                   
-                                       
-                                    </div>            
+
+
+                                    </div>
                                     <div class="col-12">
                                        <p class="mb-md-3">{{$designer->description}}</p>
-                                       <h2 class="selectfillter ">  ผลงานบรรณจุภันฑ์ (<small>{{ $designer->id}}</small>)</h2>   
-                                    </div>        
-                                    
+                                       <h2 class="selectfillter ">  ผลงานบรรณจุภันฑ์ (<small>{{ $designer->id}}</small>)</h2>
+                                    </div>
+
                                  @foreach ($refs as $ref)
                                  <div class="col-12 mt-3">
-                                    
+
                                        <img class="rounded"  style=" object-fit: cover;"src="{{ $ref->img}}" />
                                  </div>
                                  {{-- <div class="col-5 mt-3">
@@ -172,7 +175,7 @@
                                  {{-- <div class="col-5 mt-3">
                                        <img class="rounded" style=" object-fit: cover;"src="photo/@product-7.png" />
                                  </div>
-      
+
                                  <div class="col-5 mt-3">
                                        <img class="rounded"  style=" object-fit: cover;"src="photo/@product-3.png" />
                                  </div>
@@ -185,27 +188,27 @@
                                  <div class="col-5 mt-3">
                                        <img class="rounded" style=" object-fit: cover;"src="photo/@product-5.png" />
                                  </div>
-      
+
                                  <div class="col-5 mt-3">
                                        <img class="rounded"  style=" object-fit: cover;"src="photo/@product-1.png" />
                                  </div>
                                  <div class="col-7 mt-3">
                                        <img class="rounded" style=" object-fit: cover;"src="photo/@product-2.png" />
                                  </div> --}}
-      
+
                               </div>
                               </div>
-      
+
                            </div>
                            @endforeach
-                           
+
                      </div>
                   </div>
                </div>
                <input type="text" hidden id="designerId" name="output">
             <input type="text" hidden id="job_id" name="job_id" value="{{$jobs->id}}">
-              
-   
+
+
             {{-- <a href="{{URL::to('/search/show/delete/'.$jobs->id) }}"> --}}
                <div class="mt_ex"></div>
                <div class="row">
@@ -224,11 +227,11 @@
                    </div>
                   </div>
               </div>
-               
+
          </div>
 
          </form>
-         
+
       </div>
       </div> <!-- ****container -->
       @endsection

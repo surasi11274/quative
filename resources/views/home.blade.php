@@ -15,7 +15,7 @@
                     @endif
 
                     You are logged in!
-                     
+
                 </div>
 
             </div>
@@ -25,7 +25,7 @@
 
 <section class="content ">
     <div class="shape">
-    
+
     @if (Auth::guest())
 
         <div class="container">
@@ -101,7 +101,7 @@
                 <div class="col-12 col-sm-6 "style="margin-top: 110px">
                     <div class="mt-ex" style="margin-top: 10rem">
                         <h1 class="header">ออกแบบ
-                            <span class="_hilight  font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
+                            <span class="_hilight font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
                             <div class="row">
@@ -139,7 +139,7 @@
     </div>
     <div class=" _box-1 text-center _p-md-5 ">
         <div class="container">
-            <h1 class="p-5 text-center">ทำไมต้อง<span class="_hilight  font-weight-bold">QUATIVE</span> </h1>
+            <h1 class="p-5 text-center">ทำไมต้อง<span class="_hilight font-weight-bold">QUATIVE</span> </h1>
             <div class="row ">
 
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
@@ -150,7 +150,7 @@
                             <p >สินค้าดีไซน์โดยดีไซน์เนอร์มืออาชีพ <br>
                                 ทำให้มีคุณภาพ ใช้งานได้ดี สวย <br>
                                 โดนใจตามแบบที่เราต้องการ</p>
-                                
+
                         </div>
                         <div class="pallete"></div>
                     </div>
@@ -187,9 +187,9 @@
     </div>
     <div class="container-fluid totorial ">
             <div class="container  _p-md-5 ">
-                    <div class="text-center"> 
-                            <h1 class="content-dark pb-5">Quative <span class="_hilight  font-weight-bold">ใช้ยังไง?</span></h1>
-            
+                    <div class="text-center">
+                            <h1 class="content-dark pb-5">Quative <span class="_hilight font-weight-bold">ใช้ยังไง?</span></h1>
+
                         <div class="row">
                             <div class="col-12 col-md-3">
                                     <img src="photo/@progess_1.png" alt="">
@@ -220,16 +220,16 @@
                                     </small>
                             </div>
                         </div>
-                            
-                            
+
+
                             {{-- <div class="d-flex">
                                     <hr class="_dash">
                             </div> --}}
-            
+
                     </div>
                 </div>
     </div>
-    
+
 
     <div class="_box-2 _p-md-5">
                                 <div class="container">
@@ -242,7 +242,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 p-5 text-right">
-                                            <h1><span class="_hilight  font-weight-bold" >พรีวิว</span>บรรจุภัณฑ์<br>
+                                            <h1><span class="_hilight font-weight-bold" >พรีวิว</span>บรรจุภัณฑ์<br>
                                                 ลองสินค้าในแบบของคุณ
                                             </h1>
                                             <p>ลองออกแบบบรรจุภัณฑ์ในรูปแบบหลายๆแบบ โดยใช้โลโก้ของคุณระบบจะทำการสร้างบรรจุภัณฑ์ให้คุณทดลองพรีวิวก่อนค้นหาดีไซน์เนอร์
@@ -263,14 +263,14 @@
                             </div>
     <div class="_box-3 bg-white _p-md-5  mb-5">
                 <div class="container">
-                    <h1 class="p-5 text-center"> รีวิว<span class="_hilight  font-weight-bold">จากผู้ใช้งาน</span> </h1>
-                   
+                    <h1 class="p-5 text-center"> รีวิว<span class="_hilight font-weight-bold">จากผู้ใช้งาน</span> </h1>
+
                     <div class="row">
                         <div class="col-12 col-md-4 justify-content-center">
                             <div class="card border  text-center p-5 mb-3">
                                 <img id="profileImage" class="rounded-circle" src="https://picsum.photos/90" style="width: 90px; height: 90px; margin: 0px auto;">
                                     <h5 class="font-weight-bold mt-3 mb-5">สิทธิชัย อยู่ถาวร</h5>
-                                   
+
                                     <p>Quative ดีมากเลย</p>
                             </div>
                         </div>
@@ -278,9 +278,9 @@
                             <div class="card border  text-center p-5 mb-3">
                                 <img id="profileImage" class="rounded-circle " src="https://picsum.photos/90" style="width: 90px; height: 90px; margin: 0px auto;">
                                     <h5 class="font-weight-bold mt-3 mb-5">เนตรดวง ตาแก้ว</h5>
-                                   
+
                                     <p>นักออกแบบทำงาน
-                                        ให้ตรงตามใจมาก 
+                                        ให้ตรงตามใจมาก
                                         ตามใจมากครับ</p>
                             </div>
                         </div>
@@ -288,7 +288,7 @@
                             <div class="card border text-center p-5 mb-3">
                                 <img id="profileImage" class="rounded-circle " src="https://picsum.photos/90" style="width: 90px; height: 90px; margin: 0px auto;">
                                     <h5 class="font-weight-bold mt-3 mb-5">ดวงใจ ดวงนภา</h5>
-                                   
+
                                     <p>ตรงต่อเวลา งานขายได้
                                         ต้อง Quative เลย</p>
                             </div>
@@ -302,7 +302,7 @@
     </div>
                             <div class="_box-4 _p-md-5">
                                 <div class="text-center">
-                                    <h1><span class="_hilight  font-weight-bold">ผลงาน</span>นักออกแบบ </h1>
+                                    <h1><span class="_hilight font-weight-bold">ผลงาน</span>นักออกแบบ </h1>
                                     <p>ต้องการค้นหานักออกแบบใช่มั้ย ? สมัครสมาชิกแล้วลองใช้งาน <br>
                                         การค้นหานักออกแบบอย่างที่คุณต้องการดูก่อนสิ</p>
 
@@ -370,7 +370,7 @@
 
                                                 {{-- @endforeach --}}
 
-                                         
+
 
                                             </div>
                                             <!-- <div class="row">

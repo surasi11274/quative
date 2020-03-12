@@ -32,8 +32,8 @@
                         
                          
                         <h3 for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</h3><br>
-                        <label for=""class="content-bg" >วันที่เริ่มงาน :<span> {{date('F d,Y',strtotime($job->created_at))}}</span></label> <br>
-                        <label for=""class="content-bg" >วันที่ต้องการงาน :<span> {{date('F d,Y',strtotime($job->finishdate))}}</span>  </label><br>
+                        <label for=""class="content-bg" ><h5>วันที่เริ่มงาน : {{date('F d,Y',strtotime($job->created_at))}}</h5></label> <br>
+                        <label for=""class="content-bg" ><h5>วันที่ต้องการงาน : {{date('F d,Y',strtotime($job->finishdate))}}</h5>  </label><br>
                        
                             <div class="row">
                                 {{-- @if ($job->jobstatus_id == '1')

@@ -50,8 +50,8 @@
                                                     @endforeach --}}
 
                         <h3 for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</h3><br>
-                        <label for=""class="content-bg" >วันที่เริ่มงาน :<span> {{date('F d,Y',strtotime($jobs->created_at))}} </span></label> <br>
-                        <label for=""class="content-bg" >วันที่ต้องการงาน :<span> {{date('F d,Y',strtotime($jobs->finishdate))}} </span>  </label><br>
+                        <label for=""class="content-bg" ><h5>วันที่เริ่มงาน : {{date('F d,Y',strtotime($jobs->created_at))}} </h5></label> <br>
+                        <label for=""class="content-bg" ><h5>วันที่ต้องการงาน : {{date('F d,Y',strtotime($jobs->finishdate))}} </h5>  </label><br>
                         @if ($jobs->payment_id ==! NULL)
                         {{-- <a href="{{ route('job.payment', $jobs->token) }}"> --}}
                             <button hidden class="btn disabled _primary-btn">โอนเงิน</button>
@@ -96,7 +96,7 @@
 
     <p>{{$jobs->jobstatus_id}}</p> --}}
 
-    <hr>
+    
     <div class="shadow-sm bg-white mt-3">
         <div class="row">
             <div class="container">
@@ -538,8 +538,8 @@
                     {{-- 1 --}}
                     {{-- @if ($jobs->jobstatus_id == '1')  --}}
                      <div class="process-job shadow-sm p-5">
-                            <h3>เลือกสถานะของการจ้างงาน <i class="fas fa-angle-right"></i></h3>
-                           <div class="d-flex">
+                          
+                           <div class="d-flex mt-5">
                             {{-- @foreach () --}}
                             @php
                             $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusUserName;
@@ -671,11 +671,11 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12 col-md-6 p-5"> 
-                            <h3>ข้อมูลผลิตภัณฑ์ของคุณ</h3>
+                            <h4 class="font-weight-bold">ข้อมูลผลิตภัณฑ์ของคุณ</h4>
                            <hr>
-                           <p class="text-header">บรรจุภัณฑ์ประเภท</p>
+                           <h5 class="font-weight-bold">บรรจุภัณฑ์ประเภท</h5>
                             <p class="mt-3">{{ $jobs->categories}}</p>
-                           <p class="mt-3 text-header">รูปภาพผลิตภัณฑ์เดิมของคุณ</p>
+                           <h5 class="mt-3 font-weight-bold">รูปภาพผลิตภัณฑ์เดิมของคุณ</h5>
                            <div class="row mt-3">
                                <div class="col-4">
                                 <img class="rounded" src="/{{$jobs->productPic}}" alt="">
@@ -688,9 +688,9 @@
                                </div>
                            </div>
                            <label for="" class=" mt-3">URL : <a href="{{$jobs->url}}" target="_blank">{{$jobs->url}}</a></label>
-                           <h3 class="mt-5">รูปภาพตัวอย่างงาน</h3>
+                           <h4 class="mt-5 font-weight-bold">รูปภาพตัวอย่างงาน</h4>
                            <hr>
-                           <p class="mt-2 text-header">รูปภาพงานใกล้เคียงกับงาน</p>
+                           <h4 class="mt-2 font-weight-bold">รูปภาพงานใกล้เคียงกับงาน</h4>
                            <div class="row mt-3 ">
                                 <div class="col-4">
                                  <img class="rounded" src="/{{$jobs->refpicbyUser}}" alt="">
@@ -704,30 +704,30 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6 p-5">
-                            <h3>ข้อมูลงานที่ต้องการ</h3>
+                            <h4 class="font-weight-bold">ข้อมูลงานที่ต้องการ</h4>
                             <hr>
-                            <p class="text-header">รายละเอียด</p>
+                            <h5 class="font-weight-bold">รายละเอียด</h5>
                             <p class="mt-2">{{ $jobs->requirement}}</p>
-                                    <p class="text-header mt-3">ลักษณะหรือสไตล์งานที่ต้องการ</p>
+                                    <h5 class="font-weight-bold mt-3">ลักษณะหรือสไตล์งานที่ต้องการ</h5>
                                     <hr>
                                     @foreach($jobs->tags as $tagn)
             
                                     @php
                                                     $tagname = \App\Tags::find($tagn)->tagName;
                                     @endphp
-                                                                        <div class="btn _primary-btn" style="background-color:black !important; ">{{$tagname}}</div>
+                                                                        <div class="btn box-tagse border">{{$tagname}}</div>
             
                                     @endforeach
                                     <hr>
-                                    <h3 class="mt-5">ขอบเขตการจ้างงาน</h3>
+                                    <h4 class="font-weight-bold mt-5">ขอบเขตการจ้างงาน</h4>
                                     <hr>
                                     <div class="col-12 mt-3">
-                                        <h5> ขอบเขตการจ้างงาน</h5>
-                                    <small>01 - งานออกแบบฉลากติดสินค้าหน้าเดียว</small>
+                                        <h5 class="font-weight-bold"> ขอบเขตการจ้างงาน</h5>
+                                        <p>01 - งานออกแบบฉลากติดสินค้าหน้าเดียว</p>
                                     </div>
                                     <div class="col-12 mt-3">
-                                        <h5>วันที่ต้องการงาน</h5>
-                                        <small>{{date('F d,Y',strtotime($jobs->finishdate))}}</small>
+                                        <h5 class="font-weight-bold">วันที่ต้องการงาน</h5>
+                                        <p>{{date('F d,Y',strtotime($jobs->finishdate))}}</p>
                                     </div>
                                   
                                     <div class="text-right">

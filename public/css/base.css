@@ -22,10 +22,25 @@
   ._gray{
 color: #C4C4C4;
   }
-  .nav-pills .nav-link.active, .nav-pills .show>.nav-link p{
-    /* color: #fff !important; */
-    background-color: #fff !important;
-    border: 3px solid #523EE8 !important;
+  .nav-link-1 {
+    display: block;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+}
+.nav-link-1:focus, .nav-link-1:hover {
+  text-decoration: none;
+}
+  .nav-pills .nav-link-1.active, .nav-pills .show>.nav-link-1 p{
+    color: #fff !important;
+    background-color: #523EE8 !important;
+    /* background-color: #fff !important;
+    border: 3px solid #523EE8 !important; */
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: #fff !important;
+  border: 3px solid #523EE8 !important;
 }
 a{
     color: #000 !important;
