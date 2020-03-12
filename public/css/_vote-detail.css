@@ -77,8 +77,6 @@ text-align: center;
 }
 .favorite_jobs i{
   color: white;
-
-
 }
 .favorite_jobs:hover{
     transform: translateY(-10px);

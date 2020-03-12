@@ -104,7 +104,7 @@
                                     <input hidden type="text" id="user_id" name="user_id" value="{{$job->user_id}}">
                                     <div class="modal-footer">
                                         <button type="button" class="btn _secondary-btn" data-dismiss="modal">ยกเลิก</button>
-                                        <button type="submit" class="btn _primary-black">ยืนยันร</button>
+                                        <button type="submit" class="btn _primary-black">ยืนยัน</button>
                                         </div>
                                 </div>
                             </div>

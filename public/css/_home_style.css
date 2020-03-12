@@ -118,6 +118,7 @@ h2, h4, h5, p, a,small,button,div,span{
   font-variant: normal;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
+  font-size: 25px;
 }
 .profile::before {
   font-family: "Font Awesome 5 Free";
