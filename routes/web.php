@@ -3,9 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GalleryController;
 
-// Route::get('/matchfinish', function () {
-//     return view('matching.matchfinish');
-// });
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -109,6 +107,9 @@ Route::get('search/showfinal/{token}', [
 
 Route::post('/search/create/store3',
     'HomeController@storeSearchStep3');
+
+Route::get('/matched/{token}', 
+'HomeController@matched')->name('matched');
 
 // --------show finish search-------
 
@@ -242,8 +243,8 @@ Route::group(['middleware' => ['auth','admin']], function () {
     Route::post('/admin/payments/store', 'AdminController@storeUpdatePayment' );
 
 });
-Route::get('/messages/{token}', 'MessageController@message')->name('messages');
-// Route::get('/messages/messages/{token}/{id}', 'MessageController@getMessage')->name('message');
+Route::get('/message', 'MessageController@message');
+Route::get('/message/{id}', 'MessageController@getMessage')->name('message');
 Route::post('/message', 'MessageController@sendMessage');
 
 

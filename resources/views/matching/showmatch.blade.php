@@ -52,32 +52,33 @@
                                        <img src="/{{$designer->profilepic}}" class="rounded-circle" alt="..." style="width: 50px;height:50px;">
                                  </span>
                                  <span class="col-9">
-                                    <p>{{$designer->name}}</p>
+                                    <p class="font-weight-bold">{{$designer->name}}</p class="_hilight">
                                     {{-- <p>{{$designer->surname}}</p> --}}
+
                                     @if ($designer->rating == 1)
                                     <i class="fas fa-star star1"></i>
-                                    <i class="fas fa-star star"></i>
-                                    <i class="fas fa-star star"></i>
-                                    <i class="fas fa-star star"></i>
-                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star stargrey"></i>
+                                    <i class="fas fa-star stargrey"></i>
+                                    <i class="fas fa-star stargrey"></i>
+                                    <i class="fas fa-star stargrey"></i>
                                     @elseif ($designer->rating == 2)
                                     <i class="fas fa-star star1"></i>
-                                    <i class="fas fa-star star1"></i>
-                                    <i class="fas fa-star star"></i>
-                                    <i class="fas fa-star star"></i>
-                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star1 "></i>
+                                    <i class="fas fa-star stargrey"></i>
+                                    <i class="fas fa-star stargrey"></i>
+                                    <i class="fas fa-star stargrey"></i>
                                     @elseif ($designer->rating == 3)
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
-                                    <i class="fas fa-star star"></i>
-                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star stargrey"></i>
+                                    <i class="fas fa-star stargrey"></i>
                                     @elseif ($designer->rating == 4)
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
-                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star stargrey"></i>
                                     @elseif ($designer->rating == 5)
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
@@ -85,14 +86,15 @@
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
                                     @else
-                                    <i class="fas fa-star star"></i>
-                                    <i class="fas fa-star star"></i>
-                                    <i class="fas fa-star star"></i>
-                                    <i class="fas fa-star star"></i>
-                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star stargrey"></i>
+                                    <i class="fas fa-star stargrey"></i>
+                                    <i class="fas fa-star stargrey"></i>
+                                    <i class="fas fa-star stargrey"></i>
+                                    <i class="fas fa-star stargrey"></i>
                                     @endif
+                                    <small >({{$designer->rating}})</small>
 
-                                 <small>{{$designer->rating}}</small>
+
                                  {{-- <button href="" class="btn _primary-btn" style="height:50px; width:189px; margin:0px auto;">ดูโปรไฟล์</button> --}}
 
                                  </span>
@@ -119,42 +121,81 @@
                                  </div>
                                     <div class="col-9">
                                  <h2 class="font-weight-bold">{{$designer->name}}</h2>
-                                    <p class="_gray mb-md-3">นักออกแบบ<p>
+                                 
+                                    {{-- <p class="_gray md-3">นักออกแบบ<p> --}}
+                                       <div class="mb-md-3">
+
+                                          @if ($designer->rating == 1)
+                                          <i class="fas fa-star star1"></i>
+                                          <i class="fas fa-star stargrey"></i>
+                                          <i class="fas fa-star stargrey"></i>
+                                          <i class="fas fa-star stargrey"></i>
+                                          <i class="fas fa-star stargrey"></i>
+                                          @elseif ($designer->rating == 2)
+                                          <i class="fas fa-star star1"></i>
+                                          <i class="fas fa-star star1 "></i>
+                                          <i class="fas fa-star stargrey"></i>
+                                          <i class="fas fa-star stargrey"></i>
+                                          <i class="fas fa-star stargrey"></i>
+                                          @elseif ($designer->rating == 3)
+                                          <i class="fas fa-star star1"></i>
+                                          <i class="fas fa-star star1"></i>
+                                          <i class="fas fa-star star1"></i>
+                                          <i class="fas fa-star stargrey"></i>
+                                          <i class="fas fa-star stargrey"></i>
+                                          @elseif ($designer->rating == 4)
+                                          <i class="fas fa-star star1"></i>
+                                          <i class="fas fa-star star1"></i>
+                                          <i class="fas fa-star star1"></i>
+                                          <i class="fas fa-star star1"></i>
+                                          <i class="fas fa-star stargrey"></i>
+                                          @elseif ($designer->rating == 5)
+                                          <i class="fas fa-star star1"></i>
+                                          <i class="fas fa-star star1"></i>
+                                          <i class="fas fa-star star1"></i>
+                                          <i class="fas fa-star star1"></i>
+                                          <i class="fas fa-star star1"></i>
+                                          @else
+                                          <i class="fas fa-star stargrey"></i>
+                                          <i class="fas fa-star stargrey"></i>
+                                          <i class="fas fa-star stargrey"></i>
+                                          <i class="fas fa-star stargrey"></i>
+                                          <i class="fas fa-star stargrey"></i>
+                                          @endif
+                                          <small >({{$designer->rating}})</small>
+
+                                       </div>
                                     </div>
                                     <div class="col-12">
                                        <div class="form-tags ">
                                           <ul class=" d-flex">
                                        <i class="fas fa-tag icons p-1 m-1"></i>
+                                       @foreach($designerstag as $tagn)
 
+                                       @php
+                                       $tagname = \App\Tags::find($tagn)->tagName;
+
+                                       @endphp
                                              <li class="m-1">
                                                 <div class="box-tags p-1 ">
                                                    <small>
-                                                      มินิมอล
+                                                      {{$tagname}}
                                                    </small>
                                                 </div>
                                              </li>
-                                             <li class="m-1">
-                                                <div class="box-tags p-1  ">
-                                                   <small>
-                                                      ทันสมัย
-                                                   </small>
-                                                </div>
-                                             </li>
-                                             <li class="m-1">
-                                                <div class="box-tags p-1 ">
-                                                   <small>
-                                                      แปลกใหม่
-                                                   </small>
-                                                </div>
-                                             </li>
+                                       @endforeach
+                                             
                                           </ul>
                                        </div>
+                                       @php
+                                                       $jobdesigners = \App\Jobs::where('canshow' ,1 )->where('designer_id', $designer->id)->get();
 
+                                       @endphp
 
                                     </div>
                                     <div class="col-12">
                                        <p class="mb-md-3">{{$designer->description}}</p>
-                                       <h2 class="selectfillter ">  ผลงานบรรณจุภันฑ์ (<small>{{ $designer->id}}</small>)</h2>
+                                       <h2 class="selectfillter ">  ผลงานบรรณจุภันฑ์ (<small>{{ $jobdesigners->count()}}</small>)</h2>
                                     </div>
 
                                  @foreach ($refs as $ref)

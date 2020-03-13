@@ -25,7 +25,7 @@
 
                             @endphp
                                 <h5 class="content-bg">{{$designer->name}} &nbsp;{{$designer->surname}}</h5> 
-                                <a href="{{route('messages',$jobs->token)}}">
+                                <a href="#}">
                                     <button class="btn _primary-bg-dark btn-lg">คุยกับนักออกแบบ</button>
 
                                 </a>

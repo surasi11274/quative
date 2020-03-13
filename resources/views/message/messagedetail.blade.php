@@ -1,4 +1,4 @@
-{{-- <div class="message-wrapper">
+<div class="message-wrapper">
     <ul class="messages">
         @foreach ($messages as $message)
             <li class="message clearfix">
@@ -14,4 +14,4 @@
 
 <div class="input-text">
     <input type="text" name="message" class="submit">
-</div> --}}
+</div>
