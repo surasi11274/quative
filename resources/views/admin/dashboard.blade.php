@@ -25,7 +25,7 @@
                         <p>จำนวนการจ้างงาน</p>
                         <h3>2,000 </h3>
                     </div>
-                    <div class="icon"> <i class="ion ion-stats-bars"></i> </div> <a href="#" class="small-box-footer bg-dark" style="color:white !important;">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
+                    <div class="icon"> <i class="ion ion-stats-bars"></i> </div> <a href="/dashboard/totaljob" class="small-box-footer bg-dark" style="color:white !important;">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
             </div>
             <!-- ./col -->
             <div class="col-lg-3 col-6">
@@ -35,7 +35,7 @@
                         <p>ยอดรายรับกำไร</p>
                         <h3>฿19,000 </h3>
                     </div>
-                    <div class="icon"> <i class="ion ion-person-add"></i> </div> <a href="#" class="small-box-footer bg-dark" style="color:white !important;">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
+                    <div class="icon"> <i class="ion ion-person-add"></i> </div> <a href="/dashboard/totalprice" class="small-box-footer bg-dark" style="color:white !important;">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
             </div>
             <!-- ./col -->
             <div class="col-lg-3 col-6">
@@ -147,7 +147,7 @@
                                 
                                            <tr >
                                 
-                                            <td class="pt-4 pb-4"><a href="#">
+                                            <td class="pt-4 pb-4">
                                              {{-- <a href="{{ route('payments.detail', $payment->id) }}"> --}}
                                                 
                                               {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
@@ -161,7 +161,7 @@
                                             {{-- <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td> --}}
                                             <td class="pt-4 pb-4 _hilight">50000</td>
                                             <td class="pt-4 pb-4 ">
-                                                <a href="#"></a>
+                                                <a href="#">
                                               {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
                                               <button type="button" class="btn _primary-btn btn-lg btn-block">รอการตรวจสอบ</button>
                                              </a>
