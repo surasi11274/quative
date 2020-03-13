@@ -24,6 +24,7 @@
                             
 
                             @endphp
+                            
                                 <h5 class="content-bg">{{$designer->name}} &nbsp;{{$designer->surname}}</h5> 
                                 <a href="#}">
                                     <button class="btn _primary-bg-dark btn-lg">คุยกับนักออกแบบ</button>
@@ -676,14 +677,14 @@
                             <p class="mt-3">{{ $jobs->categories}}</p>
                            <h5 class="mt-3 font-weight-bold">รูปภาพผลิตภัณฑ์เดิมของคุณ</h5>
                            <div class="row mt-3">
-                               <div class="col-4">
+                               <div class="col-4 mt-3">
                                 <img class="rounded" src="/{{$jobs->productPic}}" alt="">
                                </div>
-                               <div class="col-4">
-                                    <img class="rounded" src="/photo/@product-blue.png" alt="">
+                               <div class="col-4 mt-3">
+                                <img class="rounded" src="/{{$jobs->productPic}}" alt="">
                                </div>
-                               <div class="col-4">
-                                    <img class="rounded" src="/photo/@product-blue.png" alt="">
+                               <div class="col-4 mt-3">
+                                <img class="rounded" src="/{{$jobs->productPic}}" alt="">
                                </div>
                            </div>
                            <label for="" class=" mt-3">URL : <a href="{{$jobs->url}}" target="_blank">{{$jobs->url}}</a></label>
@@ -691,14 +692,14 @@
                            <hr>
                            <h4 class="mt-2 font-weight-bold">รูปภาพงานใกล้เคียงกับงาน</h4>
                            <div class="row mt-3 ">
-                                <div class="col-4">
+                                <div class="col-4 mt-3">
                                  <img class="rounded" src="/{{$jobs->refpicbyUser}}" alt="">
                                 </div>
-                                <div class="col-4">
-                                     <img class="rounded" src="/photo/@product-8.png" alt="">
+                                <div class="col-4 mt-3">
+                                    <img class="rounded" src="/{{$jobs->refpicbyUser}}" alt="">
                                 </div>
-                                <div class="col-4">
-                                     <img class="rounded" src="/photo/@product-8.png" alt="">
+                                <div class="col-4 mt-3">
+                                    <img class="rounded" src="/{{$jobs->refpicbyUser}}" alt="">
                                 </div>
                             </div>
                         </div>

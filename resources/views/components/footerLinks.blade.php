@@ -16,6 +16,7 @@
 <script src="{{asset('js/dropzone.js')}}"></script>
     <script src="{{asset('js/progess-step.js')}}"></script>
     <script src="{{asset('js/preprofile.js')}}"></script>
+    
     {{--optionnal utility--}}
     <script src="{{asset('js/inputmxlenght.js')}}"></script>
     {{--<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>--}}
