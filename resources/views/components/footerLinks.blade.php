@@ -36,10 +36,9 @@
 
   <!-- (Optional) Latest compiled and minified JavaScript translation files -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/i18n/defaults-*.min.js"></script>
-  <script>
+  {{-- <script>
     var receiver_id = '';
     var my_id = "{{ Auth::id()}}";
-    var token = "{{ $jobs->token }}";
 
     $(document).ready(function() {
       //ajax setup from csrf token
@@ -127,4 +126,4 @@
       }
     });
   </script>
-  
+   --}}

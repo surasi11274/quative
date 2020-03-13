@@ -18,9 +18,15 @@ class MessageController extends Controller
         $this->middleware('auth');
     }
     public function message($token) {
+        $jobs = Jobs::where('token',$token)->get();
+
+        $my_id = Auth::id();
+        $user_id = User::where('id',$jobs->first()->user_id);
+
+        Message::where(['from' =>  $user_id, 'to' => $my_id])->update(['is_read' => 1]);
+
         //select all user except logged in user
        // $users = User::where('id','!=',Auth::id())->get();
-       $jobs = Jobs::where('token',$token)->get();
 
 
         //count how many message are unread from the selected user
@@ -29,9 +35,16 @@ class MessageController extends Controller
         where users.id != " . Auth::id() . "
         group by users.id, users.name, users.avatar, users.email");
 
+        $messages = Message::where(function ($query) use ($user_id ,$my_id) {
+            $query->where('from',$user_id)->where('to',$my_id);
+        })->orWhere(function($query) use ($user_id ,$my_id) {
+            $query->where('from',$my_id)->where('to',$user_id);
+        })->get();
+
         return view('message.message',[
             'users'=>$users,
-            'jobs'=>$jobs->first()
+            'jobs'=>$jobs->first(),
+            'messages'=>$messages
         ]);
     }
 
@@ -49,7 +62,7 @@ class MessageController extends Controller
             $query->where('from',$my_id)->where('to',$user_id);
         })->get();
 
-        return view('message.messagedetail', ['messages'=>$messages]);
+        return view('message.message', ['messages'=>$messages]);
     }
     public function sendMessage(Request $request) {
         $from = Auth::id();

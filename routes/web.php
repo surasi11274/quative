@@ -243,7 +243,7 @@ Route::group(['middleware' => ['auth','admin']], function () {
 
 });
 Route::get('/messages/{token}', 'MessageController@message')->name('messages');
-Route::get('/message/{id}', 'MessageController@getMessage')->name('message');
+// Route::get('/messages/messages/{token}/{id}', 'MessageController@getMessage')->name('message');
 Route::post('/message', 'MessageController@sendMessage');
 
 
