@@ -45,7 +45,7 @@
                
                 {{-- end mobile  --}}
                     <div class="container  ">
-                    <fieldset class="p-3 p-md-5  ">    
+                    <fieldset class="p-3 p-md-5  " style="padding-bottom: 140px !important;">    
                            
     
                             <h2 class="selectfillter"  style="font-weight: 800;">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h2>
@@ -166,7 +166,7 @@
                         </fieldset>
                         {{-- field-two --}}
                         <fieldset>
-                            <div class="container bg-white  p-3 p-md-5">
+                            <div class="container bg-white  p-3 p-md-5" style="padding-bottom: 140px !important;">
                                 <h2 class="selectfillter">รูปภาพงานใกล้เคียงกับงานที่ต้องการ *ถ้ามี</h2>
                                
                                 <div class="row d-none d-md-block">
