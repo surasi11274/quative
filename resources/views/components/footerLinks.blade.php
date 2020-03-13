@@ -54,7 +54,8 @@
     channel.bind('my-event', function(data) {
       // alert(JSON.stringify(data));
       if (my_id == data.from) {
-        alert('sender');
+        // alert('sender');
+        $('#' == data.to).click();
       } else if (my_id == data.to){
         if (receiver_id == data.from) {
           //if receiver is selected,reload the selected user
@@ -75,6 +76,7 @@
       $('.user').click(function() {
         $('.user').removeClass('active');
         $(this).addClass('active');
+        $(this).find('.pending').remove();
 
         receiver_id = $(this).attr('id');
         $.ajax({
