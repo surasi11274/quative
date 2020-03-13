@@ -7,6 +7,10 @@
                     <p>{{$message->message }}</p>
                     <p class="date">{{ date('d M y, h:i a', strtotime($message->created_at))}}</p>
                 </div>
+
+                @if($message->is_read == 1)
+                    <p>read</p>
+                @endif
             </li>
         @endforeach
     </ul>

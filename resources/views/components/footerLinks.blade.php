@@ -45,14 +45,31 @@
           // Enable pusher logging - don't include this in production
     Pusher.logToConsole = true;
 
-    var pusher = new Pusher('dcfb3e617fc42df9d998', {
-      cluster: 'ap2',
+    var pusher = new Pusher('99379076b02711beecee', {
+      cluster: 'ap1',
       forceTLS: true
     });
 
     var channel = pusher.subscribe('my-channel');
     channel.bind('my-event', function(data) {
-      alert(JSON.stringify(data));
+      // alert(JSON.stringify(data));
+      if (my_id == data.from) {
+        alert('sender');
+      } else if (my_id == data.to){
+        if (receiver_id == data.from) {
+          //if receiver is selected,reload the selected user
+          $('#' + data.from).click();
+        } else {
+          //if receiver is not selected,add notidication for that users
+          var pending = parseInt($('#' + data.from).find('.pending').html());
+
+          if (pending) {
+            $('#' + data.from).find('.pending').html(pending + 1);
+          } else {
+            $('#' + data.from).append('<span class="pending">1</span>');
+          }
+        }
+      }
     });
 
       $('.user').click(function() {
@@ -67,6 +84,7 @@
           cache: false,
           success: function(data) {
             $('#messages').html(data);
+            scrollToButtomFunc();
           }
         });
 
@@ -86,10 +104,19 @@
             cache: false,
             success: function (data) { },
             error: function (jqXHR, status, err) { },
-            complete: function () { }
+            complete: function () { 
+              scrollToButtomFunc();
+            }
           })
         }
       });
+
+      //make a function to scroll auto
+      function scrollToButtomFunc() {
+        $('.message-wrapper').animate({
+          scrollTop: $('.message-wrapper').get(0).scrollHeight
+        },50);
+      }
     });
   </script>
   
