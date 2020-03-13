@@ -51,6 +51,9 @@ use App\Http\Controllers\GalleryController;
  Route::get('/dashboard', function (){
      return view('admin.dashboard');
  });
+ Route::get('/dashboard/userinfo', function (){
+     return view('admin.userinfo');
+ });
 
 
 

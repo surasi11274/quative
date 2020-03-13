@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('assets')
 <link rel="stylesheet" href="css/adminlte.css">
-
     
 @endsection
 @section('content')
@@ -16,7 +15,7 @@
                         <p>ผู้ใช้งาน</p>
                         <h3>150</h3>
                     </div>
-                    <div class="icon"> <i class="ion ion-bag"></i> </div> <a href="#" class="small-box-footer bg-dark" style="color:white !important;">ดูเพื่มเติิม <i class="fas fa-arrow-circle-right"></i></a> </div>
+                    <div class="icon"> <i class="ion ion-bag"></i> </div> <a href="/dashboard/userinfo" class="small-box-footer bg-dark" style="color:white !important;">ดูเพื่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
             </div>
             <!-- ./col -->
             <div class="col-lg-3 col-6">
@@ -24,9 +23,9 @@
                 <div class="small-box bg-white">
                     <div class="inner">
                         <p>จำนวนการจ้างงาน</p>
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                        <h3>2,000 </h3>
                     </div>
-                    <div class="icon"> <i class="ion ion-stats-bars"></i> </div> <a href="#" class="small-box-footer bg-dark" style="color:white !important;">ดูเพื่มเติิม <i class="fas fa-arrow-circle-right"></i></a> </div>
+                    <div class="icon"> <i class="ion ion-stats-bars"></i> </div> <a href="#" class="small-box-footer bg-dark" style="color:white !important;">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
             </div>
             <!-- ./col -->
             <div class="col-lg-3 col-6">
@@ -36,7 +35,7 @@
                         <p>ยอดรายรับกำไร</p>
                         <h3>฿19,000 </h3>
                     </div>
-                    <div class="icon"> <i class="ion ion-person-add"></i> </div> <a href="#" class="small-box-footer bg-dark" style="color:white !important;">ดูเพื่มเติิม<i class="fas fa-arrow-circle-right"></i></a> </div>
+                    <div class="icon"> <i class="ion ion-person-add"></i> </div> <a href="#" class="small-box-footer bg-dark" style="color:white !important;">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
             </div>
             <!-- ./col -->
             <div class="col-lg-3 col-6">
@@ -46,7 +45,7 @@
                         <p> ผลงาน</p>
                         <h3>100</h3>
                     </div>
-                    <div class="icon"> <i class="ion ion-pie-graph"></i> </div> <a href="#" class="small-box-footer bg-dark" style="color:white !important;">ดูเพื่มเติิม <i class="fas fa-arrow-circle-right"></i></a> </div>
+                    <div class="icon"> <i class="ion ion-pie-graph"></i> </div> <a href="#" class="small-box-footer bg-dark" style="color:white !important;">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
             </div>
             <!-- ./col -->
         </div>
@@ -87,8 +86,29 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-header bg-white">
-                                <h4 class="font-weight-bold">ตรวจสอบการโอนเงิน</h4>
+                            <div class="card-header bg-white pt-5">
+                                <div class="row">
+                                    <div class="col-lg-9">
+                                        <h4 class="font-weight-bold">ตรวจสอบการโอนเงิน</h4>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <select class="selectpicker">
+                                            <option>ล่าสุด</option>
+                                            <option>เรียงตามลำดับใหม่ - เก่า</option>
+                                            <option>เรียงตามลำดับเก่า - ใหม่</option>
+                                          </select>
+                                          
+                                        {{-- <div class="form-group">
+                                            <select class="form-control custom-select" id="exampleFormControlSelect1">
+                                              <option class="dropdown-item">ล่าสุด</option>
+                                              <option class="dropdown-item">เรียงตามลำดับใหม่ - เก่า</option>
+                                              <option class="dropdown-item">เรียงตามลำดับเก่า - ใหม่</option>
+                                             
+                                            </select>
+                                          </div> --}}
+                                    </div>
+                                </div>
+                               
                             </div>
                             <div class="card-body">
                                 <ul class="nav nav-tabs p-3" id="myTab" role="tablist">
@@ -129,10 +149,10 @@
                                 
                                             <td class="pt-4 pb-4"><a href="#">
                                              {{-- <a href="{{ route('payments.detail', $payment->id) }}"> --}}
-                                                 <a href="#"></a>
+                                                
                                               {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
-                                              <button type="button" class="btn _primary-btn">No. W 222</button>
-                                             </a>
+                                             <p> No. W 222</p>
+                                             
                                            </td>
                                             {{-- <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td> --}}
                                             <td class="pt-4 pb-4">22/4/2563</td>
@@ -140,7 +160,12 @@
                                             <td class="pt-4 pb-4">11:30</td>
                                             {{-- <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td> --}}
                                             <td class="pt-4 pb-4 _hilight">50000</td>
-                                            <td class="pt-4 pb-4 text-warning">รออนุมัติ</td>
+                                            <td class="pt-4 pb-4 ">
+                                                <a href="#"></a>
+                                              {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
+                                              <button type="button" class="btn _primary-btn btn-lg btn-block">รอการตรวจสอบ</button>
+                                             </a>
+                                                </td>
                                             {{-- @php
                                             $jobstatusid = \App\Jobstatus::find($payment->jobstatus_id)->statusName;
                                              @endphp --}}
@@ -185,6 +210,11 @@
 {{-- <canvas id="myChart" width="400" height="400"></canvas> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 <script src="js/datachart.js"></script>
+
 @endsection
+
+<script>
+$('.my-select').selectpicker();
+</script>
 
 <script src="{{asset('js/adminlte.js')}}"></script>
