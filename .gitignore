@@ -22,3 +22,4 @@ public/css/_showjob.css
 public/js/dropzone.js
 *.js
 *.js
+resources/views/admin/totalprice.blade.php
