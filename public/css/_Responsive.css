@@ -40,7 +40,7 @@
     
     }
     .carousel-indicators {
-        /* bottom: -180px !important; */
+        bottom: -180px !important;
     }
     
     .carousel-indicators-p-lg{
