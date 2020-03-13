@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('assets')
-    <link rel="stylesheet" href="css/messages.css">
+    <link rel="stylesheet" href="../css/messages.css">
 @endsection
 
 @section('content')

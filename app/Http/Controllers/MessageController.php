@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs;
 use App\Message;
 use App\User;
 use Illuminate\Http\Request;
@@ -16,9 +17,11 @@ class MessageController extends Controller
     {
         $this->middleware('auth');
     }
-    public function message() {
+    public function message($token) {
         //select all user except logged in user
        // $users = User::where('id','!=',Auth::id())->get();
+       $jobs = Jobs::where('token',$token)->get();
+
 
         //count how many message are unread from the selected user
         $users = DB::select("select users.id, users.name, users.avatar, users.email, count(is_read) as unread
@@ -26,7 +29,10 @@ class MessageController extends Controller
         where users.id != " . Auth::id() . "
         group by users.id, users.name, users.avatar, users.email");
 
-        return view('message.message',['users'=>$users]);
+        return view('message.message',[
+            'users'=>$users,
+            'jobs'=>$jobs->first()
+        ]);
     }
 
 
