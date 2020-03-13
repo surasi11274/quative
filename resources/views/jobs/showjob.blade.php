@@ -440,7 +440,7 @@
                             <li class="complete">
                                 <div class="step">5</div>
                                 <div class="caption hidden-xs hidden-sm">
-                                    <h5  style="color:#C4C4C4;">เสร็จสิ้นงาน</h5> <br>
+                                    <h5  class="_hilight">เสร็จสิ้นงาน</h5> <br>
                                     <p  style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
                                 </div>
                             </li>
@@ -576,11 +576,11 @@
                                                     
                                                     </a>
                                                 @endif
-                                         |
+                                         
                                                     @if ($fileartname != NULL)
                                                     
-                                                    <a href="/{{$fileartname}}" download="/{{$fileartname}}">
-                                                        have a artwork file
+                                                    <a href="/{{$fileartname}}" class="btn _secondary-btn mr-2 ml-2 p-3" download="/{{$fileartname}}">
+                                                        <i class="fas fa-download " style="color:black;"></i>
                                                     </a>
                                                 @endif
                                                 
@@ -591,7 +591,7 @@
                     
         
                                         {{-- <button class="btn _secondary-btn m-1">ดาวน์โหลดไฟล์</button> --}}
-                                        <button type="button" class="btn _primary-btn m-1 btn-lg" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
+                                        <button type="button" class="btn _primary-black m-1 btn-lg" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
                                     @elseif ($jobs->jobstatus_id == 8)
                                     <button type="button" class="btn _primary-btn m-1 btn-lg" onclick="addCart2('9')" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
         
@@ -794,12 +794,12 @@
                                              <div class="row  ">
                                                  <div class="col-3"></div>
                                                  <div class="col-6 mt-5 mb-5">
-                                                     <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" name="canshow">
+                                                     <input class="form-check-input" type="radio" value="1" id="defaultCheck1" name="canshow">
                                                      <label class="form-check-label _hilight" for="defaultCheck1">
                                                          อนุญาตให้นักออกแบบนำงานคุณไปแสดงในโปรไฟล์
                                                      </label>
-                                                     <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" name="canshow">
-                                                     <label class="form-check-label _hilight text-left" for="defaultCheck2">
+                                                     <input class="form-check-input" type="radio" value="0" id="defaultCheck2" name="canshow">
+                                                     <label class="form-check-label _hilight text-left" for="defaultCheck2" style="margin-right: 50px;">
                                                         ไม่อนุญาตให้นักออกแบบนำงานคุณไปแสดง
                                                      </label>
                                                  </div>

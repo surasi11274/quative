@@ -96,7 +96,7 @@
 <div class="row mt-3 mb-5">
     
 
-    <div class="col-sm-12">
+    <div class="col-12 col-lg-12">
       <div class="shadow-sm">
         <div class="card-body bg-white">
             @foreach ($designer as $designers)
@@ -127,20 +127,26 @@
 		--><input name="stars" id="e3" type="radio" value="3"></a><label for="e3">★</label><!--
 		--><input name="stars" id="e2" type="radio" value="4"></a><label for="e2">★</label><!--
 		--><input name="stars" id="e1" type="radio" value="5"></a><label for="e1">★</label>
-	</div> --}}
-            <fieldset class="rating">
-                
-                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"><i class="fas fa-star"></i></label>
-                {{-- <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label> --}}
-                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"><i class="fas fa-star"></i></label>
-                {{-- <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label> --}}
-                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"><i class="fas fa-star"></i></label>
-                {{-- <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label> --}}
-                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"><i class="fas fa-star"></i></label>
-                {{-- <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label> --}}
-                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"><i class="fas fa-star"></i></label>
-                {{-- <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label> --}}
+    </div> --}}
+    <div class="row">
+        <div class="col-12">
+            <fieldset class="rating m-auto justify-content-center text-center">
+               
+                        <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"><i class="fas fa-star"></i></label>
+                        {{-- <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label> --}}
+                        <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"><i class="fas fa-star"></i></label>
+                        {{-- <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label> --}}
+                        <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"><i class="fas fa-star"></i></label>
+                        {{-- <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label> --}}
+                        <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"><i class="fas fa-star"></i></label>
+                        {{-- <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label> --}}
+                        <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"><i class="fas fa-star"></i></label>
+                        {{-- <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label> --}}
+               
             </fieldset>
+        </div>
+    </div>
+
           {{-- <h6 class="text-center">ภูมิใจนำเสนอ งานดีมาก</h6> --}}
           <br>
          
@@ -197,10 +203,17 @@
                         <option value="5">น้อยมาก</option>
                       </select>				    
                   </div>
-                   <div class="col-12 text-right">
-                    <button type="submit  " class="btn _primary-btn m-1 mt-5"  >บันทึกรีวิว</button>
+                
+                      <div class="col"></div>
+                      <div class="col-12 col-md-4">
+                        <button type="submit  " class="btn _primary-black btn-block btn-lg m-1 mt-5"  >บันทึกรีวิว</button>
+                      </div>
+                      <div class="col"></div>
+                  
+                    
+                    
 
-                   </div>
+                  
 
               </div>
             </div>

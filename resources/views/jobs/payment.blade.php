@@ -8,7 +8,7 @@
         <div class="container bg-white mt-5 shadow-sm ">
             <div class="text-center pt-5 mb-md-5">
                 <h1 class="_hilight">แจ้งการโอนเงิน</h1>
-                <h4>ใบรหัสการจ้างงาน No. W0{{$jobs->id}}</h4>
+                <h4 class="_gray">ใบรหัสการจ้างงาน No. W0{{$jobs->id}}</h4>
             </div>
            <div class="container">
             <form class="multi-step-form  " action="/payment/store" method="post" enctype="multipart/form-data">
@@ -16,8 +16,8 @@
               {{ csrf_field() }}
                   <div class="form-row pl-pr-lg-_ex ">
                     <div class="form-group col-md-12">
-                     <h5 class="font-weight-bold">ยอดที่ต้องชำระ</h5>
-                      <div class="row text-center show-payment shadow-sm">
+                     <h4 class="font-weight-bold mb-3">ยอดที่ต้องชำระ</h4>
+                      <div class="row text-center show-payment shadow-sm mb-4">
                         <p class="col-md-6">ยอดชำระเงินทั้งหมด</p>
                         <p class="col-md-6 _hilight">{{$jobs->pricerate}} บาท</p> 
                         <input hidden type="text" name="total_price" value="{{$jobs->pricerate}}">
@@ -26,11 +26,16 @@
                     </div>
                    
                     <div class="form-group col-md-12">
-                    <h5 class="font-weight-bold">โอนเข้าบัญชีของธนาคาร</h5>
-                      <select id="inputState" class="form-control" name="bank">
+                    <h4 class="font-weight-bold">โอนเข้าบัญชีของธนาคาร</h4>
+                      {{-- <select id="inputState" class="form-control" name="bank">
+                        <option selected value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</option>
+                        <option value="ธนาคารกรุงไทย">ธนาคารกรุงไทย</option>
+                      </select> --}}
+                      <select id="inputState" class="selectpicker w-100 mb-3"  name="bank">
                         <option selected value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</option>
                         <option value="ธนาคารกรุงไทย">ธนาคารกรุงไทย</option>
                       </select>
+                      
                     </div>
                     {{-- <div class="form-group col-md-6">
                       <label for="inputUsername">วันเกิดของคุณ</label>
@@ -70,7 +75,7 @@
                      
                             <div class="form-group col-md-12">
                               <h5 class="font-weight-bold">ข้อความเพิ่มเติม (ถ้ามี)</h5>
-                              <textarea class="form-control" id="validationTextarea" name="description" placeholder="Required example textarea" ></textarea>
+                              <textarea class="form-control" id="validationTextarea" name="description" placeholder="ระบุรายข้อความเพื่มเติม" ></textarea>
                             </div>
                             <div class="col-12 col-md-8">
 

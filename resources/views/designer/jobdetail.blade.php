@@ -65,7 +65,7 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <br>
-                                                <h5 class="text-left font-weight-bold"> อัพโหลดไฟล์งานของคุณ</h5>
+                                                <h5 class="text-left font-weight-bold"> อัพโหลดภาพตัวอย่างงาน</h5>
 
                                                 <div  id="thumb-output" class="pt-2 pb-2" style="display:flex; width:180px;height:180px;">
                                                 
@@ -78,7 +78,7 @@
 
                                              </div>
                                              <div class="col-md-12">
-                                             <h5 class="text-left font-weight-bold mt-md-5 mb-md-5"> อัพโหลดไฟล์งานอื่นๆ</h5>
+                                             <h5 class="text-left font-weight-bold mt-md-5 mb-md-5"> อัพโหลดไฟล์งาน Artwork</h5>
 
                                              </div>
                                              <div class="col-12 col-md-4">
@@ -106,10 +106,17 @@
                                      <input hidden type="text" id="job_id" name="job_id" value="{{$job->id}}">
                                     <input hidden type="text" id="designer_id" name="designer_id" value="{{$job->designer_id}}">
                                     <input hidden type="text" id="user_id" name="user_id" value="{{$job->user_id}}">
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn _secondary-btn" data-dismiss="modal">ยกเลิก</button>
-                                        <button type="submit" class="btn _primary-black">ยืนยัน</button>
+                                  
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <button type="button" class="btn _secondary-btn btn-lg btn-block" data-dismiss="modal">ยกเลิก</button>
+                                            </div>
+                                            <div class="col-6">
+                                                <button type="submit" class="btn _primary-black btn-lg btn-block">ยืนยัน</button>
+
+                                            </div>
                                         </div>
+                                     
                                 </div>
                             </div>
                         </div>
@@ -482,31 +489,31 @@
                                 <div class="step">1</div>
                                 <div class="caption hidden-xs hidden-sm"> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
-                                    <p>นักออกแบบรับงานแล้ว</p>
+                                    <p >นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
-                            <li class="active">
+                            <li class="complete">
                                 <div class="step">2</div>
                                 <div class="caption hidden-xs hidden-sm">
                                     <h5>ชำระเงิน</h5> <br>
                                     <p>ตรวจสอบการชำระเงิน</p>
                                 </div>
                             </li>
-                            <li class="active">
+                            <li class="complete">
                                 <div class="step">3</div>
                                 <div class="caption hidden-xs hidden-sm">
                                     <h5>ดำเนินการออกแบบ</h5> <br>
                                     <p>กำลังออกแบบงาน</p>
                                 </div>
                             </li>
-                            <li class="active">
+                            <li class="complete">
                                 <div class="step">4</div>
                                 <div class="caption hidden-xs hidden-sm">
                                     <h5>ส่งมอบงาน</h5> <br>
                                     <p>ตรวจสอบงาน</p>
                                 </div>
                             </li>
-                            <li class="active">
+                            <li class="complete">
                                 <div class="step">5</div>
                                 <div class="caption hidden-xs hidden-sm">
                                     <h5>เสร็จสิ้นงาน</h5> <br>

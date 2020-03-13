@@ -7,14 +7,15 @@
     <div class="container bg-white mt-5 shadow-sm ">
         <div class="text-center pt-5  ">
             <h1 class="_hilight">ชำระเงิน</h1>
-            <h4>ใบรหัสการจ้างงาน No. W00{{$jobs->id}}</h4>
+            <h4 class="_gray">ใบรหัสการจ้างงาน No. W00{{$jobs->id}}</h4>
             {{-- <h4>ใบรหัสการจ้างงาน No. W0{{$jobs->id}}</h4> --}}
+           
         </div>
        <div class="container">
         <div class="form-row pl-pr-lg-_ex  mt-5">
           <div class="form-group col-md-12">
-            <h5 class="font-weight-bold">รายละเอียดการการชำระเงิน</h5>
-            <div class=" text-left bg-white p-3 shadow-sm mb-5">
+            <h4 class="font-weight-bold mb-4">รายละเอียดการการชำระเงิน</h4>
+            <div class=" text-left bg-white p-3 shadow-sm mb-5 border rounded">
                 <h5 class="font-weight-bold">สรุปการชำระเงิน</h5>
                 <hr>
             <div class="row">
@@ -40,8 +41,8 @@
            </div>
             </div>
             {{-- 2  --}}
-            <h5 class="font-weight-bold">ข้อมูลบัญชีของธนาคาร</h5>
-            <p>ชำระเงินโดยการโอนเงินผ่านธนาคารนี้</p>
+            <h4 class="font-weight-bold">ข้อมูลบัญชีของธนาคาร</h4>
+            <p class="mb-3">ชำระเงินโดยการโอนเงินผ่านธนาคารนี้</p>
             <div class="row text-center show-payment shadow-sm mb-5">
               <div class="col-md-1">
                 <img src="../photo/kbank.jpg" alt="">

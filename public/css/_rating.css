@@ -8,9 +8,9 @@ h1 { font-size: 1.5em; margin: 10px; } */
 
 .rating { 
   border: none;
-  float: left;
+  /* float: left; */
   font-size: 46px;
-  margin: 0 400px 0 400px;
+  /* margin: 0 400px 0 400px; */
 }
 
 .rating > input { display: none; } 
@@ -29,7 +29,7 @@ h1 { font-size: 1.5em; margin: 10px; } */
 
 .rating > label { 
   color: #ddd; 
- float: right; 
+ /* float: right;  */
 }
 
 /***** CSS Magic to Highlight Stars on Hover *****/
