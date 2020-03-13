@@ -13,7 +13,8 @@
                 <div class="small-box bg-white">
                     <div class="inner">
                         <p>ผู้ใช้งาน</p>
-                        <h3>150</h3>
+                        <h3>1500</h3>
+                        
                     </div>
                     <div class="icon"> <i class="ion ion-bag"></i> </div> <a href="/dashboard/userinfo" class="small-box-footer bg-dark" style="color:white !important;">ดูเพื่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
             </div>
