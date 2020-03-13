@@ -3,16 +3,16 @@
     
 @endsection
 @section('content')
-<section class="totalprice">
+<section class="totaljob">
     <div class="container mt_ex">
-        <h2 class="font-weight-bold _gray ">Dashboard / ยอดรายรับกำไร</h2>
+        <h2 class="font-weight-bold _gray ">Dashboard / จำนวนการจ้างงาน</h2>
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header bg-white pt-5">
                         <div class="row">
                             <div class="col-lg-9">
-                                <h4 class="font-weight-bold">ยอดรายรับกำไร  (฿19,000) </h4>
+                                <h4 class="font-weight-bold">จำนวนการจ้างงาน  (2,000)  </h4>
                             </div>
                             <div class="col-lg-3">
                                 <select class="selectpicker">
@@ -47,10 +47,10 @@
                                     <th scope="col">รหัสการจ้าง</th>
                                     {{-- <th scope="col">วันที่เริ่มงาน</th> --}}
                                     <th scope="col">วันที่</th>
-                                    <th scope="col">เวลา</th>
-                                    <th scope="col">ยอดสุทธิิการจ้าง</th>
-                                    <th scope="col">หักค่าธรรมเนียม</th>
-                                    <th scope="col">รายรับ/กำ ไร</th>
+                                    <th scope="col">ผู้จ้างงาน</th>
+        
+                                    <th scope="col">นักออกแบบ</th>
+                                    <th scope="col">สถานะ</th>
                                    
                                   </tr>
                                 </thead>
@@ -74,12 +74,15 @@
                                     {{-- <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td> --}}
                                     <td class="pt-4 pb-4">25 / 12 / 2562</td>
                                     {{-- <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td> --}}
-                                    <td class="pt-4 pb-4">22:22</td>
+                                    <td class="pt-4 pb-4">Plai</td>
                                     {{-- <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td> --}}
-                                    <td class="pt-4 pb-4 ">2,900</td>
-                                    <td class="pt-4 pb-4 text-danger">- 145</td>
-                                    <td class="pt-4 pb-4 _hilight">145</td>
-
+                                    <td class="pt-4 pb-4 ">Biw</td>
+                                    <td class="pt-4 pb-4 ">
+                                        <a href="#">
+                                      {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
+                                      <p class="_hilight">เสร็จสิ้นงาน</p>
+                                     </a>
+                                        </td>
                                     {{-- @php
                                     $jobstatusid = \App\Jobstatus::find($payment->jobstatus_id)->statusName;
                                      @endphp --}}
@@ -117,4 +120,5 @@
         </div>
      </div>
 </section>
+
 @endsection

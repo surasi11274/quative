@@ -783,7 +783,7 @@
                                         <div class="container">
                                             
                                             {{-- <hr> --}}
-                                            <h1 class="modal-title text-center _hilight mt-5 mb-5">ช่วยนักออกแบบสร้าง Profile</h1>
+                                            <h1 class="modal-title  _hilight mt-5 mb-5">ช่วยนักออกแบบสร้าง Profile</h1>
                                             <span>นักออกแบบสามารถนำผลงานของคุณไปแสดงในโปรไฟล์เพื่อ
                                              ช่วยสร้าง Portfolio บนเว็บไซต์เราได้หรือไม่</span>
                  
@@ -795,8 +795,8 @@
                                                          อนุญาตให้นักออกแบบนำงานคุณไปแสดงในโปรไฟล์
                                                      </label>
                                                      <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1" name="canshow">
-                                                     <label class="form-check-label _hilight" for="defaultCheck1">
-                                                         อนุญาตให้นักออกแบบนำงานคุณไปแสดงในโปรไฟล์
+                                                     <label class="form-check-label _hilight text-left" for="defaultCheck2">
+                                                        ไม่อนุญาตให้นักออกแบบนำงานคุณไปแสดง
                                                      </label>
                                                  </div>
                                                  <div class="col-3"></div>
