@@ -65,11 +65,11 @@
 
       <table class="table table-hover table-bordered">
 
-         <thead class="thead-dark">
+         <thead class="thead-dark text-md-center">
            <tr>
 
              <th scope="col">รหัสการจ้าง</th>
-             <th scope="col">แพ็คเกจ</th>
+             <th scope="col">ราคาแพ็คเกจ</th>
              {{-- <th scope="col">วันที่เริ่มงาน</th> --}}
              <th scope="col">วันที่ต้องการงาน</th>
              <th scope="col">สถานะการทำงาน</th>
@@ -92,7 +92,7 @@
                <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button>
               </a>
             </td>
-             <td class="pt-4 pb-4 text-center">{{$job->price}}</td>
+             <td class="pt-4 pb-4 text-center">{{$job->pricerate}}</td>
              {{-- <td class="pt-4 pb-4 text-center">{{$job->finishdate}}</td> --}}
              <td class="pt-4 pb-4 text-center">{{date('F d,Y',strtotime($job->finishdate))}}</td>
              {{-- @foreach ($job->jobstatus_id as $item) --}}

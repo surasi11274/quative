@@ -611,30 +611,32 @@
                         <h5 class="mt-3">{{ $job->categories}}</h5>
                            <h5 class="font-weight-bold mt-3">รูปภาพผลิตภัณฑ์เดิมของคุณ</p>
                            <div class="row mt-3">
-                               <div class="col-4">
+                               <div class="col-4 mt-3">
                                 <img class="rounded" src="/{{$job->productPic}}" alt="">
                                </div>
-                               <div class="col-4">
-                                    <img class="rounded" src="/photo/@product-blue.png" alt="">
+                               <div class="col-4 mt-3">
+                                <img class="rounded" src="/{{$job->productPic}}" alt="">
                                </div>
-                               <div class="col-4">
-                                    <img class="rounded" src="/photo/@product-blue.png" alt="">
+                               <div class="col-4 mt-3">
+                                <img class="rounded" src="/{{$job->productPic}}" alt="">
                                </div>
+                               
+                               
                            </div>
-                           <label for="" class=" mt-3">URL : <small>{{$job->url}}</small></label>
+                           <label for="" class=" mt-3">URL : <a href="#" target="_blank"><small>{{$job->url}}</small></a></label>
                            <h4 class="font-weight-bold mt-5">รูปภาพตัวอย่างงาน</h3>
                            <hr>
                            <h5 class="mt-3 font-weight-bold">รูปภาพงานใกล้เคียงกับงาน</h5>
                            <div class="row mt-3">
-                                <div class="col-4">
-                                 <img class="rounded" src="/photo/@product-8.png" alt="">
+                                <div class="col-4 mt-3">
+                                 <img class="rounded" src="/{{$job->refpicbyUser}}" alt="">
                                 </div>
-                                <div class="col-4">
-                                     <img class="rounded" src="/photo/@product-8.png" alt="">
-                                </div>
-                                <div class="col-4">
-                                     <img class="rounded" src="/photo/@product-8.png" alt="">
-                                </div>
+                                <div class="col-4 mt-3">
+                                    <img class="rounded" src="/{{$job->refpicbyUser}}" alt="">
+                                   </div>
+                                   <div class="col-4 mt-3">
+                                    <img class="rounded" src="/{{$job->refpicbyUser}}" alt="">
+                                   </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 p-5">
