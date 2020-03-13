@@ -150,12 +150,12 @@
 
                             {{-- <div class="row"> --}}
                                 {{-- <div class="col-6">
-
                                 </div>
                                 <div class="col-6">
                                 <div class="row mt_ex">
                                     <div class="col-6"> --}}
-                                        <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/>
+                                        <a href="/" class="btn _secondary-btn  btn-block rounded btn-lg" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"> ย้อนกลับ</a>
+                                        {{-- <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/> --}}
                                     {{-- </div>
                                     <div class="col-6"> --}}
                                         <input type="button" name="next" class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>

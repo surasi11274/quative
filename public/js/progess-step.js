@@ -56,7 +56,7 @@ $(".previous").click(function(){
     //show the previous fieldset
     previous_fs.show();
     //hide the current fieldset with style
-    current_fs.animate({opacity: 0}, {
+    current_fs.animate({opacity: 1}, {
         step: function(now, mx) {
             //as the opacity of current_fs reduces to 0 - stored in "now"
             //1. scale previous_fs from 80% to 100%
@@ -65,7 +65,7 @@ $(".previous").click(function(){
             left = ((1-now) * 0)+"%"; //50 old value
             //3. increase opacity of previous_fs to 1 as it moves in
             opacity = 1 - now;
-            // current_fs.css({'left': left});
+            current_fs.css({'left': left});
             // previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
             previous_fs.css({'opacity': opacity});
 
