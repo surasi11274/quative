@@ -79,8 +79,12 @@
                                     <td class="pt-4 pb-4 ">2,900</td>
                                     <td class="pt-4 pb-4 text-danger">- 145</td>
                                     <td class="pt-4 pb-4 _hilight">145</td>
+<<<<<<< Updated upstream
                                     
                                     
+=======
+                                    yooo
+>>>>>>> Stashed changes
                                     {{-- @php
                                     $jobstatusid = \App\Jobstatus::find($payment->jobstatus_id)->statusName;
                                      @endphp --}}
