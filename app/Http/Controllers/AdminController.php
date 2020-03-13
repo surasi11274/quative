@@ -27,6 +27,15 @@ class AdminController extends Controller
     public function dashboard(){
         return view('admin.dashboard');
     }
+    public function dashinfoUser(){
+        return view('admin.userinfo');
+    }
+    public function dashtotalJob(){
+        return view('admin.totaljob');
+    }
+    public function dashtotalPrice(){
+        return view('admin.totalprice');
+    }
     public function index()
     {
        
