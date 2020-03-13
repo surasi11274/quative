@@ -120,15 +120,12 @@
                                           </div>
                                           
                                       </div>
-                                      <div class=" form-group  mt-5">
+                                      {{-- <div class=" form-group  mt-5">
                                         <h5>หรือต้องการระบุวันเป็นพิเศษ *ถ้ามี</h5>
                                         <div class="col-4 input-icons">
-                                            {{-- <input type="text" id="anotherSelector" name="birthdate" placeholder="Please select Date Time" data-input> --}}
-                                            {{-- <input class="form-control anotherSelector" type="date"  name="birthdate"  placeholder="MM/DD/YY" data-input> --}}
                                             <input type="date" id="basicDate" name="birthdate"  placeholder="MM/DD/YY" data-input>
-                                            {{-- <span class="icon calendar"></span> --}}
                                         </div>
-                                    </div>
+                                    </div> --}}
                                       </div>
                                   <div class="col-12 col-md-4">
                                       <div class="total-price p-3">

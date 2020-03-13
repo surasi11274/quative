@@ -95,6 +95,9 @@ h2, h4, h5, p, a,small,button,div,span{
 .star1 {
   color: #FCD430;
 }
+.stargrey {
+  color: #cccccc;
+}
 .overflow-ratepro{
   overflow-x: scroll;
   width: 100%;

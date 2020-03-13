@@ -231,7 +231,6 @@ class HomeController extends Controller
         
         // $designers = Designer::where('tag',$jobstags)->get();
 
-
     // $jobtags = Jobs::where('tags',$jobs->tags)->get();
     foreach($jobs as $record){
         $tags = $record->tags;
@@ -243,15 +242,22 @@ class HomeController extends Controller
                     return $query->where('designers.tag', $tags);
                     
                 })
-                ->where('hasjob',0)
+                // ->where('hasjob',0)
                 ->orderBy('rating','DESC')
-                // ->limit(1)
+                ->limit(5)
                 ->get();
         
         
         $tags = Tags::all();
         $refs = References::inRandomOrder()->limit(8)->get();     
         $jobs->first()->tags = json_decode($jobs->first()->tags);
+        $designerstag = json_decode($designers->first()->tag,true);
+
+        // foreach($designers as $designer) {
+
+        // }
+
+        // dd($jobdesigners);
         
 
         // $designers = Designer::where('tag' ,'==', $jobs->tag);
@@ -273,6 +279,8 @@ class HomeController extends Controller
             'tags'=>$tags,
             'designers'=>$designers,
             'refs'=>$refs,
+            'designerstag'=>$designerstag,
+            // 'jobdesigners'=>$jobdesigners
             ]);
 
     }
@@ -369,6 +377,7 @@ class HomeController extends Controller
             ]);
 
     }
+ 
     public function storeSearchStep3(Request $request)
     {
    
@@ -386,7 +395,7 @@ class HomeController extends Controller
       
         try{
             
-            return redirect(route('job.show',['token'=>$updateJob->token]));
+            return redirect(route('matched',['token'=>$updateJob->token]));
 
         }catch (\Exception $x){
             return back()->withInput();
@@ -394,7 +403,16 @@ class HomeController extends Controller
     }
 
 
+    public function matched($token)
+    {
 
+        $jobs = Jobs::where('token',$token)->get();
+
+        return view('matching.matchfinish',[
+            'jobs'=>$jobs->first(),
+
+        ]);
+    }
 
 
 

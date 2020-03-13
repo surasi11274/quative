@@ -36,33 +36,13 @@
                 </div>
             </div>
             <div class="col-md-6" id="messages">
-                <div class="message-wrapper">
-                    <ul class="messages">
-                        @foreach ($messages as $message)
-                            <li class="message clearfix">
-                                {{-- if message from  id is equal to auth id than it is sent by logged  in user --}}
-                                <div class="{{($message->from == Auth::id()) ? 'sent' : 'received' }}">
-                                    <p>{{$message->message }}</p>
-                                    <p class="date">{{ date('d M y, h:i a', strtotime($message->created_at))}}</p>
-                                </div>
-                {{-- 
-                                @if($message->is_read == 1)
-                                    <p>read</p>
-                                @endif --}}
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
                 
-                <div class="input-text">
-                    <input type="text" name="message" class="submit">
-                </div>
             </div>
         </div>
     </div>
     
 @endsection
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <script>
     var receiver_id = '';
     var my_id = "{{ Auth::id()}}";
@@ -153,4 +133,4 @@
       }
     });
   </script>
-  
+   --}}
