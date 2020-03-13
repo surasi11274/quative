@@ -39,6 +39,8 @@
   <script>
     var receiver_id = '';
     var my_id = "{{ Auth::id()}}";
+    var token = "{{ $jobs->token }}";
+
     $(document).ready(function() {
       //ajax setup from csrf token
       $.ajaxSetup({
@@ -85,7 +87,7 @@
         receiver_id = $(this).attr('id');
         $.ajax({
           type: "get",
-          url: "message/" + receiver_id,
+          url: "messages/" + token + "/" + receiver_id,
           data: "",
           cache: false,
           success: function(data) {
