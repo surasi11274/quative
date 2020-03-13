@@ -71,14 +71,17 @@
 
         </div>
 
-       <div class="form-group col-md-3">
+       <div class="form-group col-md-3 mt-3">
          <label for=""></label>
-         <select class="form-control">
+         
+         <select class="form-control ">
             <option value="most">ผลงานที่ถูกชื่นชอบมากที่สุด</option>
             <option value="newone">เรียงผลงานตามลำดับ ใหม่-เก่า</option>
-
           </select>
-
+          {{-- <select class="selectpicker">
+            <option value="most">ผลงานที่ถูกชื่นชอบมากที่สุด</option>
+            <option value="newone">เรียงผลงานตามลำดับ ใหม่-เก่า</option>
+          </select> --}}
        </div>
     </div>
     <div class="row">
