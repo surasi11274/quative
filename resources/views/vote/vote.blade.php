@@ -101,7 +101,7 @@
                                     <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
                                 </a>
 
-                                    <div class="card-body">
+                                    <div class="card-body" style="width:auto;">
                                         <div class="text-left position-absolute">
                                             <div class="row pl-3">
                                                 <p class="font-weight-bold">ออกแบบโดย
@@ -118,44 +118,34 @@
 
                                         @endforeach --}}
                                         <div class="row pl-3">
-                                    @foreach ($jobtags as $jobt)
-                                        @php
+                                        @foreach ($jobtags as $jobt)
+                                            @php
 
-                                        $tagname = \App\Tags::find($jobt)->tagName;
+                                            $tagname = \App\Tags::find($jobt)->tagName;
 
-                                        @endphp
-                                        <p>
-                                            {{$tagname}},
-                                        </p>
+                                            @endphp
+                                            <p>
+                                                {{$tagname}},
+                                            </p>
 
-                                    @endforeach --}}
-                                    <div class="row pl-3">
-                                @foreach ($jobtag as $jobt)
-                                    @php
-                                    $tagname = \App\Tags::find($jobt)->tagName;
-
-                                    @endphp
-                                    <p>
-
-                                        {{$tagname}},
-                                    </p>
-                                @endforeach
-                                 </div>
-                                 <div class="row pl-3 color-grey">
-                                        <span>
-                                            <i class="fas fa-heart"></i>
-                                            {{$job->favorite_to_users->count()}}
-                                        </span>
-                                        <span class="pl-3">
-                                            <i class="far fa-eye"></i>
-                                            {{$job->view_count}}
-                                        </span>
+                                        @endforeach 
+                                        </div>
+                            
+                                    <div class="row pl-3 color-grey">
+                                            <span>
+                                                <i class="fas fa-heart"></i>
+                                                {{$job->favorite_to_users->count()}}
+                                            </span>
+                                            <span class="pl-3">
+                                                <i class="far fa-eye"></i>
+                                                {{$job->view_count}}
+                                            </span>
 
 
 
 
 
-                                </div>
+                                    </div>
 
 
 
