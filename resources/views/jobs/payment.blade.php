@@ -17,10 +17,12 @@
                   <div class="form-row pl-pr-lg-_ex ">
                     <div class="form-group col-md-12">
                      <h4 class="font-weight-bold mb-3">ยอดที่ต้องชำระ</h4>
-                      <div class="row text-center show-payment shadow-sm mb-4">
-                        <p class="col-md-6">ยอดชำระเงินทั้งหมด</p>
-                        <p class="col-md-6 _hilight">{{$jobs->pricerate}} บาท</p> 
-                        <input hidden type="text" name="total_price" value="{{$jobs->pricerate}}">
+                      <div class="container">
+                        <div class="row text-center show-payment shadow-sm mb-4">
+                          <p class="col-md-6">ยอดชำระเงินทั้งหมด</p>
+                          <p class="col-md-6 _hilight">{{$jobs->pricerate}} บาท</p> 
+                          <input hidden type="text" name="total_price" value="{{$jobs->pricerate}}">
+                        </div>
                       </div>
                      
                     </div>

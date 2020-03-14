@@ -23,3 +23,8 @@ public/js/dropzone.js
 *.js
 *.js
 resources/views/admin/totalprice.blade.php
+public/uploads/ArtworkFiles/20200314080505_13590293_ASM07_PC01_Blockchain (1).pdf
+public/uploads/ArtworkFiles/20200314080505_13590293_ASM07_PC01_Blockchain.pdf
+public/uploads/ArtworkFiles/20200314080505_13590293_ASM08_PC02_Agile (1).pdf
+public/uploads/ArtworkFiles/20200314080505_13590293_ASM08_PC02_Agile.pdf
+public/uploads/ArtworkFiles/20200314080505_13590293_ASM09_PC03_KillerPresentation.pdf
