@@ -5,7 +5,7 @@
 @section('content')
 <div class="container " >
     <div class="container mt-5">
-        
+
         <div class="text-center pt-5 p-5">
             <div id="wizard-progress">
                 <ol class="step-indicator">
@@ -27,18 +27,18 @@
                     </li>
                 </ol>
             </div>
-        
+
         </div>
     </div>
     <div style="width: 100%;padding-top: 10px;">
         <form class="form-match"  id="cakeform" action="/search/create/store3" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
                          <div class="p-5" >
-                        
+
                                 <div class="row">
                                     <div class="col-12 col-md-5">
                                         <h2 class="selectfillter">ขอบเขตที่ต้องการงาน</h2>
-                                       
+
                                         <small>
                                             *ระบบจะค้นหาจากราคาที่ใกล้มากที่สุดจากกลุ่มนักออกแบบ*
                                         </small>
@@ -71,10 +71,10 @@
                                                       <span>ธรรมดา <br>
                                                     <p>  {{$courses->course_duration['0']}} วัน</p>
                                                     </span>
-                                                     
+
                                                     </div>
                                                   </label>
-                                                  
+
                                                     <label>
                                                     <input id="value2" type="radio" name="dateextra_price" onclick="addCart('{{$courses->course_duration['1']}}')"  onchange="calculateAmount2(this.value)" value="{{$courses->course_duration_rate['1']}}"  />
                                                     <div class="back-end box">
@@ -87,15 +87,15 @@
                                                     <input id="value2" type="radio" name="dateextra_price" onclick="addCart('{{$courses->course_duration['2']}}')" onchange="calculateAmount2(this.value)" value="{{$courses->course_duration_rate['2']}}"  />
                                                     <div class="front-end box">
                                                         <span>ด่วนมาก <br>
-                                                           <p>{{$courses->course_duration['2']}} วัน (+฿{{$courses->course_duration_rate['2']}})</p> 
+                                                           <p>{{$courses->course_duration['2']}} วัน (+฿{{$courses->course_duration_rate['2']}})</p>
                                                           </span>
                                                     </div>
                                                   </label>
-                                              
-                                        
+
+
                                                   </div>
                                                   {{-- <ul class="box-tag d-flex">
-                                        
+
                                                       <li class="m-5">
                                                         <label class="_area-2">
                                                           <input type="radio" checked="checked" id="customRadioInline1" name="finishdate" class="custom-control-input">
@@ -114,12 +114,12 @@
                                                           <label class="custom-control-label" for="customRadioInline3">ด่วนมาก</label>
                                                           <h5>5 <small>วัน (+฿1,000)</small></h5>
                                                       </li>
-         
+
                                                   </ul> --}}
                                               </div>
-                                              
+
                                           </div>
-                                          
+
                                       </div>
                                       {{-- <div class=" form-group  mt-5">
                                         <h5>หรือต้องการระบุวันเป็นพิเศษ *ถ้ามี</h5>
@@ -130,17 +130,17 @@
                                       </div>
                                   <div class="col-12 col-md-4">
                                       <div class="total-price p-3">
-                                          <h5>สรุปราคา</h5>
+                                          <h5 class="_hilight font-weight-bold">สรุปราคา</h5>
                                           <table class="table">
                                               <thead>
                                               <tr>
-                                                  <th scope="col">ขอบเขตงาน</th>
-                                                  <td scope="col">ราคา</td>
+                                                  <th scope="col" class="font-weight-bold">รายการ</th>
+                                                  <td scope="col" class="font-weight-bold">ราคา</td>
                                               </tr>
                                               </thead>
                                               <tbody>
                                               <tr>
-                                                  <th scope="row">01</th>
+                                                  <th scope="row">แพ็คเกจ</th>
                                                     <td>
                                                         <div class="form-group">
                                                             <input style="width:100px;"  id="package" class="form-control " name="package" type="text"   />
@@ -150,45 +150,41 @@
                                               </tr>
                                               <tr>
                                                   <th scope="row">วันที่ต้องการงาน</th>
-                                                  <td >+ ฿
+                                                  <td >
                                                       <div class="form-group">
                                                         <input style="width:100px;"  id="date" class="form-control " name="date"  type="text"   />
 
                                                       </div>
                                                   </td>
                                               </tr>
-                                              <tr>
+                                              {{-- <tr>
                                                   <th scope="row">ราคาทั้งหมด</th>
-                                                  <td style=" text-decoration: underline;" >     
+                                                  <td style=" text-decoration: underline;" >
                                                     <div class="form-group">
-                                                        {{-- <input style="width:100px;"  id="result" type="text" onkeyup="calculate()" readonly> --}}
-                                                       {{-- <a href="bankurl" id="total">$</a>  --}}
-                                                {{-- <h1>{{$courses->course_rate['0'] + $courses->course_duration_rate['1']}}  </h1> --}}
 
                                                         <input style="width:100px;" id="sum" type="text"  readonly>
 
-                                                        {{-- <output id="result"></output> --}}
 
                                                     </div>
                                                   </td>
-                                              </tr>
+                                              </tr> --}}
                                               </tbody>
                                           </table>
                                       </div>
-                                      
+
                                      {{-- <div class="d-flex mt-5">
                                          <button href="#" class="btn _secondary-btn btn-lg btn-block m-1 ">ยกเลิก</button>
                                          <button href="#"  class="btn _primary-black btn-lg btn-block m-1">ถัดไป</button>
                                      </div> --}}
                                   </div>
                                   </div>
-                                  
+
                                   <input hidden type="text" id="output" name="finishdate" >
 
                                   <input hidden type="text" id="job_id" name="jobstatus_id" value="1">
                                   <input hidden type="text" id="job_id" name="job_id" value="{{$jobs->id}}">
 
-         
+
                                  @if ($errors->any())
                                      <div class="alert alert-danger">
                                          <ul>
@@ -201,7 +197,7 @@
                                  <div class="mt_ex"></div>
                                  <div class="row">
                                     <div class="col-6">
-     
+
                                     </div>
                                     <div class="col-6">
                                      <div class="row m-3">
@@ -210,7 +206,7 @@
                                          </div>
                                          <div class="col-6">
                                              <input type="submit" name="submit" class="submit  _primary-black  btn-block rounded " value="เสร็จสิ้น"/>
-     
+
                                          </div>
                                      </div>
                                     </div>
@@ -257,11 +253,11 @@
             $('#package, #date').keyup(function(){
                var value1 = parseFloat($('#package').val()) || 0;
                var value2 = parseFloat($('#date').val()) || 0;
-             
+
             //    var sum = value1 + value2;
                $('#sum').val(value1 + value2);
             });
          });
-         
+
 </script>
 <script src="{{asset('js/flatpickr.js')}}"></script>
