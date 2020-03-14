@@ -55,31 +55,31 @@
                                     <p class="font-weight-bold">{{$designer->name}}</p class="_hilight">
                                     {{-- <p>{{$designer->surname}}</p> --}}
 
-                                    @if ($designer->rating == 1)
+                                    @if ($designer->rating >= 1 AND $designer->rating < 2)
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star stargrey"></i>
                                     <i class="fas fa-star stargrey"></i>
                                     <i class="fas fa-star stargrey"></i>
                                     <i class="fas fa-star stargrey"></i>
-                                    @elseif ($designer->rating == 2)
+                                    @elseif ($designer->rating >= 2 AND $designer->rating < 3)
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1 "></i>
                                     <i class="fas fa-star stargrey"></i>
                                     <i class="fas fa-star stargrey"></i>
                                     <i class="fas fa-star stargrey"></i>
-                                    @elseif ($designer->rating == 3)
+                                    @elseif ($designer->rating >= 3 AND $designer->rating < 4)
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star stargrey"></i>
                                     <i class="fas fa-star stargrey"></i>
-                                    @elseif ($designer->rating == 4)
+                                    @elseif ($designer->rating >= 4 AND $designer->rating < 5)
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star stargrey"></i>
-                                    @elseif ($designer->rating == 5)
+                                    @elseif ($designer->rating >= 5)
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
                                     <i class="fas fa-star star1"></i>
@@ -125,31 +125,31 @@
                                     {{-- <p class="_gray md-3">นักออกแบบ<p> --}}
                                        <div class="mb-md-3">
 
-                                          @if ($designer->rating == 1)
+                                          @if ($designer->rating >= 1 AND $designer->rating < 2)
                                           <i class="fas fa-star star1"></i>
                                           <i class="fas fa-star stargrey"></i>
                                           <i class="fas fa-star stargrey"></i>
                                           <i class="fas fa-star stargrey"></i>
                                           <i class="fas fa-star stargrey"></i>
-                                          @elseif ($designer->rating == 2)
+                                          @elseif ($designer->rating >= 2 AND $designer->rating < 3)
                                           <i class="fas fa-star star1"></i>
                                           <i class="fas fa-star star1 "></i>
                                           <i class="fas fa-star stargrey"></i>
                                           <i class="fas fa-star stargrey"></i>
                                           <i class="fas fa-star stargrey"></i>
-                                          @elseif ($designer->rating == 3)
+                                          @elseif ($designer->rating >= 3 AND $designer->rating < 4)
                                           <i class="fas fa-star star1"></i>
                                           <i class="fas fa-star star1"></i>
                                           <i class="fas fa-star star1"></i>
                                           <i class="fas fa-star stargrey"></i>
                                           <i class="fas fa-star stargrey"></i>
-                                          @elseif ($designer->rating == 4)
+                                          @elseif ($designer->rating >= 4 AND $designer->rating < 5)
                                           <i class="fas fa-star star1"></i>
                                           <i class="fas fa-star star1"></i>
                                           <i class="fas fa-star star1"></i>
                                           <i class="fas fa-star star1"></i>
                                           <i class="fas fa-star stargrey"></i>
-                                          @elseif ($designer->rating == 5)
+                                          @elseif ($designer->rating >= 5)
                                           <i class="fas fa-star star1"></i>
                                           <i class="fas fa-star star1"></i>
                                           <i class="fas fa-star star1"></i>

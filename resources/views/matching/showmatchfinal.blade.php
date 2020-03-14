@@ -129,17 +129,17 @@
                                       </div>
                                   <div class="col-12 col-md-4">
                                       <div class="total-price p-3">
-                                          <h5>สรุปราคา</h5>
+                                          <h5 class="_hilight font-weight-bold">สรุปราคา</h5>
                                           <table class="table">
                                               <thead>
                                               <tr>
-                                                  <th scope="col">ขอบเขตงาน</th>
-                                                  <td scope="col">ราคา</td>
+                                                  <th scope="col" class="font-weight-bold">รายการ</th>
+                                                  <td scope="col" class="font-weight-bold">ราคา</td>
                                               </tr>
                                               </thead>
                                               <tbody>
                                               <tr>
-                                                  <th scope="row">01</th>
+                                                  <th scope="row">แพ็คเกจ</th>
                                                     <td>
                                                         <div class="form-group">
                                                             <input style="width:100px;"  id="package" class="form-control " name="package" type="text"   />
@@ -149,26 +149,24 @@
                                               </tr>
                                               <tr>
                                                   <th scope="row">วันที่ต้องการงาน</th>
-                                                  <td >+ ฿
+                                                  <td >
                                                       <div class="form-group">
                                                         <input style="width:100px;"  id="date" class="form-control " name="date"  type="text"   />
 
                                                       </div>
                                                   </td>
                                               </tr>
-                                              <tr>
+                                              {{-- <tr>
                                                   <th scope="row">ราคาทั้งหมด</th>
                                                   <td style=" text-decoration: underline;" >     
                                                     <div class="form-group">
-                                                        {{-- <input style="width:100px;"  id="result" type="text" onkeyup="calculate()" readonly> --}}
-                                                       {{-- <a href="bankurl" id="total">$</a>  --}}
+                                                       
                                                         <input style="width:100px;" id="sum" type="text"  readonly>
 
-                                                        {{-- <output id="result"></output> --}}
 
                                                     </div>
                                                   </td>
-                                              </tr>
+                                              </tr> --}}
                                               </tbody>
                                           </table>
                                       </div>
