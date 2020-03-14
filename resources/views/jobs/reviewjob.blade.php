@@ -2,7 +2,6 @@
 @section('assets')
         <link rel="stylesheet" href="{{asset('css/style_match.css')}}">
         <link rel="stylesheet" href="{{asset('css/_rating.css')}}">
-
 @endsection
 @section('content')
 <section class="content mt_ex">
@@ -120,7 +119,6 @@
           </h3> --}}          
           <form action="/reviewjob/store" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
-
           {{-- <div class="rating"><!--
   --><input name="stars" id="e5" type="radio" value="1"></a><label for="e5">★</label><!--
 		--><input name="stars" id="e4" type="radio" value="2"></a><label for="e4">★</label><!--
@@ -128,9 +126,7 @@
 		--><input name="stars" id="e2" type="radio" value="4"></a><label for="e2">★</label><!--
 		--><input name="stars" id="e1" type="radio" value="5"></a><label for="e1">★</label>
     </div> --}}
-    <div class="row">
-        <div class="col-12">
-            <fieldset class="rating m-auto justify-content-center text-center">
+            <fieldset class="rating">
                
                         <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"><i class="fas fa-star"></i></label>
                         {{-- <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label> --}}
@@ -144,9 +140,8 @@
                         {{-- <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label> --}}
                
             </fieldset>
-        </div>
-    </div>
-
+      
+            
           {{-- <h6 class="text-center">ภูมิใจนำเสนอ งานดีมาก</h6> --}}
           <br>
          
