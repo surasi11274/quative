@@ -38,6 +38,7 @@
                                 <div class="row">
                                     <div class="col-12 col-md-5">
                                         <h2 class="selectfillter">ขอบเขตที่ต้องการงาน</h2>
+                                       
                                         <small>
                                             *ระบบจะค้นหาจากราคาที่ใกล้มากที่สุดจากกลุ่มนักออกแบบ*
                                         </small>
@@ -90,7 +91,7 @@
                                                           </span>
                                                     </div>
                                                   </label>
-                                                  
+                                              
                                         
                                                   </div>
                                                   {{-- <ul class="box-tag d-flex">
@@ -162,6 +163,8 @@
                                                     <div class="form-group">
                                                         {{-- <input style="width:100px;"  id="result" type="text" onkeyup="calculate()" readonly> --}}
                                                        {{-- <a href="bankurl" id="total">$</a>  --}}
+                                                {{-- <h1>{{$courses->course_rate['0'] + $courses->course_duration_rate['1']}}  </h1> --}}
+
                                                         <input style="width:100px;" id="sum" type="text"  readonly>
 
                                                         {{-- <output id="result"></output> --}}
@@ -250,10 +253,12 @@
 </script>
 <script>
     // we used jQuery 'keyup' to trigger the computation as the user type
-    $(function(){
+    $(function (){
             $('#package, #date').keyup(function(){
                var value1 = parseFloat($('#package').val()) || 0;
                var value2 = parseFloat($('#date').val()) || 0;
+             
+            //    var sum = value1 + value2;
                $('#sum').val(value1 + value2);
             });
          });
