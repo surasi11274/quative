@@ -45,7 +45,7 @@
                
                 {{-- end mobile  --}}
                     <div class="container  ">
-                    <fieldset class="p-3 p-md-5  " style="padding-bottom: 140px !important;">    
+                    <fieldset class="p-3 p-md-5  ">    
                            
     
                             <h2 class="selectfillter"  style="font-weight: 800;">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h2>
@@ -150,12 +150,12 @@
 
                             {{-- <div class="row"> --}}
                                 {{-- <div class="col-6">
+
                                 </div>
                                 <div class="col-6">
                                 <div class="row mt_ex">
                                     <div class="col-6"> --}}
-                                        <a href="/" class="btn _secondary-btn  btn-block rounded btn-lg" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"> ย้อนกลับ</a>
-                                        {{-- <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/> --}}
+                                        <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/>
                                     {{-- </div>
                                     <div class="col-6"> --}}
                                         <input type="button" name="next" class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
@@ -166,7 +166,7 @@
                         </fieldset>
                         {{-- field-two --}}
                         <fieldset>
-                            <div class="container bg-white  p-3 p-md-5" style="padding-bottom: 140px !important;">
+                            <div class="container bg-white  p-3 p-md-5">
                                 <h2 class="selectfillter">รูปภาพงานใกล้เคียงกับงานที่ต้องการ *ถ้ามี</h2>
                                
                                 <div class="row d-none d-md-block">
