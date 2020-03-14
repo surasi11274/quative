@@ -1,11 +1,11 @@
 @extends('layouts.app')
-{{-- @section('assets')
+@section('assets')
    <link rel="stylesheet" href="css/style_match.css">
-   <link rel="stylesheet" href="{{asset('css/flatpickr.min.css')}}">
-   <link rel="stylesheet" href="css/dropzone.css">
+   {{-- <link rel="stylesheet" href="{{asset('css/flatpickr.min.css')}}">
+   <link rel="stylesheet" href="css/dropzone.css"> --}}
 
    
-@endsection --}}
+@endsection
 
 @section('content')
 
@@ -14,12 +14,12 @@
         
         <div class="text-center p-5">
             <div id="wizard-progress" >
-                <ol class="step-indicator">
+                <ol class="step-indicator mt_ex">
                     <li class="complete">
                         <div class="step">1</div>
                         <div class="caption hidden-xs hidden-sm">ระบุความต้องการ</div>
                     </li>
-                    <li class="active">
+                    <li class="complete">
                         <div class="step">2</div>
                         <div class="caption hidden-xs hidden-sm">เลือกรูปตัวอย่างงาน</div>
                     </li>

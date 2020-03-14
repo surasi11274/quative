@@ -334,7 +334,7 @@ class DesignerController extends Controller
 
                 'fileimgname'=>$fileimg->move('uploads/Files',$filenameTostore),
     
-              
+               
     
                 
                 'user_id'=>$request->input('user_id'),
