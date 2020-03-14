@@ -154,18 +154,21 @@
                                 <div class="col-6">
                                 <div class="row mt_ex">
                                     <div class="col-6"> --}}
-                                        <a href="/" class="btn _secondary-btn  btn-block rounded btn-lg" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"> ย้อนกลับ</a>
+                                        <a href="/" class="btn _secondary-btn  btn-block rounded btn-lg" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"> ยกเลิก</a>
                                         {{-- <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/> --}}
                                     {{-- </div>
                                     <div class="col-6"> --}}
-                                        <input type="button" name="next" class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
+                                        <input type="submit"  class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
+                                       
+                                        <input style="border-width: 2px;" type="hidden" class="detaill-select" name="categories" plachholder="sadas" id="output">
+                                        <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2">
                                     {{-- </div>
                                 </div>
                                 </div> --}}
                             {{-- </div> --}}
                         </fieldset>
                         {{-- field-two --}}
-                        <fieldset>
+                        {{-- <fieldset>
                             <div class="container bg-white  p-3 p-md-5" style="padding-bottom: 140px !important;">
                                 <h2 class="selectfillter">รูปภาพงานใกล้เคียงกับงานที่ต้องการ *ถ้ามี</h2>
                                
@@ -180,15 +183,7 @@
                                          </div>
                                      </div>
                                 </div>
-                            {{-- <div class="col">
-                                <div class="input-picture">
-                    
-                                    <input type="file" id="file-input2" name="refpicbyUser" multiple />
-                                    <input type="button" onclick="removeAllImage()" value="Remove All Image" clas="remove"> 
-                                                                        <div id="thumb-output2"></div>
-                                    <i class="fas fa-plus p-icons"></i>
-                                </div>
-                            </div> --}}
+                           
                             <h2 class="selectfillter  pt-5">เลือกผลิตภัณฑ์ที่มีความใกล้เคียงกับแบบที่คุณต้องการ</h2>
                             <div class="smb-5 bg-white rounded ">
                                 <div class="waterfall ">
@@ -202,14 +197,11 @@
                                                             <span class="checkmark"></span>
                                                         </label>
                     
-                                                        <!-- <label class="single-checkbox" for="myCheckbox1"> -->
                                                             
                                                              <picture>
-                                                                {{-- <source media="(min-width: 650px)" srcset="{{$ref->img}}"> --}}
                                                                 <source class="img-fluid" media="(min-width: 375px)" srcset="{{$ref->img}}">
                                                                 <img class="rounded " src="{{$ref->img}}" alt="Flowers" style=" width: 320px; height:320px;">
                                                               </picture>
-                                                              {{-- <img class="rounded" style=" object-fit: cover; width: 320px; height:320px;"  style="display:block;" width="" src="{{$ref->img}}" /> --}}
                     
                     
                                                     </div>
@@ -221,27 +213,14 @@
                     
                                 </div>
                             </div>
-                            {{-- <div class="row">
-                                <div class="col-6">
- 
-                                </div> --}}
-                                {{-- <div class="col-6">
-                                 <div class="row mt_ex">
-                                     <div class="col-6"> --}}
-                                        <input type="button" name="previous" class="previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/>
-                                     {{-- </div>
-                                     <div class="col-6"> --}}
-                                        <input type="submit"  class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
-{{--  
-                                     </div>
-                                 </div>
-                                </div>
-                            </div> --}}
-                            {{-- </div> --}}
-                            <input style="border-width: 2px;" type="hidden" class="detaill-select" name="categories" plachholder="sadas" id="output">
-                            <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2">
                          
-                        </fieldset>
+                                        <input type="button" name="previous" class="previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/>
+                                
+                                        <input type="submit"  class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
+
+    
+                         
+                        </fieldset> --}}
                         
                     </div>
 </form>
