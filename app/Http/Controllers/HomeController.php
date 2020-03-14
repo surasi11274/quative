@@ -111,14 +111,14 @@ class HomeController extends Controller
         //     return view('designer.edit');
         // } $filenameWithExt = $request->file('profilepic')->getClientOriginalName();
         $filenameWithExt = $request->file('productPic')->getClientOriginalName();
-        $filenameWithExt = $request->file('refpicbyUser')->getClientOriginalName();
+        // $filenameWithExt = $request->file('refpicbyUser')->getClientOriginalName();
 
         //get file name
 
         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
 
         $extension = $request->file('productPic')->getClientOriginalExtension();
-        $extension = $request->file('refpicbyUser')->getClientOriginalExtension();
+        // $extension = $request->file('refpicbyUser')->getClientOriginalExtension();
 
         //create new file name
 //        $filenameTostore = $filename.'_'.time().'.'.$extension;
@@ -143,10 +143,10 @@ class HomeController extends Controller
 
             // 'finishdate'=>$request->input('finishdate'),
 
-            'refpicbyUser'=>$request->file('refpicbyUser')->move('uploads/refpicbyUser',$filenameTostore),
+            // 'refpicbyUser'=>$request->file('refpicbyUser')->move('uploads/refpicbyUser',$filenameTostore),
             'requirement'=>$request->input('requirement'),
             // 'pricerate'=>$request->input('pricerate'),
-            'reference'=>json_encode($request->input('reference')),
+            // 'reference'=>json_encode($request->input('reference')),
 
            
             // 'file'=>'0',
@@ -167,9 +167,8 @@ class HomeController extends Controller
        
 
         try{
-            // สำเร็จแล้ว ส่งไป step2
             // return redirect(route('search.create.step2'))->with('id', $jobs->id);
-            return redirect(route('search.show',
+            return redirect(route('search.ref',
             [
                 'jobs'=>$jobs->token,
                 
@@ -186,6 +185,135 @@ class HomeController extends Controller
 
 
     }
+
+    public function createSearchRef($token)
+    {
+        //
+        $jobs = Auth::user()->job();
+
+        $jobs = Jobs::where('token',$token)->get();
+
+        $isdesigner = Auth::user()->role;
+
+        // if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+        //     // return redirect(route('designer.show',['token'=>$jobs->token]));
+        //     return redirect(route('job.show',['token'=>$jobs->token]));
+
+        // }
+        if ($isdesigner == 1){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+            // return redirect(route('designer.show',['token'=>$jobs->token]));
+            $designers = Designer::all();
+
+            return view('home',[
+                'designers'=>$designers
+                ]);
+
+        }
+
+        $users = Auth::user(); 
+        // $cats = Categories::all();    
+        $refs = References::inRandomOrder()->limit(9)->get();             
+         
+             
+        // $tags = Tags::all();
+        return view('matching.searchref',[
+            'jobs'=>$jobs->first(),
+            // 'tags'=>$tags,
+            'refs'=>$refs,
+            'users'=>$users
+            ]);
+    }
+
+    public function storeSearchRef(Request $request)
+    {
+        //$jobs = Auth::user()->job();
+        // $users = Auth::user()->job();
+        // $jobs = Jobs::all();
+
+        // if ($designer){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+        //     return view('designer.edit');
+        // } $filenameWithExt = $request->file('profilepic')->getClientOriginalName();
+        // $filenameWithExt = $request->file('productPic')->getClientOriginalName();
+        $filenameWithExt = $request->file('refpicbyUser')->getClientOriginalName();
+
+        //get file name
+
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+        // $extension = $request->file('productPic')->getClientOriginalExtension();
+        $extension = $request->file('refpicbyUser')->getClientOriginalExtension();
+
+        //create new file name
+//        $filenameTostore = $filename.'_'.time().'.'.$extension;
+
+        $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
+    
+
+        $updateJob = Jobs::find($request->job_id);
+        $updateJob->refpicbyUser = $request->file('refpicbyUser')->move('uploads/refpicbyUser',$filenameTostore);
+        $updateJob->reference = json_encode($request->input('reference'));
+        $updateJob->save();
+
+        // $jobs = Jobs::create([
+            // 'categories'=>$request->input('categories'),
+            // 'categories'=>'0',
+            // 'categories_id'=>'0',
+            // 'url'=>'0',
+            // 'finishdate'=>'1111/11/11',
+
+
+
+
+            // 'categories_id'=>$request->input('categories_id'),
+            // 'productPic'=>$request->file('productPic')->move('uploads/productPic',$filenameTostore),
+            // 'tags'=>json_encode($request->input('tags')),
+            // 'url'=>$request->input('url'),
+
+            // 'finishdate'=>$request->input('finishdate'),
+
+            // 'refpicbyUser'=>$request->file('refpicbyUser')->move('uploads/refpicbyUser',$filenameTostore),
+            // 'requirement'=>$request->input('requirement'),
+            // 'pricerate'=>$request->input('pricerate'),
+            // 'reference'=>json_encode($request->input('reference')),
+
+           
+            // 'file'=>'0',
+            
+            // 'designer_id'=>NULL,
+            // 'user_id'=>Auth::user()->id,
+            // 'token'=> str_random(16),
+            
+
+            
+
+        // ]);
+
+        // $jobb = DB::getPdo()->lastInsertId();;
+        // dd($jobs->token); // $jobs->save();
+
+        // exit();
+       
+
+        try{
+            // สำเร็จแล้ว ส่งไป step2
+            // return redirect(route('search.create.step2'))->with('id', $jobs->id);
+            return redirect(route('search.show',
+            [
+                'token'=>$updateJob->token                
+            ]));
+
+        }catch (\Exception $x){
+            return back()->withInput();
+        }
+        // return redirect('/',['token'=>$designer->token]);
+
+      
+
+
+
+
+    }
+
     public function deleteStoreStep1($id){
 
         // $deleteJob = Jobs::find($request->job_id);

@@ -87,7 +87,14 @@ Route::delete('/search/show/delete/{token}',
 //     'as' => 'search.create.step2',
 //     'uses' => 'HomeController@createSearchStep2']);
 
+Route::get('/search/ref/{token}', [
+    'as' => 'search.ref',
+    'uses' => 'HomeController@createSearchRef']);
 
+Route::post('/search/store/ref', [
+        'as' => 'search.ref.store',
+        'uses' => 'HomeController@storeSearchRef']);
+        
 Route::get('/search/show/{token}', [
     'as' => 'search.show',
     'uses' => 'HomeController@show']);
