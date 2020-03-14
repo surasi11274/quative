@@ -4,14 +4,14 @@
    <link rel="stylesheet" href="{{asset('css/flatpickr.min.css')}}">
    <link rel="stylesheet" href="css/dropzone.css">
 
-   
+
 @endsection
 
 @section('content')
 
 <section class="content ">
     <div class="container d-none d-md-block">
-        
+
         <div class="text-center p-5">
             <div id="wizard-progress" >
                 <ol class="step-indicator">
@@ -33,32 +33,32 @@
                     </li>
                 </ol>
             </div>
-        
+
         </div>
     </div>
-    
+
             <form class="multi-step-form" action="/search/create/store1" method="post" enctype="multipart/form-data">
-               
+
                 {{ csrf_field() }}
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 {{-- mobile  --}}
-               
+
                 {{-- end mobile  --}}
                     <div class="container  ">
-                    <fieldset class="p-3 p-md-5  " style="padding-bottom: 140px !important;">    
-                           
-    
+                    <fieldset class="p-3 p-md-5  " style="padding-bottom:140px !important;">
+
+
                             <h2 class="selectfillter"  style="font-weight: 800;">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h2>
                         <div class="row">
                             @foreach ($cats as $cat)
 
-                                   
-                                 
-                           
+
+
+
                             <div class="col  d-none d-md-block">
                                <div class="body-below text-center">
-                       
-                                 
+
+
                                    {{-- <p>{{ $cat->name}}</p> --}}
                                    <label class="container-radio">
                                     <input type="radio" name="radio" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
@@ -73,11 +73,11 @@
                             </div>
                             @endforeach
 
-                
+
                         </div>
                         {{--old version--}}
-                     
-                        
+
+
                         <div class="row d-none d-md-block">
                             <h5 class="font-weight-bold pt-5 "  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h5>
                            {{-- <div class="form-group">
@@ -93,19 +93,19 @@
                                     </label>
                                     <div class="custom-file-container__image-preview">
                                         <div class="col-3">
-                                            
+
                                         </div>
                                     </div>
                                 </div>
                                 {{-- <div  id="thumb-output" style="display:flex; width:180px;height:180px;"></div> --}}
-                               
+
                                  <div class="upload-btn-wrapper-">
                                         {{-- <button class="_btn-upload-"><i class="fas fa-plus"></i></button>
                                         <input type="file" id="file-input"  name="productPic"  multiple /> --}}
                                  </div>
                              </div>
                         </div>
-                        
+
                         <div class="form-group d-none d-md-block">
                             <h2 class="selectfillter pt-5"  style="font-weight: 800;">URL<small>(ที่เกี่ยวข้องกับผลิตภัณฑ์)</small></h2>
                             <input type="text" class="form-control" name="url" placeholder="เช่น เว็บไซต์, เฟสบุ๊ค เพื่อให้นักออกแบบทำงานได้ง่ายขึ้น ">
@@ -132,17 +132,17 @@
                                 </div>
 
                             </div>
-                        
+
                             <div class="custom-file  d-md-none ">
                               <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
                               <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
                             </div>
-                           
-                         
-                        
+
+
+
                         <h2 class="selectfillter">ระบุรายละเอียดสำคัญ</h2>
                         <textarea class="form-control" name="requirement" placeholder="ระบุรายละเอียดสำคัญ เช่น สินค้าไม่น่าดึงดูด, สินค้าทำยอดไม่ไ่ด้" aria-label="With textarea"></textarea>
-                        
+
                         {{-- <input type="button" name="next" class=" next  _primary-black  btn-block btn-lg  rounded" value="ถัดไป"  /> --}}
                         {{-- <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" />
 
@@ -150,6 +150,7 @@
 
                             {{-- <div class="row"> --}}
                                 {{-- <div class="col-6">
+
                                 </div>
                                 <div class="col-6">
                                 <div class="row mt_ex">
@@ -159,7 +160,7 @@
                                     {{-- </div>
                                     <div class="col-6"> --}}
                                         <input type="submit"  class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
-                                       
+
                                         <input style="border-width: 2px;" type="hidden" class="detaill-select" name="categories" plachholder="sadas" id="output">
                                         <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2">
                                     {{-- </div>
@@ -171,11 +172,11 @@
                         {{-- <fieldset>
                             <div class="container bg-white  p-3 p-md-5" style="padding-bottom: 140px !important;">
                                 <h2 class="selectfillter">รูปภาพงานใกล้เคียงกับงานที่ต้องการ *ถ้ามี</h2>
-                               
+
                                 <div class="row d-none d-md-block">
                                     <div class="col">
                                         <div  id="thumb-output2" style="display:flex; width:180px;height:180px;">
-                                        
+
                                         </div>
                                          <div class="upload-btn-wrapper-">
                                                 <button class="_btn-upload-"><i class="fas fa-plus"></i></button>
@@ -183,7 +184,7 @@
                                          </div>
                                      </div>
                                 </div>
-                           
+
                             <h2 class="selectfillter  pt-5">เลือกผลิตภัณฑ์ที่มีความใกล้เคียงกับแบบที่คุณต้องการ</h2>
                             <div class="smb-5 bg-white rounded ">
                                 <div class="waterfall ">
@@ -196,36 +197,36 @@
                                                             <input  type="checkbox"  id="myCheckbox1" value="{{$ref->id}}" name="reference[]">
                                                             <span class="checkmark"></span>
                                                         </label>
-                    
-                                                            
+
+
                                                              <picture>
                                                                 <source class="img-fluid" media="(min-width: 375px)" srcset="{{$ref->img}}">
                                                                 <img class="rounded " src="{{$ref->img}}" alt="Flowers" style=" width: 320px; height:320px;">
                                                               </picture>
-                    
-                    
+
+
                                                     </div>
                                                 </div>
                                             @endforeach
                                         </div>
-                    
+
                                     </div>
-                    
+
                                 </div>
                             </div>
-                         
+
                                         <input type="button" name="previous" class="previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/>
-                                
+
                                         <input type="submit"  class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
 
-    
-                         
+
+
                         </fieldset> --}}
-                        
+
                     </div>
 </form>
 
-    
+
 
 </section>
 
@@ -267,4 +268,4 @@
 
 <script src="js/scriptdropzone.js"></script> --}}
 
-<script src="{{asset('js/file-upload-with-preview.js')}}"></script> 
+<script src="{{asset('js/file-upload-with-preview.js')}}"></script>

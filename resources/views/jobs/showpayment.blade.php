@@ -43,21 +43,23 @@
             {{-- 2  --}}
             <h4 class="font-weight-bold">ข้อมูลบัญชีของธนาคาร</h4>
             <p class="mb-3">ชำระเงินโดยการโอนเงินผ่านธนาคารนี้</p>
-            <div class="row text-center show-payment shadow-sm mb-5">
-              <div class="col-md-1">
-                <img src="../photo/kbank.jpg" alt="">
+            <div class="container">
+              <div class="row text-center show-payment shadow-sm mb-5">
+                <div class="col-md-1">
+                  <img src="../photo/kbank.jpg" alt="">
+                </div>
+                <p class="col-md-3">ธนาคารกสิกรไทย</p> 
+                <p class="col-md-4">123-4-56789-0</p> 
+                <p class="col-md-4">บริษัท ควอลทีฟ จำกัด</p> 
+                <div class="mt-5"></div>
+                <div class="col-md-1">
+                  <img src="../photo/ktb.jpg" alt="">
+                </div>
+                <p class="col-md-3">ธนาคารกสิกรไทย</p> 
+                <p class="col-md-4">123-4-56789-0</p> 
+                <p class="col-md-4">บริษัท ควอลทีฟ จำกัด</p> 
+               
               </div>
-              <p class="col-md-3">ธนาคารกสิกรไทย</p> 
-              <p class="col-md-4">123-4-56789-0</p> 
-              <p class="col-md-4">บริษัท ควอลทีฟ จำกัด</p> 
-              <div class="mt-5"></div>
-              <div class="col-md-1">
-                <img src="../photo/ktb.jpg" alt="">
-              </div>
-              <p class="col-md-3">ธนาคารกสิกรไทย</p> 
-              <p class="col-md-4">123-4-56789-0</p> 
-              <p class="col-md-4">บริษัท ควอลทีฟ จำกัด</p> 
-             
             </div>
             
             <div class="text-center mb-5">
