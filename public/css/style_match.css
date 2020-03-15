@@ -80,90 +80,6 @@ input:focus 		{ outline:none; }
     font-size: 13px;
 }
 
-ul.ks-cboxtags {
-    list-style: none;
-    /*padding: 20px;*/
-}
-ul.ks-cboxtags li{
-  display: inline;
-}
-ul.ks-cboxtags li label{
-    display: inline-block;
-    background-color: rgba(255, 255, 255, .9);
-    border: 2px solid rgba(139, 139, 139, .3);
-    color: #adadad;
-    border-radius: .25rem!important;
-    white-space: nowrap;
-    margin: 3px 0px;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    transition: all .2s;
-}
-
-ul.ks-cboxtags li label {
-    padding: 8px 12px;
-    cursor: pointer;
-      font-family: Prompt;
-font-style: normal;
-font-weight: 500;
-font-size: 13px;
-line-height: 27px;
-text-align: center;
-margin: 5px;
-}
-
-ul.ks-cboxtags li label::before {
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 12px;
-    padding: 2px 6px 2px 2px;
-    content: "\f067";
-    transition: transform .3s ease-in-out;
-}
-
-ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
-    content: "\f00c";
-    transform: rotate(-360deg);
-    transition: transform .3s ease-in-out;
-}
-
-ul.ks-cboxtags li input[type="checkbox"]:checked + label {
-    border: 2px solid mediumpurple;
-    background-color: #523EE8;
-    font-family: Prompt;
-font-style: normal;
-font-weight: 500;
-font-size: 13px;
-line-height: 27px;
-text-align: center;
-    color: #fff;
-    transition: all .2s;
-}
-
-ul.ks-cboxtags li input[type="checkbox"] {
-    position: absolute;
-}
-ul.ks-cboxtags li input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-    width: 80px;
-    margin: 0px auto;
-    height: 60px;
-    right: 10px;
-}
-ul.ks-cboxtags li input[type="checkbox"]:focus + label {
-  border: 2px solid #523EE8;
-}
-
 /*datepicker*/
 
 /*profile avatar*/
@@ -378,25 +294,57 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 /* progress-search */
 .multi-step-form{
     width: 100%;
-    /* margin: 50px auto; */
+    position: relative;
+} 
+
+
+.multi-step-form {
+    width: 100%;
+    margin: 50px auto;
+    text-align: left;
     position: relative;
 }
 .multi-step-form fieldset {
     background: white;
     border: 0 none;
     border-radius: 3px;
-    /* box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15); */
-    /* padding: 20px 30px; */
+    padding: 20px 30px 160px;
     box-sizing: border-box;
-    /* width: 80%; */
+    width: 100%;
     /* margin: 0 10%; */
 
     /*stacking fieldsets above each other*/
     position: relative;
 }
-/* if not first field just hidden them  */
+/*Hide all except first fieldset*/
 .multi-step-form fieldset:not(:first-of-type) {
-    display: none;
+    display: none; 
+}
+/*inputs*/
+.multi-step-form input, .multi-step-form textarea {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 20px;
+}
+/*buttons*/
+.multi-step-form .action-button {
+    width: 100%;
+    background: #523EE8;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+.multi-step-form .action-button:hover, .multi-step-form .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #523EE8;
 }
 .progress-bar{
     background-color:#523EE8 !important;
