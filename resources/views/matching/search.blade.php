@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('assets')
    <link rel="stylesheet" href="css/style_match.css">
+   {{-- <link rel="stylesheet" href="{{asset('css/_Responsive.css')}}"> --}}
    <link rel="stylesheet" href="{{asset('css/flatpickr.min.css')}}">
    <link rel="stylesheet" href="css/dropzone.css">
 
@@ -48,7 +49,8 @@
                     <fieldset class="p-3 p-md-5  " style="padding-bottom:140px !important;">
 
 
-                            <h2 class="selectfillter"  style="font-weight: 800;">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h2>
+                            <h4 class="font-weight-bold  d-none d-md-block">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h4>
+                            <h6 class="font-weight-bold pt-2 d-md-none">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h6>
                         <div class="row">
                             @foreach ($cats as $cat)
 
@@ -71,15 +73,30 @@
                                   </label>
                                </div>
                             </div>
+                            
                             @endforeach
+                            <div class="col d-md-none">
+                            
+                                    <select class="selectpicker w-100">
+                                        <option>บรรจุภัณฑ์ประเภทกล่อง</option>
+                                        <option>บรรจุภัณฑ์ประเภทขวด</option>
+                                        <option>บรรจุภัณฑ์ประเภทแก้ว</option>
+                                        <option>บรรจุภัณฑ์ประเภทถุง</option>
+                                        <option>บรรจุภัณฑ์ประเภทกระป๋อง</option>
+                                      </select>
+                                      
+        
+                            </div>
 
 
                         </div>
                         {{--old version--}}
 
-
-                        <div class="row d-none d-md-block">
-                            <h5 class="font-weight-bold pt-5 "  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h5>
+                        {{-- d-none d-md-block --}}
+                        <h4 class="font-weight-bold pt-md-5 d-none d-md-block">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h4>
+                        <h6 class="font-weight-bold pt-2 d-md-none">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h6>
+                        <div class="row">
+                            
                            {{-- <div class="form-group">
                             <div class="dropzone" id="drop"></div>
                            </div> --}}
@@ -106,22 +123,22 @@
                              </div>
                         </div>
 
-                        <div class="form-group d-none d-md-block">
-                            <h2 class="selectfillter pt-5"  style="font-weight: 800;">URL<small>(ที่เกี่ยวข้องกับผลิตภัณฑ์)</small></h2>
+                        
+                            <h4 class="font-weight-bold pt-md-5 d-none d-md-block">URL<small>(ที่เกี่ยวข้องกับผลิตภัณฑ์)</small></h4>
+                            <h6 class="font-weight-bold pt-2 d-md-none">URL<small>(ที่เกี่ยวข้องกับผลิตภัณฑ์)</small></h6>
+                            <div class="form-group ">
                             <input type="text" class="form-control" name="url" placeholder="เช่น เว็บไซต์, เฟสบุ๊ค เพื่อให้นักออกแบบทำงานได้ง่ายขึ้น ">
                         </div>
                             <div class="form-group">
-                                <h2 class="selectfillter  pt-5">สไตล์งานที่ต้องการ</h2>
-
-
-
+                                <h4 class="font-weight-bold  pt-md-5 d-none d-md-block">สไตล์งานที่ต้องการ</h4>
+                                <h6 class="font-weight-bold pt-2 d-md-none">สไตล์งานที่ต้องการ</h6>
                                 <div class="container text-center">
                                     <div class="row ">
 
                                         @foreach ($tags as $tag)
                                             <div class="form-check">
                                                 <ul class="ks-cboxtags">
-                                                    <li>
+                                                    <li >
                                                         <input type="checkbox"  value="{{$tag->id}}" name="tags[]">
                                                         <label for="checkboxOne">{{$tag->tagName}}</label>
                                                     </li>
@@ -133,20 +150,23 @@
 
                             </div>
 
-                            <div class="custom-file  d-md-none ">
-                              <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-                              <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-                            </div>
+                        
+                        <h4 class="font-weight-bold pt-md-5 d-none d-md-block">ระบุรายละเอียดสำคัญ</h4>
+                        <h6 class="font-weight-bold pt-2 d-md-none">ระบุรายละเอียดสำคัญ</h6>
 
-
-
-                        <h2 class="selectfillter">ระบุรายละเอียดสำคัญ</h2>
                         <textarea class="form-control" name="requirement" placeholder="ระบุรายละเอียดสำคัญ เช่น สินค้าไม่น่าดึงดูด, สินค้าทำยอดไม่ไ่ด้" aria-label="With textarea"></textarea>
 
-                        {{-- <input type="button" name="next" class=" next  _primary-black  btn-block btn-lg  rounded" value="ถัดไป"  /> --}}
-                        {{-- <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" />
-
-                        <input type="button" name="next" class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" /> --}}
+                        <div class="row pt-md-5">
+                            <div class="col d-none d-md-block"></div>
+                            <div class="col">
+                                <a href="/" class="btn _secondary-btn  btn-block rounded btn-lg d-none d-md-block"> ยกเลิก</a>
+                                <a href="/" class="btn _secondary-btn  btn-block rounded btn-lg d-md-none "> ยกเลิก</a>
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn _primary-black  btn-block rounded btn-lg d-none d-md-block">ถัดไป</button>
+                                <button type="submit" class="btn _primary-black  btn-block rounded btn-lg d-md-none ">ถัดไป</button>
+                            </div>
+                        </div>
 
                             {{-- <div class="row"> --}}
                                 {{-- <div class="col-6">
@@ -155,12 +175,23 @@
                                 <div class="col-6">
                                 <div class="row mt_ex">
                                     <div class="col-6"> --}}
-                                        <a href="/" class="btn _secondary-btn  btn-block rounded btn-lg" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"> ยกเลิก</a>
+                                        {{-- <a href="/" class="btn _secondary-btn  btn-block rounded btn-lg d-none d-md-block" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"> ยกเลิก</a>
+                                        <a href="/" class="btn _secondary-btn  btn-block rounded btn-lg d-md-none" style="    margin-top: 50px;
+                                        margin-right: 148px;
+                                        width: 43%;
+                                        float: left;
+                                        right: 0;
+                                        position: absolute;"> ยกเลิก</a> --}}
                                         {{-- <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/> --}}
                                     {{-- </div>
                                     <div class="col-6"> --}}
-                                        <input type="submit"  class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
-
+                                        {{-- <input type="submit"  class="next  _primary-black  btn-block rounded btn-lg d-none d-md-block" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
+                                        <input type="submit"  class="next  _primary-black  btn-block rounded btn-lg  d-md-none" value="ถัดไป" style="    margin-top: 50px;
+                                        margin-right: 15px;
+                                        width: 43%;
+                                        right: 0;
+                                        position: absolute;"/>
+                                         --}}
                                         <input style="border-width: 2px;" type="hidden" class="detaill-select" name="categories" plachholder="sadas" id="output">
                                         <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2">
                                     {{-- </div>
