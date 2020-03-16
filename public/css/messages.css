@@ -6,11 +6,18 @@ li {
     list-style: none;
 }
 .user-wrapper, .message-wrapper {
-    border: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
     overflow-y: auto;
 }
+.header{
+    height: 100px;
+    background-color: #ffffff;
+    
+}
 .user-wrapper{
-    height: 600px;
+    height: 500px;
+    background-color: #ffffff;
+
 }
 .user {
     cursor: pointer;
@@ -25,33 +32,44 @@ li {
 }
 .pending {
     position: absolute;
-    left: 13px;
-    top: 9px;
+    left: 20px;
+    top: 20px;
     background: #523ee8;
     margin: 0;
     border-radius: 50%;
     width: 18px;
     height: 18px;
     line-height: 18px;
-    padding-left: 5px;
+    padding-left: 3px;
     color: #ffffff;
     font-size: 12px;
 }
 .media-left {
-    margin: 0 10px;
+    padding: 20px;
+
 }
 .media-left img {
-    width: 64px;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
     border-radius: 64px;
 }
 .media-body p{
-    margin: 6px 0;
+    padding: 20px 0 0 0 ;
+    font-weight: bold;
+    
+
 } 
  .message-wrapper {
      padding: 10px;
-     height: 536px;
-     background: #eeeeee;
+     height: 436px;
+     background: #ffffff;
  }
+ .message-wrapper-none {
+    padding: 10px;
+    height: 600px;
+    background: #ffffff;
+}
  .messages .message{
      margin-bottom: 15px;
  }
@@ -64,7 +82,11 @@ li {
      border-radius: 10px;
  }
  .received {
-     background-color: #ffffff;
+     background-color: #eeeeee;
+ }
+ .received .date{
+    color: #c4c4c4;
+    font-size: 12px;
  }
  .sent{
      background-color: #523ee8;
@@ -72,12 +94,15 @@ li {
      float: right;
      text-align: right;
  }
+ .sent .date{
+    color: #c4c4c4;
+    font-size: 12px;
+ }
  .message p {
      margin: 5px 0;
  }
  .date {
-     color: #777777;
-     font-size: 12px;
+   
  }
  .active {
      background: #eeeeee;
@@ -85,13 +110,21 @@ li {
  input[type=text]{
      width: 100%;
      padding:12px 20px;
+     padding-right: 50px;
      margin: 15px 0 0 0;
      display: inline-block;
      border-radius: 4px;
      box-sizing: border-box;
      outline: none;
      border: 1px solid #cccccc;
+     background-color: #000000;
+     color: #ffffff;
  }
  input[type=text]:focus{
-    border: 1px solid #aaaaaa;
+    border: 1px solid #ffffff;
+    background-color: #121212;
+
  }
+.start-conversation {
+    text-align: center;
+}

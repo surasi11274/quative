@@ -132,7 +132,7 @@
                                         </div>
                                        </li>
                                        <li class="nav-item">
-                                           <a class="ml-2 nav-link" href="#">ข้อความและการจ้างงาน  <span class="icon chat float-right mr-2"></span></a>
+                                           <a class="ml-2 nav-link" href="/message">ข้อความ  <span class="icon chat float-right mr-2"></span></a>
                                            
                                        </li>
                                        <li class="nav-link">
@@ -325,7 +325,7 @@
                                      </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="ml-2 nav-link" href="#">ข้อความและการจ้างงาน  <span class="icon chat float-right mr-2"></span></a>
+                                        <a class="ml-2 nav-link" href="/message">ข้อความ  <span class="icon chat float-right mr-2"></span></a>
                                         
                                     </li>
                                     <li class="nav-link">

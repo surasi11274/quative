@@ -195,6 +195,8 @@ class HomeController extends Controller
 
         $isdesigner = Auth::user()->role;
 
+        
+
         // if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
         //     // return redirect(route('designer.show',['token'=>$jobs->token]));
         //     return redirect(route('job.show',['token'=>$jobs->token]));

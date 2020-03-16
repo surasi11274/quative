@@ -152,7 +152,7 @@
           
                 <div class="form-group mt-3">
                     <div id="result">
-                  <label for="exampleFormControlTextarea1">หัวข้อรีวิว </label>
+                  <label for="exampleFormControlTextarea1">ข้อความเพิ่มเติม </label>
                     {{-- <span id="totalChars" style="float: right;">0</span> --}}
                   <textarea class="form-control track" id="textcount" rows="3" name="reviewdescription"></textarea>
                   </div>
