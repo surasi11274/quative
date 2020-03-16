@@ -4,7 +4,7 @@
         @include('components.headLinks')
     </head>
    
-<body id="app">
+<body id="app" class="mt_ex">
     <header style="    width: 100%;
     height: 100px;">
         @include('components.header')

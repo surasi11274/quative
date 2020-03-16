@@ -13,7 +13,7 @@
     <script src="{{asset('js/activeonclick.js')}}"></script>
     <script src="https://kit.fontawesome.com/099b07344f.js" crossorigin="anonymous"></script>
 
-<script src="{{asset('js/dropzone.js')}}"></script>
+
     <script src="{{asset('js/progess-step.js')}}"></script>
     <script src="{{asset('js/preprofile.js')}}"></script>
     
