@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "631a748908e5fd959b8b8220f42c4ee1",
+    "content-hash": "3514528efdeec68ceee7313b60331c81",
     "packages": [
         {
             "name": "brian2694/laravel-toastr",

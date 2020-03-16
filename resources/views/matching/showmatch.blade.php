@@ -92,7 +92,7 @@
                                     <i class="fas fa-star stargrey"></i>
                                     <i class="fas fa-star stargrey"></i>
                                     @endif
-                                    <small >({{$designer->rating}})</small>
+                                    <small >({{number_format($designer->rating,1)}})</small>
 
 
                                  {{-- <button href="" class="btn _primary-btn" style="height:50px; width:189px; margin:0px auto;">ดูโปรไฟล์</button> --}}
@@ -162,7 +162,7 @@
                                           <i class="fas fa-star stargrey"></i>
                                           <i class="fas fa-star stargrey"></i>
                                           @endif
-                                          <small >({{$designer->rating}})</small>
+                                          <small >({{number_format($designer->rating,1)}})</small>
 
                                        </div>
                                     </div>

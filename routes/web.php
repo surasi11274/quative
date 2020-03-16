@@ -254,6 +254,10 @@ Route::get('/message', 'MessageController@message');
 Route::get('/message/{id}', 'MessageController@getMessage')->name('message');
 Route::post('/message', 'MessageController@sendMessage');
 
+Route::get('/job/message', 'MessageController@jobMessage');
+Route::get('/job/message/{id}', 'MessageController@jobGetMessage')->name('jobMessage');
+Route::post('/job/message', 'MessageController@jobSendMessage');
+
 
 /*
 

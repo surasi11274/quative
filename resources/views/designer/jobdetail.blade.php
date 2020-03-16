@@ -12,7 +12,7 @@
             <h3  class="content-bg mb-5" >ข้อมูลการจ้างงาน <span>no. W0{{$job->id}}</span></h3>
                     <div class="row">
                         <div class="col-3">
-                                <img class="rounded-circle " src="https://picsum.photos/120" alt="">
+                                <img class="rounded-circle " src="https://via.placeholder.com/150" alt="">
                         </div>
                         <div class="col-9">
                             
