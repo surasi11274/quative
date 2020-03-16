@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('assets')
    <link rel="stylesheet" href="css/style_match.css">
-   {{-- <link rel="stylesheet" href="{{asset('css/_Responsive.css')}}"> --}}
+
    <link rel="stylesheet" href="{{asset('css/flatpickr.min.css')}}">
-   <link rel="stylesheet" href="css/dropzone.css">
+
 
 
 @endsection
@@ -38,7 +38,7 @@
         </div>
     </div>
 
-            <form class="multi-step-form" action="/search/create/store1" method="post" enctype="multipart/form-data">
+            <form class="container card p-3 p-md-5" action="/search/create/store1" method="post" enctype="multipart/form-data">
 
                 {{ csrf_field() }}
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -97,9 +97,7 @@
                         <h6 class="font-weight-bold pt-2 d-md-none">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h6>
                         <div class="row">
                             
-                           {{-- <div class="form-group">
-                            <div class="dropzone" id="drop"></div>
-                           </div> --}}
+                          
                             <div class="col">
                                  <div class="custom-file-container" data-upload-id="myUniqueUploadId">
                                     <label><a href="javascript:void(0)" class="custom-file-container__image-clear" hidden title="Clear Image">&times;</a></label>
@@ -116,10 +114,7 @@
                                 </div>
                                 {{-- <div  id="thumb-output" style="display:flex; width:180px;height:180px;"></div> --}}
 
-                                 <div class="upload-btn-wrapper-">
-                                        {{-- <button class="_btn-upload-"><i class="fas fa-plus"></i></button>
-                                        <input type="file" id="file-input"  name="productPic"  multiple /> --}}
-                                 </div>
+                                
                              </div>
                         </div>
 
@@ -295,8 +290,7 @@
 </script>
 <script src="{{asset('js/flatpickr.js')}}"></script>
 <script src="js/previewmultiple.js"></script>
-{{-- <script src="js/dropzone.js"></script>
 
-<script src="js/scriptdropzone.js"></script> --}}
 
-<script src="{{asset('js/file-upload-with-preview.js')}}"></script>
+
+<script src="js/file-upload-with-preview.js"></script>
