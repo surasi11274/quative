@@ -1285,7 +1285,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        height: 140px;
+        height: 157px;
         width: 100%;
         /* background-color: #eee; */
         border-radius: 5px;
@@ -1320,7 +1320,7 @@
       
       /* Style the indicator (dot/circle) */
       .container-radio .checkmark-radio:after {
-        left: 55px;
+        left: 65px;
         top: 20px;
         width: 42px;
         height: 64px;
@@ -1507,7 +1507,7 @@
       
       /* Style the indicator (dot/circle) */
       .container-radio .checkmark-radio:after {
-        left: 75px;
+        left: 65px;
         top: 40px;
         width: 42px;
         height: 64px;
