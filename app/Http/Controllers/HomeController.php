@@ -15,6 +15,7 @@ use App\References;
 use App\Tags;
 use App\Jobs;
 use App\Jobstatus;
+use App\Notifications\JobsNoti;
 use App\Payment;
 use App\Review;
 use App\User;
@@ -508,7 +509,7 @@ class HomeController extends Controller
 
     }
  
-    public function storeSearchStep3(Request $request)
+    public function storeSearchStep3(Request $request,Jobs $updateJob)
     {
    
 
@@ -521,7 +522,8 @@ class HomeController extends Controller
         $updateJob->pricerate = $updateJob->package_price + $updateJob->dateextra_price;
         $updateJob->save();
 
-
+        $designer = Designer::where('id',$updateJob->designer_id)->first();
+        auth()->user()->find($designer->user_id)->notify(New JobsNoti($updateJob));
       
         try{
             

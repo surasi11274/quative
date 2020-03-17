@@ -44,74 +44,38 @@
                         @elseif (Auth::user()->role=='1') 
                             <li class="nav-item"><a class="nav-link" role="button" href="/preview">พรีวิว</a></li>
                             <li class="nav-item"><a class="nav-link" role="button" href="/gallery">ผลงาน</a></li>
-                            <li class="dropdown nav-item mr-2">
+                            <li class="dropdown nav-item mr-2" onclick="markNotificationAsRead('{{count(auth()->user()->unreadNotifications)}}')" >
                                 <a class="nav-link  " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#523EE8;text-align: center; width: 50px; height: 80px;">
                                     <span class="icon notification"></span>
+                                    <span class="pending shadow-sm font-weight-bold  text-center" style=" position:absolute; left:25px;    margin: 0;background-color:white; color:#523EE8; width:15px; height:15px padding:2px; border-radius:50%; font-size:12px; 
+                                    ">
+                                        {{count(auth()->user()->unreadNotifications)}}
+                                    </span>
                                 </a>
                                 <div class="dropdown-menu  p-5" style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);" aria-labelledby="navbarDropdownMenuLink">
                                     <div class="wrapper-notification">
                                         <div class=" overflow-noctification p-2">
-                                            <div class="row">
-                                            
-                                                <div class="col-3">
-                                                    <figure class="  img-fluid">
-                                                        <div class="active-notification float-right rounded-circle"></div>
-                                                        <img class="rounded-circle w-100 " src="https://picsum.photos/40">
-                                                    </figure>
+                                            @forelse (auth()->user()->unreadNotifications as $notification)
+                                                
+                                                <div class="row">
+                                                    
+                                                    <div class="col-3">
+                                                        <figure class="  img-fluid">
+                                                            <div class="active-notification float-right rounded-circle"></div>
+                                                            <img class="rounded-circle w-100 " src="https://picsum.photos/40">
+                                                        </figure>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        @include('components.notifications.'.snake_case(class_basename($notification->type)))
+                                                        {{-- <small class="ml-2" style="color:#523EE8;">{{'notification_'.snake_case(class_basename($notification->type))}}</small> --}}
+                                                        
+                                                    </div>
+                                                    
                                                 </div>
-                                                <div class="col-9">
-                                                    <label class="font-weight-bold" for="name">ทริปสุดา พรพาน </label><small class="ml-2" style="color:#523EE8;">ส่งข้อความหาถึงคุณ</small>
-                                                    <br>
-                                                    <label for="">2</label><small>min ago</small>
-                                                    <hr>
-                                                </div>
-                                                <div class="col-3">
-                                                    <figure class="  img-fluid">
-                                                        <img class="rounded-circle w-100" src="https://picsum.photos/40">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-9">
-                                                    <label class="font-weight-bold" for="name">ทริปสุดา พรพาน </label><small class="ml-2" style="color:#523EE8;">ส่งข้อความหาถึงคุณ</small>
-                                                    <br>
-                                                    <label for="">2</label><small>min ago</small>
-                                                    <hr>
-                                                </div>
-                                                <div class="col-3">
-                                                    <figure class="  img-fluid">
-                                                        <img class="rounded-circle w-100" src="https://picsum.photos/40">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-9">
-                                                    <label class="font-weight-bold" for="name">ทริปสุดา พรพาน </label><small class="ml-2" style="color:#523EE8;">ส่งข้อความหาถึงคุณ</small>
-                                                    <br>
-                                                    <label for="">2</label><small>min ago</small>
-                                                    <hr>
-                                                </div>
-                                               
-                                                <div class="col-3">
-                                                    <figure class="  img-fluid">
-                                                        <img class="rounded-circle w-100" src="https://picsum.photos/40">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-9">
-                                                    <label class="font-weight-bold" for="name">ทริปสุดา พรพาน </label><small class="ml-2" style="color:#523EE8;">ส่งข้อความหาถึงคุณ</small>
-                                                    <br>
-                                                    <label for="">2</label><small>min ago</small>
-                                                    <hr>
-                                                </div>
-                                              
-                                                <div class="col-3">
-                                                    <figure class="  img-fluid">
-                                                        <img class="rounded-circle w-100" src="https://picsum.photos/60">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-9">
-                                                    <label class="font-weight-bold" for="name">ทริปสุดา พรพาน </label><small class="ml-2" style="color:#523EE8;">ส่งข้อความหาถึงคุณ</small>
-                                                    <br>
-                                                    <label for="">2</label><small>min ago</small>
-                                                    <hr>
-                                                </div>
-                                            </div>
+                                                @empty
+                                                    <a href="#">No Unread Notifications</a>
+                                            @endforelse
+
                                         </div>
                                     </div>
                                 </div>
@@ -239,7 +203,12 @@
                             <li class="dropdown nav-item mr-2">
                                 <a class="nav-link rounded-ex " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#523EE8;text-align: center; width: 50px; height: 80px;">
                                     <span class="caret icon notification"></span>
+                                    <span class="pending shadow-sm font-weight-bold  text-center" style=" position:absolute; left:25px;    margin: 0;background-color:white; color:#523EE8; width:15px; height:15px padding:2px; border-radius:50%; font-size:12px; 
+                                    ">
+                                        {{count(auth()->user()->unreadNotifications)}}
+                                    </span>
                                 </a>
+                    
                                 <div class="dropdown-menu"style="border: 3px solid #523EE8;"  aria-labelledby="navbarDropdownMenuLink">
                                     <div class="wrapper-notification p-3">
                                         <div class=" overflow-noctification p-2">
@@ -257,52 +226,10 @@
                                                     <label for="">2</label><small>min ago</small>
                                                     <hr>
                                                 </div>
-                                                <div class="col-3">
-                                                    <figure class="  img-fluid">
-                                                        <img class="rounded-circle w-100" src="https://picsum.photos/40">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-9">
-                                                    <label class="font-weight-bold" for="name">ทริปสุดา พรพาน </label><small class="ml-2" style="color:#523EE8;">ส่งข้อความหาถึงคุณ</small>
-                                                    <br>
-                                                    <label for="">2</label><small>min ago</small>
-                                                    <hr>
-                                                </div>
-                                                <div class="col-3">
-                                                    <figure class="  img-fluid">
-                                                        <img class="rounded-circle w-100" src="https://picsum.photos/40">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-9">
-                                                    <label class="font-weight-bold" for="name">ทริปสุดา พรพาน </label><small class="ml-2" style="color:#523EE8;">ส่งข้อความหาถึงคุณ</small>
-                                                    <br>
-                                                    <label for="">2</label><small>min ago</small>
-                                                    <hr>
-                                                </div>
+                                                
                                                
-                                                <div class="col-3">
-                                                    <figure class="  img-fluid">
-                                                        <img class="rounded-circle w-100" src="https://picsum.photos/40">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-9">
-                                                    <label class="font-weight-bold" for="name">ทริปสุดา พรพาน </label><small class="ml-2" style="color:#523EE8;">ส่งข้อความหาถึงคุณ</small>
-                                                    <br>
-                                                    <label for="">2</label><small>min ago</small>
-                                                    <hr>
-                                                </div>
                                               
-                                                <div class="col-3">
-                                                    <figure class="  img-fluid">
-                                                        <img class="rounded-circle w-100" src="https://picsum.photos/60">
-                                                    </figure>
-                                                </div>
-                                                <div class="col-9">
-                                                    <label class="font-weight-bold" for="name">ทริปสุดา พรพาน </label><small class="ml-2" style="color:#523EE8;">ส่งข้อความหาถึงคุณ</small>
-                                                    <br>
-                                                    <label for="">2</label><small>min ago</small>
-                                                    <hr>
-                                                </div>
+                                              
                                             </div>
                                         </div>
                                     </div>
