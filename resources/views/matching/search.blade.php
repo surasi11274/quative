@@ -46,7 +46,7 @@
 
                 {{-- end mobile  --}}
                     <div class="container  ">
-                    <fieldset class="p-3 p-md-5  " style="padding-bottom:140px !important;">
+                    <fieldset class=" p-md-5  " style="padding-bottom:140px !important;">
 
 
                             <h4 class="font-weight-bold  d-none d-md-block">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h4>
