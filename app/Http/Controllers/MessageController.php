@@ -20,9 +20,7 @@ class MessageController extends Controller
         $this->middleware('auth');
     }
     public function message() {
-        // $jobs = Jobs::where('token',$token)->get();
-
-     
+       
 
         //select all user except logged in user
        // $users = User::where('id','!=',Auth::id())->get();
@@ -33,24 +31,39 @@ class MessageController extends Controller
         $isdesigner = Auth::user()->designer();
         if(!$isdesigner) {
             // $jobs = Jobs::where('user_id', auth()->id())->get();
+            // $jobs = Jobs::where('user_id',auth()->id())->get();
+
+            // $designer = Designer::where('id',$jobs->designer_id)->get();
+
+
+            // dd($designer);
 
             $users = DB::select("select users.id, users.name, users.avatar, users.email, users.role,
             designers.id as designerid, designers.profilepic as designerpic,designers.name as designername,designers.surname as designersurname,
             count(is_read) as unread
             from users LEFT  JOIN  messages ON users.id = messages.from and is_read = 0 and messages.to = " . Auth::id() . "
             JOIN designers ON users.id = designers.user_id
-            where users.id != " . Auth::id() . " && users.role = 1  
+            JOIN jobs ON designers.id = jobs.designer_id
+            where users.id != " . Auth::id() . " && users.role = 1  && " . Auth::id() . " = jobs.user_id
             group by users.id, users.name, users.avatar, users.email ,users.role ,designers.id,designers.profilepic,designers.name,designers.surname
             order by messages.created_at DESC
             "); 
         }
         else if($isdesigner) {
-            $users = DB::select("select users.id, users.name, users.avatar, users.email,users.role, count(is_read) as unread
-            from users LEFT  JOIN  messages ON users.id = messages.from and is_read = 0 and messages.to = " . Auth::id() . "
-            where users.id != " . Auth::id() . " && users.role = 0 
-            group by users.id, users.name, users.avatar, users.email,users.role
-            order by messages.created_at desc
-            ");
+            // $jobs = Jobs::where('designer_id', Auth::user()->designer()->id)->get();
+
+            // dd($jobs);
+            // exit();
+
+                $users = DB::select("select users.id, users.name, users.avatar, users.email,users.role, count(is_read) as unread
+                from users LEFT  JOIN  messages ON users.id = messages.from and is_read = 0 and messages.to = " . Auth::id() . "
+                JOIN jobs ON users.id = jobs.user_id
+                where users.id != " . Auth::id() . " && users.role = 0  && jobs.jobstatus_id > 1 && " . Auth::user()->designer()->id . " = jobs.designer_id
+                group by users.id, users.name, users.avatar, users.email,users.role
+                order by messages.created_at desc
+                ");
+            
+           
         }
         // $users = DB::select("select users.id, users.name, users.avatar, users.email, count(is_read) as unread
         // from users LEFT  JOIN  messages ON users.id = messages.from and is_read = 0 and messages.to = " . Auth::id() . "
