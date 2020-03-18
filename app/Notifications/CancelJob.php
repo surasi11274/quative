@@ -2,17 +2,17 @@
 
 namespace App\Notifications;
 
-use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class JobsNoti extends Notification
+class CancelJob extends Notification
 {
     use Queueable;
 
     protected $updateJob;
+
     /**
      * Create a new notification instance.
      *
@@ -22,6 +22,7 @@ class JobsNoti extends Notification
     {
         //
         $this->jobs=$updateJob;
+
     }
 
     /**
@@ -43,7 +44,7 @@ class JobsNoti extends Notification
             'user'=>auth()->user(),
         ];
     }
-   
+
     /**
      * Get the array representation of the notification.
      *

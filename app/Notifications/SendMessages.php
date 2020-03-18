@@ -2,26 +2,27 @@
 
 namespace App\Notifications;
 
-use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class JobsNoti extends Notification
+class SendMessages extends Notification
 {
     use Queueable;
 
-    protected $updateJob;
+    protected $data;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($updateJob)
+    public function __construct($data)
     {
         //
-        $this->jobs=$updateJob;
+        $this->messages=$data;
+
     }
 
     /**
@@ -39,11 +40,10 @@ class JobsNoti extends Notification
     {
         // dd($notifiable);
         return [
-            'jobs'=>$this->jobs,
+            'messages'=>$this->messages,
             'user'=>auth()->user(),
         ];
     }
-   
     /**
      * Get the array representation of the notification.
      *

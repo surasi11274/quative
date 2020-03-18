@@ -22,7 +22,10 @@
                         @endphp
                       
                                 <p class="content-bg">{{$user}}</p>
+                                <a href="{{route('job.Messages',$job->token)}}">
+
                                 <button class="btn _primary-bg-dark">คุยกับผู้ประกอบการ</button>
+                                </a>
                         </div>
                     </div>
             </div>

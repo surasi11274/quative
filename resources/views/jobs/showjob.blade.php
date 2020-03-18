@@ -7,7 +7,7 @@
     <div class="_black-bg mt_ex p-5">
         <div class="row">
             <div class="col-12 col-md-6 ">
-            <h3 class="content-bg mb-5" >ข้อมูลการจ้างงาน <span>no. W0{{$jobs->id}}</span></h3>
+            <h3 class="content-bg mb-5" >ข้อมูลการจ้างงาน <span>no. W{{$jobs->id}}</span></h3>
                     <div class="row">
                         <div class="col-3">
                             @php
@@ -26,7 +26,7 @@
                             @endphp
                             
                                 <h5 class="content-bg">{{$designer->name}} &nbsp;{{$designer->surname}}</h5> 
-                                <a href="#}">
+                        <a href="{{route('job.Messages',$jobs->token)}}">
                                     <button class="btn _primary-bg-dark btn-lg">คุยกับนักออกแบบ</button>
 
                                 </a>
