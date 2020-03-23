@@ -212,7 +212,7 @@ input:focus 		{ outline:none; }
 }
 .overflow-gallery{
 
-    height: 1200px;
+    height: auto;
     overflow: scroll;
 }
 .grid-gallery img{

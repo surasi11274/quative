@@ -38,10 +38,8 @@ color: #C4C4C4;
     /* background-color: #fff !important;
     border: 3px solid #523EE8 !important; */
 }
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-  background-color: #fff !important;
-  border: 3px solid #523EE8 !important;
-}
+
+
 a{
     color: #000 !important;
 }
