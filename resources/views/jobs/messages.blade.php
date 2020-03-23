@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('assets')
-    <link rel="stylesheet" href="../css/messages.css">
+    <link rel="stylesheet" href="{{asset('css/messages.css')}}">
 @endsection
 
 @section('content')
@@ -14,6 +14,7 @@
                 </h5>
               </div>
                 <div class="user-wrapper">
+                  
 
                     <ul class="users">
 
@@ -32,12 +33,12 @@
                                 @endif
                                 <div class="media">
                                     <div class="media-left">
-                                      <img src="{{$user->designerpic}}" class="media-object" width="150"  alt="">
+                                      <img src="/{{$user->designerpic}}" class="media-object" width="150"  alt="">
                                     </div>
 
                                     <div class="media-body">
                                       <p class="name">{{$user->designername}} {{$user->designersurname}}</p>
-                                        {{-- <p class="email">{{$user->email}}</p> --}}
+                                        <span class="email">{{$user->email}}</span>
                                     </div>
                                 </div>
                             </li>
@@ -57,7 +58,7 @@
 
                                       <div class="media-body">
                                           <p class="name">{{$user->name}}</p>
-                                          {{-- <p class="email">{{$user->email}}</p> --}}
+                                          <sapn class="email">{{$user->email}}</sapn>
                                       </div>
                                   </div>
                               </li>
@@ -69,101 +70,111 @@
                 </div>
             </div>
             <div class="col-md-8 mt-5" id="messages">
-                
+            
+              <div class="message-wrapper-none">
+                  <ul class="messages">
+                          <li class="message clearfix">
+                            <h5 class="text-center">Select Contact to Start Conversation</h5>
+              
+                          </li>
+                  </ul>
+              </div>
             </div>
         </div>
     </div>
     
 @endsection
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
-<script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+  <script>
     var receiver_id = '';
-    var my_id = "{{ Auth::id()}}";
-    var token = "{{$jobs->token}}"
-    $(document).ready(function() {
-      //ajax setup from csrf token
-      $.ajaxSetup({
-        headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-      });
-          // Enable pusher logging - don't include this in production
-    Pusher.logToConsole = true;
-
-    var pusher = new Pusher('99379076b02711beecee', {
-      cluster: 'ap1',
-      forceTLS: true
-    });
-
-    var channel = pusher.subscribe('my-channel');
-    channel.bind('my-event', function(data) {
-      // alert(JSON.stringify(data));
-      if (my_id == data.from) {
-        // alert('sender');
-        $('#' == data.to).click();
-      } else if (my_id == data.to){
-        if (receiver_id == data.from) {
-          //if receiver is selected,reload the selected user
-          $('#' + data.from).click();
-        } else {
-          //if receiver is not selected,add notidication for that users
-          var pending = parseInt($('#' + data.from).find('.pending').html());
-
-          if (pending) {
-            $('#' + data.from).find('.pending').html(pending + 1);
-          } else {
-            $('#' + data.from).append('<span class="pending">1</span>');
-          }
-        }
-      }
-    });
-
-      $('.user').click(function() {
-        $('.user').removeClass('active');
-        $(this).addClass('active');
-        $(this).find('.pending').remove();
-
-        receiver_id = $(this).attr('id');
-        $.ajax({
-          type: "get",
-          url: "messages/" + token + "/" + receiver_id,
-          data: "",
-          cache: false,
-          success: function(data) {
-            $('#messages').html(data);
-            scrollToButtomFunc();
-          }
+    var token = "{{ $jobs->token }}"
+    var my_id = "{{ Auth::id() }}";
+    $(document).ready(function () {
+        // ajax setup form csrf token
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
         });
 
-      });
-      $(document).on('keyup','.input-text input', function(e) { 
-        var message = $(this).val();
+        // Enable pusher logging - don't include this in production
+        Pusher.logToConsole = true;
 
-        //check if enter key is pressed and message is not null also reciever is selected
-        if (e.keyCode == 13 && message != '' && receiver_id != '') {
-          $(this).val(''); //while pressed enter text box will be empty
+        var pusher = new Pusher('99379076b02711beecee', {
+            cluster: 'ap1',
+            forceTLS: true
+        });
 
-          var datastr = "receiver_id=" + receiver_id + "&message=" + message;
-          $.ajax({
-            type: "post",
-            url: "message", //need to create this post route
-            data: datastr,
-            cache: false,
-            success: function (data) { },
-            error: function (jqXHR, status, err) { },
-            complete: function () { 
-              scrollToButtomFunc();
+        var channel = pusher.subscribe('my-channel');
+        channel.bind('my-event', function (data) {
+            // alert(JSON.stringify(data));
+            if (my_id == data.from) {
+                $('#' + data.to).click();
+            } else if (my_id == data.to) {
+                if (receiver_id == data.from) {
+                    // if receiver is selected, reload the selected user ...
+                    $('#' + data.from).click();
+                } else {
+                    // if receiver is not seleted, add notification for that user
+                    var pending = parseInt($('#' + data.from).find('.pending').html());
+
+                    if (pending) {
+                        $('#' + data.from).find('.pending').html(pending + 1);
+                    } else {
+                        $('#' + data.from).append('<span class="pending">1</span>');
+                    }
+                }
             }
-          })
-        }
-      });
+        });
 
-      //make a function to scroll auto
-      function scrollToButtomFunc() {
-        $('.message-wrapper').animate({
-          scrollTop: $('.message-wrapper').get(0).scrollHeight
-        },50);
-      }
+        $('.user').click(function () {
+            $('.user').removeClass('active');
+            $(this).addClass('active');
+            $(this).find('.pending').remove();
+
+            receiver_id = $(this).attr('id');
+            $.ajax({
+                type: "get",
+                url: "/jobmessage/" + token + "/" + receiver_id, // need to create this route
+                data: "",
+                cache: false,
+                success: function (data) {
+                    $('#messages').html(data);
+                    scrollToBottomFunc();
+                }
+            });
+        });
+
+        $(document).on('keyup', '.input-text input', function(e) {
+            var message = $(this).val();
+
+            // check if enter key is pressed and message is not null also receiver is selected
+            if (e.keyCode == 13 && message != '' && receiver_id != '') {
+                $(this).val(''); // while pressed enter text box will be empty
+
+                var datastr = "receiver_id=" + receiver_id + "&message=" + message;
+                $.ajax({
+                    type: "post",
+                    url: "/jobmessage", // need to create this post route
+                    data: datastr,
+                    cache: false,
+                    success: function (data) {
+
+                    },
+                    error: function (jqXHR, status, err) {
+                    },
+                    complete: function () {
+                        scrollToBottomFunc();
+                    }
+                })
+            }
+        });
     });
-  </script>
-   --}}
+
+    // make a function to scroll down auto
+    function scrollToBottomFunc() {
+        $('.message-wrapper').animate({
+            scrollTop: $('.message-wrapper').get(0).scrollHeight
+        }, 50);
+    }
+</script>

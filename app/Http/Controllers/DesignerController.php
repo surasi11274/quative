@@ -12,6 +12,8 @@ use App\Tags;
 use App\User;
 use App\Jobs;
 use App\Jobstatus;
+use App\Notifications\AcceptJob;
+use App\Notifications\CancelJob;
 use App\Payment;
 use App\Review;
 use DB;
@@ -286,7 +288,7 @@ class DesignerController extends Controller
     //     return  response()->download(public_path('uploads/ArtworkFiles/'.$id));
     // }
 
-    public function jobStatusStore(Request $request)
+    public function jobStatusStore(Request $request,Jobs $updateJob)
     {
    
 
@@ -294,6 +296,13 @@ class DesignerController extends Controller
         $updateJob->jobstatus_id = $request->jobstatus_id;
         $updateJob->save();
 
+        if($updateJob->jobstatus_id == 2){
+            auth()->user()->find($updateJob->user_id)->notify(New AcceptJob($updateJob));
+        }
+        else if($updateJob->jobstatus_id == 0) {
+            auth()->user()->find($updateJob->user_id)->notify(New CancelJob($updateJob));
+
+        }
 
       
         try{

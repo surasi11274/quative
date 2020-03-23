@@ -17,7 +17,7 @@
 
                     <ul class="users">
 
-                        @foreach ($users as $user)
+                        @forelse($users as $user)
                             @if (!auth()->user()->designer())
                                 
                             {{-- @php
@@ -62,8 +62,19 @@
                                   </div>
                               </li>
                             @endif
+                        @empty 
+                        <li class="user">
+                            {{-- will show unread count notification --}}
                             
-                        @endforeach
+                            <div class="media">
+                                
+
+                                <div class="media-body ">
+                                  <p class="name " >No Contact 
+                                </div>
+                            </div>
+                        </li>
+                        @endforelse
                         
                     </ul>
                 </div>
