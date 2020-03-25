@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="container " >
-    <div class="container mt-5">
+    <div class="container mt-5 d-none d-md-block">
 
         <div class="text-center pt-5 p-5">
             <div id="wizard-progress">
@@ -33,15 +33,16 @@
     <div style="width: 100%;padding-top: 10px;">
         <form class="form-match"  id="cakeform" action="/search/create/store3" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
-                         <div class="p-5" >
+                         <div class="p-3 p-md-5" >
 
                                 <div class="row">
-                                    <div class="col-12 col-md-5">
+                                    <div class="col-12 col-md-12 col-lg-5">
                                         <h2 class="selectfillter">ขอบเขตที่ต้องการงาน</h2>
 
                                         <small>
                                             *ระบบจะค้นหาจากราคาที่ใกล้มากที่สุดจากกลุ่มนักออกแบบ*
                                         </small>
+                                        
                                         <select name="package_price" id="value1" class="detaill-select form-control mt-3 mb-5 " onchange="calculateAmount(this.value)">
                                             <option class="dropdown-item"  >กรุณาเลือก package
                                             </option>
@@ -58,18 +59,18 @@
                                     </div>
                                 </div>
                               <div class="row">
-                                  <div class="col-12 col-md-8">
+                                  <div class="col-12 col-md-12 col-lg-8">
                                       <h2 class="selectfillter  pt-3">วันที่ต้องการงาน</h2>
                                               {{--<input type="date" id="basicDate"  name="finishdate" placeholder="MM/DD/YY" data-input>--}}
                                       <div class="row">
-                                          <div class="col-12">
+                                          <div class="col-12 mb-5">
                                               <div class="select-date">
                                                 <div class="middle text-left">
                                                     <label>
                                                     <input id="value2" type="radio" name="dateextra_price" onclick="addCart('{{$courses->course_duration['0']}}')" onchange="calculateAmount2(this.value)"  value="0" checked  />
-                                                    <div class="front-end box">
-                                                      <span>ธรรมดา <br>
-                                                    <p>  {{$courses->course_duration['0']}} วัน</p>
+                                                    <div class="front-end box ">
+                                                      <span class="font-weight-bold">ธรรมดา<br>
+                                                     <p>  {{$courses->course_duration['0']}} วัน</p>
                                                     </span>
 
                                                     </div>
@@ -78,7 +79,7 @@
                                                     <label>
                                                     <input id="value2" type="radio" name="dateextra_price" onclick="addCart('{{$courses->course_duration['1']}}')"  onchange="calculateAmount2(this.value)" value="{{$courses->course_duration_rate['1']}}"  />
                                                     <div class="back-end box">
-                                                        <span>ด่วน <br>
+                                                        <span class="font-weight-bold">ด่วน <br>
                                                             <p>{{$courses->course_duration['1']}} วัน (+฿{{$courses->course_duration_rate['1']}})</p>
                                                           </span>
                                                     </div>
@@ -86,7 +87,7 @@
                                                   <label>
                                                     <input id="value2" type="radio" name="dateextra_price" onclick="addCart('{{$courses->course_duration['2']}}')" onchange="calculateAmount2(this.value)" value="{{$courses->course_duration_rate['2']}}"  />
                                                     <div class="front-end box">
-                                                        <span>ด่วนมาก <br>
+                                                        <span class="font-weight-bold">ด่วนมาก <br>
                                                            <p>{{$courses->course_duration['2']}} วัน (+฿{{$courses->course_duration_rate['2']}})</p>
                                                           </span>
                                                     </div>
@@ -128,9 +129,9 @@
                                         </div>
                                     </div> --}}
                                       </div>
-                                  <div class="col-12 col-md-4">
+                                  <div class="col-12 col-md-12 col-lg-4 mb-5">
                                       <div class="total-price p-3">
-                                          <h5 class="_hilight font-weight-bold">สรุปราคา</h5>
+                                          <h5 class="font-weight-bold">สรุปราคา</h5>
                                           <table class="table">
                                               <thead>
                                               <tr>
@@ -140,7 +141,9 @@
                                               </thead>
                                               <tbody>
                                               <tr>
-                                                  <th scope="row">แพ็คเกจ</th>
+                                                  <th scope="row">
+                                                      <p>แพ็คเกจ</p>
+                                                  </th>
                                                     <td>
                                                         <div class="form-group">
                                                             <input style="width:100px;"  id="package" class="form-control " name="package" type="text"   />
@@ -149,7 +152,9 @@
                                                   </td>
                                               </tr>
                                               <tr>
-                                                  <th scope="row">วันที่ต้องการงาน</th>
+                                                  <th scope="row">
+                                                      <p>วันที่ต้องการงาน</p>
+                                                  </th>
                                                   <td >
                                                       <div class="form-group">
                                                         <input style="width:100px;"  id="date" class="form-control " name="date"  type="text"   />
@@ -194,23 +199,19 @@
                                          </ul>
                                      </div>
                                  @endif
-                                 <div class="mt_ex"></div>
-                                 <div class="row">
-                                    <div class="col-6">
-
+                                
+                                 <div class="row mb-5 pt-md-5">
+                                    <div class="col d-none d-md-block"></div>
+                                    <div class="col">
+                                        <a href="/searchref" class="btn _secondary-btn  btn-block rounded btn-lg d-none d-md-block">ย้อนกลับ</a>
+                                        <a href="/searchref" class="btn _secondary-btn  btn-block rounded btn-lg d-md-none ">ย้อนกลับ</a>
                                     </div>
-                                    <div class="col-6">
-                                     <div class="row m-3">
-                                         <div class="col-6">
-                                             <input type="button" name="previous" class=" previous _secondary-btn  btn-block rounded" value="ย้อนกลับ"/>
-                                         </div>
-                                         <div class="col-6">
-                                             <input type="submit" name="submit" class="submit  _primary-black  btn-block rounded " value="เสร็จสิ้น"/>
-
-                                         </div>
-                                     </div>
+                                    <div class="col">
+                                        <button type="submit" class="btn _primary-black  btn-block rounded btn-lg d-none d-md-block">ถัดไป</button>
+                                        <button type="submit" class="btn _primary-black  btn-block rounded btn-lg d-md-none ">ถัดไป</button>
                                     </div>
                                 </div>
+                  
                                  {{-- <input type="button" name="previous" class="previous _secondary-btn  btn-block btn-lg mt-5" value="ย้อนกลับ"/>
                                   <button type="submit" name="submit" class="submit _primary-black  btn-block btn-lg  rounded" value="Submit"> เสร็จสิ้น</button> --}}
 
