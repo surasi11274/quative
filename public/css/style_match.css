@@ -202,17 +202,10 @@ input:focus 		{ outline:none; }
 .p-icons{
     padding: 80px 80px 80px 80px;
 }
-.total-price{
-    width: 280px;
-    height: 294px;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    border-radius: 5px;
-}
+
 .overflow-gallery{
 
-    height: 1200px;
+    height: auto;
     overflow: scroll;
 }
 .grid-gallery img{
@@ -578,109 +571,7 @@ ul.purple-active li input[type="checkbox"]:focus + img {
 	 padding: 11px 16px;
 }
 
-.middle {
-    width: 100%;
-    text-align: center;
-   /* Made by */
-}
-.middle h1 {
-    font-family: 'Dax', sans-serif;
-    color: #fff;
-}
-.middle input[type="radio"] {
-    display: none;
-}
-.middle input[type="radio"]:checked + .box {
-    background-color: #523EE8;
-}
-.middle input[type="radio"]:checked + .box span {
-    color: white;
-    /* transform: translateY(70px); */
-    transform: translateY(0px);
-}
-.middle input[type="radio"]:checked + .box p {
-    color: white;
-    /* transform: translateY(70px); */
-    transform: translateY(0px);
-}
-.middle input[type="radio"]:checked + .box span:before {
-    transform: translateY(0px);
-    opacity: 1;
-}
-.middle .box {
-    width: 200px;
-    height: 100px;
-    background-color: #fff;
-    transition: all 250ms ease;
-    will-change: transition;
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    position: relative;
-    border-radius: 5px;
-    font-family: 'Prompt', sans-serif !important;
-    font-style: italic;
-    font-weight: 900;
-    
-}
-.middle .box:active {
-    /* transform: translateY(10px); */
-    transform: translateY(0px);
-}
-.middle .box p{
-    color: #c4c4c4;
-}
-.middle .box span{
-    border-radius: 5px;
-    width: 100%;
-    height: 100px;
-    position: absolute;
-    /* transform: translate(0, 60px); */
-    transform: translate(0, 0px);
-    left: 0;
-    right: 0;
-    transition: all 300ms ease;
-    font-size: 1.5em;
-    user-select: none;
-    color: #c4c4c4;
-    border:2px solid #c4c4c4;
-}
-.middle .box span:before {
-    font-size: 1.2em;
-    font-family: FontAwesome;
-    display: block;
-    /* transform: translateY(-80px); */
-    transform: translateY(0px);
-    opacity: 0;
-    transition: all 300ms ease-in-out;
-    font-weight: normal;
-    color: white;
-}
-.middle .front-end span:before {
-    /* content: '\f00c'; */
 
-}
-.middle .back-end span:before {
-    /* content: '\f00c'; */
-}
-.middle p {
-    color: #fff;
-    /* font-family: 'Dax', sans-serif; */
-    font-family: 'Prompt', sans-serif !important;
-  font-weight: 400;
-  font-style: normal;
-    /* font-weight: 800; */
-}
-.middle p a {
-    text-decoration: underline;
-    font-weight: bold;
-    color: #fff;
-}
-.middle p span:after {
-    content: '\f0e7';
-    font-family: FontAwesome;
-    color: yellow;
-}
 
   .form-check{
      padding-left: 0 !important;
