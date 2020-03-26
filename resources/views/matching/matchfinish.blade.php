@@ -11,7 +11,7 @@
 
 
     @endphp
-    <h4 class="font-weight-bold">ใบรหัสการจ้างงาน No. W0{{$jobs->id}}</h4>
+    <h4 class="font-weight-bold">ใบรหัสการจ้างงาน No. W{{$jobs->id}}</h4>
     <p >นักออกแบบชื่อ {{$designer->name}} {{$designer->surname}}</p>
     {{-- <p class="_hilight">ราคารวม {{$jobs->pricerate}} บาท</p> --}}
 
@@ -20,10 +20,10 @@
             <div class="col-12 mt-5">
                 {{-- customer -> pic --}}
                 
-                <img class="rounded-circle shadow-sm border-avatar " src="https://via.placeholder.com/150" width="180" alt="">
+                <img class="rounded-circle shadow-sm border-avatar matched-img" src="https://via.placeholder.com/150"   alt="">
                 {{-- designer -> pic --}}
                       
-                <img class="rounded-circle shadow-sm border-avatar" src="/{{$designerpic}}" width="180" alt="">
+                <img class="rounded-circle shadow-sm border-avatar matched-img" src="/{{$designerpic}}" alt="">
 
 
             </div> 
