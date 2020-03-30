@@ -4,19 +4,29 @@
 @endsection
 @section('content')
 <div class="container">
-    <div class="_black-bg mt_ex p-5">
+    <div class="_black-bg mt-5 p-3 p-md-5">
         <div class="row">
             <div class="col-12 col-md-6 ">
-            <h3 class="content-bg mb-5" >ข้อมูลการจ้างงาน <span>no. W{{$jobs->id}}</span></h3>
+            <h3 class="content-bg mb-5 d-none d-md-block" >ข้อมูลการจ้างงาน <span>no. W{{$jobs->id}}</span></h3>
+            <h5 class="content-bg mb-3 d-md-none font-weight-bold" >ข้อมูลการจ้างงาน <span>no. W{{$jobs->id}}</span></h5>
                     <div class="row">
-                        <div class="col-3">
+                        
+                        <div class="col-12 ">
+                            <div class="d-md-none">
+                                <h6 for=""class="content-bg  font-weight-bold" >แพ็คเกจ <span>15</span> วัน</h6>
+                                <label for=""class="content-bg mt-md-4" ><small>วันที่เริ่มงาน : {{date('F d,Y',strtotime($jobs->created_at))}} </small></label>
+                                <label for=""class="content-bg " ><small>วันที่ต้องการงาน : {{date('F d,Y',strtotime($jobs->finishdate))}} </small>  </label>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-3 mb-3 mt-3">
                             @php
                             $designerpic = \App\Designer::find($jobs->designer_id)->profilepic;
 
                             @endphp
-                                <img class="rounded-circle " src="/{{$designerpic}}" alt="">
+                            
+                                <img class="rounded-circle" src="/{{$designerpic}}" alt="">
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 col-md-9 mb-3 mt-3">
                             
 
                             @php
@@ -25,11 +35,16 @@
 
                             @endphp
                             
-                                <h5 class="content-bg">{{$designer->name}} &nbsp;{{$designer->surname}}</h5> 
-                        <a href="{{route('job.Messages',$jobs->token)}}">
-                                    <button class="btn _primary-bg-dark btn-lg">คุยกับนักออกแบบ</button>
-
+                                <h5 class="content-bg">{{$designer->name}}</h5> 
+                                
+                                <a href="{{route('job.Messages',$jobs->token)}}">
+                                    <button class="btn _primary-bg-dark btn-lg d-none d-md-block">คุยกับนักออกแบบ</button>
                                 </a>
+                        </div>
+                        <div class="col-12 d-md-none mt-3 mb-5">
+                            <a href="{{route('job.Messages',$jobs->token)}}">
+                                <button class="btn _primary-bg-dark btn-lg btn-block "><i class="far fa-comment-dots icon "></i>คุยกับนักออกแบบ</button>
+                            </a>
                         </div>
                     </div>
             </div>
@@ -53,9 +68,11 @@
                             
                                                     @endforeach --}}
 
+                       <div class="d-none d-md-block">
                         <h3 for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</h3><br>
                         <label for=""class="content-bg mt-4" ><h5>วันที่เริ่มงาน : {{date('F d,Y',strtotime($jobs->created_at))}} </h5></label> <br>
                         <label for=""class="content-bg " ><h5>วันที่ต้องการงาน : {{date('F d,Y',strtotime($jobs->finishdate))}} </h5>  </label><br>
+                       </div>
                         @if ($jobs->payment_id ==! NULL)
                         {{-- <a href="{{ route('job.payment', $jobs->token) }}"> --}}
                             <button hidden class="btn disabled _primary-btn">โอนเงิน</button>
@@ -101,9 +118,9 @@
     <p>{{$jobs->jobstatus_id}}</p> --}}
 
     
-    <div class="shadow-sm bg-white mt-3">
+    <div class="shadow-sm bg-white mt-3 ">
         <div class="row">
-            <div class="container">
+            <div class="container d-none d-md-block ">
                 @if ($jobs->jobstatus_id == 1)
                 <div class="text-center  p-5">
                     <div id="wizard-progress">
@@ -541,25 +558,25 @@
                 {{-- <form action="" class="multi-step-status"> --}}
                     {{-- 1 --}}
                     {{-- @if ($jobs->jobstatus_id == '1')  --}}
-                     <div class="process-job shadow-sm p-5">
+                     <div class="process-job shadow-sm p-3 p-md-5">
                           
                            <div class="form-row mt-5">
-                               <div class="col-md-9">
+                               <div class="col-12 col-md-9">
                                 @php
                                 $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusUserName;
                                  @endphp
-                                <h4><span class=" icon pl-md-2 pr-md-2 user-friend"></span>สถานะปัจจุบัน : <label class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</label></h4>
+                                <h4 class="text-center text-md-left">สถานะปัจจุบัน : <label class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</label></h4>
                                </div>
-                               <div class="col-md-3">
-                                <div class="float-right d-flex">
+                               <div class="col-12 col-md-3">
+                                <div class="float-right d-md-flex col-12">
                                     @if ($jobs->jobstatus_id == 1)
-                                        <button type="button" class="btn disabled _btn-dis m-1 btn-lg" >แจ้งชำระเงิน</button>
-                                        <button type="button"class="btn _secondary-btn m-1 btn-lg" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                        <button type="button" class="btn disabled _btn-dis m-1 btn-lg btn-block" >แจ้งชำระเงิน</button>
+                                        <button type="button"class="btn _secondary-btn m-1 btn-lg btn-block" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                                     @elseif ($jobs->jobstatus_id == 2)
                                         <a href="{{ route('job.showpayment', $jobs->token) }}" style="text-decoration:none;">
-                                            <button type="button" class="btn _primary-btn m-1 btn-lg" >แจ้งชำระเงิน</button>
+                                            <button type="button" class="btn _primary-btn m-1 btn-lg btn-block" >แจ้งชำระเงิน</button>
                                         </a>
-                                        <button type="button"class="btn _secondary-btn m-1 btn-lg" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                        <button type="button"class="btn _secondary-btn m-1 btn-lg btn-block" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                                     @elseif ($jobs->jobstatus_id == 7)
                           
                                                                             
@@ -579,7 +596,7 @@
                                          
                                                     @if ($fileartname != NULL)
                                                     
-                                                    <a href="/{{$fileartname}}" class="btn _secondary-btn mr-2 ml-2 p-3" download="/{{$fileartname}}">
+                                                    <a href="/{{$fileartname}}" class="btn _secondary-btn mr-2 ml-2 p-3 btn-block" download="/{{$fileartname}}">
                                                         <i class="fas fa-download " style="color:black;"></i>
                                                     </a>
                                                 @endif
@@ -591,9 +608,9 @@
                     
         
                                         {{-- <button class="btn _secondary-btn m-1">ดาวน์โหลดไฟล์</button> --}}
-                                        <button type="button" class="btn _primary-black m-1 btn-lg" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
+                                        <button type="button" class="btn _primary-black m-1 btn-lg btn-block" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
                                     @elseif ($jobs->jobstatus_id == 8)
-                                    <button type="button" class="btn _primary-btn m-1 btn-lg" onclick="addCart2('9')" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
+                                    <button type="button" class="btn _primary-btn m-1 btn-lg btn-block" onclick="addCart2('9')" data-toggle="modal" data-target=".bd-example-modal-lg">เสร็จสิ้นงาน</button>
         
                                     @endif
         
@@ -668,46 +685,53 @@
                        
                         {{-- <input type="submit" name="next" class=" next  _primary-btn" value="เสร็จสิ้นงาน"  /> --}}
                 {{-- </form> --}}
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row">
-                        <div class="col-12 col-md-6 p-5"> 
-                            <h4 class="font-weight-bold">ข้อมูลผลิตภัณฑ์ของคุณ</h4>
+                        <div class="col-12 col-md-6 p-3 p-md-5"> 
+                            <h4 class="font-weight-bold ">ข้อมูลผลิตภัณฑ์ของคุณ</h4>
+                            
                            <hr>
                            <h5 class="font-weight-bold">บรรจุภัณฑ์ประเภท</h5>
                             <p class="mt-3">{{ $jobs->categories}}</p>
                            <h5 class="mt-3 font-weight-bold">รูปภาพผลิตภัณฑ์เดิมของคุณ</h5>
                            <div class="row mt-3">
-                               <div class="col-4 mt-3">
+                               <div class="col-6 col-md-4 mt-3">
                                 <img class="rounded" src="/{{$jobs->productPic}}" alt="">
                                </div>
-                               <div class="col-4 mt-3">
+                               <div class="col-6 col-md-4 mt-3">
                                 <img class="rounded" src="/{{$jobs->productPic}}" alt="">
                                </div>
-                               <div class="col-4 mt-3">
+                               <div class="col-6 col-md-4 mt-3">
                                 <img class="rounded" src="/{{$jobs->productPic}}" alt="">
                                </div>
                            </div>
-                           <label for="" class=" mt-3">URL : <a href="{{$jobs->url}}" target="_blank">{{$jobs->url}}</a></label>
+                           <p class=" mt-3 over-wrap">URL : <a href="{{$jobs->url}}" target="_blank"><small>{{$jobs->url}}</small></a></p>
                            <h4 class="mt-5 font-weight-bold">รูปภาพตัวอย่างงาน</h4>
                            <hr>
                            <h4 class="mt-2 font-weight-bold">รูปภาพงานใกล้เคียงกับงาน</h4>
                            <div class="row mt-3 ">
-                                <div class="col-4 mt-3">
+                                <div class="col-6 col-md-4 mt-3">
                                  <img class="rounded" src="/{{$jobs->refpicbyUser}}" alt="">
                                 </div>
-                                <div class="col-4 mt-3">
+                                <div class="col-6 col-md-4 mt-3">
                                     <img class="rounded" src="/{{$jobs->refpicbyUser}}" alt="">
                                 </div>
-                                <div class="col-4 mt-3">
+                                <div class="col-6 col-md-4 mt-3">
                                     <img class="rounded" src="/{{$jobs->refpicbyUser}}" alt="">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 p-5">
+                        <div class="col-12 col-md-6 p-3 p-md-5">
                             <h4 class="font-weight-bold">ข้อมูลงานที่ต้องการ</h4>
                             <hr>
+                          
                             <h5 class="font-weight-bold">รายละเอียด</h5>
-                            <p class="mt-2">{{ $jobs->requirement}}</p>
+                         
+                            <p class="mt-2 over-wrap">{{ $jobs->requirement}}</p>
+                          
+                        
+                        
+                         
                                     <h5 class="font-weight-bold mt-3">ลักษณะหรือสไตล์งานที่ต้องการ</h5>
                                     <hr>
                                     @foreach($jobs->tags as $tagn)
