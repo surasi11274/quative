@@ -198,7 +198,7 @@ class MessageController extends Controller
 
         return view('jobs.messagedetail', ['messages'=>$messages,'jobs'=>$jobs->first(),'isnotdesigner'=>$isnotdesigner->first(),'isdesigner'=>$isdesigner->first()]);
     }
-    public function jobSendMessage(Request $request) {
+    public function jobSendMessage(Request $request, Message $data) {
         $from = Auth::id();
         $to = $request->receiver_id;
         $message = $request->message;
@@ -209,6 +209,8 @@ class MessageController extends Controller
         $data->message = $message;
         $data->is_read = 0; //message will be unread when sending message
         $data->save();
+
+        auth()->user()->find($data->to)->notify(New SendMessages($data));
 
          // pusher
          $options = array(

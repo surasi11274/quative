@@ -112,3 +112,10 @@ img{
     50%{transform:translate(160%, 160%)}
     75%{transform:translate(0, 160%)}
 }
+
+.matched-img{
+    width: 180px; 
+    height:180px;
+    object-fit:cover;
+
+}

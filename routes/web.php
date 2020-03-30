@@ -20,12 +20,15 @@ use App\Http\Controllers\GalleryController;
 // });
 
 
-// Route::get('/preview', function () {
-//     return view('preview.preview');
-// });
-// Route::get('/previewmock', function () {
-//     return view('preview.previewmock');
-// });
+Route::get('/preview', function () {
+    return view('preview.preview');
+});
+Route::get('/previewmock', function () {
+    return view('preview.previewmock');
+});
+Route::get('/previewmock/bag', function () {
+    return view('preview.mockup.bag');
+});
 
 // Route::get('/select', function () {
 //     return view('select');

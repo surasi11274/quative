@@ -33,7 +33,7 @@
                         <h1 for="" class="_hilight">เกี่ยวกับคุณ</h1>
                         <h5 class="_gray mb-5">ระบุข้อมูลการจ้างงานเกี่ยวกับคุณเพื่อการสื่อสารรับงานที่ง่ายขึ้น</h5>
                        <div class="container ml-md-4">
-                           <img id="blah" class="rounded-circle" src="photo/preprofile.png" alt="your image" style="width: 180px; height: 180px; border: 2px solid #523EE8;"/>
+                           <img id="blah" class="rounded-circle" src="photo/preprofile.png" alt="your image" style="width: 180px; height: 180px; border: 2px solid #523EE8; object-fit:cover;"/>
 
                            <div class="upload-btn-wrapper">
                                <button class="_btn-upload rounded-ex"><i class="fas fa-user-edit"></i></button>
@@ -93,7 +93,7 @@
                 <div class="form-row pl-md-5 pr-md-5">
                     <div class="form-group dropdown col-12 col-md-3">
                       <h5 class="font-weight-bold" for="due">   <i class="fas fa-venus-mars icon"></i>  คำนำหน้าชื่อ</h5>
-                        <select class="form-control" name="titlename" id="month" >
+                        <select class="form-control" name="titleName" id="month" >
                                     <option selected="selected" value="นาย">นาย</option>
                                     <option value="นาง">นาง</option>
                                     <option value="นางสาว">นางสาว</option>
