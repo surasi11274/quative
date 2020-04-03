@@ -13,7 +13,7 @@
                 <div class="small-box bg-white">
                     <div class="inner">
                         <p>ผู้ใช้งาน</p>
-                        <h3>1500</h3>
+                        <h3 class="_hilight">{{number_format($users->count())}}</h3>
                         
                     </div>
                     <div class="icon"> <i class="ion ion-bag"></i> </div> <a href="/dashboard/userinfo" class="small-box-footer bg-dark" style="color:white !important;">ดูเพื่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
@@ -24,7 +24,7 @@
                 <div class="small-box bg-white">
                     <div class="inner">
                         <p>จำนวนการจ้างงาน</p>
-                        <h3>2,000 </h3>
+                        <h3 class="_hilight">{{number_format($jobs->count())}}</h3>
                     </div>
                     <div class="icon"> <i class="ion ion-stats-bars"></i> </div> <a href="/dashboard/totaljob" class="small-box-footer bg-dark" style="color:white !important;">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
             </div>
@@ -34,7 +34,7 @@
                 <div class="small-box bg-white">
                     <div class="inner">
                         <p>ยอดรายรับกำไร</p>
-                        <h3>฿19,000 </h3>
+                        <h3 class="_hilight">฿{{number_format($transfered * 0.05)}} </h3>
                     </div>
                     <div class="icon"> <i class="ion ion-person-add"></i> </div> <a href="/dashboard/totalprice" class="small-box-footer bg-dark" style="color:white !important;">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
             </div>
@@ -44,13 +44,15 @@
                 <div class="small-box bg-white">
                     <div class="inner">
                         <p> ผลงาน</p>
-                        <h3>100</h3>
+                        <h3 class="_hilight">{{number_format($canshows->count())}}</h3>
                     </div>
                     <div class="icon"> <i class="ion ion-pie-graph"></i> </div> <a href="#" class="small-box-footer bg-dark" style="color:white !important;">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
             </div>
             <!-- ./col -->
         </div>
         <div class="row">
+            
+
             <div class="col-lg-9">
                 <div class="card">
                     <div class="card-header bg-white ">
@@ -72,13 +74,13 @@
                                    
                                 </div>
                                 <div class="card-body">
-                                    <p class="mb-3">โอนเงินให้นักออกแบบ</p>
-                                    <p class="_gray mb-3">รวม</p>
-                                    <h1>฿6,000</h1>
-                                    <hr class="mb-5 mt-5">
                                     <p class="mb-3">โอนเงินเข้าระบบทั้งหมด</p>
+                                    <p class="_gray mb-3">รวม</p>
+                                    <h1 class="_hilight">฿{{number_format($wtransfer)}}</h1>
+                                    <hr class="mb-5 mt-5">
+                                    <p class="mb-3">โอนเงินให้นักออกแบบ</p>
                                     <p class="_gray">รวม</p>
-                                    <h1 class="mb-5">฿10,000</h1>
+                                    <h1 class="mb-5 _hilight">฿{{number_format($transferedToDesigner)}}</h1>
                                 </div>
                          </div>
                     </div>
@@ -117,8 +119,11 @@
                                       <a class="nav-link active _hilight" id="home-tab" data-toggle="tab" href="#waiting" role="tab" aria-controls="home" aria-selected="true">รอตรวจสอบการโอนเงิน</a>
                                     </li>
                                     <li class="nav-item">
-                                      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#done" role="tab" aria-controls="profile" aria-selected="false">อนุมัติแล้ว</a>
+                                      <a class="nav-link _hilight" id="profile-tab" data-toggle="tab" href="#done" role="tab" aria-controls="profile" aria-selected="false">อนุมัติแล้ว</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link _hilight" id="problem-tab" data-toggle="tab" href="#problem" role="tab" aria-controls="problem" aria-selected="false">ยอดมีปัญหา</a>
+                                      </li>
                                     
                                   </ul>
                                 <div class="tab-content" id="nav-tabContent">
@@ -138,35 +143,46 @@
                 
                                             <th scope="col">จำนวนเงิน</th>
                                             <th scope="col">สถานะ</th>
+                                            <th scope="col">Action</th>
+
                                            
                                           </tr>
                                         </thead>
                                 
                                         <tbody class="table-light">
                                            
-                                         {{-- @foreach ($payments as $payment) --}}
-                                
+                                         @foreach ($payments as $payment)
+                                         @if ($payment->payments_status == 'รออนุมัติ')
+
                                            <tr >
                                 
                                             <td class="pt-4 pb-4">
                                              {{-- <a href="{{ route('payments.detail', $payment->id) }}"> --}}
                                                 
                                               {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
-                                             <p> No. W 222</p>
+                                             <p> No. W{{$payment->job_id}}</p>
                                              
                                            </td>
                                             {{-- <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td> --}}
-                                            <td class="pt-4 pb-4">22/4/2563</td>
+                                            <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td>
                                             {{-- <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td> --}}
-                                            <td class="pt-4 pb-4">11:30</td>
+                                            <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td>
                                             {{-- <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td> --}}
-                                            <td class="pt-4 pb-4 _hilight">50000</td>
-                                            <td class="pt-4 pb-4 ">
-                                                <a href="#">
-                                              {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
-                                              <button type="button" class="btn _primary-btn btn-lg btn-block">รอการตรวจสอบ</button>
-                                             </a>
-                                                </td>
+                                            <td class="pt-4 pb-4 _hilight">{{number_format($payment->total_price)}}</td>
+                                            @if($payment->payments_status == 'รออนุมัติ')
+                                            <td class="pt-4 pb-4 text-warning">{{$payment->payments_status}}</td>
+                                            @elseif($payment->payments_status == 'อนุมัติการโอนเงินเรียบร้อย')
+                                            <td class="pt-4 pb-4 text-success">{{$payment->payments_status}}</td>
+                                            @else
+                                            <td class="pt-4 pb-4 text-danger">{{$payment->payments_status}}</td>
+
+                                            @endif
+                                            <td class="pt-4 pb-4">
+                                                <a href="{{ route('payments.detail', $payment->id) }}">
+                                                 <button type="button" class="btn _primary-btn">ตรวจสอบ</button>
+                                                </a>
+                                             
+                                           </td>
                                             {{-- @php
                                             $jobstatusid = \App\Jobstatus::find($payment->jobstatus_id)->statusName;
                                              @endphp --}}
@@ -188,8 +204,9 @@
                                            @endif</td> --}}
                                           </tr>
                                      
-                                          
-                                         {{-- @endforeach --}}
+                                        @endif
+
+                                         @endforeach
                                 
                                 
                                         
@@ -199,8 +216,177 @@
                                 
                                 </div> 
                                 <div class="tab-pane fade" id="done" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                    ...
-                                   </div>
+                                        
+                                    <table class="table table-hover table-bordered text-center">
+                                
+                                        <thead class="thead-dark">
+                                          <tr>
+                                
+                                            <th scope="col">รหัสการจ้าง</th>
+                                            {{-- <th scope="col">วันที่เริ่มงาน</th> --}}
+                                            <th scope="col">วันที่ทำการ</th>
+                                            <th scope="col">เวลาที่ทำการ</th>
+                
+                                            <th scope="col">จำนวนเงิน</th>
+                                            <th scope="col">สถานะ</th>
+                                            <th scope="col">Action</th>
+
+                                           
+                                          </tr>
+                                        </thead>
+                                
+                                        <tbody class="table-light">
+                                           
+                                         @foreach ($payments as $payment)
+                                         @if ($payment->payments_status == 'อนุมัติการโอนเงินเรียบร้อย')
+
+                                           <tr >
+                                
+                                            <td class="pt-4 pb-4">
+                                             {{-- <a href="{{ route('payments.detail', $payment->id) }}"> --}}
+                                                
+                                              {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
+                                             <p> No. W{{$payment->job_id}}</p>
+                                             
+                                           </td>
+                                            {{-- <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td> --}}
+                                            <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td>
+                                            {{-- <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td> --}}
+                                            <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td>
+                                            {{-- <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td> --}}
+                                            <td class="pt-4 pb-4 _hilight">{{number_format($payment->total_price)}}</td>
+                                            @if($payment->payments_status == 'รออนุมัติ')
+                                            <td class="pt-4 pb-4 text-warning">{{$payment->payments_status}}</td>
+                                            @elseif($payment->payments_status == 'อนุมัติการโอนเงินเรียบร้อย')
+                                            <td class="pt-4 pb-4 text-success">{{$payment->payments_status}}</td>
+                                            @else
+                                            <td class="pt-4 pb-4 text-danger">{{$payment->payments_status}}</td>
+
+                                            @endif
+                                            <td class="pt-4 pb-4">
+                                                <a href="{{ route('payments.detail', $payment->id) }}">
+                                                 <button type="button" class="btn _primary-btn">ตรวจสอบ</button>
+                                                </a>
+                                             
+                                           </td>
+                                            {{-- @php
+                                            $jobstatusid = \App\Jobstatus::find($payment->jobstatus_id)->statusName;
+                                             @endphp --}}
+                                             {{-- @if($payment->payments_status == 'รออนุมัติ')
+                                            <td class="pt-4 pb-4 text-warning">{{$payment->payments_status}}</td>
+                                            @elseif($payment->payments_status == 'อนุมัติการโอนเงินเรียบร้อย')
+                                            <td class="pt-4 pb-4 text-success">{{$payment->payments_status}}</td>
+                                            @else
+                                            <td class="pt-4 pb-4 text-danger">{{$payment->payments_status}}</td> --}}
+                
+                                            {{-- @endif --}}
+                                            {{-- @endforeach --}}
+                                            {{-- <td class="pt-4 pb-4"><span class="text-warning"●  </span>
+                                             @if ($payment->payment_id ==! NULL)
+                                             ชำระเงินแล้ว
+                                             @else
+                                             ยังไม่ได้ชำระเงิน
+                                
+                                           @endif</td> --}}
+                                          </tr>
+                                     
+                                            @endif
+
+                                         @endforeach
+                                
+                                
+                                        
+                                        </tbody>
+                                
+                                      </table>
+
+                                </div>
+                                <div class="tab-pane fade" id="problem" role="tabpanel" aria-labelledby="nav-problem-tab">
+                                        
+                                    <table class="table table-hover table-bordered text-center">
+                                
+                                        <thead class="thead-dark">
+                                          <tr>
+                                
+                                            <th scope="col">รหัสการจ้าง</th>
+                                            {{-- <th scope="col">วันที่เริ่มงาน</th> --}}
+                                            <th scope="col">วันที่ทำการ</th>
+                                            <th scope="col">เวลาที่ทำการ</th>
+                
+                                            <th scope="col">จำนวนเงิน</th>
+                                            <th scope="col">สถานะ</th>
+                                            <th scope="col">Action</th>
+
+                                           
+                                          </tr>
+                                        </thead>
+                                
+                                        <tbody class="table-light">
+                                           
+                                         @foreach ($payments as $payment)
+                                         @if ($payment->payments_status !== 'อนุมัติการโอนเงินเรียบร้อย' && $payment->payments_status !== 'รออนุมัติ')
+
+                                           <tr >
+                                
+                                            <td class="pt-4 pb-4">
+                                             {{-- <a href="{{ route('payments.detail', $payment->id) }}"> --}}
+                                                
+                                              {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
+                                             <p> No. W{{$payment->job_id}}</p>
+                                             
+                                           </td>
+                                            {{-- <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td> --}}
+                                            <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td>
+                                            {{-- <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td> --}}
+                                            <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td>
+                                            {{-- <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td> --}}
+                                            <td class="pt-4 pb-4 _hilight">{{number_format($payment->total_price)}}</td>
+                                            @if($payment->payments_status == 'รออนุมัติ')
+                                            <td class="pt-4 pb-4 text-warning">{{$payment->payments_status}}</td>
+                                            @elseif($payment->payments_status == 'อนุมัติการโอนเงินเรียบร้อย')
+                                            <td class="pt-4 pb-4 text-success">{{$payment->payments_status}}</td>
+                                            @else
+                                            <td class="pt-4 pb-4 text-danger">{{$payment->payments_status}}</td>
+
+                                            @endif
+                                            <td class="pt-4 pb-4">
+                                                <a href="{{ route('payments.detail', $payment->id) }}">
+                                                 <button type="button" class="btn _primary-btn">ตรวจสอบ</button>
+                                                </a>
+                                             
+                                           </td>
+                                            {{-- @php
+                                            $jobstatusid = \App\Jobstatus::find($payment->jobstatus_id)->statusName;
+                                             @endphp --}}
+                                             {{-- @if($payment->payments_status == 'รออนุมัติ')
+                                            <td class="pt-4 pb-4 text-warning">{{$payment->payments_status}}</td>
+                                            @elseif($payment->payments_status == 'อนุมัติการโอนเงินเรียบร้อย')
+                                            <td class="pt-4 pb-4 text-success">{{$payment->payments_status}}</td>
+                                            @else
+                                            <td class="pt-4 pb-4 text-danger">{{$payment->payments_status}}</td> --}}
+                
+                                            {{-- @endif --}}
+                                            {{-- @endforeach --}}
+                                            {{-- <td class="pt-4 pb-4"><span class="text-warning"●  </span>
+                                             @if ($payment->payment_id ==! NULL)
+                                             ชำระเงินแล้ว
+                                             @else
+                                             ยังไม่ได้ชำระเงิน
+                                
+                                           @endif</td> --}}
+                                          </tr>
+                                     
+                                            @endif
+
+                                         @endforeach
+                                
+                                
+                                        
+                                        </tbody>
+                                
+                                      </table>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -209,6 +395,7 @@
 </section>
 
 {{-- <canvas id="myChart" width="400" height="400"></canvas> --}}
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 {{-- <script src="js/datacharts.js"></script> --}}
 <script>

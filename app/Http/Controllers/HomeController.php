@@ -815,7 +815,7 @@ class HomeController extends Controller
 
         $updateJob = DB::table('jobs')->where('id', $payment->job_id)->update([
             'payment_id' => $payment->id,
-            'jobstatus_id' => 3
+            'jobstatus_id' => 99
             ]);
             
         $jobs = Jobs::where('id',$payment->job_id)->first();

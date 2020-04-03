@@ -26,6 +26,8 @@
     <script src="js/progress-bar-1.js"></script>
     {{-- <script src="js/formcalculations.js"></script> --}}
     <script src="{{asset('js/formcalculations.js')}}"></script>
+    <script src="{{asset('js/jquery.magnific-popup.js')}}"></script>
+
 
     <script>
         AOS.init();

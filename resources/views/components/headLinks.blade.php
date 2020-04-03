@@ -14,6 +14,8 @@
 <!-- Styles -->
 <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 <link rel="stylesheet" href="{{asset('css/reset.css')}}">
+
+<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 <link rel="stylesheet" href="{{asset('css/base.css')}}">
 <link rel="stylesheet" href="{{asset('css/_Responsive.css')}}">
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">

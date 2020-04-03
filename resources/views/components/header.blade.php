@@ -144,7 +144,7 @@
                             {{-- 2 --}}
                            
                         @elseif(Auth::user()->role=='2')
-                        <li class="nav-item"><a class="nav-link" role="button" href="/admin/payments">ตรวจสอบการชำระเงิน</a></li>
+                        <li class="nav-item"><a class="nav-link" role="button" href="/dashboard">Dashboard</a></li>
                         {{-- <li class="nav-item"><a class="nav-link" role="button" href="/gallery">ผลงาน</a></li> --}}
                         
                         <li class="dropdown nav-item" >

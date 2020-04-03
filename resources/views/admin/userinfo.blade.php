@@ -12,7 +12,7 @@
                     <div class="card-header bg-white pt-5">
                         <div class="row">
                             <div class="col-lg-9">
-                                <h4 class="font-weight-bold">ผู้ใช้งานทั้งหมด (2,000)  </h4>
+                                <h4 class="font-weight-bold">ผู้ใช้งานทั้งหมด ({{$users->count()}})  </h4>
                             </div>
                             <div class="col-lg-3">
                                 <select class="selectpicker">
@@ -50,6 +50,8 @@
                                     <th scope="col">อีเมล</th>
         
                                     <th scope="col">สถานะ</th>
+                                    <th scope="col">ใช้งานล่าสุด</th>
+
                                     <th scope="col">สถานะ</th>
                                    
                                   </tr>
@@ -57,25 +59,37 @@
                         
                                 <tbody class="table-light">
                                    
-                                 {{-- @foreach ($payments as $payment) --}}
+                                 @foreach ($users as $user)
                         
                                    <tr >
                         
                                     <td class="pt-4 pb-4">
                                      {{-- <a href="{{ route('payments.detail', $payment->id) }}"> --}}
-                                        <a href="#">
                                             {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
                                             
                                       {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
-                                     <p> 01</p>
+                                     <p>{{$user->id}}</p>
                                      
                                    </td>
                                     {{-- <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td> --}}
-                                    <td class="pt-4 pb-4">plai</td>
+                                    <td class="pt-4 pb-4">{{$user->name}}</td>
                                     {{-- <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td> --}}
-                                    <td class="pt-4 pb-4">plai@gmail.com</td>
+                                    <td class="pt-4 pb-4">{{$user->email}}</td>
+
                                     {{-- <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td> --}}
-                                    <td class="pt-4 pb-4 _hilight">ผู้ใช้ธรรมดา</td>
+                                    <td class="pt-4 pb-4 _hilight">
+                                      @if ($user->role == 0)
+                                        <p class="text-primary">
+                                          ผู้ใช้ธรรมดา
+                                        </p>
+                                      @elseif($user->role == 1)
+                                      <p class="text-danger">
+                                        นักออกแบบ
+                                      </p>
+                                      @endif
+                                    </td>
+                                    <td class="pt-4 pb-4">xx</td>
+
                                     <td class="pt-4 pb-4 ">
                                         <a href="#">
                                       {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
@@ -104,7 +118,7 @@
                                   </tr>
                              
                                   
-                                 {{-- @endforeach --}}
+                                 @endforeach
                         
                         
                                 
