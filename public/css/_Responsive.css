@@ -3,6 +3,9 @@
 /* Mobile section  */
 /* iphone 5 */
 @media (min-width: 319.98px) {
+  .img-center{
+    margin: 0px 65px auto;
+  }
   .middle {
     width: 100%;
     text-align: center;
