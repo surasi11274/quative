@@ -49,18 +49,7 @@ Route::get('/previewmock/bag', function () {
  Route::get('/term&condition', function () {
      return view('auth.term');
  });
- Route::get('/dashboard', function (){
-     return view('admin.dashboard');
- });
- Route::get('/dashboard/userinfo', function (){
-     return view('admin.userinfo');
- });
- Route::get('/dashboard/totaljob', function (){
-    return view('admin.totaljob');
-});
-Route::get('/dashboard/totalprice', function (){
-    return view('admin.totalprice');
-});
+
 
 
 
@@ -247,7 +236,21 @@ Route::get('/favouritelist', 'GalleryController@favList');
 
 
 Route::group(['middleware' => ['auth','admin']], function () {
-    Route::get('/admin', 'AdminController@index' )->name('admin');
+    // Route::get('/dashboard', function (){
+    //     return view('admin.dashboard');
+    // });
+    // Route::get('/dashboard/userinfo', function (){
+    //     return view('admin.userinfo');
+    // });
+//     Route::get('/dashboard/totaljob', function (){
+//        return view('admin.totaljob');
+//    });
+   Route::get('/dashboard/totalprice', function (){
+       return view('admin.totalprice');
+   });
+    Route::get('/dashboard', 'AdminController@index' )->name('admin');
+    Route::get('/dashboard/userinfo', 'AdminController@userinfo' );
+    Route::get('/dashboard/totaljob', 'AdminController@jobs' );
     Route::get('/admin/payments', 'AdminController@payments' );
     Route::get('/admin/payments/{id}', 'AdminController@paymentsdetail' )->name('payments.detail');
     Route::post('/admin/payments/store', 'AdminController@storeUpdatePayment' );

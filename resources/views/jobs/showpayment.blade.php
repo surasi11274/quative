@@ -7,7 +7,7 @@
     <div class="container bg-white mt-5 shadow-sm ">
         <div class="text-center pt-5  ">
             <h1 class="_hilight">ชำระเงิน</h1>
-            <h4 class="_gray">ใบรหัสการจ้างงาน No. W00{{$jobs->id}}</h4>
+            <h4 class="_gray">ใบรหัสการจ้างงาน No. W{{$jobs->id}}</h4>
             {{-- <h4>ใบรหัสการจ้างงาน No. W0{{$jobs->id}}</h4> --}}
            
         </div>

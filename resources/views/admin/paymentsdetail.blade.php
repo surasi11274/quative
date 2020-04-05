@@ -1,12 +1,14 @@
 @extends('layouts.app')
-
+@section('assets')
+<link rel="stylesheet" href="{{asset('css/paymentdetails.css')}}">
+@endsection
 @section('content')
 
 <section class="payment">
     <div class="container bg-white mt-5 shadow-sm ">
         <div class="text-center pt-5  ">
             <h1 class="_hilight">ตรวจสอบการโอนเงิน</h1>
-            <h4>ใบรหัสการจ้างงาน No. W0{{$payments->job_id}}</h4>
+            <h4>ใบรหัสการจ้างงาน No. W{{$payments->job_id}}</h4>
             @if($payments->payments_status == 'อนุมัติการโอนเงินเรียบร้อย')
                 <span class="text-success">
                     <i class="fas fa-check-circle"></i>
@@ -18,23 +20,67 @@
                 ยอดการชำระเงินมีปัญหา
             </span>
             @endif
-            
-            <div class="row">
-
-                <div class="m-auto">
-                    <img class="mt-5" src="/{{$payments->fileTransfer}}" alt="">
-
-                </div>
-
-            </div>
-            <form action="/admin/payments/store"  method="post" >
+           
+            {{-- <form action="/admin/payments/store"  method="post" > --}}
                 {{ csrf_field() }}
                 <input type="hidden"  name="id" value="{{$payments->id}}">
                 <input type="hidden"  name="payments_status" value="อนุมัติการโอนเงินเรียบร้อย">
 
 
                 <div class="container pl-pr-lg-_ex pt-5" >
-                    <div class="text-left">
+                    <div class="row">
+                        <div class="col" >
+                            <div class="m-auto " style="border:solid 1px; width:300px; height:300px;" >
+                                <a class="image-popup-vertical-fit" href="/{{$payments->fileTransfer}}" title="ภาพหลักฐานการโอนเงินจากผู้ประกอบการ">
+
+                                <img  style="object-fit:cover; width:300px; height:300px;" src="/{{$payments->fileTransfer}}" alt="">
+                                </a>
+                            </div>
+                            <p>ภาพหลักฐานการโอนเงินจากผู้ประกอบการ</p>
+                        </div>
+                        {{-- <div class="col-1">
+                            <div style="margin-top: auto; margin-bottom: auto; font-size: 50px;">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </div>
+                        </div> --}}
+                        <div class="col">
+                            <div class="m-auto " style="border:solid 1px; width:300px; height:300px;" >
+        
+                                @if ($payments->fileTransferToDesigner !== NULL)
+                                    
+                                <a class="image-popup-vertical-fit" href="/{{$payments->fileTransferToDesigner}}" title="ภาพหลักฐานการโอนเงินไปยังนักออกแบบ">
+
+                                <img id="myImg" style="object-fit:cover; width:300px; height:300px;"  src="/{{$payments->fileTransferToDesigner}}" alt="">
+                                </a>
+
+                                @else
+                                    <p class="text-secondary" style="padding-top:50%; opacity:50%; font-size:12px;">ยังไม่มีหลักฐานการโอนเงินไปยังนักออกแบบ</p>
+                                @endif
+        
+                            </div>
+                            <p>ภาพหลักฐานการโอนเงินไปยังนักออกแบบ</p>
+        
+                        </div>
+        
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- The Close Button -->
+                        <span class="close" style="color:white;">
+                            <i class="fas fa-times"></i>
+                        </span>
+                    
+                        <!-- Modal Content (The Image) -->
+                        <img class="modal-content" id="img01">
+                    
+                        <!-- Modal Caption (Image Text) -->
+                        <div id="caption"></div>
+                    </div>
+                                            
+        
+                    </div>
+                    <div class="text-left pt-5">
                         <h4>ยอดที่ชำระเงิน</h4>
                         <div class="row alert alert-secondary" role="alert">
                             <div class="col">
@@ -76,20 +122,20 @@
                         <p>{{$payments->description}}</p>
                     </div>
                     <div class="text-right pt-5">
-                        <a class="text-decoration-none" href="/admin/payments">
+                        <a class="text-decoration-none" href="/dashboard">
                             <button type="button" class="btn btn-outline-dark text-center mb-5 ">ย้อนกลับ</button>
                         </a>
-                        <button type="button" class="btn btn-outline-dark text-center mb-5 " data-toggle="modal" data-target=".bd-example-modal-lg">
+                        <button type="button" class="btn btn-outline-dark text-center mb-5 " data-toggle="modal" data-target=".exampleModal">
                             ปฏิเสธยอดชำระเงิน
                         </button>
-                        <button type="submit" class="btn btn-dark text-center mb-5">อนุมัติการโอนเงิน</button>
+                        <button type="button" class="btn btn-dark text-center mb-5" data-toggle="modal" data-target=".bd-example-modal-lg">อนุมัติการโอนเงิน</button>
                     </div>
                 </div>
-            </form>
+            {{-- </form> --}}
 
             <form action="/admin/payments/store" method="post" >
                 {{ csrf_field() }}
-            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal fade exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
 
@@ -104,7 +150,7 @@
                         </div> --}}
                         <div class="modal-body text-center">
                             <div class="container">
-                                <h1 class="modal-title text-center mt-5 mb-5 _hilight text-danger"  id="myLargeModalLabel">ปฎิเสธยอดชำระเงิน</h1>
+                                <h1 class="modal-title text-center mt-5 mb-5 _hilight text-danger"  id="exampleModalLabel">ปฎิเสธยอดชำระเงิน</h1>
      
                                  <div class="row  ">
                                      <div class="col-3"></div>
@@ -157,6 +203,7 @@
             
                                         <button type="submit" class="btn btn-primary" style="background-color:black;">ยืนยันการทำรายการ</button>
                                     </a>
+
                                 </div>
                                  
          
@@ -169,12 +216,152 @@
             </div>
         </form>
 
+        <form action="/admin/payments/store" method="post" enctype="multipart/form-data">
+             {{ csrf_field() }}
+           
+
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <input type="hidden"  name="id" value="{{$payments->id}}">
+                    <input type="hidden"  name="payments_status" value="อนุมัติการโอนเงินเรียบร้อย">
+                    <input type="hidden"  name="jobstatus_id" value="3">
+
+
+                    {{-- <div class="modal-header " >
+                        <div class="row">
+
+                        </div>
+                        <h4 class="modal-title text-center"  id="myLargeModalLabel">คุณต้องการเสร็จสิ้นงานใช่ไหม?</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div> --}}
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            
+                            {{-- <hr> --}}
+                            <h1 class="modal-title  _hilight mt-5 mb-5">ช่วยนักออกแบบสร้าง Profile</h1>
+                            <span>นักออกแบบสามารถนำผลงานของคุณไปแสดงในโปรไฟล์เพื่อ
+                             ช่วยสร้าง Portfolio บนเว็บไซต์เราได้หรือไม่</span>
+ 
+                             <div class="form-row pl-pr-lg-_ex ">
+                                <div class="form-group col-md-12">
+                                 <h4 class="font-weight-bold mb-3">ยอดที่ต้องโอนให้นักออกแบบชำระ</h4>
+                                  <div class="container">
+                                    <div class="row text-center show-payment shadow-sm mb-4">
+                                      <p class="col-md-6">ยอดชำระเงินทั้งหมด</p>
+                                      <p class="col-md-6 _hilight">{{$payments->total_price - ($payments->total_price * 0.05)}}บาท</p> 
+                                      <input hidden type="text" name="priceTransferToDesigner" value="{{$payments->total_price - ($payments->total_price * 0.05)}}">
+                                    </div>
+                                  </div>
+                                 
+                                </div>
+                               
+                                
+                                {{-- <div class="form-group col-md-6">
+                                  <label for="inputUsername">วันเกิดของคุณ</label>
+                                  <div class="input-icons">
+                                      <i class="fas fa-calendar-week icon"></i>
+                                      <input type="date" id="basicDate" name="birthdate"  placeholder="MM/DD/YY" data-input>
+                                  </div>
+                              </div> --}}
+                                
+                                <div class="form-row">
+                                  <label class="font-weight-bold" style="font-size:1.25rem" for="">แนบรูปภาพการโอนเงิน
+                                   
+                                  <div class="row">
+                                      {{-- <div class="col"> --}}
+                                        <div class="mt-5"></div>
+                                          <div  id="thumb-output" style="display:flex; width:180px;height:180px;">
+                                          </div>
+                                        </label>
+                                           <div class="upload-btn-wrapper-">
+                                                  <button class="_btn-upload-"><i class="fas fa-plus"></i></button>
+                                                  <input type="file" id="file-input"  name="fileTransferToDesigner"  multiple />
+                                           </div>
+                                           
+                                       
+                                  </div>
+                              </div> {{-- end --}}
+                              
+                                 
+                                        
+                   
+                                        
+                                            
+                                  </div>
+                             <hr>
+                            <div class="mt-5 mb-5">
+                                <button type="button" class="btn btn-secondary"  data-dismiss="modal">ยกเลิก</button>
+        
+                                    <button type="submit" class="btn btn-primary" style="background-color:black;">ยืนยันการเสร็จสิ้นงาน</button>
+                            </div>
+                             
+     
+                        </div>
+                        
+                        
+
+                 
+                        
+                    </div>
+                     
+                    {{-- <div class="modal-footer text-center">
+                        
+                        </div> --}}
+                </div>
+            </div>
+        </div>
+    </form>
+
         </div>
        
     </div>
 </section>
-@endsection
 
+@endsection
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+
+<script>
+    // Get the modal
+    $(document).ready(function() {
+
+        $('.image-popup-vertical-fit').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            mainClass: 'mfp-img-mobile',
+            image: {
+                verticalFit: true
+            }
+            
+        });
+
+        $('.image-popup-fit-width').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            image: {
+                verticalFit: false
+            }
+        });
+
+        $('.image-popup-no-margins').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            closeBtnInside: false,
+            fixedContentPos: true,
+            mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+            image: {
+                verticalFit: true
+            },
+            zoom: {
+                enabled: true,
+                duration: 300 // don't foget to change the duration also in CSS
+            }
+        });
+
+    });
+</script>
 <script>
     function addCart(v){
         document.getElementById('output').value = v

@@ -38,7 +38,7 @@
                            {{-- <button class="btn "> --}}
                            <tr >
                 
-                            <td class="pt-4 pb-4"><a href="#">
+                            <td class="pt-4 pb-4">
                              <a href="{{ route('payments.detail', $payment->id) }}">
                               <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button>
                              </a>

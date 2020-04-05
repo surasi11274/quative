@@ -12,7 +12,7 @@
                     <div class="card-header bg-white pt-5">
                         <div class="row">
                             <div class="col-lg-9">
-                                <h4 class="font-weight-bold">จำนวนการจ้างงาน  (2,000)  </h4>
+                                <h4 class="font-weight-bold">จำนวนการจ้างงาน  ({{$jobs->count()}})  </h4>
                             </div>
                             <div class="col-lg-3">
                                 <select class="selectpicker">
@@ -42,6 +42,7 @@
                              <table class="table table-hover table-bordered text-center">
                         
                                 <thead class="thead-dark">
+                                      
                                   <tr>
                         
                                     <th scope="col">รหัสการจ้าง</th>
@@ -50,15 +51,22 @@
                                     <th scope="col">ผู้จ้างงาน</th>
         
                                     <th scope="col">นักออกแบบ</th>
-                                    <th scope="col">สถานะ</th>
+                                    <th scope="col">สถานะผู้จ้าง</th>
+                                    <th scope="col">สถานะนักออกแบบ</th>
+
                                    
                                   </tr>
                                 </thead>
                         
                                 <tbody class="table-light">
                                    
-                                 {{-- @foreach ($payments as $payment) --}}
-                        
+                                 @foreach ($jobs as $job)
+                                   @php
+                                       $user = \App\User::find($job->user_id);
+                                       $designer = \App\Designer::find($job->designer_id);
+
+                                       $jobstatus = \App\Jobstatus::find($job->jobstatus_id);
+                                   @endphp
                                    <tr >
                         
                                     <td class="pt-4 pb-4">
@@ -67,22 +75,31 @@
                                       {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
                                       <a href="#">
                                         {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
-                                        <button type="button" class="btn _primary-btn btn-lg btn-block">No. W0001</button>
+                                        <button type="button" class="btn _primary-btn btn-lg btn-block">No. W{{$job->id}}</button>
                                        </a>
                                      
                                    </td>
                                     {{-- <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td> --}}
-                                    <td class="pt-4 pb-4">25 / 12 / 2562</td>
+                                    <td class="pt-4 pb-4">{{date('F d,Y',strtotime($job->created_at))}}</td>
                                     {{-- <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td> --}}
-                                    <td class="pt-4 pb-4">Plai</td>
+                                    <td class="pt-4 pb-4">{{$user->name}}</td>
                                     {{-- <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td> --}}
-                                    <td class="pt-4 pb-4 ">Biw</td>
+                                    <td class="pt-4 pb-4 ">{{$designer->name}}</td>
                                     <td class="pt-4 pb-4 ">
-                                        <a href="#">
                                       {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
-                                      <p class="_hilight">เสร็จสิ้นงาน</p>
-                                     </a>
-                                        </td>
+                                      <p class="_hilight">
+                                        {{$jobstatus->statusName}}
+                                       
+                                      </p>
+                                    </td>
+                                    <td class="pt-4 pb-4 ">
+                                      {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
+                                      <p class="_hilight">
+                                        
+                                        {{$jobstatus->statusUserName}}
+                                      </p>
+                                    </td>
+                                        
                                     {{-- @php
                                     $jobstatusid = \App\Jobstatus::find($payment->jobstatus_id)->statusName;
                                      @endphp --}}
@@ -104,8 +121,8 @@
                                    @endif</td> --}}
                                   </tr>
                              
-                                  
-                                 {{-- @endforeach --}}
+                                  @endforeach
+
                         
                         
                                 

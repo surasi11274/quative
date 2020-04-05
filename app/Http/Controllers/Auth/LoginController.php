@@ -31,7 +31,7 @@ class LoginController extends Controller
     protected function authenticated()
     {
     if ( Auth::user()->role=='2' ) {// do your magic here
-        return redirect('/admin');
+        return redirect('/dashboard');
     }
     
      return redirect('/');

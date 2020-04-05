@@ -35,11 +35,27 @@
 
     control = new THREE.OrbitControls( camera,renderer.domElement );
 
+    
+
     let loader = new THREE.GLTFLoader();
-    loader.load('../model/scene.gltf', function(glft){
+    var mesh;
+
+    loader.load('../model/mock1x.gltf', function(glft){
+        mesh = glft.scene.children[0];
+        mesh.material = new THREE.MeshLambertMaterial();
+        scene.add(mesh);
+
         scene.add(glft.scene);
         renderer.render(scene,camera);
+
+   
+
     });
+
+  
+
+
+
     //create the shape
         // var geometry = new THREE.BoxGeometry( 2, 2, 2 );
         // var cubeMaterials = [
@@ -62,23 +78,23 @@
 
    
 
-        var ambientLight = new THREE.AmbientLight( 0x404040, 5.0 );
+        var ambientLight = new THREE.AmbientLight( 0x404040, 100.0 );
         scene.add( ambientLight );
 
-        // var light1 = new THREE.PointLight( 0xFF0040, 4, 50 );
+        // var light1 = new THREE.PointLight( 0x404040, 4, 50 );
         // scene.add( light1 );
 
-        // var light2 = new THREE.PointLight( 0x0040FF, 2, 50 );
+        // var light2 = new THREE.PointLight( 0x404040, 2, 50 );
         // scene.add( light2 );
 
-        // var light3 = new THREE.PointLight( 0x80FF80, 4, 50 );
+        // var light3 = new THREE.PointLight( 0x404040, 4, 50 );
         // scene.add( light3 );
 
-        // var directionalLight = new THREE.DirectionalLight( 0xFFFFFF, 1 );
-        // directionalLight.position.set( 0, 1, 0 );
-        // scene.add( directionalLight  );
+        var directionalLight = new THREE.DirectionalLight( 0x404040, 1 );
+        directionalLight.position.set( 0, 1, 0 );
+        scene.add( directionalLight  );
 
-        // var spotLight = new THREE.SpotLight( 0xFF45F6, 25 );
+        // var spotLight = new THREE.SpotLight( 0x404040, 25 );
         // spotLight.position.set( 0, 3, 0 );
         // scene.add( spotLight );
 
