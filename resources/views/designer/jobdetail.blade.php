@@ -6,15 +6,23 @@
 @foreach ($jobs as $job)
 
 <div class="container">
-    <div class="_black-bg mt_ex p-5">
+    <div class="_black-bg mt-5 p-3 p-md-5">
         <div class="row">
             <div class="col-12 col-md-6 ">
-            <h3  class="content-bg mb-5" >ข้อมูลการจ้างงาน <span>no. W0{{$job->id}}</span></h3>
+            <h3  class="content-bg mb-5 d-none d-md-block" >ข้อมูลการจ้างงาน <span>no. W0{{$job->id}}</span></h3>
+            <h5  class="content-bg mb-3 d-md-none font-weight-bold" >ข้อมูลการจ้างงาน <span>no. W{{$job->id}}</span></h5>
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-12">
+                            <div class="d-md-none">
+                                <h6 for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</h6>
+                                <label for=""class="content-bg" ><small>วันที่เริ่มงาน : {{date('F d,Y',strtotime($job->created_at))}}</small></label>
+                                <label for=""class="content-bg" ><small>วันที่ต้องการงาน : {{date('F d,Y',strtotime($job->finishdate))}}</small>  </label>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-3 mb-3 mt-3">
                                 <img class="rounded-circle " src="https://via.placeholder.com/150" alt="">
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 col-md-9 mb-3 mt-3">
                             
                             @php
                             $user = \App\User::find($job->user_id)->name;
@@ -24,8 +32,13 @@
                                 <p class="content-bg">{{$user}}</p>
                                 <a href="{{route('job.Messages',$job->token)}}">
 
-                                <button class="btn _primary-bg-dark">คุยกับผู้ประกอบการ</button>
+                                <button class="btn _primary-bg-dark btn-lg d-none d-md-block">คุยกับผู้ประกอบการ</button>
                                 </a>
+                        </div>
+                        <div class="col-12 d-md-none mt-3 mb-5">
+                            <a href="{{route('job.Messages',$job->token)}}">
+                                <button class="btn _primary-bg-dark btn-lg btn-block "><i class="far fa-comment-dots icon "></i>คุยกับผู้ประกอบการ</button>
+                            </a>
                         </div>
                     </div>
             </div>
@@ -33,11 +46,11 @@
                 <div class="text-right">
                     
                         
-                         
+                    <div class="d-none d-md-block">
                         <h3 for=""class="content-bg " >แพ็คเกจ <span>15</span> วัน</h3><br>
                         <label for=""class="content-bg" ><h5>วันที่เริ่มงาน : {{date('F d,Y',strtotime($job->created_at))}}</h5></label> <br>
                         <label for=""class="content-bg" ><h5>วันที่ต้องการงาน : {{date('F d,Y',strtotime($job->finishdate))}}</h5>  </label><br>
-                       
+                    </div>
                             <div class="row">
                                 {{-- @if ($job->jobstatus_id == '1')
                                 <button hidden type="button" class="btn _primary-btn mr-5" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">
@@ -138,7 +151,7 @@
     
     <div class="shadow-sm bg-whte mt-3">
         <div class="row">
-            <div class="container">
+            <div class="container d-none d-md-block">
         
                 @if ($job->jobstatus_id == 1)
                 <div class="text-center  p-5 bg-white">
@@ -577,13 +590,13 @@
                 <form action="" class="multi-step-status">
                     {{-- 1 --}}
                     <fieldset>
-                        <div class="process-job shadow-sm p-5">
-                           <div class="form-row mt-5 text-center text-md-left">
+                        <div class="process-job shadow-sm p-3 p-md-5">
+                           <div class="form-row mt-5 ">
                                <div class="col-12 col-md-9">
                                 @php
                                 $jobstatusid = \App\Jobstatus::find($job->jobstatus_id)->statusName;
                                  @endphp
-                                <h4><span class=" icon pl-md-2 pr-md-2 user-designer">สถานะปัจจุบัน : <label class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</label></h4>
+                                <h4 class="text-center text-md-left">สถานะปัจจุบัน : <label class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</label></h4>
                                </div>
                                <div class="col-12 col-md-3">
                                 <div class="float-right d-flex">
@@ -614,46 +627,47 @@
                 </form>
                 <div class="container-fluid bg-white">
                     <div class="row">
-                        <div class="col-12 col-md-6 p-5">
+                        <div class="col-12 col-md-6 p-3 p-md-5">
                             <h4 class="font-weight-bold">ข้อมูลผลิตภัณฑ์ของคุณ</h4>
                            <hr>
                            <h5 class="font-weight-bold">บรรจุภัณฑ์ประเภท</h5>
                         <h5 class="mt-3">{{ $job->categories}}</h5>
                            <h5 class="font-weight-bold mt-3">รูปภาพผลิตภัณฑ์เดิมของคุณ</p>
                            <div class="row mt-3">
-                               <div class="col-4 mt-3">
+                               <div class="col-6 col-md-4 mt-3">
                                 <img class="rounded" src="/{{$job->productPic}}" alt="">
                                </div>
-                               <div class="col-4 mt-3">
+                               <div class="col-6 col-md-4 mt-3">
                                 <img class="rounded" src="/{{$job->productPic}}" alt="">
                                </div>
-                               <div class="col-4 mt-3">
+                               <div class="col-6 col-md-4 mt-3">
                                 <img class="rounded" src="/{{$job->productPic}}" alt="">
                                </div>
                                
                                
                            </div>
-                           <label for="" class=" mt-3">URL : <a href="#" target="_blank"><small>{{$job->url}}</small></a></label>
+                           <p class=" mt-3 over-wrap">URL : <a href="{{$job->url}}" target="_blank"><small>{{$job->url}}</small></a></p>
+                      
                            <h4 class="font-weight-bold mt-5">รูปภาพตัวอย่างงาน</h3>
                            <hr>
                            <h5 class="mt-3 font-weight-bold">รูปภาพงานใกล้เคียงกับงาน</h5>
                            <div class="row mt-3">
-                                <div class="col-4 mt-3">
+                                <div class="col-6 col-md-4 mt-3">
                                  <img class="rounded" src="/{{$job->refpicbyUser}}" alt="">
                                 </div>
-                                <div class="col-4 mt-3">
+                                <div class="col-6 col-md-4 mt-3">
                                     <img class="rounded" src="/{{$job->refpicbyUser}}" alt="">
                                    </div>
-                                   <div class="col-4 mt-3">
+                                   <div class="col-6 col-md-4 mt-3">
                                     <img class="rounded" src="/{{$job->refpicbyUser}}" alt="">
                                    </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 p-5">
+                        <div class="col-12 col-md-6 p-3 p-md-5">
                             <h4 class="font-weight-bold">ข้อมูลงานที่ต้องการ</h4>
                             <hr>
                             <h5 class="font-weight-bold">รายละเอียด</h5>
-                            <h5 class="mt-3">{{ $job->requirement}}</h5>
+                            <h5 class="mt-3 over-wrap">{{ $job->requirement}}</h5>
                                     <h5 class="mt-3 font-weight-bold">ลักษณะหรือสไตล์งานที่ต้องการ</h5>
                                    
                                     {{-- {{ $job->tags}} --}}
