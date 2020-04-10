@@ -6,8 +6,8 @@
         <!-- <div class="col-md-6 col-md-offset-2"> -->
                 <div class="col-12 card " style="width: 100% ;margin-top: 100px;">
                    <div class="row"> 
-                       <div class="col-2"></div>
-                       <div class="col-8 mt-5">
+
+                       <div class="col-12 mt-5">
                            <div class="row"></div>
                                <center>
                                    <div class="panel-heading" style=" margin-top: 20px;margin-bottom: 20px; font-family: chonburi;">
@@ -100,7 +100,7 @@
                                    </div>
                            </center>
                        </div>
-                       <div class="col-2"></div>
+                 
 
                     
                    </div>

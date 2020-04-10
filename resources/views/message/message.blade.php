@@ -10,6 +10,7 @@
             <div class="col-md-4 mt-5">
               <div class="header p-3">
                 <h5 class="font-weight-bold pt-4">
+                    <i class="fas fa-inbox mr-3 _gray"></i>
                   กล่องข้อความ
                 </h5>
               </div>
@@ -57,7 +58,8 @@
 
                                       <div class="media-body">
                                           <p class="name">{{$user->name}}</p>
-                                          <sapn class="email">{{$user->email}}</sapn>
+                                      {{-- <small class="_gray">21 : 35</small> --}}
+                                          <span class="email">{{$user->email}}</span>
                                       </div>
                                   </div>
                               </li>
@@ -84,7 +86,7 @@
               <div class="message-wrapper-none">
                   <ul class="messages">
                           <li class="message clearfix">
-                            <h5 class="text-center">Select Contact to Start Conversation</h5>
+                            <h5 class="text-center _gray mt-md-4">Select Contact to Start Conversation to Enterprenuer</h5>
               
                           </li>
                   </ul>
