@@ -609,7 +609,6 @@
                                     @elseif ($job->jobstatus_id == 3)
                                         <button type="button" class="btn _primary-btn m-1 btn-lg" onclick="addCart('7')" data-toggle="modal" data-target=".bd-example-modal-lg">อัพโหลดไฟล์</button>
                                         {{-- <button type="button"class="btn _secondary-btn m-1" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button> --}}
-                                        
                                     @endif
                                    
                                    </div>

@@ -574,9 +574,9 @@
                                         <button type="button"class="btn _secondary-btn m-1 btn-lg btn-block" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                                     @elseif ($jobs->jobstatus_id == 2)
                                         <a href="{{ route('job.showpayment', $jobs->token) }}" style="text-decoration:none;">
-                                            <button type="button" class="btn _primary-btn m-1 btn-lg btn-block" >แจ้งชำระเงิน</button>
+                                            <button type="button" class="btn _primary-btn mr-1 btn-lg btn-block" >แจ้งชำระเงิน</button>
                                         </a>
-                                        <button type="button"class="btn _secondary-btn m-1 btn-lg btn-block" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                        <button type="button"class="btn _secondary-btn ml-1 btn-lg btn-block" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                                     @elseif ($jobs->jobstatus_id == 7)
                           
                                                                             
