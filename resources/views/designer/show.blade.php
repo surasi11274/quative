@@ -44,33 +44,37 @@
              
                         
       </div>
-     {{-- new  --}}
- <div class="col-6 col-lg-3">
+
+      <div class="col-12 col-md-8">		
+          <div class="card-body bg-white">
+
+              <div class="row">
+              <div class="col-6 col-md-3">
+            
             <h5 class="font-weight-bold d-none d-md-block" >ข้อมูลเบื้องต้น</h5>
             <h6 class="font-weight-bold d-md-none" >ข้อมูลเบื้องต้น</h6>
             <p class="d-none d-md-block">เป็นสมาชิกเมื่อ</p>
-            <p class="d-none d-md-block">ออกแบบงานแล้ว</p>
+            <p class="d-none d-md-block">เดือน/วัน/ปี เกิด</p>
             <p class="d-none d-md-block">อัตรางานสำเร็จ</p>
             <small class="d-md-none">เป็นสมาชิกเมื่อ</small>
             <small class="d-md-none">ออกแบบงานแล้ว</small>
             <small class="d-md-none">อัตรางานสำเร็จ</small>
             </div>
 
-            <div class="col-6 col-lg-3">
-           <br>
-            <p class="d-none d-md-block"> {{date('F d,Y',strtotime($designer->create_at))}}</p>
-            <p class="d-none d-md-block">{{212 }} ครั้ง</p>
-            <p class="d-none d-md-block">{{100%100}}</p>
-            <small class="d-md-none"> {{date('F d,Y',strtotime($designer->create_at))}}</small>
-            <br>
-            <small class="d-md-none">{{212 }} ครั้ง</small>
-            <br>
-            <small class="d-md-none">{{100%100}}</small>
+            <div class="col-6 col-md-3">
+                <br>
+                <p class="d-none d-md-block">  {{date('F d,Y',strtotime( Auth::user()->created_at))}}</p>
+                <p class="d-none d-md-block">{{ date('F d,Y',strtotime($designer->birthdate)) }}</p>
+                <p class="d-none d-md-block">{{ $jobs->count() }} ครั้ง</p>
+                <small class="d-md-none"> {{date('F d,Y',strtotime( Auth::user()->created_at))}}</small>
+                <br>
+                <small class="d-md-none">{{ date('F d,Y',strtotime($designer->birthdate)) }}</small>
+                <br>
+                <small class="d-md-none">{{ $jobs->count() }} ครั้ง</small>
             </div>
 
-            <div class="col-12 col-lg-3 ">
-            <h5 class="font-weight-bold d-none d-md-block">ยืนยันตัวตน</h5>
-            <h6 class="font-weight-bold d-md-none">ยืนยันตัวตน</h6>
+            <div class="col-md-3">
+            <h5 class="font-weight-bold">ยืนยันตัวตน</h5>
             <div class="row">
                 <div class="col-2">
                     <i class="fas fa-envelope-square icon _hilight"></i>
@@ -83,41 +87,14 @@
                     <p>เบอร์โทรศัพท์</p>
                 </div>
                 <div class="col-2" style="display:grid;">
-                    <i class="fas fa-check _hilight"></i>
-                    <i class="fas fa-check _hilight"></i>
-                    <i class="fas fa-check _hilight"></i>
+                    @if (Auth::user()->email !== NULL) <i class="fas fa-check _hilight"></i>@endif
+                    @if ($designer->personalID !== NULL) <i class="fas fa-check _hilight"></i>@endif
+                    @if ($designer->phonenumber !== NULL) <i class="fas fa-check _hilight"></i>@endif
                 </div>
             </div>
-      {{-- end new  --}}
-      <div class="col-12 col-md-8">		
-          <div class="card-body bg-white">
-
-              <div class="row">
-              <div class="col-6 col-md-3">
-            
-            <h5 class="font-weight-bold d-none d-md-block" >ข้อมูลเบื้องต้น</h5>
-            <h6 class="font-weight-bold d-md-none" >ข้อมูลเบื้องต้น</h6>
-            <p class="d-none d-md-block">เป็นสมาชิกเมื่อ</p>
-            <p class="d-none d-md-block">ออกแบบงานแล้ว</p>
-            <p class="d-none d-md-block">อัตรางานสำเร็จ</p>
-            <small class="d-md-none">เป็นสมาชิกเมื่อ</small>
-            <small class="d-md-none">ออกแบบงานแล้ว</small>
-            <small class="d-md-none">อัตรางานสำเร็จ</small>
-        
-            </div>
-
-            <div class="col-6 col-md-3">
-           <br>
-            <p> {{date('F d,Y',strtotime( Auth::user()->created_at))}}</p>
-            <p>{{ date('F d,Y',strtotime($designer->birthdate)) }}</p>
-            <p>{{ $jobs->count() }} ครั้ง</p>
-            </div>
-
-            <div class="col-md-3">
-            <h5 class="font-weight-bold">ยืนยันตัวตน</h5>
-            <p><i class="fas fa-envelope-square"></i>  อีเมล   @if (Auth::user()->email !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif
+            {{-- <p><i class="fas fa-envelope-square"></i>  อีเมล   @if (Auth::user()->email !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif
             <p><i class="fas fa-id-card"></i>  ประชาชน   @if ($designer->personalID !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif
-            <p><i class="fas fa-phone-square-alt"></i>  เบอร์โทรศัพท์               @if ($designer->phonenumber !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif
+            <p><i class="fas fa-phone-square-alt"></i>  เบอร์โทรศัพท์               @if ($designer->phonenumber !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif --}}
             </div>
             </div>
 
@@ -300,12 +277,16 @@
                       
                       
                     </div>
+                    <div class="overflow-review">
                     @foreach ($reviews as $review)
                     @php
                         $user = Auth::user()->find($review->user_id);
                         $profile = $user->profile();
                     @endphp
-                    <div class="row mt-2">
+                  
+
+                    
+                    <div class="row  mt-2">
 
                         <div class="col-2">
                             <div class="profile-img2 mt-3" style="height:50px; width:50px;"> 
@@ -336,7 +317,7 @@
                     <hr>
 
                     @endforeach
-
+                </div>
                     
                     <!-- comment -->
 {{-- 
@@ -383,7 +364,7 @@
                             @foreach ($artworks as $artwork)
 
                                 @if ($artwork->fileartworkname == NULL)
-                                <img class="rounded shadow-sm"  style="width:620px; height:460px; object-fit: cover;" src="/{{ $artwork->fileimgname }}" />
+                                <img class="rounded shadow-sm mt-3 mb-3 img-port"  style="width:100%; height:460px; object-fit: cover;" src="/{{ $artwork->fileimgname }}" />
 
                                 @endif
  
