@@ -599,3 +599,8 @@ ul.purple-active li input[type="checkbox"]:focus + img {
     border-radius: 5px;
     padding: 1rem;
   }
+  .overflow-review{
+    overflow-y: scroll;
+    height: 400px ;
+    width: 100%;
+}
