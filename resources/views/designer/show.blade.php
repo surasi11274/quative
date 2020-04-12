@@ -3,11 +3,11 @@
         <link rel="stylesheet" href="{{asset('css/style_match.css')}}">
 @endsection
 @section('content')
-<section class="content mt_ex">
+<section class="content">
 
 <div class="container">		
     <div class="row mt-3">
-      <div class="col-12 col-md-4 card pb-md-5"  style=" background-color: #000;">
+      <div class="col-12 col-md-4 card pb-3 pb-md-5"  style=" background-color: #000;">
               <div class="profile-img text-center mt-5" style="width:120px;height:120px;margin:auto;">
                 <img id="profileImage" class="rounded-circle" src="/{{$designer->profilepic}}" />
             </div>
@@ -39,31 +39,56 @@
           <div class="card-body bg-white">
 
               <div class="row">
-              <div class="col-md-3">
-            <h5 class="font-weight-bold" >ข้อมูลเบื้องต้น</h5>
-            <p>เป็นสมาชิกเมื่อ </p>
-            <p>ออกแบบงานเมื่อ</p>
-            <p>อัตรางานสำเร็จ</p>
+              <div class="col-6 col-lg-3">
+            <h5 class="font-weight-bold d-none d-md-block" >ข้อมูลเบื้องต้น</h5>
+            <h6 class="font-weight-bold d-md-none" >ข้อมูลเบื้องต้น</h6>
+            <p class="d-none d-md-block">เป็นสมาชิกเมื่อ</p>
+            <p class="d-none d-md-block">ออกแบบงานแล้ว</p>
+            <p class="d-none d-md-block">อัตรางานสำเร็จ</p>
+            <small class="d-md-none">เป็นสมาชิกเมื่อ</small>
+            <small class="d-md-none">ออกแบบงานแล้ว</small>
+            <small class="d-md-none">อัตรางานสำเร็จ</small>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-6 col-lg-3">
            <br>
-            <p> {{date('F d,Y',strtotime($designer->create_at))}}</p>
-            <p>{{212 }} ครั้ง</p>
-            <p>{{100%100}}</p>
+            <p class="d-none d-md-block"> {{date('F d,Y',strtotime($designer->create_at))}}</p>
+            <p class="d-none d-md-block">{{212 }} ครั้ง</p>
+            <p class="d-none d-md-block">{{100%100}}</p>
+            <small class="d-md-none"> {{date('F d,Y',strtotime($designer->create_at))}}</small>
+            <br>
+            <small class="d-md-none">{{212 }} ครั้ง</small>
+            <br>
+            <small class="d-md-none">{{100%100}}</small>
             </div>
 
-            <div class="col-md-3">
-            <h5 class="font-weight-bold">ยืนยันตัวตน</h5>
-            <p><i class="fas fa-envelope-square"></i>  อีเมล   <i class="fas fa-check" style="color: #523EE8;"></i></p> 
-            <p><i class="fas fa-id-card"></i>  ประชาชน   <i class="fas fa-check" style="color: #523EE8;"></i></p>
-            <p><i class="fas fa-phone-square-alt"></i>  เบอร์โทรศัพท์   <i class="fas fa-check" style="color: #523EE8;"></i></p>
+            <div class="col-12 col-lg-3 ">
+            <h5 class="font-weight-bold d-none d-md-block">ยืนยันตัวตน</h5>
+            <h6 class="font-weight-bold d-md-none">ยืนยันตัวตน</h6>
+            <div class="row">
+                <div class="col-2">
+                    <i class="fas fa-envelope-square icon _hilight"></i>
+                    <i class="fas fa-id-card icon _hilight "></i>
+                    <i class="fas fa-phone-square-alt icon _hilight"></i> 
+                </div>
+                <div class="col-8">
+                    <p >อีเมล</p>
+                    <p >ประชาชน</p>
+                    <p>เบอร์โทรศัพท์</p>
+                </div>
+                <div class="col-2" style="display:grid;">
+                    <i class="fas fa-check _hilight"></i>
+                    <i class="fas fa-check _hilight"></i>
+                    <i class="fas fa-check _hilight"></i>
+                </div>
+            </div>
             </div>
             </div>
 
             <hr>
 
-            <h5 class="font-weight-bold">ข้อมูลเบื้องต้น</h5>
+            <h5 class="font-weight-bold d-none d-md-block">ข้อมูลเบื้องต้น</h5>
+            <h6 class="font-weight-bold d-md-none">ข้อมูลเบื้องต้น</h6>
             <p>{{$designer->description}}</p>
             
             <hr>
@@ -88,19 +113,18 @@
 </div>
 <div class="container">
 <div class="row mt-3">
-      <div class="col-md-4 " style="    padding-right: 0px !important;
-      padding-left: 0px !important;">
+      <div class="col-12 col-md-4 " style="padding-right: 0px !important; padding-left: 0px !important;">
           <div class="card" style="padding-bottom: 45px;">
               <div class="card-body">
                   <h5 class=" font-weight-bold mt-3">รีวิวจากผู้ประกอบการ</h5>
                       <div class="row mt-3">
-                         <div class="col-md-3">
+                         <div class="col-12 col-lg-3">
                             <div class="text-center mt-3">
                                 <h3 class="font-weight-bold">{{$designer->rating}}</h3>
                                     <small class="_gray">จาก 5.0</small>
                             </div>
                          </div>
-                         <div class="col-md-9">
+                         <div class="col-12 col-lg-9">
                             <p>ความพึงพอใจ</p>
                            <div class="d-flex">
                             <i class="fas fa-star star1"></i>
@@ -133,30 +157,40 @@
                       
                          
                       
-                      <div class="col-2">
-                          <div class="profile-img2 mt-3">
-                         <img class="rounded-circle" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
-                        </div>
-                    </div>
+                     
 
+                    
+                   
+                </div>
+                <hr>
+                <div class="row mt-3">
                     @foreach ($reviews as $review)
-                        
-                    <div class="col">
+                    <div class="col-3">
+                        <div class="profile-img2 mt-3">
+                       <img class="rounded-circle" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
+                      </div>
+                  </div>
+                    <div class="col-9">
                     @php
                         $username = Auth::user()->find($review->user_id)->name;
                     @endphp
-                      <h5 class="mt-3">{{$username}} <span>
-                          
+                    
+                      <h5 class="mt-3">{{$username}} 
+                        <span>
                           <i class="fas fa-star star1" style="float: right;"> 
-                             <span style="color: #000;">{{$review->rating}}</span>
-                          </i> </span></h5>
-                          <p class="text-black-50">{{date('F d,Y',strtotime($review->create_at))}}</p>
+                             <span style="color: #000;">({{$review->rating}})</span>
+                          </i> 
+                        </span>
+                    </h5>
+                          <small class="text-black-50">วันที่รีวิว {{date('F d,Y',strtotime($review->create_at))}}</small>
+                          <hr class="w-100">
+                          <p class="mt-3">{{$review->reviewdescription}}</p>
                     </div>
-                    </div>
-                    <h5 class="mt-3">{{$review->reviewdescription}}</h5>
+                    <hr class="w-100">
+                
                     @endforeach
-
-                    <hr>
+                </div>
+                   
                     
                     <!-- comment -->
 {{-- 
@@ -179,16 +213,12 @@
                     {{-- <h5 class="mt-3">ทำงานตรงใจเราเลย</h5> --}}
                     {{-- <hr> --}}
                     <!-- comment -->
-
-
-
-
-
+                    
               </div>
           </div>
 </div>
 
-<div class="col-8">
+<div class="col-12 col-md-8">
           <div class="card">					
           <div class="card-body">
               <div class="tab-content" id="v-pills-tabContent">
@@ -234,6 +264,6 @@
     </div>
 
 </div>
-
+</div>
 </section>
 @endsection
