@@ -162,6 +162,14 @@ Route::get('/profile/show/{token}', [
         'as' => 'profile.show',
         'uses' => 'ProfileController@show']);
 
+Route::get('/profile/edit/{token}', [
+        'as' => 'profile.edit',
+        'uses' => 'ProfileController@edit']);
+            
+Route::post('/profile/edit/store/{token}', [
+    'as' => 'profile.edit.store',
+    'uses' => 'ProfileController@update']);
+
     // -------------------------- Designer ---------------------------
 // Route::get('/designer','DesignerController@create');
 Route::get('/designer', [
