@@ -90,7 +90,13 @@
                                     <li class="nav-item">
                                         <div class="wrapper-profile">
                                           <div class="profile-color d-flex p-2">
-                                              <img class="ml-3 rounded-circle" src="https://picsum.photos/50" alt="" style="width:50px;height:50px;">
+                                              @if(Auth::user()->designer() )
+                                              <img class="ml-3 rounded-circle" src="/{{ Auth::user()->designer()->profilepic }}" alt="" style="width:50px;height:50px; border:solid 1px white;">
+
+                                              @else
+                                              <img class="ml-3 rounded-circle" src="{{ Auth::user()->avatar }}" alt="" style="width:50px;height:50px; border:solid 1px white;">
+
+                                              @endif
                                            <h5 class="ml-2">{{ Auth::user()->name }}</h5>
                                           </div> 
                                         </div>
@@ -125,7 +131,7 @@
                                            <a class="ml-2 nav-link" href="/favouritelist">ผลงานที่ถูกใจ  <span class="icon love-sym float-right mr-2"></span></a>
                                        </li>
                                        <li class="nav-link">
-                                           <a class="ml-2 nav-link" href="{{ route('designer.designer') }}">แก้ไขโปรไฟล์ส่วนตัว  <span class="icon cog float-right mr-2"></span></a>
+                                           <a class="ml-2 nav-link" href="{{ route('designer.designer') }}">โปรไฟล์ส่วนตัว  <span class="icon cog float-right mr-2"></span></a>
                                        </li>
                                        <li class="nav-link">
                                            <hr>
@@ -176,7 +182,7 @@
                                        <a class="ml-2 nav-link" href="/favouritelist">ผลงานที่ถูกใจ  <span class="icon love-sym float-right mr-2"></span></a>
                                    </li> --}}
                                    {{-- <li class="nav-link">
-                                       <a class="ml-2 nav-link" href="{{ route('designer.designer') }}">แก้ไขโปรไฟล์ส่วนตัว  <span class="icon cog float-right mr-2"></span></a>
+                                       <a class="ml-2 nav-link" href="{{ route('designer.designer') }}">โปรไฟล์ส่วนตัว  <span class="icon cog float-right mr-2"></span></a>
                                    </li> --}}
                                    <li class="nav-link">
                                        <hr>
@@ -248,7 +254,7 @@
                                     <li class="nav-item">
                                      <div class="wrapper-profile">
                                        <div class="profile-color d-flex p-2">
-                                           <img class="ml-3 rounded-circle" src="https://picsum.photos/50" alt="" style="width:50px;height:50px;">
+                                           <img class="ml-3 rounded-circle" src="{{ Auth::user()->avatar }}" alt="" style="width:50px;height:50px; border:solid 1px white;">
                                         <h5 class="ml-2">{{ Auth::user()->name }}</h5>
                                        </div> 
                                      </div>
@@ -267,7 +273,7 @@
                                         <a class="ml-2 nav-link" href="/favouritelist">ผลงานที่ถูกใจ  <span class="icon love-sym float-right mr-2"></span></a>
                                     </li>
                                     <li class="nav-link">
-                                        <a class="ml-2 nav-link" href="#">แก้ไขโปรไฟล์ส่วนตัว  <span class="icon cog float-right mr-2"></span></a>
+                                        <a class="ml-2 nav-link" href="{{ route('profile.create') }}">โปรไฟล์ส่วนตัว  <span class="icon cog float-right mr-2"></span></a>
                                     </li>
                                     <li class="nav-link">
                                         <hr>

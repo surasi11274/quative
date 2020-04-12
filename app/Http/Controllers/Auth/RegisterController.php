@@ -52,6 +52,9 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'role' => ['required'],
+            'acceptterm' => ['required'],
+
+            // 'avatar' => ['required']
         ]);
     }
 
@@ -68,6 +71,9 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'role' => $data['role'],
+            'avatar' => 'https://s3-ap-southeast-1.amazonaws.com/img-in-th/14480b52252f0ac721edf82486f0f8f9.png',
+            'acceptterm' => $data['acceptterm'],
+
         ]);
     }
 }

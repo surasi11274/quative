@@ -48,7 +48,7 @@
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <table class="table table-hover table-bordered">
                         <thead class="thead-dark">
-                            <tr>
+                            <tr class="text-center">
                   
                               <th scope="col">รหัสการจ้าง</th>
                               <th scope="col">วันที่</th>
@@ -57,6 +57,8 @@
                               <th scope="col">ยอดเงินที่ได้รับโดยหัก 5% แล้ว</th>
                               <th scope="col">สถานะการชำระเงิน</th>
                              
+
+                             
                             </tr>
                           </thead>
                           <tbody class="table-light">
@@ -64,12 +66,10 @@
                                 @foreach ($payments as $payment)
                                 @if ($payment->payments_status == 'รออนุมัติ')
 
-                                <tr >
+                                <tr class="text-center">
                                     <td class="pt-4 pb-4">
-                                        <a href="#">
-                                            <button type="button" class="btn _primary-btn btn-block">No. {{$payment->job_id}}</button>
+                                            <p>No. {{$payment->job_id}}</p>
                                             {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
-                                        </a>
                                         
                                     </td>
                                     <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td>
@@ -91,36 +91,40 @@
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <table class="table table-hover table-bordered">
                         <thead class="thead-dark">
-                            <tr>
+                            <tr class="text-center">
                   
                               <th scope="col">รหัสการจ้าง</th>
                               <th scope="col">วันที่</th>
                               {{-- <th scope="col">วันที่เริ่มงาน</th> --}}
                               <th scope="col">เวลา</th>
-                              <th scope="col">ยอดเงินที่ได้รับ</th>
+                              <th scope="col">ยอดเงินที่ได้รับโดยหัก 5% แล้ว</th>
                               <th scope="col">สถานะการชำระเงิน</th>
-                             
+                              <th scope="col">หลักฐานโอนเงิน</th>
+
                             </tr>
                           </thead>
                           <tbody class="table-light">
                             @foreach ($payments as $payment)
                                 @if ($payment->payments_status == 'อนุมัติการโอนเงินเรียบร้อย')
 
-                                <tr >
+                                <tr class="text-center">
                                     <td class="pt-4 pb-4">
-                                        <a href="#">
-                                            <button type="button" class="btn _primary-btn btn-block">No. {{$payment->job_id}}</button>
+                                            <p>No. {{$payment->job_id}}</p>
                                             {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
-                                        </a>
                                         
                                     </td>
                                     <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td>
                                     {{-- <td class="pt-4 pb-4">{{$job->price}}</td> --}}
                                     <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td>
-                                    <td class="pt-4 pb-4 _hilight">{{number_format(($payment->total_price - ($payment->total_price * 0.05)))}}</td>
+                                    <td class="pt-4 pb-4 _hilight">{{number_format($payment->priceTransferToDesigner)}}</td>
                                     <td class="pt-4 pb-4">
                                         <span class="text-success">{{$payment->payments_status}}</span>
                                     </td>
+                                    <td class="pt-4 pb-4 ">
+                                        <a class="image-popup-vertical-fit" href="/{{$payment->fileTransferToDesigner}}" title="หลักฐานโอนเงิน">
+                                            <button type="button" class="btn _primary-btn btn-block"> <i class="far fa-eye"></i></button>
+                                            {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
+                                        </a>                                    </td>
                                 </tr>
                                 @endif
 
@@ -135,5 +139,45 @@
     </div>
    
 </section>
-    
 @endsection
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+
+<script>
+    // Get the modal
+    $(document).ready(function() {
+
+        $('.image-popup-vertical-fit').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            mainClass: 'mfp-img-mobile',
+            image: {
+                verticalFit: true
+            }
+            
+        });
+
+        $('.image-popup-fit-width').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            image: {
+                verticalFit: false
+            }
+        });
+
+        $('.image-popup-no-margins').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            closeBtnInside: false,
+            fixedContentPos: true,
+            mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+            image: {
+                verticalFit: true
+            },
+            zoom: {
+                enabled: true,
+                duration: 300 // don't foget to change the duration also in CSS
+            }
+        });
+
+    });
+</script>

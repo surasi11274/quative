@@ -150,6 +150,17 @@ Route::get('/alljob', [
 
 
 
+Route::get('/profile', [
+        'as' => 'profile.create',
+        'uses' => 'ProfileController@create']);
+        // Route::get('/edit','DesignerController@edit');
+Route::post('/profile/store', [
+        'as' => 'profile.create.store',
+        'uses' => 'ProfileController@store']);
+            
+Route::get('/profile/show/{token}', [
+        'as' => 'profile.show',
+        'uses' => 'ProfileController@show']);
 
     // -------------------------- Designer ---------------------------
 // Route::get('/designer','DesignerController@create');
@@ -161,9 +172,7 @@ Route::post('/designer/store', [
     'as' => 'designer.create.store',
     'uses' => 'DesignerController@store']);
 
-Route::get('/designer/edit', [
-    'as' => 'designer.edit',
-    'uses' => 'DesignerController@edit']);
+
 
 
 Route::get('/designer/billing', [
@@ -180,6 +189,14 @@ Route::get('/designer/billing', [
 Route::get('/designer/show/{token}', [
     'as' => 'designer.show',
     'uses' => 'DesignerController@show']);
+
+Route::get('/designer/edit/{token}', [
+    'as' => 'designer.edit',
+    'uses' => 'DesignerController@edit']);
+    
+Route::post('/designer/edit/store/{token}', [
+    'as' => 'designer.edit.store',
+    'uses' => 'DesignerController@update']);
 
  Route::get('/requestjob', [
     'as' => 'designer.requestjob',

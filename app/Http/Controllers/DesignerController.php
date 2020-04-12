@@ -195,10 +195,15 @@ class DesignerController extends Controller
         $designer = Designer::where('token',$token)->get();
         $users = Auth::user()->designer();
 
+        $jobs = Jobs::where('designer_id', Auth::user()->designer()->id)->where('jobstatus_id',9)->get();
         $reviews = Review::where('designer_id',$designer->first()->id)->get();
+        // $complacency = Review::where('designer_id',$designer->first()->id)->avg('complacency');
         // return $this->show()->where('designer','=','confirmed');
-    
-
+        $works = Jobs::where('designer_id', Auth::user()->designer()->id)->where('canshow',1)->get();
+  
+        // $artworks = Jobfiles::select('fileimgname')->where('job_id',$works->id)->get();
+        // dd($artworks);
+        // exit();
         $tags = Tags::all();
 
         $designer->first()->tag = json_decode($designer->first()->tag);
@@ -212,6 +217,10 @@ class DesignerController extends Controller
             'tags'=>$tags,
             'reviews'=>$reviews,
             'users'=>$users,
+            'jobs'=>$jobs,
+            'works'=>$works,
+            // 'complacency'=>$complacency,
+
             ]);
 
     }
@@ -222,16 +231,75 @@ class DesignerController extends Controller
      * @param  \App\Designer  $designer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Designer $designer)
+    public function edit($token)
     {
         //
 
-        $designer = Auth::user()->designer();
-        if (!$designer){ // ยังเคยสร้างโปรไฟล์ เด้งไปหน้าสร้าง
-            return redirect('/designer');
-        }
-        return view('designer.edit');;
+        $designer = Auth::user()->designer()->where('token',$token)->get();
+        $tags = Tags::all();
+        $designer->first()->tag = json_decode($designer->first()->tag);
+
+        return view('designer.edit',[
+            'designer'=>$designer->first(),
+            'tags'=>$tags
+
+        ]);
     }
+    public function update(Request $request, $token)
+    {
+       
+     
+
+        $designer = Designer::where('token',$token)->first();
+        $designer->description = $request->input('description');
+        $designer->phonenumber = $request->input('phonenumber');
+        $designer->tag = json_encode($request->input('tag'));
+        $designer->personalID = $request->input('personalID');
+        $designer->titleName = $request->input('titleName');
+        $designer->name = $request->input('name');
+        $designer->surname = $request->input('surname');
+        $designer->birthdate = $request->input('birthdate');
+        $designer->address = $request->input('address');
+        $designer->zipcode = $request->input('zipcode');
+            // 'pricerate = $request->input('pricerate');
+        $designer->bankname = $request->input('bankname');
+        $designer->bankaccount = $request->input('bankaccount');
+        if($request->hasfile('profilepic')){
+            $filenameWithExt = $request->file('profilepic')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('profilepic')->getClientOriginalExtension();
+            $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
+
+            $designer->profilepic = $request->file('profilepic')->move('uploads/profilepic',$filenameTostore);
+
+        }
+        if($request->hasfile('selfieID')){
+            $filenameWithExt = $request->file('selfieID')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('selfieID')->getClientOriginalExtension();
+            $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
+
+            $designer->selfieID = $request->file('selfieID')->move('uploads/selfieID',$filenameTostore);
+
+        }
+        if($request->hasfile('pictureIDCard')){
+            $filenameWithExt = $request->file('pictureIDCard')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('pictureIDCard')->getClientOriginalExtension();
+            $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
+
+            $designer->pictureIDCard = $request->file('pictureIDCard')->move('uploads/pictureIDCard',$filenameTostore);
+
+        }
+        $designer->save();
+            // 'hasjob'='0',
+            // 'rating'='0',
+
+
+
+        return redirect(route('designer.show',['token'=>$designer->token]));
+    }
+
 
     public function requestjob(Designer $designer)
     {
@@ -597,11 +665,7 @@ class DesignerController extends Controller
      */
 
 
-    public function update(Request $request, Designer $designer)
-    {
-        //
-    }
-
+   
     /**
      * Remove the specified resource from storage.
      *
