@@ -8,9 +8,9 @@
 <div class="container">		
     <div class="row mt-3">
       <div class="col-12 col-md-4 card pb-3 pb-md-5"  style=" background-color: #000;">
-              <div class="profile-img text-center mt-5" style="width:120px;height:120px;margin:auto;">
-                <img id="profileImage" class="rounded-circle" src="/{{$designer->profilepic}}" />
-            </div>
+              <div class="profile-img text-center mt-5" style="width:120px; height:120px; margin:auto;">
+                <img id="profileImage" class="rounded-circle" style=" object-fit:cover;" src="/{{$designer->profilepic}}" />
+              </div>
               {{-- <h5 class="text-center mt-5 text-white">ปลายฟ้า เป็นตาธรรม</h5> --}}
               <h5 class="titlename text-center text-white mt-5 font-weight-bold">{{$designer->name}} {{$designer->surname}}</h5>
               @if ($designer->rating == 1)
@@ -34,12 +34,18 @@
               @endif
               <span class="text-white">  ({{$designer->rating}})</span></p>
 
+              <div class="mt-5 text-center">
+                <a href="{{route('designer.edit',$designer->token)}}">
+                    <button class="btn btn-secondary">
+                        แก้ไขข้อมูลส่วนตัว
+                    </button>
+                </a>
+              </div>
+             
+                        
       </div>
-      <div class="col-12 col-md-8">		
-          <div class="card-body bg-white">
-
-              <div class="row">
-              <div class="col-6 col-lg-3">
+     {{-- new  --}}
+ <div class="col-6 col-lg-3">
             <h5 class="font-weight-bold d-none d-md-block" >ข้อมูลเบื้องต้น</h5>
             <h6 class="font-weight-bold d-md-none" >ข้อมูลเบื้องต้น</h6>
             <p class="d-none d-md-block">เป็นสมาชิกเมื่อ</p>
@@ -82,6 +88,36 @@
                     <i class="fas fa-check _hilight"></i>
                 </div>
             </div>
+      {{-- end new  --}}
+      <div class="col-12 col-md-8">		
+          <div class="card-body bg-white">
+
+              <div class="row">
+              <div class="col-6 col-md-3">
+            
+            <h5 class="font-weight-bold d-none d-md-block" >ข้อมูลเบื้องต้น</h5>
+            <h6 class="font-weight-bold d-md-none" >ข้อมูลเบื้องต้น</h6>
+            <p class="d-none d-md-block">เป็นสมาชิกเมื่อ</p>
+            <p class="d-none d-md-block">ออกแบบงานแล้ว</p>
+            <p class="d-none d-md-block">อัตรางานสำเร็จ</p>
+            <small class="d-md-none">เป็นสมาชิกเมื่อ</small>
+            <small class="d-md-none">ออกแบบงานแล้ว</small>
+            <small class="d-md-none">อัตรางานสำเร็จ</small>
+        
+            </div>
+
+            <div class="col-6 col-md-3">
+           <br>
+            <p> {{date('F d,Y',strtotime( Auth::user()->created_at))}}</p>
+            <p>{{ date('F d,Y',strtotime($designer->birthdate)) }}</p>
+            <p>{{ $jobs->count() }} ครั้ง</p>
+            </div>
+
+            <div class="col-md-3">
+            <h5 class="font-weight-bold">ยืนยันตัวตน</h5>
+            <p><i class="fas fa-envelope-square"></i>  อีเมล   @if (Auth::user()->email !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif
+            <p><i class="fas fa-id-card"></i>  ประชาชน   @if ($designer->personalID !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif
+            <p><i class="fas fa-phone-square-alt"></i>  เบอร์โทรศัพท์               @if ($designer->phonenumber !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif
             </div>
             </div>
 
@@ -124,73 +160,183 @@
                                     <small class="_gray">จาก 5.0</small>
                             </div>
                          </div>
-                         <div class="col-12 col-lg-9">
+                         <div class="col-12 col-md-9">
+                             @php
+                                $complacency = $reviews->avg('complacency'); 
+                                $reasonableprice = $reviews->avg('reasonableprice'); 
+                                $skillandexpertise = $reviews->avg('skillandexpertise'); 
+
+                             @endphp
                             <p>ความพึงพอใจ</p>
+                          
                            <div class="d-flex">
-                            <i class="fas fa-star star1"></i>
-                            <i class="fas fa-star star1"></i> 
-                            <i class="fas fa-star star1"></i> 
-                            <i class="fas fa-star star1"></i> 
-                            <i class="fas fa-star star1"></i>  
+                            @if (number_format($complacency) == 1)
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i>
+          
+                            @elseif (number_format($complacency) == 2) 
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i>
+            
+                            @elseif (number_format($complacency) == 3) 
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i>
+            
+                            @elseif (number_format($complacency) == 4) 
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star stargrey"></i>
+            
+                            @elseif (number_format($complacency) == 5) 
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i>
+                                
+                            @else
+                                <i class="fas fa-star stargrey" id=""></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i>
+            
+                            @endif
+                            @if (number_format($complacency) == 1)
+                            <p class="_gray ml-2 mr-2">(น้อย)</p>
+          
+                            @elseif (number_format($complacency) == 2) 
+                            <p class="_gray ml-2 mr-2">(พอใช้)</p>
+            
+                            @elseif (number_format($complacency) == 3) 
+                            <p class="_gray ml-2 mr-2">(ปานกลาง)</p>
+            
+                            @elseif (number_format($complacency) == 4) 
                             <p class="_gray ml-2 mr-2">(ดีมาก)</p>
+            
+                            @elseif (number_format($complacency) == 5) 
+                            <p class="_gray ml-2 mr-2">(ดีมากที่สุด)</p>
+                                
+                            @else
+                            <p class="_gray ml-2 mr-2">(ไม่ดี)</p>
+            
+                            @endif
                            </div>
                            <p>ราคาเหมาะสมกับคุณภาพ</p>
+
                            <div class="d-flex">
-                            <i class="fas fa-star star1"></i>
-                            <i class="fas fa-star star1"></i> 
-                            <i class="fas fa-star star1"></i> 
-                            <i class="fas fa-star star1"></i> 
-                            <i class="fas fa-star star1"></i>  
+                            @if (number_format($reasonableprice) == 1)
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i>
+          
+                            @elseif (number_format($reasonableprice) == 2) 
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i>
+            
+                            @elseif (number_format($reasonableprice) == 3) 
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i>
+            
+                            @elseif (number_format($reasonableprice) == 4) 
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star stargrey"></i>
+            
+                            @elseif (number_format($reasonableprice) == 5) 
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i>
+                                
+                            @else
+                                <i class="fas fa-star stargrey" id=""></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i>
+            
+                            @endif
+                            @if (number_format($reasonableprice) == 1)
+                            <p class="_gray ml-2 mr-2">(น้อย)</p>
+          
+                            @elseif (number_format($reasonableprice) == 2) 
+                            <p class="_gray ml-2 mr-2">(พอใช้)</p>
+            
+                            @elseif (number_format($reasonableprice) == 3) 
+                            <p class="_gray ml-2 mr-2">(ปานกลาง)</p>
+            
+                            @elseif (number_format($reasonableprice) == 4) 
                             <p class="_gray ml-2 mr-2">(ดีมาก)</p>
+            
+                            @elseif (number_format($reasonableprice) == 5) 
+                            <p class="_gray ml-2 mr-2">(ดีมากที่สุด)</p>
+                                
+                            @else
+                            <p class="_gray ml-2 mr-2">(ไม่ดี)</p>
+            
+                            @endif
                            </div>
                            <p>ฝีมือและความเชี่ยวชาญ</p>
+
                            <div class="d-flex">
-                            <i class="fas fa-star star1"></i>
-                            <i class="fas fa-star star1"></i> 
-                            <i class="fas fa-star star1"></i> 
-                            <i class="fas fa-star star1"></i> 
-                            <i class="fas fa-star star1"></i>  
+                            @if (number_format($skillandexpertise) == 1)
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i>
+          
+                            @elseif (number_format($skillandexpertise) == 2) 
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i>
+            
+                            @elseif (number_format($skillandexpertise) == 3) 
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i>
+            
+                            @elseif (number_format($skillandexpertise) == 4) 
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star stargrey"></i>
+            
+                            @elseif (number_format($skillandexpertise) == 5) 
+                                <i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i>
+                                
+                            @else
+                                <i class="fas fa-star stargrey" id=""></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i><i class="fas fa-star stargrey"></i>
+            
+                            @endif
+                            @if (number_format($skillandexpertise) == 1)
+                            <p class="_gray ml-2 mr-2">(น้อย)</p>
+          
+                            @elseif (number_format($skillandexpertise) == 2) 
+                            <p class="_gray ml-2 mr-2">(พอใช้)</p>
+            
+                            @elseif (number_format($skillandexpertise) == 3) 
+                            <p class="_gray ml-2 mr-2">(ปานกลาง)</p>
+            
+                            @elseif (number_format($skillandexpertise) == 4) 
                             <p class="_gray ml-2 mr-2">(ดีมาก)</p>
+            
+                            @elseif (number_format($skillandexpertise) == 5) 
+                            <p class="_gray ml-2 mr-2">(ดีมากที่สุด)</p>
+                                
+                            @else
+                            <p class="_gray ml-2 mr-2">(ไม่ดี)</p>
+            
+                            @endif
                            </div>
                         
                          </div>
                       
                          
                       
-                     
-
-                    
-                   
-                </div>
-                <hr>
-                <div class="row mt-3">
-                    @foreach ($reviews as $review)
-                    <div class="col-3">
-                        <div class="profile-img2 mt-3">
-                       <img class="rounded-circle" src="https://i.pinimg.com/originals/73/1c/ed/731ced24d44459831ec166492257fa45.jpg" alt=""/>
-                      </div>
-                  </div>
-                    <div class="col-9">
-                    @php
-                        $username = Auth::user()->find($review->user_id)->name;
-                    @endphp
-                    
-                      <h5 class="mt-3">{{$username}} 
-                        <span>
-                          <i class="fas fa-star star1" style="float: right;"> 
-                             <span style="color: #000;">({{$review->rating}})</span>
-                          </i> 
-                        </span>
-                    </h5>
-                          <small class="text-black-50">วันที่รีวิว {{date('F d,Y',strtotime($review->create_at))}}</small>
-                          <hr class="w-100">
-                          <p class="mt-3">{{$review->reviewdescription}}</p>
+                      
                     </div>
-                    <hr class="w-100">
-                
+                    @foreach ($reviews as $review)
+                    @php
+                        $user = Auth::user()->find($review->user_id);
+                        $profile = $user->profile();
+                    @endphp
+                    <div class="row mt-2">
+
+                        <div class="col-2">
+                            <div class="profile-img2 mt-3" style="height:50px; width:50px;"> 
+                                @if ($profile)
+                                <img class="rounded-circle" style="height:50px; width:50px; object-fit:cover;" src="/{{$profile->profilepic}}" />
+
+
+
+                                @else
+                                <img class="rounded-circle" style="height:50px; width:50px; object-fit:cover;" src="{{$user->avatar}}" />
+
+                                @endif
+                          </div>
+                        </div>
+  
+                          
+                      <div class="col">
+                     
+                      <h5 class="mt-3">{{$user->name}} <span>
+                            
+                            <i class="fas fa-star star1" style="float: right;"> 
+                               <span style="color: #000;">{{$review->rating}}</span>
+                            </i> </span></h5>
+                            <p class="text-black-50">{{date('F d,Y',strtotime($review->created_at))}}</p>
+                      </div>
+                    </div>
+                    <h5 class="mt-3">{{$review->reviewdescription}}</h5>
+                    <hr>
+
                     @endforeach
-                </div>
-                   
+
                     
                     <!-- comment -->
 {{-- 
@@ -223,36 +369,29 @@
           <div class="card-body">
               <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                    <h5 class="font-weight-bold ">  ผลงานบรรณจุภันฑ์ (<small>8</small>)</h5>
+                <h5 class="font-weight-bold ">  ผลงานบรรณจุภันฑ์ (<small>{{$works->count()}}</small>)</h5>
                     <div class="overflow-gallery grid-gallery">
                     <div class="row">
+                        @foreach ($works as $work)
+                        @php
+                            // $artwork = json_decode($work->file);
+                        $artworks = \App\Jobfiles::where('job_id',$work->id)->get();
+
+                           
+                        @endphp
                         <div class="col-12 mt-3">
-                            <img class="rounded"  style=" object-fit: cover;"src="/photo/@product-8.png" />
+                            @foreach ($artworks as $artwork)
+
+                                @if ($artwork->fileartworkname == NULL)
+                                <img class="rounded shadow-sm"  style="width:620px; height:460px; object-fit: cover;" src="/{{ $artwork->fileimgname }}" />
+
+                                @endif
+ 
+                            @endforeach
                         </div>
-                        <div class="col-12 mt-3">
-                            <img class="rounded" style=" object-fit: cover;"src="/photo/@product-7.png" />
-                        </div>
-    
-                        <div class="col-12 mt-3">
-                            <img class="rounded"  style=" object-fit: cover;"src="/photo/@product-3.png" />
-                        </div>
-                        <div class="col-12 mt-3">
-                            <img class="rounded" style=" object-fit: cover;"src="/photo/@product-4.png" />
-                        </div>
-                        <div class="col-12 mt-3">
-                            <img class="rounded"  style=" object-fit: cover;"src="/photo/@product-6.png" />
-                        </div>
-                        <div class="col-12 mt-3">
-                            <img class="rounded" style=" object-fit: cover;"src="/photo/@product-5.png" />
-                        </div>
-    
-                        <div class="col-12 mt-3">
-                            <img class="rounded"  style=" object-fit: cover;"src="/photo/@product-1.png" />
-                        </div>
-                        <div class="col-12 mt-3">
-                            <img class="rounded" style=" object-fit: cover;"src="/photo/@product-2.png" />
-                        </div>
-    
+                        
+                        @endforeach
+
                     </div>
                     </div>
     

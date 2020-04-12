@@ -17,7 +17,7 @@ class User extends Authenticatable
      */
     protected $table = 'users';
     protected $fillable = [
-        'name','avatar', 'email', 'password','role'
+        'name','avatar', 'email', 'password','role','acceptterm'
     ];
 
     /**
@@ -28,6 +28,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function profile(){
+        return $this->hasOne('App\Profile')->first();
+
+    }
 
     public function designer()
     {
