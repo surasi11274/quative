@@ -97,7 +97,7 @@
                         {{-- <h3 class="_hilight ">Package  Coralist</h3> --}}
                       
                         <a href="">
-                            <h3 >ออกแบบโดย&nbsp;<label> {{$designerid->name}}</label></h3>
+                            <h3 >ออกแบบโดย&nbsp;<label class="font-weight-bold _hilight"> {{$designerid->name}}</label></h3>
                         </a>
                         <p class="_gray">ออกแบบบรรจุภัณฑ์ประเภท ขวด</p>
                     </div>
@@ -297,7 +297,10 @@
             
                 </div>
                 <div class="container" style="padding: 0rem 3rem 3rem!important;">
-                    <h5 class="font-weight-bold">ผลงานอื่นๆของ การดา ราทอง</h5>
+                    <div class="row">
+                        <h5 class="font-weight-bold">ผลงานอื่นๆของ </h5> &nbsp;<h5 class="font-weight-bold _hilight">{{$designerid->name}}</h5>
+
+                    </div>
                         <div class="row">
                             <div class="col-12 col-md-4 ">
                                 <div class="caption-inner mt-3 mb-3">
