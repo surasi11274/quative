@@ -3,11 +3,11 @@
         <link rel="stylesheet" href="{{asset('css/style_match.css')}}">
 @endsection
 @section('content')
-<section class="content mt_ex">
+<section class="content">
 
 <div class="container">		
     <div class="row mt-3">
-      <div class="col-12 col-md-4 card pb-md-5"  style=" background-color: #000;">
+      <div class="col-12 col-md-4 card pb-3 pb-md-5"  style=" background-color: #000;">
               <div class="profile-img text-center mt-5" style="width:120px; height:120px; margin:auto;">
                 <img id="profileImage" class="rounded-circle" style=" object-fit:cover;" src="/{{$designer->profilepic}}" />
               </div>
@@ -44,18 +44,69 @@
              
                         
       </div>
+     {{-- new  --}}
+ <div class="col-6 col-lg-3">
+            <h5 class="font-weight-bold d-none d-md-block" >ข้อมูลเบื้องต้น</h5>
+            <h6 class="font-weight-bold d-md-none" >ข้อมูลเบื้องต้น</h6>
+            <p class="d-none d-md-block">เป็นสมาชิกเมื่อ</p>
+            <p class="d-none d-md-block">ออกแบบงานแล้ว</p>
+            <p class="d-none d-md-block">อัตรางานสำเร็จ</p>
+            <small class="d-md-none">เป็นสมาชิกเมื่อ</small>
+            <small class="d-md-none">ออกแบบงานแล้ว</small>
+            <small class="d-md-none">อัตรางานสำเร็จ</small>
+            </div>
+
+            <div class="col-6 col-lg-3">
+           <br>
+            <p class="d-none d-md-block"> {{date('F d,Y',strtotime($designer->create_at))}}</p>
+            <p class="d-none d-md-block">{{212 }} ครั้ง</p>
+            <p class="d-none d-md-block">{{100%100}}</p>
+            <small class="d-md-none"> {{date('F d,Y',strtotime($designer->create_at))}}</small>
+            <br>
+            <small class="d-md-none">{{212 }} ครั้ง</small>
+            <br>
+            <small class="d-md-none">{{100%100}}</small>
+            </div>
+
+            <div class="col-12 col-lg-3 ">
+            <h5 class="font-weight-bold d-none d-md-block">ยืนยันตัวตน</h5>
+            <h6 class="font-weight-bold d-md-none">ยืนยันตัวตน</h6>
+            <div class="row">
+                <div class="col-2">
+                    <i class="fas fa-envelope-square icon _hilight"></i>
+                    <i class="fas fa-id-card icon _hilight "></i>
+                    <i class="fas fa-phone-square-alt icon _hilight"></i> 
+                </div>
+                <div class="col-8">
+                    <p >อีเมล</p>
+                    <p >ประชาชน</p>
+                    <p>เบอร์โทรศัพท์</p>
+                </div>
+                <div class="col-2" style="display:grid;">
+                    <i class="fas fa-check _hilight"></i>
+                    <i class="fas fa-check _hilight"></i>
+                    <i class="fas fa-check _hilight"></i>
+                </div>
+            </div>
+      {{-- end new  --}}
       <div class="col-12 col-md-8">		
           <div class="card-body bg-white">
 
               <div class="row">
-              <div class="col-md-3">
-            <h5 class="font-weight-bold" >ข้อมูลเบื้องต้น</h5>
-            <p>เป็นสมาชิกเมื่อ </p>
-            <p>เดือน/วัน/ปี เกิด</p>
-            <p>ออกแบบงาน</p>
+              <div class="col-6 col-md-3">
+            
+            <h5 class="font-weight-bold d-none d-md-block" >ข้อมูลเบื้องต้น</h5>
+            <h6 class="font-weight-bold d-md-none" >ข้อมูลเบื้องต้น</h6>
+            <p class="d-none d-md-block">เป็นสมาชิกเมื่อ</p>
+            <p class="d-none d-md-block">ออกแบบงานแล้ว</p>
+            <p class="d-none d-md-block">อัตรางานสำเร็จ</p>
+            <small class="d-md-none">เป็นสมาชิกเมื่อ</small>
+            <small class="d-md-none">ออกแบบงานแล้ว</small>
+            <small class="d-md-none">อัตรางานสำเร็จ</small>
+        
             </div>
 
-            <div class="col-md-3 mt-2">
+            <div class="col-6 col-md-3">
            <br>
             <p> {{date('F d,Y',strtotime( Auth::user()->created_at))}}</p>
             <p>{{ date('F d,Y',strtotime($designer->birthdate)) }}</p>
@@ -72,7 +123,8 @@
 
             <hr>
 
-            <h5 class="font-weight-bold">รายละเอียด</h5>
+            <h5 class="font-weight-bold d-none d-md-block">ข้อมูลเบื้องต้น</h5>
+            <h6 class="font-weight-bold d-md-none">ข้อมูลเบื้องต้น</h6>
             <p>{{$designer->description}}</p>
             
             <hr>
@@ -97,19 +149,18 @@
 </div>
 <div class="container">
 <div class="row mt-3">
-      <div class="col-md-4 " style="    padding-right: 0px !important;
-      padding-left: 0px !important;">
+      <div class="col-12 col-md-4 " style="padding-right: 0px !important; padding-left: 0px !important;">
           <div class="card" style="padding-bottom: 45px;">
               <div class="card-body">
                   <h5 class=" font-weight-bold mt-3">รีวิวจากผู้ประกอบการ</h5>
                       <div class="row mt-3">
-                         <div class="col-md-3">
+                         <div class="col-12 col-lg-3">
                             <div class="text-center mt-3">
                                 <h3 class="font-weight-bold">{{$designer->rating}}</h3>
                                     <small class="_gray">จาก 5.0</small>
                             </div>
                          </div>
-                         <div class="col-md-9">
+                         <div class="col-12 col-md-9">
                              @php
                                 $complacency = $reviews->avg('complacency'); 
                                 $reasonableprice = $reviews->avg('reasonableprice'); 
@@ -308,16 +359,12 @@
                     {{-- <h5 class="mt-3">ทำงานตรงใจเราเลย</h5> --}}
                     {{-- <hr> --}}
                     <!-- comment -->
-
-
-
-
-
+                    
               </div>
           </div>
 </div>
 
-<div class="col-8">
+<div class="col-12 col-md-8">
           <div class="card">					
           <div class="card-body">
               <div class="tab-content" id="v-pills-tabContent">
@@ -357,6 +404,5 @@
 
 </div>
 </div>
-
 </section>
 @endsection
