@@ -14,7 +14,13 @@
               {{-- <h5 class="text-center mt-5 text-white">ปลายฟ้า เป็นตาธรรม</h5> --}}
               <h5 class="titlename text-center text-white mt-5 font-weight-bold">{{$profiles->name}} {{$profiles->surname}}</h5>
              
-
+              <div class="mt-5 text-center">
+                <a href="{{route('profile.edit',$profiles->token)}}">
+                    <button class="btn btn-secondary">
+                        แก้ไขข้อมูลส่วนตัว
+                    </button>
+                </a>
+              </div>
 
       </div>
       <div class="col-12 col-md-8">		

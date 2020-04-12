@@ -13,19 +13,19 @@
               </div>
               {{-- <h5 class="text-center mt-5 text-white">ปลายฟ้า เป็นตาธรรม</h5> --}}
               <h5 class="titlename text-center text-white mt-5 font-weight-bold">{{$designer->name}} {{$designer->surname}}</h5>
-              @if ($designer->rating == 1)
+              @if ($designer->rating >= 1 && $designer->rating < 2)
               <p class="mt text-center"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i>
 
-              @elseif ($designer->rating == 2) 
+              @elseif ($designer->rating >= 2 && $designer->rating < 3) 
               <p class="mt text-center"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i>
 
-              @elseif ($designer->rating == 3) 
+              @elseif ($designer->rating >= 3 && $designer->rating < 4) 
               <p class="mt text-center"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i>
 
-              @elseif ($designer->rating == 4) 
+              @elseif ($designer->rating >= 1 && $designer->rating < 5) 
               <p class="mt text-center"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star"></i>
 
-              @elseif ($designer->rating == 5) 
+              @elseif ($designer->rating >= 5) 
                 <p class="mt text-center"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i><i class="fas fa-star star1"></i>
                     
                     @else
@@ -283,9 +283,6 @@
                         $user = Auth::user()->find($review->user_id);
                         $profile = $user->profile();
                     @endphp
-                  
-
-                    
                     <div class="row  mt-2">
 
                         <div class="col-2">

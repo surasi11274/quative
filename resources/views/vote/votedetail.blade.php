@@ -96,7 +96,9 @@
                     <div class="col-12 col-md-7 p-md-5 text-md-left text-xm-center ">
                         {{-- <h3 class="_hilight ">Package  Coralist</h3> --}}
                       
-                        <h3 >ออกแบบโดย&nbsp;<label> {{$designerid->name}}</label></h3>
+                        <a href="">
+                            <h3 >ออกแบบโดย&nbsp;<label> {{$designerid->name}}</label></h3>
+                        </a>
                         <p class="_gray">ออกแบบบรรจุภัณฑ์ประเภท ขวด</p>
                     </div>
                     <div class="col-12 col-md-3 p-5">
