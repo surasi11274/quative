@@ -73,7 +73,7 @@
                 <small class="d-md-none">{{ $jobs->count() }} ครั้ง</small>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-12 col-md-6">
             <h5 class="font-weight-bold">ยืนยันตัวตน</h5>
             <div class="row">
                 <div class="col-2">

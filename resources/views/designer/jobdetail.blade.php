@@ -824,3 +824,4 @@ updateList = function() {
 }
 
 </script>
+<script src="js/file-upload-with-preview.js"></script>
