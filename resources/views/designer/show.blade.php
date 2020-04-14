@@ -9,7 +9,7 @@
     <div class="row mt-3">
       <div class="col-12 col-md-4 card pb-3 pb-md-5"  style=" background-color: #000;">
               <div class="profile-img text-center mt-5" style="width:120px; height:120px; margin:auto;">
-                <img id="profileImage" class="rounded-circle" style=" object-fit:cover;" src="/{{$designer->profilepic}}" />
+                <img id="profileImage" class="rounded-circle" style="width:120px; height:120px; object-fit:cover;" src="/{{$designer->profilepic}}" />
               </div>
               {{-- <h5 class="text-center mt-5 text-white">ปลายฟ้า เป็นตาธรรม</h5> --}}
               <h5 class="titlename text-center text-white mt-5 font-weight-bold">{{$designer->name}} {{$designer->surname}}</h5>
@@ -55,10 +55,10 @@
             <h6 class="font-weight-bold d-md-none" >ข้อมูลเบื้องต้น</h6>
             <p class="d-none d-md-block">เป็นสมาชิกเมื่อ</p>
             <p class="d-none d-md-block">เดือน/วัน/ปี เกิด</p>
-            <p class="d-none d-md-block">อัตรางานสำเร็จ</p>
+            <p class="d-none d-md-block">การจ้างงาน</p>
             <small class="d-md-none">เป็นสมาชิกเมื่อ</small>
-            <small class="d-md-none">ออกแบบงานแล้ว</small>
-            <small class="d-md-none">อัตรางานสำเร็จ</small>
+            <small class="d-md-none">เดือน/วัน/ปี เกิด</small>
+            <small class="d-md-none">การจ้างงาน</small>
             </div>
 
             <div class="col-6 col-md-3">
