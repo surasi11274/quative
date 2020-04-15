@@ -1738,6 +1738,14 @@
 
 }
 @media (min-width:1023.98px){
+  .dropdown-menu {
+    top: 100%;
+    left: -290px !important;
+}
+  .wrapper-profile{
+    width: 322px;
+    /* width: 100%; */
+  }
   .middle {
     width: 100%;
     text-align: center;
@@ -2301,8 +2309,6 @@
     ul.ks-cboxtags li input[type="checkbox"]:focus + label {
       border: 2px solid #523EE8;
     }
-
-    
 }
 @media(min-width:1920px){
   .nav-pills .nav-link {
