@@ -246,6 +246,37 @@ Route::group(['middlewere' => 'auth'], function () {
 
 Route::get('/favouritelist', 'GalleryController@favList');
 
+Route::get('/startjob/show/{token}', [
+    'as' => 'startjob.show',
+    'uses' => 'ManualJobController@show']);
+
+
+Route::get('/startjob/create1/{token}', [
+    'as' => 'startjob.create1',
+    'uses' => 'ManualJobController@createJobStep1']);
+
+Route::post('/startjob/create1/store', [
+    'as' => 'startjob.create1.store',
+    'uses' => 'ManualJobController@jobStep1Store']);
+
+Route::get('/startjob/createRef/{token}', [
+    'as' => 'startjob.createref',
+    'uses' => 'ManualJobController@createJobStep2']);
+   
+Route::post('/startjob/createRef/store', [
+    'as' => 'startjob.createref.store',
+    'uses' => 'ManualJobController@jobStep2Store']);
+
+Route::get('/startjob/createprice/{token}', [
+    'as' => 'startjob.createprice',
+    'uses' => 'ManualJobController@createJobStep3']);
+       
+Route::post('/startjob/createprice/store', [
+    'as' => 'startjob.createprice.store',
+    'uses' => 'ManualJobController@jobStep3Store']);
+
+Route::get('/startjob/matched/{token}', 
+    'ManualJobController@matched')->name('matched');
 // Route::post('/gallery/like' , 'GalleryController@likepost')->name('like');
 // Route::post('ajaxRequest', 'GalleryController@ajaxRequest')->name('ajaxRequest');
 

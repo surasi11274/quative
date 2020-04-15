@@ -4,6 +4,8 @@
 @endsection
 @section('content')
 <link href="{{ asset('css/_vote-detail.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     {{-- <div class="bd-example shadow-ex">
         <div id="carouselExampleCaptions3" class="carousel slide" data-ride="pause">
@@ -96,7 +98,7 @@
                     <div class="col-12 col-md-7 p-md-5 text-md-left text-xm-center ">
                         {{-- <h3 class="_hilight ">Package  Coralist</h3> --}}
                       
-                        <a href="">
+                        <a style="text-decoration:none;" href="{{route('startjob.show',$designerid->token)}}">
                             <h3 >ออกแบบโดย&nbsp;<label class="font-weight-bold _hilight"> {{$designerid->name}}</label></h3>
                         </a>
                         <p class="_gray">ออกแบบบรรจุภัณฑ์ประเภท ขวด</p>
@@ -106,7 +108,7 @@
                             @guest
 
                             <a href="javascript:void(0);" >
-                            <button onclick="toastr.info('To add favorite list. You need to login first.','Info',{
+                            <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
                                 closeButton:true,
                                 progressBar: true,
                             })" class="love btn btn-light text-center rounded float-right border">
@@ -389,3 +391,4 @@
         </div>
     </div> --}}
     @endsection
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

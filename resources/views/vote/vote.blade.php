@@ -159,7 +159,7 @@
                                             @guest
 
                                             <a href="javascript:void(0);" >
-                                            <button onclick="toastr.info('To add favorite list. You need to login first.','Info',{
+                                            <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
                                                 closeButton:true,
                                                 progressBar: true,
                                             })" class="love btn btn-light text-center rounded float-right border">

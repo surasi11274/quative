@@ -45,15 +45,15 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     // pang edit 
-    public function includecourse (){
-        return view('designer.includecourse');
-    }
-    public function billing (){
-        return view('designer.billing');
-    }
-    public function term(){
-        return view('auth.term');
-    }
+    // public function includecourse (){
+    //     return view('designer.includecourse');
+    // }
+    // public function billing (){
+    //     return view('designer.billing');
+    // }
+    // public function term(){
+    //     return view('auth.term');
+    // }
     
     public function index()
     {
