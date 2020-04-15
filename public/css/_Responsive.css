@@ -3,6 +3,14 @@
 /* Mobile section  */
 /* iphone 5 */
 @media (min-width: 319.98px) {
+  .overflow-menu-designer{
+    overflow-y: scroll;
+    height: 210px;
+  }
+  .icon::before {
+    
+    font-size: 27px !important;
+}
   .img-center{
     margin: 0px 65px auto;
   }
@@ -438,6 +446,10 @@
 
 /* iphone 6 iphone x */  
 @media (min-width: 375px){
+  .overflow-menu-designer{
+    overflow-y: scroll;
+    height: 280px;
+  }
   .middle {
     width: 100%;
     text-align: center;
@@ -1052,6 +1064,10 @@
 
 /* ipad section  */
 @media (min-width: 768px) {
+  .overflow-menu-designer{
+    overflow-y: scroll;
+    height: 290px;
+  }
   .middle {
     width: 100%;
     text-align: center;
