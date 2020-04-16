@@ -83,14 +83,27 @@
                                                 <br>
                                                 <h5 class="text-left font-weight-bold"> อัพโหลดภาพตัวอย่างงาน</h5>
 
-                                                <div  id="thumb-output" class="pt-2 pb-2" style="display:flex; width:180px;height:180px;">
-                                                
+                                               
+                                        <div class="col text-left">
+                                            <div class="custom-file-container" data-upload-id="myUniqueUploadId">
+                                                <label><a href="javascript:void(0)" class="custom-file-container__image-clear" hidden title="Clear Image">&times;</a></label>
+                                                <label class="custom-file-container__custom-file" >
+                                                    <input type="file" class="custom-file-container__custom-file__custom-file-input" name="fileimgname[]" accept="*" multiple aria-label="Choose File">
+                                                    <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                                    <span class="custom-file-container__custom-file__custom-file-control"></span>
+                                                </label>
+                                                <div class="custom-file-container__image-preview">
+                                                    <div class="col-3">
+            
+                                                    </div>
                                                 </div>
+                                            </div>
+                                            </div>          
+                                 
+                                {{-- <div  id="thumb-output" style="display:flex; width:180px;height:180px;"></div> --}}
 
-                                                 <div class="upload-btn-wrapper-">
-                                                        <button class="_btn-upload- " style="width: 670px;"><i class="fas fa-plus"></i></button>
-                                                        <input type="file" id="file-input"  name="fileimgname[]"  multiple />
-                                                 </div>
+                               
+                             
 
                                              </div>
                                              <div class="col-md-12">
@@ -824,4 +837,4 @@ updateList = function() {
 }
 
 </script>
-<script src="js/file-upload-with-preview.js"></script>
+<script src="{{asset('js/file-upload-with-preview.js')}}"></script>
