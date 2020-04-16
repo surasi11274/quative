@@ -98,10 +98,12 @@
         @else
         <div class="container">
             <div class="row " >
-                <div class="col-12 col-sm-6 "style="margin-top: 110px">
+                <div class="col-12 col-md-6"style="margin-top: 110px">
                     <div class="mt-ex" style="margin-top: 10rem">
-                        <h1 class="header">ออกแบบ
+                        <h1 class="header d-none d-md-block">ออกแบบ
                             <span class="_hilight font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
+                            <h3 class="header d-md-none">ออกแบบ
+                            <span class="_hilight font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h3>
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
                             <div class="row">
@@ -115,16 +117,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-sm-6 mt_ex">
-                    {{--<div data-aos="fade-up" data-aos-duration="300">--}}
-                        {{--<figure class="img-fluid ">--}}
-                            {{--<picture>--}}
-                                {{--<img src="photo/Frame.png" alt="">--}}
-                            {{--</picture>--}}
-                        {{--</figure>--}}
-                    {{--</div>--}}
-
                 </div>
             </div>
             <div class=" text-center mt-5 mb-5 p-5 _curve">
@@ -144,8 +136,9 @@
                     {{-- <i class="fas icon fa-angle-double-down"></i> --}}
             </div>
 
-            <h1 class="p-5 text-center">ทำไมต้อง<span class="_hilight font-weight-bold">QUATIVE</span> </h1>
-            <div class="row ">
+            <h1 class="p-md-5 text-center d-none d-md-block">ทำไมต้อง<span class="_hilight font-weight-bold">QUATIVE</span> </h1>
+            <h3 class="p-3 text-center d-md-none">ทำไมต้อง<span class="_hilight font-weight-bold">QUATIVE</span> </h3>
+            <div class="row mb-5">
 
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
                     <div class="card _card border shadow-sm" style="cursor: pointer;">
@@ -190,10 +183,11 @@
         </div>
 
     </div>
-    <div class="container-fluid totorial ">
+    <div class="container-fluid totorial  pb-5 pb-md-1">
             <div class="container  _p-md-5 ">
                     <div class="text-center">
-                            <h1 class="content-dark pb-5">Quative <span class="_hilight font-weight-bold">ใช้ยังไง?</span></h1>
+                            <h1 class="content-dark pb-5 d-none d-md-block">Quative <span class="_hilight font-weight-bold">ใช้ยังไง?</span></h1>
+                            <h3 class="content-dark pt-5 pb-5 d-md-none">Quative <span class="_hilight font-weight-bold">ใช้ยังไง?</span></h3>
 
                         <div class="row">
                             <div class="col-12 col-md-3">
@@ -246,17 +240,18 @@
                                                 </figure>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-md-6 p-5 text-right">
-                                            <h1><span class="_hilight font-weight-bold" >พรีวิว</span>บรรจุภัณฑ์<br>
-                                                ลองสินค้าในแบบของคุณ
+                                        <div class="col-12 col-md-6 p-md-5 text-center text-md-right">
+                                            <h1 class="d-none d-md-block"><span class="_hilight font-weight-bold" >พรีวิว</span>บรรจุภัณฑ์<br>
+                                                สินค้าในแบบของคุณ
                                             </h1>
+                                            <h3 class=" d-md-none text-center"><span class="_hilight font-weight-bold" >พรีวิว</span>บรรจุภัณฑ์<br>
+                                                สินค้าในแบบของคุณ
+                                            </h3>
                                             <p>ลองออกแบบบรรจุภัณฑ์ในรูปแบบหลายๆแบบ โดยใช้โลโก้ของคุณระบบจะทำการสร้างบรรจุภัณฑ์ให้คุณทดลองพรีวิวก่อนค้นหาดีไซน์เนอร์
                                             </p>
                                             <div class="row">
-                                                <div class="col">
-
-                                                </div>
-                                                <div class="col">
+                                                
+                                                <div class="col-12 col-6">
                                                     <button class="btn _primary-btn btn-lg btn-block mt-5">พรีวิวโลโก้</button>
 
                                                 </div>
@@ -268,7 +263,8 @@
                             </div>
     <div class="_box-3 bg-white _p-md-5  mb-5">
                 <div class="container">
-                    <h1 class="p-5 text-center"> รีวิว<span class="_hilight font-weight-bold">จากผู้ใช้งาน</span> </h1>
+                    <h1 class="p-5 text-center d-none d-md-block"> รีวิว<span class="_hilight font-weight-bold">จากผู้ใช้งาน</span> </h1>
+                    <h3 class="p-5 text-center d-md-none"> รีวิว<span class="_hilight font-weight-bold">จากผู้ใช้งาน</span> </h3>
 
                     <div class="row">
                         <div class="col-12 col-md-4 justify-content-center">
@@ -306,9 +302,10 @@
 
     </div>
                             <div class="_box-4 _p-md-5">
-                                <div class="text-center">
-                                    <h1><span class="_hilight font-weight-bold">ผลงาน</span>นักออกแบบ </h1>
-                                    <p>ต้องการค้นหานักออกแบบใช่มั้ย ? สมัครสมาชิกแล้วลองใช้งาน <br>
+                                <div class="col-12 text-center">
+                                    <h1 class="d-none d-md-block"><span class="_hilight font-weight-bold">ผลงาน</span>นักออกแบบ </h1>
+                                    <h3 class="d-md-none"><span class="_hilight font-weight-bold">ผลงาน</span>นักออกแบบ </h3>
+                                    <p>ต้องการค้นหานักออกแบบใช่มั้ย ? สมัครสมาชิกแล้วลองใช้งาน
                                         การค้นหานักออกแบบอย่างที่คุณต้องการดูก่อนสิ</p>
 
                                     <div class="flex">
