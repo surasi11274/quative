@@ -3,13 +3,17 @@
 /* Mobile section  */
 /* iphone 5 */
 @media (min-width: 319.98px) {
+  .overflow-select{
+    overflow-x: scroll;
+    width: 320px;
+  }
   .overflow-menu-designer{
     overflow-y: scroll;
     height: 210px;
   }
   .icon::before {
     
-    font-size: 27px !important;
+    font-size: 14px !important;
 }
   .img-center{
     margin: 0px 65px auto;
