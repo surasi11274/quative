@@ -279,24 +279,32 @@
 
                                              
                                             <div class="row  mt-5">
-                                                {{-- <div class="col"> --}}
+                                             
                                                 <label class="font-weight-bold text-left" style="font-size:1.25rem" for="">แนบรูปภาพการโอนเงิน</label>
 
                                         
                                                   </label>
-                                                  <div class="row">
-                                                    <div class="upload-btn-wrapper- pl-3">
-                                                        <button class="_btn-upload-"><i class="fas fa-plus"></i></button>
-                                                        <input type="file" id="file-input"  name="fileTransferToDesigner"  multiple />
-                                                    </div>
-                                                    <div class="mt-5"></div>
-                                                    <div  id="thumb-output" style="display:flex; width:180px;height:180px;">
-                                                    </div>
-                                                  </div>
-                                                     
+                                                  <div class="col">
+                                                    <div class="custom-file-container" data-upload-id="myUniqueUploadId">
+                                                       <label><a href="javascript:void(0)" class="custom-file-container__image-clear" hidden title="Clear Image">&times;</a></label>
+                                                       <label class="custom-file-container__custom-file" >
+                                                           <input type="file" class="custom-file-container__custom-file__custom-file-input" name="fileTransferToDesigner" accept="*" multiple aria-label="Choose File">
+                                                           <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                                           <span class="custom-file-container__custom-file__custom-file-control"></span>
+                                                       </label>
+                                                       <div class="custom-file-container__image-preview">
+                                                           <div class="col-3">
+                   
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                   {{-- <div  id="thumb-output" style="display:flex; width:180px;height:180px;"></div> --}}
+                   
+                                                  
+                                                </div>
                                                      
                                                  
-                                            </div>
+                                            
                                         </div> {{-- end --}}
                                         
                                            
@@ -409,3 +417,4 @@
         return false;
     }
 </script>
+<script src="{{asset('js/file-upload-with-preview.js')}}"></script>
