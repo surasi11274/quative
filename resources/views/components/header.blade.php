@@ -336,7 +336,7 @@
                             <li class="dropdown nav-item d-none d-lg-block" onclick="markNotificationAsRead('{{count(auth()->user()->unreadNotifications)}}')" >
                                 <a class="nav-link  " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                     <span class="icon notification"></span>
-                                    <span class="pending shadow-sm font-weight-bold  text-center" style=" position:absolute; left:25px;    margin: 0;background-color:#FE3A76; color:white; width:15px; height:15px padding:2px; border-radius:50%; font-size:12px; 
+                                    <span class="pending shadow-sm font-weight-bold  text-center" style=" position:absolute; left:35px;    margin: 0;background-color:#FE3A76; color:white; width:15px; height:15px padding:2px; border-radius:50%; font-size:12px; 
                                     ">
                                         {{count(auth()->user()->unreadNotifications)}}
                                     </span>
