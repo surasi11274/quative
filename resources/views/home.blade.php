@@ -1,6 +1,13 @@
 @extends('layouts.app')
+@section('assets')
+    <link rel="stylesheet" href="css/_vote-detail.css">
+@endsection
 
 @section('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+
 <!-- <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -51,7 +58,7 @@
                 <div class="col-12 col-sm-6 mt_ex">
                     <figure class="img-fluid ">
                         <picture>
-                            <img src="photo/Frame.png" alt="">
+                            {{-- <img src="photo/Frame.png" alt=""> --}}
                         </picture>
                     </figure>
                 </div>
@@ -139,14 +146,14 @@
                     {{-- <i class="fas icon fa-angle-double-down"></i> --}}
             </div>
 
-            <h1 class="p-md-5 text-center d-none d-md-block">ทำไมต้อง<span class="_hilight font-weight-bold">QUATIVE</span> </h1>
-            <h3 class="p-3 text-center d-md-none">ทำไมต้อง<span class="_hilight font-weight-bold">QUATIVE</span> </h3>
+            <h1 class="p-md-5 text-center d-none d-md-block">ทำไมต้อง <span class="_hilight font-weight-bold">QUATIVE</span> </h1>
+            <h3 class="p-3 text-center d-md-none">ทำไมต้อง <span class="_hilight font-weight-bold">QUATIVE</span> </h3>
             <div class="row mb-5">
 
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
                     <div class="card _card border shadow-sm" style="cursor: pointer;">
                         <div class="card-body ">
-                            <img src="photo/badge.png" alt="..." class="mt-5 mb-3">
+                            <img src="../photo/badge.png" alt="..." class="mt-5 mb-3">
                             <h5 class="mt-3 mb-3 font-weight-bold">มีคุณภาพ</h5>
                             <p >สินค้าดีไซน์โดยดีไซน์เนอร์มืออาชีพ <br>
                                 ทำให้มีคุณภาพ ใช้งานได้ดี สวย <br>
@@ -159,7 +166,7 @@
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
                     <div class="card _card border shadow-sm"  style="cursor: pointer;">
                         <div class="card-body">
-                            <img src="photo/lightpop.png"alt="..." class="mt-5 mb-3">
+                            <img src="../photo/lightpop.png"alt="..." class="mt-5 mb-3">
                             <h5 class="mt-3 mb-3 font-weight-bold">นักออกแบบมืออาชีพ</h5>
                             <p >นักออกแบบเฉพาะทาง <br>
                                 มาช่วยให้งานของคุณดูดีขึ้น <br>
@@ -171,7 +178,7 @@
                 <div class="col-12 col-md-4" data-aos="fade-up" data-aos-duration="500">
                     <div class="card _card border shadow-sm"  style="cursor: pointer;">
                         <div class="card-body">
-                            <img src="photo/verify.png" alt="..." class="mt-5 mb-3">
+                            <img src="../photo/verify.png" alt="..." class="mt-5 mb-3">
                             <h5 class="mt-3 mb-3 font-weight-bold">ความปลอดภัย</h5>
                             <p >มีการตรวจสอบความปลอดภัย <br>
                                 น่าเชื่อถือสำหรับผู้ใช้งาน <br>
@@ -189,34 +196,34 @@
     <div class="container-fluid totorial  pb-5 pb-md-1">
             <div class="container  _p-md-5 ">
                     <div class="text-center">
-                            <h1 class="content-dark pb-5 d-none d-md-block">Quative <span class="_hilight font-weight-bold">ใช้ยังไง?</span></h1>
-                            <h3 class="content-dark pt-5 pb-5 d-md-none">Quative <span class="_hilight font-weight-bold">ใช้ยังไง?</span></h3>
+                            <h1 class="content-dark pb-5 d-none d-md-block">QUATIVE <span class="_hilight font-weight-bold">ใช้ยังไง?</span></h1>
+                            <h3 class="content-dark pt-5 pb-5 d-md-none">QUATIVE <span class="_hilight font-weight-bold">ใช้ยังไง?</span></h3>
 
                         <div class="row">
                             <div class="col-12 col-md-3">
-                                    <img src="photo/@progess_1.png" alt="">
-                                    <h5 class="content-dark mt-5">ขั้นตอนที่ 1</h5>
+                                    <img src="../photo/@progess_1.png" alt="">
+                                    <h5 class="content-dark mt-5 font-weight-bold">ขั้นตอนที่ 1</h5>
                                     <small class="content-dark mt-3">เลือกผลิตภัณฑ์ <br>
                                          ที่คุณต้องการใช้
                                     </small>
                             </div>
                             <div class="col-12 col-md-3">
-                                    <img src="photo/@progess_2.png" alt="">
-                                    <h5 class="content-dark mt-5">ขั้นตอนที่ 2</h5>
+                                    <img src="../photo/@progess_2.png" alt="">
+                                    <h5 class="content-dark mt-5 font-weight-bold">ขั้นตอนที่ 2</h5>
                                     <small class="content-dark mt-3">เลือกนักออกแบบ <br>
                                             จากระบบที่คัดเลือกมาให้
                                     </small>
                             </div>
                             <div class="col-12 col-md-3">
-                                    <img src="photo/@progess_3.png" alt="">
-                                    <h5 class="content-dark mt-5">ขั้นตอนที่ 3</h5>
+                                    <img src="../photo/@progess_3.png" alt="">
+                                    <h5 class="content-dark mt-5 font-weight-bold">ขั้นตอนที่ 3</h5>
                                     <small class="content-dark mt-3">ชำระเงินโดยโอนผ่านธนาคาร <br>
                                             และเเจ้งใบเสร็จ
                                     </small>
                             </div>
                             <div class="col-12 col-md-3">
-                                    <img src="photo/@progess_4.png" alt="">
-                                    <h5 class="content-dark mt-5">ขั้นตอนที่ 4</h5>
+                                    <img src="../photo/@progess_4.png" alt="">
+                                    <h5 class="content-dark mt-5 font-weight-bold">ขั้นตอนที่ 4</h5>
                                     <small class="content-dark mt-3"> รับไฟล์งาน <br>
                                             จากนักออกแบบ
                                     </small>
@@ -239,7 +246,7 @@
                                         <div class="col-12 col-md-6 ">
                                             <div data-aos="fade-right" data-aos-duration="1000">
                                                 <figure class="img-fluid">
-                                                    <img src="photo/Packaging-3.png">
+                                                    <img src="../photo/Packaging-3.png">
                                                 </figure>
                                             </div>
                                         </div>
@@ -316,36 +323,116 @@
 
                                             <div class="row mt-5">
                                             {{-- @foreach ($designers as $designer) --}}
+                                            <div class="row">
 
-                                                <div class="col-12 col-md-6 mb-5">
-
-                                                    <div class="card">
-                                                        <img src="https://picsum.photos/320" class="rounded" alt="...">
-                                                        <div class="card-body text-left">
-                                                            <div class="row">
-                                                                <div class="col-3">
-                                                                    <img src="https://picsum.photos/90" style=" object-fit: cover; width: 90px;height: 90px;" class="rounded-circle" alt="...">
+                                                @if($jobs->count())
+                                                    @foreach($jobs as $job)
+                            
+                                                        @php
+                                                            $designerid = \App\Designer::find($job->designer_id);
+                            
+                                                            $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+                            
+                            
+                                                        @endphp
+                            
+                                                        <article class="col-12 col-md-4 mt-5">
+                                                            <div class="card shadow-sm" data-id="{{ $job->id }}">
+                            
+                                                            <a href="{{ route('galleryDetail', $job->id) }}">
+                                                                <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
+                                                            </a>
+                            
+                                                                <div class="card-body" style="width:auto;">
+                                                                    <div class="text-left position-absolute">
+                                                                        <div class="row pl-3">
+                                                                            <p class="font-weight-bold">ออกแบบโดย
+                                                                                {{$designerid->name}}
+                                                                            </p>
+                                                                        </div>
+                            
+                                                                    {{-- @foreach($job->tags as $tagn)
+                            
+                            
+                                                                        <p>
+                                                                            {{$tagname}},
+                                                                        </p>
+                            
+                                                                    @endforeach --}}
+                                                                    <div class="row pl-3">
+                                                                    @foreach ($jobtags as $jobt)
+                                                                        @php
+                            
+                                                                        $tagname = \App\Tags::find($jobt)->tagName;
+                            
+                                                                        @endphp
+                                                                        <p>
+                                                                            {{$tagname}},
+                                                                        </p>
+                            
+                                                                    @endforeach 
+                                                                    </div>
+                                                        
+                                                                <div class="row pl-3 color-grey">
+                                                                        <span>
+                                                                            <i class="fas fa-heart"></i>
+                                                                            {{$job->favorite_to_users->count()}}
+                                                                        </span>
+                                                                        <span class="pl-3">
+                                                                            <i class="far fa-eye"></i>
+                                                                            {{$job->view_count}}
+                                                                        </span>
+                            
+                            
+                            
+                            
+                            
                                                                 </div>
-                                                                <div class="col-9">
-                                                                    <h5>ภาวิณี ดุจดวง</h5>
-                                                                    <p class="card-text">บรรจุภัณฑ์ประเภทกล่องวัสดุมาตรฐาน</p>
-                                                                    <small>กล่อง,มินิมอล</small>
+                            
+                            
+                            
                                                                 </div>
+                                                                <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
+                                                                <span class="pull-right">
+                            
+                                                                        @guest
+                            
+                                                                        <a href="javascript:void(0);" >
+                                                                        <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
+                                                                            closeButton:true,
+                                                                            progressBar: true,
+                                                                        })" class="love btn btn-light text-center rounded float-right border">
+                                                                            <i class="fas fa-heart"></i>
+                                                                            {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                                                        </button>
+                                                                        </a>
+                            
+                                                                        @else
+                                                                        <a href="javascript:void(0);" >
+                                                                            <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                                                                <i class="fas fa-heart"></i>
+                            
+                                                                                {{-- {{$job->favorite_to_users->count()}}   --}}
+                                                                            </button>
+                                                                        </a>
+                                                                             <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                                                                style="display:none;">
+                                                                            @csrf
+                                                                            </form>
+                            
+                                                                        @endguest
+                                                                        {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
+                                                                        <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
+                                                                </span>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-12 col-md-6 mt-5">
-                                                            <img src="https://picsum.photos/320" class="rounded" alt="...">
-                                                        </div>
-                                                        <div class="col-12 col-md-6 mt-5">
-                                                            <img src="https://picsum.photos/320" class="rounded" alt="...">
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                                    <div class="col-12 col-md-6  mb-5">
+                                                    </article>
+                                                @endforeach
+                                            @endif
+                            
+                                        </div>
+                                       
+                                                    {{-- <div class="col-12 col-md-6  mb-5">
                                                         <div class="row">
                                                             <div class="col-12 col-md-6  mb-5">
                                                                 <img src="https://picsum.photos/320" class="rounded" alt="...">
@@ -369,9 +456,23 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </div> --}}
                                                     </div>
-
+                                                    <div class="row mt-5">
+                                                        <div class="col-4"></div>
+                                                        <div class="col-4 ">
+                                                            <div class="text-center">
+                                                                <a href="/gallery" >
+                                                                    <button class="btn _primary-black text-center btn-lg" > ดูผลงานเพิ่มเติม</button>
+                                                                </a>
+                                                            </div>
+                                                               
+                                                                
+                                                            
+                                                        </div>
+                                                        <div class="col-4"></div>
+            
+                                                    </div>
 
                                                 {{-- @endforeach --}}
 
@@ -402,3 +503,4 @@
                             </div>
                         </section>
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

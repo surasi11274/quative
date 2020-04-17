@@ -18,7 +18,22 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="photo/bg-vote.jpg" class="d-block w-100" alt="...">
+                @php
+                                $job = \App\Like::select('jobs_id')
+    ->selectRaw('COUNT(*) AS count')
+    ->groupBy('jobs_id')
+    ->orderByDesc('count')
+    ->limit(1)
+    ->dd();
+                                // $designerid = \App\Designer::find($job->designer_id);
+
+                                $jobfilee = DB::table('jobfiles')->where('job_id',$job->jobs_id)->get();
+
+
+                @endphp
+                <a href="">
+                    <img src="/{{$jobfilee->fileimgname}}" class="d-block w-100" alt="...">
+                </a>
                 <div class="carousel-caption1 d-none d-md-block">
                     <a href="/votedetail" class="site-link"></a>
                     <div class="container">
@@ -219,6 +234,7 @@
                 @endif
 
             </div>
+           
         </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">กล่อง</div>
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">ขวด</div>

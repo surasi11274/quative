@@ -55,14 +55,14 @@ class HomeController extends Controller
     //     return view('auth.term');
     // }
     
-    public function index()
-    {
-        $designers = Designer::all();
-        $cats = Categories::all();  
-        return view('home',[
-            'designers'=>$designers
-            ]);
-    }
+    // public function index()
+    // {
+    //     $designers = Designer::all();
+    //     $cats = Categories::all();  
+    //     return view('home',[
+    //         'designers'=>$designers
+    //         ]);
+    // }
 
 
 
