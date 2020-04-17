@@ -93,7 +93,7 @@
                           <div class="row">
                             <div class=" col-12 mt-5">
                               
-                                  <img class="img-fluid w-50 center" src="/photo/artwork_new_ครั้งที่2-05 1.png" alt="">
+                                  <img class="img-fluid w-50 center" src="../photo/Enterpreuer.png" alt="">
                               
                 
                             </div>
