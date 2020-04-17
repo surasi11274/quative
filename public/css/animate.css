@@ -3310,30 +3310,36 @@
 
 @-webkit-keyframes slideInDown {
   from {
-    opacity: 0;
+    opacity: 0 ;
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
     visibility: visible;
+    transition: 10s;
   }
 
   to {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     opacity: 1;
+    transition: 10s;
     
   }
 }
 
 @keyframes slideInDown {
   from {
+    opacity: 0 ;
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
     visibility: visible;
+    transition: 10s;
   }
 
   to {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: 10s;
   }
 }
 

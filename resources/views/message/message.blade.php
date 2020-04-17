@@ -86,7 +86,7 @@
               <div class="message-wrapper-none">
                   <ul class="messages">
                           <li class="message clearfix">
-                            <h5 class="text-center _gray mt-md-4">เริ่มสนทนากับผู้ประกอบการ</h5>
+                            <h5 class="text-center _gray mt-md-4">เริ่มการสนทนา</h5>
                             
                           <div class="row">
                               <div class="col-12 mt-5">

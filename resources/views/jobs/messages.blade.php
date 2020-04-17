@@ -78,6 +78,14 @@
                             <h5 class="text-center _gray mt-md-5">เริ่มสนทนากับนักออกแบบ</h5>
               
                           </li>
+                          <div class="row">
+                            <div class=" col-12 mt-5">
+                              
+                                  <img class="img-fluid w-50 center" src="/photo/artwork_new_ครั้งที่2-05 1.png" alt="">
+                              
+                
+                            </div>
+                        </div>
                   </ul>
               </div>
             </div>
