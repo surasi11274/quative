@@ -72,11 +72,16 @@
             <div class="row">
               <div class="col-6">
                 <button type="button" class="btn _secondary-btn btn-lg btn-block" >ยกเลิก</button>
-                <a href="{{ route('job.payment', $jobs->token) }}"> </a>
+                
               </div>
               <div class="col-6">
-                <button type="submit" class="btn _primary-black btn-lg  d-none d-md-block" style="width:100%;">อัพโหลดหลักฐานการชำระเงิน</button>
-                <button type="submit" class="btn _primary-black btn-lg d-md-none btn-block">อัพโหลด</button>
+                <a href="{{ route('job.payment', $jobs->token) }}">
+                  <button type="submit" class="btn _primary-black btn-lg  d-none d-md-block" style="width:100%;">อัพโหลดหลักฐานการชำระเงิน</button>
+                 </a>
+                 <a href="{{ route('job.payment', $jobs->token) }}">
+                  <button type="submit" class="btn _primary-black btn-lg d-md-none btn-block">อัพโหลด</button> 
+                </a>
+               
               </div>
             </div>
            
