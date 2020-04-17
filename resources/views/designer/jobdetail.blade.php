@@ -28,10 +28,10 @@
                             <div>
                                 @if ($profile)
 
-                                <img class="rounded-circle " style="width:100px; height:100px; object-fit:cover;" src="/{{ $profile->profilepic }}" alt="">
+                                <img class="rounded-circle obj-img-showjob" src="/{{ $profile->profilepic }}" alt="">
 
                              @else
-                             <img class="rounded-circle " style="width:100px; height:100px; object-fit:cover;" src="{{ $user->avatar }}" alt="">
+                             <img class="rounded-circle obj-img-showjob"  src="{{ $user->avatar }}" alt="">
 
                              @endif
 

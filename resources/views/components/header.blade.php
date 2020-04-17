@@ -269,7 +269,7 @@
                                                           </form>
                                                       
                                                     </div>
-                                                    <div class="col-3 text-center" style="display:grid;">
+                                                    <div class="col-3 text-center mt-2" style="display:grid;">
                                                       <span class="icon chat float-right mr-2"></span>
                                                       <span class="icon list-ul float-right mr-2"></span>
                                                       <span class="icon dollar-sign  float-right mr-2"></span>
@@ -579,7 +579,7 @@
                                                         </form>
                 
                                                   </div>
-                                                  <div class="col-3 text-center" style="display:grid;">
+                                                  <div class="col-3 text-center mt-2" style="display:grid;">
                                                     <span class="icon chat float-right mr-2"></span>
                                                     <span class="icon list-ul float-right mr-2"></span>
                                                     <span class="icon love-sym float-right mr-2"></span>
