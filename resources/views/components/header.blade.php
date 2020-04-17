@@ -157,10 +157,10 @@
                                         <div class="wrapper-profile">
                                           <div class="profile-color d-flex p-2">
                                               @if(Auth::user()->designer() )
-                                              <img class="ml-3 rounded-circle" src="/{{ Auth::user()->designer()->profilepic }}" alt="" style="width:50px;height:50px; border:solid 1px white;">
+                                              <img class="ml-3 rounded-circle" src="/{{ Auth::user()->designer()->profilepic }}" alt="" style="width:50px;height:50px; ">
 
                                               @else
-                                              <img class="ml-3 rounded-circle" src="{{ Auth::user()->avatar }}" alt="" style="width:50px;height:50px; border:solid 1px white;">
+                                              <img class="ml-3 rounded-circle" src="{{ Auth::user()->avatar }}" alt="" style="width:50px;height:50px; ">
 
                                               @endif
                                            <h5 class="ml-2 mt-3">{{ Auth::user()->name }}</h5>
@@ -235,10 +235,10 @@
                                             <div class="wrapper-profile-m">
                                                 <div class="profile-color d-flex p-2">
                                                     @if(Auth::user()->designer() )
-                                                    <img class="ml-3 rounded-circle" src="/{{ Auth::user()->designer()->profilepic }}" alt="" style="width:50px;height:50px; border:solid 1px white;">
+                                                    <img class="ml-3 rounded-circle" src="/{{ Auth::user()->designer()->profilepic }}" alt="" style="width:50px;height:50px; ">
       
                                                     @else
-                                                    <img class="ml-3 rounded-circle" src="{{ Auth::user()->avatar }}" alt="" style="width:50px;height:50px; border:solid 1px white;">
+                                                    <img class="ml-3 rounded-circle" src="{{ Auth::user()->avatar }}" alt="" style="width:50px;height:50px; ">
       
                                                     @endif
                                                  <h5 class="ml-2 mt-3">{{ Auth::user()->name }}</h5>
@@ -468,9 +468,9 @@
                                         
                                         @if ($profile)
 
-                                           <img class="ml-3 rounded-circle" src="/{{ $profile->profilepic }}" alt="" style="width:50px;height:50px; border:solid 1px white;">
+                                           <img class="ml-3 rounded-circle" src="/{{ $profile->profilepic }}" alt="" style="width:50px;height:50px; ">
                                         @else
-                                        <img class="ml-3 rounded-circle" src="{{ Auth::user()->avatar }}" alt="" style="width:50px;height:50px; border:solid 1px white;">
+                                        <img class="ml-3 rounded-circle" src="{{ Auth::user()->avatar }}" alt="" style="width:50px;height:50px; ">
 
                                         @endif
 
@@ -548,9 +548,9 @@
                                                  @endphp
                                                  @if ($profile)
          
-                                                    <img class="ml-3 rounded-circle" src="{{ $profile->profilepic }}" alt="" style="width:50px;height:50px; border:solid 1px white;">
+                                                    <img class="ml-3 rounded-circle" src="{{ $profile->profilepic }}" alt="" style="width:50px;height:50px; ">
                                                  @else
-                                                 <img class="ml-3 rounded-circle" src="{{ Auth::user()->avatar }}" alt="" style="width:50px;height:50px; border:solid 1px white;">
+                                                 <img class="ml-3 rounded-circle" src="{{ Auth::user()->avatar }}" alt="" style="width:50px;height:50px; ">
          
                                                  @endif
          

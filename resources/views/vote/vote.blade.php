@@ -18,21 +18,9 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-                @php
-                                $job = \App\Like::select('jobs_id')
-    ->selectRaw('COUNT(*) AS count')
-    ->groupBy('jobs_id')
-    ->orderByDesc('count')
-    ->limit(1)
-    ->dd();
-                                // $designerid = \App\Designer::find($job->designer_id);
-
-                                $jobfilee = DB::table('jobfiles')->where('job_id',$job->jobs_id)->get();
-
-
-                @endphp
+               
                 <a href="">
-                    <img src="/{{$jobfilee->fileimgname}}" class="d-block w-100" alt="...">
+                    <img src="../photo/bg-vote.jpg" class="d-block w-100" alt="...">
                 </a>
                 <div class="carousel-caption1 d-none d-md-block">
                     <a href="/votedetail" class="site-link"></a>
@@ -40,7 +28,7 @@
                         <div class="row">
                             <div class="col-12 text-left">
                                 <div class="site-header">
-                                    <h1 class="_hilight mt-5">ผลงานที่ได้รับการโหวตมากที่สุด</h1>
+                                    <h1 class="_hilight mt-5">ผลงานของนักออกแบบ</h1>
                                     <p style="color:black;">รวบรวมผลงานของนักออกแบบบรรจุภัณฑ์ที่สร้างสรรค์ผลงาน <br>
                                         บรรจุภัณฑ์ในรูปแบบต่างๆผ่านทางเว็บไซต์ Quative</p>
                                 </div>
