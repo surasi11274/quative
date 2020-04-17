@@ -6,7 +6,7 @@
    
 <body id="app">
     <header style="    width: 100%;
-    height: 100px;">
+    height: 80px;">
         @include('components.header')
     </header>
     <div class="container-fluid layout-top-bot" style="
