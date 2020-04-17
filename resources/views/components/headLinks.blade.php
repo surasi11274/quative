@@ -33,7 +33,7 @@
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 {{-- selectpicker --}}
 <link rel="stylesheet" href="css/bootstrap-select.min.css">
-
+<link rel="icon" href="photo/favicon.ico" type="image/gif" sizes="16x16">
 
 
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
