@@ -4,7 +4,7 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <!-- <div class="col-md-6 col-md-offset-2"> -->
-                <div class="col-12 card " style="width: 100% ;margin-top: 100px;">
+                <div class="col-12 col-md-8 card " style="width: 100% ;margin-top: 100px;">
                    <div class="row"> 
 
                        <div class="col-12 mt-5">
@@ -84,15 +84,17 @@
 ; color: white;">
                                                        เข้าสู่ระบบ
                                                    </button> --}}
-                                                   <center>
-                                                    <div class="mt-3 mb-5 text-right">
+                                                   <div class="row mt-3 mb-5 text-right">
+                                                       <div class="col-12 col-md-6">
                                                         <a href="/register">
-                                                     <button  type="button" class="btn btn-outline-dark mt-1" style="width: 150px; height: 50px;">สมัครสมาชิก</button>
-                                                    </a>
-                                                     <button  type="submit" class="btn btn-dark mt-1" style="width:  150px; height: 50px; background: #000000;">เข้าสู่ระบบ</button>
+                                                            <button  type="button" class="btn btn-outline-dark mt-1  btn-block" style="height: 50px;">สมัครสมาชิก</button>
+                                                           </a>
+                                                       </div>
+                                                       <div class="col-12 col-md-6">
+                                                        <button  type="submit" class="btn btn-dark mt-1 btn-block" style=" height: 50px; background: #000000;">เข้าสู่ระบบ</button>
                                                     </div>
-                                                   </center>
-
+                                                   </div>
+                                                  
                                                </div>
                                                
                                            </div>
