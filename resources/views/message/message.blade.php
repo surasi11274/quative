@@ -102,7 +102,7 @@
                           <div class="row">
                               <div class="col-12 mt-5">
                                 
-                                    <img class="img-fluid w-50 center" src="photo/Enterpreuer.png" alt="">
+                                    <img class="img-fluid w-50 center" src="../photo/Enterpreuer.png" alt="">
                                 
                   
                               </div>
