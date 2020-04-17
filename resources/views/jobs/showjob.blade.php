@@ -24,7 +24,7 @@
 
                             @endphp
                             
-                                <img class="rounded-circle" src="/{{$designerpic}}" alt="">
+                                <img class="rounded-circle obj-img-showjob" src="/{{$designerpic}}" alt="">
                         </div>
                         <div class="col-9 col-md-9 mb-3 mt-3">
                             

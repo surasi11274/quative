@@ -3,6 +3,9 @@
 /* Mobile section  */
 /* iphone 5 */
 @media (min-width: 319.98px) {
+  .obj-img-showjob{
+    width:100px;height:40px;object-fit:cover;
+  }
   .message-wrapper-none {
     padding: 10px;
     height: auto;
@@ -472,6 +475,9 @@
 
 /* iphone 6 iphone x */  
 @media (min-width: 374.98px){
+  .obj-img-showjob{
+    width:100px;height:60px;object-fit:cover;
+  }
   .rating {
     border: none;
     float: left;
@@ -1102,6 +1108,9 @@
 
 /* ipad section  */
 @media (min-width: 768px) {
+  .obj-img-showjob{
+    width:100px;height:50px !important;object-fit:cover;
+  }
   .rating {
     border: none;
     float: left;
@@ -1802,6 +1811,9 @@
 
 }
 @media (min-width:1023.98px){
+  .obj-img-showjob{
+    width:100px;height:80px !important;object-fit:cover;
+  }
   .rating {
     border: none;
     float: left;
@@ -2381,6 +2393,9 @@
     }
 }
 @media(min-width:1920px){
+  .obj-img-showjob{
+    width:100px;height:100px;object-fit:cover;
+  }
   .message-wrapper-none {
     padding: 10px;
     height: 600px;
@@ -2502,6 +2517,9 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 /* landscape _  */
 @media(min-width:568px){
+  .obj-img-showjob{
+    width:100px;height:100px;object-fit:cover;
+  }
   .rating {
     border: none;
     float: left;
@@ -3104,6 +3122,9 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media (min-width:812px){
+  .obj-img-showjob{
+    width:100px;height:50px;object-fit:cover;
+  }
   .rating {
     border: none;
     float: left;
@@ -3405,6 +3426,9 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media(min-width:1366px){
+  .obj-img-showjob{
+    width:100px;height:100px !important;object-fit:cover;
+  }
   .rating {
     border: none;
     float: left;
