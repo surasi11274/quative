@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('assets')
-    <link rel="stylesheet" href="css/_vote-detail.css">
+    <link rel="stylesheet" href="../css/_vote-detail.css">
 @endsection
 
 @section('content')
