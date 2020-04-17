@@ -18,75 +18,40 @@
 <link href="{{ asset('css/_vote-detail.css') }}" rel="stylesheet">
 <div class="bd-example shadow-ex">
     <div id="carouselExampleCaptions3" class="carousel slide" data-ride="pause">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions3" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions3" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions3" data-slide-to="2"></li>
-        </ol>
+
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
+               
+                <a href="">
+                    <img src="../photo/bg-vote.jpg" class="d-block w-100" alt="...">
+                </a>
                 <div class="carousel-caption1 d-none d-md-block">
                     <a href="/votedetail" class="site-link"></a>
-                    <div class="container-fluid">
+                    <div class="container">
                         <div class="row">
-                            <div class="col-12 text-left p-5">
+                            <div class="col-12 text-left">
                                 <div class="site-header">
-                                    {{-- <h1 class=" d-flex float-left mt-5">ผลงานที่ได้รับการโหวตมากที่สุด</h1> --}}
+                                    <h1 class="_hilight mt-5">ผลงานของนักออกแบบ</h1>
+                                    <p style="color:black;">รวบรวมผลงานของนักออกแบบบรรจุภัณฑ์ที่สร้างสรรค์ผลงาน <br>
+                                        บรรจุภัณฑ์ในรูปแบบต่างๆผ่านทางเว็บไซต์ Quative</p>
                                 </div>
                                 <div class="site-below">
-                                    <h1 class=" d-flex float-left mt-5" style="color:black;">ผลงานที่ได้รับการโหวตมากที่สุด</h1>
-                                    <h3 class="mt-5">Package colorlista</h3>
-                                    <span class="mt-5">Design by&nbsp;<label> กิตติพร บุญดี</label></span>
+                                    {{-- <h1 class="_hilight float-left mt-5">ผลงานที่ได้รับการโหวตมากที่สุด</h1>
+                                    <p>รวบรวมผลงานของนักออกแบบบรรจุภัณฑ์ที่สร้างสรรค์ผลงาน <br>
+                                        บรรจุภัณฑ์ในรูปแบบต่างๆผ่านทางเว็บไซต์ Quative</p> --}}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption1 d-none d-md-block">
-                    <a href="/votedetail" class="site-link"></a>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 text-left p-5">
-                                <div class="site-header">
-                                    <h1 class=" d-flex float-left mt-5">ผลงานที่ได้รับการโหวตมากที่สุด</h1>
-                                </div>
-                                <div class="site-below">
-                                    <h3 class="mt-5">Package colorlista</h3>
-                                    <span class="mt-5">Design by&nbsp;<label> กิตติพร บุญดี</label></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption1 d-none d-md-block">
-                    <a href="/votedetail" class="site-link"></a>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 text-left p-5">
-                                <div class="site-header">
-                                    <h1 class=" d-flex float-left mt-5">ผลงานที่ได้รับการโหวตมากที่สุด</h1>
-                                </div>
-                                <div class="site-below">
-                                    <h3 class="mt-5">Package colorlista</h3>
-                                    <span class="mt-5">Design by&nbsp;<label> กิตติพร บุญดี</label></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
         </div>
     </div>
 </div>
 <div class="container">
-    <h1 class="mt-5">ผลงานที่คุณถูกใจ<span class="_hilight">ทั้งหมด</span></h1>
+    <h1 class="mt-5">ผลงานที่คุณถูกใจ<span class="_hilight font-weight-bold">ทั้งหมด</span></h1>
     <div class="row">
 
                     @if($jobs->count())
