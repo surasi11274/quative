@@ -66,6 +66,7 @@
             <div class="row " >
                 <div class="col-12 col-sm-6 "style="margin-top: 110px">
                     <div class="mt-ex" style="margin-top: 10rem">
+                        
                         <h1 class="header d-none d-md-block">ออกแบบ
                             <span class="_hilight font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
                             <h3 class="header d-md-none">ออกแบบ
@@ -133,7 +134,7 @@
     </div>
     <div class=" _box-1 text-center _p-md-5 ">
         <div class="container">
-            <div class="fadeInDown">
+            <div class="animated infinite slideInDown">
                 <span class=" icon pl-md-2 pr-md-2 angle-double-down">
                     {{-- <i class="fas icon fa-angle-double-down"></i> --}}
             </div>

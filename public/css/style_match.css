@@ -1,4 +1,9 @@
-
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 .form-match{
 background: #FFFFFF;
 /* border: 3px solid #904AE8; */

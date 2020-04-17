@@ -3,6 +3,22 @@
 /* Mobile section  */
 /* iphone 5 */
 @media (min-width: 319.98px) {
+  .message-wrapper-none {
+    padding: 10px;
+    height: auto;
+    background: #ffffff;
+}
+  .received{
+    width: 45%;
+    padding: 3px 10px;
+    border-radius: 10px;
+    float: left;
+}
+.sent{
+   width: 45%;
+   padding: 3px 10px;
+   border-radius: 10px;
+}
   .rating {
     border: none;
     float: left;
@@ -2365,6 +2381,22 @@
     }
 }
 @media(min-width:1920px){
+  .message-wrapper-none {
+    padding: 10px;
+    height: 600px;
+    background: #ffffff;
+}
+  .received{
+    width: auto;
+    padding: 3px 10px;
+    border-radius: 10px;
+    float: left;
+}
+.sent{
+   width: auto;
+   padding: 3px 10px;
+   border-radius: 10px;
+}
   .rating { 
     border: none;
     float: left;

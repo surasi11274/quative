@@ -38,8 +38,8 @@
                                     </div>
 
                                     <div class="media-body">
-                                      <p class="name">{{$user->designername}} {{$user->designersurname}}</p>
-                                        <span class="email">{{$user->email}}</span>
+                                      <p class="name over-wrap">{{$user->designername}} {{$user->designersurname}}</p>
+                                        <span class="email over-wrap">{{$user->email}}</span>
                                     </div>
                                 </div>
                             </li>
@@ -58,8 +58,8 @@
                                       </div>
 
                                       <div class="media-body">
-                                          <p class="name">{{$user->name}}</p>
-                                          <span class="email">{{$user->email}}</span>
+                                          <p class="name over-wrap">{{$user->name}}</p>
+                                          <span class="email over-wrap">{{$user->email}}</span>
                                       </div>
                                   </div>
                               </li>
@@ -75,7 +75,7 @@
               <div class="message-wrapper-none">
                   <ul class="messages">
                           <li class="message clearfix">
-                            <h5 class="text-center _gray mt-md-5">Select Contact to Start Conversation to Designer</h5>
+                            <h5 class="text-center _gray mt-md-5">เริ่มสนทนากับนักออกแบบ</h5>
               
                           </li>
                   </ul>

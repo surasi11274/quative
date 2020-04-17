@@ -16,7 +16,7 @@
             <li class="message clearfix">
                 <div class="{{($message->from == Auth::id()) ? 'sent' : 'received' }}">
 
-                    <p>{{$message->message }}</p>
+                    <p class="over-wrap">{{$message->message }}</p>
                     <p class="date">{{ $message->created_at->diffForHumans()}}</p>
                     
                 </div>

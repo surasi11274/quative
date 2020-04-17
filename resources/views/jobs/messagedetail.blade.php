@@ -16,7 +16,7 @@
             <li class="message clearfix">
                 <div class="{{($message->from == Auth::id()) ? 'sent' : 'received' }}">
 
-                    <p>{{$message->message }}</p>
+                    <p class="over-wrap">{{$message->message }}</p>
                     <p class="date">{{ $message->created_at->diffForHumans()}}</p>
                     
                 </div>
@@ -27,5 +27,5 @@
 </div>
 
 <div class="input-text">
-    <input type="text" name="message" class="submit" placeholder="กดเพื่อพิมพ์ข้อความ...">
+    <input type="text" name="message" class="submit"  placeholder="กดเพื่อพิมพ์ข้อความ...">
 </div>

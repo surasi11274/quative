@@ -65,21 +65,11 @@ li {
      height: 436px;
      background: #ffffff;
  }
- .message-wrapper-none {
-    padding: 10px;
-    height: 600px;
-    background: #ffffff;
-}
  .messages .message{
      margin-bottom: 15px;
  }
  .messages .message:last-child {
      margin-bottom: 0;
- }
- .received, .sent{
-     width: 45%;
-     padding: 3px 10px;
-     border-radius: 10px;
  }
  .received {
      background-color: #eeeeee;
