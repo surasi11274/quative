@@ -15,19 +15,19 @@
 
         @if ($isdesigner)
             @if ($isprofile)
-                <img class="rounded-circle" style="width:70px; height:70px; object-fit:cover;"  src="/{{$isprofile->profilepic}}">
+                <img class="rounded-circle obj-img-noti"  src="/{{$isprofile->profilepic}}">
             @else 
-                <img class="rounded-circle" style="width:70px; height:70px; object-fit:cover;"  src="{{$notification->data['user']['avatar']}}">
+                <img class="rounded-circle obj-img-noti"  src="{{$notification->data['user']['avatar']}}">
             @endif
 
         @elseif($isprofile)
             @if ($isdesigner)
-                <img class="rounded-circle" style="width:70px; height:70px; object-fit:cover;"  src="/{{$isdesigner->profilepic}}">
+                <img class="rounded-circle obj-img-noti"  src="/{{$isdesigner->profilepic}}">
             @else 
-                <img class="rounded-circle" style="width:70px; height:70px; object-fit:cover;"  src="{{$notification->data['user']['avatar']}}">
+                <img class="rounded-circle obj-img-noti"   src="{{$notification->data['user']['avatar']}}">
             @endif
         @else 
-            <img class="rounded-circle" style="width:70px; height:70px; object-fit:cover;"  src="{{$notification->data['user']['avatar']}}">
+            <img class="rounded-circle obj-img-noti"  src="{{$notification->data['user']['avatar']}}">
 
         @endif
     </div>
