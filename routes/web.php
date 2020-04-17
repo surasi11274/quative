@@ -89,7 +89,7 @@ Auth::routes();
 
 
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'WelcomeController@index')->name('home');
 
 Route::get('/search', [
     'as' => 'search.create',

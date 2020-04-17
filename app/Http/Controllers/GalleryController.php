@@ -25,6 +25,7 @@ class GalleryController extends Controller
         // $jobs = DB::table('jobs')->where('canshow',1)->get();
 
         $jobs = Jobs::where('canshow',1)->orderBy('id', 'DESC')->get();
+        
         // $jobfiles = $jobs->find()->file;
         // $jobfiles = json_decode($jobfiles,true);
         // $jobs->first()->file = json_decode($jobs->first()->file);
