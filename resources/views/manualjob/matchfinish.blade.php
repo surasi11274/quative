@@ -21,7 +21,7 @@
         <div class="col-6">
             @if ($profile)
 
-                <img class="rounded-circle shadow-sm border-avatar " src="/{{ $profile->profilepic }}" width="180" alt="">
+                <img class="rounded-circle shadow-sm border-avatar  " src="/{{ $profile->profilepic }}" width="180" alt="">
             @else
                 <img class="rounded-circle shadow-sm border-avatar " src="{{ Auth::user()->avatar }}" width="180" alt="">
 
@@ -39,7 +39,7 @@
                 {{-- customer -> pic --}}
                 @if ($profile)
 
-                <img class="rounded-circle shadow-sm border-avatar matched-img" src="/{{ $profile->profilepic }}"   alt="">
+                <img class="rounded-circle shadow-sm border-avatar matched-img animated  slideInLeft" src="/{{ $profile->profilepic }}"   alt="">
                 @else
                 <img class="rounded-circle shadow-sm border-avatar matched-img" src="{{ Auth::user()->avatar }}"   alt="">
 
@@ -47,7 +47,7 @@
 
                 {{-- designer -> pic --}}
                       
-                <img class="rounded-circle shadow-sm border-avatar matched-img" src="/{{$designerpic}}" alt="">
+                <img class="rounded-circle shadow-sm border-avatar matched-img animated   slideInRight" src="/{{$designerpic}}" alt="">
 
 
             </div> 

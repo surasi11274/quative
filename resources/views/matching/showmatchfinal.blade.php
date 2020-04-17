@@ -186,9 +186,10 @@
 
                                   <input hidden  type="text" id="output" name="finishdate" >
                                   <input hidden type="text" id="textpackage" name="package">
-                                  <textarea  name="package" id="lblSel" cols="30" rows="1">                                  
+                                  <textarea class="form-control" name="package" id="lblSel" cols="30" rows="1" hidden>                                  
                                     {{-- <label  id="lblSel" style="color:green" for="package">กรุณาเลือก package</label> --}}
                                 </textarea>
+                               
                                   <input hidden type="text" id="job_id" name="jobstatus_id" value="1">
                                   <input hidden type="text" id="job_id" name="job_id" value="{{$jobs->id}}">
 
