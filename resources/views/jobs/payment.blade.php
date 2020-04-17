@@ -20,7 +20,7 @@
                       <div class="container">
                         <div class="row text-center show-payment shadow-sm mb-4">
                           <p class="col-md-6">ยอดชำระเงินทั้งหมด</p>
-                          <p class="col-md-6 _hilight">{{$jobs->pricerate}} บาท</p> 
+                          <p class="col-md-6 _hilight">{{number_format($jobs->pricerate)}} บาท</p> 
                           <input hidden type="text" name="total_price" value="{{$jobs->pricerate}}">
                         </div>
                       </div>
@@ -29,14 +29,14 @@
                    
                     <div class="form-group col-md-12">
                     <h4 class="font-weight-bold">โอนเข้าบัญชีของธนาคาร</h4>
-                      {{-- <select id="inputState" class="form-control" name="bank">
-                        <option selected value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</option>
-                        <option value="ธนาคารกรุงไทย">ธนาคารกรุงไทย</option>
-                      </select> --}}
-                      <select id="inputState" class="selectpicker w-100 mb-3"  name="bank">
+                      <select id="inputState" class="form-control" name="bank">
                         <option selected value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</option>
                         <option value="ธนาคารกรุงไทย">ธนาคารกรุงไทย</option>
                       </select>
+                      {{-- <select id="inputState" class="selectpicker w-100 mb-3"  name="bank">
+                        <option selected value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</option>
+                        <option value="ธนาคารกรุงไทย">ธนาคารกรุงไทย</option>
+                      </select> --}}
                       
                     </div>
                     {{-- <div class="form-group col-md-6">
@@ -56,26 +56,30 @@
                       <input type="date" id="anotherSelector"" class="form-control" name="timeatTransfer"  placeholder="เลือกเวลาทำรายการ" data-input>
                      
                     </div>
-                    <div class="form-row">
-                      <label class="font-weight-bold" style="font-size:1.25rem" for="">แนบรูปภาพการโอนเงิน
-                       
-                      <div class="row">
-                          {{-- <div class="col"> --}}
-                            <div class="mt-5"></div>
-                              <div  id="thumb-output" style="display:flex; width:180px;height:180px;">
+                    <label class="font-weight-bold" style="font-size:1.25rem" for="">แนบรูปภาพการโอนเงิน</label>
+                      <div class="col-md-12">
+                        
+                           <div class="custom-file-container" data-upload-id="myUniqueUploadId">
+                              <label><a href="javascript:void(0)" class="custom-file-container__image-clear" hidden title="Clear Image">&times;</a></label>
+                              <label class="custom-file-container__custom-file" >
+                                  <input type="file" class="custom-file-container__custom-file__custom-file-input" name="fileTransfer" accept="*" multiple aria-label="Choose File">
+                                  <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                  <span class="custom-file-container__custom-file__custom-file-control"></span>
+                              </label>
+                              <div class="custom-file-container__image-preview">
+                                  <div class="col-3">
+
+                                  </div>
                               </div>
-                            </label>
-                               <div class="upload-btn-wrapper-">
-                                      <button class="_btn-upload-"><i class="fas fa-plus"></i></button>
-                                      <input type="file" id="file-input"  name="fileTransfer"  multiple />
-                               </div>
-                               
-                           
-                      </div>
-                  </div> {{-- end --}}
-                  
+                          </div>
+                          {{-- <div  id="thumb-output" style="display:flex; width:180px;height:180px;"></div> --}}
+
+                          
+                       </div>
+                 
+                
                      
-                            <div class="form-group col-md-12">
+                            <div class="form-group col-md-12 mt-3">
                               <h5 class="font-weight-bold">ข้อความเพิ่มเติม (ถ้ามี)</h5>
                               <textarea class="form-control" id="validationTextarea" name="description" placeholder="ระบุรายข้อความเพื่มเติม" ></textarea>
                             </div>
@@ -113,3 +117,4 @@
 </script> --}}
 <script src="{{asset('js/flatpickr.js')}}"></script>
 <script  src="{{asset('js/datepicker.js')}}"></script>
+<script src="{{asset('js/file-upload-with-preview.js')}}"></script>

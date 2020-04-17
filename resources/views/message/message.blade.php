@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-    <div class="container d-none d-md-block">
+    <div class="container">
         <div class="row">
-            <div class="col-md-4 mt-5">
+            <div class="col-12 col-md-4 mt-5">
               <div class="header p-3">
                 <h5 class="font-weight-bold pt-4">
                     <i class="fas fa-inbox mr-3 _gray"></i>
@@ -27,8 +27,8 @@
                             <li class="user" id="{{$user->id}}">
                                 {{-- will show unread count notification --}}
                                 @if($user->unread)
-                                    <span class="pending">
-                                        {{ $user->unread}}
+                                    <span class="pendingg font-weight-bold" style="padding-left:6px; padding-top:1px;">
+                                        {{$user->unread }}
                                     </span>
                                 @endif
                                 <div class="media">
@@ -37,8 +37,8 @@
                                     </div>
 
                                     <div class="media-body">
-                                      <p class="name">{{$user->designername}} {{$user->designersurname}}</p>
-                                        <span class="email">{{$user->email}}</span>
+                                      <p class="name over-wrap">{{$user->designername}} {{$user->designersurname}}</p>
+                                        <span class="email over-wrap">{{$user->email}}</span>
                                     </div>
                                 </div>
                             </li>
@@ -47,19 +47,30 @@
                               <li class="user" id="{{$user->id}}">
                                   {{-- will show unread count notification --}}
                                   @if($user->unread)
-                                      <span class="pending">
-                                          {{ $user->unread}}
+                                      <span class="pendingg font-weight-bold" style="padding-left:6px; padding-top:1px;">
+                                          {{ $user->unread }}
                                       </span>
                                   @endif
                                   <div class="media">
-                                      <div class="media-left">
-                                        <img src="https://via.placeholder.com/150" class="media-object" width="150"  alt="">
+                                      <div class="media-left"> 
+                                    @php
+                                        $users = \App\User::find($user->id);
+                                        $profile = $users->profile();
+                                    @endphp
+
+                                    @if ($profile)
+                                    <img src="{{$profile->profilepic}}" class="media-object" width="150"  alt="">
+
+                                    @else 
+                                    <img src="{{$users->avatar}}" class="media-object" width="150"  alt="">
+                                    @endif
+
                                       </div>
 
                                       <div class="media-body">
-                                          <p class="name">{{$user->name}}</p>
+                                          <p class="name over-wrap">{{$user->name}}</p>
                                       {{-- <small class="_gray">21 : 35</small> --}}
-                                          <span class="email">{{$user->email}}</span>
+                                          <span class="email over-wrap">{{$user->email}}</span>
                                       </div>
                                   </div>
                               </li>
@@ -86,8 +97,16 @@
               <div class="message-wrapper-none">
                   <ul class="messages">
                           <li class="message clearfix">
-                            <h5 class="text-center _gray mt-md-4">Select Contact to Start Conversation to Enterprenuer</h5>
-              
+                            <h5 class="text-center _gray mt-md-4">เริ่มการสนทนา</h5>
+                            
+                          <div class="row">
+                              <div class="col-12 mt-5">
+                                
+                                    <img class="img-fluid w-50 center" src="photo/Enterpreuer.png" alt="">
+                                
+                  
+                              </div>
+                          </div>
                           </li>
                   </ul>
               </div>
@@ -127,12 +146,12 @@
                     $('#' + data.from).click();
                 } else {
                     // if receiver is not seleted, add notification for that user
-                    var pending = parseInt($('#' + data.from).find('.pending').html());
+                    var pendingg = parseInt($('#' + data.from).find('.pendingg').html());
 
-                    if (pending) {
-                        $('#' + data.from).find('.pending').html(pending + 1);
+                    if (pendingg) {
+                        $('#' + data.from).find('.pendingg').html(pendingg + 1);
                     } else {
-                        $('#' + data.from).append('<span class="pending">1</span>');
+                        $('#' + data.from).append('<span class="pendingg">1</span>');
                     }
                 }
             }
@@ -141,7 +160,7 @@
         $('.user').click(function () {
             $('.user').removeClass('active');
             $(this).addClass('active');
-            $(this).find('.pending').remove();
+            $(this).find('.pendingg').remove();
 
             receiver_id = $(this).attr('id');
             $.ajax({

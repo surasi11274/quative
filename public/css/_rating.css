@@ -6,12 +6,7 @@ h1 { font-size: 1.5em; margin: 10px; } */
 
 /****** Style Star Rating Widget *****/
 
-.rating { 
-  border: none;
-  float: left;
-  font-size: 46px;
-  margin: 0 400px 0 400px;
-}
+
 
 .rating > input { display: none; } 
 .rating > label:before { 

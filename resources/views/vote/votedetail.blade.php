@@ -79,9 +79,9 @@
 
     <div class="container mt-5 ">
         <div class="shadow-sm  bg-white ">
-            <div class="container content-profile" >
+            <div class="container content-profile p-3 ">
                 <div class="row">
-                    <div class=" col-12 col-md-2 m-auto">
+                    <div class=" col-4 col-md-2 m-auto">
                         <div class="">
                             @php
                             $designerid = \App\Designer::find($jobs->designer_id);
@@ -90,21 +90,23 @@
     
                         @endphp
                             
+                           
                             <figure class="img-fluid float-right m-auto">
-                                <img class="rounded-circle" src="/{{$designerid->profilepic}}" style="width:70px; height:70px;">
+                                <img class="rounded-circle img-fluid" src="/{{$designerid->profilepic}}" style="width:70px; height:70px;  object-fit: cover;">
                             </figure>
                         </div>
                     </div>
-                    <div class="col-12 col-md-7 p-md-5 text-md-left text-xm-center ">
+                    <div class="col-8 col-md-7 p-md-5 text-left ">
                         {{-- <h3 class="_hilight ">Package  Coralist</h3> --}}
                       
                         <a style="text-decoration:none;" href="{{route('startjob.show',$designerid->token)}}">
-                            <h3 >ออกแบบโดย&nbsp;<label class="font-weight-bold _hilight"> {{$designerid->name}}</label></h3>
+                            <h3  class="d-none d-md-block">ออกแบบโดย&nbsp;<label class="font-weight-bold _hilight"> {{$designerid->name}}</label></h3>
+                            <p  class="d-md-none">ออกแบบโดย&nbsp;<label class="font-weight-bold _hilight"> {{$designerid->name}}</label></p>
                         </a>
                         <p class="_gray">ออกแบบบรรจุภัณฑ์ประเภท ขวด</p>
                     </div>
-                    <div class="col-12 col-md-3 p-5">
-                        <div class="float-right">
+                    <div class="col-12 col-md-3 p-3 p-md-5">
+                        <div class="float-none float-md-right">
                             @guest
 
                             <a href="javascript:void(0);" >
@@ -119,10 +121,18 @@
 
                             @else
                             <a href="javascript:void(0);" >
-                                <button onclick="document.getElementById('vote-form-{{$jobs->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobs->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                <button onclick="document.getElementById('vote-form-{{$jobs->id}}').submit();" class="d-none d-md-block love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobs->id)->count() == 0 ?'favorite_jobs' : ''}}">
                                     <i class="fas fa-heart"></i>
                                     {{-- {{$job->favorite_to_users->count()}}   --}}
                                 </button>
+                                <div class="row">
+                                    <div class="col-12 mb-5">
+                                        <button onclick="document.getElementById('vote-form-{{$jobs->id}}').submit();" class="d-md-none love text-center rounded float-right border w-100 {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobs->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                         <p><i class="fas fa-heart mr-2"></i>ชื่นชอบผลงาน</p>
+                                            {{-- {{$job->favorite_to_users->count()}}   --}}
+                                        </button>
+                                    </div>
+                                </div>
                             </a>
                                  <form id="vote-form-{{$jobs->id}}" method="POST" action="{{route('job.vote',$jobs->id)}}"
                                     style="display:none;">
@@ -143,6 +153,17 @@
                                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                                 <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
                             </ol>
+                            {{-- <ol class="carousel-indicators d-none d-md-flex">
+                                <div data-target="#carouselExampleCaptions" data-slide-to="0" class="active rounded mr-2 ml-2">
+                                    <img class="rounded" src="https://picsum.photos/160/120" alt="">
+                                </div>
+                                <div data-target="#carouselExampleCaptions" data-slide-to="1" class="active rounded mr-2 ml-2">
+                                    <img class="rounded" src="https://picsum.photos/160/120" alt="">
+                                </div>
+                                <div data-target="#carouselExampleCaptions" data-slide-to="2" class="active rounded mr-2 ml-2">
+                                    <img class="rounded" src="https://picsum.photos/160/120" alt="">
+                                </div>
+                            </ol> --}}
                             <div class="carousel-inner  mt-5">
                                 <div class="carousel-item active">
 
@@ -186,11 +207,11 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-12  carousel-indicators-p-lg">
-                        <p class="text-justify p-md-5 p-3">
+                        <p class="text-justify p-md-5 p-3 over-wrap">
                             {{$jobs->requirement}}
                         </p>
                     <hr>
-                    <div class="row p-5 ">
+                    <div class="row p-1 p-md-5 ">
                         <div class="col-12 col-md-7">
                         <h5 class="font-weight-bold">ความคิดเห็น ({{$jobs->comments()->count()}})</h5>
                                 @guest
@@ -202,19 +223,22 @@
                                     @csrf
                                 <div class=" container-fluid" >
                                 <div class="row mt-4">
-                                    <div class="col-3">
+                                    <div class="col-12 col-md-3">
                                         <figure class="img-fluid  mr-3 ml-3">
                                             <img class="rounded-circle" src="https://picsum.photos/70">
                                         </figure>
                                     </div>
-                                    <div class="col-9">
-                                        <textarea name="comment" rows="5" class="form-control" id="validationTextarea" placeholder="แสดงความคิดเห็น" required></textarea>
-        
+                                    <div class="col-12 col-md-9">
+                                        <textarea name="comment" rows="3" class="form-control" id="validationTextarea" placeholder="แสดงความคิดเห็นของคุณ" required></textarea>
+    
                                     </div>
                                 </div>
-                                        <button class="mt-3 btn _primary-black float-right btn-lg" style="    display: block;
+                                        <button class="mt-3 btn _primary-black float-right btn-lg d-none d-md-block" style="    display: block;
                                         width: 30%;
                                     " type="submit" >โพสต์</button>
+                                     <button class="mt-3 btn _primary-black float-right btn-lg d-md-none" style="    display: block;
+                                     width:100%;
+                                 " type="submit" >โพสต์</button>
                                 </div>
                             </form>
                             @endguest
@@ -243,7 +267,7 @@
                                </ul>
                             </div>
                             <div class="d-flex">
-                                <i class="fas fa-heart m-1"></i>
+                                <i class=" fas fa-heart m-1"></i>
                                 <span class="m-1">{{$jobs->favorite_to_users->count()}}</span>
                                 <p class="m-1">Likes</p>
                             </div>
@@ -276,7 +300,7 @@
                                     </div>
                                     <div class="col-7">
                                         <label for="name">{{$comment->user->name}}</label> <br>
-                                        <p>{{$comment->comment}}</p>
+                                        <p class="over-wrap">{{$comment->comment}}</p>
                                     </div>
                                     <div class="col-3 ">
                                         <small>{{$comment->created_at->diffForHumans()}}</small>
@@ -286,7 +310,7 @@
                                 @endforeach
 
                                 @else
-                                <p>No Comment yet. Be the first.</p>
+                                <h1>''</h1><p class="_gray">ยังไม่มีใครแสดงความคิดเห็นเลย. บอกอะไรสักอย่างเกี่ยวกับงานที่ได้ดูสักหน่อย.</p><h1 class="float-right">''</h1>
 
                                 @endif
                                     
@@ -298,7 +322,7 @@
     
             
                 </div>
-                <div class="container" style="padding: 0rem 3rem 3rem!important;">
+                <div class="container" >
                     <div class="row">
                         <h5 class="font-weight-bold">ผลงานอื่นๆของ </h5> &nbsp;<h5 class="font-weight-bold _hilight">{{$designerid->name}}</h5>
 

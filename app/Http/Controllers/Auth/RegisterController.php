@@ -71,7 +71,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'role' => $data['role'],
-            'avatar' => 'https://s3-ap-southeast-1.amazonaws.com/img-in-th/14480b52252f0ac721edf82486f0f8f9.png',
+            'avatar' => 'https://s3-ap-southeast-1.amazonaws.com/img-in-th/52f5803a80feb45312e4c50b1b53ede3.jpg',
             'acceptterm' => $data['acceptterm'],
 
         ]);

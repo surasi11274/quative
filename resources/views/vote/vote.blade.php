@@ -47,7 +47,34 @@
 <div class="container">
 
     <div class="form-row mt-5">
-        <div class="form-group col-md-9">
+        {{-- select-mobile  --}}
+        <div class=" selecter d-lg-none">
+          <div class="row">
+              <div class="col-12">
+                <ul class="overflow-select d-flex nav-pills mt-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link-1 border bg-white rounded m-2 active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ทั้งหมด</a>
+                    </li>
+                    <li class="nav-item border bg-white rounded m-2">
+                      <a class="nav-link-1" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">กล่อง</a>
+                    </li>
+                    <li class="nav-item border bg-white m-2 rounded">
+                      <a class="nav-link-1" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">ขวด</a>
+                    </li>
+                    <li class="nav-item border bg-white m-2 rounded">
+                        <a class="nav-link-1" id="pills-glass-tab" data-toggle="pill" href="#pills-glass" role="tab" aria-controls="pills-glass" aria-selected="false">แก้ว</a>
+                      </li>
+                      <li class="nav-item border bg-white m-2 rounded">
+                        <a class="nav-link-1" id="pills-bag-tab" data-toggle="pill" href="#pills-bag" role="tab" aria-controls="pills-bag" aria-selected="false">ถุง</a>
+                      </li>
+                      <li class="nav-item border bg-white m-2 rounded">
+                        <a class="nav-link-1" id="pills-can-tab" data-toggle="pill" href="#pills-can" role="tab" aria-controls="pills-can" aria-selected="false">กระป๋อง</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+        </div>
+        <div class="form-group col-md-9 d-none d-lg-block">
             <ul class="nav nav-pills mt-3" id="pills-tab" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link-1 border bg-white rounded m-2 active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ทั้งหมด</a>
@@ -97,7 +124,7 @@
 
                             @endphp
 
-                            <article class="col-4 mt-5">
+                            <article class="col-12 col-md-4 mt-5">
                                 <div class="card shadow-sm" data-id="{{ $job->id }}">
 
                                 <a href="{{ route('galleryDetail', $job->id) }}">

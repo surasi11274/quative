@@ -23,11 +23,38 @@ use App\Http\Controllers\GalleryController;
 Route::get('/preview', function () {
     return view('preview.preview');
 });
-Route::get('/previewmock', function () {
-    return view('preview.previewmock');
-});
-Route::get('/previewmock/bag', function () {
+// Route::get('/previewmock', function () {
+//     return view('preview.previewmock');
+// });
+Route::get('/preview/bag', function () {
     return view('preview.mockup.bag');
+});
+Route::get('/preview/bag2', function () {
+    return view('preview.mockup.bag2');
+});
+Route::get('/preview/cosmetic', function () {
+    return view('preview.mockup.cosmetic');
+});
+Route::get('/preview/cosmetic2', function () {
+    return view('preview.mockup.cosmetic2');
+});
+Route::get('/preview/bottle', function () {
+    return view('preview.mockup.bottle');
+});
+Route::get('/preview/bottle2', function () {
+    return view('preview.mockup.bottle2');
+});
+Route::get('/preview/cup', function () {
+    return view('preview.mockup.cup');
+});
+Route::get('/preview/cup2', function () {
+    return view('preview.mockup.cup2');
+});
+Route::get('/preview/can', function () {
+    return view('preview.mockup.can');
+});
+Route::get('/preview/can2', function () {
+    return view('preview.mockup.can2');
 });
 
 // Route::get('/select', function () {

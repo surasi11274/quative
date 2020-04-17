@@ -1,0 +1,266 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.1.46",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "extras" : {
+                "glTF2ExportSettings" : {
+                    "export_apply" : 1,
+                    "export_current_frame" : 1,
+                    "export_extras" : 1,
+                    "export_format" : "GLTF_SEPARATE",
+                    "export_image_format" : "JPEG",
+                    "export_selected" : 1,
+                    "export_tangents" : 1,
+                    "export_texture_dir" : "textures"
+                }
+            },
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Plane",
+            "rotation" : [
+                0.4806145429611206,
+                -0.08621084690093994,
+                0.07622929662466049,
+                0.8693482875823975
+            ],
+            "scale" : [
+                0.9613738656044006,
+                1.3209506273269653,
+                1.3209508657455444
+            ],
+            "translation" : [
+                -0.19159692525863647,
+                0.9720213413238525,
+                -0.010576725006103516
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "Material",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "Material.003",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Plane",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TANGENT" : 2,
+                        "TEXCOORD_0" : 3
+                    },
+                    "indices" : 4,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 5,
+                        "NORMAL" : 6,
+                        "TANGENT" : 7,
+                        "TEXCOORD_0" : 8
+                    },
+                    "indices" : 9,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "logomock",
+            "uri" : "textures/logomock.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 1331968,
+            "max" : [
+                0.926931619644165,
+                0.49192848801612854,
+                0.9813385009765625
+            ],
+            "min" : [
+                -0.9405728578567505,
+                0.013059252873063087,
+                -0.9846507906913757
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 1331968,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 1331968,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 1331968,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5125,
+            "count" : 1997952,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 51968,
+            "max" : [
+                0.404857873916626,
+                0.4956565797328949,
+                0.17515672743320465
+            ],
+            "min" : [
+                -0.2970220148563385,
+                0.4563404321670532,
+                -0.33256402611732483
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 51968,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 51968,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 51968,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5123,
+            "count" : 77952,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 15983616,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 15983616,
+            "byteOffset" : 15983616
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21311488,
+            "byteOffset" : 31967232
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10655744,
+            "byteOffset" : 53278720
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7991808,
+            "byteOffset" : 63934464
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 623616,
+            "byteOffset" : 71926272
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 623616,
+            "byteOffset" : 72549888
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 831488,
+            "byteOffset" : 73173504
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 415744,
+            "byteOffset" : 74004992
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 155904,
+            "byteOffset" : 74420736
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 74576640,
+            "uri" : "chips.bin"
+        }
+    ]
+}

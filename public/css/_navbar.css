@@ -1,7 +1,7 @@
 nav a {
-    padding-top: 20px !important;
+    /* padding-top: 20px !important;
     padding-bottom: 20px !important;
-    font-size: 18px;
+    font-size: 18px; */
 }
 
 nav .navbar-toggle {
@@ -36,23 +36,37 @@ nav.shrink .navbar-brand {
 }
 
 .overflow-noctification{
-    width: 100%;
+    /* width: 100%; */
     overflow: scroll;
     height: 440px;
+
+}
+.overflow-noti-mobile{
+  width: 100%;
+  overflow: scroll;
+  /* height: 440px; */
+  height: 113px;
 }
 .active-notification{
     background-color: #FE3A76;
     width: 20px;
     height: 20px;
+    border: 2px solid white;
     position:absolute;
-    left: 70px;
-    right: 0;
+    /* left: 70px; */
+    right: 10px;
 }
-.wrapper-profile{
-    width: 322px;
+.wrapper-profile-m{
+    /* width: 322px; */
+    width: 100%;
   }
   .wrapper-notification{
     width: 420px;
+    /* width: 100%; */
+  }
+  .wrapper-notification-m{
+    /* width: 420px; */
+    width: 100%;
   }
   .profile-color{
     margin: 0px auto;

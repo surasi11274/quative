@@ -3,6 +3,43 @@
 /* Mobile section  */
 /* iphone 5 */
 @media (min-width: 319.98px) {
+  .obj-img-showjob{
+    width:100px;height:40px;object-fit:cover;
+  }
+  .message-wrapper-none {
+    padding: 10px;
+    height: auto;
+    background: #ffffff;
+}
+  .received{
+    width: 45%;
+    padding: 3px 10px;
+    border-radius: 10px;
+    float: left;
+}
+.sent{
+   width: 45%;
+   padding: 3px 10px;
+   border-radius: 10px;
+}
+  .rating {
+    border: none;
+    float: left;
+    font-size: 36px;
+    margin: 0 20px;
+}
+  .overflow-select{
+    overflow-x: scroll;
+    width: 320px;
+  }
+  .overflow-menu-designer{
+    overflow-y: scroll;
+    height: 210px;
+  }
+  .icon::before {
+    
+    font-size: 14px !important;
+}
   .img-center{
     margin: 0px 65px auto;
   }
@@ -437,7 +474,20 @@
 /* end Mobile section  */
 
 /* iphone 6 iphone x */  
-@media (min-width: 375px){
+@media (min-width: 374.98px){
+  .obj-img-showjob{
+    width:100px;height:60px;object-fit:cover;
+  }
+  .rating {
+    border: none;
+    float: left;
+    font-size: 36px;
+    margin: 0 50px;
+}
+  .overflow-menu-designer{
+    overflow-y: scroll;
+    height: 280px;
+  }
   .middle {
     width: 100%;
     text-align: center;
@@ -721,6 +771,12 @@
 }
 /* iphone 6/7/8 plus */
 @media (min-width: 414px){
+  .rating {
+    border: none;
+    float: left;
+    font-size: 36px;
+    margin: 0 70px;
+}
   .middle {
     width: 100%;
     text-align: center;
@@ -1052,6 +1108,23 @@
 
 /* ipad section  */
 @media (min-width: 768px) {
+  .obj-img-showjob{
+    width:100px;height:50px !important;object-fit:cover;
+  }
+  .rating {
+    border: none;
+    float: left;
+    font-size: 36px;
+    margin: 0 220px !important;
+}
+  .icon::before {
+    
+    font-size: 24px !important;
+}
+  .overflow-menu-designer{
+    overflow-y: scroll;
+    height: 290px;
+  }
   .middle {
     width: 100%;
     text-align: center;
@@ -1738,6 +1811,23 @@
 
 }
 @media (min-width:1023.98px){
+  .obj-img-showjob{
+    width:100px;height:80px !important;object-fit:cover;
+  }
+  .rating {
+    border: none;
+    float: left;
+    font-size: 36px;
+    margin: 0 340px !important;
+}
+  .dropdown-menu {
+    top: 100%;
+    left: -290px !important;
+}
+  .wrapper-profile{
+    width: 322px;
+    /* width: 100%; */
+  }
   .middle {
     width: 100%;
     text-align: center;
@@ -2301,10 +2391,33 @@
     ul.ks-cboxtags li input[type="checkbox"]:focus + label {
       border: 2px solid #523EE8;
     }
-
-    
 }
 @media(min-width:1920px){
+  .obj-img-showjob{
+    width:100px;height:100px;object-fit:cover;
+  }
+  .message-wrapper-none {
+    padding: 10px;
+    height: 600px;
+    background: #ffffff;
+}
+  .received{
+    width: auto;
+    padding: 3px 10px;
+    border-radius: 10px;
+    float: left;
+}
+.sent{
+   width: auto;
+   padding: 3px 10px;
+   border-radius: 10px;
+}
+  .rating { 
+    border: none;
+    float: left;
+    font-size: 46px;
+    margin: 0 400px 0 400px;
+  }
   .nav-pills .nav-link {
     border-radius: .25rem;
     transition: 0.3s;
@@ -2404,6 +2517,15 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 /* landscape _  */
 @media(min-width:568px){
+  .obj-img-showjob{
+    width:100px;height:100px;object-fit:cover;
+  }
+  .rating {
+    border: none;
+    float: left;
+    font-size: 36px;
+    margin: 0 140px;
+}
   .middle {
     width: 100%;
     text-align: center;
@@ -2792,6 +2914,12 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media(min-width:667px){
+  .rating {
+    border: none;
+    float: left;
+    font-size: 36px;
+    margin: 0 130px;
+}
   .middle {
     width: 100%;
     text-align: center;
@@ -2994,6 +3122,15 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media (min-width:812px){
+  .obj-img-showjob{
+    width:100px;height:50px;object-fit:cover;
+  }
+  .rating {
+    border: none;
+    float: left;
+    font-size: 36px;
+    margin: 0 220px;
+}
   .middle {
     width: 100%;
     text-align: center;
@@ -3289,6 +3426,15 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media(min-width:1366px){
+  .obj-img-showjob{
+    width:100px;height:100px !important;object-fit:cover;
+  }
+  .rating {
+    border: none;
+    float: left;
+    font-size: 36px;
+    margin: 0 430px !important;
+}
   .middle {
     width: 100%;
     text-align: center;

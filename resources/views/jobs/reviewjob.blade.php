@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="{{asset('css/_rating.css')}}">
 @endsection
 @section('content')
-<section class="content mt_ex">
+<section class="content mt-5">
 {{-- <div class="row">
     <div class="alert alert-success col-md-3 offset-md-8 alert-dissmissable position-absolute fade show" style="z-index: 1; transition: 0.6s;" role="alert">
     <button class="close" type="button" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>

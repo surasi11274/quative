@@ -20,12 +20,20 @@
                 <hr>
             <div class="row">
                 <div class="col-md-6">
-                  <p>01 - งานออกแบบฉลากติดสินค้าหน้าเดียว ต้องการงาน ด่วน</p>
-                 
+                  @if ($jobs->package !== NULL)
+                  <p>{{$jobs->package}}</p>
+
+                  @else 
+                  <p>แพ็คเกจ</p>
+
+                  @endif
+                  {{-- <p>{{$jobs->package}}</p> --}}
+                  <p>ระยะเวลา</p>
+
                 </div>
                 <div class="col-md-6">
-                  <p>{{$jobs->package_price}} บาท</p>
-                  <p>{{$jobs->dateextra_price}} บาท</p>
+                  <p>{{number_format($jobs->package_price)}} บาท</p>
+                  <p>{{number_format($jobs->dateextra_price)}} บาท</p>
                 </div>
              <hr>
             </div> 
@@ -36,7 +44,7 @@
               <h5>รวมทั้งสิ้น</h5>
             </div>
             <div class="col-md-6">
-              <p class="_hilight">{{$jobs->pricerate}} บาท</p>
+              <p class="_hilight">{{number_format($jobs->pricerate)}} บาท</p>
             </div>
            </div>
             </div>
@@ -61,13 +69,17 @@
                
               </div>
             </div>
-            
-            <div class="text-center mb-5">
-              <button type="button" class="btn _secondary-btn btn-lg" >ยกเลิก</button>
-              <a href="{{ route('job.payment', $jobs->token) }}">
-                <button type="submit" class="btn _primary-black btn-lg">อัพโหลดหลักฐานการชำระเงิน</button>
-              </a>
+            <div class="row">
+              <div class="col-6">
+                <button type="button" class="btn _secondary-btn btn-lg btn-block" >ยกเลิก</button>
+                <a href="{{ route('job.payment', $jobs->token) }}"> </a>
+              </div>
+              <div class="col-6">
+                <button type="submit" class="btn _primary-black btn-lg  d-none d-md-block" style="width:100%;">อัพโหลดหลักฐานการชำระเงิน</button>
+                <button type="submit" class="btn _primary-black btn-lg d-md-none btn-block">อัพโหลด</button>
+              </div>
             </div>
+           
            
           </div>
         </div>

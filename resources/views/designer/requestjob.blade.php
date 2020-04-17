@@ -92,7 +92,7 @@
                <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button>
               </a>
             </td>
-             <td class="pt-4 pb-4 text-center">{{$job->pricerate}}</td>
+             <td class="pt-4 pb-4 text-center">{{number_format($job->pricerate)}}</td>
              {{-- <td class="pt-4 pb-4 text-center">{{$job->finishdate}}</td> --}}
              <td class="pt-4 pb-4 text-center">{{date('F d,Y',strtotime($job->finishdate))}}</td>
              {{-- @foreach ($job->jobstatus_id as $item) --}}
