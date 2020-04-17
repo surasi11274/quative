@@ -334,7 +334,7 @@ button:focus {outline:0 !important;}
     margin-bottom: 10px;
 }
 .icon {
-    padding: 10px;
+    /* padding: 10px; */
     min-width: 40px;
     left: 40px;
     color: #904AE8;
