@@ -284,7 +284,7 @@
 
                                         
                                                   </label>
-                                                  <div class="row">
+                                                  
                                                     
                                                     <div class="col">
                                                         <div class="custom-file-container" data-upload-id="myUniqueUploadId">
@@ -304,7 +304,7 @@
                        
                                                       
                                                     </div>
-                                                  </div>
+                                                  
                                                      
                                                      
                                                  

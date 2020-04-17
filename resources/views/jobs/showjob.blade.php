@@ -741,7 +741,7 @@
                            <div class="row">
                                <div class="col-6 col-md-4 " >
                                    <a class="image-popup-vertical-fit" href="/{{$jobs->productPic}}">
-                                        <img class="rounded" style="width:100px; height:100px; object-fit:cover;" src="/{{$jobs->productPic}}" alt="">
+                                        <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="/{{$jobs->productPic}}" alt="">
                                     </a>
                                </div>
                                {{-- <div class="col-6 col-md-4 mt-3">
@@ -756,22 +756,27 @@
                            <hr>
                            <h5 class="mt-3 font-weight-bold">รูปภาพงานใกล้เคียงกับงาน</h5>
                            <div class="row ">
-                                <div class="col-6 col-md-4 ">
+                                <div class="col-6 col-md-4 mt-3">
                                     <a class="image-popup-vertical-fit" href="/{{$jobs->refpicbyUser}}">
 
-                                 <img class="rounded" style="width:100px; height:100px; object-fit:cover;" src="/{{$jobs->refpicbyUser}}" alt="">
+                                 <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="/{{$jobs->refpicbyUser}}" alt="">
                                     </a>
                                 </div>
                                 @php
                                 $refs = \App\References::find($jobs->reference);
                             @endphp
-                                @foreach ($refs as $ref)
+                              @foreach ($refs as $ref)
+                               <div class="col-6 col-md-4 mt-3">
+                               
+                              
                                     
                                     <a class="image-popup-vertical-fit" href="{{$ref->img}}">
 
-                                 <img class="rounded" style="width:100px; height:100px; object-fit:cover;" src="{{$ref->img}}" alt="">
+                                 <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="{{$ref->img}}" alt="">
                                     </a>
-                                @endforeach
+                                
+                               </div>
+                               @endforeach
                                 
                                 {{-- <div class="col-6 col-md-4 mt-3">
                                     <img class="rounded" src="/{{$jobs->refpicbyUser}}" alt="">
