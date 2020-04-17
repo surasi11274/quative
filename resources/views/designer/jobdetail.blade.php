@@ -80,7 +80,7 @@
                         {{ csrf_field() }}
                         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
-                                <div class="modal-content p-5">
+                                <div class="modal-content p-2 p-md-5">
 
                                     <div class="modal-header " style="text-align:center;">
                                     <h1 class="modal-title "  id="myLargeModalLabel">อัพโหลดไฟล์งาน</h1>
@@ -91,47 +91,47 @@
                                     <div class="modal-body">
                                         {{-- <h2 class="selectfillter pt-5 text-left"  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2> --}}
                                         <div class="row">
-                                            <div class="col-7">
+                                            <div class="col-12">
                                                     <br>
                                                     <div class="row">
                                                         <h5 class="text-left font-weight-bold ">อัพโหลดภาพตัวอย่างงาน</h5>
                                                     </div>                                                    
                                                     <div class="row">
                                                         <small class="text-left text-danger">*ภาพนี้จะถูกนำไปแสดงในหน้าผลงาน</small>
-
+                                                        
                                                
-                                        <div class="col text-left">
-                                            <div class="custom-file-container" data-upload-id="myUniqueUploadId">
-                                                <label><a href="javascript:void(0)" class="custom-file-container__image-clear" hidden title="Clear Image">&times;</a></label>
-                                                <label class="custom-file-container__custom-file" >
-                                                    <input type="file" class="custom-file-container__custom-file__custom-file-input" name="fileimgname[]" accept="*" multiple aria-label="Choose File">
-                                                    <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-                                                    <span class="custom-file-container__custom-file__custom-file-control"></span>
-                                                </label>
-                                                <div class="custom-file-container__image-preview">
-                                                    <div class="col-3">
-            
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>          
-                                 
-                                {{-- <div  id="thumb-output" style="display:flex; width:180px;height:180px;"></div> --}}
+                                                        <div class="col-12 text-left">
+                                                            <div class="custom-file-container" data-upload-id="myUniqueUploadId">
+                                                                <label><a href="javascript:void(0)" class="custom-file-container__image-clear" hidden title="Clear Image">&times;</a></label>
+                                                                <label class="custom-file-container__custom-file" >
+                                                                    <input type="file" class="custom-file-container__custom-file__custom-file-input" name="fileimgname[]" accept="*" multiple aria-label="Choose File">
+                                                                    <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                                                    <span class="custom-file-container__custom-file__custom-file-control"></span>
+                                                                </label>
+                                                                <div class="custom-file-container__image-preview">
+                                                                    <div class="col-3">
+                            
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            </div>    
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <h5 class="text-left font-weight-bold ">อัพโหลดไฟล์งาน</h5>
+                                                                <small class="text-left text-danger">*สามารถอัพโหลดได้หลายไฟล์</small>
+                                                                </div> 
+                                                                    
+                                                            </div>     
+                                                            <div class="upload-btn-wrapper-work">
+                                                                <button class="btn-lg font-weight-bold _primary-black " ">อัพโหลดไฟล์ +</button>
+                                                                <input type="file" name="fileartworkname[]" id="file" multiple  onchange="javascript:updateList()" />
+                                                            </div>
+                                                    <div class="col-12 ml-md-5">
+                                                       
+                                                            <small id="fileList" class="text-left _hilight">
 
-                               
-                             
-
-                                                    <div class="row mt-3">
-                                                        <div class="upload-btn-wrapper-work">
-                                                            <button class="btn-sm btn-work _primary-black btn-block" ">อัพโหลดไฟล์ +</button>
-                                                            <input type="file" name="fileartworkname[]" id="file" multiple  onchange="javascript:updateList()" />
-                
-                                                          </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div>
-                                                            <small id="fileList" class="text-left _hilight"></small>
-                                                         </div>
+                                                            </small>
+                                                        
                                                     </div>
     
                                                        
@@ -141,23 +141,23 @@
                
                                             
                                             
-                                             
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <h5 class="selectfillter text-left pt-5"  style="font-weight: 800;">URL :<small> </small></h5>
-
-                                            </div>
-                                            <div class="row">
-                                                <small class="text-left text-warning">หากไฟล์ใหญ่เกินไปแนะนำให้อัพโหลดขึ้นบน cloud แล้วนำลิงค์มาวาง</small>
-
-                                            </div>
-                                            <div class="row mt-4">
-                                                <input type="text" class="form-control" name="filelinks" placeholder="ลิงค์จาก cloud หรือเว็บฝากไฟล์ถ้ามี">
-
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <h5 class="selectfillter text-left pt-5"  style="font-weight: 800;">URL :<small> </small></h5>
+    
+                                                </div>
+                                                <div class="row">
+                                                    <small class="text-left text-warning">หากไฟล์ใหญ่เกินไปแนะนำให้อัพโหลดขึ้นบน cloud แล้วนำลิงค์มาวาง</small>
+    
+                                                </div>
+                                                <div class="row mt-4">
+                                                    <input type="text" class="form-control" name="filelinks" placeholder="ลิงค์จาก cloud หรือเว็บฝากไฟล์ถ้ามี">
+    
+                                                </div>
                                             </div>
                                         </div>
+
+                                       
                                     </div>
                                     {{-- <input type="text" id="output" name="jobstatus_id"> --}}
                                     <div class="modal-footer">
@@ -949,7 +949,7 @@ updateList = function() {
 
   output.innerHTML = '<ul>';
   for (var i = 0; i < input.files.length; ++i) {
-    output.innerHTML += '<li>' + input.files.item(i).name + '</li>';
+    output.innerHTML += '<li class="nav-link over-wrap"><i class="fas fa-file-import icon mr-5 _gray"></i>' + input.files.item(i).name + '</li>';
   }
   output.innerHTML += '</ul>';
 }

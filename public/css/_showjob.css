@@ -249,12 +249,7 @@ input.remove
 .multi-step-status fieldset:not(:first-of-type) {
   display: none;
 }
-.upload-btn-wrapper-work {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-  width: 100%;
-}
+
 
 .btn-work {
   border: 2px solid gray;
