@@ -612,15 +612,15 @@
                                 <h4 class="text-center text-md-left">สถานะปัจจุบัน : <label class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</label></h4>
                                </div>
                                <div class="col-12 col-md-3">
-                                <div class="float-right d-flex">
+                                <div class="float-right d-md-flex col-12">
                                     @if ($job->jobstatus_id == 1)
-                                        <button type="button" class="btn _primary-btn m-1 btn-lg" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
-                                        <button type="button"class="btn _secondary-btn m-1 btn-lg" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                        <button type="button" class="btn _primary-btn m-1 btn-lg btn-block" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
+                                        <button type="button"class="btn _secondary-btn m-1 btn-lg btn-block" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                                     @elseif ($job->jobstatus_id == 4)
-                                        <button type="button" class="btn _primary-btn m-1 btn-lg" onclick="addCart('3')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
-                                        <button type="button"class="btn _secondary-btn m-1 btn-lg" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                        <button type="button" class="btn _primary-btn m-1 btn-lg btn-block" onclick="addCart('3')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
+                                        <button type="button"class="btn _secondary-btn m-1 btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                                     @elseif ($job->jobstatus_id == 3)
-                                        <button type="button" class="btn _primary-btn m-1 btn-lg" onclick="addCart('7')" data-toggle="modal" data-target=".bd-example-modal-lg">อัพโหลดไฟล์</button>
+                                        <button type="button" class="btn _primary-btn m-1 btn-lg btn-block" onclick="addCart('7')" data-toggle="modal" data-target=".bd-example-modal-lg">อัพโหลดไฟล์</button>
                                         {{-- <button type="button"class="btn _secondary-btn m-1" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button> --}}
                                     @endif
                                    

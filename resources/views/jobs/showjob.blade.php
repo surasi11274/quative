@@ -568,7 +568,7 @@
                                 <h4 class="text-center text-md-left">สถานะปัจจุบัน : <label class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</label></h4>
                                </div>
                                <div class="col-12 col-md-3">
-                                <div class="float-right d-md-flex col-12">
+                                <div class="float-right d-md-flex col-12 mr-md-5">
                                     @if ($jobs->jobstatus_id == 1)
                                         <button type="button" class="btn disabled _btn-dis m-1 btn-lg btn-block" >แจ้งชำระเงิน</button>
                                         <button type="button"class="btn _secondary-btn m-1 btn-lg btn-block" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
