@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('assets')
-   <link rel="stylesheet" href="css/style_match.css">
+   <link rel="stylesheet" href="../css/style_match.css">
    {{-- <link rel="stylesheet" href="{{asset('css/flatpickr.min.css')}}">
    <link rel="stylesheet" href="css/dropzone.css"> --}}
 

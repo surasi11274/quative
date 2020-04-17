@@ -11,7 +11,7 @@
 @section('content')
 
 <section class="content ">
-    <div class="container d-none d-md-block">
+    <div class="container d-none d-md-block mt-ex">
 
         <div class="text-center p-5">
             <div id="wizard-progress" >

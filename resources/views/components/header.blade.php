@@ -47,31 +47,31 @@
                             <li class="dropdown nav-item d-none d-lg-block" onclick="markNotificationAsRead('{{count(auth()->user()->unreadNotifications)}}')" >
                                 <a class="nav-link  " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                     <span class="icon notification"></span>
-                                    <span class="pending shadow-sm font-weight-bold  text-center" style=" position:absolute; left:25px; top:5px;   margin: 0;background-color:#FE3A76; color:white; width:15px; height:15px padding:2px; border-radius:50%; font-size:12px; 
+                                    @if (count(auth()->user()->unreadNotifications) == 0 )
+                                    <span class="pending shadow-sm font-weight-bold text-center" style=" position:absolute; left:25px;    margin: 0;background-color:white; color:black; width:15px; height:15px;  border-radius:50%; font-size:12px; 
+                                    ">
+                                        {{count(auth()->user()->unreadNotifications)}}
+                                    </span> 
+                                    
+                                    @else
+                                    
+                                    <span class="pending shadow-sm font-weight-bold  text-center" style=" position:absolute; left:25px;    margin: 0;background-color:#FE3A76; color:white; width:15px; height:15px;  border-radius:50%; font-size:12px; 
                                     ">
                                         {{count(auth()->user()->unreadNotifications)}}
                                     </span>
+                                    @endif
+                                   
                                 </a>
-                                <div class="dropdown-menu  p-5" style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);" aria-labelledby="navbarDropdownMenuLink">
+                                <div class="dropdown-menu  p-3" style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);" aria-labelledby="navbarDropdownMenuLink">
                                     <div class="wrapper-notification">
                                         <div class=" overflow-noctification p-2">
                                             @forelse (auth()->user()->unreadNotifications as $notification)
                                                 
-                                                <div class="row">
+                                            <div class="row">
                                                     
-                                                    <div class="col-3">
-                                                        <figure class="  img-fluid">
-                                                            <div class="active-notification float-right rounded-circle"></div>
-                                                            <img class="rounded-circle w-100 " src="https://picsum.photos/40">
-                                                        </figure>
-                                                    </div>
-                                                    <div class="col-9">
-                                                        @include('components.notifications.'.snake_case(class_basename($notification->type)))
-                                                        {{-- <small class="ml-2" style="color:#523EE8;">{{'notification_'.snake_case(class_basename($notification->type))}}</small> --}}
-                                                        
-                                                    </div>
-                                                    
-                                                </div>
+                                                @include('components.notifications.'.snake_case(class_basename($notification->type)))
+
+                                            </div>
                                                 @empty
                                                     <a class="gray text-center" href="#">ยังไม่มีการแจ้งเตือนใดๆ</a>
                                             @endforelse
@@ -90,7 +90,22 @@
                                           
                                            <div class="row">
                                                <div class="col-9">
-                                                <a class="nav-link">การแจ้งเตือน</a>
+                                                <a class="nav-link">การแจ้งเตือน@if (count(auth()->user()->unreadNotifications) == 0 )
+                                                    <span class="mt-1 ml-2 pending shadow-sm font-weight-bold text-center" style=" position:absolute;    margin: 0;background-color:white; color:black; width:15px; height:15px;  border-radius:50%; font-size:12px; 
+                                                    ">
+                                                        {{count(auth()->user()->unreadNotifications)}}
+                                                    </span> 
+                                                    
+                                                    @else 
+                                                    
+                                                    <span class="mt-1 ml-2 pending shadow-sm font-weight-bold  text-center" style=" position:absolute;    margin: 0;background-color:#FE3A76; color:white; width:15px; height:15px;  border-radius:50%; font-size:12px; 
+                                                    ">
+                                                        {{count(auth()->user()->unreadNotifications)}}
+                                                    </span>
+                                                </a>
+                                  
+                                    @endif</a>
+                                                
                                                </div>
                                                <div class="col-3 text-center">
                                                 <i class="icon _hilight fas fa-caret-down"></i>
@@ -328,6 +343,10 @@
                         {{-- 2 for User --}}
                         @else
 
+                        @php
+                            $user = Auth::user()->find(Auth::user()->id);
+                            $profile = $user->profile();
+                        @endphp
 
 
                             <li class="nav-item"><a class="nav-link" role="button" href="{{ route('search.create') }}">ค้นหานักออกแบบ</a></li>
@@ -336,10 +355,19 @@
                             <li class="dropdown nav-item d-none d-lg-block" onclick="markNotificationAsRead('{{count(auth()->user()->unreadNotifications)}}')" >
                                 <a class="nav-link  " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                     <span class="icon notification"></span>
-                                    <span class="pending shadow-sm font-weight-bold  text-center" style=" position:absolute; left:25px;    margin: 0;background-color:#FE3A76; color:white; width:15px; height:15px padding:2px; border-radius:50%; font-size:12px; 
+                                    @if (count(auth()->user()->unreadNotifications) == 0 )
+                                    <span class="pending shadow-sm font-weight-bold  text-center" style=" position:absolute; left:25px;    margin: 0;background-color:white; color:black; width:15px; height:15px;  border-radius:50%; font-size:12px; 
+                                    ">
+                                        {{count(auth()->user()->unreadNotifications)}}
+                                    </span> 
+                                    
+                                    @else
+                                    
+                                    <span class="pending shadow-sm font-weight-bold  text-center" style=" position:absolute; left:25px;    margin: 0;background-color:#FE3A76; color:white; width:15px; height:15px;  border-radius:50%; font-size:12px; 
                                     ">
                                         {{count(auth()->user()->unreadNotifications)}}
                                     </span>
+                                    @endif
                                 </a>
                                 <div class="dropdown-menu" style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);" aria-labelledby="navbarDropdownMenuLink">
                                     <div class="wrapper-notification">
@@ -348,19 +376,8 @@
                                                 
                                                 <div class="row">
                                                     
-                                                    <div class="col-3">
-                                                        <figure class="  img-fluid">
-                                                            <div class="active-notification float-right rounded-circle"></div>
-                                                            <img class="rounded-circle w-100 " src="https://picsum.photos/40">
-                                                        </figure>
-                                                    </div>
-                                                    <div class="col-9">
-                                                        @include('components.notifications.'.snake_case(class_basename($notification->type)))
+                                                    @include('components.notifications.'.snake_case(class_basename($notification->type)))
 
-                                                        {{-- <small class="ml-2" style="color:#523EE8;">{{'notification_'.snake_case(class_basename($notification->type))}}</small> --}}
-                                                        
-                                                    </div>
-                                                    
                                                 </div>
                                                 @empty
                                                     <a class="gray text-center" href="#">ยังไม่มีการแจ้งเตือนใดๆ</a>
@@ -380,7 +397,22 @@
                                           
                                            <div class="row">
                                                <div class="col-9">
-                                                <a class="nav-link">การแจ้งเตือน</a>
+                                                <a class="nav-link">การแจ้งเตือน  @if (count(auth()->user()->unreadNotifications) == 0 )
+                                                    <span class="mt-1 ml-2 pending shadow-sm font-weight-bold text-center" style=" position:absolute;    margin: 0;background-color:white; color:black; width:15px; height:15px;  border-radius:50%; font-size:12px; 
+                                                    ">
+                                                        {{count(auth()->user()->unreadNotifications)}}
+                                                    </span> 
+                                                    
+                                                    @else 
+                                                    
+                                                    <span class="mt-1 ml-2 pending shadow-sm font-weight-bold  text-center" style=" position:absolute;    margin: 0;background-color:#FE3A76; color:white; width:15px; height:15px;  border-radius:50%; font-size:12px; 
+                                                    ">
+                                                        {{count(auth()->user()->unreadNotifications)}}
+                                                    </span>
+                                                </a>
+                                  
+                                    @endif</a>
+                                                
                                                </div>
                                                <div class="col-3 text-center">
                                                 <i class="icon _hilight fas fa-caret-down"></i>
@@ -433,13 +465,10 @@
                                     <li class="nav-item">
                                      <div class="wrapper-profile">
                                        <div class="profile-color d-flex p-2">
-                                        @php
-                                            $user = Auth::user()->find(Auth::user()->id);
-                                            $profile = $user->profile();
-                                        @endphp
+                                        
                                         @if ($profile)
 
-                                           <img class="ml-3 rounded-circle" src="{{ $profile->profilepic }}" alt="" style="width:50px;height:50px; border:solid 1px white;">
+                                           <img class="ml-3 rounded-circle" src="/{{ $profile->profilepic }}" alt="" style="width:50px;height:50px; border:solid 1px white;">
                                         @else
                                         <img class="ml-3 rounded-circle" src="{{ Auth::user()->avatar }}" alt="" style="width:50px;height:50px; border:solid 1px white;">
 

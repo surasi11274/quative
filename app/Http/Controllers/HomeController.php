@@ -215,7 +215,7 @@ class HomeController extends Controller
 
         $users = Auth::user(); 
         // $cats = Categories::all();    
-        $refs = References::inRandomOrder()->limit(9)->get();             
+        $refs = References::where('categories_id',$jobs->first()->categories_id)->limit(9)->get();             
          
              
         // $tags = Tags::all();
@@ -378,7 +378,7 @@ class HomeController extends Controller
                 ->limit(5)
                 ->get();
         
-        
+
         $tags = Tags::all();
         $refs = References::inRandomOrder()->limit(8)->get();     
         $jobs->first()->tags = json_decode($jobs->first()->tags);
@@ -520,6 +520,8 @@ class HomeController extends Controller
         $updateJob->dateextra_price = $request->dateextra_price;
 
         $updateJob->pricerate = $updateJob->package_price + $updateJob->dateextra_price;
+        $updateJob->package = $request->package;
+
         $updateJob->save();
 
         $designer = Designer::where('id',$updateJob->designer_id)->first();
@@ -570,6 +572,7 @@ class HomeController extends Controller
         $jobstatus = Jobstatus::all();
         $tags = Tags::all();
 
+        $jobs->first()->reference = json_decode($jobs->first()->reference);
         $jobs->first()->tags = json_decode($jobs->first()->tags);
         $jobfile = json_decode($jobs->first()->file,true);
 
@@ -596,6 +599,10 @@ class HomeController extends Controller
 
         $updateJob = Jobs::find($request->job_id);
         $updateJob->jobstatus_id = $request->jobstatus_id;
+        $updateJob->editorcomment = $request->editorcomment;
+        $updateJob->filelinks = $request->filelinks;
+
+
     
         $updateJob->save();
 

@@ -33,8 +33,8 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 {{-- selectpicker --}}
-<link rel="stylesheet" href="css/bootstrap-select.min.css">
-
+<link rel="icon" href="photo/favicon.ico" type="image/gif" sizes="16x16">
+<link rel="stylesheet" href="../css/bootstrap-select.min.css">
 
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
 

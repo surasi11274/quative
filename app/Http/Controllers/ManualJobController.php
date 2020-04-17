@@ -200,7 +200,7 @@ class ManualJobController extends Controller
     
             $users = Auth::user(); 
             // $cats = Categories::all();    
-            $refs = References::inRandomOrder()->limit(9)->get();             
+            $refs = References::where('categories_id',$jobs->first()->categories_id)->limit(9)->get();             
              
                  
             // $tags = Tags::all();
@@ -379,6 +379,8 @@ class ManualJobController extends Controller
         $updateJob->dateextra_price = $request->dateextra_price;
 
         $updateJob->pricerate = $updateJob->package_price + $updateJob->dateextra_price;
+        $updateJob->package = $request->package;
+
         $updateJob->save();
 
         $designer = Designer::where('id',$updateJob->designer_id)->first();
@@ -396,6 +398,15 @@ class ManualJobController extends Controller
 
     public function matched($token)
     {
+        $auth = Auth::user();
+
+        if (!$auth){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
+            // return redirect(route('designer.show',['token'=>$jobs->token]));
+
+            return view('auth.login',[
+                ]);
+
+        }
 
         $jobs = Jobs::where('token',$token)->get();
 

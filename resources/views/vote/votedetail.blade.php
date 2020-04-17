@@ -90,6 +90,7 @@
     
                         @endphp
                             
+                           
                             <figure class="img-fluid float-right m-auto">
                                 <img class="rounded-circle img-fluid" src="/{{$designerid->profilepic}}" style="width:70px; height:70px;  object-fit: cover;">
                             </figure>

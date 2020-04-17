@@ -14,10 +14,10 @@
      <table class="table table-hover table-bordered">
 
         <thead class="thead-dark">
-          <tr>
+          <tr class="text-center">
 
             <th scope="col">รหัสการจ้าง</th>
-            <th scope="col">แพ็คเกจ</th>
+            <th scope="col">ราคาแพ็คเกจ</th>
             {{-- <th scope="col">วันที่เริ่มงาน</th> --}}
             <th scope="col">วันที่ต้องการงาน</th>
             <th scope="col">สถานะการทำงาน</th>
@@ -33,14 +33,14 @@
         
           
            {{-- <button class="btn "> --}}
-           <tr >
+           <tr  class="text-center">
 
             <td class="pt-4 pb-4"><a href="#">
              <a href="{{ route('job.show', $job->token) }}">
               <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button>
              </a>
            </td>
-            <td class="pt-4 pb-4">{{$job->price}}</td>
+            <td class="pt-4 pb-4">{{number_format($job->pricerate)}}</td>
             {{-- <td class="pt-4 pb-4">{{$job->finishdate}}</td> --}}
             <td class="pt-4 pb-4">{{date('F d,Y',strtotime($job->finishdate))}}</td>
             {{-- @foreach ($job->jobstatus_id as $item) --}}

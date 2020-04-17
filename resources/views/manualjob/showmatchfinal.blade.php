@@ -40,16 +40,16 @@
                                             *ระบบจะค้นหาจากราคาที่ใกล้มากที่สุดจากกลุ่มนักออกแบบ*
                                         </small>
                                         
-                                        <select name="package_price" id="value1" class="detaill-select form-control mt-3 mb-5 " onchange="calculateAmount(this.value)">
+                                        <select name="package_price" id="value1" class="detaill-select form-control mt-3 mb-5 pack" onchange="calculateAmount(this.value)">
                                             <option class="dropdown-item"  >กรุณาเลือก package
                                             </option>
-                                            <option class="dropdown-item" value="{{$courses->course_rate['0']}}" >งานออกแบบฉลากติดสินค้าหน้าเดียว
+                                            <option class="dropdown-item" value="{{$courses->course_rate['0']}}" data-package="งานออกแบบฉลากติดสินค้าหน้าเดียว">งานออกแบบฉลากติดสินค้าหน้าเดียว
                                                 <span style="text-color: #ff3957;">ราคา ฿{{$courses->course_rate['0']}}</span>
                                             </option>
-                                            <option class="dropdown-item" value="{{$courses->course_rate['1']}}" >ออกแบบกล่องแพคเกจ
+                                            <option class="dropdown-item" value="{{$courses->course_rate['1']}}" data-package="ออกแบบกล่องแพคเกจ">ออกแบบกล่องแพคเกจ
                                                 <span style="text-color: #ff3957;">ราคา ฿{{$courses->course_rate['1']}}</span>
                                             </option>
-                                            <option class="dropdown-item" value="{{$courses->course_rate['2']}}" o>ออกแบบฉลากติดสินค้า พร้อม กล่องแพคเกจ
+                                            <option class="dropdown-item" value="{{$courses->course_rate['2']}}" data-package="ออกแบบฉลากติดสินค้า พร้อม กล่องแพคเกจ">ออกแบบฉลากติดสินค้า พร้อม กล่องแพคเกจ
                                                 <span style="text-color: #ff3957;">ราคา ฿{{$courses->course_rate['2']}}</span>
                                             </option>
                                         </select>
@@ -181,10 +181,15 @@
                                   </div>
                                   </div>
 
-                                  <input hidden type="text" id="output" name="finishdate" >
+                                  <input hidden type="text" id="output" name="finishdate">
+                                  <textarea hidden name="package" id="lblSel" cols="30" rows="1">                                  
+                                      {{-- <label  id="lblSel" style="color:green" for="package">กรุณาเลือก package</label> --}}
+                                  </textarea>
+                                  {{-- <input  id="lblSel" type="text" name="package" /> --}}
 
                                   <input hidden type="text" id="job_id" name="jobstatus_id" value="1">
                                   <input hidden type="text" id="job_id" name="job_id" value="{{$jobs->id}}">
+
 
 
                                  @if ($errors->any())
@@ -227,6 +232,12 @@
         console.log(v);
         return false;
     }
+    // function addCart2(v){
+    //     document.getElementById('textpackage').value = v
+
+    //     console.log(v);
+    //     return false;
+    // }
 </script>
 <script>
     function calculateAmount(val) {
@@ -245,7 +256,26 @@
     }
 
 </script>
-<script>
+<script >
+    $(document).ready(function () {
+
+        $(".pack").change(function () {
+            var cntrol = $(this);
+            
+            var City = cntrol.find(':selected').data('package');
+            //   var doj = ', DOJ : ' + cntrol.find(':selected').data("doj");
+            //   var value = ', Value : ' + cntrol.val();     
+            var finalvalue = City;
+            
+            if(cntrol.val() == "")
+            finalvalue = "กรุณาเลือก package";
+            $('#lblSel').text(finalvalue);  
+        
+        });
+    });
+
+</script>
+{{-- <script>
     // we used jQuery 'keyup' to trigger the computation as the user type
     $(function (){
             $('#package, #date').keyup(function(){
@@ -257,5 +287,5 @@
             });
          });
 
-</script>
+</script> --}}
 <script src="{{asset('js/flatpickr.js')}}"></script>

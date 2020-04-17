@@ -334,6 +334,7 @@ class DesignerController extends Controller
 
 
         $tags = Tags::all();
+        $jobs->first()->reference = json_decode($jobs->first()->reference);
 
         $jobs->first()->tags = json_decode($jobs->first()->tags);
 
@@ -456,6 +457,8 @@ class DesignerController extends Controller
     
     DB::table('jobs')->where('id', $fileinput->job_id)->update([
         'file' => json_encode($query),
+        'filelinks' => $request->input('filelinks'),
+
         'jobstatus_id' => '7'
         // 'reference'=>json_encode($request->input('reference')),
 
