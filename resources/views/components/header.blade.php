@@ -48,14 +48,14 @@
                                 <a class="nav-link  " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                     <span class="icon notification"></span>
                                     @if (count(auth()->user()->unreadNotifications) == 0 )
-                                    <span class="pending shadow-sm font-weight-bold text-center" style=" position:absolute; left:25px;    margin: 0;background-color:white; color:black; width:15px; height:15px;  border-radius:50%; font-size:12px; 
+                                    <span class="pending shadow-sm font-weight-bold text-center" style="padding-right:2px;position:absolute; left:20px;    margin: 0;background-color:white; color:black; width:15px; height:15px;  border-radius:50%; font-size:12px; 
                                     ">
                                         {{count(auth()->user()->unreadNotifications)}}
                                     </span> 
                                     
                                     @else
                                     
-                                    <span class="pending shadow-sm font-weight-bold  text-center" style=" position:absolute; left:25px;    margin: 0;background-color:#FE3A76; color:white; width:15px; height:15px;  border-radius:50%; font-size:12px; 
+                                    <span class="pending shadow-sm font-weight-bold  text-center" style="padding-right:2px; position:absolute; left:20px;    margin: 0;background-color:#FE3A76; color:white; width:15px; height:15px;  border-radius:50%; font-size:12px; 
                                     ">
                                         {{count(auth()->user()->unreadNotifications)}}
                                     </span>
@@ -356,14 +356,14 @@
                                 <a class="nav-link  " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                     <span class="icon notification"></span>
                                     @if (count(auth()->user()->unreadNotifications) == 0 )
-                                    <span class="pending shadow-sm font-weight-bold  text-center" style=" position:absolute; left:25px;    margin: 0;background-color:white; color:black; width:15px; height:15px;  border-radius:50%; font-size:12px; 
+                                    <span class="pending shadow-sm font-weight-bold  text-center" style="padding-right:2px; position:absolute; left:20px;    margin: 0;background-color:white; color:black; width:15px; height:15px;  border-radius:50%; font-size:12px; 
                                     ">
                                         {{count(auth()->user()->unreadNotifications)}}
                                     </span> 
                                     
                                     @else
                                     
-                                    <span class="pending shadow-sm font-weight-bold  text-center" style=" position:absolute; left:25px;    margin: 0;background-color:#FE3A76; color:white; width:15px; height:15px;  border-radius:50%; font-size:12px; 
+                                    <span class="pending shadow-sm font-weight-bold  text-center" style="padding-right:2px; position:absolute; left:20px;    margin: 0;background-color:#FE3A76; color:white; width:15px; height:15px;  border-radius:50%; font-size:12px; 
                                     ">
                                         {{count(auth()->user()->unreadNotifications)}}
                                     </span>
