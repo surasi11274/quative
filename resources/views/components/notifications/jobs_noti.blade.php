@@ -15,19 +15,19 @@
 
         @if ($isdesigner)
             @if ($isprofile)
-                <img class="rounded-circle" style="width:70px; height:70px; object-fit:cover;"  src="/{{$isprofile->profilepic}}">
+                <img class="rounded-circle obj-img-noti"  src="/{{$isprofile->profilepic}}">
             @else 
-                <img class="rounded-circle" style="width:70px; height:70px; object-fit:cover;"  src="{{$notification->data['user']['avatar']}}">
+                <img class="rounded-circle obj-img-noti"  src="{{$notification->data['user']['avatar']}}">
             @endif
 
         @elseif($isprofile)
             @if ($isdesigner)
-                <img class="rounded-circle" style="width:70px; height:70px; object-fit:cover;"  src="/{{$isdesigner->profilepic}}">
+                <img class="rounded-circle obj-img-noti"  src="/{{$isdesigner->profilepic}}">
             @else 
-                <img class="rounded-circle" style="width:70px; height:70px; object-fit:cover;"  src="{{$notification->data['user']['avatar']}}">
+                <img class="rounded-circle obj-img-noti"   src="{{$notification->data['user']['avatar']}}">
             @endif
         @else 
-            <img class="rounded-circle" style="width:70px; height:70px; object-fit:cover;"  src="{{$notification->data['user']['avatar']}}">
+            <img class="rounded-circle obj-img-noti"  src="{{$notification->data['user']['avatar']}}">
 
         @endif
     </div>
@@ -35,9 +35,9 @@
 </div>
 <div class="col-9">
     <a href="{{route('designer.jobdetail', $notification->data['jobs']['id'])}}" style="text-decoration:none;"">
-        <label class="font-weight-bold" for="name">{{$notification->data['user']['name']}} </label><br>
+        <label class="font-weight-bold over-wrap" for="name">{{$notification->data['user']['name']}} </label><br>
     
-        <small class="ml-2 " style="color:#523EE8;">Request a New job W{{$notification->data['jobs']['id']}}
+        <small class="ml-2 over-wrap" style="color:#523EE8;">Request a New job W{{$notification->data['jobs']['id']}}
         </small>
         <br>
             <small>{{$notification->created_at->diffForHumans()}}</small>

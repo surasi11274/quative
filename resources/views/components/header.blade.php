@@ -120,20 +120,9 @@
                                                 <div class=" overflow-noti-mobile p-2">
                                                     @forelse (auth()->user()->unreadNotifications as $notification)
                                                         
-                                                        <div class="row">
-                                                            
-                                                            <div class="col-3">
-                                                                <figure class="  img-fluid">
-                                                                    <div class="active-notification float-right rounded-circle"></div>
-                                                                    <img class="rounded-circle w-100 " src="https://picsum.photos/40">
-                                                                </figure>
-                                                            </div>
-                                                            <div class="col-9">
+                                                        <div class="row">     
                                                                 @include('components.notifications.'.snake_case(class_basename($notification->type)))
-                                                                {{-- <small class="ml-2" style="color:#523EE8;">{{'notification_'.snake_case(class_basename($notification->type))}}</small> --}}
-                                                                
-                                                            </div>
-                                                            
+                                                                {{-- <small class="ml-2" style="color:#523EE8;">{{'notification_'.snake_case(class_basename($notification->type))}}</small> --}}                                                      
                                                         </div>
                                                         @empty
                                                             <a class="gray text-center" href="#">ยังไม่มีการแจ้งเตือนใดๆ</a>
@@ -423,24 +412,17 @@
                                       </div>
                                       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                         <div class="card-body">
-                                            <div class="wrapper-notificatio-m">
+                                            <div class="wrapper-notification-m">
                                                 <div class="overflow-noti-mobile p-2 p-md-5">
                                                     @forelse (auth()->user()->unreadNotifications as $notification)
                                                         
                                                         <div class="row">
                                                             
-                                                            <div class="col-3">
-                                                                <figure class="  img-fluid">
-                                                                    <div class="active-notification float-right rounded-circle"></div>
-                                                                    <img class="rounded-circle w-100 " src="https://picsum.photos/40">
-                                                                </figure>
-                                                            </div>
-                                                            <div class="col-9">
+                                                            
                                                                 @include('components.notifications.'.snake_case(class_basename($notification->type)))
         
                                                                 {{-- <small class="ml-2" style="color:#523EE8;">{{'notification_'.snake_case(class_basename($notification->type))}}</small> --}}
-                                                                
-                                                            </div>
+                                                            
                                                             
                                                         </div>
                                                         @empty
