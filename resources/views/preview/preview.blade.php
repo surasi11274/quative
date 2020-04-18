@@ -7,14 +7,16 @@
       .bradius{
         border-radius:5px;
         /* border:solid px #000000; */
+        transition: 1s;
+       
       }
    
-    .bradius:hover
-    {
+    .bradius:hover{
       opacity: 0.3;
-              border:solid 1px #000000;
-
+      /* border:solid 1px #000000; */
+      transform: translate3d(0px, -10px, 0px);
       filter: alpha(opacity=30);
+      transition: 1s;
     }
     
     </style>
@@ -24,7 +26,8 @@
 
 <div class="card mt-5 shadow-sm" style="width:100%; height:auto; margin-top: 150px !important;">		  
   <div class="card-body" >
-    <h1 class="card-title _hilight text-center mt-5" >ลองพรีวิวบรรจุภัณฑ์แบบต่างๆในรูปแบบ 3D</h1>
+    <h1 class="card-title _hilight text-center mt-5 d-none d-md-block" >ลองพรีวิวบรรจุภัณฑ์แบบต่างๆในรูปแบบ 3D</h1>
+    <h3 class="card-title _hilight text-center mt-5 d-md-none" >ลองพรีวิวบรรจุภัณฑ์แบบต่างๆในรูปแบบ 3D</h3>
     {{-- <p class="card-text text-center">อัพโหลดรูปโลโก้ของคุณเพื่อดูบรรจุภัณฑ์ไฟล์ <br>.jpg, .png, .svg</p> --}}
     
     <div class="boxup mb-5" >
@@ -44,15 +47,15 @@
   
         </div> --}}
        
-        <div class="row mt-5">
-          <div class="col-4">
-            <div class="text-center">
+        <div class="row mt-3">
+          <div class="col-12 col-md-4 ">
+            <div class="text-center mt-3">
               <h5 class="_primary  ">แพ็คเกจเครื่องสำอาง</h5 >
             </div>
-            <div class="row">
+            <div class="row mt-3 mb-3">
               <div class="col-6">
-                <a style="text-decoration:none;" href="/preview/cosmetic" >
-                  <img class="shadow-sm bradius" style="width:150px; height:200px; object-fit:cover;" src="../photo/model_pic/creamkapook.png" />
+                <a class="text-decoration" href="/preview/cosmetic" >
+                  <img class="shadow-sm bradius obj-img-preview" src="../photo/model_pic/creamkapook.png" />
                   
 
 
@@ -60,8 +63,8 @@
                 
               </div>
               <div class="col-6">
-                <a style="text-decoration:none;" href="/preview/cosmetic2" >
-                  <img class="shadow-sm bradius" style="width:150px; height:200px; object-fit:cover;" src="../photo/model_pic/lotion.jpg" />
+                <a class="text-decoration" href="/preview/cosmetic2" >
+                  <img class="shadow-sm bradius obj-img-preview" src="../photo/model_pic/lotion.jpg" />
                 </a>
               </div>
 
@@ -69,19 +72,19 @@
                
             </div>
           </div>
-          <div class="col-4">
-            <div class="text-center">
+          <div class="col-12 col-md-4 ">
+            <div class="text-center mt-3">
               <h5 class="_primary  ">แพ็คเกจประเภทถุง</h5 >
             </div>
-            <div class="row">
+            <div class="row mt-3 mb-3">
               <div class="col-6">
-                <a style="text-decoration:none;" href="/preview/bag" >
-                  <img class="shadow-sm bradius" style=" width:150px; height:200px; object-fit:cover;" src="../photo/model_pic/bag.jpg" />
+                <a class="text-decoration" href="/preview/bag" >
+                  <img class="shadow-sm bradius obj-img-preview" src="../photo/model_pic/bag.jpg" />
                 </a>
               </div>
               <div class="col-6">
-                <a style="text-decoration:none;" href="/preview/bag2" >
-                  <img class="shadow-sm bradius" style=" width:150px; height:200px; object-fit:cover;" src="../photo/model_pic/chipbag.jpg" />
+                <a class="text-decoration" href="/preview/bag2" >
+                  <img class="shadow-sm bradius obj-img-preview" src="../photo/model_pic/chipbag.jpg" />
                 </a>
               </div>
 
@@ -90,20 +93,20 @@
             </div>
           </div>
 
-          <div class="col-4">
-            <div class="text-center">
+          <div class="col-12 col-md-4 ">
+            <div class="text-center mt-3">
               <h5 class="_primary  ">แพ็คเกจประเภทแก้ว</h5 >
             </div>
-            <div class="row">
+            <div class="row mt-3 mb-3">
               <div class="col-6">
-                <a style="text-decoration:none;" href="/preview/cup" >
-                  <img class="shadow-sm bradius" style="width:150px; height:200px; object-fit:cover;" src="../photo/model_pic/cup.jpg" />
+                <a class="text-decoration" href="/preview/cup" >
+                  <img class="shadow-sm bradius obj-img-preview" src="../photo/model_pic/cup.jpg" />
                 </a>
                 
               </div>
               <div class="col-6">
-                <a style="text-decoration:none;" href="/preview/cup2" >
-                  <img class="shadow-sm bradius" style="width:150px; height:200px; object-fit:cover;" src="../photo/model_pic/coffeecup.jpg" />
+                <a class="text-decoration" href="/preview/cup2" >
+                  <img class="shadow-sm bradius obj-img-preview" src="../photo/model_pic/coffeecup.jpg" />
                 </a>
               </div>
 
@@ -115,21 +118,21 @@
 
           
         </div>
-        <div class="row mt-5">
-          <div class="col-4">
-            <div class="text-center">
+        <div class="row mt-3">
+          <div class="col-12 col-md-4">
+            <div class="text-center mt-3">
               <h5 class="_primary  ">แพ็คเกจประเภทกระป๋อง</h5 >
             </div>
-            <div class="row">
+            <div class="row mt-3 mb-3">
               <div class="col-6">
-                <a style="text-decoration:none;" href="/preview/can" >
-                  <img class="shadow-sm bradius" style="width:150px; height:200px; object-fit:cover;" src="../photo/model_pic/sodacan.jpg" />
+                <a class="text-decoration" href="/preview/can" >
+                  <img class="shadow-sm bradius obj-img-preview" src="../photo/model_pic/sodacan.jpg" />
                 </a>
                 
               </div>
               <div class="col-6">
-                <a style="text-decoration:none;" href="/preview/can2" >
-                  <img class="shadow-sm bradius" style="width:150px; height:200px; object-fit:cover;" src="../photo/model_pic/foodcan.jpg" />
+                <a class="text-decoration" href="/preview/can2" >
+                  <img class="shadow-sm bradius obj-img-preview" src="../photo/model_pic/foodcan.jpg" />
                 </a>
               </div>
 
@@ -137,21 +140,21 @@
                
             </div>
           </div>
-          <div class="col-4">
-            <div class="text-center">
+          <div class="col-12 col-md-4">
+            <div class="text-center mt-3">
               <h5 class="_primary  ">แพ็คเกจประเภทขวด</h5 >
             </div>
-            <div class="row">
+            <div class="row mt-3 mb-3">
               <div class="col-6">
                   
-                <a style="text-decoration:none;" href="/preview/bottle" >
-                  <img class="shadow-sm bradius" style="width:150px; height:200px; object-fit:cover;" src="../photo/model_pic/bottle1.jpg" />
+                <a class="text-decoration" href="/preview/bottle" >
+                  <img class="shadow-sm bradius obj-img-preview"  src="../photo/model_pic/bottle1.jpg" />
                 </a>
                 
               </div>
               <div class="col-6">
-                <a style="text-decoration:none;" href="/preview/bottle2" >
-                  <img class="shadow-sm bradius" style="width:150px; height:200px; object-fit:cover;" src="../photo/model_pic/waterbottle.jpg" />
+                <a class="text-decoration" href="/preview/bottle2" >
+                  <img class="shadow-sm bradius obj-img-preview"  src="../photo/model_pic/waterbottle.jpg" />
                 </a>
               </div>
 
