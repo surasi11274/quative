@@ -56,6 +56,7 @@
               <div class="col-12">
                 <ul class="overflow-select d-flex nav-pills mt-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
+                        
                       <a class="nav-link-1 border bg-white rounded m-2 active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ทั้งหมด</a>
                     </li>
                     <li class="nav-item border bg-white rounded m-2">
@@ -114,121 +115,685 @@
           </select> --}}
        </div>
     </div>
-    <div class="row">
+    <div class="tab-content" id="myTabContent">
 
-                    @if($jobs->count())
-                        @foreach($jobs as $job)
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
-                            @php
-                                $designerid = \App\Designer::find($job->designer_id);
+        <div class="row">
+            
 
-                                $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+                        @if($jobs->count())
+
+                            @foreach($jobs as $job)
+
+                                @php
+                                    $designerid = \App\Designer::find($job->designer_id);
+
+                                    $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
 
 
-                            @endphp
+                                @endphp
 
-                            <article class="col-12 col-md-4 mt-5">
-                                <div class="card shadow-sm" data-id="{{ $job->id }}">
+                                <article class="col-12 col-md-4 mt-5">
+                                    <div class="card shadow-sm" data-id="{{ $job->id }}">
 
-                                <a href="{{ route('galleryDetail', $job->id) }}">
-                                    <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
-                                </a>
+                                    <a href="{{ route('galleryDetail', $job->id) }}">
+                                        <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
+                                    </a>
 
-                                    <div class="card-body" style="width:auto;">
-                                        <div class="text-left position-absolute">
-                                            <div class="row pl-3">
-                                                <p class="font-weight-bold">ออกแบบโดย
-                                                    {{$designerid->name}}
+                                        <div class="card-body" style="width:auto;">
+                                            <div class="text-left position-absolute">
+                                                <div class="row pl-3">
+                                                    <p class="font-weight-bold">ออกแบบโดย
+                                                        {{$designerid->name}}
+                                                    </p>
+                                                </div>
+
+                                            {{-- @foreach($job->tags as $tagn)
+
+
+                                                <p>
+                                                    {{$tagname}},
                                                 </p>
+
+                                            @endforeach --}}
+                                            <div class="row pl-3">
+                                            @foreach ($jobtags as $jobt)
+                                                @php
+
+                                                $tagname = \App\Tags::find($jobt)->tagName;
+
+                                                @endphp
+                                                <p>
+                                                    {{$tagname}},
+                                                </p>
+
+                                            @endforeach 
                                             </div>
-
-                                        {{-- @foreach($job->tags as $tagn)
-
-
-                                            <p>
-                                                {{$tagname}},
-                                            </p>
-
-                                        @endforeach --}}
-                                        <div class="row pl-3">
-                                        @foreach ($jobtags as $jobt)
-                                            @php
-
-                                            $tagname = \App\Tags::find($jobt)->tagName;
-
-                                            @endphp
-                                            <p>
-                                                {{$tagname}},
-                                            </p>
-
-                                        @endforeach 
-                                        </div>
-                            
-                                    <div class="row pl-3 color-grey">
-                                            <span>
-                                                <i class="fas fa-heart"></i>
-                                                {{$job->favorite_to_users->count()}}
-                                            </span>
-                                            <span class="pl-3">
-                                                <i class="far fa-eye"></i>
-                                                {{$job->view_count}}
-                                            </span>
-
-
-
-
-
-                                    </div>
-
-
-
-                                    </div>
-                                    <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
-                                    <span class="pull-right">
-
-                                            @guest
-
-                                            <a href="javascript:void(0);" >
-                                            <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
-                                                closeButton:true,
-                                                progressBar: true,
-                                            })" class="love btn btn-light text-center rounded float-right border">
-                                                <i class="fas fa-heart"></i>
-                                                {{-- {{$job->favorite_to_users->count()}}                                 --}}
-                                            </button>
-                                            </a>
-
-                                            @else
-                                            <a href="javascript:void(0);" >
-                                                <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                
+                                        <div class="row pl-3 color-grey">
+                                                <span>
                                                     <i class="fas fa-heart"></i>
+                                                    {{$job->favorite_to_users->count()}}
+                                                </span>
+                                                <span class="pl-3">
+                                                    <i class="far fa-eye"></i>
+                                                    {{$job->view_count}}
+                                                </span>
 
-                                                    {{-- {{$job->favorite_to_users->count()}}   --}}
+
+
+
+
+                                        </div>
+
+
+
+                                        </div>
+                                        <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
+                                        <span class="pull-right">
+
+                                                @guest
+
+                                                <a href="javascript:void(0);" >
+                                                <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
+                                                    closeButton:true,
+                                                    progressBar: true,
+                                                })" class="love btn btn-light text-center rounded float-right border">
+                                                    <i class="fas fa-heart"></i>
+                                                    {{-- {{$job->favorite_to_users->count()}}                                 --}}
                                                 </button>
-                                            </a>
-                                                 <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
-                                                    style="display:none;">
-                                                @csrf
-                                                </form>
+                                                </a>
 
-                                            @endguest
-                                            {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
-                                            <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
-                                    </span>
+                                                @else
+                                                <a href="javascript:void(0);" >
+                                                    <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                                        <i class="fas fa-heart"></i>
+
+                                                        {{-- {{$job->favorite_to_users->count()}}   --}}
+                                                    </button>
+                                                </a>
+                                                    <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                                        style="display:none;">
+                                                    @csrf
+                                                    </form>
+
+                                                @endguest
+                                                {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
+                                                <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    @endforeach
-                @endif
+                            </article>
+                        @endforeach
 
-            </div>
-           
+                    @endif
+                </div>
         </div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">กล่อง</div>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">ขวด</div>
-        <div class="tab-pane fade" id="pills-glass" role="tabpanel" aria-labelledby="pills-contact-tab">แก้ว</div>
-        <div class="tab-pane fade" id="pills-bag" role="tabpanel" aria-labelledby="pills-contact-tab">ถุง</div>
-        <div class="tab-pane fade" id="pills-can" role="tabpanel" aria-labelledby="pills-contact-tab">กระป๋อง</div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><div class="row">
+            
+
+            @if($jobs->count())
+
+                @foreach($jobs as $job)
+
+                    @php
+                        $designerid = \App\Designer::find($job->designer_id);
+
+                        $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+
+
+                    @endphp
+
+                    <article class="col-12 col-md-4 mt-5">
+                        <div class="card shadow-sm" data-id="{{ $job->id }}">
+
+                        <a href="{{ route('galleryDetail', $job->id) }}">
+                            <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
+                        </a>
+
+                            <div class="card-body" style="width:auto;">
+                                <div class="text-left position-absolute">
+                                    <div class="row pl-3">
+                                        <p class="font-weight-bold">ออกแบบโดย
+                                            {{$designerid->name}}
+                                        </p>
+                                    </div>
+
+                                {{-- @foreach($job->tags as $tagn)
+
+
+                                    <p>
+                                        {{$tagname}},
+                                    </p>
+
+                                @endforeach --}}
+                                <div class="row pl-3">
+                                @foreach ($jobtags as $jobt)
+                                    @php
+
+                                    $tagname = \App\Tags::find($jobt)->tagName;
+
+                                    @endphp
+                                    <p>
+                                        {{$tagname}},
+                                    </p>
+
+                                @endforeach 
+                                </div>
+                    
+                            <div class="row pl-3 color-grey">
+                                    <span>
+                                        <i class="fas fa-heart"></i>
+                                        {{$job->favorite_to_users->count()}}
+                                    </span>
+                                    <span class="pl-3">
+                                        <i class="far fa-eye"></i>
+                                        {{$job->view_count}}
+                                    </span>
+
+
+
+
+
+                            </div>
+
+
+
+                            </div>
+                            <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
+                            <span class="pull-right">
+
+                                    @guest
+
+                                    <a href="javascript:void(0);" >
+                                    <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
+                                        closeButton:true,
+                                        progressBar: true,
+                                    })" class="love btn btn-light text-center rounded float-right border">
+                                        <i class="fas fa-heart"></i>
+                                        {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                    </button>
+                                    </a>
+
+                                    @else
+                                    <a href="javascript:void(0);" >
+                                        <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                            <i class="fas fa-heart"></i>
+
+                                            {{-- {{$job->favorite_to_users->count()}}   --}}
+                                        </button>
+                                    </a>
+                                        <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                            style="display:none;">
+                                        @csrf
+                                        </form>
+
+                                    @endguest
+                                    {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
+                                    <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
+                            </span>
+                        </div>
+                    </div>
+                </article>
+            @endforeach
+
+        @endif
+    </div>
+</div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="row">
+            
+
+                @if($jobs->count())
+
+                    @foreach($jobs as $job)
+
+                        @php
+                            $designerid = \App\Designer::find($job->designer_id);
+
+                            $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+
+
+                        @endphp
+
+                        <article class="col-12 col-md-4 mt-5">
+                            <div class="card shadow-sm" data-id="{{ $job->id }}">
+
+                            <a href="{{ route('galleryDetail', $job->id) }}">
+                                <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
+                            </a>
+
+                                <div class="card-body" style="width:auto;">
+                                    <div class="text-left position-absolute">
+                                        <div class="row pl-3">
+                                            <p class="font-weight-bold">ออกแบบโดย
+                                                {{$designerid->name}}
+                                            </p>
+                                        </div>
+
+                                    {{-- @foreach($job->tags as $tagn)
+
+
+                                        <p>
+                                            {{$tagname}},
+                                        </p>
+
+                                    @endforeach --}}
+                                    <div class="row pl-3">
+                                    @foreach ($jobtags as $jobt)
+                                        @php
+
+                                        $tagname = \App\Tags::find($jobt)->tagName;
+
+                                        @endphp
+                                        <p>
+                                            {{$tagname}},
+                                        </p>
+
+                                    @endforeach 
+                                    </div>
+                        
+                                <div class="row pl-3 color-grey">
+                                        <span>
+                                            <i class="fas fa-heart"></i>
+                                            {{$job->favorite_to_users->count()}}
+                                        </span>
+                                        <span class="pl-3">
+                                            <i class="far fa-eye"></i>
+                                            {{$job->view_count}}
+                                        </span>
+
+
+
+
+
+                                </div>
+
+
+
+                                </div>
+                                <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
+                                <span class="pull-right">
+
+                                        @guest
+
+                                        <a href="javascript:void(0);" >
+                                        <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
+                                            closeButton:true,
+                                            progressBar: true,
+                                        })" class="love btn btn-light text-center rounded float-right border">
+                                            <i class="fas fa-heart"></i>
+                                            {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                        </button>
+                                        </a>
+
+                                        @else
+                                        <a href="javascript:void(0);" >
+                                            <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                                <i class="fas fa-heart"></i>
+
+                                                {{-- {{$job->favorite_to_users->count()}}   --}}
+                                            </button>
+                                        </a>
+                                            <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                                style="display:none;">
+                                            @csrf
+                                            </form>
+
+                                        @endguest
+                                        {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
+                                        <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                @endforeach
+
+            @endif
+        </div>
+        </div>
+        <div class="tab-pane fade" id="pills-glass" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="row">
+            
+
+                @if($jobs->count())
+
+                    @foreach($jobs as $job)
+
+                        @php
+                            $designerid = \App\Designer::find($job->designer_id);
+
+                            $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+
+
+                        @endphp
+
+                        <article class="col-12 col-md-4 mt-5">
+                            <div class="card shadow-sm" data-id="{{ $job->id }}">
+
+                            <a href="{{ route('galleryDetail', $job->id) }}">
+                                <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
+                            </a>
+
+                                <div class="card-body" style="width:auto;">
+                                    <div class="text-left position-absolute">
+                                        <div class="row pl-3">
+                                            <p class="font-weight-bold">ออกแบบโดย
+                                                {{$designerid->name}}
+                                            </p>
+                                        </div>
+
+                                    {{-- @foreach($job->tags as $tagn)
+
+
+                                        <p>
+                                            {{$tagname}},
+                                        </p>
+
+                                    @endforeach --}}
+                                    <div class="row pl-3">
+                                    @foreach ($jobtags as $jobt)
+                                        @php
+
+                                        $tagname = \App\Tags::find($jobt)->tagName;
+
+                                        @endphp
+                                        <p>
+                                            {{$tagname}},
+                                        </p>
+
+                                    @endforeach 
+                                    </div>
+                        
+                                <div class="row pl-3 color-grey">
+                                        <span>
+                                            <i class="fas fa-heart"></i>
+                                            {{$job->favorite_to_users->count()}}
+                                        </span>
+                                        <span class="pl-3">
+                                            <i class="far fa-eye"></i>
+                                            {{$job->view_count}}
+                                        </span>
+
+
+
+
+
+                                </div>
+
+
+
+                                </div>
+                                <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
+                                <span class="pull-right">
+
+                                        @guest
+
+                                        <a href="javascript:void(0);" >
+                                        <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
+                                            closeButton:true,
+                                            progressBar: true,
+                                        })" class="love btn btn-light text-center rounded float-right border">
+                                            <i class="fas fa-heart"></i>
+                                            {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                        </button>
+                                        </a>
+
+                                        @else
+                                        <a href="javascript:void(0);" >
+                                            <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                                <i class="fas fa-heart"></i>
+
+                                                {{-- {{$job->favorite_to_users->count()}}   --}}
+                                            </button>
+                                        </a>
+                                            <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                                style="display:none;">
+                                            @csrf
+                                            </form>
+
+                                        @endguest
+                                        {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
+                                        <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                @endforeach
+
+            @endif
+        </div>
+        </div>
+        <div class="tab-pane fade" id="pills-bag" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="row">
+            
+
+                @if($jobs->count())
+
+                    @foreach($jobs as $job)
+
+                        @php
+                            $designerid = \App\Designer::find($job->designer_id);
+
+                            $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+
+
+                        @endphp
+
+                        <article class="col-12 col-md-4 mt-5">
+                            <div class="card shadow-sm" data-id="{{ $job->id }}">
+
+                            <a href="{{ route('galleryDetail', $job->id) }}">
+                                <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
+                            </a>
+
+                                <div class="card-body" style="width:auto;">
+                                    <div class="text-left position-absolute">
+                                        <div class="row pl-3">
+                                            <p class="font-weight-bold">ออกแบบโดย
+                                                {{$designerid->name}}
+                                            </p>
+                                        </div>
+
+                                    {{-- @foreach($job->tags as $tagn)
+
+
+                                        <p>
+                                            {{$tagname}},
+                                        </p>
+
+                                    @endforeach --}}
+                                    <div class="row pl-3">
+                                    @foreach ($jobtags as $jobt)
+                                        @php
+
+                                        $tagname = \App\Tags::find($jobt)->tagName;
+
+                                        @endphp
+                                        <p>
+                                            {{$tagname}},
+                                        </p>
+
+                                    @endforeach 
+                                    </div>
+                        
+                                <div class="row pl-3 color-grey">
+                                        <span>
+                                            <i class="fas fa-heart"></i>
+                                            {{$job->favorite_to_users->count()}}
+                                        </span>
+                                        <span class="pl-3">
+                                            <i class="far fa-eye"></i>
+                                            {{$job->view_count}}
+                                        </span>
+
+
+
+
+
+                                </div>
+
+
+
+                                </div>
+                                <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
+                                <span class="pull-right">
+
+                                        @guest
+
+                                        <a href="javascript:void(0);" >
+                                        <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
+                                            closeButton:true,
+                                            progressBar: true,
+                                        })" class="love btn btn-light text-center rounded float-right border">
+                                            <i class="fas fa-heart"></i>
+                                            {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                        </button>
+                                        </a>
+
+                                        @else
+                                        <a href="javascript:void(0);" >
+                                            <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                                <i class="fas fa-heart"></i>
+
+                                                {{-- {{$job->favorite_to_users->count()}}   --}}
+                                            </button>
+                                        </a>
+                                            <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                                style="display:none;">
+                                            @csrf
+                                            </form>
+
+                                        @endguest
+                                        {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
+                                        <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                @endforeach
+
+            @endif
+        </div>
+        </div>
+        <div class="tab-pane fade" id="pills-can" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="row">
+            
+
+                @if($jobs->count())
+
+                    @foreach($jobs as $job)
+
+                        @php
+                            $designerid = \App\Designer::find($job->designer_id);
+
+                            $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+
+
+                        @endphp
+
+                        <article class="col-12 col-md-4 mt-5">
+                            <div class="card shadow-sm" data-id="{{ $job->id }}">
+
+                            <a href="{{ route('galleryDetail', $job->id) }}">
+                                <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
+                            </a>
+
+                                <div class="card-body" style="width:auto;">
+                                    <div class="text-left position-absolute">
+                                        <div class="row pl-3">
+                                            <p class="font-weight-bold">ออกแบบโดย
+                                                {{$designerid->name}}
+                                            </p>
+                                        </div>
+
+                                    {{-- @foreach($job->tags as $tagn)
+
+
+                                        <p>
+                                            {{$tagname}},
+                                        </p>
+
+                                    @endforeach --}}
+                                    <div class="row pl-3">
+                                    @foreach ($jobtags as $jobt)
+                                        @php
+
+                                        $tagname = \App\Tags::find($jobt)->tagName;
+
+                                        @endphp
+                                        <p>
+                                            {{$tagname}},
+                                        </p>
+
+                                    @endforeach 
+                                    </div>
+                        
+                                <div class="row pl-3 color-grey">
+                                        <span>
+                                            <i class="fas fa-heart"></i>
+                                            {{$job->favorite_to_users->count()}}
+                                        </span>
+                                        <span class="pl-3">
+                                            <i class="far fa-eye"></i>
+                                            {{$job->view_count}}
+                                        </span>
+
+
+
+
+
+                                </div>
+
+
+
+                                </div>
+                                <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
+                                <span class="pull-right">
+
+                                        @guest
+
+                                        <a href="javascript:void(0);" >
+                                        <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
+                                            closeButton:true,
+                                            progressBar: true,
+                                        })" class="love btn btn-light text-center rounded float-right border">
+                                            <i class="fas fa-heart"></i>
+                                            {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                        </button>
+                                        </a>
+
+                                        @else
+                                        <a href="javascript:void(0);" >
+                                            <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                                <i class="fas fa-heart"></i>
+
+                                                {{-- {{$job->favorite_to_users->count()}}   --}}
+                                            </button>
+                                        </a>
+                                            <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                                style="display:none;">
+                                            @csrf
+                                            </form>
+
+                                        @endguest
+                                        {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
+                                        <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                @endforeach
+
+            @endif
+        </div>
+        </div>
+
+       
+    </div>
+    </div>
+        
     </div>
 
    </div>

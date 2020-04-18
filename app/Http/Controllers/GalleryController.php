@@ -25,6 +25,11 @@ class GalleryController extends Controller
         // $jobs = DB::table('jobs')->where('canshow',1)->get();
 
         $jobs = Jobs::where('canshow',1)->orderBy('id', 'DESC')->get();
+        // $jobbox = Jobs::where('canshow',1)->where('categories','กล่อง')->orderBy('id', 'DESC')->get();
+        // $jobbottle = Jobs::where('canshow',1)->where('categories','ขวด')->orderBy('id', 'DESC')->get();
+        // $jobcup = Jobs::where('canshow',1)->where('categories','แก้ว')->orderBy('id', 'DESC')->get();
+        // $jobbag = Jobs::where('canshow',1)->where('categories','ถุง')->orderBy('id', 'DESC')->get();
+        // $jobcan = Jobs::where('canshow',1)->where('categories','กระป๋อง')->orderBy('id', 'DESC')->get();
         
         // $jobfiles = $jobs->find()->file;
         // $jobfiles = json_decode($jobfiles,true);
@@ -39,6 +44,31 @@ class GalleryController extends Controller
 
 
         }
+        // foreach ($jobbox as $jobbo){
+        //     $jobtagsjobbo = json_decode($jobbo->tags,true);
+
+
+        // }
+        // foreach ($jobbottle as $jobbot){
+        //     $jobtagsjobbot = json_decode($jobbot->tags,true);
+
+
+        // }
+        // foreach ($jobcup as $jobc){
+        //     $jobtagsjobc = json_decode($jobc->tags,true);
+
+
+        // }
+        // foreach ($jobbag as $jobba){
+        //     $jobtagsjobba = json_decode($jobba->tags,true);
+
+
+        // }
+        // foreach ($jobcan as $jobca){
+        //     $jobtagsjobca = json_decode($jobca->tags,true);
+
+
+        // }
         // foreach($jobs as $record){
         //     $jobid = $record->id;
         //     // ....
@@ -53,7 +83,25 @@ class GalleryController extends Controller
         return view('vote.vote',[
             'jobs'=>$jobs,
             'jobfiles'=>$jobfiles,
-            'jobtags'=>$jobtags
+            'jobtags'=>$jobtags,
+            // 'jobbox'=>$jobbox,
+            // 'jobtagsjobbo'=>$jobtagsjobbo,
+
+            // 'jobbottle'=>$jobbottle,
+            // 'jobtagsjobbot'=>$jobtagsjobbot,
+
+
+            // 'jobcup'=>$jobcup,
+            // 'jobtagsjobc'=>$jobtagsjobc,
+
+            // 'jobbag'=>$jobbag,
+            // 'jobtagsjobba'=>$jobtagsjobba,
+
+            // 'jobcan'=>$jobcan,
+            // 'jobtagsjobca'=>$jobtagsjobca,
+
+
+
             ]);
     }
 

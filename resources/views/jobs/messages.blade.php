@@ -28,7 +28,7 @@
                             <li class="user" id="{{$user->id}}">
                                 {{-- will show unread count notification --}}
                                 @if($user->unread)
-                                    <span class="pendingg font-weight-bold" style="padding-left:6px; padding-top:1px;">
+                                    <span class="pendingg font-weight-bold" style="padding-top:1px;">
                                         {{ $user->unread}}
                                     </span>
                                 @endif
@@ -48,7 +48,7 @@
                               <li class="user " id="{{$user->id}}">
                                   {{-- will show unread count notification --}}
                                   @if($user->unread)
-                                      <span class="pendingg font-weight-bold" style="padding-left:6px; padding-top:1px;">
+                                      <span class="pendingg font-weight-bold" style="padding-top:1px;">
                                           {{ $user->unread}}
                                       </span>
                                   @endif
