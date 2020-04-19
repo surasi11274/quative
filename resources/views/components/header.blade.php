@@ -16,30 +16,11 @@
                                 <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">สมัครสมาชิก</a></li> -->
                             <li class="nav-item"><a class="nav-link" role="button" href="/preview">พรีวิว</a></li>
                             <li class="nav-item"><a class="nav-link" role="button" href="/gallery">ผลงาน</a></li>
+                            <li class="nav-item"><a class="nav-link" role="button" href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
+                            <li class="nav-item"><a class="nav-link" role="button" href="{{ route('register') }}">สมัครสมาชิก</a></li>
+                            
 
-
-                            <li class="dropdown nav-item">
-                                <a href="#" class="dropdown-toggle nav-link btn"  data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <span class=" icon user-1"></span>
-                                </a>
-
-                                <ul class="dropdown-menu " role="menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">
-                                            เข้าสู่ระบบ
-                                        </a>
-
-
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">
-                                            สมัครสมาชิก
-                                        </a>
-                                    </li>
-
-
-                                </ul>
-                            </li>
+                    
                                
                         @elseif (Auth::user()->role=='1') 
                             <li class="nav-item"><a class="nav-link" role="button" href="/preview">พรีวิว</a></li>
@@ -62,7 +43,7 @@
                                     @endif
                                    
                                 </a>
-                                <div class="dropdown-menu  p-3" style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);" aria-labelledby="navbarDropdownMenuLink">
+                                <div class="dropdown-menu dropdown-menu-only p-3" style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);" aria-labelledby="navbarDropdownMenuLink">
                                     <div class="wrapper-notification">
                                         <div class=" overflow-noctification p-2">
                                             @forelse (auth()->user()->unreadNotifications as $notification)
@@ -141,7 +122,7 @@
                                 </a>
                                 {{-- {{ Auth::user()->name }} --}}
                                 <!-- <a class="nav-link" role="button" href="/login/designer">Register to Designer</a> -->
-                                <ul class="dropdown-menu "   role="menu">
+                                <ul class="dropdown-menu dropdown-menu-only  "   role="menu">
                                     <li class="nav-item">
                                         <div class="wrapper-profile">
                                           <div class="profile-color d-flex p-2">
@@ -290,7 +271,7 @@
                             </a>
                             {{-- {{ Auth::user()->name }} --}}
                             <!-- <a class="nav-link" role="button" href="/login/designer">Register to Designer</a> -->
-                            <ul class="dropdown-menu "   role="menu">
+                            <ul class="dropdown-menu dropdown-menu-only  "   role="menu">
                                 <li class="nav-item">
                                     <div class="wrapper-profile">
                                       <div class="profile-color d-flex p-2">
@@ -358,7 +339,7 @@
                                     </span>
                                     @endif
                                 </a>
-                                <div class="dropdown-menu" style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);" aria-labelledby="navbarDropdownMenuLink">
+                                <div class="dropdown-menu dropdown-menu-only " style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);" aria-labelledby="navbarDropdownMenuLink">
                                     <div class="wrapper-notification">
                                         <div class="overflow-noctification p-2 p-md-5">
                                             @forelse (auth()->user()->unreadNotifications as $notification)
@@ -443,7 +424,7 @@
                                 </a>
                               
 
-                                <ul class="dropdown-menu " role="menu" style="border: 3px solid #523EE8;">
+                                <ul class="dropdown-menu dropdown-menu-only  " role="menu" style="border: 3px solid #523EE8;">
                                     <li class="nav-item">
                                      <div class="wrapper-profile">
                                        <div class="profile-color d-flex p-2">

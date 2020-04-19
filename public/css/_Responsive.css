@@ -1867,9 +1867,10 @@
     font-size: 36px;
     margin: 0 340px !important;
 }
-  .dropdown-menu {
+  .dropdown-menu-only {
     top: 100%;
     left: -290px !important;
+    
 }
   .wrapper-profile{
     width: 322px;
