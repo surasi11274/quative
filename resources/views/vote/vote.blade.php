@@ -131,6 +131,12 @@
 
                                     $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
 
+                                    // foreach ($jobs as $job){
+            // $object->title 
+                                        $jobtags = json_decode($job->tags,true);
+
+
+                                    // }
 
                                 @endphp
 
@@ -233,22 +239,26 @@
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><div class="row">
             
 
-            @if($jobs->count())
+            @if($jobbox->count())
 
-                @foreach($jobs as $job)
+                @foreach($jobbox as $jobboxs)
 
                     @php
-                        $designerid = \App\Designer::find($job->designer_id);
+                        $designerid = \App\Designer::find($jobboxs->designer_id);
 
-                        $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+                        $jobfilee = DB::table('jobfiles')->where('job_id',$jobboxs->id)->first();
+                        // foreach ($jobbox as $jobbo){
+                        $jobtagsjobbo = json_decode($jobboxs->tags,true);
 
+
+                    // }
 
                     @endphp
 
                     <article class="col-12 col-md-4 mt-5">
-                        <div class="card shadow-sm" data-id="{{ $job->id }}">
+                        <div class="card shadow-sm" data-id="{{ $jobboxs->id }}">
 
-                        <a href="{{ route('galleryDetail', $job->id) }}">
+                        <a href="{{ route('galleryDetail', $jobboxs->id) }}">
                             <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
                         </a>
 
@@ -259,8 +269,8 @@
                                             {{$designerid->name}}
                                         </p>
                                     </div>
-
-                                {{-- @foreach($job->tags as $tagn)
+                                    
+                                {{-- @foreach($jobboxs->tags as $tagn)
 
 
                                     <p>
@@ -269,10 +279,10 @@
 
                                 @endforeach --}}
                                 <div class="row pl-3">
-                                @foreach ($jobtags as $jobt)
+                                @foreach ($jobtagsjobbo as $jobtagsjobbos)
                                     @php
 
-                                    $tagname = \App\Tags::find($jobt)->tagName;
+                                    $tagname = \App\Tags::find($jobtagsjobbos)->tagName;
 
                                     @endphp
                                     <p>
@@ -285,11 +295,11 @@
                             <div class="row pl-3 color-grey">
                                     <span>
                                         <i class="fas fa-heart"></i>
-                                        {{$job->favorite_to_users->count()}}
+                                        {{$jobboxs->favorite_to_users->count()}}
                                     </span>
                                     <span class="pl-3">
                                         <i class="far fa-eye"></i>
-                                        {{$job->view_count}}
+                                        {{$jobboxs->view_count}}
                                     </span>
 
 
@@ -301,7 +311,7 @@
 
 
                             </div>
-                            <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
+                            <h4><a href="#" title="Nature Portfolio">{{ $jobboxs->title }}</a></h4>
                             <span class="pull-right">
 
                                     @guest
@@ -312,19 +322,19 @@
                                         progressBar: true,
                                     })" class="love btn btn-light text-center rounded float-right border">
                                         <i class="fas fa-heart"></i>
-                                        {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                        {{-- {{$jobboxs->favorite_to_users->count()}}                                 --}}
                                     </button>
                                     </a>
 
                                     @else
                                     <a href="javascript:void(0);" >
-                                        <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                        <button onclick="document.getElementById('vote-form-{{$jobboxs->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobboxs->id)->count() == 0 ?'favorite_jobs' : ''}}">
                                             <i class="fas fa-heart"></i>
 
-                                            {{-- {{$job->favorite_to_users->count()}}   --}}
+                                            {{-- {{$jobboxs->favorite_to_users->count()}}   --}}
                                         </button>
                                     </a>
-                                        <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                        <form id="vote-form-{{$jobboxs->id}}" method="POST" action="{{route('job.vote',$jobboxs->id)}}"
                                             style="display:none;">
                                         @csrf
                                         </form>
@@ -345,22 +355,26 @@
             <div class="row">
             
 
-                @if($jobs->count())
+                @if($jobbottle->count())
 
-                    @foreach($jobs as $job)
+                    @foreach($jobbottle as $jobbottles)
 
                         @php
-                            $designerid = \App\Designer::find($job->designer_id);
+                            $designerid = \App\Designer::find($jobbottles->designer_id);
 
-                            $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+                            $jobfilee = DB::table('jobfiles')->where('job_id',$jobbottles->id)->first();
+                            // foreach ($jobbottle as $jobbot){
+                                        $jobtagsjobbot = json_decode($jobbottles->tags,true);
 
+
+                                    // }
 
                         @endphp
 
                         <article class="col-12 col-md-4 mt-5">
-                            <div class="card shadow-sm" data-id="{{ $job->id }}">
+                            <div class="card shadow-sm" data-id="{{ $jobbottles->id }}">
 
-                            <a href="{{ route('galleryDetail', $job->id) }}">
+                            <a href="{{ route('galleryDetail', $jobbottles->id) }}">
                                 <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
                             </a>
 
@@ -372,7 +386,7 @@
                                             </p>
                                         </div>
 
-                                    {{-- @foreach($job->tags as $tagn)
+                                    {{-- @foreach($jobbottles->tags as $tagn)
 
 
                                         <p>
@@ -381,10 +395,10 @@
 
                                     @endforeach --}}
                                     <div class="row pl-3">
-                                    @foreach ($jobtags as $jobt)
+                                    @foreach ($jobtagsjobbot as $jobtagsjobbots)
                                         @php
 
-                                        $tagname = \App\Tags::find($jobt)->tagName;
+                                        $tagname = \App\Tags::find($jobtagsjobbots)->tagName;
 
                                         @endphp
                                         <p>
@@ -397,11 +411,11 @@
                                 <div class="row pl-3 color-grey">
                                         <span>
                                             <i class="fas fa-heart"></i>
-                                            {{$job->favorite_to_users->count()}}
+                                            {{$jobbottles->favorite_to_users->count()}}
                                         </span>
                                         <span class="pl-3">
                                             <i class="far fa-eye"></i>
-                                            {{$job->view_count}}
+                                            {{$jobbottles->view_count}}
                                         </span>
 
 
@@ -413,7 +427,7 @@
 
 
                                 </div>
-                                <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
+                                <h4><a href="#" title="Nature Portfolio">{{ $jobbottles->title }}</a></h4>
                                 <span class="pull-right">
 
                                         @guest
@@ -424,19 +438,19 @@
                                             progressBar: true,
                                         })" class="love btn btn-light text-center rounded float-right border">
                                             <i class="fas fa-heart"></i>
-                                            {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                            {{-- {{$jobbottles->favorite_to_users->count()}}                                 --}}
                                         </button>
                                         </a>
 
                                         @else
                                         <a href="javascript:void(0);" >
-                                            <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                            <button onclick="document.getElementById('vote-form-{{$jobbottles->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobbottles->id)->count() == 0 ?'favorite_jobs' : ''}}">
                                                 <i class="fas fa-heart"></i>
 
-                                                {{-- {{$job->favorite_to_users->count()}}   --}}
+                                                {{-- {{$jobbottles->favorite_to_users->count()}}   --}}
                                             </button>
                                         </a>
-                                            <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                            <form id="vote-form-{{$jobbottles->id}}" method="POST" action="{{route('job.vote',$jobbottles->id)}}"
                                                 style="display:none;">
                                             @csrf
                                             </form>
@@ -457,22 +471,26 @@
             <div class="row">
             
 
-                @if($jobs->count())
+                @if($jobcup->count())
 
-                    @foreach($jobs as $job)
+                    @foreach($jobcup as $jobcups)
 
                         @php
-                            $designerid = \App\Designer::find($job->designer_id);
+                            $designerid = \App\Designer::find($jobcups->designer_id);
 
-                            $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+                            $jobfilee = DB::table('jobfiles')->where('job_id',$jobcups->id)->first();
+                            // foreach ($jobcup as $jobc){
+                                $jobtagsjobc = json_decode($jobcups->tags,true);
 
+
+                            // }
 
                         @endphp
 
                         <article class="col-12 col-md-4 mt-5">
-                            <div class="card shadow-sm" data-id="{{ $job->id }}">
+                            <div class="card shadow-sm" data-id="{{ $jobcups->id }}">
 
-                            <a href="{{ route('galleryDetail', $job->id) }}">
+                            <a href="{{ route('galleryDetail', $jobcups->id) }}">
                                 <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
                             </a>
 
@@ -484,7 +502,7 @@
                                             </p>
                                         </div>
 
-                                    {{-- @foreach($job->tags as $tagn)
+                                    {{-- @foreach($jobcups->tags as $tagn)
 
 
                                         <p>
@@ -493,7 +511,7 @@
 
                                     @endforeach --}}
                                     <div class="row pl-3">
-                                    @foreach ($jobtags as $jobt)
+                                    @foreach ($jobtagsjobc as $jobt)
                                         @php
 
                                         $tagname = \App\Tags::find($jobt)->tagName;
@@ -509,11 +527,11 @@
                                 <div class="row pl-3 color-grey">
                                         <span>
                                             <i class="fas fa-heart"></i>
-                                            {{$job->favorite_to_users->count()}}
+                                            {{$jobcups->favorite_to_users->count()}}
                                         </span>
                                         <span class="pl-3">
                                             <i class="far fa-eye"></i>
-                                            {{$job->view_count}}
+                                            {{$jobcups->view_count}}
                                         </span>
 
 
@@ -525,7 +543,7 @@
 
 
                                 </div>
-                                <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
+                                <h4><a href="#" title="Nature Portfolio">{{ $jobcups->title }}</a></h4>
                                 <span class="pull-right">
 
                                         @guest
@@ -536,19 +554,19 @@
                                             progressBar: true,
                                         })" class="love btn btn-light text-center rounded float-right border">
                                             <i class="fas fa-heart"></i>
-                                            {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                            {{-- {{$jobcups->favorite_to_users->count()}}                                 --}}
                                         </button>
                                         </a>
 
                                         @else
                                         <a href="javascript:void(0);" >
-                                            <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                            <button onclick="document.getElementById('vote-form-{{$jobcups->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobcups->id)->count() == 0 ?'favorite_jobs' : ''}}">
                                                 <i class="fas fa-heart"></i>
 
-                                                {{-- {{$job->favorite_to_users->count()}}   --}}
+                                                {{-- {{$jobcups->favorite_to_users->count()}}   --}}
                                             </button>
                                         </a>
-                                            <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                            <form id="vote-form-{{$jobcups->id}}" method="POST" action="{{route('job.vote',$jobcups->id)}}"
                                                 style="display:none;">
                                             @csrf
                                             </form>
@@ -569,22 +587,26 @@
             <div class="row">
             
 
-                @if($jobs->count())
+                @if($jobbag->count())
 
-                    @foreach($jobs as $job)
+                    @foreach($jobbag as $jobbags)
 
                         @php
-                            $designerid = \App\Designer::find($job->designer_id);
+                            $designerid = \App\Designer::find($jobbags->designer_id);
 
-                            $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+                            $jobfilee = DB::table('jobfiles')->where('job_id',$jobbags->id)->first();
+
+                            // foreach ($jobbag as $jobba){
+            $jobtagsjobba = json_decode($jobbags->tags,true);
 
 
+        // }
                         @endphp
 
                         <article class="col-12 col-md-4 mt-5">
-                            <div class="card shadow-sm" data-id="{{ $job->id }}">
+                            <div class="card shadow-sm" data-id="{{ $jobbags->id }}">
 
-                            <a href="{{ route('galleryDetail', $job->id) }}">
+                            <a href="{{ route('galleryDetail', $jobbags->id) }}">
                                 <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
                             </a>
 
@@ -596,7 +618,7 @@
                                             </p>
                                         </div>
 
-                                    {{-- @foreach($job->tags as $tagn)
+                                    {{-- @foreach($jobbags->tags as $tagn)
 
 
                                         <p>
@@ -605,10 +627,10 @@
 
                                     @endforeach --}}
                                     <div class="row pl-3">
-                                    @foreach ($jobtags as $jobt)
+                                    @foreach ($jobtagsjobba as $jobtagsjobbas)
                                         @php
 
-                                        $tagname = \App\Tags::find($jobt)->tagName;
+                                        $tagname = \App\Tags::find($jobtagsjobbas)->tagName;
 
                                         @endphp
                                         <p>
@@ -621,11 +643,11 @@
                                 <div class="row pl-3 color-grey">
                                         <span>
                                             <i class="fas fa-heart"></i>
-                                            {{$job->favorite_to_users->count()}}
+                                            {{$jobbags->favorite_to_users->count()}}
                                         </span>
                                         <span class="pl-3">
                                             <i class="far fa-eye"></i>
-                                            {{$job->view_count}}
+                                            {{$jobbags->view_count}}
                                         </span>
 
 
@@ -637,7 +659,7 @@
 
 
                                 </div>
-                                <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
+                                <h4><a href="#" title="Nature Portfolio">{{ $jobbags->title }}</a></h4>
                                 <span class="pull-right">
 
                                         @guest
@@ -648,25 +670,25 @@
                                             progressBar: true,
                                         })" class="love btn btn-light text-center rounded float-right border">
                                             <i class="fas fa-heart"></i>
-                                            {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                            {{-- {{$jobbags->favorite_to_users->count()}}                                 --}}
                                         </button>
                                         </a>
 
                                         @else
                                         <a href="javascript:void(0);" >
-                                            <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                            <button onclick="document.getElementById('vote-form-{{$jobbags->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobbags->id)->count() == 0 ?'favorite_jobs' : ''}}">
                                                 <i class="fas fa-heart"></i>
 
-                                                {{-- {{$job->favorite_to_users->count()}}   --}}
+                                                {{-- {{$jobbags->favorite_to_users->count()}}   --}}
                                             </button>
                                         </a>
-                                            <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                            <form id="vote-form-{{$jobbags->id}}" method="POST" action="{{route('job.vote',$jobbags->id)}}"
                                                 style="display:none;">
                                             @csrf
                                             </form>
 
                                         @endguest
-                                        {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
+                                        {{-- <i id="like{{$jobbags->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
                                         <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
                                 </span>
                             </div>
@@ -681,22 +703,26 @@
             <div class="row">
             
 
-                @if($jobs->count())
+                @if($jobcan->count())
 
-                    @foreach($jobs as $job)
+                    @foreach($jobcan as $jobcans)
 
                         @php
-                            $designerid = \App\Designer::find($job->designer_id);
+                            $designerid = \App\Designer::find($jobcans->designer_id);
 
-                            $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+                            $jobfilee = DB::table('jobfiles')->where('job_id',$jobcans->id)->first();
+                            // foreach ($jobcan as $jobca){
+            $jobtagsjobca = json_decode($jobcans->tags,true);
 
+
+        // }
 
                         @endphp
 
                         <article class="col-12 col-md-4 mt-5">
-                            <div class="card shadow-sm" data-id="{{ $job->id }}">
+                            <div class="card shadow-sm" data-id="{{ $jobcans->id }}">
 
-                            <a href="{{ route('galleryDetail', $job->id) }}">
+                            <a href="{{ route('galleryDetail', $jobcans->id) }}">
                                 <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
                             </a>
 
@@ -708,7 +734,7 @@
                                             </p>
                                         </div>
 
-                                    {{-- @foreach($job->tags as $tagn)
+                                    {{-- @foreach($jobcans->tags as $tagn)
 
 
                                         <p>
@@ -717,7 +743,7 @@
 
                                     @endforeach --}}
                                     <div class="row pl-3">
-                                    @foreach ($jobtags as $jobt)
+                                    @foreach ($jobtagsjobca as $jobt)
                                         @php
 
                                         $tagname = \App\Tags::find($jobt)->tagName;
@@ -733,11 +759,11 @@
                                 <div class="row pl-3 color-grey">
                                         <span>
                                             <i class="fas fa-heart"></i>
-                                            {{$job->favorite_to_users->count()}}
+                                            {{$jobcans->favorite_to_users->count()}}
                                         </span>
                                         <span class="pl-3">
                                             <i class="far fa-eye"></i>
-                                            {{$job->view_count}}
+                                            {{$jobcans->view_count}}
                                         </span>
 
 
@@ -749,7 +775,7 @@
 
 
                                 </div>
-                                <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
+                                <h4><a href="#" title="Nature Portfolio">{{ $jobcans->title }}</a></h4>
                                 <span class="pull-right">
 
                                         @guest
@@ -760,19 +786,19 @@
                                             progressBar: true,
                                         })" class="love btn btn-light text-center rounded float-right border">
                                             <i class="fas fa-heart"></i>
-                                            {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                            {{-- {{$jobcans->favorite_to_users->count()}}                                 --}}
                                         </button>
                                         </a>
 
                                         @else
                                         <a href="javascript:void(0);" >
-                                            <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                            <button onclick="document.getElementById('vote-form-{{$jobcans->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobcans->id)->count() == 0 ?'favorite_jobs' : ''}}">
                                                 <i class="fas fa-heart"></i>
 
-                                                {{-- {{$job->favorite_to_users->count()}}   --}}
+                                                {{-- {{$jobcans->favorite_to_users->count()}}   --}}
                                             </button>
                                         </a>
-                                            <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                            <form id="vote-form-{{$jobcans->id}}" method="POST" action="{{route('job.vote',$jobcans->id)}}"
                                                 style="display:none;">
                                             @csrf
                                             </form>

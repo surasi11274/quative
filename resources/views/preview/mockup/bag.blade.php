@@ -10,7 +10,7 @@
 {{-- <canvas id="myCanvas"></canvas> --}}
 <script src="{{asset('js/THREEjs/three.js')}}"></script>
 <script src="{{asset('js/THREEjs/OrbitControls.js')}}"></script>
-{{-- <script src="{{asset('js/THREEjs/TrackBallsControls.js')}}"></script> --}}
+{{-- <script src="{{asset('js/THREEjs/TrackballControls.js')}}"></script> --}}
 
 <script src="{{asset('js/THREEjs/GLTFLoader.js')}}"></script>
 
@@ -40,7 +40,8 @@
     })
     //CAMERA
     camera = new THREE.PerspectiveCamera(6, window.innerWidth / window.innerHeight, 1, 10000 );
-    
+    // camera.position.z = 3;
+
     //SCENE
     scene = new THREE.Scene();
     
@@ -76,6 +77,7 @@
 
     render();
     controls.update();
+    
 
 
     var delta = 0;
@@ -88,7 +90,7 @@
         if (mesh) {
         
             mesh.rotation.y += 0.01;
-            mesh.rotation.x += 0.001;
+            // mesh.rotation.x += 0.001;
 
             //animation mesh
             // mesh.morphTargetInfluences[ 0 ] = Math.sin(delta) * 20.0;
