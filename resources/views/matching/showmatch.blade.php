@@ -319,8 +319,8 @@
                <div class="row mb-5 pt-md-5">
                   <div class="col d-none d-md-block"></div>
                   <div class="col">
-                      <a href="/searchref" class="btn _secondary-btn  btn-block rounded btn-lg d-none d-md-block">ย้อนกลับ</a>
-                      <a href="/searchref" class="btn _secondary-btn  btn-block rounded btn-lg d-md-none ">ย้อนกลับ</a>
+                     <button type="button" class="btn _secondary-btn  btn-block rounded btn-lg d-none d-md-block" data-toggle="modal" data-target="#exampleModal">ย้อนกลับ</button>
+                     <button type="button" class="btn _secondary-btn  btn-block rounded btn-lg d-md-none " data-toggle="modal" data-target="#exampleModal">ย้อนกลับ</button>
                   </div>
                   <div class="col">
                       <button type="submit" class="btn _primary-black  btn-block rounded btn-lg d-none d-md-block">ถัดไป</button>
@@ -332,6 +332,35 @@
          </div>
 
          </form>
+         {{-- <form action="/searchref/delete/{{$jobs->token}}" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }} --}}
+            {{-- {{ method_field('DELETE') }} --}}
+        
+        
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">ยืนยันการทำรายการ</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            คุณต้องการยืนยันที่จะทำรายการหรือไม่?
+            
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+         <a href="/search/ref/{{$jobs->token}}">
+
+            <button type="button" class="btn btn-primary" style="background-color:black;">ยืนยัน</button>
+        </a>            </div>
+        </div>
+        </div>
+        </div>
+        
+        {{-- </form> --}}
 
       </div>
       </div> <!-- ****container -->

@@ -9,7 +9,7 @@ use ChristianKuri\LaravelFavorite\Traits\Favoriteable;
 class Jobs extends Model
 {
     //
-    use Favoriteable;
+    // use Favoriteable;
     
     protected $table =  'jobs';
     protected $fillable = ['categories','categories_id','tags','designer_id','url','productPic','refpicbyUser','requirement','pricerate','reference','file','canshow','jobstatus_id','token','user_id','view_count','editorcomment','filelinks','package'];

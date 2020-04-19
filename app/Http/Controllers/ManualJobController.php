@@ -101,20 +101,20 @@ class ManualJobController extends Controller
         // if ($designer){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
         //     return view('designer.edit');
         // } $filenameWithExt = $request->file('profilepic')->getClientOriginalName();
-        $filenameWithExt = $request->file('productPic')->getClientOriginalName();
+        // $filenameWithExt = $request->file('productPic')->getClientOriginalName();
         // $filenameWithExt = $request->file('refpicbyUser')->getClientOriginalName();
 
         //get file name
 
-        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+//         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
 
-        $extension = $request->file('productPic')->getClientOriginalExtension();
-        // $extension = $request->file('refpicbyUser')->getClientOriginalExtension();
+//         $extension = $request->file('productPic')->getClientOriginalExtension();
+//         // $extension = $request->file('refpicbyUser')->getClientOriginalExtension();
 
-        //create new file name
-//        $filenameTostore = $filename.'_'.time().'.'.$extension;
+//         //create new file name
+// //        $filenameTostore = $filename.'_'.time().'.'.$extension;
 
-        $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
+//         $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
     
 
         $jobs = Jobs::create([
@@ -128,7 +128,7 @@ class ManualJobController extends Controller
 
 
             'categories_id'=>$request->input('categories_id'),
-            'productPic'=>$request->file('productPic')->move('uploads/productPic',$filenameTostore),
+            // 'productPic'=>$request->file('productPic')->move('uploads/productPic',$filenameTostore),
             'tags'=>$request->input('tags'),
             'url'=>$request->input('url'),
 
@@ -150,6 +150,16 @@ class ManualJobController extends Controller
             
 
         ]);
+        if($request->hasfile('productPic')){
+            $filenameWithExt = $request->file('productPic')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('productPic')->getClientOriginalExtension();
+            $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
+
+            $jobs->productPic = $request->file('productPic')->move('uploads/productPic',$filenameTostore);
+
+        }
+        $jobs->save();
 
         // $jobb = DB::getPdo()->lastInsertId();;
         // dd($jobs->token); // $jobs->save();
@@ -170,6 +180,22 @@ class ManualJobController extends Controller
         }
         // return redirect('/',['token'=>$designer->token]);
 
+    }
+    public function deleteStoreStep1($token){
+
+        // $deleteJob = Jobs::find($request->job_id);
+        // Jobs::where('token',$token)->delete();
+
+        $deleteJob = Jobs::where('token',$token)->get();
+        $designer = Designer::where('id',$deleteJob->first()->id)->first()->dd();
+
+        $deleteJob->first()->delete();
+       
+
+        
+        return redirect(route('startjob.create1',[
+            'designer'=>$designer->token
+        ]));
     }
 
     public function createJobStep2($token)
@@ -222,24 +248,34 @@ class ManualJobController extends Controller
             //     return view('designer.edit');
             // } $filenameWithExt = $request->file('profilepic')->getClientOriginalName();
             // $filenameWithExt = $request->file('productPic')->getClientOriginalName();
-            $filenameWithExt = $request->file('refpicbyUser')->getClientOriginalName();
+    //         $filenameWithExt = $request->file('refpicbyUser')->getClientOriginalName();
     
-            //get file name
+    //         //get file name
     
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+    //         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
     
-            // $extension = $request->file('productPic')->getClientOriginalExtension();
-            $extension = $request->file('refpicbyUser')->getClientOriginalExtension();
+    //         // $extension = $request->file('productPic')->getClientOriginalExtension();
+    //         $extension = $request->file('refpicbyUser')->getClientOriginalExtension();
     
-            //create new file name
-    //        $filenameTostore = $filename.'_'.time().'.'.$extension;
+    //         //create new file name
+    // //        $filenameTostore = $filename.'_'.time().'.'.$extension;
     
-            $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
+    //         $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
         
     
             $updateJob = Jobs::find($request->job_id);
-            $updateJob->refpicbyUser = $request->file('refpicbyUser')->move('uploads/refpicbyUser',$filenameTostore);
+            // $updateJob->refpicbyUser = $request->file('refpicbyUser')->move('uploads/refpicbyUser',$filenameTostore);
             $updateJob->reference = json_encode($request->input('reference'));
+            if($request->hasfile('refpicbyUser')){
+                $filenameWithExt = $request->file('refpicbyUser')->getClientOriginalName();
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                $extension = $request->file('refpicbyUser')->getClientOriginalExtension();
+                $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
+    
+                $updateJob->refpicbyUser = $request->file('refpicbyUser')->move('uploads/refpicbyUser',$filenameTostore);
+    
+            }
+            // $jobs->save();
             $updateJob->save();
     
             // $jobs = Jobs::create([

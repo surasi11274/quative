@@ -33,7 +33,7 @@
                          <div class="p-3 p-md-5" >
 
                                 <div class="row">
-                                    <div class="col-12 col-md-12 col-lg-5">
+                                    <div class="col-12 col-md-12 col-lg-8">
                                         <h2 class="selectfillter">ขอบเขตที่ต้องการงาน</h2>
 
                                         <small>
@@ -53,133 +53,135 @@
                                                 <span style="text-color: #ff3957;">ราคา ฿{{$courses->course_rate['2']}}</span>
                                             </option>
                                         </select>
+                                        <div class="row">
+                                            <div class="col-12 col-md-12 ">
+                                                <h2 class="selectfillter  pt-3">วันที่ต้องการงาน</h2>
+                                                        {{--<input type="date" id="basicDate"  name="finishdate" placeholder="MM/DD/YY" data-input>--}}
+                                                <div class="row">
+                                                    <div class="col-12 mb-5">
+                                                        <div class="select-date">
+                                                          <div class="middle text-left">
+                                                              <label>
+                                                              <input id="value2" type="radio" name="dateextra_price" onclick="addCart('{{$courses->course_duration['0']}}')" onchange="calculateAmount2(this.value)"  value="0" checked  />
+                                                              <div class="front-end box ">
+                                                                <span class="font-weight-bold">ธรรมดา<br>
+                                                               <p>  {{$courses->course_duration['0']}} วัน</p>
+                                                              </span>
+          
+                                                              </div>
+                                                            </label>
+          
+                                                              <label>
+                                                              <input id="value2" type="radio" name="dateextra_price" onclick="addCart('{{$courses->course_duration['1']}}')"  onchange="calculateAmount2(this.value)" value="{{$courses->course_duration_rate['1']}}"  />
+                                                              <div class="back-end box">
+                                                                  <span class="font-weight-bold">ด่วน <br>
+                                                                      <p>{{$courses->course_duration['1']}} วัน (+฿{{$courses->course_duration_rate['1']}})</p>
+                                                                    </span>
+                                                              </div>
+                                                            </label>
+                                                            <label>
+                                                              <input id="value2" type="radio" name="dateextra_price" onclick="addCart('{{$courses->course_duration['2']}}')" onchange="calculateAmount2(this.value)" value="{{$courses->course_duration_rate['2']}}"  />
+                                                              <div class="front-end box">
+                                                                  <span class="font-weight-bold">ด่วนมาก <br>
+                                                                     <p>{{$courses->course_duration['2']}} วัน (+฿{{$courses->course_duration_rate['2']}})</p>
+                                                                    </span>
+                                                              </div>
+                                                            </label>
+          
+          
+                                                            </div>
+                                                            {{-- <ul class="box-tag d-flex">
+          
+                                                                <li class="m-5">
+                                                                  <label class="_area-2">
+                                                                    <input type="radio" checked="checked" id="customRadioInline1" name="finishdate" class="custom-control-input">
+                                                                   <p>ธรรมดา</p>
+                                                                    <h5>15 <small>วัน</small></h5>
+                                                                    <span class="checkmark-price"></span>
+                                                                  </label>
+                                                                </li>
+                                                                <li class="m-5">
+                                                                    <input type="radio" id="customRadioInline2" name="finishdate" class="custom-control-input">
+                                                                    <label class="custom-control-label" for="customRadioInline2">ด่วน</label>
+                                                                    <h5>7 <small>วัน (+฿5000)</small></h5>
+                                                                </li>
+                                                                <li class="m-5">
+                                                                    <input type="radio" id="customRadioInline3" name="finishdate" class="custom-control-input">
+                                                                    <label class="custom-control-label" for="customRadioInline3">ด่วนมาก</label>
+                                                                    <h5>5 <small>วัน (+฿1,000)</small></h5>
+                                                                </li>
+          
+                                                            </ul> --}}
+                                                        </div>
+          
+                                                    </div>
+          
+                                                </div>
+                                                {{-- <div class=" form-group  mt-5">
+                                                  <h5>หรือต้องการระบุวันเป็นพิเศษ *ถ้ามี</h5>
+                                                  <div class="col-4 input-icons">
+                                                      <input type="date" id="basicDate" name="birthdate"  placeholder="MM/DD/YY" data-input>
+                                                  </div>
+                                              </div> --}}
+                                                </div>
+                                            
+                                            </div>
+                                    </div>
+                                    <div class="col-12 col-md-12 col-lg-4 mb-5">
+                                        <div class="total-price p-3">
+                                            <h5 class="font-weight-bold">สรุปราคา</h5>
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col" class="font-weight-bold">รายการ</th>
+                                                    <td scope="col" class="font-weight-bold">ราคา</td>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <p>แพ็คเกจ</p>
+                                                    </th>
+                                                      <td>
+                                                          <div class="form-group">
+                                                              <input style="width:100px;"  id="package" class="form-control " name="package" type="text"   />
+  
+                                                          </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <p>วันที่ต้องการงาน</p>
+                                                    </th>
+                                                    <td >
+                                                        <div class="form-group">
+                                                          <input style="width:100px;"  id="date" class="form-control " name="date"  type="text"   />
+  
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                {{-- <tr>
+                                                    <th scope="row">ราคาทั้งหมด</th>
+                                                    <td style=" text-decoration: underline;" >
+                                                      <div class="form-group">
+  
+                                                          <input style="width:100px;" id="sum" type="text"  readonly>
+  
+  
+                                                      </div>
+                                                    </td>
+                                                </tr> --}}
+                                                </tbody>
+                                            </table>
+                                        </div>
+  
+                                       {{-- <div class="d-flex mt-5">
+                                           <button href="#" class="btn _secondary-btn btn-lg btn-block m-1 ">ยกเลิก</button>
+                                           <button href="#"  class="btn _primary-black btn-lg btn-block m-1">ถัดไป</button>
+                                       </div> --}}
                                     </div>
                                 </div>
-                              <div class="row">
-                                  <div class="col-12 col-md-12 col-lg-8">
-                                      <h2 class="selectfillter  pt-3">วันที่ต้องการงาน</h2>
-                                              {{--<input type="date" id="basicDate"  name="finishdate" placeholder="MM/DD/YY" data-input>--}}
-                                      <div class="row">
-                                          <div class="col-12 mb-5">
-                                              <div class="select-date">
-                                                <div class="middle text-left">
-                                                    <label>
-                                                    <input id="value2" type="radio" name="dateextra_price" onclick="addCart('{{$courses->course_duration['0']}}')" onchange="calculateAmount2(this.value)"  value="0" checked  />
-                                                    <div class="front-end box ">
-                                                      <span class="font-weight-bold">ธรรมดา<br>
-                                                     <p>  {{$courses->course_duration['0']}} วัน</p>
-                                                    </span>
-
-                                                    </div>
-                                                  </label>
-
-                                                    <label>
-                                                    <input id="value2" type="radio" name="dateextra_price" onclick="addCart('{{$courses->course_duration['1']}}')"  onchange="calculateAmount2(this.value)" value="{{$courses->course_duration_rate['1']}}"  />
-                                                    <div class="back-end box">
-                                                        <span class="font-weight-bold">ด่วน <br>
-                                                            <p>{{$courses->course_duration['1']}} วัน (+฿{{$courses->course_duration_rate['1']}})</p>
-                                                          </span>
-                                                    </div>
-                                                  </label>
-                                                  <label>
-                                                    <input id="value2" type="radio" name="dateextra_price" onclick="addCart('{{$courses->course_duration['2']}}')" onchange="calculateAmount2(this.value)" value="{{$courses->course_duration_rate['2']}}"  />
-                                                    <div class="front-end box">
-                                                        <span class="font-weight-bold">ด่วนมาก <br>
-                                                           <p>{{$courses->course_duration['2']}} วัน (+฿{{$courses->course_duration_rate['2']}})</p>
-                                                          </span>
-                                                    </div>
-                                                  </label>
-
-
-                                                  </div>
-                                                  {{-- <ul class="box-tag d-flex">
-
-                                                      <li class="m-5">
-                                                        <label class="_area-2">
-                                                          <input type="radio" checked="checked" id="customRadioInline1" name="finishdate" class="custom-control-input">
-                                                         <p>ธรรมดา</p>
-                                                          <h5>15 <small>วัน</small></h5>
-                                                          <span class="checkmark-price"></span>
-                                                        </label>
-                                                      </li>
-                                                      <li class="m-5">
-                                                          <input type="radio" id="customRadioInline2" name="finishdate" class="custom-control-input">
-                                                          <label class="custom-control-label" for="customRadioInline2">ด่วน</label>
-                                                          <h5>7 <small>วัน (+฿5000)</small></h5>
-                                                      </li>
-                                                      <li class="m-5">
-                                                          <input type="radio" id="customRadioInline3" name="finishdate" class="custom-control-input">
-                                                          <label class="custom-control-label" for="customRadioInline3">ด่วนมาก</label>
-                                                          <h5>5 <small>วัน (+฿1,000)</small></h5>
-                                                      </li>
-
-                                                  </ul> --}}
-                                              </div>
-
-                                          </div>
-
-                                      </div>
-                                      {{-- <div class=" form-group  mt-5">
-                                        <h5>หรือต้องการระบุวันเป็นพิเศษ *ถ้ามี</h5>
-                                        <div class="col-4 input-icons">
-                                            <input type="date" id="basicDate" name="birthdate"  placeholder="MM/DD/YY" data-input>
-                                        </div>
-                                    </div> --}}
-                                      </div>
-                                  <div class="col-12 col-md-12 col-lg-4 mb-5">
-                                      <div class="total-price p-3">
-                                          <h5 class="font-weight-bold">สรุปราคา</h5>
-                                          <table class="table">
-                                              <thead>
-                                              <tr>
-                                                  <th scope="col" class="font-weight-bold">รายการ</th>
-                                                  <td scope="col" class="font-weight-bold">ราคา</td>
-                                              </tr>
-                                              </thead>
-                                              <tbody>
-                                              <tr>
-                                                  <th scope="row">
-                                                      <p>แพ็คเกจ</p>
-                                                  </th>
-                                                    <td>
-                                                        <div class="form-group">
-                                                            <input style="width:100px;"  id="package" class="form-control " name="package" type="text"   />
-
-                                                        </div>
-                                                  </td>
-                                              </tr>
-                                              <tr>
-                                                  <th scope="row">
-                                                      <p>วันที่ต้องการงาน</p>
-                                                  </th>
-                                                  <td >
-                                                      <div class="form-group">
-                                                        <input style="width:100px;"  id="date" class="form-control " name="date"  type="text"   />
-
-                                                      </div>
-                                                  </td>
-                                              </tr>
-                                              {{-- <tr>
-                                                  <th scope="row">ราคาทั้งหมด</th>
-                                                  <td style=" text-decoration: underline;" >
-                                                    <div class="form-group">
-
-                                                        <input style="width:100px;" id="sum" type="text"  readonly>
-
-
-                                                    </div>
-                                                  </td>
-                                              </tr> --}}
-                                              </tbody>
-                                          </table>
-                                      </div>
-
-                                     {{-- <div class="d-flex mt-5">
-                                         <button href="#" class="btn _secondary-btn btn-lg btn-block m-1 ">ยกเลิก</button>
-                                         <button href="#"  class="btn _primary-black btn-lg btn-block m-1">ถัดไป</button>
-                                     </div> --}}
-                                  </div>
-                                  </div>
+                           
 
                                   <input hidden type="text" id="output" name="finishdate">
                                   <textarea hidden name="package" id="lblSel" cols="30" rows="1">                                  
@@ -205,8 +207,8 @@
                                  <div class="row mb-5 pt-md-5">
                                     <div class="col d-none d-md-block"></div>
                                     <div class="col">
-                                        <a href="/searchref" class="btn _secondary-btn  btn-block rounded btn-lg d-none d-md-block">ย้อนกลับ</a>
-                                        <a href="/searchref" class="btn _secondary-btn  btn-block rounded btn-lg d-md-none ">ย้อนกลับ</a>
+                                        <button type="button" class="btn _secondary-btn  btn-block rounded btn-lg d-none d-md-block" data-toggle="modal" data-target="#exampleModal">ย้อนกลับ</button>
+                                        <button type="button" class="btn _secondary-btn  btn-block rounded btn-lg d-md-none " data-toggle="modal" data-target="#exampleModal">ย้อนกลับ</button>
                                     </div>
                                     <div class="col">
                                         <button type="submit" class="btn _primary-black  btn-block rounded btn-lg d-none d-md-block">ถัดไป</button>
@@ -219,6 +221,29 @@
 
                                     </div>
                     </form>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">ยืนยันการทำรายการ</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                            คุณต้องการยืนยันที่จะทำรายการหรือไม่?
+                            
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                            <a href="/startjob/createRef/{{$jobs->token}}">
+    
+                            <button type="button" class="btn btn-primary" style="background-color:black;">ยืนยัน</button>
+                        </a>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
                 </div>
             </div>
 

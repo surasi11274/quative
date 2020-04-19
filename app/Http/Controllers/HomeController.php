@@ -198,7 +198,18 @@ class HomeController extends Controller
 
 
     }
+    public function deleteStoreStep1($token){
 
+        // $deleteJob = Jobs::find($request->job_id);
+        // Jobs::where('token',$token)->delete();
+        $deleteJob = Jobs::where('token',$token)->get();
+        $deleteJob->first()->delete();
+       
+
+        
+        return redirect(route('search.create'));
+    }
+    
     public function createSearchRef($token)
     {
         //
@@ -339,17 +350,7 @@ class HomeController extends Controller
 
     }
 
-    public function deleteStoreStep1($id){
-
-        // $deleteJob = Jobs::find($request->job_id);
-        // Jobs::where('token',$token)->delete();
-        $deleteJob = Jobs::find($id);
-        $deleteJob->delete();
-       
-
-        
-        return view('matching.search');
-    }
+    
 
 
         // เอาไอดีจาก create มาสร้าง insertรูปภาพRefต่อ

@@ -99,8 +99,12 @@ Route::post('/search/create/store1', [
     'as' => 'search.create.store',
     'uses' => 'HomeController@storeSearchStep1']);
 
-Route::delete('/search/show/delete/{token}',
-    'HomeController@deleteStoreStep1');
+//delete search ref step to first
+Route::delete('/searchref/delete/{token}',
+    'HomeController@deleteStoreStep1')->name('deletesearch1');
+
+
+
 
 // Route::get('/search/step2/{token}', [
 //     'as' => 'search.create.step2',
@@ -277,6 +281,8 @@ Route::get('/startjob/show/{token}', [
     'as' => 'startjob.show',
     'uses' => 'ManualJobController@show']);
 
+Route::delete('/startjob/delete/{token}',
+    'ManualJobController@deleteStoreStep1')->name('deletestartjob');
 
 Route::get('/startjob/create1/{token}', [
     'as' => 'startjob.create1',
