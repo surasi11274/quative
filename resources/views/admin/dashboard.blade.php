@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('assets')
-<link rel="stylesheet" href="css/adminlte.css">
+<link rel="stylesheet" href="../css/adminlte.css">
     
 @endsection
 @section('content')
@@ -131,9 +131,9 @@
                                   
                                    
                                 
-                                     <table class="table table-hover table-bordered text-center">
+                                     <table class="table table-borderless table-striped table-hover  text-center">
                                 
-                                        <thead class="thead-dark">
+                                        <thead >
                                           <tr>
                                 
                                             <th scope="col">รหัสการจ้าง</th>
@@ -160,7 +160,7 @@
                                              {{-- <a href="{{ route('payments.detail', $payment->id) }}"> --}}
                                                 
                                               {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
-                                             <p> No. W{{$payment->job_id}}</p>
+                                             <p class="_hilight font-weight-bold">W{{$payment->job_id}}</p>
                                              
                                            </td>
                                             {{-- <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td> --}}
@@ -217,9 +217,9 @@
                                 </div> 
                                 <div class="tab-pane fade" id="done" role="tabpanel" aria-labelledby="nav-contact-tab">
                                         
-                                    <table class="table table-hover table-bordered text-center">
+                                    <table class="table table-borderless table-striped table-hover  text-center">
                                 
-                                        <thead class="thead-dark">
+                                        <thead >
                                           <tr>
                                 
                                             <th scope="col">รหัสการจ้าง</th>
@@ -303,9 +303,9 @@
                                 </div>
                                 <div class="tab-pane fade" id="problem" role="tabpanel" aria-labelledby="nav-problem-tab">
                                         
-                                    <table class="table table-hover table-bordered text-center">
+                                    <table class="table table-borderless table-striped table-hover  text-center">
                                 
-                                        <thead class="thead-dark">
+                                        <thead >
                                           <tr>
                                 
                                             <th scope="col">รหัสการจ้าง</th>

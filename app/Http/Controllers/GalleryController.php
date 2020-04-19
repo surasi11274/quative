@@ -25,11 +25,11 @@ class GalleryController extends Controller
         // $jobs = DB::table('jobs')->where('canshow',1)->get();
 
         $jobs = Jobs::where('canshow',1)->orderBy('id', 'DESC')->get();
-        // $jobbox = Jobs::where('canshow',1)->where('categories','กล่อง')->orderBy('id', 'DESC')->get();
-        // $jobbottle = Jobs::where('canshow',1)->where('categories','ขวด')->orderBy('id', 'DESC')->get();
-        // $jobcup = Jobs::where('canshow',1)->where('categories','แก้ว')->orderBy('id', 'DESC')->get();
-        // $jobbag = Jobs::where('canshow',1)->where('categories','ถุง')->orderBy('id', 'DESC')->get();
-        // $jobcan = Jobs::where('canshow',1)->where('categories','กระป๋อง')->orderBy('id', 'DESC')->get();
+        $jobbox = Jobs::where('canshow',1)->where('categories','กล่อง')->orderBy('id', 'DESC')->get();
+        $jobbottle = Jobs::where('canshow',1)->where('categories','ขวด')->orderBy('id', 'DESC')->get();
+        $jobcup = Jobs::where('canshow',1)->where('categories','แก้ว')->orderBy('id', 'DESC')->get();
+        $jobbag = Jobs::where('canshow',1)->where('categories','ถุง')->orderBy('id', 'DESC')->get();
+        $jobcan = Jobs::where('canshow',1)->where('categories','กระป๋อง')->orderBy('id', 'DESC')->get();
         
         // $jobfiles = $jobs->find()->file;
         // $jobfiles = json_decode($jobfiles,true);
@@ -38,12 +38,12 @@ class GalleryController extends Controller
         // $jobfiles = \App\Jobfiles::where('job_id',$job->id)->get();
         $jobfiles = Jobfiles::all();
 
-        foreach ($jobs as $job){
-            // $object->title 
-            $jobtags = json_decode($job->tags,true);
+        // foreach ($jobs as $job){
+        //     // $object->title 
+        //     $jobtags = json_decode($job->tags,true);
 
 
-        }
+        // }
         // foreach ($jobbox as $jobbo){
         //     $jobtagsjobbo = json_decode($jobbo->tags,true);
 
@@ -83,21 +83,21 @@ class GalleryController extends Controller
         return view('vote.vote',[
             'jobs'=>$jobs,
             'jobfiles'=>$jobfiles,
-            'jobtags'=>$jobtags,
-            // 'jobbox'=>$jobbox,
+            // 'jobtags'=>$jobtags,
+            'jobbox'=>$jobbox,
             // 'jobtagsjobbo'=>$jobtagsjobbo,
 
-            // 'jobbottle'=>$jobbottle,
+            'jobbottle'=>$jobbottle,
             // 'jobtagsjobbot'=>$jobtagsjobbot,
 
 
-            // 'jobcup'=>$jobcup,
+            'jobcup'=>$jobcup,
             // 'jobtagsjobc'=>$jobtagsjobc,
 
-            // 'jobbag'=>$jobbag,
+            'jobbag'=>$jobbag,
             // 'jobtagsjobba'=>$jobtagsjobba,
 
-            // 'jobcan'=>$jobcan,
+            'jobcan'=>$jobcan,
             // 'jobtagsjobca'=>$jobtagsjobca,
 
 

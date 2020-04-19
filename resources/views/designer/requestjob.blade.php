@@ -63,9 +63,9 @@
    
     
 
-      <table class="table table-hover table-bordered">
+      <table class="table table-hover table-borderless table-striped">
 
-         <thead class="thead-dark text-md-center">
+         <thead class=" text-md-center">
            <tr>
 
              <th scope="col">รหัสการจ้าง</th>
@@ -74,6 +74,8 @@
              <th scope="col">วันที่ต้องการงาน</th>
              <th scope="col">สถานะการทำงาน</th>
              <th scope="col">สถานะการชำระเงิน</th>
+             <th scope="col">Action</th>
+
             
            </tr>
          </thead>
@@ -81,16 +83,15 @@
          <tbody class="table-light">
             
           @foreach ($jobs as $job)
-           
+          @if ($job->jobstatus_id !== NULL ) 
+
          
            
             {{-- <button class="btn "> --}}
-            <tr >
+            <tr class="text-center">
 
              <td class="pt-4 pb-4 text-center"><a href="#">
-              <a href="{{ route('designer.jobdetail', $job->id) }}">
-               <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button>
-              </a>
+              <p class="_hilight font-weight-bold">W{{$job->id}}</p>
             </td>
              <td class="pt-4 pb-4 text-center">{{number_format($job->pricerate)}}</td>
              {{-- <td class="pt-4 pb-4 text-center">{{$job->finishdate}}</td> --}}
@@ -108,6 +109,11 @@
               ยังไม่ได้ชำระเงิน
 
             @endif</td>
+            <td>
+              <a href="{{ route('job.show', $job->token) }}">
+                <button type="button" class="btn _primary-btn">ตรวจสอบ</button>
+               </a>
+             </td>
            </tr>
           {{-- </button> --}}
            {{-- <tr >
@@ -126,7 +132,8 @@
             <td class="pt-4 pb-4 _hilight">●   ตรวจสอบ การชำระเงิน</td>
             <td class="pt-4 pb-4"><span class="text-warning">●  </span>ตรวจสอบ</td>
           </tr> --}}
-           
+          @endif
+
           @endforeach
 
 
@@ -140,7 +147,7 @@
  {{-- <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
   <table class="table table-hover">
 
-    <thead class="thead-dark">
+    <thead class="">
       <tr>
 
         <th scope="col">รหัสการจ้าง</th>

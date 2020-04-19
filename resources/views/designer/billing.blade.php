@@ -46,8 +46,8 @@
               <div class="tab-content" id="myTabContent">
                   {{-- 1  --}}
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <table class="table table-hover table-bordered">
-                        <thead class="thead-dark">
+                    <table class="table table-borderless table-striped table-hover  text-center">
+                        <thead >
                             <tr class="text-center">
                   
                               <th scope="col">รหัสการจ้าง</th>
@@ -68,7 +68,7 @@
 
                                 <tr class="text-center">
                                     <td class="pt-4 pb-4">
-                                            <p>No. {{$payment->job_id}}</p>
+                                            <p class="_hilight font-weight-bold">W{{$payment->job_id}}</p>
                                             {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
                                         
                                     </td>
@@ -89,8 +89,8 @@
                 </div>
                 {{-- 2  --}}
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <table class="table table-hover table-bordered">
-                        <thead class="thead-dark">
+                    <table class="table table-borderless table-striped table-hover  text-center">
+                        <thead >
                             <tr class="text-center">
                   
                               <th scope="col">รหัสการจ้าง</th>
@@ -109,7 +109,7 @@
 
                                 <tr class="text-center">
                                     <td class="pt-4 pb-4">
-                                            <p>No. {{$payment->job_id}}</p>
+                                            <p class="_hilight font-weight-bold">W{{$payment->job_id}}</p>
                                             {{-- <button type="button" class="btn _primary-btn">No. W{{$job->id}}</button> --}}
                                         
                                     </td>
