@@ -14,6 +14,7 @@
         <li><img src="photo/box.svg" alt=""></li>
         <li><img src="photo/border.svg" alt=""></li>
 </ul>
+</div>
 
     <div class="container mt-5">
         <div class="row justify-content-center">
