@@ -740,9 +740,16 @@
                            <h5 class="mt-3 font-weight-bold">รูปภาพผลิตภัณฑ์เดิมของคุณ</h5>
                            <div class="row">
                                <div class="col-6 col-md-4 " >
+                                @if ($jobs->productPic !== NULL)
+
                                    <a class="image-popup-vertical-fit" href="/{{$jobs->productPic}}">
                                         <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="/{{$jobs->productPic}}" alt="">
                                     </a>
+                                @else
+                                    <p class="text-secondary" style="opacity:0.5;">ไม่มีรูปภาพ</p>
+
+                                @endif
+
                                </div>
                                {{-- <div class="col-6 col-md-4 mt-3">
                                 <img class="rounded" src="/{{$jobs->productPic}}" alt="">
@@ -757,26 +764,38 @@
                            <h5 class="mt-3 font-weight-bold">รูปภาพงานใกล้เคียงกับงาน</h5>
                            <div class="row ">
                                 <div class="col-6 col-md-4 mt-3">
+                                    @if ($jobs->refpicbyUser !== NULL)
+
                                     <a class="image-popup-vertical-fit" href="/{{$jobs->refpicbyUser}}">
 
                                  <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="/{{$jobs->refpicbyUser}}" alt="">
                                     </a>
+                                    @elseif($jobs->refpicbyUser == NULL && $jobs->reference == NULL)
+                                    <p class="text-secondary" style="opacity:0.5;">ไม่มีรูปภาพ</p>
+
+                                    @endif
+
                                 </div>
                                 @php
-                                $refs = \App\References::find($jobs->reference);
-                            @endphp
-                              @foreach ($refs as $ref)
-                               <div class="col-6 col-md-4 mt-3">
-                               
-                              
-                                    
-                                    <a class="image-popup-vertical-fit" href="{{$ref->img}}">
-
-                                 <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="{{$ref->img}}" alt="">
-                                    </a>
+                                    $refs = \App\References::find($jobs->reference);
+                                @endphp
+                              @if ($jobs->reference !== NULL)
+                                  
+                                @foreach ($refs as $ref)
+                                <div class="col-6 col-md-4 mt-3">
                                 
-                               </div>
-                               @endforeach
+                                
+                                        
+                                        <a class="image-popup-vertical-fit" href="{{$ref->img}}">
+
+                                    <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="{{$ref->img}}" alt="">
+                                        </a>
+                                    
+                                </div>
+                                @endforeach
+                                
+                               @endif
+
                                 
                                 {{-- <div class="col-6 col-md-4 mt-3">
                                     <img class="rounded" src="/{{$jobs->refpicbyUser}}" alt="">
@@ -816,22 +835,27 @@
             
                                     @endforeach
                                     <h4 class="font-weight-bold mt-5">ขอบเขตการจ้างงาน</h4>
-                                    <hr>
+                                    {{-- <hr> --}}
+                                    <div class="row">
                                     <div class="col-12 mt-3">
-                                        <h5 class="font-weight-bold"> ขอบเขตการจ้างงาน</h5>
-                                        <p>
-                                            @if ($jobs->package !== NULL)
-                                        {{$jobs->package}}
-                                    @else 
-                                        -
-                                    @endif
-                                            ({{number_format($jobs->pricerate)}})</p>
+                                            <h5 class="font-weight-bold"> ขอบเขตการจ้างงาน</h5>
+                                            <p>
+                                                @if ($jobs->package !== NULL)
+                                            {{$jobs->package}}
+                                        @else 
+                                            -
+                                        @endif
+                                                ({{number_format($jobs->pricerate)}})</p>
+                                        </div>
                                     </div>
-                                    <div class="col-12 mt-3">
-                                        <h5 class="font-weight-bold">วันที่ต้องการงาน</h5>
-                                        <p>{{date('F d,Y',strtotime($jobs->finishdate))}}</p>
-                                    </div>
-                                  
+                                    <div class="row">
+
+                                        <div class="col-12 mt-3">
+                                            <h5 class="font-weight-bold">วันที่ต้องการงาน</h5>
+                                            <p>{{date('F d,Y',strtotime($jobs->finishdate))}}</p>
+                                        </div>
+                                </div>
+
                                     <div class="text-right">
                                         {{-- <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                                             <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target=".bd-example-modal-lg">
@@ -844,7 +868,7 @@
                         @if ($jobs->jobstatus_id == 7)
                         <form action="/showjob/store" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
-            
+        
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content">

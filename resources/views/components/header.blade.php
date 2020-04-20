@@ -29,7 +29,7 @@
                                 <a class="nav-link  " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                     <span class="icon notification"></span>
                                     @if (count(auth()->user()->unreadNotifications) == 0 )
-                                    <span class="pending shadow-sm font-weight-bold text-center" style="padding-right:2px;position:absolute; left:20px;    margin: 0;background-color:white; color:black; width:15px; height:15px;  border-radius:50%; font-size:12px; 
+                                    <span class="pending shadow-sm font-weight-bold text-center" style="padding-right:2px; position:absolute; left:20px;    margin: 0;background-color:white; color:black; width:15px; height:15px;  border-radius:50%; font-size:12px; 
                                     ">
                                         {{count(auth()->user()->unreadNotifications)}}
                                     </span> 
@@ -339,9 +339,9 @@
                                     </span>
                                     @endif
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-only " style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);" aria-labelledby="navbarDropdownMenuLink">
+                                <div class="dropdown-menu dropdown-menu-only p-3" style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);" aria-labelledby="navbarDropdownMenuLink">
                                     <div class="wrapper-notification">
-                                        <div class="overflow-noctification p-2 p-md-5">
+                                        <div class="overflow-noctification p-2 ">
                                             @forelse (auth()->user()->unreadNotifications as $notification)
                                                 
                                                 <div class="row">

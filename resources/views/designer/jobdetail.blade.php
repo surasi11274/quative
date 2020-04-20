@@ -696,10 +696,16 @@
                            <h5 class="font-weight-bold mt-3">รูปภาพผลิตภัณฑ์เดิมของคุณ</p>
                            <div class="row mt-3">
                                <div class="col-6 col-md-4 ">
+                                @if ($job->productPic !== NULL)
+
                                 <a class="image-popup-vertical-fit" href="/{{$job->productPic}}">
 
                                 <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="/{{$job->productPic}}" alt="">
                                 </a>
+                                @else
+                                <p class="text-secondary" style="opacity:0.5;">ไม่มีรูปภาพ</p>
+
+                            @endif
                                </div>
                                {{-- <div class="col-6 col-md-4 mt-3">
                                 <img class="rounded" src="/{{$job->productPic}}" alt="">
@@ -717,15 +723,22 @@
                            <h5 class="mt-3 font-weight-bold">รูปภาพงานใกล้เคียงกับงาน</h5>
                            <div class="row ">
                                 <div class="col-6 col-md-4 mt-3">
+                                    @if ($job->refpicbyUser !== NULL)
+
                                     <a class="image-popup-vertical-fit" href="/{{$job->refpicbyUser}}">
 
                                  <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="/{{$job->refpicbyUser}}" alt="">
                                     </a>
-                                   
+                                    @elseif($job->refpicbyUser == NULL && $job->reference == NULL)
+                                    <p class="text-secondary" style="opacity:0.5;">ไม่มีรูปภาพ</p>
+
+                                    @endif
                                 </div>
                                 @php
                                 $refs = \App\References::find($job->reference);
                             @endphp
+                                                          @if ($job->reference !== NULL)
+
                                 @foreach ($refs as $ref)
                                 <div class="col-6 col-md-4 mt-3">
                                    
@@ -737,6 +750,8 @@
                               
                                 </div>
                                 @endforeach
+                                @endif
+
                                 
                                 {{-- <div class="col-6 col-md-4 mt-3">
                                     <img class="rounded" src="/{{$job->refpicbyUser}}" alt="">

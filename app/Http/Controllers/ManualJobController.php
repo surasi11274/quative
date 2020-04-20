@@ -185,9 +185,12 @@ class ManualJobController extends Controller
 
         // $deleteJob = Jobs::find($request->job_id);
         // Jobs::where('token',$token)->delete();
+        // $jobs = Jobs::where('token',$token)->first();
 
         $deleteJob = Jobs::where('token',$token)->get();
-        $designer = Designer::where('id',$deleteJob->first()->id)->first()->dd();
+        $designer = Designer::where('id',$deleteJob->first()->designer_id)->first();
+        // dd($designer);
+        // exit();
 
         $deleteJob->first()->delete();
        

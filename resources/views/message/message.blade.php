@@ -33,7 +33,7 @@
                                 @endif
                                 <div class="media">
                                     <div class="media-left">
-                                      <img src="{{$user->designerpic}}" class="media-object" width="150"  alt="">
+                                      <img src="/{{$user->designerpic}}" class="media-object" width="150"  alt="">
                                     </div>
 
                                     <div class="media-body">
@@ -59,7 +59,7 @@
                                     @endphp
 
                                     @if ($profile)
-                                    <img src="{{$profile->profilepic}}" class="media-object" width="150"  alt="">
+                                    <img src="/{{$profile->profilepic}}" class="media-object" width="150"  alt="">
 
                                     @else 
                                     <img src="{{$users->avatar}}" class="media-object" width="150"  alt="">

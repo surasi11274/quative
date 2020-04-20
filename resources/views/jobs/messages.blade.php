@@ -61,7 +61,7 @@
                                         @endphp
 
                                         @if ($profile)
-                                        <img src="{{$profile->profilepic}}" class="media-object" width="150"  alt="">
+                                        <img src="/{{$profile->profilepic}}" class="media-object" width="150"  alt="">
 
                                         @else 
                                         <img src="{{$users->avatar}}" class="media-object" width="150"  alt="">

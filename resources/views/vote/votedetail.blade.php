@@ -324,37 +324,129 @@
                 </div>
                 <div class="container" >
                     <div class="row">
-                        <h5 class="font-weight-bold">ผลงานอื่นๆของ </h5> &nbsp;<h5 class="font-weight-bold _hilight">{{$designerid->name}}</h5>
+                        <h5 class="pl-3 font-weight-bold">ผลงานอื่นๆของ </h5> &nbsp;<h5 class="font-weight-bold _hilight">{{$designerid->name}}</h5>
 
                     </div>
                         <div class="row">
-                            <div class="col-12 col-md-4 ">
-                                <div class="caption-inner mt-3 mb-3">
-                                    <img src="https://picsum.photos/320/200" alt="Avatar" class="rounded w-100 shadow">
-                                    {{-- <div class="overlay  rounded p-3">
-                                        <h1>Paper Bag</h1>
-                                        <small>Design by Kritpon Klinkomut</small>
-                                    </div> --}}
+                            @forelse($jobsde as $job)
+
+                                @php
+                                    $designerid = \App\Designer::find($job->designer_id);
+
+                                    $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
+
+                                    // foreach ($jobs as $job){
+            // $object->title 
+                                    $jobtags = json_decode($job->tags,true);
+
+
+                                    // }
+
+                                @endphp
+
+                                <article class="col-12 col-md-4 mt-5">
+                                    <div class="card shadow-sm" data-id="{{ $job->id }}">
+
+                                    <a href="{{ route('galleryDetail', $job->id) }}">
+                                        <img class="card-img-top" src="/{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
+                                    </a>
+
+                                        <div class="card-body" style="width:auto;">
+                                            <div class="text-left position-absolute">
+                                                <div class="row pl-3">
+                                                    <p class="font-weight-bold">ออกแบบโดย
+                                                        {{$designerid->name}}
+                                                    </p>
+                                                </div>
+
+                                            {{-- @foreach($job->tags as $tagn)
+
+
+                                                <p>
+                                                    {{$tagname}},
+                                                </p>
+
+                                            @endforeach --}}
+                                            <div class="row pl-3">
+                                            @foreach ($jobtags as $jobt)
+                                                @php
+
+                                                $tagname = \App\Tags::find($jobt)->tagName;
+
+                                                @endphp
+                                                <p>
+                                                    {{$tagname}},
+                                                </p>
+
+                                            @endforeach 
+                                            </div>
+                                
+                                        <div class="row pl-3 color-grey">
+                                                <span>
+                                                    <i class="fas fa-heart"></i>
+                                                    {{$job->favorite_to_users->count()}}
+                                                </span>
+                                                <span class="pl-3">
+                                                    <i class="far fa-eye"></i>
+                                                    {{$job->view_count}}
+                                                </span>
+
+
+
+
+
+                                        </div>
+
+
+
+                                        </div>
+                                        <h4><a href="#" title="Nature Portfolio">{{ $job->title }}</a></h4>
+                                        <span class="pull-right">
+
+                                                @guest
+
+                                                <a href="javascript:void(0);" >
+                                                <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
+                                                    closeButton:true,
+                                                    progressBar: true,
+                                                })" class="love btn btn-light text-center rounded float-right border">
+                                                    <i class="fas fa-heart"></i>
+                                                    {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                                </button>
+                                                </a>
+
+                                                @else
+                                                <a href="javascript:void(0);" >
+                                                    <button onclick="document.getElementById('vote-form-{{$job->id}}').submit();" class="love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$job->id)->count() == 0 ?'favorite_jobs' : ''}}">
+                                                        <i class="fas fa-heart"></i>
+
+                                                        {{-- {{$job->favorite_to_users->count()}}   --}}
+                                                    </button>
+                                                </a>
+                                                    <form id="vote-form-{{$job->id}}" method="POST" action="{{route('job.vote',$job->id)}}"
+                                                        style="display:none;">
+                                                    @csrf
+                                                    </form>
+
+                                                @endguest
+                                                {{-- <i id="like{{$job->id}}" class="far fa-heart{{ auth()->user()->isFavorited($job) ? 'like-post' : '' }}"></i>
+                                                <div id="like{{$job->id}}-bs3">{{ $job->favoritesCount }}</div> --}}
+                                        </span>
+                                    </div>
                                 </div>
-                             </div>
-                             <div class="col-12 col-md-4">
-                                <div class="caption-inner mt-3 mb-3">
-                                    <img src="https://picsum.photos/320/200" alt="Avatar" class="rounded w-100 shadow">
-                                    {{-- <div class="overlay  rounded p-3">
-                                        <h1>Paper Bag</h1>
-                                        <small>Design by Kritpon Klinkomut</small>
-                                    </div> --}}
-                                </div>
-                             </div>
-                             <div class="col-12 col-md-4">
-                                <div class="caption-inner mt-3 mb-3">
-                                    <img src="https://picsum.photos/320/200" alt="Avatar" class="rounded w-100 shadow">
-                                    {{-- <div class="overlay  rounded p-3">
-                                        <h1>Paper Bag</h1>
-                                        <small>Design by Kritpon Klinkomut</small>
-                                    </div> --}}
-                                </div>
-                             </div>
+                            </article>
+                        @empty 
+                                                <div class="container">
+
+                        <div class="row pl-3">
+                                                <p class="text-secondary" style="opacity:0.5;">ไม่มีงานอื่นๆของนักออกแบบคนนี้</p>
+
+                        </div>
+                                                </div>
+
+                        @endforelse
+
+                            
                        
                         </div>
                 </div>
