@@ -174,13 +174,21 @@
                                                                     
                                                         
                                                         
-                                                       
-                                                                    <div class="form-check pl-md-5 pr-md-5 mt-3">
+                                                                   
+                                                                    <div class=" pl-md-5 pr-md-5 mt-3">
+                                                                        
                                                                         {{-- <input type="checkbox" id="toggle" />
                                                                         <span>some text</span> --}}
-                                                                        <input type="checkbox" name="acceptterm" value="1" class="form-check-input" id="exampleCheck1"  />
-                                                                        <label class="form-check-label _hilight" for="exampleCheck1">ยอมรับเงื่อนไขและข้อตกลงการใช้บริการและนโยบายความเป็นส่วนตัว</label>
-                                                                      </div>
+                                                                        
+                                                                        {{-- <input type="checkbox" name="acceptterm" value="1" class="form-check-input" id="exampleCheck1"  />
+                                                                        <label class="form-check-label _hilight" for="exampleCheck1">ยอมรับเงื่อนไขและข้อตกลงการใช้บริการและนโยบายความเป็นส่วนตัว</label> --}}
+                                                                        <label class="box-1term form-check-label _hilight" for="exampleCheck1">ยอมรับเงื่อนไขและข้อตกลงการใช้บริการและนโยบายความเป็นส่วนตัว
+                                                                            <input type="checkbox" name="acceptterm" value="1" id="exampleCheck1">
+                                                                            <span class="checkmarkterm"></span>
+                                                                          </label>
+                                                                    </div>
+                                                                    
+                                                                      
                                                                     <div class="row">
                                                                        <div class="col">
                                                     
