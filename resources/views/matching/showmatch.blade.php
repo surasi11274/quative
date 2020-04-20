@@ -35,10 +35,12 @@
          {{ csrf_field() }}
 
             <div class=" bg-white p-3 p-md-5">
-               <h1 class=" text-center   pt-md-5 d-none d-md-block">ผลการ <span class="_hilight font-weight-bold">Matching</span></h1>
+               {{-- <h1 class=" text-center   pt-md-5 d-none d-md-block">ผลการ <span class="_hilight font-weight-bold">Matching</span></h1> --}}
+              
 
-               <h4 class="font-weight-bold  pt-md-5 d-none d-md-block">เลือกนักออกแบบที่ตรงใจกับคุณ</h4>
+               <h4 class="font-weight-bold   d-none d-md-block">เลือกนักออกแบบที่ตรงใจกับคุณ</h4>
                <h6 class="font-weight-bold p-3 pt-2 mb-md-5 d-md-none">เลือกนักออกแบบที่ตรงใจกับคุณ</h6>
+               <p>ระบบได้ทำการเสนอนักออกแบบมาให้คุณกรุณาเลือกนักออกแบบที่ตรงใจคุณมากที่สุด</p>
                <div class="row  mb-md-5">
 
                   <input  type="hidden" class="detaill-select " name="designer_id" plachholder="sadas" id="output">
@@ -48,7 +50,7 @@
                         @foreach ($designers as $count => $designer)
                            <a class="nav-link shadow-sm m-1 mt-3 m-md-1"  id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home-{{ $designer->id }}" onclick="addCart('{{$designer->id}}')" role="tab" aria-controls="v-pills-home" aria-selected="true">
 
-                              <span class="row ">
+                              <span class="row p-1 ">
 
                                  <div class="col-12 col-md-3  " style="padding-right:0px !important;padding-left:0px !important;">
                                        <img src="/{{$designer->profilepic}}" class="mx-auto d-block img-fluid rounded-circle border sm-img-circle" alt="...">
