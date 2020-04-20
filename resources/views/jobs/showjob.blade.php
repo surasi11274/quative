@@ -38,12 +38,12 @@
                                 <p class="content-bg mb-3">{{$designer->name}}</p> 
                                 
                                 <a style="text-decoration:none;"  href="{{route('job.Messages',$jobs->token)}}">
-                                    <button class="btn _primary-bg-dark btn-lg d-none d-md-block">คุยกับนักออกแบบ</button>
+                                    <button class="btn _primary-bg-dark btn-lg d-none d-md-block"><i class=" far fa-comments pr-2"></i>คุยกับนักออกแบบ</button>
                                 </a>
                         </div>
                         <div class="col-12 d-md-none mt-3 mb-5">
                             <a style="text-decoration:none;"  href="{{route('job.Messages',$jobs->token)}}">
-                                <button class="btn _primary-bg-dark btn-lg btn-block mt-5"><i class="far fa-comment-dots icon "></i>คุยกับนักออกแบบ</button>
+                                <button class="btn _primary-bg-dark btn-lg btn-block mt-5"><i class=" far fa-comments pr-2"></i>คุยกับนักออกแบบ</button>
                             </a>
                         </div>
                     </div>

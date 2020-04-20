@@ -41,7 +41,7 @@
 
                 <img class="rounded-circle shadow-sm border-avatar matched-img animated  slideInLeft" src="/{{ $profile->profilepic }}"   alt="">
                 @else
-                <img class="rounded-circle shadow-sm border-avatar matched-img" src="{{ Auth::user()->avatar }}"   alt="">
+                <img class="rounded-circle shadow-sm border-avatar matched-img animated  slideInLeft" src="{{ Auth::user()->avatar }}"   alt="">
 
                 @endif
 
