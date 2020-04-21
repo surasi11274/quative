@@ -43,7 +43,7 @@
                                     @endif
                                    
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-only p-3" style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);" aria-labelledby="navbarDropdownMenuLink">
+                                <div class="dropdown-menu dropdown-menu-only p-3" style="border: 3px solid #523EE8;" aria-labelledby="navbarDropdownMenuLink">
                                     <div class="wrapper-notification">
                                         <div class=" overflow-noctification p-2">
                                             @forelse (auth()->user()->unreadNotifications as $notification)
@@ -122,7 +122,7 @@
                                 </a>
                                 {{-- {{ Auth::user()->name }} --}}
                                 <!-- <a class="nav-link" role="button" href="/login/designer">Register to Designer</a> -->
-                                <ul class="dropdown-menu dropdown-menu-only  "   role="menu">
+                                <ul class="dropdown-menu dropdown-menu-only  "    role="menu">
                                     <li class="nav-item">
                                         <div class="wrapper-profile">
                                           <div class="profile-color d-flex p-2">
@@ -339,7 +339,7 @@
                                     </span>
                                     @endif
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-only p-3" style=" box-shadow: 5px 1px 20px 1px rgba(144, 74, 232,.15);" aria-labelledby="navbarDropdownMenuLink">
+                                <div class="dropdown-menu dropdown-menu-only p-3" style="border: 3px solid #523EE8;" aria-labelledby="navbarDropdownMenuLink">
                                     <div class="wrapper-notification">
                                         <div class="overflow-noctification p-2 ">
                                             @forelse (auth()->user()->unreadNotifications as $notification)
