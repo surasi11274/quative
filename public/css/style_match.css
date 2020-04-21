@@ -127,7 +127,7 @@ input:focus 		{ outline:none; }
     flex-wrap: wrap;
     padding-left: 50px !important;
     margin-bottom: 0;
-    padding-right: 50px !important;
+    /* padding-right: 50px !important; */
     list-style: none;
 }
 ._btn {

@@ -150,9 +150,12 @@
                                         <div class="card-body" style="width:auto;">
                                             <div class="text-left position-absolute">
                                                 <div class="row pl-3">
-                                                    <p class="font-weight-bold">ออกแบบโดย
-                                                        {{$designerid->name}}
-                                                    </p>
+                                                    <a style="text-decoration:none;" href="{{route('startjob.show',$designerid->token)}}">
+
+                                                        <p class="font-weight-bold">ออกแบบโดย
+                                                            {{$designerid->name}}
+                                                        </p>
+                                                        </a>
                                                 </div>
 
                                             {{-- @foreach($job->tags as $tagn)
@@ -265,9 +268,12 @@
                             <div class="card-body" style="width:auto;">
                                 <div class="text-left position-absolute">
                                     <div class="row pl-3">
-                                        <p class="font-weight-bold">ออกแบบโดย
-                                            {{$designerid->name}}
-                                        </p>
+                                        <a style="text-decoration:none;" href="{{route('startjob.show',$designerid->token)}}">
+
+                                            <p class="font-weight-bold">ออกแบบโดย
+                                                {{$designerid->name}}
+                                            </p>
+                                            </a>
                                     </div>
                                     
                                 {{-- @foreach($jobboxs->tags as $tagn)
@@ -381,9 +387,12 @@
                                 <div class="card-body" style="width:auto;">
                                     <div class="text-left position-absolute">
                                         <div class="row pl-3">
-                                            <p class="font-weight-bold">ออกแบบโดย
-                                                {{$designerid->name}}
-                                            </p>
+                                            <a style="text-decoration:none;" href="{{route('startjob.show',$designerid->token)}}">
+
+                                                <p class="font-weight-bold">ออกแบบโดย
+                                                    {{$designerid->name}}
+                                                </p>
+                                                </a>
                                         </div>
 
                                     {{-- @foreach($jobbottles->tags as $tagn)
@@ -497,9 +506,12 @@
                                 <div class="card-body" style="width:auto;">
                                     <div class="text-left position-absolute">
                                         <div class="row pl-3">
-                                            <p class="font-weight-bold">ออกแบบโดย
-                                                {{$designerid->name}}
-                                            </p>
+                                            <a style="text-decoration:none;" href="{{route('startjob.show',$designerid->token)}}">
+
+                                                <p class="font-weight-bold">ออกแบบโดย
+                                                    {{$designerid->name}}
+                                                </p>
+                                                </a>
                                         </div>
 
                                     {{-- @foreach($jobcups->tags as $tagn)
@@ -613,9 +625,12 @@
                                 <div class="card-body" style="width:auto;">
                                     <div class="text-left position-absolute">
                                         <div class="row pl-3">
-                                            <p class="font-weight-bold">ออกแบบโดย
-                                                {{$designerid->name}}
-                                            </p>
+                                            <a style="text-decoration:none;" href="{{route('startjob.show',$designerid->token)}}">
+
+                                                <p class="font-weight-bold">ออกแบบโดย
+                                                    {{$designerid->name}}
+                                                </p>
+                                                </a>
                                         </div>
 
                                     {{-- @foreach($jobbags->tags as $tagn)
@@ -729,9 +744,12 @@
                                 <div class="card-body" style="width:auto;">
                                     <div class="text-left position-absolute">
                                         <div class="row pl-3">
+                                            <a style="text-decoration:none;" href="{{route('startjob.show',$designerid->token)}}">
+
                                             <p class="font-weight-bold">ออกแบบโดย
                                                 {{$designerid->name}}
                                             </p>
+                                            </a>
                                         </div>
 
                                     {{-- @foreach($jobcans->tags as $tagn)

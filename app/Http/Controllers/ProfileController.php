@@ -23,20 +23,20 @@ class ProfileController extends Controller
     }
     public function store(Request $request)
     {
-        $filenameWithExt = $request->file('profilepic')->getClientOriginalName();
+        // $filenameWithExt = $request->file('profilepic')->getClientOriginalName();
       
 
         //get file name
 
-        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        // $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
 
-        $extension = $request->file('profilepic')->getClientOriginalExtension();
+        // $extension = $request->file('profilepic')->getClientOriginalExtension();
       
 
         //create new file name
 //        $filenameTostore = $filename.'_'.time().'.'.$extension;
 
-        $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
+        // $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
 
            //upload img
         // $request->file('profilepic')->move('uploads/profilepic',$filenameTostore);
@@ -50,7 +50,8 @@ class ProfileController extends Controller
             'surname'=>$request->input('surname'),
             'birthdate'=>$request->input('birthdate'),
            
-            'profilepic'=>$request->file('profilepic')->move('uploads/profilepic',$filenameTostore),
+            // 'profilepic'=>$request->file('profilepic')->move('uploads/profilepic',$filenameTostore),
+
         
             // 'hasjob'=>'0',
             // 'rating'=>'0',
@@ -59,6 +60,15 @@ class ProfileController extends Controller
 
 
         ]);
+        if($request->hasfile('profilepic')){
+            $filenameWithExt = $request->file('profilepic')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('profilepic')->getClientOriginalExtension();
+            $filenameTostore = date('YmdHis').'_'.$filename.'.'.$extension;
+
+            $profiles->profilepic = $request->file('profilepic')->move('uploads/profilepic',$filenameTostore);
+
+        }      
         
         
       
@@ -81,6 +91,7 @@ class ProfileController extends Controller
         $users = Auth::user()->profile();
         $jobs = Jobs::where('user_id', Auth::user()->id)->where('jobstatus_id',9)->get();
 
+        $works = Jobs::where('user_id', Auth::user()->id)->get();
 
         if ($profiles->count() == 0){
             return "หาไม่เจอ ทำอะไรดี";
@@ -88,6 +99,7 @@ class ProfileController extends Controller
         return view('auth.profile.show',[
             'profiles'=>$profiles->first(),
             'jobs'=>$jobs,
+            'works'=>$works,
 
             ]);
 

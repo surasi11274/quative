@@ -391,21 +391,34 @@ class HomeController extends Controller
         // ....
         }
  
-    $designers = DB::table('designers')
-                ->when($tags, function ($query) use ($tags) {
-                    return $query->where('designers.tag', $tags);
-                    
-                })
-                // ->where('hasjob',0)
-                ->orderBy('rating','DESC')
-                ->limit(5)
-                ->get();
+        $designers = DB::table('designers')
+                    ->when($tags, function ($query) use ($tags) {
+                        return $query->where('designers.tag', $tags);
+                        
+                    })
+                    // ->where('hasjob',0)
+                    ->orderBy('rating','DESC')
+                    ->limit(5)
+                    ->get();
         
+        $otherdesigners = DB::table('designers')
+                    ->inRandomOrder()
+                    // ->where('hasjob',0)
+                    ->orderBy('rating','DESC')
+                    ->limit(5)
+                    ->get();
+            
 
         $tags = Tags::all();
         $refs = References::inRandomOrder()->limit(8)->get();     
         $jobs->first()->tags = json_decode($jobs->first()->tags);
-        $designerstag = json_decode($designers->first()->tag,true);
+        
+            // $designerstag = json_decode($designers->first()->tag,true);
+
+  
+
+            // $otherdesignerstag = json_decode($otherdesigners->first()->tag,true);
+
 
         // foreach($designers as $designer) {
 
@@ -433,7 +446,9 @@ class HomeController extends Controller
             'tags'=>$tags,
             'designers'=>$designers,
             'refs'=>$refs,
-            'designerstag'=>$designerstag,
+            // 'designerstag'=>$designerstag,
+            'otherdesigners'=>$otherdesigners,
+            // 'otherdesignerstag'=>$otherdesignerstag,
             // 'jobdesigners'=>$jobdesigners
             ]);
 
