@@ -37,7 +37,7 @@
         </div>
     </div>
     
-            <form class="container card p-3 p-md-5" action="/search/store/ref" method="post" enctype="multipart/form-data">
+            <form class="container p-3 p-md-5" action="/search/store/ref" method="post" enctype="multipart/form-data">
                
                 {{ csrf_field() }}
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">

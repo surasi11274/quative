@@ -116,13 +116,13 @@
                             <div class="card-body">
                                 <ul class="nav nav-tabs p-3" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                      <a class="nav-link active _hilight" id="home-tab" data-toggle="tab" href="#waiting" role="tab" aria-controls="home" aria-selected="true">รอตรวจสอบการโอนเงิน</a>
+                                      <a class="nav-link active " id="home-tab" data-toggle="tab" href="#waiting" role="tab" aria-controls="home" aria-selected="true">รอตรวจสอบการโอนเงิน</a>
                                     </li>
                                     <li class="nav-item">
-                                      <a class="nav-link _hilight" id="profile-tab" data-toggle="tab" href="#done" role="tab" aria-controls="profile" aria-selected="false">อนุมัติแล้ว</a>
+                                      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#done" role="tab" aria-controls="profile" aria-selected="false">อนุมัติแล้ว</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link _hilight" id="problem-tab" data-toggle="tab" href="#problem" role="tab" aria-controls="problem" aria-selected="false">ยอดมีปัญหา</a>
+                                        <a class="nav-link" id="problem-tab" data-toggle="tab" href="#problem" role="tab" aria-controls="problem" aria-selected="false">ยอดมีปัญหา</a>
                                       </li>
                                     
                                   </ul>
