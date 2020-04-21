@@ -136,15 +136,15 @@ class GalleryController extends Controller
     {
 
         $jobs = Jobs::find($id);
-        $jobsde = Jobs::where('canshow',1)->where('designer_id',$jobs->designer_id)->where('id','!==',$jobs->id)->get();
-        $jobsotherde = Jobs::where('canshow',1)->where('designer_id',$jobs->designer_id)->where('id','!==',$jobs->id)->get();
+        $jobsde = Jobs::where('canshow',1)->where('designer_id',$jobs->designer_id)->where('id','!=',$jobs->id)->limit(3)->get();
+        $jobsotherde = Jobs::where('canshow',1)->where('designer_id','!=',$jobs->designer_id)->where('id','!=',$jobs->id)->limit(3)->get();
 
         // dd($jobs);
             // $object->title 
         $jobtag = json_decode($jobs->tags,true);
         $jobfile = json_decode($jobs->file,true);
 
-        $jobsdetail = Jobs::where('canshow',1)->where('categories','กล่อง')->orderBy('id', 'DESC')->get();
+        // $jobsdetail = Jobs::where('canshow',1)->where('categories','กล่อง')->orderBy('id', 'DESC')->get();
 
         $jobfiles = Jobfiles::all();
 
