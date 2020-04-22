@@ -45,6 +45,14 @@
     overflow-x: scroll;
     width: 320px;
   }
+  .nav, .nav-select{
+    display: flex;
+    -ms-flex-wrap: initial !important;
+    flex-wrap: inherit !important;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
   .overflow-menu-designer{
     overflow-y: scroll;
     height: 210px;

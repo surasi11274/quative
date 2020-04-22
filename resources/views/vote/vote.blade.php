@@ -54,7 +54,7 @@
         <div class=" selecter d-lg-none">
           <div class="row">
               <div class="col-12">
-                <ul class="overflow-select d-flex nav-pills mt-3" id="pills-tab" role="tablist">
+                <ul class="overflow-select nav nav-select nav-pills mt-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
                         
                       <a class="nav-link-1 border bg-white rounded m-2 active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ทั้งหมด</a>
