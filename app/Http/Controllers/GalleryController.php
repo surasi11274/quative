@@ -231,16 +231,16 @@ class GalleryController extends Controller
 
         $jobfiles = Jobfiles::all();
 
-        foreach ($jobs as $jobtags){
-            // $object->title 
-            $jobtag = json_decode($jobtags->tags,true);
+        // foreach ($jobs as $jobtags){
+        //     // $object->title 
+        //     $jobtag = json_decode($jobtags->tags,true);
 
 
-        }
+        // }
         return view('vote.favoritelist',[
             'jobs'=>$jobs,
             'jobfiles'=>$jobfiles,
-            'jobtag'=>$jobtag
+            // 'jobtag'=>$jobtag
             ]);
     }
 

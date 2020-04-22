@@ -583,16 +583,14 @@
 
                                                
                         
-                                                            <div class="row">
-                                                                <div class="col-3">
-                                                                    <button type="button" class="btn _primary-black m-1 btn-lg btn-block w-auto" style="height:50px;" onclick="addCart('6')" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-undo-alt"></i></button>
+                                                            {{-- <div class="row">
+                                                                <div class="col-3"> --}}
+                                                                    <button type="button" class="btn _primary-black m-1 btn-lg btn-block w-auto" style="height:50px;" onclick="addCart('6')" data-toggle="modal" data-target="#exampleModal"><p >สั่งแก้ไข</p></button>
 
-                                                                </div>
-                                                                <div class="col-9">
                                                                     <button type="button" class="btn _primary-btn m-1 btn-lg btn-block w-auto" style="height:50px;" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
 
-                                                                </div>
-                                                            </div>    
+                                                                {{-- </div>
+                                                            </div>     --}}
                                                            
                                                              
                                        
@@ -617,12 +615,16 @@
 
 
                                </div>
-                               
+                               @if ($jobs->jobstatus_id == 7)
+
+                               <div class="row ml-1">
+                                <h5 class="font-weight-bold  text-success">นักออกแบบส่งงานแล้ว กรุณาตรวจสอบงานออกแบบ</h5 >
+                            </div>
                            
-                               <div class="row mt-3 mr-5 " >
-                                   <div class="col"></div>
-                                   <div class="col" style="text-align:right; ">
-                                    @if ($jobs->jobstatus_id == 7)
+                               <div class="row ml-1 mr-5 " >
+                                   
+                                   <div class="col" style="border: dashed 2px #523EE8; border-radius:15px;">
+                                    {{-- @if ($jobs->jobstatus_id == 7) --}}
 
                                     
                                     
@@ -636,7 +638,7 @@
                                     {{-- <img src="/{{$filename}}" class="d-block w-100" height="100px" alt="..."> --}}
                                            
                                                 @if ($filename != NULL)
-                                                    <a href="/{{$filename}}" class="btn _secondary-btn w-auto ml-1 mt-3" style="height:50px;"  download="/{{$filename}}">
+                                                    <a href="/{{$filename}}" class="btn _secondary-btn w-auto ml-1 mt-3 mb-3" style="height:50px;"  download="/{{$filename}}">
                                                         <i class="fas fa-download " style="color:black; "></i><p>ไฟล์รูปภาพ</p>
     
                                                     </a>
@@ -645,7 +647,7 @@
                                             
                                                 @if ($fileartname != NULL)
 
-                                                    <a href="/{{$fileartname}}" class="btn _secondary-btn w-auto ml-1 mt-3" style="height:50px;" download="/{{$fileartname}}">
+                                                    <a href="/{{$fileartname}}" class="btn _secondary-btn w-auto ml-1 mt-3 mb-3" style="height:50px;" download="/{{$fileartname}}">
                                                         <i class="fas fa-download " style="color:black;"></i><p>ไฟล์งาน</p>
                                                     </a>
 
@@ -665,6 +667,8 @@
                                     @endif
                                @endif
                                    </div>
+                                   <div class="col"></div>
+
                                 
                             </div>
                            
@@ -771,7 +775,11 @@
 
                                  <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="/{{$jobs->refpicbyUser}}" alt="">
                                     </a>
+                                </div>
+
                                     @elseif($jobs->refpicbyUser == NULL && $jobs->reference == NULL)
+                                    <div class="col-6 col-md-4 mt-3">
+
                                     <p class="text-secondary" style="opacity:0.5;">ไม่มีรูปภาพ</p>
 
 
@@ -837,7 +845,7 @@
             
                                     @endforeach
                                     <h4 class="font-weight-bold mt-5">ขอบเขตการจ้างงาน</h4>
-                                    {{-- <hr> --}}
+                                    <hr>
                                     <div class="row">
                                     <div class="col-12 mt-3">
                                             <h5 class="font-weight-bold"> ขอบเขตการจ้างงาน</h5>
@@ -856,14 +864,60 @@
                                             <h5 class="font-weight-bold">วันที่ต้องการงาน</h5>
                                             <p>{{date('F d,Y',strtotime($jobs->finishdate))}}</p>
                                         </div>
-                                </div>
-
-                                    <div class="text-right">
-                                        {{-- <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
-                                            <button type="button"  class="btn _primary-black" onclick="addCart('9')" data-toggle="modal" data-target=".bd-example-modal-lg">
-                                              เสร็จสิ้นงาน
-                                            </button> --}}
                                     </div>
+
+                                        @if ($jobfile !== NULL )
+                                            <div class="row" >
+                                    
+                                                <div class="col-12 mt-3" >
+                                                {{-- @if ($jobs->jobstatus_id == 7) --}}
+            
+                                                
+                                                <h5 class="font-weight-bold">ไฟล์งาน</h5>
+
+            
+                                                @foreach ($jobfile as $jobf)
+                                                    @php
+                                                        $filename = \App\Jobfiles::find($jobf)->fileimgname;
+                                                        $fileartname = \App\Jobfiles::find($jobf)->fileartworkname;
+                                                    @endphp 
+                                            
+                                                {{-- <img src="/{{$filename}}" class="d-block w-100" height="100px" alt="..."> --}}
+                                                        
+                                                            @if ($filename != NULL)
+                                                                <a href="/{{$filename}}" class="btn _secondary-btn w-auto ml-1 mt-3 mb-3" style="height:50px;"  download="/{{$filename}}">
+                                                                    <i class="fas fa-download " style="color:black; "></i><p>ไฟล์รูปภาพ</p>
+                
+                                                                </a>
+                
+                                                            @endif
+                                                        
+                                                            @if ($fileartname != NULL)
+            
+                                                                <a href="/{{$fileartname}}" class="btn _secondary-btn w-auto ml-1 mt-3 mb-3" style="height:50px;" download="/{{$fileartname}}">
+                                                                    <i class="fas fa-download " style="color:black;"></i><p>ไฟล์งาน</p>
+                                                                </a>
+            
+                                                            @endif
+            
+            
+                                                    
+                                                
+                                                
+            
+                                            @endforeach
+                                            @if ($jobs->filelinks !== NULL)
+                                            <p class="mt-5 font-weight-bold">ลิงค์สำหรับดาวน์โหลดไฟล์เพิ่มเติม</p>
+                                                <a href="{{$jobs->filelinks}}">
+                                                    <p style="color:#523EE8;">{{$jobs->filelinks}}</p>
+                                                </a>
+                                                @endif
+                                            
+                                                </div>
+            
+                                            
+                                        </div>
+                                        @endif
                                     
                         </div>
                         {{--  --}}

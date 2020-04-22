@@ -92,6 +92,7 @@ class ProfileController extends Controller
         $jobs = Jobs::where('user_id', Auth::user()->id)->where('jobstatus_id',9)->get();
 
         $works = Jobs::where('user_id', Auth::user()->id)->where('jobstatus_id',9)->get();
+        $designersw = Jobs::select('designer_id')->where('user_id', Auth::user()->id)->where('jobstatus_id',9)->distinct('designer_id')->get();
 
         if ($profiles->count() == 0){
             return "หาไม่เจอ ทำอะไรดี";
@@ -100,6 +101,8 @@ class ProfileController extends Controller
             'profiles'=>$profiles->first(),
             'jobs'=>$jobs,
             'works'=>$works,
+            'designersw'=>$designersw,
+
 
             ]);
 

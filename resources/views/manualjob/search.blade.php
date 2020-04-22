@@ -62,7 +62,7 @@
 
                                    {{-- <p>{{ $cat->name}}</p> --}}
                                    <label class="container-radio">
-                                    <input type="radio" name="radio" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
+                                    <input required type="radio" name="radio" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
                                     {{-- <input type="radio" name="radio"> --}}
                                     <img src="{{ $cat->catsPic}}"  class="rounded" alt="" >
                                     <span class="checkmark-radio"></span>
@@ -76,13 +76,16 @@
                             @endforeach
                             <div class="col d-md-none">
                             
-                                    <select class="selectpicker w-100">
-                                        <option>บรรจุภัณฑ์ประเภทกล่อง</option>
-                                        <option>บรรจุภัณฑ์ประเภทขวด</option>
-                                        <option>บรรจุภัณฑ์ประเภทแก้ว</option>
-                                        <option>บรรจุภัณฑ์ประเภทถุง</option>
-                                        <option>บรรจุภัณฑ์ประเภทกระป๋อง</option>
-                                      </select>
+                                <select class="selectpicker w-100 pack">
+                                    @foreach ($cats as $cat)
+
+                                    <option value="{{$cat->id}}" name="categories_id" data-package="{{$cat->name}}">{{$cat->name}}</option>
+                                    {{-- <option>บรรจุภัณฑ์ประเภทขวด</option>
+                                    <option>บรรจุภัณฑ์ประเภทแก้ว</option>
+                                    <option>บรรจุภัณฑ์ประเภทถุง</option>
+                                    <option>บรรจุภัณฑ์ประเภทกระป๋อง</option> --}}
+                                    @endforeach
+                                </select>
                                       
         
                             </div>
@@ -148,7 +151,7 @@
                         <h4 class="font-weight-bold pt-md-5 d-none d-md-block">ระบุรายละเอียดสำคัญ</h4>
                         <h6 class="font-weight-bold pt-2 d-md-none">ระบุรายละเอียดสำคัญ</h6>
 
-                        <textarea class="form-control" name="requirement" placeholder="ระบุรายละเอียดสำคัญ เช่น สินค้าไม่น่าดึงดูด, สินค้าทำยอดไม่ไ่ด้" aria-label="With textarea"></textarea>
+                        <textarea required class="form-control" name="requirement" placeholder="ระบุรายละเอียดสำคัญ เช่น สินค้าไม่น่าดึงดูด, สินค้าทำยอดไม่ไ่ด้" aria-label="With textarea"></textarea>
 
                         <div class="row pt-md-5">
                             <div class="col d-none d-md-block"></div>
@@ -188,6 +191,9 @@
                                          --}}
                                         <input style="border-width: 2px;" type="hidden" class="detaill-select" name="categories" plachholder="sadas" id="output">
                                         <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2">
+                                        <textarea hidden class="form-control" name="categories" id="lblSel" cols="30" rows="1" >                                  
+                                            {{-- <label  id="lblSel" style="color:green" for="package">กรุณาเลือก package</label> --}}
+                                        </textarea>
                                     {{-- </div>
                                 </div>
                                 </div> --}}
@@ -256,6 +262,7 @@
 </section>
 
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
 <script>
@@ -293,3 +300,22 @@
 
 
 <script src="{{asset('js/file-upload-with-preview.js')}}"></script>
+<script >
+    $(document).ready(function () {
+
+        $(".pack").change(function () {
+            var cntrol = $(this);
+            
+            var City = cntrol.find(':selected').data('package');
+            //   var doj = ', DOJ : ' + cntrol.find(':selected').data("doj");
+            //   var value = ', Value : ' + cntrol.val();     
+            var finalvalue = City;
+            
+            if(cntrol.val() == "")
+            finalvalue = "กรุณาเลือก package";
+            $('#lblSel').text(finalvalue);  
+        
+        });
+    });
+
+</script>

@@ -394,14 +394,14 @@ class DesignerController extends Controller
        $filesartwork = $request->file('fileartworkname');
        if(!empty($filesimg)) :
 
-        foreach ($filesimg as $fileimg ):
-            $filenameWithExt = $fileimg->getClientOriginalName();
+        // foreach ($filesimg as $fileimg ):
+            $filenameWithExt = $filesimg->getClientOriginalName();
 
             //get file name
     
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
     
-            $extension = $fileimg->getClientOriginalExtension();
+            $extension = $filesimg->getClientOriginalExtension();
     
             //create new file name
     
@@ -410,7 +410,7 @@ class DesignerController extends Controller
             $fileinput = Jobfiles::create([
                 // foreach (file as $file){
 
-                'fileimgname'=>$fileimg->move('uploads/Files',$filenameTostore),
+                'fileimgname'=>$filesimg->move('uploads/Files',$filenameTostore),
     
                
     
@@ -420,7 +420,7 @@ class DesignerController extends Controller
                 'job_id'=>$request->input('job_id'),
     
             ]);
-        endforeach;
+        // endforeach;
         endif;
 
         if(!empty($filesartwork)) :

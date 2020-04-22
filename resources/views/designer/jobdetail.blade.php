@@ -94,17 +94,17 @@
                                             <div class="col-12">
                                                     <br>
                                                     <div class="row">
-                                                        <h5 class="text-left font-weight-bold ">อัพโหลดภาพตัวอย่างงาน</h5>
+                                                        <h5 class="text-left font-weight-bold ">อัพโหลดภาพตัวอย่างงาน (1 ภาพ)</h5>
                                                     </div>                                                    
                                                     <div class="row">
-                                                        <small class="text-left text-danger">*ภาพนี้จะถูกนำไปแสดงในหน้าผลงาน</small>
+                                                        <small class="text-left text-danger">*เพื่อที่แภาพนี้จะเป็นตัวอย่างงานให้ลูกค้า และภาพนี้จะถูกนำไปแสดงในหน้าผลงาน </small>
                                                         
                                                
                                                         <div class="col-12 text-left">
                                                             <div class="custom-file-container" data-upload-id="myUniqueUploadId">
                                                                 <label><a href="javascript:void(0)" class="custom-file-container__image-clear" hidden title="Clear Image">&times;</a></label>
                                                                 <label class="custom-file-container__custom-file" >
-                                                                    <input type="file" class="custom-file-container__custom-file__custom-file-input" name="fileimgname[]" accept="*" multiple aria-label="Choose File">
+                                                                    <input type="file" class="custom-file-container__custom-file__custom-file-input" name="fileimgname" accept="*" multiple aria-label="Choose File">
                                                                     <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
                                                                     <span class="custom-file-container__custom-file__custom-file-control"></span>
                                                                 </label>
@@ -123,10 +123,10 @@
                                                                     
                                                             </div>     
                                                             <div class="upload-btn-wrapper-work">
-                                                                <button class="btn-lg font-weight-bold _primary-black " ">อัพโหลดไฟล์ +</button>
+                                                                <button class="btn-lg font-weight-bold _primary-black " >อัพโหลดไฟล์ +</button>
                                                                 <input type="file" name="fileartworkname[]" id="file" multiple  onchange="javascript:updateList()" />
                                                             </div>
-                                                    <div class="col-12 ml-md-5">
+                                                    <div class="col-12 ">
                                                        
                                                             <small id="fileList" class="text-left _hilight">
 
@@ -689,17 +689,23 @@
                 <div class="container-fluid bg-white">
                     <div class="row">
                         <div class="col-12 col-md-6 p-3 p-md-5">
-                            <h4 class="font-weight-bold">ข้อมูลผลิตภัณฑ์ของคุณ</h4>
+                            <h4 class="font-weight-bold">ข้อมูลผลิตภัณฑ์</h4>
                            <hr>
                            <h5 class="font-weight-bold">บรรจุภัณฑ์ประเภท</h5>
                         <h5 >{{ $job->categories}}</h5>
-                           <h5 class="font-weight-bold mt-3">รูปภาพผลิตภัณฑ์เดิมของคุณ</p>
+                           <h5 class="font-weight-bold mt-3">รูปภาพผลิตภัณฑ์เดิม</p>
                            <div class="row mt-3">
-                               <div class="col-6 col-md-4 ">
-                                <a class="image-popup-vertical-fit" href="/{{$job->productPic}}">
+                            <div class="col-6 col-md-4 " >
+                                @if ($job->productPic !== NULL)
 
-                                <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="/{{$job->productPic}}" alt="">
-                                </a>
+                                   <a class="image-popup-vertical-fit" href="/{{$job->productPic}}">
+                                        <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="/{{$job->productPic}}" alt="">
+                                    </a>
+                                @else
+                                    <p class="text-secondary" style="opacity:0.5;">ไม่มีรูปภาพ</p>
+
+                                @endif
+
                                </div>
                                {{-- <div class="col-6 col-md-4 mt-3">
                                 <img class="rounded" src="/{{$job->productPic}}" alt="">
@@ -718,18 +724,22 @@
                            <div class="row ">
                             @if ($job->refpicbyUser !== NULL)
 
+                            <div class="col-6 col-md-4 mt-3">
+
+                                <a class="image-popup-vertical-fit" href="/{{$job->refpicbyUser}}">
+
+                             <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="/{{$job->refpicbyUser}}" alt="">
+                                </a>
+                            </div>
+
+                                @elseif($job->refpicbyUser == NULL && $job->reference == NULL)
                                 <div class="col-6 col-md-4 mt-3">
 
-                                    <a class="image-popup-vertical-fit" href="/{{$job->refpicbyUser}}">
+                                <p class="text-secondary" style="opacity:0.5;">ไม่มีรูปภาพ</p>
 
-                                 <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="/{{$job->refpicbyUser}}" alt="">
-                                    </a>
-                                    @elseif($job->refpicbyUser == NULL && $job->reference == NULL)
-                                    <p class="text-secondary" style="opacity:0.5;">ไม่มีรูปภาพ</p>
 
-                                   
-                                </div>
-                                @endif
+                            </div>
+                            @endif
 
                                 @php
                                 $refs = \App\References::find($job->reference);
@@ -771,21 +781,26 @@
                 
                                     @endforeach
                                     
-                                    <h4 class="mt-5 font-weight-bold">ขอบเขตการจ้างงาน</h4>
+                                    <h4 class="font-weight-bold mt-5">ขอบเขตการจ้างงาน</h4>
                                     <hr>
+                                    <div class="row">
                                     <div class="col-12 mt-3">
-                                        <h5 class="font-weight-bold"> ขอบเขตการจ้างงาน</h5>
-                                    <p>
-                                    @if ($job->package !== NULL)
-                                        {{$job->package}}
-                                    @else 
-                                        -
-                                    @endif
-                                     ({{number_format($job->pricerate)}})</p>
+                                            <h5 class="font-weight-bold"> ขอบเขตการจ้างงาน</h5>
+                                            <p>
+                                                @if ($job->package !== NULL)
+                                            {{$job->package}}
+                                        @else 
+                                            -
+                                        @endif
+                                                ({{number_format($job->pricerate)}})</p>
+                                        </div>
                                     </div>
-                                    <div class="col-12 mt-3">
-                                        <h5 class="font-weight-bold">วันที่ต้องการงาน</h5>
-                                        <p>{{date('F d,Y',strtotime($job->finishdate))}} </p>
+                                    <div class="row">
+
+                                        <div class="col-12 mt-3">
+                                            <h5 class="font-weight-bold">วันที่ต้องการงาน</h5>
+                                            <p>{{date('F d,Y',strtotime($job->finishdate))}}</p>
+                                        </div>
                                     </div>
                                     <div class="text-right">
                                         {{-- <button type="button"  class="btn _secondary-btn" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>

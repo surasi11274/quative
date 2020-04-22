@@ -13,7 +13,7 @@
 
     @endphp
 
-    @if ($isdesigner && $isdesigner->profilepic !== NULL))
+    @if ($isdesigner && $isdesigner->profilepic !== NULL)
         <img class="rounded-circle obj-img-noti"  src="/{{$isdesigner->profilepic}}">
 
     @elseif($isprofile && $isprofile->profilepic !== NULL)

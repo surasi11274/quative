@@ -37,7 +37,7 @@
 
                            <div class="upload-btn-wrapper">
                                <button class="_btn-upload rounded-ex"><i class="fas fa-user-edit"></i></button>
-                               <input  name="profilepic"  type="file" id="imgInp"/>
+                               <input required  name="profilepic"  type="file" id="imgInp"/>
                            </div>
                        </div>
                        <p class="mt-md-4 mb-md-5 _hilight">*รูปโปรไฟล์นักออกแบบต้องใช้ภาพถ่ายตัวจริง <br>
@@ -49,7 +49,7 @@
                          <h5 class="font-weight-bold" for="inputUsername"><i class="fas fa-info icon"></i> แนะนำเกี่ยวกับคุณ</h5>
                             
                               
-                                <textarea  type="text" rows="5" class="form-control"  name="description" placeholder="ex. ถนัดงานแบบไหนเป็นพิเศษ"></textarea>
+                                <textarea required  type="text" rows="5" class="form-control"  name="description" placeholder="ex. ถนัดงานแบบไหนเป็นพิเศษ"></textarea>
                                 <small class="_gray ">เช่น คุณถนัดงานแบบไหน ระบุให้ชัดเจน</small>
 
                           
@@ -57,7 +57,7 @@
 
                     <div class="form-group pl-md-5 pr-md-5 mb-3">
                         <h5 class="font-weight-bold" for="inputUsername">  <i class="fas fa-phone icon"></i> เบอร์โทรศัพท์</h5>
-                            <input type="tel"  class="form-control w-50" placeholder="เบอร์โทรศัพท์" name="phonenumber" max="1234567890"  >
+                            <input required type="tel"  class="form-control w-50" placeholder="เบอร์โทรศัพท์" name="phonenumber" max="1234567890"  >
                             <small class="_gray">ex. 092-xxx-xxxx</small>
                     </div>
                     <div class="form-group pl-md-5 pr-md-5">
@@ -101,11 +101,11 @@
                     </div>
                     <div class="form-group col-12 col-md-5">
                         <h5 class="font-weight-bold" for="inputUsername">ชื่อ</h5>
-                            <input type="text" class="form-control" placeholder="กรอกชื่อของคุณ" name="name">
+                            <input required type="text" class="form-control" placeholder="กรอกชื่อของคุณ" name="name">
                     </div>
                     <div class="form-group col-12 col-md-4">
                         <h5 class="font-weight-bold" for="inputUsername">นามสกุล</h5>
-                            <input type="text" class="form-control" placeholder="กรอกนามสกุลของคุณ" name="surname">
+                            <input required type="text" class="form-control" placeholder="กรอกนามสกุลของคุณ" name="surname">
                     </div>
                     <div class="form-group col-12 col-md-6">
                           <h5 class="font-weight-bold" for="inputUsername"><i class="fas fa-calendar-week icon"></i> วันเกิดของคุณ</h5> 
@@ -113,15 +113,15 @@
                     </div>
                     <div class="form-group col-12 col-md-6">
                         <h5 class="font-weight-bold" for="inputUsername"><i class="fas fa-id-card icon"></i> เลขบัตรประชาชน</h5>
-                            <input type="personalid" class="form-control w-100" placeholder="กรอกหมายเลขบัตรประชาชนของคุณ"  name="personalID" max="1234567890123">
+                            <input required type="personalid" class="form-control w-100" placeholder="กรอกหมายเลขบัตรประชาชนของคุณ"  name="personalID" max="1234567890123">
                     </div>
                     <div class="form-group col-12 col-md-8">
                       <h5 class="font-weight-bold" for="inputUsername"><i class="fas fa-map-marked icon"></i>  ที่อยู่</h5> 
-                            <input type="text" class="form-control" placeholder="กรอกที่อยู่ตามบัตรประชาชนของคุณ"  name="address" >
+                            <input required type="text" class="form-control" placeholder="กรอกที่อยู่ตามบัตรประชาชนของคุณ"  name="address" >
                     </div>
                     <div class="form-group col-12 col-md-4">
                        <h5 class="font-weight-bold" for="inputUsername"> <i class="fas fa-mail-bulk icon"></i>  รหัสไปรษณีย์</h5>
-                            <input type="text" class="form-control" placeholder="กรอกรหัสไปรษณีย์ที่อยู่ของคุณ" name="zipcode" max="44444" >
+                            <input required type="text" class="form-control" placeholder="กรอกรหัสไปรษณีย์ที่อยู่ของคุณ" name="zipcode" max="44444" >
                     </div>
                     <div class="form-group col-md-12">
                         <h5 class="font-weight-bold" for="due" > <i class="fas fa-id-card-alt icon"></i>  ภาพถ่ายบัตรประชาชน</h5> 
@@ -134,7 +134,7 @@
                             </div>
                             <div class="_upload-btn-wrapper ">
                                 <button class="btn _primary-btn  mt-2 mb-5">อัปโหลดรูปบัตรประชาชน</button>
-                                <input   name="selfieID"  type="file" id="imgInp2"/>
+                                <input required  name="selfieID"  type="file" id="imgInp2"/>
                             </div>
                         </div>
                        
@@ -144,7 +144,7 @@
                             </div>
                             <div class="_upload-btn-wrapper">
                                 <button class="btn _primary-btn  mt-2">อัปโหลดรูปใบหน้าคู่บัตรประชาชน</button>
-                                <input  name="pictureIDCard"  type="file" id="imgInp3"/>
+                                <input required name="pictureIDCard"  type="file" id="imgInp3"/>
                             </div>
                          </div>
                          

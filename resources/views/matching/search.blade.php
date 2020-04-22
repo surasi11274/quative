@@ -64,7 +64,7 @@
 
                                    {{-- <p>{{ $cat->name}}</p> --}}
                                    <label class="container-radio">
-                                    <input type="radio" name="radio" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
+                                    <input required type="radio" name="radio" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
                                     {{-- <input type="radio" name="radio"> --}}
                                     <div class="row">
                                         <div class="col-4 col-md-12">
@@ -87,12 +87,15 @@
                             @endforeach
                             {{-- <div class="col d-md-none">
                             
-                                    <select class="selectpicker w-100">
-                                        <option>บรรจุภัณฑ์ประเภทกล่อง</option>
-                                        <option>บรรจุภัณฑ์ประเภทขวด</option>
+                                    <select class="selectpicker w-100 pack">
+                                        @foreach ($cats as $cat)
+
+                                        <option value="{{$cat->id}}" name="categories_id" data-package="{{$cat->name}}">{{$cat->name}}</option>
+                                        {{-- <option>บรรจุภัณฑ์ประเภทขวด</option>
                                         <option>บรรจุภัณฑ์ประเภทแก้ว</option>
                                         <option>บรรจุภัณฑ์ประเภทถุง</option>
-                                        <option>บรรจุภัณฑ์ประเภทกระป๋อง</option>
+                                        <option>บรรจุภัณฑ์ประเภทกระป๋อง</option> --}}
+                                        @endforeach
                                       </select>
                                       
         
@@ -112,7 +115,7 @@
                                  <div class="custom-file-container" data-upload-id="myUniqueUploadId">
                                     <label><a href="javascript:void(0)" class="custom-file-container__image-clear" hidden title="Clear Image">&times;</a></label>
                                     <label class="custom-file-container__custom-file" >
-                                        <input type="file" class="custom-file-container__custom-file__custom-file-input" name="productPic" accept="*" multiple aria-label="Choose File">
+                                        <input  type="file" class="custom-file-container__custom-file__custom-file-input" name="productPic" accept="*" multiple aria-label="Choose File">
                                         <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
                                         <span class="custom-file-container__custom-file__custom-file-control"></span>
                                     </label>
@@ -144,7 +147,7 @@
                                             <div class="form-check">
                                                 <ul class="ks-cboxtags">
                                                     <li >
-                                                        <input type="checkbox"  value="{{$tag->id}}" name="tags[]">
+                                                        <input  type="checkbox"  value="{{$tag->id}}" name="tags[]">
                                                         <label for="checkboxOne">{{$tag->tagName}}</label>
                                                     </li>
                                                 </ul>
@@ -159,7 +162,7 @@
                         <h4 class="font-weight-bold pt-md-5 d-none d-md-block">ระบุรายละเอียดสำคัญ</h4>
                         <h6 class="font-weight-bold pt-2 d-md-none">ระบุรายละเอียดสำคัญ</h6>
 
-                        <textarea class="form-control" name="requirement" placeholder="ระบุรายละเอียดสำคัญ เช่น สินค้าไม่น่าดึงดูด, สินค้าทำยอดไม่ไ่ด้" aria-label="With textarea"></textarea>
+                        <textarea class="form-control" required name="requirement" placeholder="ระบุรายละเอียดสำคัญ เช่น สินค้าไม่น่าดึงดูด, สินค้าทำยอดไม่ไ่ด้" aria-label="With textarea"></textarea>
 
                         <div class="row pt-md-5">
                             <div class="col d-none d-md-block"></div>
@@ -267,6 +270,7 @@
 </section>
 
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
 <script>
@@ -304,3 +308,22 @@
 
 
 <script src="js/file-upload-with-preview.js"></script>
+<script >
+    $(document).ready(function () {
+
+        $(".pack").change(function () {
+            var cntrol = $(this);
+            
+            var City = cntrol.find(':selected').data('package');
+            //   var doj = ', DOJ : ' + cntrol.find(':selected').data("doj");
+            //   var value = ', Value : ' + cntrol.val();     
+            var finalvalue = City;
+            
+            if(cntrol.val() == "")
+            finalvalue = "กรุณาเลือก package";
+            $('#lblSel').text(finalvalue);  
+        
+        });
+    });
+
+</script>

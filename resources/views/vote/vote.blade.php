@@ -121,8 +121,13 @@
 
         <div class="row">
             
-
-                        @if($jobs->count())
+                        @if($jobs->count() == 0)
+                        <article class="col-12 mt-5">
+                            <div class="row">
+                                <p class="mx-auto text-secondary" style="opacity:0.5;"> ไม่มีผลงาน</p>
+                            </div>
+                        </article>
+                        @elseif($jobs->count())
 
                             @foreach($jobs as $job)
 
@@ -241,8 +246,13 @@
         </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><div class="row">
             
-
-            @if($jobbox->count())
+            @if($jobbox->count() == 0)
+                                <article class="col-12 mt-5">
+                                    <div class="row">
+                                        <p class="mx-auto text-secondary" style="opacity:0.5;"> ไม่มีผลงาน</p>
+                                    </div>
+                                </article>
+            @elseif($jobbox->count())
 
                 @foreach($jobbox as $jobboxs)
 
@@ -360,8 +370,13 @@
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
             <div class="row">
             
-
-                @if($jobbottle->count())
+                @if($jobbottle->count() == 0)
+                <article class="col-12 mt-5">
+                    <div class="row">
+                        <p class="mx-auto text-secondary" style="opacity:0.5;"> ไม่มีผลงาน</p>
+                    </div>
+                </article>
+                @elseif($jobbottle->count())
 
                     @foreach($jobbottle as $jobbottles)
 
@@ -479,8 +494,13 @@
         <div class="tab-pane fade" id="pills-glass" role="tabpanel" aria-labelledby="pills-contact-tab">
             <div class="row">
             
-
-                @if($jobcup->count())
+                @if($jobcup->count() == 0)
+                <article class="col-12 mt-5">
+                    <div class="row">
+                        <p class="mx-auto text-secondary" style="opacity:0.5;"> ไม่มีผลงาน</p>
+                    </div>
+                </article>
+                @elseif($jobcup->count())
 
                     @foreach($jobcup as $jobcups)
 
@@ -598,8 +618,13 @@
         <div class="tab-pane fade" id="pills-bag" role="tabpanel" aria-labelledby="pills-contact-tab">
             <div class="row">
             
-
-                @if($jobbag->count())
+                @if($jobbag->count() == 0)
+                <article class="col-12 mt-5">
+                    <div class="row">
+                        <p class="mx-auto text-secondary" style="opacity:0.5;"> ไม่มีผลงาน</p>
+                    </div>
+                </article>
+                @elseif($jobbag->count())
 
                     @foreach($jobbag as $jobbags)
 
@@ -717,8 +742,13 @@
         <div class="tab-pane fade" id="pills-can" role="tabpanel" aria-labelledby="pills-contact-tab">
             <div class="row">
             
-
-                @if($jobcan->count())
+                @if($jobcan->count() == 0)
+                <article class="col-12 mt-5">
+                    <div class="row">
+                        <p class="mx-auto text-secondary" style="opacity:0.5;"> ไม่มีผลงาน</p>
+                    </div>
+                </article>
+                @elseif($jobcan->count())
 
                     @foreach($jobcan as $jobcans)
 

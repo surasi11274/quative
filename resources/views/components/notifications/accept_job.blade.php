@@ -12,14 +12,14 @@
     
             @endphp
     
-            @if ($isdesigner)
+            @if (auth()->user()->designer())
                 @if ($isprofile && $isprofile->profilepic !== NULL)
                     <img class="rounded-circle obj-img-noti"   src="/{{$isprofile->profilepic}}">
                 @else 
                     <img class="rounded-circle obj-img-noti"   src="{{$notification->data['user']['avatar']}}">
                 @endif
     
-            @elseif($isprofile )
+            @elseif(!auth()->user()->designer() )
                 @if ($isdesigner && $isdesigner->profilepic !== NULL)
                     <img class="rounded-circle obj-img-noti"  src="/{{$isdesigner->profilepic}}">
                 @else 

@@ -19,7 +19,7 @@
 
                            <div class="upload-btn-wrapper">
                                <button class="_btn-upload rounded-ex"><i class="fas fa-user-edit"></i></button>
-                               <input  name="profilepic"  type="file" id="imgInp"/>
+                               <input required name="profilepic"  type="file" id="imgInp"/>
                            </div>
                        </div>
                        <p class="mt-md-4 mb-md-5 _hilight">*รูปโปรไฟล์นักออกแบบต้องใช้ภาพถ่ายตัวจริง <br>
@@ -44,11 +44,11 @@
                     </div>
                     <div class="form-group col-12 col-md-5">
                         <h5 class="font-weight-bold" for="inputUsername">ชื่อ</h5>
-                            <input type="text" class="form-control" placeholder="กรอกชื่อของคุณ" name="name">
+                            <input required type="text" class="form-control" placeholder="กรอกชื่อของคุณ" name="name">
                     </div>
                     <div class="form-group col-12 col-md-4">
                         <h5 class="font-weight-bold" for="inputUsername">นามสกุล</h5>
-                            <input type="text" class="form-control" placeholder="กรอกนามสกุลของคุณ" name="surname">
+                            <input required type="text" class="form-control" placeholder="กรอกนามสกุลของคุณ" name="surname">
                     </div>
                    
                   
@@ -63,7 +63,7 @@
                  
                     <div class="form-groupcol-md-6 pr-md-5 mb-3">
                       <h5 class="font-weight-bold" for="inputUsername">  <i class="fas fa-phone icon"></i> เบอร์โทรศัพท์</h5>
-                          <input type="tel"  class="form-control" placeholder="เบอร์โทรศัพท์" name="phonenumber" max="1234567890"  >
+                          <input required type="tel"  class="form-control" placeholder="เบอร์โทรศัพท์" name="phonenumber" max="1234567890"  >
                           <small class="_gray">ex. 092-xxx-xxxx</small>
                     </div>
           

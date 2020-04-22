@@ -3,9 +3,9 @@
     
 @endsection
 @section('content')
- <section class="userinfo">
-     <div class="container mt_ex">
-        <h2 class="font-weight-bold _gray ">Dashboard / ผู้ใช้งาน</h2>
+ <section class="userinfo mt-5">
+     <div class="container">
+        {{-- <h2 class="font-weight-bold _gray ">Dashboard / ผู้ใช้งาน</h2> --}}
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -39,18 +39,23 @@
                           
                            
                         
-                             <table class="table table-hover table-bordered text-center">
+                             <table class="table table-borderless table-striped table-hover  text-center">
                         
-                                <thead class="thead-dark">
+                                <thead >
                                   <tr>
                         
                                     <th scope="col">รหัส</th>
                                     {{-- <th scope="col">วันที่เริ่มงาน</th> --}}
                                     <th scope="col">ชื่อผู้ใช้</th>
                                     <th scope="col">อีเมล</th>
+                                    {{-- <th scope="col">รหัสผ่าน</th> --}}
+
         
                                     <th scope="col">สถานะ</th>
-                                    <th scope="col">ใช้งานล่าสุด</th>
+                                    <th scope="col">เป็นสมาชิกเมื่อ</th>
+                                    <th scope="col">เคยจ้างงาน</th>
+                                    <th scope="col">จ้างงานสำเร็จ</th>
+
 
                                     <th scope="col">สถานะ</th>
                                    
@@ -75,12 +80,14 @@
                                     <td class="pt-4 pb-4">{{$user->name}}</td>
                                     {{-- <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td> --}}
                                     <td class="pt-4 pb-4">{{$user->email}}</td>
+                                    {{-- <td class="pt-4 pb-4">{{$user->password}}</td> --}}
+
 
                                     {{-- <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td> --}}
                                     <td class="pt-4 pb-4 _hilight">
                                       @if ($user->role == 0)
                                         <p class="text-primary">
-                                          ผู้ใช้ธรรมดา
+                                          ผู้ประกอบการ
                                         </p>
                                       @elseif($user->role == 1)
                                       <p class="text-danger">
@@ -88,7 +95,45 @@
                                       </p>
                                       @endif
                                     </td>
-                                    <td class="pt-4 pb-4">xx</td>
+                                    <td class="pt-4 pb-4">{{date('F d,Y',strtotime($user->created_at))}}</td>
+                                    @if ($user->role == 0)
+                                      @php
+                                          $jobs = \App\Jobs::where('user_id',$user->id)->get();
+                                      @endphp
+                                      <td class="pt-4 pb-4">{{$jobs->count()}}</td>
+
+                                    @elseif ($user->role == 1)
+                                      @if ($user->designer())
+                                        @php
+                                          $jobs = \App\Jobs::where('designer_id',$user->designer()->id)->get();
+                                        @endphp 
+                                      <td class="pt-4 pb-4">{{$jobs->count()}}</td>
+                                      @else
+                                      <td class="pt-4 pb-4 text-secondary" style="opacity:0.5;">NULL</td>
+
+                                      @endif
+                                    
+                                    @endif
+
+
+                                    @if ($user->role == 0)
+                                    @php
+                                        $jobs = \App\Jobs::where('user_id',$user->id)->where('jobstatus_id','9')->get();
+                                    @endphp
+                                    <td class="pt-4 pb-4">{{$jobs->count()}}</td>
+
+                                  @elseif ($user->role == 1)
+                                    @if ($user->designer())
+                                      @php
+                                        $jobs = \App\Jobs::where('designer_id',$user->designer()->id)->where('jobstatus_id','9')->get();
+                                      @endphp 
+                                    <td class="pt-4 pb-4">{{$jobs->count()}}</td>
+                                    @else
+                                    <td class="pt-4 pb-4 text-secondary" style="opacity:0.5;">NULL</td>
+
+                                    @endif
+                                  
+                                  @endif
 
                                     <td class="pt-4 pb-4 ">
                                         <a href="#">

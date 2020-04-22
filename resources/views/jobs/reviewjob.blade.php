@@ -101,11 +101,11 @@
             @foreach ($designer as $designers)
         
             <div class="col text-center">
-                <h1 class="mt-5">เขียนรีวิวนักออกแบบ</h1>
+                <h1 class="mt-5">รีวิวนักออกแบบ</h1>
                 <div class="profile-img text-center mt-5" >
                     <img id="profileImage" class="rounded-circle" src="/{{$designers->profilepic}}" style="width:120px;height:120px;margin:auto;"/>
                 </div>
-                <h5 class="titlename text-center mt-5 pb-5" style="color:black;">{{$designers->name}} {{$designers->surname}}</h5>
+                <h5 class="titlename text-center mt-3 pb-5" style="color:black;">{{$designers->name}} {{$designers->surname}}</h5>
 
             </div>
             @endforeach
@@ -152,9 +152,9 @@
           
                 <div class="form-group mt-3">
                     <div id="result">
-                  <label for="exampleFormControlTextarea1">ข้อความเพิ่มเติม </label>
+                  <label class="font-weight-bold" for="exampleFormControlTextarea1">ข้อความเพิ่มเติม </label>
                     {{-- <span id="totalChars" style="float: right;">0</span> --}}
-                  <textarea class="form-control track" id="textcount" rows="3" name="reviewdescription"></textarea>
+                  <textarea class="form-control track" id="textcount" rows="3" name="reviewdescription" placeholder="รีวิวให้นักออกแบบคนนี้"></textarea>
                   </div>
                    <br> 
 
@@ -164,9 +164,9 @@
               <div class="row">
 
                   <div class="col-12 col-md-4">
-                      <label >ความพึงพอใจ</label>
+                      <label class="font-weight-bold">ความพึงพอใจ</label>
                       <select class="track form-control" name="complacency">
-                        <option value="">Choose One</option>
+                        <option value="">คุณพอใจไหม?</option>
                         <option value="1">มากที่สุด</option>
                         <option value="2">มาก</option>
                         <option value="3">ปานกลาง</option>
@@ -176,9 +176,9 @@
                   </div>
 
                   <div class="col-12 col-md-4">
-                      <label >ราคาเหมาะสมกับคุณภาพ</label>
+                      <label class="font-weight-bold">ราคาเหมาะสมกับคุณภาพ</label>
                       <select class="track form-control" name="reasonableprice">
-                        <option value="">Choose One</option>
+                        <option value="">ราคาเหมาะสมกับคุณภาพหรือไม่?</option>
                         <option value="1">มากที่สุด</option>
                         <option value="2">มาก</option>
                         <option value="3">ปานกลาง</option>
@@ -188,9 +188,9 @@
                   </div>
 
                    <div class="col-12 col-md-4">
-                      <label >ฝีมือและความเชี่ยวชาญ</label>
+                      <label class="font-weight-bold">ฝีมือและความเชี่ยวชาญ</label>
                       <select class="track form-control" name="skillandexpertise">
-                        <option value="">Choose One</option>
+                        <option value="">ฝีมือและความเชี่ยวชาญดีหรือไม่?</option>
                         <option value="1">มากที่สุด</option>
                         <option value="2">มาก</option>
                         <option value="3">ปานกลาง</option>

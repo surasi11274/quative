@@ -10,7 +10,7 @@
             {{-- <h4>ใบรหัสการจ้างงาน No. W0{{$jobs->id}}</h4> --}}
         </div>
        <div class="container">
-        <div class="form-row pl-pr-lg-_ex  mt-5">
+        <div class="form-row mt-5">
           <div class="form-group col-md-12">
             <h5 class="font-weight-bold">ขอบเขตการจ้างงาน</h5>
            
@@ -31,6 +31,7 @@
                     </div>
                   </div>
                 </div>
+                {{-- <div class="col-md-4"></div> --}}
                 {{-- @endforeach --}}
 
                 {{-- @endforeach --}}
@@ -45,7 +46,8 @@
                         </div>
                       </div>
                 </div>
-                <div class="col-12 col-md-4   bg-white">
+
+                <div class="col-12 col-md-4   bg-white " style="right:0;">
                     <div class="show-payment bg-white">
                         <div class="form-group">
                             <p class="font-weight-bold">ออกแบบฉลากติดสินค้า พร้อมกล่องแพคเกจ</p>
