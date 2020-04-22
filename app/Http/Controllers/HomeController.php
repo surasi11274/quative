@@ -567,7 +567,7 @@ class HomeController extends Controller
       
         try{
             
-            return redirect(route('matched',['token'=>$updateJob->token]));
+            return redirect(route('matching.matched',['token'=>$updateJob->token]));
 
         }catch (\Exception $x){
             return back()->withInput();

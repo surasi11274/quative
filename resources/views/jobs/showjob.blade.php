@@ -763,8 +763,9 @@
                            <hr>
                            <h5 class="mt-3 font-weight-bold">รูปภาพงานใกล้เคียงกับงาน</h5>
                            <div class="row ">
+                            @if ($jobs->refpicbyUser !== NULL)
+
                                 <div class="col-6 col-md-4 mt-3">
-                                    @if ($jobs->refpicbyUser !== NULL)
 
                                     <a class="image-popup-vertical-fit" href="/{{$jobs->refpicbyUser}}">
 
@@ -773,9 +774,10 @@
                                     @elseif($jobs->refpicbyUser == NULL && $jobs->reference == NULL)
                                     <p class="text-secondary" style="opacity:0.5;">ไม่มีรูปภาพ</p>
 
-                                    @endif
 
                                 </div>
+                                @endif
+
                                 @php
                                     $refs = \App\References::find($jobs->reference);
                                 @endphp

@@ -13,14 +13,14 @@
             @endphp
     
             @if ($isdesigner)
-                @if ($isprofile)
+                @if ($isprofile && $isprofile->profilepic !== NULL)
                     <img class="rounded-circle" style="width:70px; height:70px; object-fit:cover;"  src="/{{$isprofile->profilepic}}">
                 @else 
                     <img class="rounded-circle" style="width:70px; height:70px; object-fit:cover;"  src="{{$notification->data['user']['avatar']}}">
                 @endif
     
             @elseif($isprofile)
-                @if ($isdesigner)
+                @if ($isdesigner && $isdesigner->profilepic !== NULL) )
                     <img class="rounded-circle" style="width:70px; height:70px; object-fit:cover;"  src="/{{$isdesigner->profilepic}}">
                 @else 
                     <img class="rounded-circle" style="width:70px; height:70px; object-fit:cover;"  src="{{$notification->data['user']['avatar']}}">

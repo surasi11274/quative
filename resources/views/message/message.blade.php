@@ -58,7 +58,7 @@
                                         $profile = $users->profile();
                                     @endphp
 
-                                    @if ($profile)
+                                    @if ($profile && $profile->profilepic !== NULL)
                                     <img src="/{{$profile->profilepic}}" class="media-object" width="150"  alt="">
 
                                     @else 
@@ -83,7 +83,10 @@
                                 
 
                                 <div class="media-body ">
-                                  <p class="name " >No Contact 
+                                    <div class="row">
+                                        <p class="name mx-auto text-secondary" style="opacity:0.5;" >No Contact 
+
+                                    </div>
                                 </div>
                             </div>
                         </li>

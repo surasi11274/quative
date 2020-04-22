@@ -34,6 +34,7 @@
                                 @endif
                                 <div class="media">
                                     <div class="media-left">
+                                        
                                       <img src="/{{$user->designerpic}}" class="media-object" width="150"  alt="">
                                     </div>
 
@@ -60,7 +61,7 @@
                                             $profile = $users->profile();
                                         @endphp
 
-                                        @if ($profile)
+                                        @if ($profile && $profile->profilepic !== NULL)
                                         <img src="/{{$profile->profilepic}}" class="media-object" width="150"  alt="">
 
                                         @else 

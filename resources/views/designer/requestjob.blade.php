@@ -110,7 +110,7 @@
 
             @endif</td>
             <td>
-              <a href="{{ route('job.show', $job->token) }}">
+              <a href="{{ route('designer.jobdetail', $job->id) }}">
                 <button type="button" class="btn _primary-btn">ตรวจสอบ</button>
                </a>
              </td>

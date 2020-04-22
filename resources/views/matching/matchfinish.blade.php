@@ -10,6 +10,8 @@
         $designer = \App\Designer::find($jobs->designer_id);
         $designerpic = \App\Designer::find($jobs->designer_id)->profilepic;
 
+        $user = auth()->user();
+        $profile = $user->profile();
 
     @endphp
     <h4 class="font-weight-bold">ใบรหัสการจ้างงาน No. W{{$jobs->id}}</h4>
@@ -18,8 +20,13 @@
 
     <div class="row d-md-none mb-5 mt-5">
         <div class="col-6">
-            <img class="rounded-circle shadow-sm border-avatar " src="https://via.placeholder.com/150" width="180" alt="">
+            @if ($profile && $profile->profilepic !== NULL)
 
+            <img class="rounded-circle shadow-sm border-avatar  " src="/{{ $profile->profilepic }}" width="180" alt="">
+            @else
+                <img class="rounded-circle shadow-sm border-avatar " src="{{ Auth::user()->avatar }}" width="180" alt="">
+
+            @endif
         </div>
         <div class="col-6">
             <img class="rounded-circle shadow-sm border-avatar" src="/{{$designerpic}}" width="180" alt="">
@@ -31,8 +38,13 @@
             <div class="col-12 mt-5 d-none d-md-block">
                 {{-- customer -> pic --}}
                 
-                <img class="rounded-circle shadow-sm border-avatar matched-img" src="https://via.placeholder.com/150"   alt="">
-                {{-- designer -> pic --}}
+                @if ($profile && $profile->profilepic !== NULL)
+
+                <img class="rounded-circle shadow-sm border-avatar matched-img animated  slideInLeft" src="/{{ $profile->profilepic }}"   alt="">
+                @else
+                <img class="rounded-circle shadow-sm border-avatar matched-img animated  slideInLeft" src="{{ Auth::user()->avatar }}"   alt="">
+
+                @endif                {{-- designer -> pic --}}
                       
                 <img class="rounded-circle shadow-sm border-avatar matched-img" src="/{{$designerpic}}" alt="">
 

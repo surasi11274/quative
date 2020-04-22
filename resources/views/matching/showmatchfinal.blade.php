@@ -33,7 +33,7 @@
     <div style="width: 100%;padding-top: 10px;">
         <form class="form-match"  id="cakeform" action="/search/create/store3" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
-                         <div class="p-3 p-md-5" >
+                         <div class="bg-white p-3 p-md-5" >
 
                                 <div class="row">
                                     <div class="col-12 col-md-12 col-lg-8">

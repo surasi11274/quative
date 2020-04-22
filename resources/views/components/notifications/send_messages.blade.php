@@ -13,10 +13,10 @@
 
     @endphp
 
-    @if ($isdesigner)
+    @if ($isdesigner && $isdesigner->profilepic !== NULL))
         <img class="rounded-circle obj-img-noti"  src="/{{$isdesigner->profilepic}}">
 
-    @elseif($isprofile)
+    @elseif($isprofile && $isprofile->profilepic !== NULL)
         <img class="rounded-circle obj-img-noti"  src="/{{$isprofile->profilepic}}">
     @else 
         <img class="rounded-circle obj-img-noti"  src="{{$notification->data['user']['avatar']}}">

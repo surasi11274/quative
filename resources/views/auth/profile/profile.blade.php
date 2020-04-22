@@ -15,7 +15,7 @@
                         <h1 for="" class="_hilight">เกี่ยวกับคุณ</h1>
                         <h5 class="_gray mb-5">ระบุข้อมูลการจ้างงานเกี่ยวกับคุณเพื่อการสื่อสารรับงานที่ง่ายขึ้น</h5>
                        <div class="container ml-md-4">
-                           <img id="blah" class="rounded-circle" src="photo/preprofile.png" alt="your image" style="width: 180px; height: 180px; border: 2px solid #523EE8; object-fit:cover;"/>
+                           <img id="blah" class="rounded-circle" src="../photo/preprofile.png" alt="your image" style="width: 180px; height: 180px; border: 2px solid #523EE8; object-fit:cover;"/>
 
                            <div class="upload-btn-wrapper">
                                <button class="_btn-upload rounded-ex"><i class="fas fa-user-edit"></i></button>

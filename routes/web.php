@@ -139,7 +139,7 @@ Route::post('/search/create/store3',
     'HomeController@storeSearchStep3');
 
 Route::get('/matched/{token}', 
-'HomeController@matched')->name('matched');
+'HomeController@matched')->name('matching.matched');
 
 // --------show finish search-------
 

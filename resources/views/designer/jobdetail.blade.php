@@ -26,7 +26,7 @@
                       
                         <div class="col-3 col-md-3 mb-3 mt-3">
                             <div>
-                                @if ($profile)
+                                @if ($profile && $profile->profilepic !== NULL)
 
                                 <img class="rounded-circle obj-img-showjob" src="/{{ $profile->profilepic }}" alt="">
 
@@ -716,13 +716,21 @@
                            <hr>
                            <h5 class="mt-3 font-weight-bold">รูปภาพงานใกล้เคียงกับงาน</h5>
                            <div class="row ">
+                            @if ($job->refpicbyUser !== NULL)
+
                                 <div class="col-6 col-md-4 mt-3">
+
                                     <a class="image-popup-vertical-fit" href="/{{$job->refpicbyUser}}">
 
                                  <img class="rounded" style="width:100%; height:100px; object-fit:cover;" src="/{{$job->refpicbyUser}}" alt="">
                                     </a>
+                                    @elseif($job->refpicbyUser == NULL && $job->reference == NULL)
+                                    <p class="text-secondary" style="opacity:0.5;">ไม่มีรูปภาพ</p>
+
                                    
                                 </div>
+                                @endif
+
                                 @php
                                 $refs = \App\References::find($job->reference);
                             @endphp

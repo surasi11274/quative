@@ -91,7 +91,7 @@ class ProfileController extends Controller
         $users = Auth::user()->profile();
         $jobs = Jobs::where('user_id', Auth::user()->id)->where('jobstatus_id',9)->get();
 
-        $works = Jobs::where('user_id', Auth::user()->id)->get();
+        $works = Jobs::where('user_id', Auth::user()->id)->where('jobstatus_id',9)->get();
 
         if ($profiles->count() == 0){
             return "หาไม่เจอ ทำอะไรดี";

@@ -10,7 +10,7 @@
         $designer = \App\Designer::find($jobs->designer_id);
         $designerpic = \App\Designer::find($jobs->designer_id)->profilepic;
 
-        $user = Auth::user()->find(Auth::user()->id);
+        $user = auth()->user();
         $profile = $user->profile();
     @endphp
     <h4 class="font-weight-bold">ใบรหัสการจ้างงาน No. W{{$jobs->id}}</h4>
@@ -19,7 +19,7 @@
     
     <div class="row d-md-none mb-5 mt-5">
         <div class="col-6">
-            @if ($profile)
+            @if ($profile && $profile->profilepic !== NULL)
 
                 <img class="rounded-circle shadow-sm border-avatar  " src="/{{ $profile->profilepic }}" width="180" alt="">
             @else
@@ -37,7 +37,7 @@
 
             <div class="col-12 mt-5 d-none d-md-block">
                 {{-- customer -> pic --}}
-                @if ($profile)
+                @if ($profile && $profile->profilepic !== NULL)
 
                 <img class="rounded-circle shadow-sm border-avatar matched-img animated  slideInLeft" src="/{{ $profile->profilepic }}"   alt="">
                 @else

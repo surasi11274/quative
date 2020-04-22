@@ -112,20 +112,20 @@
                                 <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
                                     closeButton:true,
                                     progressBar: true,
-                                })" class="love btn btn-light text-center rounded float-right border" style="width:100px; height:100px;">
-                                   <p style="font-size:50px;"><i class="fas fa-heart"></i></p>
+                                })" class="love btn btn-light text-center rounded float-right border" style="width:70px; height:70px;">
+                                   <p style="font-size:30px;"><i class="fas fa-heart"></i></p>
                                     {{-- {{$job->favorite_to_users->count()}}                                 --}}
                                 </button>
                             </a>
                             @else
                             <a href="javascript:void(0);" >
-                                <button onclick="document.getElementById('vote-form-{{$jobs->id}}').submit();" class="d-none d-md-block love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobs->id)->count() == 0 ?'favorite_jobs' : ''}}" style="width:100px; height:100px;">
-                                    <p style="font-size:50px;"><i class="fas fa-heart"></i></p>
+                                <button onclick="document.getElementById('vote-form-{{$jobs->id}}').submit();" class="d-none d-md-block love text-center rounded float-right border {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobs->id)->count() == 0 ?'favorite_jobs' : ''}}" style="width:70px; height:70px;">
+                                    <p style="font-size:30px;"><i class="fas fa-heart"></i></p>
                                     {{-- {{$job->favorite_to_users->count()}}   --}}
                                 </button>
                             
-                                        <button onclick="document.getElementById('vote-form-{{$jobs->id}}').submit();" class="d-md-none love text-center rounded float-right border w-100 {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobs->id)->count() == 0 ?'favorite_jobs' : ''}}" style="width:100px; height:100px;">
-                                         <p style="font-size:50px;"><i class="fas fa-heart mr-2"></i>ชื่นชอบผลงาน</p>
+                                        <button onclick="document.getElementById('vote-form-{{$jobs->id}}').submit();" class="d-md-none love text-center rounded float-right border w-100 {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobs->id)->count() == 0 ?'favorite_jobs' : ''}}" style="width:70px; height:70px;">
+                                         <p style="font-size:30px;"><i class="fas fa-heart mr-2"></i>ชื่นชอบผลงาน</p>
                                             {{-- {{$job->favorite_to_users->count()}}   --}}
                                         </button>
                             </a>
@@ -214,7 +214,10 @@
                         <div class="col-12 col-md-7">
                         <h5 class="font-weight-bold">ความคิดเห็น ({{$jobs->comments()->count()}})</h5>
                                 @guest
-                                    <p>For a new comment.You need to login first.
+                                <div class="row">
+                                    <p class="mx-auto text-secondary mt-3" style="opacity:0.5;">For a new comment.You need to login first.
+
+                                </div>
                                     <a href="{{route('login')}}">Login </a>
                                     </p>
                                 @else 
@@ -227,7 +230,7 @@
                                             @if (auth()->user()->designer())
                                                 
                                             <img class="rounded-circle" style="width:100px;height:100px; object-fit:cover;" src="/{{auth()->user()->designer()->profilepic}}">
-                                            @elseif(!auth()->user()->designer())
+                                            @elseif(!auth()->user()->designer() && auth()->user()->profile() && auth()->user()->profile()->profilepic !== NULL)
                                                 <img class="rounded-circle" style="width:100px;height:100px; object-fit:cover;" src="/{{auth()->user()->profile()->profilepic}}">
 
                                             @else
@@ -307,7 +310,7 @@
                                             @if (auth()->user()->designer())
                                                 
                                             <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="/{{auth()->user()->designer()->profilepic}}">
-                                            @elseif(!auth()->user()->designer())
+                                            @elseif(!auth()->user()->designer() &&  auth()->user()->profile() && auth()->user()->profile()->profilepic !== NULL )
                                                 <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="/{{auth()->user()->profile()->profilepic}}">
 
                                             @else
