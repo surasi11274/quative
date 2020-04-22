@@ -52,12 +52,13 @@
                             <h4 class="font-weight-bold  d-none d-md-block">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h4>
                             <h6 class="font-weight-bold pt-2 d-md-none">เลือกประเภทของผลิตภัณฑ์ของคุณที่พัฒนาบรรณจุภันฑ์</h6>
                         <div class="row">
+                            
                             @foreach ($cats as $cat)
 
 
 
 
-                            <div class="col  d-none d-md-block">
+                            <div class="col-12 col-md  ">
                                <div class="body-below text-center">
 
 
@@ -65,9 +66,18 @@
                                    <label class="container-radio">
                                     <input type="radio" name="radio" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
                                     {{-- <input type="radio" name="radio"> --}}
-                                    <img src="{{ $cat->catsPic}}"  class="rounded" alt="" >
+                                    <div class="row">
+                                        <div class="col-4 col-md-12">
+                                            <img src="{{ $cat->catsPic}}"  class="rounded" alt="" >
+                                         
+                                        </div>
+                            
+                                        <div class="col-8 col-md-12">
+                                            <p>{{ $cat->name}}</p>
+                                        </div>
+                                        
+                                    </div>
                                     <span class="checkmark-radio"></span>
-                                    <p>{{ $cat->name}}</p>
                                    {{-- <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2"> --}}
 
                                   </label>
@@ -75,7 +85,7 @@
                             </div>
                             
                             @endforeach
-                            <div class="col d-md-none">
+                            {{-- <div class="col d-md-none">
                             
                                     <select class="selectpicker w-100">
                                         <option>บรรจุภัณฑ์ประเภทกล่อง</option>
@@ -86,7 +96,7 @@
                                       </select>
                                       
         
-                            </div>
+                            </div> --}}
 
 
                         </div>
