@@ -13,7 +13,7 @@
 
 
 <link href="{{ asset('css/_vote-detail.css') }}" rel="stylesheet">
-<div class="bd-example shadow-ex">
+<div class="bd-example">
     <div id="carouselExampleCaptions3" class="carousel slide" data-ride="pause">
 
         <div class="carousel-inner">
