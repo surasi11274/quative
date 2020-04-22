@@ -44,10 +44,10 @@
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
                             <div class="row mt-md-5">
-                                <div class="col">
+                                <div class="col mt-3">
                                     <a href="/preview" class="btn _secondary-btn btn-lg btn-block ">พรีวิวงานออกแบบ</a>
                                 </div>
-                                <div class="col">
+                                <div class="col mt-3">
                                     <a href="{{ route('register') }}" class="btn _primary-btn btn-lg btn-block">สมัครสมาชิก</a>
 
                                 </div>
@@ -81,10 +81,10 @@
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
                             <div class="row mt-3 mt-md-5">
-                                <div class="col">
+                                <div class="col mt-3">
                                     <a href="/preview" class="btn _secondary-btn btn-lg btn-block ">พรีวิวงานออกแบบ</a>
                                 </div>
-                                <div class="col">
+                                <div class="col mt-3">
                                     <a href="/vote" class="btn _primary-btn btn-lg btn-block">ผลงานนักออกแบบ</a>
 
                                 </div>
@@ -117,10 +117,10 @@
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
                             <div class="row mt-3 mt-md-5">
-                                <div class="col">
+                                <div class="col mt-3">
                                     <a href="/preview" class="btn _secondary-btn btn-lg btn-block ">พรีวิวงานออกแบบ</a>
                                 </div>
-                                <div class="col">
+                                <div class="col mt-3">
                                     <a href="/search"  class="btn _primary-btn btn-lg btn-block">ค้นหานักออกแบบ</a>
 
                                 </div>
