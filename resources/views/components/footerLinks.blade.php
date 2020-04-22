@@ -29,7 +29,7 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"  ></script>
     <script>
-        AOS.init();
+        AOS.refreshHard();
     </script>
     <script>
       var upload = new FileUploadWithPreview('myUniqueUploadId')
