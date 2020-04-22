@@ -44,10 +44,10 @@
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
                             <div class="row mt-md-5">
-                                <div class="col">
+                                <div class="col mt-3">
                                     <a href="/preview" class="btn _secondary-btn btn-lg btn-block ">พรีวิวงานออกแบบ</a>
                                 </div>
-                                <div class="col">
+                                <div class="col mt-3">
                                     <a href="{{ route('register') }}" class="btn _primary-btn btn-lg btn-block">สมัครสมาชิก</a>
 
                                 </div>
@@ -81,10 +81,10 @@
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
                             <div class="row mt-3 mt-md-5">
-                                <div class="col">
+                                <div class="col mt-3">
                                     <a href="/preview" class="btn _secondary-btn btn-lg btn-block ">พรีวิวงานออกแบบ</a>
                                 </div>
-                                <div class="col">
+                                <div class="col mt-3">
                                     <a href="/vote" class="btn _primary-btn btn-lg btn-block">ผลงานนักออกแบบ</a>
 
                                 </div>
@@ -107,8 +107,8 @@
         </div>
         @else
         <div class="container">
-            <div class="row " >
-                <div class="col-12 col-md-6"style="margin-top: 110px">
+            <div class="row text-center text-md-left justify-content-md-center justify-content-lg-start" >
+                <div class="col-12 col-md-8 col-lg-6">
                     <div class="mt-ex" style="margin-top: 10rem">
                         <h1 class="header d-none d-md-block">ออกแบบ
                             <span class="_hilight font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
@@ -117,10 +117,10 @@
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
                             <div class="row mt-3 mt-md-5">
-                                <div class="col">
+                                <div class="col mt-3">
                                     <a href="/preview" class="btn _secondary-btn btn-lg btn-block ">พรีวิวงานออกแบบ</a>
                                 </div>
-                                <div class="col">
+                                <div class="col mt-3">
                                     <a href="/search"  class="btn _primary-btn btn-lg btn-block">ค้นหานักออกแบบ</a>
 
                                 </div>
@@ -155,8 +155,8 @@
                         <div class="card-body ">
                             <img src="../photo/badge.png" alt="..." class="mt-5 mb-3">
                             <h5 class="mt-3 mb-3 font-weight-bold">มีคุณภาพ</h5>
-                            <p >สินค้าดีไซน์โดยดีไซน์เนอร์มืออาชีพ <br>
-                                ทำให้มีคุณภาพ ใช้งานได้ดี สวย <br>
+                            <p >สินค้าดีไซน์โดยดีไซน์เนอร์มืออาชีพ<br class="d-none d-lg-block">
+                                ทำให้มีคุณภาพ ใช้งานได้ดี สวย<br class="d-none d-lg-block">
                                 โดนใจตามแบบที่เราต้องการ</p>
 
                         </div>
@@ -168,8 +168,8 @@
                         <div class="card-body">
                             <img src="../photo/lightpop.png"alt="..." class="mt-5 mb-3">
                             <h5 class="mt-3 mb-3 font-weight-bold">นักออกแบบมืออาชีพ</h5>
-                            <p >นักออกแบบเฉพาะทาง <br>
-                                มาช่วยให้งานของคุณดูดีขึ้น <br>
+                            <p >นักออกแบบเฉพาะทาง<br class="d-none d-lg-block">
+                                มาช่วยให้งานของคุณดูดีขึ้น<br class="d-none d-lg-block">
                                 สร้างประสบการณ์ที่ดีต่อใจคุณ</p>
                         </div>
                         <div class="pallete"></div>
@@ -180,8 +180,8 @@
                         <div class="card-body">
                             <img src="../photo/verify.png" alt="..." class="mt-5 mb-3">
                             <h5 class="mt-3 mb-3 font-weight-bold">ความปลอดภัย</h5>
-                            <p >มีการตรวจสอบความปลอดภัย <br>
-                                น่าเชื่อถือสำหรับผู้ใช้งาน <br>
+                            <p >มีการตรวจสอบความปลอดภัย<br class="d-none d-lg-block">
+                                น่าเชื่อถือสำหรับผู้ใช้งาน<br class="d-none d-lg-block">
                                 และนักออกแบบ
                             </p>
                         </div>
