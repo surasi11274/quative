@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <section class="content">
-
+{{-- designer  --}}
 <div class="container">		
     <div class="row mt-3">
       <div class="col-12 col-md-4 card pb-3 pb-md-5"  style=" background-color: #000;">
@@ -66,8 +66,8 @@
             <small class="d-md-none">การจ้างงาน</small>
             </div>
 
-            <div class="col-6 col-md-3 mt-2">
-                <br>
+            <div class="col-6 col-md-3 mt-4">
+                
                 <p class="d-none d-md-block">  {{date('F d,Y',strtotime( Auth::user()->created_at))}}</p>
                 <p class="d-none d-md-block">{{ date('F d,Y',strtotime($designer->birthdate)) }}</p>
                 <p class="d-none d-md-block">{{ $jobs->count() }} ครั้ง</p>
@@ -78,7 +78,7 @@
                 <small class="d-md-none">{{ $jobs->count() }} ครั้ง</small>
             </div>
 
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 mt-2">
             <h5 class="font-weight-bold">ยืนยันตัวตน</h5>
             <div class="row">
                 <div class="col-2">

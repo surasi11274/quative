@@ -4,10 +4,10 @@
 @endsection
 @section('content')
 <section class="content ">
-
+{{-- user  --}}
 <div class="container">		
     <div class="row mt-3">
-      <div class="col-12 col-md-4 card pb-md-5"  style=" background-color: #000;">
+      <div class="col-12 col-md-4 card pb-3 pb-md-5"  style=" background-color: #000;">
               <div class="profile-img text-center mt-5" style="width:120px;height:120px;margin:auto; ">
                 @if ($profiles->profilepic == NULL)
                   <img id="profileImage" class="rounded-circle " style="width:120px;height:120px; object-fit:cover;" src="{{auth()->user()->avatar}}" />
@@ -18,7 +18,6 @@
             </div>
               {{-- <h5 class="text-center mt-5 text-white">ปลายฟ้า เป็นตาธรรม</h5> --}}
               <h5 class="titlename text-center text-white mt-5 font-weight-bold">{{$profiles->name}} {{$profiles->surname}}</h5>
-             
               <div class="mt-5 text-center">
                 <a href="{{route('profile.edit',$profiles->token)}}">
                     <button class="btn btn-secondary">
@@ -26,35 +25,54 @@
                     </button>
                 </a>
               </div>
-
       </div>
       <div class="col-12 col-md-8">		
           <div class="card-body bg-white">
 
               <div class="row">
-              <div class="col-md-3">
-            <h5 class="font-weight-bold" >ข้อมูลเบื้องต้น</h5>
-            <p class="_hilight font-weight-bold">เป็นสมาชิกเมื่อ </p>
-            <p class="_hilight font-weight-bold">เดือน/วัน/ปี เกิด</p>
-
-            <p class="_hilight font-weight-bold">จ้างงาน</p>
-
+              <div class="col-6 col-md-3">
+                <h5 class="font-weight-bold d-none d-md-block" >ข้อมูลเบื้องต้น</h5>
+                <h6 class="font-weight-bold d-md-none" >ข้อมูลเบื้องต้น</h6>
+                <p class="d-none d-md-block _hilight font-weight-bold">เป็นสมาชิกเมื่อ</p>
+                <p class="d-none d-md-block _hilight font-weight-bold">เดือน/วัน/ปี เกิด</p>
+                <p class="d-none d-md-block _hilight font-weight-bold">การจ้างงาน</p>
+                <small class="d-md-none">เป็นสมาชิกเมื่อ</small>
+                <small class="d-md-none">เดือน/วัน/ปี เกิด</small>
+                <small class="d-md-none">จ้างงาน</small>
             </div>
 
-            <div class="col-md-3 mt-2">
+            <div class="col-6 col-md-3 mt-4">
+           
+
+           <p class="d-none d-md-block">  {{date('F d,Y',strtotime($profiles->created_at))}}</p>
+           <p class="d-none d-md-block">{{ date('F d,Y',strtotime($profiles->birthdate)) }}</p>
+           <p class="d-none d-md-block">{{ $jobs->count() }} ครั้ง</p>
+           <small class="d-md-none">  {{date('F d,Y',strtotime($profiles->created_at))}}</small>
            <br>
-            <p> {{date('F d,Y',strtotime($profiles->created_at))}}</p>
-            <p>{{ date('F d,Y',strtotime($profiles->birthdate)) }}</p>
+           <small class="d-md-none">{{ date('F d,Y',strtotime($profiles->birthdate)) }}</small>
+           <br>
+           <small class="d-md-none">{{ $jobs->count() }} ครั้ง</small>
 
-            <p>{{ $jobs->count() }} ครั้ง</p>
+          
 
             </div>
 
-            <div class="col-md-3">
+            <div class="col-12 col-md-6 mt-2">
             <h5 class="font-weight-bold">ยืนยันตัวตน</h5>
-            <p><i class="fas fa-envelope-square _hilight"></i>  อีเมล  @if (Auth::user()->email !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif
-            <p><i class="fas fa-id-card _hilight" ></i>  ประชาชน   @if ($profiles->personalID !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif
-            <p><i class="fas fa-phone-square-alt _hilight"></i>  เบอร์โทรศัพท์  @if ($profiles->phonenumber !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-envelope-square icon _hilight"></i>
+                <i class="fas fa-phone-square-alt icon _hilight"></i> 
+            </div>
+            <div class="col-8">
+                <p >อีเมล</p>
+                <p>เบอร์โทรศัพท์</p>
+            </div>
+            <div class="col-2" style="display:grid;">
+              @if (Auth::user()->email !== NULL)<i class="fas fa-check _hilight"></i>@endif
+                @if ($profiles->phonenumber !== NULL) <i class="fas fa-check _hilight"></i>@endif
+            </div>
+            </div>
             </div>
             </div>
 
