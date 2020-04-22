@@ -43,9 +43,9 @@
 }
   .overflow-select{
     overflow-x: scroll;
-    width: 300px;
+    width: 350px;
   }
-  .nav, .nav-select{
+   .nav-select{
     display: flex;
     -ms-flex-wrap: initial !important;
     flex-wrap: inherit !important;

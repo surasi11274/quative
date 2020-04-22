@@ -53,7 +53,7 @@
         {{-- select-mobile  --}}
         <div class=" selecter d-lg-none">
           <div class="row">
-              <div class="col-12">
+              <div class="form-group col-12">
                 <ul class="overflow-select nav nav-select nav-pills mt-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
                         
