@@ -43,7 +43,7 @@
 }
   .overflow-select{
     overflow-x: scroll;
-    width: 350px;
+    width: 300px;
   }
    .nav-select{
     display: flex;
@@ -496,6 +496,10 @@
 
 /* iphone 6 iphone x */  
 @media (min-width: 374.98px){
+  .overflow-select{
+    overflow-x: scroll;
+    width: 360px;
+  }
   .obj-img-noti{
     width:70px; height:50px; object-fit:cover;
   }
@@ -802,6 +806,10 @@
 }
 /* iphone 6/7/8 plus */
 @media (min-width: 414px){
+  .overflow-select{
+    overflow-x: scroll;
+    width: 395px;
+  }
   .obj-img-noti{
     width:70px; height:60px; object-fit:cover;
   }
@@ -1149,6 +1157,10 @@
 
 /* ipad section  */
 @media (min-width: 768px) {
+  .overflow-select {
+    overflow-x: scroll;
+    width: 350px !important;
+}
   .upload-btn-wrapper-work {
     position: relative;
     overflow: hidden;
@@ -2586,6 +2598,10 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 /* landscape _  */
 @media(min-width:568px){
+  .overflow-select{
+    overflow-x: scroll;
+    width: 540px;
+  }
   .obj-img-noti{
     width:70px; height:70px; object-fit:cover;
   }
@@ -2993,6 +3009,10 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media(min-width:667px){
+  .overflow-select{
+    overflow-x: scroll;
+    width: 520px;
+  }
   .obj-img-noti{
     width:70px; height:70px; object-fit:cover;
   }
@@ -3211,6 +3231,10 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media (min-width:812px){
+  .overflow-select {
+    overflow-x: scroll;
+    width: 350px;
+}
   .obj-img-noti{
     width:70px; height:70px; object-fit:cover;
   }

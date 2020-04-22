@@ -53,7 +53,7 @@
         {{-- select-mobile  --}}
         <div class=" selecter d-lg-none">
           <div class="row">
-              <div class="form-group col-12">
+              <div class="form-group col-12 col-md-9">
                 <ul class="overflow-select nav nav-select nav-pills mt-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
                         
@@ -78,7 +78,7 @@
               </div>
           </div>
         </div>
-        <div class="form-group col-md-9 d-none d-lg-block">
+        <div class="form-group col-md-9 col-lg-8 d-none d-lg-block">
             <ul class="nav nav-pills mt-3" id="pills-tab" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link-1 border bg-white rounded m-2 active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ทั้งหมด</a>
@@ -102,7 +102,7 @@
 
         </div>
 
-       <div class="form-group col-md-3 mt-3">
+       <div class="form-group col-md-6 col-lg-4 mt-3">
          <label for=""></label>
          
          <select class="form-control ">
