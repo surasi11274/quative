@@ -35,7 +35,7 @@
                 <h6 class="font-weight-bold d-md-none" >ข้อมูลเบื้องต้น</h6>
                 <p class="d-none d-md-block _hilight font-weight-bold">เป็นสมาชิกเมื่อ</p>
                 <p class="d-none d-md-block _hilight font-weight-bold">เดือน/วัน/ปี เกิด</p>
-                <p class="d-none d-md-block _hilight font-weight-bold">การจ้างงาน</p>
+                <p class="d-none d-md-block _hilight font-weight-bold">จ้างงาน</p>
                 <small class="d-md-none">เป็นสมาชิกเมื่อ</small>
                 <small class="d-md-none">เดือน/วัน/ปี เกิด</small>
                 <small class="d-md-none">จ้างงาน</small>
