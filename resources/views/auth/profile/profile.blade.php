@@ -10,7 +10,7 @@
         {{ csrf_field() }}
             
             <!-- fieldsets -->
-           <div class="bg-white">
+           <div class="bg-white" style="height:110%;">
                     <div class="text-center p-5">
                         <h1 for="" class="_hilight">เกี่ยวกับคุณ</h1>
                         <h5 class="_gray mb-5">ระบุข้อมูลการจ้างงานเกี่ยวกับคุณเพื่อการสื่อสารรับงานที่ง่ายขึ้น</h5>
@@ -58,12 +58,12 @@
                 <div class="form-row pl-md-5 pr-md-5">
                     <div class="form-group col-md-6">
                         <h5 class="font-weight-bold" for="inputUsername"><i class="fas fa-calendar-week icon"></i> วันเกิดของคุณ</h5> 
-                          <input class="w-100 form-control" type="date" id="basicDate" name="birthdate"  placeholder="Ex.00/00/0000" data-input>
+                          <input class="form-control" type="date" id="basicDate" name="birthdate"  placeholder="Ex.00/00/0000" data-input>
                     </div>
                  
-                    <div class="form-group pl-md-5 col-md-6 pr-md-5 mb-3">
+                    <div class="form-groupcol-md-6 pr-md-5 mb-3">
                       <h5 class="font-weight-bold" for="inputUsername">  <i class="fas fa-phone icon"></i> เบอร์โทรศัพท์</h5>
-                          <input type="tel"  class="form-control w-50" placeholder="เบอร์โทรศัพท์" name="phonenumber" max="1234567890"  >
+                          <input type="tel"  class="form-control" placeholder="เบอร์โทรศัพท์" name="phonenumber" max="1234567890"  >
                           <small class="_gray">ex. 092-xxx-xxxx</small>
                     </div>
           

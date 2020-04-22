@@ -129,12 +129,12 @@
                                     </div>
                                     <div class="col-12 col-md-12 col-lg-4 mb-5">
                                         <div class="total-price p-3">
-                                            <h5 class="font-weight-bold">สรุปราคา</h5>
+                                            <h5 class="font-weight-bold">สรุปราคา(อัตโนมัติ)</h5>
                                             <table class="table">
                                                 <thead>
                                                 <tr>
                                                     <th scope="col" class="font-weight-bold">รายการ</th>
-                                                    <td scope="col" class="font-weight-bold">ราคา</td>
+                                                    <td scope="col" class="font-weight-bold" style="padding-top:20px;">ราคา</td>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -144,7 +144,7 @@
                                                     </th>
                                                       <td>
                                                           <div class="form-group">
-                                                              <input style="width:100px;"  id="package" class="form-control " name="package" type="text"   />
+                                                              <input style="width:100px;"  id="package" class="form-control " name="package" type="text"  disabled />
   
                                                           </div>
                                                     </td>
@@ -155,7 +155,7 @@
                                                     </th>
                                                     <td >
                                                         <div class="form-group">
-                                                          <input style="width:100px;"  id="date" class="form-control " name="date"  type="text"   />
+                                                          <input style="width:100px;"  id="date" class="form-control " name="date"  type="text"  disabled />
   
                                                         </div>
                                                     </td>
