@@ -3,6 +3,77 @@
 /* Mobile section  */
 /* iphone 5 */
 @media (min-width: 319.98px) {
+  .container-radio {
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .container-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 65px;
+    width: 25%;
+    /* background-color: #eee; */
+    border-radius: 5px;
+}
+  
+  /* On mouse-over, add a grey background color */
+  .container-radio:hover input ~ .checkmark-radio {
+   transform: translateY(-20px);
+   transition: 0.3s;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container-radio input:checked ~ .checkmark-radio {
+    background-color: #523EE8;
+    opacity: 0.8;
+    transition: 0.3s;
+    transform: translateY(0px);
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark-radio:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container-radio input:checked ~ .checkmark-radio:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container-radio .checkmark-radio:after {
+    left: 31px;
+    top: 10px;
+    width: 10px;
+    height: 30px;
+    border: solid white;
+    border-width: 0 5px 5px 0;
+    /* border-radius: 5px; */
+    /* -webkit-transform: rotate(45deg); */
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: 0.4s;
+}
+  /* search mobile */
   .obj-img-preview{
     width:150px; height:100px; object-fit:cover;
   }
@@ -496,6 +567,28 @@
 
 /* iphone 6 iphone x */  
 @media (min-width: 374.98px){
+  .checkmark-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 83px;
+    width: 27%;
+    /* background-color: #eee; */
+    border-radius: 5px;
+}
+.container-radio .checkmark-radio:after {
+  left: 41px;
+  top: 20px;
+  width: 10px;
+  height: 30px;
+  border: solid white;
+  border-width: 0 5px 5px 0;
+  /* border-radius: 5px; */
+  /* -webkit-transform: rotate(45deg); */
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: 0.4s;
+}
   .overflow-select{
     overflow-x: scroll;
     width: 360px;
@@ -1157,6 +1250,28 @@
 
 /* ipad section  */
 @media (min-width: 768px) {
+  .checkmark-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 75px !important;
+    width: 100% !important;
+    /* background-color: #eee; */
+    border-radius: 5px;
+}
+.container-radio .checkmark-radio:after {
+  left: 30px !important;
+  top: 10px !important;
+  width: 20px !important;
+  height: 50px !important;
+  border: solid white;
+  border-width: 0 10px 8px 0;
+  /* border-radius: 5px; */
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: 0.4s;
+}
   .overflow-select {
     overflow-x: scroll;
     width: 350px !important;
@@ -1871,6 +1986,28 @@
 
 }
 @media (min-width:1023.98px){
+  .checkmark-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 120px !important;
+    width: 100%;
+    /* background-color: #eee; */
+    border-radius: 5px;
+}
+.container-radio .checkmark-radio:after {
+    left: 60px !important;
+    top: 20px !important;
+    width: 20px !important;
+    height: 50px !important;
+    border: solid white;
+    border-width: 0 10px 8px 0;
+    /* border-radius: 5px; */
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: 0.4s;
+}
   .upload-btn-wrapper-work {
     position: relative;
     overflow: hidden;
@@ -2598,6 +2735,28 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 /* landscape _  */
 @media(min-width:568px){
+  .checkmark-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 145px;
+    width: 29%;
+    /* background-color: #eee; */
+    border-radius: 5px;
+}
+.container-radio .checkmark-radio:after {
+  left: 71px;
+  top: 30px;
+  width: 20px;
+  height: 60px;
+  border: solid white;
+  border-width: 0 10px 8px 0;
+  /* border-radius: 5px; */
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: 0.4s;
+}
   .overflow-select{
     overflow-x: scroll;
     width: 540px;
@@ -3231,6 +3390,29 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media (min-width:812px){
+  .checkmark-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 75px;
+    width: 100%;
+    /* background-color: #eee; */
+    border-radius: 5px;
+}
+.container-radio .checkmark-radio:after {
+  left: 30px;
+  top: 10px;
+  width: 20px;
+  height: 50px;
+  border: solid white;
+  border-width: 0 10px 8px 0;
+  /* border-radius: 5px; */
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: 0.4s;
+}
+  
   .overflow-select {
     overflow-x: scroll;
     width: 350px;
@@ -3549,6 +3731,28 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media(min-width:1366px){
+  .checkmark-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 160px !important;
+    width: 100%;
+    /* background-color: #eee; */
+    border-radius: 5px;
+}
+.container-radio .checkmark-radio:after {
+    left: 70px !important;
+    top: 40px !important;
+    width: 20px !important;
+    height: 50px !important;
+    border: solid white;
+    border-width: 0 10px 8px 0;
+    /* border-radius: 5px; */
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: 0.4s;
+}
   .obj-img-showjob{
     width:100px;height:100px !important;object-fit:cover;
   }
