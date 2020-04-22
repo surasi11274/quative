@@ -43,7 +43,7 @@
                <p>ระบบได้ทำการเสนอนักออกแบบมาให้คุณกรุณาเลือกนักออกแบบที่ตรงใจคุณมากที่สุด</p>
                <div class="row  mb-md-5">
 
-                  <input  type="hidden" class="detaill-select " name="designer_id" plachholder="sadas" id="output">
+                  <input required  type="hidden" class="detaill-select " name="designer_id" plachholder="sadas" id="output">
 
                   <div class="col-12 col-md-12 col-lg-4">
                      <div class="nav  nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -263,18 +263,20 @@
 
                                  @endphp
                                   @foreach ($artworks as $artwork)
-                                 <div class="col-6 col-md-4 col-lg-4 mt-3">
+                                  @if ($artwork->fileartworkname == NULL)
+
+                                 <div class="col-4 col-md-4 col-lg-4 mt-3">
                                    
 
-                                       @if ($artwork->fileartworkname == NULL)
                                        {{-- <img class="rounded shadow-sm mt-3 mb-3 img-port"  style="width:100%; height:460px; object-fit: cover;" src="/{{ $artwork->fileimgname }}" /> --}}
                                        <img class="rounded sm-img-box border-danger" src="/{{ $artwork->fileimgname }}" />
 
-                                       @endif
          
                                    
 
                                  </div>
+                                 @endif
+
                                  @endforeach
                                  {{-- <div class="col-5 mt-3">
                                     <img class="rounded"  style=" object-fit: cover;"src="{{ $ref->img}}" />

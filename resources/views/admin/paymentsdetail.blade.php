@@ -242,7 +242,7 @@
                 <div class="modal-content">
                     <input type="hidden"  name="id" value="{{$payments->id}}">
                     <input type="hidden"  name="payments_status" value="อนุมัติการโอนเงินเรียบร้อย">
-                    <input type="hidden"  name="jobstatus_id" value="3">
+                    {{-- <input type="hidden"  name="jobstatus_id" value="3"> --}}
 
 
                     {{-- <div class="modal-header " >

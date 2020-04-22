@@ -22,6 +22,7 @@
                           <p class="col-md-6">ยอดชำระเงินทั้งหมด</p>
                           <p class="col-md-6 _hilight">{{number_format($jobs->pricerate)}} บาท</p> 
                           <input hidden type="text" name="total_price" value="{{$jobs->pricerate}}">
+
                         </div>
                       </div>
                      
@@ -48,12 +49,14 @@
                   </div> --}}
                     <div class="form-group col-md-6">
                     <h5 class="font-weight-bold">วันที่โอนเงิน</h5>
-                      <input type="date" id="basicDate" class="form-control" name="dateatTransfer"  placeholder="MM/DD/YY" data-input>
+                      <input type="date"  id="basicDate" class="form-control "  name="dateatTransfer"  placeholder="MM/DD/YY" data-input required>
+                      {{-- {!! $errors->first('dateatTransfer', '<p class="help-block">:message</p>') !!} --}}
                       
                     </div>
                     <div class="form-group col-md-6">
                     <h5 class="font-weight-bold">เวลาที่ทำรายการ</h5>
-                      <input type="date" id="anotherSelector"" class="form-control" name="timeatTransfer"  placeholder="เลือกเวลาทำรายการ" data-input>
+                      <input type="date"  id="anotherSelector"" class="form-control "  name="timeatTransfer"  placeholder="เลือกเวลาทำรายการ" data-input required>
+                      {{-- {!! $errors->first('timeatTransfer', '<p class="help-block">:message</p>') !!} --}}
                      
                     </div>
                     <label class="font-weight-bold" style="font-size:1.25rem" for="">แนบรูปภาพการโอนเงิน</label>
@@ -62,8 +65,9 @@
                            <div class="custom-file-container" data-upload-id="myUniqueUploadId">
                               <label><a href="javascript:void(0)" class="custom-file-container__image-clear" hidden title="Clear Image">&times;</a></label>
                               <label class="custom-file-container__custom-file" >
-                                  <input type="file" class="custom-file-container__custom-file__custom-file-input" name="fileTransfer" accept="*" multiple aria-label="Choose File">
+                                  <input type="file" required="required" class="custom-file-container__custom-file__custom-file-input" name="fileTransfer" accept="*" multiple aria-label="Choose File">
                                   <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                  {!! $errors->first('fileTransfer', '<p class="help-block">:message</p>') !!}
                                   <span class="custom-file-container__custom-file__custom-file-control"></span>
                               </label>
                               <div class="custom-file-container__image-preview">
@@ -87,8 +91,11 @@
 
                             </div>
                             <div class="col-12 col-md-4">
-                             <button type="button" class="btn btn-outline-dark text-center mb-5 btn-lg">ยกเลิกงาน</button>
-                             <button type="submit" class="btn btn-dark text-center mb-5 btn-lg">ยืนยัน</button>
+                              <a href="{{ route('job.showpayment', $jobs->token) }}">
+                                <button type="button" class="btn btn-outline-dark text-center mb-5 btn-lg">ย้อนกลับ</button>
+
+                              </a>
+                             <button type="submit" class="btn _primary-black text-center mb-5 btn-lg">ยืนยัน</button>
                             </div>
                                 
                       </div>

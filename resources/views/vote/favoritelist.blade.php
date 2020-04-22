@@ -54,7 +54,13 @@
     <h1 class="mt-5">ผลงานที่คุณถูกใจ<span class="_hilight font-weight-bold">ทั้งหมด</span></h1>
     <div class="row">
 
-                    @if($jobs->count())
+                    @if($jobs->count() == 0)
+                    <article class="col-12 mt-5">
+                        <div class="row">
+                            <p class="mx-auto text-secondary" style="opacity:0.5;"> ไม่มีผลงานที่ถูกใจ</p>
+                        </div>
+                    </article>
+                    @elseif($jobs->count())
                         @foreach($jobs as $job)
 
                             @php
@@ -62,6 +68,7 @@
 
                                 $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
 
+                                $jobtag = json_decode($job->tags,true);
 
                             @endphp
 

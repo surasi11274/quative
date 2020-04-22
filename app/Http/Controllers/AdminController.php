@@ -127,7 +127,7 @@ class AdminController extends Controller
         
 
         $updatejobpayment = Jobs::find($jobpayment->first()->id);
-        $updatejobpayment->jobstatus_id = $request->jobstatus_id;
+        // $updatejobpayment->jobstatus_id = $request->jobstatus_id;
         $updatejobpayment->save();
 
         // dd($updatejobpayment);

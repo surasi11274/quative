@@ -43,7 +43,7 @@
                                             *ระบบจะค้นหาจากราคาที่ใกล้มากที่สุดจากกลุ่มนักออกแบบ*
                                         </small>
                                         
-                                        <select name="package_price" id="value1" class="detaill-select form-control mt-3 mb-5 pack" onchange="calculateAmount(this.value)">
+                                        <select  name="package_price" id="value1" class="detaill-select form-control mt-3 mb-5 pack" onchange="calculateAmount(this.value)">
                                             <option class="dropdown-item"  >กรุณาเลือก package
                                             </option>
                                             <option class="dropdown-item" value="{{$courses->course_rate['0']}}" data-package="งานออกแบบฉลากติดสินค้าหน้าเดียว">งานออกแบบฉลากติดสินค้าหน้าเดียว

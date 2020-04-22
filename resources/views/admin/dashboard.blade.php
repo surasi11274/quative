@@ -4,10 +4,10 @@
     
 @endsection
 @section('content')
-<section class="Dashboard">
-    <div class="container mt_ex">
-        <h2 class="font-weight-bold _gray ">Dashboard</h2>
-        <div class="row">
+<section class="Dashboard mt-5">
+    <div class="container">
+        <h2 class="font-weight-bold _hilight ">Dashboard</h2>
+        <div class="row mt-5">
             <div class="col-lg-3 col-6">
                 <!-- small box -->
                 <div class="small-box bg-white">
@@ -46,7 +46,7 @@
                         <p> ผลงาน</p>
                         <h3 class="_hilight">{{number_format($canshows->count())}}</h3>
                     </div>
-                    <div class="icon"> <i class="ion ion-pie-graph"></i> </div> <a href="#" class="small-box-footer bg-dark" style="color:white !important;">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
+                    <div class="icon"> </div> <a href="#" class="small-box-footer bg-white" style="cursor:none;color:white !important;">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a> </div>
             </div>
             <!-- ./col -->
         </div>
