@@ -10,7 +10,7 @@
         {{ csrf_field() }}
             
             <!-- fieldsets -->
-           <div class="bg-white">
+           <div class="bg-white" style="height:110%;">
                     <div class="text-center p-5">
                         <h1 for="" class="_hilight">เกี่ยวกับคุณ</h1>
                         <h5 class="_gray mb-5">ระบุข้อมูลการจ้างงานเกี่ยวกับคุณเพื่อการสื่อสารรับงานที่ง่ายขึ้น</h5>
