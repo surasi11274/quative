@@ -10,7 +10,7 @@
         <div class="row mt-5">
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-white">
+                <div class="small-box bg-white text-center">
                     <div class="inner">
                         <p>ผู้ใช้งาน</p>
                         <h3 class="_hilight">{{number_format($users->count())}}</h3>
@@ -21,7 +21,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-white">
+                <div class="small-box bg-white text-center">
                     <div class="inner">
                         <p>จำนวนการจ้างงาน</p>
                         <h3 class="_hilight">{{number_format($jobs->count())}}</h3>
@@ -31,7 +31,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-white">
+                <div class="small-box bg-white text-center">
                     <div class="inner">
                         <p>ยอดรายรับกำไร</p>
                         <h3 class="_hilight">฿{{number_format($transfered * 0.05)}} </h3>
@@ -41,7 +41,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-white">
+                <div class="small-box bg-white text-center">
                     <div class="inner">
                         <p> ผลงาน</p>
                         <h3 class="_hilight">{{number_format($canshows->count())}}</h3>
@@ -69,11 +69,11 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="card">
-                                <div class="card-header bg-white">
-                                    <h4 class="card-title font-weight-bold">การโอนเงิน</h4>
+                                <div class="card-header bg-white text-center">
+                                    <h4 class="card-title font-weight-bold ">การโอนเงิน</h4>
                                    
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body text-center">
                                     <p class="mb-3">โอนเงินเข้าระบบทั้งหมด</p>
                                     <p class="_gray mb-3">รวม</p>
                                     <h1 class="_hilight">฿{{number_format($wtransfer)}}</h1>
@@ -392,6 +392,21 @@
                     </div>
                 </div>
             </div>
+            @php
+                $jan = \App\Payment::select('total_price')->whereBetween('created_at',['2020-01-01 00:00:00','2020-01-31 00:00:00'])->where('payments_status','อนุมัติการโอนเงินเรียบร้อย')->sum('total_price');
+                $feb = \App\Payment::select('total_price')->whereBetween('created_at',['2020-02-01 00:00:00','2020-02-29 00:00:00'])->where('payments_status','อนุมัติการโอนเงินเรียบร้อย')->sum('total_price');
+                $mar = \App\Payment::select('total_price')->whereBetween('created_at',['2020-03-01 00:00:00','2020-03-31 00:00:00'])->where('payments_status','อนุมัติการโอนเงินเรียบร้อย')->sum('total_price');
+                $apr = \App\Payment::select('total_price')->whereBetween('created_at',['2020-04-01 00:00:00','2020-04-30 00:00:00'])->where('payments_status','อนุมัติการโอนเงินเรียบร้อย')->sum('total_price');
+                $may = \App\Payment::select('total_price')->whereBetween('created_at',['2020-05-01 00:00:00','2020-05-31 00:00:00'])->where('payments_status','อนุมัติการโอนเงินเรียบร้อย')->sum('total_price');
+                $jun = \App\Payment::select('total_price')->whereBetween('created_at',['2020-06-01 00:00:00','2020-06-30 00:00:00'])->where('payments_status','อนุมัติการโอนเงินเรียบร้อย')->sum('total_price');
+                $jul = \App\Payment::select('total_price')->whereBetween('created_at',['2020-07-01 00:00:00','2020-07-31 00:00:00'])->where('payments_status','อนุมัติการโอนเงินเรียบร้อย')->sum('total_price');
+                $aug = \App\Payment::select('total_price')->whereBetween('created_at',['2020-08-01 00:00:00','2020-08-31 00:00:00'])->where('payments_status','อนุมัติการโอนเงินเรียบร้อย')->sum('total_price');
+                $sep = \App\Payment::select('total_price')->whereBetween('created_at',['2020-09-01 00:00:00','2020-09-30 00:00:00'])->where('payments_status','อนุมัติการโอนเงินเรียบร้อย')->sum('total_price');
+                $oct = \App\Payment::select('total_price')->whereBetween('created_at',['2020-10-01 00:00:00','2020-10-30 00:00:00'])->where('payments_status','อนุมัติการโอนเงินเรียบร้อย')->sum('total_price');
+                $nov = \App\Payment::select('total_price')->whereBetween('created_at',['2020-11-01 00:00:00','2020-11-30 00:00:00'])->where('payments_status','อนุมัติการโอนเงินเรียบร้อย')->sum('total_price');
+                $dec = \App\Payment::select('total_price')->whereBetween('created_at',['2020-12-01 00:00:00','2020-12-31 00:00:00'])->where('payments_status','อนุมัติการโอนเงินเรียบร้อย')->sum('total_price');
+
+            @endphp
 </section>
 
 {{-- <canvas id="myChart" width="400" height="400"></canvas> --}}
@@ -400,13 +415,13 @@
 {{-- <script src="js/datacharts.js"></script> --}}
 <script>
     var ctx = document.getElementById('myChart');
-var myChart = new Chart(ctx, {
+    var myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: ['Jan', 'Fab', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov','Dec'],
         datasets: [{
             label: 'Sumary of Price',
-            data: [0, 9000, 10000, 7000, 5000, 3000,12000, 8000, 4000, 7000, 2000, 3000],
+            data: [{{$jan}}, {{$feb}}, {{$mar}}, {{$apr}}, {{$may}}, {{$jun}},{{$jul}}, {{$aug}}, {{$sep}}, {{$oct}}, {{$nov}}, {{$dec}}],
         
             backgroundColor: [
                 'rgba(82,62,232,0.2)',

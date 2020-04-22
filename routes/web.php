@@ -334,12 +334,16 @@ Route::group(['middleware' => ['auth','admin']], function () {
 //     Route::get('/dashboard/totaljob', function (){
 //        return view('admin.totaljob');
 //    });
-   Route::get('/dashboard/totalprice', function (){
-       return view('admin.totalprice');
-   });
+//    Route::get('/dashboard/totalprice', function (){
+//        return view('admin.totalprice');
+//    });
     Route::get('/dashboard', 'AdminController@index' )->name('admin');
     Route::get('/dashboard/userinfo', 'AdminController@userinfo' );
+    Route::delete('/dashboard/userinfo/delete/{id}', 'AdminController@deleteuser')->name('deleteuser');
+
     Route::get('/dashboard/totaljob', 'AdminController@jobs' );
+    Route::get('/dashboard/totalprice', 'AdminController@dashtotalPrice' );
+
     Route::get('/admin/payments', 'AdminController@payments' );
     Route::get('/admin/payments/{id}', 'AdminController@paymentsdetail' )->name('payments.detail');
     Route::post('/admin/payments/store', 'AdminController@storeUpdatePayment' );

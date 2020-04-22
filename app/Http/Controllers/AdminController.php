@@ -32,8 +32,33 @@ class AdminController extends Controller
     // public function dashtotalJob(){
     //     return view('admin.totaljob');
     // }
+    public function deleteuser($id){
+
+        // $deleteJob = Jobs::find($request->job_id);
+        // Jobs::where('token',$token)->delete();
+        // $jobs = Jobs::where('token',$token)->first();
+
+        $deleteuser = User::find($id)->dd();
+        // $designer = Designer::where('id',$deleteJob->first()->designer_id)->first();
+        // dd($designer);
+        // exit();
+
+        $deleteuser->delete();
+       
+
+        
+        return redirect('/dashboard/userinfo');
+    }
+
     public function dashtotalPrice(){
-        return view('admin.totalprice');
+        $transfered = Payment::where('payments_status','อนุมัติการโอนเงินเรียบร้อย')->sum('total_price');
+        $payments = Payment::where('payments_status','อนุมัติการโอนเงินเรียบร้อย')->get();
+
+        return view('admin.totalprice',[
+            'transfered'=>$transfered,
+            'payments'=>$payments,
+
+        ]);
     }
     public function index()
     {

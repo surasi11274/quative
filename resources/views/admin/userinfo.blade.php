@@ -65,7 +65,34 @@
                                 <tbody class="table-light">
                                    
                                  @foreach ($users as $user)
-                        
+                                      <form action="/dashboard/userinfo/delete/{{$user->id}}" method="post" enctype="multipart/form-data">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                    
+                                    
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">ยืนยันการทำรายการ</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                        คุณต้องการยืนยันที่จะทำรายการหรือไม่?
+                                        
+                                        </div>
+                                        <div class="modal-footer">
+                                        <input type="text" value="{{$user->id}}">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                                        <button type="submit" class="btn btn-primary" style="background-color:black;">ยืนยัน</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    
+                                    </form>
                                    <tr >
                         
                                     <td class="pt-4 pb-4">
@@ -136,11 +163,10 @@
                                   @endif
 
                                     <td class="pt-4 pb-4 ">
-                                        <a href="#">
                                       {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
-                                      <button type="button" class="btn _primary-black btn-lg btn-block">ระงับการใช้งาน</button>
-                                     </a>
-                                        </td>
+                                      <button type="button" class="btn _primary-black btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">ระงับการใช้งาน</button>
+
+                                    </td>
                                     {{-- @php
                                     $jobstatusid = \App\Jobstatus::find($payment->jobstatus_id)->statusName;
                                      @endphp --}}
@@ -162,10 +188,10 @@
                                    @endif</td> --}}
                                   </tr>
                              
-                                  
+                                 
                                  @endforeach
                         
-                        
+                                 
                                 
                                 </tbody>
                         
