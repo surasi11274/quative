@@ -43,7 +43,7 @@
 }
   .overflow-select{
     overflow-x: scroll;
-    width: 320px;
+    width: 300px;
   }
   .nav, .nav-select{
     display: flex;
