@@ -119,7 +119,11 @@
                                             <input id="password-confirm" type="password" placeholder="ยืนยันรหัสผ่าน" class="form-control" name="password_confirmation" required>
                                         </div>
                                     </div>
-                                    <small class="text-left">รหัสผ่านต้องมีความยาวตั้งแต่ 6 ตัวอักษรขึ้นไป</small>
+                                   <div class="form-group">
+                                       <div class="col-md-6">
+                                        <small class="text-left float-left">รหัสผ่านต้องมีความยาวตั้งแต่ 6 ตัวอักษรขึ้นไป</small>
+                                       </div>
+                                   </div>
             
                                     <div class="form-group">
                                         <div class="col-12 offset-md-4 col-md-2">
