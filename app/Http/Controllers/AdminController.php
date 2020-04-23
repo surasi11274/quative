@@ -6,6 +6,7 @@ use App\Jobs;
 use App\Payment;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -38,12 +39,12 @@ class AdminController extends Controller
         // Jobs::where('token',$token)->delete();
         // $jobs = Jobs::where('token',$token)->first();
 
-        $deleteuser = User::find($id)->dd();
+        $deleteuser = DB::table('users')->where('id',$id)->delete();
         // $designer = Designer::where('id',$deleteJob->first()->designer_id)->first();
-        // dd($designer);
+        // dd($deleteuser);
         // exit();
 
-        $deleteuser->delete();
+        // $deleteuser->delete();
        
 
         

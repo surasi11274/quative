@@ -39,7 +39,7 @@
         camera.updateProjectionMatrix();
     })
     //CAMERA
-    camera = new THREE.PerspectiveCamera(6, window.innerWidth / window.innerHeight, 1, 10000 );
+    camera = new THREE.PerspectiveCamera(3, window.innerWidth / window.innerHeight, 1, 10000 );
     // camera.position.z = 3;
 
     //SCENE

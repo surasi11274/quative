@@ -97,7 +97,7 @@
                                                         <h5 class="text-left font-weight-bold ">อัพโหลดภาพตัวอย่างงาน (1 ภาพ)</h5>
                                                     </div>                                                    
                                                     <div class="row">
-                                                        <small class="text-left text-danger">*เพื่อที่แภาพนี้จะเป็นตัวอย่างงานให้ลูกค้า และภาพนี้จะถูกนำไปแสดงในหน้าผลงาน </small>
+                                                        <small class="text-left text-danger">*เพื่อที่ภาพนี้จะเป็นตัวอย่างงานให้ลูกค้า และภาพนี้จะถูกนำไปแสดงในหน้าผลงาน </small>
                                                         
                                                
                                                         <div class="col-12 text-left">

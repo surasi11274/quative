@@ -20,9 +20,29 @@ use App\Http\Controllers\GalleryController;
 // });
 
 
-Route::get('/preview', function () {
-    return view('preview.preview');
-});
+// Route::get('/preview', function () {
+//     return view('preview.preview');
+// });
+Route::get('/preview', 'MockupController@mockupindex');
+Route::post('/preview/store', 'MockupController@createmockupstore');
+
+Route::get('/preview/byuser/{token}', 'MockupController@mockbyuser')->name('mock.user');
+Route::get('/preview/byuser/mockcosmetic/{token}', 'MockupController@mockcosmetic')->name('mock.cosmetic');
+Route::get('/preview/byuser/mockcosmetic2/{token}', 'MockupController@mockcosmetic2')->name('mock.cosmetic2');
+
+Route::get('/preview/byuser/mockbag/{token}', 'MockupController@mockbag')->name('mock.bag');
+Route::get('/preview/byuser/mockbag2/{token}', 'MockupController@mockbag2')->name('mock.bag2');
+
+Route::get('/preview/byuser/mockcup/{token}', 'MockupController@mockcup')->name('mock.cup');
+Route::get('/preview/byuser/mockcup2/{token}', 'MockupController@mockcup2')->name('mock.cup2');
+
+Route::get('/preview/byuser/mockcan/{token}', 'MockupController@mockcan')->name('mock.can');
+Route::get('/preview/byuser/mockcan2/{token}', 'MockupController@mockcan2')->name('mock.can2');
+
+Route::get('/preview/byuser/mockbottle/{token}', 'MockupController@mockbottle')->name('mock.bottle');
+Route::get('/preview/byuser/mockbottle2/{token}', 'MockupController@mockbottle2')->name('mock.bottle2');
+
+
 // Route::get('/previewmock', function () {
 //     return view('preview.previewmock');
 // });
@@ -339,7 +359,7 @@ Route::group(['middleware' => ['auth','admin']], function () {
 //    });
     Route::get('/dashboard', 'AdminController@index' )->name('admin');
     Route::get('/dashboard/userinfo', 'AdminController@userinfo' );
-    Route::delete('/dashboard/userinfo/delete/{id}', 'AdminController@deleteuser')->name('deleteuser');
+    Route::get('/dashboard/userinfo/delete/{id}', 'AdminController@deleteuser')->name('deleteuser');
 
     Route::get('/dashboard/totaljob', 'AdminController@jobs' );
     Route::get('/dashboard/totalprice', 'AdminController@dashtotalPrice' );

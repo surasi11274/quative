@@ -262,7 +262,10 @@
                                             <div class="row">
                                                 
                                                 <div class="col-12 col-6">
-                                                    <button class="btn _primary-btn btn-lg btn-block mt-5">พรีวิวโลโก้</button>
+                                                    <a href="/preview" style="text-decoration:none;">
+                                                        <button class="btn _primary-btn btn-lg btn-block mt-5">พรีวิวโลโก้</button>
+
+                                                    </a>
 
                                                 </div>
                                             </div>
