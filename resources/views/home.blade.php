@@ -473,7 +473,7 @@
                                                     </div>
                                                     <div class="row mt-5">
                                                         <div class="col-4"></div>
-                                                        <div class="col-4 ">
+                                                        <div class="col-12">
                                                             <div class="text-center">
                                                                 <a href="/gallery" >
                                                                     <button class="btn _primary-black text-center btn-lg" > ดูผลงานเพิ่มเติม</button>

@@ -21,14 +21,14 @@
 
                    <ul class="list-unstyled mx-auto">
                        <li>
-                           <a href="{{ url('/') }}"><img src="https://sv1.picz.in.th/images/2020/02/01/RyM1Aa.png"  width="50" height="50" alt=""></a>
+                           <a  href="{{ url('/') }}"><img src="https://sv1.picz.in.th/images/2020/02/01/RyM1Aa.png" class="d-none d-lg-block" width="50" height="50" alt=""></a>
                            
                        </li>
                        <li>
-                           <a href="#" class="_hilight"><h3>Quative</h3></a>
+                           <a href="/" class="_hilight text-center text-md-left"><h3>Quative</h3></a>
                        </li>
                            <li>
-                               <p style="color: #523EE8;">
+                               <p class="_hilight d-none d-lg-block" >
                                    เป็นเว็บไซต์ที่จะเข้ามาเพื่อแก้ไขปัญหาสำหรับผู้ใช้เพื่อพัฒนาผลิตภัณฑ์ไทย <br>
                                    โดยนักออกแบบสร้างสรรค์ พัฒนาฝืมือ และช่วยเหลือกลุ่มสินค้า
                                </p>
