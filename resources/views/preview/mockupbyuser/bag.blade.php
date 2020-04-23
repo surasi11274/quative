@@ -39,7 +39,7 @@
         camera.updateProjectionMatrix();
     })
     //CAMERA
-    camera = new THREE.PerspectiveCamera(3, window.innerWidth / window.innerHeight, 1, 10000 );
+    camera = new THREE.PerspectiveCamera(4, window.innerWidth / window.innerHeight, 1, 10000 );
     // camera.position.z = 3;
 
     //SCENE
@@ -67,12 +67,12 @@
         console.log(mesh.children[0]);
         mesh.children[0].material = new THREE.MeshLambertMaterial();
   scene.add( mesh );
-        mesh.position.z = -10;
+        mesh.position.z = 10;
     }
 
 
     //RENDER LOOP
-    camera.position.set( 0, -20, 100 );
+    camera.position.set( 0, -15, -100 );
 
     render();
     controls.update();
@@ -88,7 +88,7 @@
 
         if (mesh) {
         
-            mesh.rotation.y += 0.01;
+            mesh.rotation.y += 0.005;
             // mesh.rotation.x += 0.001;
 
             //animation mesh

@@ -87,7 +87,7 @@
 
         if (mesh) {
         
-            mesh.rotation.y += 0.01;
+            mesh.rotation.y += 0.005;
             // mesh.rotation.x += 0.001;
 
             //animation mesh

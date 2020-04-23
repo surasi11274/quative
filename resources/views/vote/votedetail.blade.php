@@ -96,11 +96,18 @@
 
                                 @foreach ($jobfile as $jobf)
                                 @php
-                                $filename = \App\Jobfiles::find($jobf)->fileimgname;
+                                $filename = \App\Jobfiles::find($jobf);
     
                                 @endphp
+                                @if ($filename->fileartworkname == NULL)
+
+                                <img src="/{{$filename->fileimgname}}" class="d-block w-100" height="100px" alt="...">
+
+                                {{-- @else 
+                                <img src="/{{$filename->fileimgname}}" class="d-block w-100" height="100px" alt="..."> --}}
+
+                                @endif
                                
-                                <img src="/{{$filename}}" class="d-block w-100" height="100px" alt="...">
                                
                             @endforeach
                             {{-- <div class="carousel-caption d-none d-md-block">

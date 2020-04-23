@@ -50,7 +50,7 @@
                 0,
                 0
             ],
-            "name" : "Material.007",
+            "name" : "Material",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
@@ -68,17 +68,19 @@
                 {
                     "attributes" : {
                         "POSITION" : 0,
-                        "TEXCOORD_0" : 1
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
                     },
-                    "indices" : 2,
+                    "indices" : 3,
                     "material" : 0
                 },
                 {
                     "attributes" : {
-                        "POSITION" : 3,
-                        "TEXCOORD_0" : 4
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
                     },
-                    "indices" : 5,
+                    "indices" : 7,
                     "material" : 1
                 }
             ]
@@ -100,7 +102,7 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 24927,
+            "count" : 24931,
             "max" : [
                 0.9932861924171448,
                 1.4036871194839478,
@@ -116,79 +118,101 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 24927,
-            "type" : "VEC2"
+            "count" : 24931,
+            "type" : "VEC3"
         },
         {
             "bufferView" : 2,
-            "componentType" : 5123,
-            "count" : 145788,
-            "type" : "SCALAR"
+            "componentType" : 5126,
+            "count" : 24931,
+            "type" : "VEC2"
         },
         {
             "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 145704,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
             "componentType" : 5126,
-            "count" : 40,
+            "count" : 72,
             "max" : [
-                0.3787146806716919,
+                0.5505808591842651,
                 0.8187389969825745,
-                -0.9175199270248413
+                -0.8260658979415894
             ],
             "min" : [
-                -0.09582691639661789,
-                0.23528891801834106,
+                -0.2867158055305481,
+                0.23209305107593536,
                 -0.9932861924171448
             ],
             "type" : "VEC3"
         },
         {
-            "bufferView" : 4,
+            "bufferView" : 5,
             "componentType" : 5126,
-            "count" : 40,
+            "count" : 72,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 72,
             "type" : "VEC2"
         },
         {
-            "bufferView" : 5,
+            "bufferView" : 7,
             "componentType" : 5123,
-            "count" : 162,
+            "count" : 246,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 299124,
+            "byteLength" : 299172,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 199416,
-            "byteOffset" : 299124
+            "byteLength" : 299172,
+            "byteOffset" : 299172
         },
         {
             "buffer" : 0,
-            "byteLength" : 291576,
-            "byteOffset" : 498540
+            "byteLength" : 199448,
+            "byteOffset" : 598344
         },
         {
             "buffer" : 0,
-            "byteLength" : 480,
-            "byteOffset" : 790116
+            "byteLength" : 291408,
+            "byteOffset" : 797792
         },
         {
             "buffer" : 0,
-            "byteLength" : 320,
-            "byteOffset" : 790596
+            "byteLength" : 864,
+            "byteOffset" : 1089200
         },
         {
             "buffer" : 0,
-            "byteLength" : 324,
-            "byteOffset" : 790916
+            "byteLength" : 864,
+            "byteOffset" : 1090064
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 576,
+            "byteOffset" : 1090928
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 492,
+            "byteOffset" : 1091504
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 791240,
+            "byteLength" : 1091996,
             "uri" : "creamkapook.bin"
         }
     ]

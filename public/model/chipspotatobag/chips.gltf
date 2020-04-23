@@ -73,7 +73,7 @@
                 0,
                 0
             ],
-            "name" : "Material.003",
+            "name" : "Material.004",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
@@ -127,10 +127,10 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 1331968,
+            "count" : 1328640,
             "max" : [
                 0.926931619644165,
-                0.49192848801612854,
+                0.4927923083305359,
                 0.9813385009765625
             ],
             "min" : [
@@ -143,123 +143,123 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 1331968,
+            "count" : 1328640,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 1331968,
+            "count" : 1328640,
             "type" : "VEC4"
         },
         {
             "bufferView" : 3,
             "componentType" : 5126,
-            "count" : 1331968,
+            "count" : 1328640,
             "type" : "VEC2"
         },
         {
             "bufferView" : 4,
             "componentType" : 5125,
-            "count" : 1997952,
+            "count" : 1992960,
             "type" : "SCALAR"
         },
         {
             "bufferView" : 5,
             "componentType" : 5126,
-            "count" : 51968,
+            "count" : 55296,
             "max" : [
-                0.404857873916626,
+                0.4049868881702423,
                 0.4956565797328949,
                 0.17515672743320465
             ],
             "min" : [
                 -0.2970220148563385,
-                0.4563404321670532,
-                -0.33256402611732483
+                0.4529957175254822,
+                -0.29596835374832153
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 6,
             "componentType" : 5126,
-            "count" : 51968,
+            "count" : 55296,
             "type" : "VEC3"
         },
         {
             "bufferView" : 7,
             "componentType" : 5126,
-            "count" : 51968,
+            "count" : 55296,
             "type" : "VEC4"
         },
         {
             "bufferView" : 8,
             "componentType" : 5126,
-            "count" : 51968,
+            "count" : 55296,
             "type" : "VEC2"
         },
         {
             "bufferView" : 9,
             "componentType" : 5123,
-            "count" : 77952,
+            "count" : 82944,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 15983616,
+            "byteLength" : 15943680,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 15983616,
-            "byteOffset" : 15983616
+            "byteLength" : 15943680,
+            "byteOffset" : 15943680
         },
         {
             "buffer" : 0,
-            "byteLength" : 21311488,
-            "byteOffset" : 31967232
+            "byteLength" : 21258240,
+            "byteOffset" : 31887360
         },
         {
             "buffer" : 0,
-            "byteLength" : 10655744,
-            "byteOffset" : 53278720
+            "byteLength" : 10629120,
+            "byteOffset" : 53145600
         },
         {
             "buffer" : 0,
-            "byteLength" : 7991808,
-            "byteOffset" : 63934464
+            "byteLength" : 7971840,
+            "byteOffset" : 63774720
         },
         {
             "buffer" : 0,
-            "byteLength" : 623616,
-            "byteOffset" : 71926272
+            "byteLength" : 663552,
+            "byteOffset" : 71746560
         },
         {
             "buffer" : 0,
-            "byteLength" : 623616,
-            "byteOffset" : 72549888
+            "byteLength" : 663552,
+            "byteOffset" : 72410112
         },
         {
             "buffer" : 0,
-            "byteLength" : 831488,
-            "byteOffset" : 73173504
+            "byteLength" : 884736,
+            "byteOffset" : 73073664
         },
         {
             "buffer" : 0,
-            "byteLength" : 415744,
-            "byteOffset" : 74004992
+            "byteLength" : 442368,
+            "byteOffset" : 73958400
         },
         {
             "buffer" : 0,
-            "byteLength" : 155904,
-            "byteOffset" : 74420736
+            "byteLength" : 165888,
+            "byteOffset" : 74400768
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 74576640,
+            "byteLength" : 74566656,
             "uri" : "chips.bin"
         }
     ]

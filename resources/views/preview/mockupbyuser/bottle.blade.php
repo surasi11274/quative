@@ -92,8 +92,8 @@
 
         if (mesh) {
         
-            mesh.rotation.y += 0.01;
-            mesh.rotation.x += 0.001;
+            mesh.rotation.y += 0.005;
+            // mesh.rotation.x += 0.001;
 
             //animation mesh
             // mesh.morphTargetInfluences[ 0 ] = Math.sin(delta) * 20.0;

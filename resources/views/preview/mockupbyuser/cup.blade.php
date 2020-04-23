@@ -39,7 +39,7 @@
         camera.updateProjectionMatrix();
     })
     //CAMERA
-    camera = new THREE.PerspectiveCamera(6, window.innerWidth / window.innerHeight, 1, 10000 );
+    camera = new THREE.PerspectiveCamera(7, window.innerWidth / window.innerHeight, 1, 10000 );
     
     //SCENE
     scene = new THREE.Scene();
@@ -72,7 +72,7 @@
 
 
     //RENDER LOOP
-    camera.position.set( 0, -20, 100 );
+    camera.position.set( 0, -10, 100 );
 
     render();
     controls.update();
@@ -87,8 +87,8 @@
 
         if (mesh) {
         
-            mesh.rotation.y += 0.01;
-            mesh.rotation.x += 0.001;
+            mesh.rotation.y += 0.005;
+            // mesh.rotation.x += 0.001;
 
             //animation mesh
             // mesh.morphTargetInfluences[ 0 ] = Math.sin(delta) * 20.0;
