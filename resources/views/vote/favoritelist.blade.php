@@ -72,7 +72,7 @@
 
                             @endphp
 
-                            <article class="col-4 mt-5">
+                            <article class="col-12 col-md-4 mt-5">
                                 <div class="card shadow-sm" data-id="{{ $job->id }}">
                                     
                                 <img class="card-img-top" src="{{$jobfilee->fileimgname}}"  alt="..." style="height: 267px;">
@@ -94,16 +94,18 @@
 
                                         @endforeach --}}
                                         <div class="row pl-3">
+                                            <span class="d-inline-block text-truncate wraptext-md">
                                     @foreach ($jobtag as $jobt)
                                         @php
                                         $tagname = \App\Tags::find($jobt)->tagName;
 
                                         @endphp
-                                        <p>
+                                       
                                             
                                             {{$tagname}}, 
-                                        </p>
+                                        
                                     @endforeach
+                                </span>
                                      </div>
                                      <div class="row pl-3 color-grey">
                                             <span>                                                    
