@@ -1,8 +1,23 @@
 @extends('layouts.app')
 @section('assets')
 <link rel="stylesheet" href="{{asset('css/_animate.css')}}">
+<link rel="stylesheet" href="{{asset('css/_home_style.css')}}">
 @endsection
 @section('content')
+<div class="area-bg">
+    <ul class="circles-finish">
+        <li><img src="../photo/plus.svg" alt=""></li>
+        <li><img class="animated infinite jello" src="../photo/paper-bag.svg" alt=""></li>
+        <li><img src="../photo/circle-copy.svg" alt=""></li>
+        <li><img src="../photo/box.svg" alt=""></li>
+        <li><img src="../photo/border.svg" alt=""></li>
+        <li><img src="../photo/plus.svg" alt=""></li>
+        <li><img class="animated infinite jello" src="../photo/paper-bag.svg" alt=""></li>
+        <li><img src="../photo/circle-copy.svg" alt=""></li>
+        <li><img src="../photo/box.svg" alt=""></li>
+        <li><img src="../photo/border.svg" alt=""></li>
+</ul>
+</div>
     <div class="container bg-white mt-5 shadow-sm p-3 text-center">
         <h1 class="_hilight bounceIn mt-5 d-none d-md-block">ระบบได้บันทึกข้อมูลสำเร็จ</h1>
         <h5 class="_hilight bounceIn mt-5 d-md-none font-weight-bold">ระบบได้บันทึกข้อมูลสำเร็จ</h5>
@@ -46,7 +61,7 @@
 
                 @endif                {{-- designer -> pic --}}
                       
-                <img class="rounded-circle shadow-sm border-avatar matched-img" src="/{{$designerpic}}" alt="">
+                <img class="rounded-circle shadow-sm border-avatar matched-img animated  slideInRight" src="/{{$designerpic}}" alt="">
 
 
             </div> 

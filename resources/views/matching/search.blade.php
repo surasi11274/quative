@@ -84,21 +84,8 @@
                                </div>
                             </div>
                             
-                            {{-- <div class="col d-md-none">
+                            @endforeach
                             
-                                    <select class="selectpicker w-100 pack">
-                                        @foreach ($cats as $cat)
-
-                                        <option value="{{$cat->id}}" name="categories_id" data-package="{{$cat->name}}">{{$cat->name}}</option>
-                                        {{-- <option>บรรจุภัณฑ์ประเภทขวด</option>
-                                        <option>บรรจุภัณฑ์ประเภทแก้ว</option>
-                                        <option>บรรจุภัณฑ์ประเภทถุง</option>
-                                        <option>บรรจุภัณฑ์ประเภทกระป๋อง</option> --}}
-                                        @endforeach
-                                      </select>
-                                      
-        
-                            {{-- </div>  --}}
 
 
                         </div>

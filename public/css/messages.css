@@ -107,12 +107,12 @@ li {
      box-sizing: border-box;
      outline: none;
      border: 1px solid #cccccc;
-     background-color: #000000;
-     color: #ffffff;
+     background-color: #fff;
+     color: #000;
  }
  input[type=text]:focus{
     border: 1px solid #ffffff;
-    background-color: #121212;
+    background-color: #fff;
 
  }
 .start-conversation {

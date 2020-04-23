@@ -3,6 +3,13 @@
 /* Mobile section  */
 /* iphone 5 */
 @media (min-width: 319.98px) {
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 180px;
+    top: 280px;
+}
   .container-radio {
     display: block;
     position: relative;
@@ -130,7 +137,7 @@
   }
   .icon::before {
     
-    font-size: 13px !important;
+    font-size: 23px !important;
 }
   .img-center{
     margin: 0px 65px auto;
@@ -567,6 +574,13 @@
 
 /* iphone 6 iphone x */  
 @media (min-width: 374.98px){
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 210px;
+    top: 280px;
+}
   .checkmark-radio {
     position: absolute;
     top: 0;
@@ -899,6 +913,13 @@
 }
 /* iphone 6/7/8 plus */
 @media (min-width: 414px){
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 230px;
+    top: 280px;
+}
   .overflow-select{
     overflow-x: scroll;
     width: 395px;
@@ -1250,6 +1271,18 @@
 
 /* ipad section  */
 @media (min-width: 768px) {
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 380px !important;
+    top: 290px !important;
+}
+  .message-wrapper-none {
+    padding: 10px;
+    height: 600px;
+    background: #ffffff;
+}
   .checkmark-radio {
     position: absolute;
     top: 0;
@@ -1986,6 +2019,13 @@
 
 }
 @media (min-width:1023.98px){
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 500px !important;
+    top: 280px !important;
+}
   .checkmark-radio {
     position: absolute;
     top: 0;
@@ -2598,6 +2638,14 @@
     }
 }
 @media(min-width:1920px){
+  .upload-btn-wrapper {
+    z-index: 100;
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 600px;
+    top: 300px;
+}
   .obj-img-preview{
     width:150px; height:200px; object-fit:cover;
   }
@@ -2735,6 +2783,13 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 /* landscape _  */
 @media(min-width:568px){
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 320px;
+    top: 250px;
+}
   .checkmark-radio {
     position: absolute;
     top: 0;
@@ -3168,6 +3223,13 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media(min-width:667px){
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 300px;
+    top: 250px;
+}
   .overflow-select{
     overflow-x: scroll;
     width: 520px;
@@ -3390,6 +3452,13 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media (min-width:812px){
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 390px;
+    top: 300px;
+}
   .checkmark-radio {
     position: absolute;
     top: 0;
@@ -3731,6 +3800,13 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media(min-width:1366px){
+  .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 600px !important;
+    top: 280px !important;
+}
   .checkmark-radio {
     position: absolute;
     top: 0;

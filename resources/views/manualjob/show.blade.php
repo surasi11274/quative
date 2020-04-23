@@ -73,9 +73,9 @@
             
             <h5 class="font-weight-bold d-none d-md-block" >ข้อมูลเบื้องต้น</h5>
             <h6 class="font-weight-bold d-md-none" >ข้อมูลเบื้องต้น</h6>
-            <p class="d-none d-md-block">เป็นสมาชิกเมื่อ</p>
-            <p class="d-none d-md-block">เดือน/วัน/ปี เกิด</p>
-            <p class="d-none d-md-block">อัตรางานสำเร็จ</p>
+            <p class="d-none d-md-block _hilight font-weight-bold">เป็นสมาชิกเมื่อ</p>
+            <p class="d-none d-md-block _hilight font-weight-bold">เดือน/วัน/ปี เกิด</p>
+            <p class="d-none d-md-block _hilight font-weight-bold">อัตรางานสำเร็จ</p>
             <small class="d-md-none">เป็นสมาชิกเมื่อ</small>
             <small class="d-md-none">ออกแบบงานแล้ว</small>
             <small class="d-md-none">การจ้างงาน</small>
@@ -83,8 +83,9 @@
             @php
                 $u = \App\User::find($designer->user_id);
             @endphp
-            <div class="col-6 col-md-3">
-                <br>
+            <div class="col-6 col-md-3 mt-4" style="padding-right: 0px !important;
+            padding-left: 0px !important;">
+                
                 <p class="d-none d-md-block">  {{date('F d,Y',strtotime( $u->created_at))}}</p>
                 <p class="d-none d-md-block">{{ date('F d,Y',strtotime($designer->birthdate)) }}</p>
                 <p class="d-none d-md-block">{{ $jobs->count() }} ครั้ง</p>
@@ -95,8 +96,9 @@
                 <small class="d-md-none">{{ $jobs->count() }} ครั้ง</small>
             </div>
 
-            <div class="col-md-3">
-            <h5 class="font-weight-bold">ยืนยันตัวตน</h5>
+            <div class="col-12 col-md-6 ">
+                <h5 class="font-weight-bold d-none d-md-block">ยืนยันตัวตน</h5>
+                <h6 class="font-weight-bold d-md-none" >ยืนยันตัวตน</h6>
             <div class="row">
                 <div class="col-2">
                     <i class="fas fa-envelope-square icon _hilight"></i>
@@ -109,14 +111,12 @@
                     <p>เบอร์โทรศัพท์</p>
                 </div>
                 <div class="col-2" style="display:grid;">
-                    @if ( $u->email !== NULL) <i class="fas fa-check _hilight"></i>@endif
+                    @if (Auth::user()->email !== NULL) <i class="fas fa-check _hilight"></i>@endif
                     @if ($designer->personalID !== NULL) <i class="fas fa-check _hilight"></i>@endif
                     @if ($designer->phonenumber !== NULL) <i class="fas fa-check _hilight"></i>@endif
                 </div>
             </div>
-            {{-- <p><i class="fas fa-envelope-square"></i>  อีเมล   @if (Auth::user()->email !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif
-            <p><i class="fas fa-id-card"></i>  ประชาชน   @if ($designer->personalID !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif
-            <p><i class="fas fa-phone-square-alt"></i>  เบอร์โทรศัพท์               @if ($designer->phonenumber !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif --}}
+           
             </div>
             </div>
 

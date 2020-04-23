@@ -66,7 +66,8 @@
             <small class="d-md-none">การจ้างงาน</small>
             </div>
 
-            <div class="col-6 col-md-3 mt-4">
+            <div class="col-6 col-md-3 mt-4" style="padding-right: 0px !important;
+            padding-left: 0px !important;">
                 
                 <p class="d-none d-md-block">  {{date('F d,Y',strtotime( Auth::user()->created_at))}}</p>
                 <p class="d-none d-md-block">{{ date('F d,Y',strtotime($designer->birthdate)) }}</p>
@@ -79,7 +80,8 @@
             </div>
 
             <div class="col-12 col-md-6 ">
-            <h5 class="font-weight-bold">ยืนยันตัวตน</h5>
+                <h5 class="font-weight-bold d-none d-md-block">ยืนยันตัวตน</h5>
+                <h6 class="font-weight-bold d-md-none" >ยืนยันตัวตน</h6>
             <div class="row">
                 <div class="col-2">
                     <i class="fas fa-envelope-square icon _hilight"></i>
@@ -97,9 +99,7 @@
                     @if ($designer->phonenumber !== NULL) <i class="fas fa-check _hilight"></i>@endif
                 </div>
             </div>
-            {{-- <p><i class="fas fa-envelope-square"></i>  อีเมล   @if (Auth::user()->email !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif
-            <p><i class="fas fa-id-card"></i>  ประชาชน   @if ($designer->personalID !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif
-            <p><i class="fas fa-phone-square-alt"></i>  เบอร์โทรศัพท์               @if ($designer->phonenumber !== NULL)<i class="fas fa-check" style="color: #523EE8;"></i></p>@endif --}}
+            
             </div>
             </div>
 

@@ -10,19 +10,27 @@
         {{ csrf_field() }}
             
             <!-- fieldsets -->
-           <div class="bg-white" style="height:110%;">
-                    <div class="text-center p-5">
-                        <h1 for="" class="_hilight">เกี่ยวกับคุณ</h1>
+           <div class="bg-white">
+                    <div class="text-center p-3 p-md-5">
+                        <div class="d-none d-md-block">
+                            <h1 for="" class="_hilight">เกี่ยวกับคุณ</h1>
                         <h5 class="_gray mb-5">ระบุข้อมูลการจ้างงานเกี่ยวกับคุณเพื่อการสื่อสารรับงานที่ง่ายขึ้น</h5>
-                       <div class="container ml-md-4">
-                           <img id="blah" class="rounded-circle" src="../photo/preprofile.png" alt="your image" style="width: 180px; height: 180px; border: 2px solid #523EE8; object-fit:cover;"/>
-
+                        </div>
+                        <div class="d-md-none">
+                            <h3 for="" class="_hilight">เกี่ยวกับคุณ</h3>
+                            <p class="_gray mb-5">ระบุข้อมูลการจ้างงานเกี่ยวกับคุณเพื่อการสื่อสารรับงานที่ง่ายขึ้น</p>
+                        </div>
+                       <div class="container">
+                       
+                            <img id="blah" class="rounded-circle" src="../photo/preprofile.png" alt="your image" style="width: 180px; height: 180px; border: 2px solid #523EE8; object-fit:cover;"/>
+                       
                            <div class="upload-btn-wrapper">
                                <button class="_btn-upload rounded-ex"><i class="fas fa-user-edit"></i></button>
                                <input required name="profilepic"  type="file" id="imgInp"/>
                            </div>
+                       
                        </div>
-                       <p class="mt-md-4 mb-md-5 _hilight">*รูปโปรไฟล์นักออกแบบต้องใช้ภาพถ่ายตัวจริง <br>
+                       <p class="mt-md-4 mb-md-5 _hilight">*รูปโปรไฟล์นักออกแบบต้องใช้ภาพถ่ายตัวจริง <br class="d-none d-md-block">
                         ที่เห็นใบหน้าของคุณชัดเจน*</p>
 
                     </div>
@@ -33,7 +41,7 @@
                     
            
                 
-                <div class="form-row pl-md-5 pr-md-5">
+                <div class="form-row pl-md-5 pr-md-5 p-3 ">
                     <div class="form-group dropdown col-12 col-md-3">
                       <h5 class="font-weight-bold" for="due">   <i class="fas fa-venus-mars icon"></i>  คำนำหน้าชื่อ</h5>
                         <select class="form-control" name="titleName" id="month" >
@@ -55,18 +63,26 @@
                    
                     
                 </div>
-                <div class="form-row pl-md-5 pr-md-5">
+                <div class="form-row pl-md-5 pr-md-5  p-3 ">
                     <div class="form-group col-md-6">
                         <h5 class="font-weight-bold" for="inputUsername"><i class="fas fa-calendar-week icon"></i> วันเกิดของคุณ</h5> 
                           <input class="form-control" type="date" id="basicDate" name="birthdate"  placeholder="Ex.00/00/0000" data-input>
                     </div>
                  
-                    <div class="form-groupcol-md-6 pr-md-5 mb-3">
+                    <div class="form-groupcol-md-6 pr-md-5 mb-5">
                       <h5 class="font-weight-bold" for="inputUsername">  <i class="fas fa-phone icon"></i> เบอร์โทรศัพท์</h5>
                           <input required type="tel"  class="form-control" placeholder="เบอร์โทรศัพท์" name="phonenumber" max="1234567890"  >
                           <small class="_gray">ex. 092-xxx-xxxx</small>
                     </div>
-          
+                    
+                    <div class="col-6 col-md-3 offset-md-6">
+                        <a href="/" class="btn  _secondary-btn  btn-block rounded btn-lg">ย้อนกลับ</a>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <input type="submit" name="submit" class="btn submit  _primary-black  btn-block rounded btn-lg" value="เสร็จสิ้น"/>
+                    </div>
+                    
+                   
                 </div>
               
               
@@ -82,11 +98,10 @@
                 </div> -->
                 
               
-               
 
                
-                <input type="submit" name="submit" class="submit  _primary-black  btn-block rounded btn-lg" value="เสร็จสิ้น" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
-                <input type="button" name="previous" class="previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/>
+                {{-- <input type="submit" name="submit" class="submit  _primary-black  btn-block rounded btn-lg" value="เสร็จสิ้น" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
+                <input type="button" name="previous" class="previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/> --}}
                
                {{-- <input type="button" name="previous" style="background-color:#ff3957
         ;" class=" previous action-button btn-block btn-lg  rounded" value="Previous"/>
