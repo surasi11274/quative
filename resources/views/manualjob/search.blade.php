@@ -56,7 +56,7 @@
 
 
 
-                            <div class="col  d-none d-md-block">
+                            <div class="col-12 col-md">
                                <div class="body-below text-center">
 
 
@@ -64,9 +64,18 @@
                                    <label class="container-radio">
                                     <input required type="radio" name="radio" onclick="addCart('{{$cat->name}}'),addID('{{$cat->id}}')">
                                     {{-- <input type="radio" name="radio"> --}}
-                                    <img src="{{ $cat->catsPic}}"  class="rounded" alt="" >
+                                    <div class="row">
+                                        <div class="col-4 col-md-12">
+                                            <img src="{{ $cat->catsPic}}"  class="rounded" alt="" >
+                                         
+                                        </div>
+                            
+                                        <div class="col-8 col-md-12">
+                                            <p>{{ $cat->name}}</p>
+                                        </div>
+                                        
+                                    </div>
                                     <span class="checkmark-radio"></span>
-                                    <p>{{ $cat->name}}</p>
                                    {{-- <input  type="hidden"  name="categories_id" plachholder="sadas" id="output2"> --}}
 
                                   </label>
@@ -74,21 +83,7 @@
                             </div>
                             
                             @endforeach
-                            <div class="col d-md-none">
                             
-                                <select class="selectpicker w-100 pack">
-                                    @foreach ($cats as $cat)
-
-                                    <option value="{{$cat->id}}" name="categories_id" data-package="{{$cat->name}}">{{$cat->name}}</option>
-                                    {{-- <option>บรรจุภัณฑ์ประเภทขวด</option>
-                                    <option>บรรจุภัณฑ์ประเภทแก้ว</option>
-                                    <option>บรรจุภัณฑ์ประเภทถุง</option>
-                                    <option>บรรจุภัณฑ์ประเภทกระป๋อง</option> --}}
-                                    @endforeach
-                                </select>
-                                      
-        
-                            </div>
 
 
                         </div>
