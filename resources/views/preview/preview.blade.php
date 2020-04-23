@@ -53,22 +53,22 @@
               <div class="modal-dialog modal-lg">
                   <div class="modal-content p-2 p-md-5">
 
-                      <div class="modal-header " style="text-align:center;">
+                      {{-- <div class="modal-header " style="text-align:center;">
                       <h1 class="modal-title "  id="myLargeModalLabel">อัพโหลดไฟล์งาน</h1>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">×</span>
                       </button>
-                      </div>
+                      </div> --}}
                       <div class="modal-body">
                           {{-- <h2 class="selectfillter pt-5 text-left"  style="font-weight: 800;">แนบรูปภาพผลิตภัณฑ์เดิมของคุณ</h2> --}}
                           <div class="row">
                               <div class="col-12">
                                       <br>
                                       <div class="row">
-                                          <h5 class="text-left font-weight-bold ">อัพโหลดภาพตัวอย่างงาน (1 ภาพ)</h5>
+                                          <h5 class="text-left font-weight-bold ">อัพโหลดภาพ logo เพื่อพรีวิว (1 ภาพ)</h5>
                                       </div>                                                    
                                       <div class="row">
-                                          <small class="text-left text-danger">*เพื่อที่แภาพนี้จะเป็นตัวอย่างงานให้ลูกค้า และภาพนี้จะถูกนำไปแสดงในหน้าผลงาน </small>
+                                          <small class="text-left text-success">*ภาพโลโก้จะทำงานได้เต็มประสิทธิภาพหากเป็นไฟล .jpg </small>
                                           
                                  
                                           <div class="col-12 text-left">
@@ -108,7 +108,7 @@
                                   <button type="button" class="btn _secondary-btn btn-lg btn-block" data-dismiss="modal">ยกเลิก</button>
                               </div>
                               <div class="col">
-                                  <button type="submit" class="btn _primary-black btn-lg btn-block">ยืนยัน</button>
+                                  <button type="submit" class="btn _primary-black btn-lg btn-block">อัพโหลด</button>
 
                               </div>
                          
@@ -136,8 +136,11 @@
           <button class="btn btn-outline-dark mt-1 font-weight-bold" style="background-color:white;">แพ็คเกจประเภทขวด</button>
   
         </div> --}}
-       
-        <div class="row mt-3">
+        {{-- <div class="row"> --}}
+          <hr >
+        {{-- </div> --}}
+        <div class="row mt-5">
+          
           <div class="col-12 col-md-4 ">
             <div class="text-center mt-3">
               <h5 class="_primary  font-weight-bold">แพ็คเกจเครื่องสำอาง</h5 >

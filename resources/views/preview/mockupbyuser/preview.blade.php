@@ -42,9 +42,9 @@
     <div class="container">
       <div >
         <div class="row">
-          <div class="col mt-5 mb-5">
-            <h1 class="text-success">อัพโหลดเสร็จแล้วลองเข้าไปดูแพ็คเกจกับโลโก้ของคุณดูสิ</h1>
-          </div>
+          {{-- <div class="col mt-5 mb-5"> --}}
+            <h5 class="mt-5 mb-5 text-success mx-auto font-weight-bold">อัพโหลดเสร็จแล้วลองเข้าไปดูแพ็คเกจกับโลโก้ของคุณดูสิ</h5>
+          {{-- </div> --}}
         </div>
       </div>
       {{-- <div class="row">
@@ -56,11 +56,12 @@
           <button class="btn btn-outline-dark mt-1 font-weight-bold" style="background-color:white;">แพ็คเกจประเภทขวด</button>
   
         </div> --}}
-       
-        <div class="row mt-3">
+        <hr >
+
+        <div class="row mt-5">
           <div class="col-12 col-md-4 ">
             <div class="text-center mt-3">
-              <h5 class="_primary  ">แพ็คเกจเครื่องสำอาง</h5 >
+              <h5 class="_primary  font-weight-bold">แพ็คเกจเครื่องสำอาง</h5 >
             </div>
             <div class="row mt-3 mb-3">
               <div class="col-6">
@@ -84,7 +85,7 @@
           </div>
           <div class="col-12 col-md-4 ">
             <div class="text-center mt-3">
-              <h5 class="_primary  ">แพ็คเกจประเภทถุง</h5 >
+              <h5 class="_primary  font-weight-bold">แพ็คเกจประเภทถุง</h5 >
             </div>
             <div class="row mt-3 mb-3">
               <div class="col-6">
@@ -105,7 +106,7 @@
 
           <div class="col-12 col-md-4 ">
             <div class="text-center mt-3">
-              <h5 class="_primary  ">แพ็คเกจประเภทแก้ว</h5 >
+              <h5 class="_primary  font-weight-bold">แพ็คเกจประเภทแก้ว</h5 >
             </div>
             <div class="row mt-3 mb-3">
               <div class="col-6">
@@ -131,7 +132,7 @@
         <div class="row mt-3">
           <div class="col-12 col-md-4">
             <div class="text-center mt-3">
-              <h5 class="_primary  ">แพ็คเกจประเภทกระป๋อง</h5 >
+              <h5 class="_primary  font-weight-bold">แพ็คเกจประเภทกระป๋อง</h5 >
             </div>
             <div class="row mt-3 mb-3">
               <div class="col-6">
@@ -152,7 +153,7 @@
           </div>
           <div class="col-12 col-md-4">
             <div class="text-center mt-3">
-              <h5 class="_primary  ">แพ็คเกจประเภทขวด</h5 >
+              <h5 class="_primary  font-weight-bold">แพ็คเกจประเภทขวด</h5 >
             </div>
             <div class="row mt-3 mb-3">
               <div class="col-6">
