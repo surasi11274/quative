@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('assets')
     <link rel="stylesheet" href="../css/_vote-detail.css">
+    <link rel="stylesheet" href="../css/base.css">
+    
 @endsection
 
 @section('content')
@@ -36,11 +38,13 @@
     @if (Auth::guest())
 
         <div class="container">
-            <div class="row " >
-                <div class="col-12 col-sm-6 "style="margin-top: 110px">
+            <div class="row text-center text-md-left justify-content-md-center justify-content-lg-start" >
+                <div class="col-12 col-md-8 col-lg-6"style="margin-top: 110px">
                     <div class="mt-ex" style="margin-top: 10rem">
-                        <h1 class="header">ออกแบบ
+                        <h1 class="header d-none d-md-block">ออกแบบ
                             <span class="_hilight font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
+                            <h3 class="header d-md-none">ออกแบบ
+                                <span class="_hilight font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h3>
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
                             <div class="row mt-md-5">
@@ -70,8 +74,8 @@
         </div>
         @elseif (Auth::user()->role=='1')
         <div class="container">
-            <div class="row " >
-                <div class="col-12 col-sm-6 "style="margin-top: 110px">
+            <div class="row text-center text-md-left justify-content-md-center justify-content-lg-start" >
+                <div class="col-12 col-md-8 col-lg-6"style="margin-top: 110px">
                     <div class="mt-ex" style="margin-top: 10rem">
                         
                         <h1 class="header d-none d-md-block">ออกแบบ
@@ -155,7 +159,7 @@
                         <div class="card-body ">
                             <img src="../photo/badge.png" alt="..." class="mt-5 mb-3">
                             <h5 class="mt-3 mb-3 font-weight-bold">มีคุณภาพ</h5>
-                            <p >สินค้าดีไซน์โดยดีไซน์เนอร์มืออาชีพ<br class="d-none d-lg-block">
+                            <p class="d-none d-lg-block" >สินค้าดีไซน์โดยดีไซน์เนอร์มืออาชีพ<br class="d-none d-lg-block">
                                 ทำให้มีคุณภาพ ใช้งานได้ดี สวย<br class="d-none d-lg-block">
                                 โดนใจตามแบบที่เราต้องการ</p>
 
@@ -168,7 +172,7 @@
                         <div class="card-body">
                             <img src="../photo/lightpop.png"alt="..." class="mt-5 mb-3">
                             <h5 class="mt-3 mb-3 font-weight-bold">นักออกแบบมืออาชีพ</h5>
-                            <p >นักออกแบบเฉพาะทาง<br class="d-none d-lg-block">
+                            <p class="d-none d-lg-block" >นักออกแบบเฉพาะทาง<br class="d-none d-lg-block">
                                 มาช่วยให้งานของคุณดูดีขึ้น<br class="d-none d-lg-block">
                                 สร้างประสบการณ์ที่ดีต่อใจคุณ</p>
                         </div>
@@ -180,7 +184,7 @@
                         <div class="card-body">
                             <img src="../photo/verify.png" alt="..." class="mt-5 mb-3">
                             <h5 class="mt-3 mb-3 font-weight-bold">ความปลอดภัย</h5>
-                            <p >มีการตรวจสอบความปลอดภัย<br class="d-none d-lg-block">
+                            <p class="d-none d-lg-block" >มีการตรวจสอบความปลอดภัย<br class="d-none d-lg-block">
                                 น่าเชื่อถือสำหรับผู้ใช้งาน<br class="d-none d-lg-block">
                                 และนักออกแบบ
                             </p>
@@ -251,13 +255,13 @@
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 p-md-5 text-center text-md-right">
-                                            <h1 class="d-none d-md-block"><span class="_hilight font-weight-bold" >พรีวิว</span>บรรจุภัณฑ์<br>
+                                            <h1 class="d-none d-lg-block"><span class="_hilight font-weight-bold" >พรีวิว</span>บรรจุภัณฑ์<br>
                                                 สินค้าในแบบของคุณ
                                             </h1>
-                                            <h3 class=" d-md-none text-center"><span class="_hilight font-weight-bold" >พรีวิว</span>บรรจุภัณฑ์<br>
+                                            <h3 class=" d-lg-none text-left"><span class="_hilight font-weight-bold" >พรีวิว</span>บรรจุภัณฑ์<br>
                                                 สินค้าในแบบของคุณ
                                             </h3>
-                                            <p>ลองออกแบบบรรจุภัณฑ์ในรูปแบบหลายๆแบบ โดยใช้โลโก้ของคุณระบบจะทำการสร้างบรรจุภัณฑ์ให้คุณทดลองพรีวิวก่อนค้นหาดีไซน์เนอร์
+                                            <p class="d-none d-lg-block">ลองออกแบบบรรจุภัณฑ์ในรูปแบบหลายๆแบบ โดยใช้โลโก้ของคุณระบบจะทำการสร้างบรรจุภัณฑ์ให้คุณทดลองพรีวิวก่อนค้นหาดีไซน์เนอร์
                                             </p>
                                             <div class="row">
                                                 
@@ -281,7 +285,7 @@
 
                     <div class="row">
                         <div class="col-12 col-md-4 justify-content-center">
-                            <div class="card border  text-center p-5 mb-3">
+                            <div class="card border  text-center p-3 p-lg-5 mb-3">
                                 <img id="profileImage" class="rounded-circle" src="https://picsum.photos/90" style="width: 90px; height: 90px; margin: 0px auto;">
                                     <h5 class="font-weight-bold mt-3 mb-5">สิทธิชัย อยู่ถาวร</h5>
 
@@ -289,7 +293,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-4 justify-content-center">
-                            <div class="card border  text-center p-5 mb-3">
+                            <div class="card border  text-center p-3 p-lg-5 mb-3">
                                 <img id="profileImage" class="rounded-circle " src="https://picsum.photos/90" style="width: 90px; height: 90px; margin: 0px auto;">
                                     <h5 class="font-weight-bold mt-3 mb-5">เนตรดวง ตาแก้ว</h5>
 
@@ -299,7 +303,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-4 justify-content-center">
-                            <div class="card border text-center p-5 mb-3">
+                            <div class="card border text-center p-3 p-lg-5 mb-3">
                                 <img id="profileImage" class="rounded-circle " src="https://picsum.photos/90" style="width: 90px; height: 90px; margin: 0px auto;">
                                     <h5 class="font-weight-bold mt-3 mb-5">ดวงใจ ดวงนภา</h5>
 
@@ -345,7 +349,7 @@
                             
                                                         @endphp
                             
-                                                        <article class="col-12 col-md-4 mt-5">
+                                                        <article class="col-12 col-lg-4 mt-5">
                                                             <div class="card shadow-sm" data-id="{{ $job->id }}">
                             
                                                             <a href="{{ route('galleryDetail', $job->id) }}">
@@ -355,31 +359,31 @@
                                                                 <div class="card-body" style="width:auto;">
                                                                     <div class="text-left position-absolute">
                                                                         <div class="row pl-3">
-                                                                            <p class="font-weight-bold">ออกแบบโดย
+                                                                            <p class="font-weight-bold over-wrap">ออกแบบโดย
                                                                                 {{$designerid->name}}
                                                                             </p>
                                                                         </div>
-                            
-                                                                    {{-- @foreach($job->tags as $tagn)
-                            
-                            
-                                                                        <p>
-                                                                            {{$tagname}},
-                                                                        </p>
-                            
-                                                                    @endforeach --}}
+
                                                                     <div class="row pl-3">
+                                                                        <span class="d-inline-block text-truncate wraptext-md">
+
                                                                     @foreach ($jobtags as $jobt)
                                                                         @php
                             
                                                                         $tagname = \App\Tags::find($jobt)->tagName;
                             
                                                                         @endphp
-                                                                        <p>
-                                                                            {{$tagname}},
-                                                                        </p>
+                                                                       
+                                                                                {{$tagname}},
+                                                                            {{-- <small class="d-inline-block text-truncate">
+                                                                                {{$tagname}},
+                                                                            </small> --}}
+                                                                           
+                                                                      
                             
                                                                     @endforeach 
+                                                                </span>
+
                                                                     </div>
                                                         
                                                                 <div class="row pl-3 color-grey">

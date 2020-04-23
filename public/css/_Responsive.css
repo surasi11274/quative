@@ -3,6 +3,28 @@
 /* Mobile section  */
 /* iphone 5 */
 @media (min-width: 319.98px) {
+  .wraptext-md{
+    max-width: 160px;
+  }
+  .designer-previous {
+    width: 45% !important;
+    float: left !important;
+    right: -10px !important;
+    position: relative !important;
+}
+  .designer-next {
+    width: 44% !important;
+    right: -17px !important;
+    position: relative !important;
+    margin: 0 !important;
+}
+  .upload-btn-wrapper-designer {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 190px;
+    top: 370px;
+}
   .upload-btn-wrapper {
     position: absolute;
     overflow: hidden;
@@ -574,6 +596,13 @@
 
 /* iphone 6 iphone x */  
 @media (min-width: 374.98px){
+  .upload-btn-wrapper-designer {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 210px;
+    top: 370px;
+}
   .upload-btn-wrapper {
     position: absolute;
     overflow: hidden;
@@ -913,6 +942,13 @@
 }
 /* iphone 6/7/8 plus */
 @media (min-width: 414px){
+  .upload-btn-wrapper-designer {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 230px;
+    top: 370px;
+}
   .upload-btn-wrapper {
     position: absolute;
     overflow: hidden;
@@ -1271,6 +1307,14 @@
 
 /* ipad section  */
 @media (min-width: 768px) {
+
+  .upload-btn-wrapper-designer {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 390px !important;
+    top: 440px !important;
+}
   .upload-btn-wrapper {
     position: absolute;
     overflow: hidden;
@@ -2019,6 +2063,24 @@
 
 }
 @media (min-width:1023.98px){
+  .designer-previous {
+    width: 45% !important;
+    float: left !important;
+    right: -30px !important;
+    position: relative !important;
+}
+  .designer-next {
+    width: 44% !important;
+    right: -67px !important;
+    position: relative !important;
+}
+  .upload-btn-wrapper-designer {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 510px !important;
+    top: 440px !important;
+}
   .upload-btn-wrapper {
     position: absolute;
     overflow: hidden;
@@ -2638,6 +2700,20 @@
     }
 }
 @media(min-width:1920px){
+  .wraptext-md{
+    max-width: 200px;
+  }
+  .designer-previous{
+    width: 20% !important;
+    float: left !important;
+    right: -550px !important;
+    position: relative !important;
+  }
+  .designer-next{
+    width: 20% !important;
+    right: -570px !important;
+    position: relative !important;
+  }
   .upload-btn-wrapper {
     z-index: 100;
     position: absolute;
@@ -2783,6 +2859,14 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 /* landscape _  */
 @media(min-width:568px){
+
+  .upload-btn-wrapper-designer {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 320px;
+    top: 350px;
+}
   .upload-btn-wrapper {
     position: absolute;
     overflow: hidden;
@@ -3223,6 +3307,13 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media(min-width:667px){
+  .upload-btn-wrapper-designer {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 300px;
+    top: 350px;
+}
   .upload-btn-wrapper {
     position: absolute;
     overflow: hidden;
@@ -3452,6 +3543,14 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media (min-width:812px){
+
+  .upload-btn-wrapper-designer {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 400px;
+    top: 440px;
+}
   .upload-btn-wrapper {
     position: absolute;
     overflow: hidden;
@@ -3800,6 +3899,13 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 }
 @media(min-width:1366px){
+  .upload-btn-wrapper-designer {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    left: 600px !important;
+    top: 440px !important;
+}
   .upload-btn-wrapper {
     position: absolute;
     overflow: hidden;
