@@ -105,25 +105,32 @@
                         <ol class="step-indicator">
                             <li class="complete">
                                 <div class="step">1</div>
-                                <div class="caption hidden-xs hidden-sm">เกี่ยวกับคุณ</div>
+                                <div class="caption hidden-xs d-none d-md-block">เกี่ยวกับคุณ</div>
                             </li>
                             <li class="complete">
                                 <div class="step">2</div>
-                                <div class="caption hidden-xs hidden-sm">บัตรประชาชน</div>
+                                <div class="caption hidden-xs d-none d-md-block">บัตรประชาชน</div>
                             </li>
                             <li class="active">
                                 <div class="step">3</div>
-                                <div class="caption hidden-xs hidden-sm">บัญชีและการเงิน</div>
+                                <div class="caption hidden-xs d-none d-md-block">บัญชีและการเงิน</div>
                             </li>
                         </ol>
                     </div>
 
                 </div>
-                <div class="text-center p-5">
-                    <h1 class="_hilight">บัตรประชาชน</h1>
+                <div class="text-center p-3 p-md-5">
+                    <div class="d-none d-md-block">
+                        <h1 class="_hilight">บัตรประชาชน</h1>
+                        <h5 class="_gray">ระบุข้อมูลส่วนบุคคลเพื่อใช้เป็นหลักฐานในการจ้างงาน </h5>
+                    </div>
+                    <div class="d-md-none">
+                        <h3 class="_hilight">บัตรประชาชน</h3>
                     <p class="_gray">ระบุข้อมูลส่วนบุคคลเพื่อใช้เป็นหลักฐานในการจ้างงาน </p>
+                    </div>
+                   
                 </div>
-                <div class="form-row pl-md-5 pr-md-5">
+                <div class="form-row pl-md-5 pr-md-5 p-3">
                     <div class="form-group dropdown col-12 col-md-3">
                       <h5 class="font-weight-bold" for="due">   <i class="fas fa-venus-mars icon"></i>  คำนำหน้าชื่อ</h5>
                         <select class="form-control" name="titleName" id="month" >
@@ -201,23 +208,29 @@
                         <ol class="step-indicator">
                             <li class="complete">
                                 <div class="step">1</div>
-                                <div class="caption hidden-xs hidden-sm">เกี่ยวกับคุณ</div>
+                                <div class="caption hidden-xs d-none d-md-block">เกี่ยวกับคุณ</div>
                             </li>
                             <li class="complete">
                                 <div class="step">2</div>
-                                <div class="caption hidden-xs hidden-sm">บัตรประชาชน</div>
+                                <div class="caption hidden-xs d-none d-md-block">บัตรประชาชน</div>
                             </li>
                             <li class="complete">
                                 <div class="step">3</div>
-                                <div class="caption hidden-xs hidden-sm">บัญชีและการเงิน</div>
+                                <div class="caption hidden-xs d-none d-md-block">บัญชีและการเงิน</div>
                             </li>
                         </ol>
                     </div>
 
                 </div>
-                <div class="text-center p-5">
-                    <h1 for="" class="_hilight ">บัญชีและการเงิน</h1>
-                    <h5 class="_gray">ระบุข้อมูลบัญชีธนาคารใช้เป็นหลักฐานในการรับเงินค่าจ้างงาน</h5>
+                <div class="text-center p-3 p-md-5">
+                    <div class="d-none d-md-block">
+                        <h1 for="" class="_hilight ">บัญชีและการเงิน</h1>
+                        <h5 class="_gray">ระบุข้อมูลบัญชีธนาคารใช้เป็นหลักฐานในการรับเงินค่าจ้างงาน</h5>
+                    </div>
+                    <div class="d-md-none">
+                        <h3 for="" class="_hilight ">บัญชีและการเงิน</h3>
+                    <p class="_gray">ระบุข้อมูลบัญชีธนาคารใช้เป็นหลักฐานในการรับเงินค่าจ้างงาน</p>
+                    </div>
                 </div>
                 <!-- <div class="form-group pl-5 pr-5">
                     <label for="inputUsername">ราคาที่ต้องการจะได้รับ 1:ชิ้นงาน </label>
@@ -226,7 +239,7 @@
                         <input type="text" class="form-control" name="pricerate" >
                     </div>
                 </div> -->
-                <div class="form-row pl-5 pr-5">
+                <div class="form-row pl-md-5 pr-md-5 p-3">
                     <div class="form-group col-12 col-md-6">
                         <h5 class="font-weight-bold" for="inputUsername"> <i class="fas fa-money-check icon"></i>ธนาคาร</h5>
                        <select class="form-control" name="bankname"  >
