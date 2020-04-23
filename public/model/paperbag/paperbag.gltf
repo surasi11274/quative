@@ -6,11 +6,19 @@
     "scene" : 0,
     "scenes" : [
         {
+            "extras" : {
+                "glTF2ExportSettings" : {
+                    "export_apply" : 1,
+                    "export_extras" : 1,
+                    "export_format" : "GLTF_SEPARATE",
+                    "export_selected" : 1,
+                    "export_tangents" : 1,
+                    "export_texture_dir" : "textures"
+                }
+            },
             "name" : "Scene",
             "nodes" : [
-                0,
-                1,
-                2
+                0
             ]
         }
     ],
@@ -25,52 +33,14 @@
                 0.9712362885475159
             ],
             "scale" : [
-                0.604357898235321,
-                0.6772183179855347,
-                0.33991527557373047
+                0.9071773886680603,
+                0.9534009695053101,
+                0.49523353576660156
             ],
             "translation" : [
-                -1.8970804376294836e-05,
-                0.794898271560669,
-                -5.2564613724825904e-05
-            ]
-        },
-        {
-            "name" : "BezierCurve",
-            "rotation" : [
-                0,
-                -0.23811766505241394,
-                0,
-                0.9712362885475159
-            ],
-            "scale" : [
-                0.3548605442047119,
-                0.39764195680618286,
-                0.1995878964662552
-            ],
-            "translation" : [
-                0.09398104250431061,
-                3.2965259552001953,
-                -0.039664581418037415
-            ]
-        },
-        {
-            "name" : "BezierCurve.001",
-            "rotation" : [
-                0,
-                -0.23811766505241394,
-                0,
-                0.9712362885475159
-            ],
-            "scale" : [
-                0.3548605442047119,
-                0.39764195680618286,
-                -0.1995878964662552
-            ],
-            "translation" : [
-                -0.09396209567785263,
-                3.2965259552001953,
-                0.03953547775745392
+                -2.670442518137861e-05,
+                -0.017480134963989258,
+                -4.997252835892141e-05
             ]
         }
     ],
@@ -101,7 +71,7 @@
                 0,
                 0
             ],
-            "name" : "Material.006",
+            "name" : "Material.003",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
@@ -155,7 +125,7 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 142,
+            "count" : 244,
             "max" : [
                 1,
                 4.039002895355225,
@@ -171,123 +141,123 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 142,
+            "count" : 244,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 142,
+            "count" : 244,
             "type" : "VEC4"
         },
         {
             "bufferView" : 3,
             "componentType" : 5126,
-            "count" : 142,
+            "count" : 244,
             "type" : "VEC2"
         },
         {
             "bufferView" : 4,
             "componentType" : 5123,
-            "count" : 216,
+            "count" : 372,
             "type" : "SCALAR"
         },
         {
             "bufferView" : 5,
             "componentType" : 5126,
-            "count" : 8,
+            "count" : 24,
             "max" : [
-                0.318497896194458,
+                0.5384895205497742,
                 2.59389591217041,
-                0.9050161242485046
+                -0.8634162545204163
             ],
             "min" : [
-                -0.2932591438293457,
-                1.8038619756698608,
-                -0.9050161242485046
+                -0.494337260723114,
+                1.5822763442993164,
+                -0.9166839122772217
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 6,
             "componentType" : 5126,
-            "count" : 8,
+            "count" : 24,
             "type" : "VEC3"
         },
         {
             "bufferView" : 7,
             "componentType" : 5126,
-            "count" : 8,
+            "count" : 24,
             "type" : "VEC4"
         },
         {
             "bufferView" : 8,
             "componentType" : 5126,
-            "count" : 8,
+            "count" : 24,
             "type" : "VEC2"
         },
         {
             "bufferView" : 9,
             "componentType" : 5123,
-            "count" : 12,
+            "count" : 36,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 1704,
+            "byteLength" : 2928,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 1704,
-            "byteOffset" : 1704
+            "byteLength" : 2928,
+            "byteOffset" : 2928
         },
         {
             "buffer" : 0,
-            "byteLength" : 2272,
-            "byteOffset" : 3408
+            "byteLength" : 3904,
+            "byteOffset" : 5856
         },
         {
             "buffer" : 0,
-            "byteLength" : 1136,
-            "byteOffset" : 5680
+            "byteLength" : 1952,
+            "byteOffset" : 9760
         },
         {
             "buffer" : 0,
-            "byteLength" : 432,
-            "byteOffset" : 6816
+            "byteLength" : 744,
+            "byteOffset" : 11712
         },
         {
             "buffer" : 0,
-            "byteLength" : 96,
-            "byteOffset" : 7248
+            "byteLength" : 288,
+            "byteOffset" : 12456
         },
         {
             "buffer" : 0,
-            "byteLength" : 96,
-            "byteOffset" : 7344
+            "byteLength" : 288,
+            "byteOffset" : 12744
         },
         {
             "buffer" : 0,
-            "byteLength" : 128,
-            "byteOffset" : 7440
+            "byteLength" : 384,
+            "byteOffset" : 13032
         },
         {
             "buffer" : 0,
-            "byteLength" : 64,
-            "byteOffset" : 7568
+            "byteLength" : 192,
+            "byteOffset" : 13416
         },
         {
             "buffer" : 0,
-            "byteLength" : 24,
-            "byteOffset" : 7632
+            "byteLength" : 72,
+            "byteOffset" : 13608
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 7656,
+            "byteLength" : 13680,
             "uri" : "paperbag.bin"
         }
     ]

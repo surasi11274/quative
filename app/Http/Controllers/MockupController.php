@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mockup;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -94,6 +95,7 @@ class MockupController extends Controller
         
         $mockup = Mockup::where('token',$token)->get();
 
+        // Storage::deleteDirectory('logomockupload/'.$mockup->first()->token)->where('created_at', '>=', Carbon::now()->subMinutes(120)->toDateTimeString());
         return view('preview.mockupbyuser.preview',[
             'mockup'=>$mockup->first(),
 

@@ -67,12 +67,12 @@
         console.log(mesh.children[0]);
         mesh.children[0].material = new THREE.MeshLambertMaterial();
   scene.add( mesh );
-        mesh.position.z = -10;
+        mesh.position.z = 10;
     }
 
 
     //RENDER LOOP
-    camera.position.set( 0, -10, 100 );
+    camera.position.set( 0, -10, -100 );
 
     render();
     controls.update();
@@ -87,8 +87,8 @@
 
         if (mesh) {
         
-            mesh.rotation.y += 0.01;
-            mesh.rotation.x += 0.001;
+            mesh.rotation.y += 0.005;
+            // mesh.rotation.x += 0.001;
 
             //animation mesh
             // mesh.morphTargetInfluences[ 0 ] = Math.sin(delta) * 20.0;

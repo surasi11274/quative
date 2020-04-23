@@ -43,8 +43,13 @@
       <div >
         <div class="row">
           {{-- <div class="col mt-5 mb-5"> --}}
-            <h5 class="mt-5 mb-5 text-success mx-auto font-weight-bold">อัพโหลดเสร็จแล้วลองเข้าไปดูแพ็คเกจกับโลโก้ของคุณดูสิ</h5>
+            <h5 class="mt-5 text-success mx-auto font-weight-bold">อัพโหลดเสร็จแล้วลองเข้าไปดูแพ็คเกจกับโลโก้ของคุณดูสิ</h5>
+
           {{-- </div> --}}
+        </div>
+        <div class="row">
+          <p class="mb-5 text-secondary mx-auto " style="opacity:0.5;">Tips: ลองใช้เมาส์ <i class="fas fa-mouse"></i> เคลื่อนไหวในผลงานแบบ 3D ดูสิ</p>
+
         </div>
       </div>
       {{-- <div class="row">
