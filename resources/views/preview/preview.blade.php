@@ -44,7 +44,21 @@
         <div class="row">
           <div class="col mt-5 mb-5">
             <div class="row">
+              @guest
+              <a href="javascript:void(0);" >
+                <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
+                    closeButton:true,
+                    progressBar: true,
+                })" class="mx-auto btn _primary-btn btn-lg">
+                    อัพโหลดโลโก้
+                    {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                </button>
+                </a>
+
+              @else
+
               <button type="button" class="mx-auto btn _primary-btn btn-lg" data-toggle="modal" data-target=".bd-example-modal-lg">อัพโหลดโลโก้</button>
+              @endguest
 
             </div>
         <form action="/preview/store" method="post" enctype="multipart/form-data">
@@ -68,7 +82,7 @@
                                           <h5 class="text-left font-weight-bold ">อัพโหลดภาพ logo เพื่อพรีวิว (1 ภาพ)</h5>
                                       </div>                                                    
                                       <div class="row">
-                                          <small class="text-left text-success">*ภาพโลโก้จะทำงานได้เต็มประสิทธิภาพหากเป็นไฟล .jpg </small>
+                                          <small class="text-left text-success">*ภาพโลโก้จะทำงานได้เต็มประสิทธิภาพหากเป็นไฟล์ .jpg </small>
                                           
                                  
                                           <div class="col-12 text-left">

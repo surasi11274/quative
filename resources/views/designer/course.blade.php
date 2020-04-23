@@ -10,7 +10,7 @@
             {{-- <h4>ใบรหัสการจ้างงาน No. W0{{$jobs->id}}</h4> --}}
         </div>
        <div class="container">
-        <div class="form-row mt-5">
+        <div class="form-row pl-pr-lg-_ex mt-5">
           <div class="form-group col-md-12">
             <h5 class="font-weight-bold">ขอบเขตการจ้างงาน</h5>
            

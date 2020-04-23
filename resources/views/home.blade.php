@@ -85,7 +85,7 @@
                                     <a href="/preview" class="btn _secondary-btn btn-lg btn-block ">พรีวิวงานออกแบบ</a>
                                 </div>
                                 <div class="col mt-3">
-                                    <a href="/vote" class="btn _primary-btn btn-lg btn-block">ผลงานนักออกแบบ</a>
+                                    <a href="/gallery" class="btn _primary-btn btn-lg btn-block">ผลงานนักออกแบบ</a>
 
                                 </div>
                             </div>
@@ -276,8 +276,8 @@
                             </div>
     <div class="_box-3 bg-white _p-md-5  mb-5">
                 <div class="container">
-                    <h1 class="p-5 text-center d-none d-md-block"> รีวิว<span class="_hilight font-weight-bold">จากผู้ใช้งาน</span> </h1>
-                    <h3 class="p-5 text-center d-md-none"> รีวิว<span class="_hilight font-weight-bold">จากผู้ใช้งาน</span> </h3>
+                    <h1 class="p-5 text-center d-none d-md-block"> รีวิว<span class="_hilight font-weight-bold"> จากผู้ใช้งาน</span> </h1>
+                    <h3 class="p-5 text-center d-md-none"> รีวิว<span class="_hilight font-weight-bold"> จากผู้ใช้งาน</span> </h3>
 
                     <div class="row">
                         <div class="col-12 col-md-4 justify-content-center">
@@ -316,8 +316,8 @@
     </div>
                             <div class="_box-4 _p-md-5">
                                 <div class="col-12 text-center">
-                                    <h1 class="d-none d-md-block"><span class="_hilight font-weight-bold">ผลงาน</span>นักออกแบบ </h1>
-                                    <h3 class="d-md-none"><span class="_hilight font-weight-bold">ผลงาน</span>นักออกแบบ </h3>
+                                    <h1 class="d-none d-md-block"><span class="_hilight font-weight-bold">ผลงาน</span> นักออกแบบ </h1>
+                                    <h3 class="d-md-none"><span class="_hilight font-weight-bold">ผลงาน</span> นักออกแบบ </h3>
                                     <p>ต้องการค้นหานักออกแบบใช่มั้ย ? สมัครสมาชิกแล้วลองใช้งาน
                                         การค้นหานักออกแบบอย่างที่คุณต้องการดูก่อนสิ</p>
 
@@ -326,16 +326,22 @@
 
                                             <div class="row mt-5">
                                             {{-- @foreach ($designers as $designer) --}}
-                                            <div class="row">
-
-                                                @if($jobs->count())
+                                            {{-- <div class="row"> --}}
+                                                @if($jobs->count() == 0)
+                                                <article class="col-12 mt-5">
+                                                    <div class="row">
+                                                        <p class="mx-auto text-secondary" style="opacity:0.5;"> ไม่มีผลงาน</p>
+                                                    </div>
+                                                </article>
+                                                @elseif($jobs->count())
                                                     @foreach($jobs as $job)
                             
                                                         @php
                                                             $designerid = \App\Designer::find($job->designer_id);
                             
                                                             $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
-                            
+                                                            $jobtags = json_decode($job->tags,true);
+
                             
                                                         @endphp
                             
@@ -433,7 +439,7 @@
                                                 @endforeach
                                             @endif
                             
-                                        </div>
+                                        {{-- </div> --}}
                                        
                                                     {{-- <div class="col-12 col-md-6  mb-5">
                                                         <div class="row">

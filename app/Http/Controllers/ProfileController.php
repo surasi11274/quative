@@ -71,7 +71,8 @@ class ProfileController extends Controller
         }      
         
         
-      
+        $profiles->save();
+
 
       
         try{

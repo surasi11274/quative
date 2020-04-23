@@ -292,14 +292,14 @@
                     <div class="overflow-review">
                     @foreach ($reviews as $review)
                     @php
-                        $user = Auth::user()->find($review->user_id);
+                        $user = \App\User::find($review->user_id);
                         $profile = $user->profile();
                     @endphp
                     <div class="row  mt-2">
 
                         <div class="col-2">
                             <div class="profile-img2 mt-3" style="height:50px; width:50px;"> 
-                                @if ($profile)
+                                @if ($profile && $profile->profilepic !== NULL)
                                 <img class="rounded-circle" style="height:50px; width:50px; object-fit:cover;" src="/{{$profile->profilepic}}" />
 
 

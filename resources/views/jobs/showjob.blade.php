@@ -476,28 +476,28 @@
                                     <p>นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
-                            <li class="active">
+                            <li class="complete">
                                 <div class="step">2</div>
                                 <div class="caption hidden-xs hidden-sm">
                                     <h5>ชำระเงิน</h5> <br>
                                     <p>ตรวจสอบการชำระเงิน</p>
                                 </div>
                             </li>
-                            <li class="active">
+                            <li class="complete">
                                 <div class="step">3</div>
                                 <div class="caption hidden-xs hidden-sm">
                                     <h5>ดำเนินการออกแบบ</h5> <br>
                                     <p>กำลังออกแบบงาน</p>
                                 </div>
                             </li>
-                            <li class="active">
+                            <li class="complete">
                                 <div class="step">4</div>
                                 <div class="caption hidden-xs hidden-sm">
                                     <h5>ส่งมอบงาน</h5> <br>
                                     <p>ตรวจสอบงาน</p>
                                 </div>
                             </li>
-                            <li class="active">
+                            <li class="complete">
                                 <div class="step">5</div>
                                 <div class="caption hidden-xs hidden-sm">
                                     <h5>เสร็จสิ้นงาน</h5> <br>
@@ -937,7 +937,7 @@
                             <div class="modal-body">
                                 คุณต้องการยืนยันที่จะทำรายการหรือไม่?
                                 <div >
-                                    <small class="text-danger" for="">*ความคิดเห็น หรือ เหตุผลที่ส่งงานกลับไปแก้ไข</small class="text-warning">
+                                    <small class="text-success" for="">*ความคิดเห็น หรือ เหตุผลที่ส่งงานกลับไปแก้ไข</small class="text-warning">
                                     <textarea class="form-control mt-3" name="editorcomment" id="" cols="30" rows="4" placeholder="ความคิดเห็นของคุณจะช่วยพัฒนางานของนักออกแบบให้ดีมากขึ้นในครั้งต่อไป" ></textarea>
                                 </div>
 

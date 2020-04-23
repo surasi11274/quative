@@ -23,17 +23,17 @@ class WelcomeController extends Controller
         // $jobfiles = \App\Jobfiles::where('job_id',$job->id)->get();
         $jobfiles = Jobfiles::all();
 
-        foreach ($jobs as $job){
-            // $object->title 
-            $jobtags = json_decode($job->tags,true);
+        // foreach ($jobs as $job){
+        //     // $object->title 
+        //     $jobtags = json_decode($job->tags,true);
 
 
-        }
+        // }
         return view('home',[
             'designers'=>$designers,
             'jobs'=>$jobs,
             'jobfiles'=>$jobfiles,
-            'jobtags'=>$jobtags
+            // 'jobtags'=>$jobtags
             ]);
     }
 

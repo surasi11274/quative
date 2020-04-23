@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Categories;
 use App\Courses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -306,13 +307,18 @@ class DesignerController extends Controller
         //
 
         $designer = Auth::user()->designer();
+        if(!$designer){
+           
+            return redirect(route('home'));
+              
+        }
         
 
         $jobs = Jobs::where('jobs.designer_id',$designer->id)->orderBy('id', 'DESC')->get();
         ;
         // $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusName;
 
-        $jobs->first()->tags = json_decode($jobs->first()->tags);
+        // $jobs->first()->tags = json_decode($jobs->first()->tags);
 
         
 

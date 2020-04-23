@@ -81,7 +81,24 @@
          </thead>
 
          <tbody class="table-light">
+          @if ($jobs->count() == NULL)
+          <tr class="text-center">
+            {{-- <th></th> --}}
+            <th scope="col">
+              <p class="text-secondary font-weight-bold" style="opacity:0.5;">ยังไม่มีคำขอการจ้างงาน</p>
+
+            </th>
+            <th scope="col"></th>
+
+           
+            <th scope="col"></th>
+            <th scope="col"></th>
             
+            <th scope="col"></th>
+            <th scope="col"></th>
+
+          </tr>
+          @else
           @foreach ($jobs as $job)
           @if ($job->jobstatus_id !== NULL ) 
 
@@ -135,6 +152,7 @@
           @endif
 
           @endforeach
+          @endif
 
 
          

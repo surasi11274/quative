@@ -309,7 +309,7 @@
 
                         <div class="col-2">
                             <div class="profile-img2 mt-3" style="height:50px; width:50px;"> 
-                                @if ($profile)
+                                @if ($profile && $profile->profilepic !== NULL)
                                 <img class="rounded-circle" style="height:50px; width:50px; object-fit:cover;" src="/{{$profile->profilepic}}" />
 
 
