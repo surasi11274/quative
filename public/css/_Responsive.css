@@ -3,6 +3,9 @@
 /* Mobile section  */
 /* iphone 5 */
 @media (min-width: 319.98px) {
+  .wraptext-md{
+    max-width: 160px;
+  }
   .designer-previous {
     width: 45% !important;
     float: left !important;
@@ -2697,6 +2700,9 @@
     }
 }
 @media(min-width:1920px){
+  .wraptext-md{
+    max-width: 200px;
+  }
   .designer-previous{
     width: 20% !important;
     float: left !important;
