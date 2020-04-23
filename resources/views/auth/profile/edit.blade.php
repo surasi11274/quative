@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="col-6 col-md-3 offset-md-6">
-                        <a href="#" class="btn  _secondary-btn  btn-block rounded btn-lg">ย้อนกลับ</a>
+                        <a href="{{route('profile.show',$profiles->token)}}" class="btn  _secondary-btn  btn-block rounded btn-lg">ย้อนกลับ</a>
                     </div>
                     <div class="col-6 col-md-3">
                         <input type="submit" name="submit" class="btn submit  _primary-black  btn-block rounded btn-lg" value="เสร็จสิ้น"/>
