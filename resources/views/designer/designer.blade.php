@@ -6,7 +6,7 @@
 @section('content')
 <!-- multistep form -->
 <div class="container">
-    <form  action="/designer/store" method="post" enctype="multipart/form-data" class="msform " >
+    <form  action="/designer/store" method="post" enctype="multipart/form-data" class="msform" >
         {{ csrf_field() }}
             
             <!-- fieldsets -->
@@ -16,37 +16,43 @@
                         <ol class="step-indicator">
                             <li class="complete">
                                 <div class="step">1</div>
-                                <div class="caption hidden-xs hidden-sm">เกี่ยวกับคุณ</div>
+                                <div class="caption hidden-xs d-none d-md-block">เกี่ยวกับคุณ</div>
                             </li>
                             <li class="active">
                                 <div class="step">2</div>
-                                <div class="caption hidden-xs hidden-sm">บัตรประชาชน</div>
+                                <div class="caption hidden-xs d-none d-md-block">บัตรประชาชน</div>
                             </li>
                             <li class="active">
                                 <div class="step">3</div>
-                                <div class="caption hidden-xs hidden-sm">บัญชีและการเงิน</div>
+                                <div class="caption hidden-xs d-none d-md-block">บัญชีและการเงิน</div>
                             </li>
                         </ol>
                     </div>
 
                 </div>
-                    <div class="text-center p-5">
-                        <h1 for="" class="_hilight">เกี่ยวกับคุณ</h1>
+                    <div class="text-center p-3 p-md-5">
+                        <div class="d-none d-md-block">
+                            <h1 for="" class="_hilight">เกี่ยวกับคุณ</h1>
                         <h5 class="_gray mb-5">ระบุข้อมูลการจ้างงานเกี่ยวกับคุณเพื่อการสื่อสารรับงานที่ง่ายขึ้น</h5>
-                       <div class="container ml-md-4">
+                        </div>
+                        <div class="d-md-none">
+                            <h3 for="" class="_hilight">เกี่ยวกับคุณ</h3>
+                            <p class="_gray mb-5">ระบุข้อมูลการจ้างงานเกี่ยวกับคุณเพื่อการสื่อสารรับงานที่ง่ายขึ้น</p>
+                        </div>
+                       <div class="container">
                            <img id="blah" class="rounded-circle" src="../photo/preprofile.png" alt="your image" style="width: 180px; height: 180px; border: 2px solid #523EE8; object-fit:cover;"/>
 
-                           <div class="upload-btn-wrapper">
-                               <button class="_btn-upload rounded-ex"><i class="fas fa-user-edit"></i></button>
+                           <div class="upload-btn-wrapper-designer">
+                               <button class="_btn-upload-designer rounded-ex"><i class="fas fa-user-edit"></i></button>
                                <input required  name="profilepic"  type="file" id="imgInp"/>
                            </div>
                        </div>
-                       <p class="mt-md-4 mb-md-5 _hilight">*รูปโปรไฟล์นักออกแบบต้องใช้ภาพถ่ายตัวจริง <br>
+                       <p class="mt-md-4 mb-md-5 _hilight">*รูปโปรไฟล์นักออกแบบต้องใช้ภาพถ่ายตัวจริง <br class="d-none d-md-block">
                         ที่เห็นใบหน้าของคุณชัดเจน*</p>
 
                     </div>
 
-                    <div class="form-group pl-md-5 pr-md-5 mb-3">
+                    <div class="form-group pl-md-5 pr-md-5 mb-3 p-3">
                          <h5 class="font-weight-bold" for="inputUsername"><i class="fas fa-info icon"></i> แนะนำเกี่ยวกับคุณ</h5>
                             
                               
@@ -56,12 +62,12 @@
                           
                     </div>
 
-                    <div class="form-group mt-3 pl-md-5 pr-md-5 mb-3">
+                    <div class="form-group mt-3 pl-md-5 pr-md-5 mb-3 p-3">
                         <h5 class="font-weight-bold" for="inputUsername">  <i class="fas fa-phone icon"></i> เบอร์โทรศัพท์</h5>
-                            <input required type="tel"  class="form-control w-50" placeholder="เบอร์โทรศัพท์" name="phonenumber" max="1234567890"  >
+                            <input required type="tel"  class="form-control col-12 col-md-6" placeholder="เบอร์โทรศัพท์" name="phonenumber" max="1234567890"  >
                             <small class="text-warning">เช่น. 092-xxx-xxxx</small>
                     </div>
-                    <div class="form-group mt-3  pl-md-5 pr-md-5">
+                    <div class="form-group mt-3  pl-md-5 pr-md-5 p-3">
 
                         <h5 class="font-weight-bold" for="inputUsername">  <i class="fas fa-tag icon"></i>ลักษณะหรือสไตล์งานที่ถนัด  </h5>
                         <div class="row">
@@ -81,9 +87,16 @@
                             @endforeach
                         </div>
                     </div>
+
+                     <a href="/" name="previous" class="previous btn designer-previous _secondary-btn text-center  btn-block rounded btn-lg">ย้อนกลับ</a>
+                    <input type="button" name="next" class="next btn designer-next _primary-black  btn-block rounded btn-lg mb-5" value="ถัดไป">
                   
-                    <a href="/" name="previous" class="previous _secondary-btn text-center  btn-block rounded btn-lg" style="text-decoration:none;margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;">ย้อนกลับ</a>
-                    <input type="button" name="next" class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;">
+{{--                         
+                        <a href="/" name="previous" class="previous _secondary-btn text-center  btn-block rounded btn-lg col-6 col-md-3 offset-md-6 " >ย้อนกลับ</a>
+                    <input type="button" name="next" class="next  _primary-black  btn-block rounded btn-lg  col-6 col-md-3 offset-md-6 mb-5" value="ถัดไป" > --}}
+                    
+                    {{-- <a href="/" name="previous" class="previous _secondary-btn text-center  btn-block rounded btn-lg" style="text-decoration:none;margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;">ย้อนกลับ</a>
+                    <input type="button" name="next" class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"> --}}
                     
             </fieldset>
             <fieldset>
@@ -176,9 +189,10 @@
 
                     </div>
                 </div>
-              
-                <input type="button" name="next" class="next  _primary-black  btn-block rounded btn-lg" value="ถัดไป" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
-                <input type="button" name="previous" class="previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/>
+                
+                <input type="button" name="previous" class="previous btn designer-previous _secondary-btn text-center  btn-block rounded btn-lg" value="ย้อนกลับ"/>
+                <input type="button" name="next" class="next btn designer-next _primary-black  btn-block rounded btn-lg mb-5" value="ถัดไป"/>
+                
             
             </fieldset>
             <fieldset>
@@ -235,11 +249,12 @@
                 </div>
               
                
-
-               
-                <input type="submit" name="submit" class="submit  _primary-black  btn-block rounded btn-lg" value="เสร็จสิ้น" style="margin-top:50px; margin-right:50px; width:20%; right:0; position:absolute;"/>
-                <input type="button" name="previous" class="previous _secondary-btn  btn-block rounded btn-lg" value="ย้อนกลับ" style="margin-top:50px; margin-right:280px; width:20%; float: left; right:0; position:absolute;"/>
-               
+                            {{-- <input type="button" name="previous" class="previous btn designer-previous _secondary-btn text-center  btn-block rounded btn-lg" value="ย้อนกลับ"/>
+                <input type="button" name="next" class="next btn designer-next _primary-black  btn-block rounded btn-lg" value="ถัดไป"/>
+                --}}
+              
+                <input type="button" name="previous" class="previous btn designer-previous _secondary-btn text-center  btn-block rounded btn-lg" value="ย้อนกลับ"/>
+                <input type="submit" name="submit" class="submit btn designer-next _primary-black  btn-block rounded btn-lg mb-5" value="เสร็จสิ้น"/>
                {{-- <input type="button" name="previous" style="background-color:#ff3957
         ;" class=" previous action-button btn-block btn-lg  rounded" value="Previous"/>
                 <button type="submit" name="submit" class="submit action-button" value="Submit"> Submit</button> --}}
