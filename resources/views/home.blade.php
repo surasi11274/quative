@@ -41,8 +41,10 @@
             <div class="row text-center text-md-left justify-content-md-center justify-content-lg-start" >
                 <div class="col-12 col-md-8 col-lg-6"style="margin-top: 110px">
                     <div class="mt-ex" style="margin-top: 10rem">
-                        <h1 class="header">ออกแบบ
+                        <h1 class="header d-none d-md-block">ออกแบบ
                             <span class="_hilight font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
+                            <h3 class="header d-md-none">ออกแบบ
+                                <span class="_hilight font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h3>
                         <p class="detail_1">ออกแบบบรรจุภัณฑ์ แพคเกจจิ้งด้วยดีไซน์เนอร์ ทีมมืออาชีพ ประสบการณ์สูงเพื่อให้สินค้าของคุณตามเป้าหมายที่ต้องการ</p>
                         <div class="buttons">
                             <div class="row mt-md-5">
