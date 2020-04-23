@@ -17,15 +17,26 @@
         {
             "mesh" : 0,
             "name" : "Circle",
+            "rotation" : [
+                0,
+                0.9953650832176208,
+                0,
+                0.096168152987957
+            ],
             "translation" : [
                 0,
-                2.501420259475708,
+                2.576028823852539,
                 0
             ]
         },
         {
             "mesh" : 1,
-            "name" : "Circle.001"
+            "name" : "Circle.001",
+            "scale" : [
+                0.9824095964431763,
+                0.9824095964431763,
+                0.9824095964431763
+            ]
         }
     ],
     "materials" : [
@@ -74,7 +85,7 @@
                 0,
                 0
             ],
-            "name" : "Material.003",
+            "name" : "Material.002",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
@@ -174,15 +185,15 @@
         {
             "bufferView" : 4,
             "componentType" : 5126,
-            "count" : 265,
+            "count" : 355,
             "max" : [
                 0.9461395740509033,
-                2.6000001430511475,
-                0.7866863012313843
+                2.6983909606933594,
+                0.9461395144462585
             ],
             "min" : [
                 -0.9461395740509033,
-                0,
+                -0.02833014726638794,
                 -0.9461395740509033
             ],
             "type" : "VEC3"
@@ -190,53 +201,53 @@
         {
             "bufferView" : 5,
             "componentType" : 5126,
-            "count" : 265,
+            "count" : 355,
             "type" : "VEC3"
         },
         {
             "bufferView" : 6,
             "componentType" : 5126,
-            "count" : 265,
+            "count" : 355,
             "type" : "VEC2"
         },
         {
             "bufferView" : 7,
             "componentType" : 5123,
-            "count" : 1458,
+            "count" : 1854,
             "type" : "SCALAR"
         },
         {
             "bufferView" : 8,
             "componentType" : 5126,
-            "count" : 20,
+            "count" : 10,
             "max" : [
-                0.6690221428871155,
-                2.6000001430511475,
-                0.9461395144462585
+                0.485090047121048,
+                1.8897144794464111,
+                -0.6762940287590027
             ],
             "min" : [
-                -0.5256469249725342,
-                0.195389986038208,
-                0.5080539584159851
+                -0.17034132778644562,
+                1.22758948802948,
+                -0.873140811920166
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 9,
             "componentType" : 5126,
-            "count" : 20,
+            "count" : 10,
             "type" : "VEC3"
         },
         {
             "bufferView" : 10,
             "componentType" : 5126,
-            "count" : 20,
+            "count" : 10,
             "type" : "VEC2"
         },
         {
             "bufferView" : 11,
             "componentType" : 5123,
-            "count" : 48,
+            "count" : 24,
             "type" : "SCALAR"
         }
     ],
@@ -263,48 +274,48 @@
         },
         {
             "buffer" : 0,
-            "byteLength" : 3180,
+            "byteLength" : 4260,
             "byteOffset" : 890824
         },
         {
             "buffer" : 0,
-            "byteLength" : 3180,
-            "byteOffset" : 894004
+            "byteLength" : 4260,
+            "byteOffset" : 895084
         },
         {
             "buffer" : 0,
-            "byteLength" : 2120,
-            "byteOffset" : 897184
+            "byteLength" : 2840,
+            "byteOffset" : 899344
         },
         {
             "buffer" : 0,
-            "byteLength" : 2916,
-            "byteOffset" : 899304
+            "byteLength" : 3708,
+            "byteOffset" : 902184
         },
         {
             "buffer" : 0,
-            "byteLength" : 240,
-            "byteOffset" : 902220
+            "byteLength" : 120,
+            "byteOffset" : 905892
         },
         {
             "buffer" : 0,
-            "byteLength" : 240,
-            "byteOffset" : 902460
+            "byteLength" : 120,
+            "byteOffset" : 906012
         },
         {
             "buffer" : 0,
-            "byteLength" : 160,
-            "byteOffset" : 902700
+            "byteLength" : 80,
+            "byteOffset" : 906132
         },
         {
             "buffer" : 0,
-            "byteLength" : 96,
-            "byteOffset" : 902860
+            "byteLength" : 48,
+            "byteOffset" : 906212
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 902956,
+            "byteLength" : 906260,
             "uri" : "coffee.bin"
         }
     ]

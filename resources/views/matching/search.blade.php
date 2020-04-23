@@ -84,7 +84,6 @@
                                </div>
                             </div>
                             
-                            @endforeach
                             {{-- <div class="col d-md-none">
                             
                                     <select class="selectpicker w-100 pack">
@@ -99,7 +98,7 @@
                                       </select>
                                       
         
-                            </div> --}}
+                            {{-- </div>  --}}
 
 
                         </div>
