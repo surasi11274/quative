@@ -3,6 +3,11 @@
 <link rel="stylesheet" href="{{asset('css/base.css')}}">
 @endsection
 @section('content')
+@if(session()->has('message'))
+    <div class="alert alert-danger text-center">
+        {{ session()->get('message') }}
+    </div>
+@endif
 <div class="container mt-5 d-none d-md-block">
 
    <div class="text-center pt-5 p-5">
@@ -535,18 +540,20 @@
 
                                  @endphp
                                   @foreach ($artworks as $artwork)
+                                  @if ($artwork->fileartworkname == NULL)
+
                                  <div class="col-6 col-md-4 col-lg-4 mt-3">
                                    
 
-                                       @if ($artwork->fileartworkname == NULL)
                                        {{-- <img class="rounded shadow-sm mt-3 mb-3 img-port"  style="width:100%; height:460px; object-fit: cover;" src="/{{ $artwork->fileimgname }}" /> --}}
                                        <img class="rounded sm-img-box border-danger" src="/{{ $artwork->fileimgname }}" />
 
-                                       @endif
          
                                    
 
                                  </div>
+                                 @endif
+
                                  @endforeach
                                  {{-- <div class="col-5 mt-3">
                                     <img class="rounded"  style=" object-fit: cover;"src="{{ $ref->img}}" />

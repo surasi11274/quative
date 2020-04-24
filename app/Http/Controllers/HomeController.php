@@ -486,6 +486,7 @@ class HomeController extends Controller
     public function searchstep3($token)
     {
         //
+
         $jobs = Auth::user()->job();
 
         // if ($jobs){ // เคยสร้างโปรไฟล์ไปแล้ว เด้งไปหน้าแก้ไข
@@ -494,6 +495,10 @@ class HomeController extends Controller
 
         // }
         $jobs = Jobs::where('token',$token)->get();
+
+        if($jobs->first()->designer_id == NULL){
+            return back()->with('message', 'คุณยังไม่ได้เลือกนักออกแบบ โปรดเลือกนักออกแบบก่อน');;
+                }
 
         $designer = Designer::where('id',$jobs->first()->designer_id)->get();
 

@@ -147,18 +147,18 @@
                                                     </th>
                                                       <td>
                                                           <div class="form-group">
-                                                              <input style="width:100px;"  id="package" class="form-control " name="package" type="text" disabled   />
+                                                              <input style="border:none;width:100px;"  id="package" class="form-control " name="package" type="text"    />
   
                                                           </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">
+                                                    <th scope="row ">
                                                         <p>วันที่ต้องการงาน</p>
                                                     </th>
                                                     <td >
                                                         <div class="form-group">
-                                                          <input style="width:100px;"  id="date" class="form-control " name="date"  type="text"  disabled />
+                                                          <input style="border:none;width:100px;"  id="date" class="form-control " name="date"  type="text"   />
   
                                                         </div>
                                                     </td>
