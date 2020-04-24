@@ -1,7 +1,7 @@
 
 
     <!-- Footer Links -->
-    <div class="container text-center text-md-left " >
+    <div class="container text-center text-lg-left " >
 
         <!-- Grid row -->
         <div class="row justify-content-center p-5">
@@ -13,7 +13,7 @@
         
 
             <!-- Grid column -->
-           <div class="col-12 col-md-8">
+           <div class="col-12 col-lg-8">
                <div class="text-left">
 
                    <!-- Links -->
@@ -25,7 +25,7 @@
                            
                        </li>
                        <li>
-                           <a href="/" class="_hilight text-center text-md-left"><h3>Quative</h3></a>
+                           <a href="/" class="_hilight text-center text-lg-left"><h3>Quative</h3></a>
                        </li>
                            <li>
                                <p class="_hilight d-none d-lg-block" >
@@ -40,7 +40,7 @@
 
                </div>
            </div>
-            <div class="col-12 col-md-2">
+            <div class="col-12 offset-lg-2 col-lg-2">
                 <ul class="list-unstyled mx-auto">
                     <li>
                         <p class="_hilight">Site Navigation</p>
@@ -64,20 +64,7 @@
                         </li>
                 </ul>
             </div>
-            <div class="col-12 col-md-2">
-                <ul class="list-unstyled mx-auto">
-                    <li>
-                        <p class="_hilight">Support</p>
-                        <hr>
-                    </li>
-                    <li>
-                        <a href="#" class="_hilight">ติดต่อเรา</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="_hilight">Quative ใช้ยังไง</a>
-                    </li>
-                </ul>
-            </div>
+            
             <!-- Grid column -->
 
             <!-- Grid column -->

@@ -94,22 +94,6 @@
                                     <div class="col-lg-9">
                                         <h4 class="font-weight-bold">ตรวจสอบการโอนเงิน</h4>
                                     </div>
-                                    <div class="col-lg-3">
-                                        <select class="selectpicker">
-                                            <option>ล่าสุด</option>
-                                            <option>เรียงตามลำดับใหม่ - เก่า</option>
-                                            <option>เรียงตามลำดับเก่า - ใหม่</option>
-                                          </select>
-                                          
-                                        {{-- <div class="form-group">
-                                            <select class="form-control custom-select" id="exampleFormControlSelect1">
-                                              <option class="dropdown-item">ล่าสุด</option>
-                                              <option class="dropdown-item">เรียงตามลำดับใหม่ - เก่า</option>
-                                              <option class="dropdown-item">เรียงตามลำดับเก่า - ใหม่</option>
-                                             
-                                            </select>
-                                          </div> --}}
-                                    </div>
                                 </div>
                                
                             </div>

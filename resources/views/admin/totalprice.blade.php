@@ -12,24 +12,9 @@
                     <div class="card-header bg-white pt-5">
                         <div class="row">
                             <div class="col-lg-9">
-                                <h4 class="font-weight-bold">ยอดรายรับกำไร  (฿ {{number_format($transfered)}}) </h4>
+                                <h4 class="font-weight-bold">ยอดรายรับกำไร  (฿ {{number_format($transfered * 0.05)}}) </h4>
                             </div>
-                            <div class="col-lg-3">
-                                <select class="selectpicker">
-                                    <option>ล่าสุด</option>
-                                    <option>เรียงตามลำดับใหม่ - เก่า</option>
-                                    <option>เรียงตามลำดับเก่า - ใหม่</option>
-                                  </select>
-
-                                {{-- <div class="form-group">
-                                    <select class="form-control custom-select" id="exampleFormControlSelect1">
-                                      <option class="dropdown-item">ล่าสุด</option>
-                                      <option class="dropdown-item">เรียงตามลำดับใหม่ - เก่า</option>
-                                      <option class="dropdown-item">เรียงตามลำดับเก่า - ใหม่</option>
-
-                                    </select>
-                                  </div> --}}
-                            </div>
+                           
                         </div>
 
                     </div>
@@ -78,7 +63,7 @@
                                     <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td>
                                     {{-- <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td> --}}
                                     <td class="pt-4 pb-4 ">{{number_format($payment->total_price)}}</td>
-                                    <td class="pt-4 pb-4 text-danger">{{number_format($payment->total_price)}} - {{number_format($payment->total_price * 0.05)}}</td>
+                                    <td class="pt-4 pb-4 text-danger">{{number_format($payment->total_price * 0.05)}}</td>
                                     <td class="pt-4 pb-4 _hilight">{{number_format($payment->total_price * 0.05)}}</td>
 
 

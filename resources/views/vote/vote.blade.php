@@ -23,7 +23,7 @@
                     <img src="../photo/bg-vote.jpg" class="d-block w-100" alt="...">
                 </a>
                 <div class="carousel-caption1 d-none d-md-block">
-                    <a href="/votedetail" class="site-link"></a>
+                    {{-- <a href="/votedetail" class="site-link"></a> --}}
                     <div class="container">
                         <div class="row">
                             <div class="col-12 text-left">
@@ -78,7 +78,7 @@
               </div>
           </div>
         </div>
-        <div class="form-group col-md-9 col-lg-8 d-none d-lg-block">
+        <div class="form-group col-md-9 col-lg-12 d-none d-lg-block">
             <ul class="nav nav-pills mt-3" id="pills-tab" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link-1 border bg-white rounded m-2 active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ทั้งหมด</a>
@@ -102,18 +102,7 @@
 
         </div>
 
-       <div class="form-group col-md-6 col-lg-4 mt-3">
-         <label for=""></label>
-         
-         <select class="form-control ">
-            <option value="most">ผลงานที่ถูกชื่นชอบมากที่สุด</option>
-            <option value="newone">เรียงผลงานตามลำดับ ใหม่-เก่า</option>
-          </select>
-          {{-- <select class="selectpicker">
-            <option value="most">ผลงานที่ถูกชื่นชอบมากที่สุด</option>
-            <option value="newone">เรียงผลงานตามลำดับ ใหม่-เก่า</option>
-          </select> --}}
-       </div>
+       
     </div>
     <div class="tab-content" id="myTabContent">
 
