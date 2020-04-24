@@ -254,16 +254,21 @@
                                 @foreach ($jobs->comments->sortByDesc('id') as $comment)
 
                                 <div class="row d-flex">
-                                    <div class="col col-md-2">
-                                        <figure class=" img-fluid ">
-                                            @if (auth()->user()->designer())
+                                    <div class="col-2">
+                                        @php
+                                            $user = $comment->user_id;
+                                            $designer = \App\Designer::where('user_id',$user)->first();
+                                            $users = \App\User::find($user);
+                                        @endphp
+                                        <figure class=" img-fluid">
+                                            @if ($designer && $designer->profilepic !== NULL)
 
-                                            <img class="rounded-circle img-comment-designer" src="/{{auth()->user()->designer()->profilepic}}">
-                                            @elseif(!auth()->user()->designer() &&  auth()->user()->profile() && auth()->user()->profile()->profilepic !== NULL )
-                                                <img class="rounded-circle img-comment-designer"  src="/{{auth()->user()->profile()->profilepic}}">
+                                            <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="/{{$designer->profilepic}}">
+                                            @elseif($users->profile() && $users->profile()->profilepic !== NULL )
+                                                <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="/{{$users->profile()->profilepic}}">
 
                                             @else
-                                                <img class="rounded-circle img-comment-designer" src="{{auth()->user()->avatar}}">
+                                                <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="{{$users->avatar}}">
 
                                             @endif
                                         </figure>
