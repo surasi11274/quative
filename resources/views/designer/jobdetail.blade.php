@@ -49,7 +49,7 @@
                         </div>
                         <div class="col-12 d-md-none mt-3 mb-5">
                             <a  style="text-decoration:none;"  href="{{route('job.Messages',$job->token)}}">
-                                <button class="btn _primary-bg-dark btn-lg btn-block "><i class=" far fa-comments pr-2"></i>sคุยกับผู้ประกอบการ</button>
+                                <button class="btn _primary-bg-dark btn-lg btn-block "><i class=" far fa-comments pr-2"></i>คุยกับผู้ประกอบการ</button>
                             </a>
                         </div>
                     </div>
@@ -642,9 +642,9 @@
                                 @php
                                 $jobstatusid = \App\Jobstatus::find($job->jobstatus_id)->statusName;
                                  @endphp
-                                 <div class="row">
+                                
                                     <h4 class="text-center text-md-left">สถานะปัจจุบัน : <label class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</label></h4>
-                                 </div>
+                        
                                 <div class="row">       
                                     <div class="col-2"></div>  
                                     <div class="col-10 " style="padding-left:45px;">

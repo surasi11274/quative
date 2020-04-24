@@ -349,7 +349,7 @@
                             
                                                         @endphp
                             
-                                                        <article class="col-12 col-lg-4 mt-5">
+                                                        <article class="col-12 col-md-6 col-lg-4 mt-5">
                                                             <div class="card shadow-sm" data-id="{{ $job->id }}">
                             
                                                             <a href="{{ route('galleryDetail', $job->id) }}">
