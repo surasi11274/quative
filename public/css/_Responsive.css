@@ -11,6 +11,11 @@
     height: 50px;
     object-fit: cover;
   }
+  .img-avatar-designer{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
   .wraptext-md{
     max-width: 120px;
   }
@@ -1332,7 +1337,7 @@
 @media (min-width: 768px) {
   .img-comment-designer{
     width: 50px;
-    height: 35px ;
+    height: 35px;
     object-fit: cover;
   }
   .wraptext-md{
@@ -2735,6 +2740,11 @@
     }
 }
 @media(min-width:1920px){
+  .img-avatar-designer{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
   .img-comment-designer{
     width: 50px;
     height: 50px;

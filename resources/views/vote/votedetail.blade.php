@@ -178,12 +178,12 @@
                                         <figure class="img-fluid  ">
                                             @if (auth()->user()->designer())
 
-                                            <img class="rounded-circle img-comment-designer" src="/{{auth()->user()->designer()->profilepic}}">
+                                            <img class="rounded-circle img-avatar-designer" src="/{{auth()->user()->designer()->profilepic}}">
                                             @elseif(!auth()->user()->designer() && auth()->user()->profile() && auth()->user()->profile()->profilepic !== NULL)
-                                                <img class="rounded-circle img-comment-designer"  src="/{{auth()->user()->profile()->profilepic}}">
+                                                <img class="rounded-circle img-avatar-designer"  src="/{{auth()->user()->profile()->profilepic}}">
 
                                             @else
-                                                <img class="rounded-circle img-comment-designer" src="{{auth()->user()->avatar}}">
+                                                <img class="rounded-circle img-avatar-designer" src="{{auth()->user()->avatar}}">
 
                                             @endif
 
@@ -254,26 +254,26 @@
                                 @foreach ($jobs->comments->sortByDesc('id') as $comment)
 
                                 <div class="row d-flex">
-                                    <div class="col-2">
+                                    <div class="col col-md-2">
                                         @php
                                             $user = $comment->user_id;
                                             $designer = \App\Designer::where('user_id',$user)->first();
                                             $users = \App\User::find($user);
                                         @endphp
-                                        <figure class=" img-fluid">
+                                        <figure class="img-fluid">
                                             @if ($designer && $designer->profilepic !== NULL)
 
-                                            <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="/{{$designer->profilepic}}">
+                                            <img class="rounded-circle img-comment-designer" src="/{{$designer->profilepic}}">
                                             @elseif($users->profile() && $users->profile()->profilepic !== NULL )
-                                                <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="/{{$users->profile()->profilepic}}">
+                                                <img class="rounded-circle img-comment-designer" src="/{{$users->profile()->profilepic}}">
 
                                             @else
-                                                <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="{{$users->avatar}}">
+                                                <img class="rounded-circle img-comment-designer" src="{{$users->avatar}}">
 
                                             @endif
                                         </figure>
                                     </div>
-                                    <div class="colcol-md-7">
+                                    <div class="col col-md-7">
                                         <label for="name">{{$comment->user->name}}</label> <br>
                                         <p class="over-wrap">{{$comment->comment}}</p>
                                     </div>
