@@ -9,12 +9,12 @@
     <div class="_black-bg mt-5 p-3 p-md-5">
         <div class="row">
             <div class="col-12 col-md-6 ">
-            <h5  class="content-bg mb-5 d-none d-md-block" >ข้อมูลการจ้างงาน no. W{{$job->id}}</h5>
+            <h5  class="content-bg mb-5 d-none d-md-block font-weight-bold" >ข้อมูลการจ้างงาน no. W{{$job->id}}</h5>
             <h5  class="content-bg mb-3 d-md-none font-weight-bold text-center" >ข้อมูลการจ้างงาน no. W{{$job->id}}</h5>
                     <div class="row">
-                        <div class="col-12 text-center">
-                            <div class="d-md-none">
-                                <h6 for=""class="content-bg " >แพ็คเกจ {{number_format(round(strtotime($job->finishdate) - strtotime($job->created_at)) / (60 * 60 * 24))}} วัน</h6>
+                        <div class="col-12 text-center" >
+                            <div class="d-md-none" >
+                                <h5 for=""class="content-bg font-weight-bold" >แพ็คเกจ {{number_format(round(strtotime($job->finishdate) - strtotime($job->created_at)) / (60 * 60 * 24))}} วัน</h5>
                                 <label for=""class="content-bg mt-md-5" ><small>วันที่เริ่มงาน : {{date('F d,Y',strtotime($job->created_at))}}</small></label>
                                 <label for=""class="content-bg" ><small>วันที่ต้องการงาน : {{date('F d,Y',strtotime($job->finishdate))}}</small>  </label>
                             </div>
@@ -41,12 +41,13 @@
                             
                           
                       
-                                <p class="content-bg mb-3 text-center text-md-left">{{$user->name}}</p>
+                                <h5 class="content-bg mb-3 text-center text-md-left font-weight-bold">{{$user->name}}</h5>
                                 <a style="text-decoration:none;"  href="{{route('job.Messages',$job->token)}}">
 
                                 <button class="btn _primary-bg-dark btn-lg d-none d-md-block"><i class=" far fa-comments pr-2"></i>คุยกับผู้ประกอบการ</button>
                                 </a>
                         </div>
+                        
                         <div class="col-12 d-md-none mt-3 ">
                             <a  style="text-decoration:none;"  href="{{route('job.Messages',$job->token)}}">
                                 <button class="btn _primary-bg-dark btn-lg btn-block "><i class=" far fa-comments pr-2"></i>คุยกับผู้ประกอบการ</button>
@@ -59,9 +60,11 @@
                     
                         
                     <div class="d-none d-md-block">
-                        <h3 for=""class="content-bg " >แพ็คเกจ {{number_format(round(strtotime($job->finishdate) - strtotime($job->created_at)) / (60 * 60 * 24))}} วัน</h3><br>
-                        <label for=""class="content-bg mt-5" ><h5>วันที่เริ่มงาน : {{date('F d,Y',strtotime($job->created_at))}}</h5></label> <br>
-                        <label for=""class="content-bg" ><h5>วันที่ต้องการงาน : {{date('F d,Y',strtotime($job->finishdate))}}</h5>  </label><br>
+                        <h5 for=""class="content-bg font-weight-bold" >แพ็คเกจ {{number_format(round(strtotime($job->finishdate) - strtotime($job->created_at)) / (60 * 60 * 24))}} วัน</h5><br>
+                        <label for=""class="content-bg mt-5 " >
+                            <h6 class="font-weight-bold">วันที่เริ่มงาน : {{date('F d,Y',strtotime($job->created_at))}}</h6></label> <br>
+                        <label for=""class="content-bg" >
+                            <h6 class="font-weight-bold">วันที่ต้องการงาน : {{date('F d,Y',strtotime($job->finishdate))}}</h6>  </label><br>
                     </div>
                             <div class="row">
                                 {{-- @if ($job->jobstatus_id == '1')
