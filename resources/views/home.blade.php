@@ -294,29 +294,26 @@
                     <div class="row">
                         <div class="col-12 col-md-4 justify-content-center">
                             <div class="card border  text-center p-3 p-lg-5 mb-3">
-                                <img id="profileImage" class="rounded-circle" src="https://picsum.photos/90" style="width: 90px; height: 90px; margin: 0px auto;">
-                                    <h5 class="font-weight-bold mt-3 mb-5">สิทธิชัย อยู่ถาวร</h5>
+                                <img id="profileImage" class="rounded-circle" src="../photo/top2.jpg" style="width: 90px; height: 90px; margin: 0px auto;">
+                                    <h5 class="font-weight-bold mt-3 mb-5">ศุภชัย วอนเบ้า</h5>
 
-                                    <p>Quative ดีมากเลย</p>
+                                    <p>เว็บไซต์ดูแล้วเข้าใจง่ายรู้ว่าเว็บทำงานยังไง</p>
                             </div>
                         </div>
                         <div class="col-12 col-md-4 justify-content-center">
                             <div class="card border  text-center p-3 p-lg-5 mb-3">
-                                <img id="profileImage" class="rounded-circle " src="https://picsum.photos/90" style="width: 90px; height: 90px; margin: 0px auto;">
-                                    <h5 class="font-weight-bold mt-3 mb-5">เนตรดวง ตาแก้ว</h5>
+                                <img id="profileImage" class="rounded-circle " src="../photo/top1.jpg" style="width: 90px; height: 90px; margin: 0px auto;">
+                                    <h5 class="font-weight-bold mt-3 mb-5">อัศดาวุธ มาลานุสรณ์</h5>
 
-                                    <p>นักออกแบบทำงาน
-                                        ให้ตรงตามใจมาก
-                                        ตามใจมากครับ</p>
+                                    <p>ชอบรูปแบบของเว็บไซต์การจ้างงาน</p>
                             </div>
                         </div>
                         <div class="col-12 col-md-4 justify-content-center">
                             <div class="card border text-center p-3 p-lg-5 mb-3">
-                                <img id="profileImage" class="rounded-circle " src="https://picsum.photos/90" style="width: 90px; height: 90px; margin: 0px auto;">
-                                    <h5 class="font-weight-bold mt-3 mb-5">ดวงใจ ดวงนภา</h5>
+                                <img id="profileImage" class="rounded-circle " src="../photo/top3.jpg" style="width: 90px; height: 90px; margin: 0px auto;">
+                                    <h5 class="font-weight-bold mt-3 mb-5">เมียม</h5>
 
-                                    <p>ตรงต่อเวลา งานขายได้
-                                        ต้อง Quative เลย</p>
+                                    <p>เข้าใจจุดประสงค์ของเว็บไซต์ ระบบทำงานได้ดี</p>
                             </div>
                         </div>
 
