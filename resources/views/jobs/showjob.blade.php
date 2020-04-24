@@ -561,14 +561,14 @@
                      <div class="process-job shadow-sm p-3 p-md-5">
                           
                            <div class="form-row mt-5">
-                                <div class="col-12 col-md-8">
+                                <div class="col-12 col-md-7">
                                     @php
                                         $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusUserName;
                                     @endphp
+                                        <h4 class="text-center text-md-left ">สถานะการจ้างงาน : <label class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</label></h4>
 
-                                    <h4 class="text-center text-md-left">สถานะปัจจุบัน : <label class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</label></h4>
                                </div>
-                               <div class="col-12 col-md-3">
+                               <div class="col-12 col-md-5">
                                 <div class="float-right d-md-flex col-12 mr-md-5">
                                     @if ($jobs->jobstatus_id == 1)
                                         <button type="button" class="btn disabled _btn-dis m-1 btn-lg btn-block" >แจ้งชำระเงิน</button>

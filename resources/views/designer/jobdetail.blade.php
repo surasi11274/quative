@@ -638,12 +638,12 @@
                     <fieldset>
                         <div class="process-job shadow-sm p-3 p-md-5">
                            <div class="form-row mt-5 ">
-                               <div class="col-12 col-md-9">
+                               <div class="col-12 col-md-7">
                                 @php
                                 $jobstatusid = \App\Jobstatus::find($job->jobstatus_id)->statusName;
                                  @endphp
                                 
-                                    <h4 class="text-center text-md-left">สถานะปัจจุบัน : <label class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</label></h4>
+                                    <h4 class="text-center text-md-left">สถานะการจ้างงาน : <label class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</label></h4>
                         
                                 <div class="row">       
                                     <div class="col-2"></div>  
@@ -657,7 +657,7 @@
                                   
                                 </div>
                                </div>
-                               <div class="col-12 col-md-3">
+                               <div class="col-12 col-md-5">
                                 <div class="float-right d-md-flex col-12">
                                     @if ($job->jobstatus_id == 1)
                                         <button type="button" class="btn _primary-btn m-1 btn-lg btn-block" onclick="addCart('2')" data-toggle="modal" data-target="#exampleModal">รับงาน</button>
