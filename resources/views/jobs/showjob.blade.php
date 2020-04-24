@@ -13,7 +13,7 @@
                         
                         <div class="col-12 text-center">
                             <div class="d-md-none">
-                                <h6 for=""class="content-bg  font-weight-bold" >แพ็คเกจ {{number_format(round(strtotime($jobs->finishdate) - strtotime($jobs->created_at)) / (60 * 60 * 24))}} วัน</h6>
+                                <h5 for=""class="content-bg  font-weight-bold" >แพ็คเกจ {{number_format(round(strtotime($jobs->finishdate) - strtotime($jobs->created_at)) / (60 * 60 * 24))}} วัน</h5>
                                 <label for=""class="content-bg mt-md-5" ><small>วันที่เริ่มงาน : {{date('F d,Y',strtotime($jobs->created_at))}} </small></label>
                                 <label for=""class="content-bg " ><small>วันที่ต้องการงาน : {{date('F d,Y',strtotime($jobs->finishdate))}} </small>  </label>
                             </div>
@@ -35,7 +35,7 @@
 
                             @endphp
                             
-                                <p class="content-bg mb-3 text-center text-md-left">{{$designer->name}}</p> 
+                                <h5 class="content-bg mb-3 text-center text-md-left font-weight-bold">{{$designer->name}}</h5> 
                                 
                                 <a style="text-decoration:none;"  href="{{route('job.Messages',$jobs->token)}}">
                                     <button class="btn _primary-bg-dark btn-lg d-none d-md-block"><i class=" far fa-comments pr-2"></i>คุยกับนักออกแบบ</button>
@@ -71,11 +71,11 @@
                        <div class="d-none d-md-block">
                         <h5 for=""class="content-bg  font-weight-bold" >แพ็คเกจ {{number_format(round(strtotime($jobs->finishdate) - strtotime($jobs->created_at)) / (60 * 60 * 24))}} วัน</h5><br>
                         <label for=""class="content-bg mt-5" >
-                            <h6>วันที่เริ่มงาน : {{date('F d,Y',strtotime($jobs->created_at))}} </h6>
+                            <h6 class="font-weight-bold">วันที่เริ่มงาน : {{date('F d,Y',strtotime($jobs->created_at))}} </h6>
                         </label>
                          <br>
                         <label for=""class="content-bg" >
-                            <h6>วันที่ต้องการงาน : {{date('F d,Y',strtotime($jobs->finishdate))}} </h6>
+                            <h6 class="font-weight-bold">วันที่ต้องการงาน : {{date('F d,Y',strtotime($jobs->finishdate))}} </h6>
                           </label>
                           <br>
                        </div>
@@ -674,12 +674,12 @@
                                @if ($jobs->jobstatus_id == 7)
 
                                <div class="row ml-1">
-                                <h5 class="font-weight-bold  text-success">นักออกแบบส่งงานแล้ว กรุณาตรวจสอบงานออกแบบ</h5 >
+                                <h5 class="font-weight-bold  text-success mt-5">นักออกแบบส่งงานแล้ว กรุณาตรวจสอบงานออกแบบ</h5 >
                             </div>
                            
                                <div class="row p-3 " >
                                    
-                                   <div class="col-12" style="border: dashed 2px #523EE8; border-radius:15px; width:100%">
+                                   <div class="col-6" style="border: dashed 2px #523EE8; border-radius:15px; width:100%">
                                     {{-- @if ($jobs->jobstatus_id == 7) --}}
 
                                     
