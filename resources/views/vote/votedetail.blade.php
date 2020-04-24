@@ -17,23 +17,23 @@
                         <div class="">
                             @php
                             $designerid = \App\Designer::find($jobs->designer_id);
-    
-    
-    
+
+
+
                         @endphp
-                            
-                           
-                            <figure class="img-fluid float-right m-auto">
-                                <img class="rounded-circle img-fluid" src="/{{$designerid->profilepic}}" style="width:100px; height:100px;  object-fit: cover;">
+
+
+                            <figure class="img-fluid float-right  mt-3">
+                                <img class="rounded-circle img-fluid" src="/{{$designerid->profilepic}}">
                             </figure>
                         </div>
                     </div>
                     <div class="col-8 col-md-7 p-md-5 text-left ">
                         {{-- <h3 class="_hilight ">Package  Coralist</h3> --}}
-                      
+
                         <a style="text-decoration:none;" href="{{route('startjob.show',$designerid->token)}}">
                             <h3  class="d-none d-md-block">ออกแบบโดย&nbsp;<label class="font-weight-bold _hilight"> {{$designerid->name}}</label></h3>
-                            <p  class="d-md-none">ออกแบบโดย&nbsp;<label class="font-weight-bold _hilight"> {{$designerid->name}}</label></p>
+                            <p  class="d-md-none mt-3">ออกแบบโดย&nbsp;<label class="font-weight-bold _hilight"> {{$designerid->name}}</label></p>
                         </a>
                         <h5 class="_gray">ออกแบบบรรจุภัณฑ์ประเภท {{$jobs->categories}}</h5>
                     </div>
@@ -44,10 +44,20 @@
                                 <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
                                     closeButton:true,
                                     progressBar: true,
-                                })" class="love btn btn-light text-center rounded float-right border" style="width:70px; height:70px;">
+                                })" class="d-none d-md-block love btn btn-light text-center rounded float-right border" style="width:70px; height:70px;">
                                    <p style="font-size:30px;"><i class="fas fa-heart"></i></p>
                                     {{-- {{$job->favorite_to_users->count()}}                                 --}}
                                 </button>
+                            </a>
+                            <a href="javascript:void(0);" >
+
+                            <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
+                                closeButton:true,
+                                progressBar: true,
+                            })" class="d-md-none love text-center rounded float-right border w-100 mb-5 " style="width:70px; height:70px;">
+                                <p style="font-size:30px;"><i class="fas fa-heart mr-2"></i>ชื่นชอบผลงาน</p>
+                                   {{-- {{$job->favorite_to_users->count()}}   --}}
+                               </button>
                             </a>
                             @else
                             <a href="javascript:void(0);" >
@@ -55,8 +65,8 @@
                                     <p style="font-size:30px;"><i class="fas fa-heart"></i></p>
                                     {{-- {{$job->favorite_to_users->count()}}   --}}
                                 </button>
-                            
-                                        <button onclick="document.getElementById('vote-form-{{$jobs->id}}').submit();" class="d-md-none love text-center rounded float-right border w-100 {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobs->id)->count() == 0 ?'favorite_jobs' : ''}}" style="width:70px; height:70px;">
+
+                                        <button onclick="document.getElementById('vote-form-{{$jobs->id}}').submit();" class="d-md-none love text-center rounded float-right border w-100 mb-5 {{ !Auth::user()->favorite_jobs->where('pivot.jobs_id',$jobs->id)->count() == 0 ?'favorite_jobs' : ''}}" style="width:70px; height:70px;">
                                          <p style="font-size:30px;"><i class="fas fa-heart mr-2"></i>ชื่นชอบผลงาน</p>
                                             {{-- {{$job->favorite_to_users->count()}}   --}}
                                         </button>
@@ -65,7 +75,7 @@
                                     style="display:none;">
                                 @csrf
                                 </form>
-                            @endguest                     
+                            @endguest
                         </div>
                     </div>
 
@@ -73,7 +83,7 @@
 
                     <div class="container-fluid" style="    padding-right: 0px !important;
                     padding-left: 0px !important;     margin-top: -60px;">
-                
+
                         <div id="carouselExampleCaptions" class="carousel slide " data-ride="carousel">
                             {{-- <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -97,18 +107,18 @@
                                 @foreach ($jobfile as $jobf)
                                 @php
                                 $filename = \App\Jobfiles::find($jobf);
-    
+
                                 @endphp
                                 @if ($filename->fileartworkname == NULL)
 
                                 <img src="/{{$filename->fileimgname}}" class="d-block w-100" height="100px" alt="...">
 
-                                {{-- @else 
+                                {{-- @else
                                 <img src="/{{$filename->fileimgname}}" class="d-block w-100" height="100px" alt="..."> --}}
 
                                 @endif
-                               
-                               
+
+
                             @endforeach
                             {{-- <div class="carousel-caption d-none d-md-block">
                                 <h5>First slide label</h5>
@@ -119,13 +129,13 @@
                                 {{-- <div class="carousel-item">
                                     <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
-                       
+
                                     </div>
                                 </div>
                                 <div class="carousel-item">
                                     <img src="https://sv1.picz.in.th/images/2019/12/17/i2azOP.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
-                                      
+
                                     </div>
                                 </div> --}}
                             </div>
@@ -153,13 +163,13 @@
                         <div class="col-12 col-md-7">
                         <h5 class="font-weight-bold">ความคิดเห็น ({{$jobs->comments()->count()}})</h5>
                                 @guest
-                                <div class="row">
-                                    <p class="mx-auto text-secondary mt-3" style="opacity:0.5;">For a new comment.You need to login first.
-
-                                </div>
-                                    <a href="{{route('login')}}">Login </a>
+                                <div class="row mt-5">
+                                    <p class="mx-auto text-secondary mt-3" style="opacity:0.5;">กรุณาเข้าสู่ระบบก่อน จึงจะสามารถแสดงความคิดเห็นได้.
                                     </p>
-                                @else 
+                                </div>
+                                    {{-- <a href="{{route('login')}}">Login </a> --}}
+
+                                @else
                                 <form action="{{ route('comment.store',$jobs->id)}}" method="POST">
                                     @csrf
                                 <div class=" container-fluid" >
@@ -167,13 +177,13 @@
                                     <div class="col-12 col-md-3">
                                         <figure class="img-fluid  ">
                                             @if (auth()->user()->designer())
-                                                
-                                            <img class="rounded-circle" style="width:100px;height:100px; object-fit:cover;" src="/{{auth()->user()->designer()->profilepic}}">
+
+                                            <img class="rounded-circle img-comment-designer" src="/{{auth()->user()->designer()->profilepic}}">
                                             @elseif(!auth()->user()->designer() && auth()->user()->profile() && auth()->user()->profile()->profilepic !== NULL)
-                                                <img class="rounded-circle" style="width:100px;height:100px; object-fit:cover;" src="/{{auth()->user()->profile()->profilepic}}">
+                                                <img class="rounded-circle img-comment-designer"  src="/{{auth()->user()->profile()->profilepic}}">
 
                                             @else
-                                                <img class="rounded-circle" style="width:100px;height:100px; object-fit:cover;" src="{{auth()->user()->avatar}}">
+                                                <img class="rounded-circle img-comment-designer" src="{{auth()->user()->avatar}}">
 
                                             @endif
 
@@ -181,7 +191,7 @@
                                     </div>
                                     <div class="col-12 col-md-9">
                                         <textarea name="comment" rows="4" class="form-control" id="validationTextarea" placeholder="แสดงความคิดเห็นของคุณ" required></textarea>
-    
+
                                     </div>
                                 </div>
                                         <button class="mt-3 btn _primary-black float-right btn-lg d-none d-md-block" style="    display: block;
@@ -193,7 +203,7 @@
                                 </div>
                             </form>
                             @endguest
-                        </div>    
+                        </div>
                     <div class="col-12 col-md-5 mt-5">
                             <div class="form-tags ">
                                <ul class="d-flex">
@@ -205,7 +215,7 @@
                             @endphp
                             <p>
 
-                                
+
                                 <li class="ml-1">
                                     <div class="box-tags ">
                                        <small>{{$tagname}}</small>
@@ -213,7 +223,7 @@
                                  </li>
                             </p>
                         @endforeach
-                                 
+
 
                                </ul>
                             </div>
@@ -226,43 +236,43 @@
                                 <i class="far fa-eye m-1 _hilight"></i>
                             <span class="ml-1">{{$jobs->view_count}}</span>
                                 <p class="ml-1">Views</p>
-                                
+
                             </div>
                             <div class="d-flex  mt-2">
                                 <i class="fas fa-calendar-week m-1 _hilight"></i>
                                 <p class="ml-1">{{date('F d,Y',strtotime($jobs->created_at))}}</p>
                             </div>
                             <hr>
-                            
-                            
-                         </div> 
+
+
+                         </div>
                          <div class="col-12 col-md-7 ">
                             {{-- <div class="comment-flow mt-5"> --}}
                                 <div class="mt-5">
-                               
+
                                 @if ($jobs->comments->count() > 0)
                                 @foreach ($jobs->comments->sortByDesc('id') as $comment)
 
                                 <div class="row d-flex">
-                                    <div class="col-2">
-                                        <figure class=" img-fluid">
+                                    <div class="col col-md-2">
+                                        <figure class=" img-fluid ">
                                             @if (auth()->user()->designer())
-                                                
-                                            <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="/{{auth()->user()->designer()->profilepic}}">
+
+                                            <img class="rounded-circle img-comment-designer" src="/{{auth()->user()->designer()->profilepic}}">
                                             @elseif(!auth()->user()->designer() &&  auth()->user()->profile() && auth()->user()->profile()->profilepic !== NULL )
-                                                <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="/{{auth()->user()->profile()->profilepic}}">
+                                                <img class="rounded-circle img-comment-designer"  src="/{{auth()->user()->profile()->profilepic}}">
 
                                             @else
-                                                <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="{{auth()->user()->avatar}}">
+                                                <img class="rounded-circle img-comment-designer" src="{{auth()->user()->avatar}}">
 
                                             @endif
                                         </figure>
                                     </div>
-                                    <div class="col-7">
+                                    <div class="colcol-md-7">
                                         <label for="name">{{$comment->user->name}}</label> <br>
                                         <p class="over-wrap">{{$comment->comment}}</p>
                                     </div>
-                                    <div class="col-3 ">
+                                    <div class="col col-md-3 ">
                                         <small>{{$comment->created_at->diffForHumans()}}</small>
                                     </div>
                                 </div>
@@ -273,14 +283,14 @@
                                 <h1>''</h1><p class="_gray">ยังไม่มีใครแสดงความคิดเห็นเลย. บอกอะไรสักอย่างเกี่ยวกับงานที่ได้ดูสักหน่อย.</p><h1 class="float-right">''</h1>
 
                                 @endif
-                                    
 
-                                
+
+
                             </div>
-                        </div> 
-                        
-    
-            
+                        </div>
+
+
+
                 </div>
                 <div class="container" >
                         <div class="row">
@@ -296,7 +306,7 @@
                                     $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
 
                                     // foreach ($jobs as $job){
-            // $object->title 
+            // $object->title
                                     $jobtags = json_decode($job->tags,true);
 
 
@@ -304,7 +314,7 @@
 
                                 @endphp
 
-                                <article class="col-12 col-md-4 mt-5">
+                                <article class="col-12 col-md-6 col-lg-4 mt-5">
                                     <div class="card shadow-sm" data-id="{{ $job->id }}">
 
                                     <a href="{{ route('galleryDetail', $job->id) }}">
@@ -314,9 +324,12 @@
                                         <div class="card-body" style="width:auto;">
                                             <div class="text-left position-absolute">
                                                 <div class="row pl-3">
-                                                    <p class="font-weight-bold">ออกแบบโดย
+                                                    <p class="font-weight-bold over-wrap d-none d-md-block text-truncate wraptext-md">ออกแบบโดย
                                                         {{$designerid->name}}
                                                     </p>
+                                                    <small class="font-weight-bold over-wrap d-md-none  text-truncate wraptext-md">ออกแบบโดย
+                                                        {{$designerid->name}}
+                                                    </small>
                                                 </div>
 
                                             {{-- @foreach($job->tags as $tagn)
@@ -328,19 +341,21 @@
 
                                             @endforeach --}}
                                             <div class="row pl-3">
+                                                <span class="d-inline-block text-truncate wraptext-md">
                                             @foreach ($jobtags as $jobt)
                                                 @php
 
                                                 $tagname = \App\Tags::find($jobt)->tagName;
 
                                                 @endphp
-                                                <p>
-                                                    {{$tagname}},
-                                                </p>
 
-                                            @endforeach 
+                                                    {{$tagname}},
+
+
+                                            @endforeach
+                                                </span>
                                             </div>
-                                
+
                                         <div class="row pl-3 color-grey">
                                                 <span>
                                                     <i class="fas fa-heart"></i>
@@ -395,7 +410,7 @@
                                     </div>
                                 </div>
                             </article>
-                        @empty 
+                        @empty
                                                 <div class="container">
 
                         <div class="row pl-3">
@@ -406,8 +421,8 @@
 
                         @endforelse
 
-                            
-                       
+
+
                         </div>
 
 
@@ -425,7 +440,7 @@
                                     $jobfilee = DB::table('jobfiles')->where('job_id',$job->id)->first();
 
                                     // foreach ($jobs as $job){
-            // $object->title 
+            // $object->title
                                     $jobtags = json_decode($job->tags,true);
 
 
@@ -433,7 +448,7 @@
 
                                 @endphp
 
-                                <article class="col-12 col-md-4 mt-5">
+                                <article class="col-12 col-md-6 col-lg-4 mt-5">
                                     <div class="card shadow-sm" data-id="{{ $job->id }}">
 
                                     <a href="{{ route('galleryDetail', $job->id) }}">
@@ -443,9 +458,12 @@
                                         <div class="card-body" style="width:auto;">
                                             <div class="text-left position-absolute">
                                                 <div class="row pl-3">
-                                                    <p class="font-weight-bold">ออกแบบโดย
+                                                    <p class="font-weight-bold over-wrap d-none d-md-block text-truncate wraptext-md">ออกแบบโดย
                                                         {{$designerid->name}}
                                                     </p>
+                                                    <small class="font-weight-bold over-wrap d-md-none  text-truncate wraptext-md">ออกแบบโดย
+                                                        {{$designerid->name}}
+                                                    </small>
                                                 </div>
 
                                             {{-- @foreach($job->tags as $tagn)
@@ -457,19 +475,21 @@
 
                                             @endforeach --}}
                                             <div class="row pl-3">
+                                                <span class="d-inline-block text-truncate wraptext-md">
                                             @foreach ($jobtags as $jobt)
                                                 @php
 
                                                 $tagname = \App\Tags::find($jobt)->tagName;
 
                                                 @endphp
-                                                <p>
-                                                    {{$tagname}},
-                                                </p>
 
-                                            @endforeach 
+                                                    {{$tagname}},
+
+
+                                            @endforeach
+                                            </span>
                                             </div>
-                                
+
                                         <div class="row pl-3 color-grey">
                                                 <span>
                                                     <i class="fas fa-heart"></i>
@@ -524,7 +544,7 @@
                                     </div>
                                 </div>
                             </article>
-                        @empty 
+                        @empty
                                                 <div class="container">
 
                         <div class="row pl-3">
@@ -535,8 +555,8 @@
 
                         @endforelse
 
-                            
-                       
+
+
                         </div>
 
 
@@ -544,8 +564,8 @@
 
                 </div>
             </div>
-               
-                   
+
+
                     {{-- end container-fluid --}}
                 </div>
             </div>
@@ -559,7 +579,7 @@
     </div>
     {{-- <div class="container mt-5 ">
         <div class="row">
-            
+
             <div class="col-12 col-md-5">
                 <div class="card  p-5 shadow-ex overflow-y">
                     <label class="text-right" for="">ผลงานของ Kritpon Klinkomut </label>

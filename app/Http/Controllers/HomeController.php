@@ -16,6 +16,7 @@ use App\Tags;
 use App\Jobs;
 use App\Jobstatus;
 use App\Notifications\JobsNoti;
+use App\Notifications\JobsNotiAll;
 use App\Payment;
 use App\Review;
 use App\User;
@@ -643,7 +644,11 @@ class HomeController extends Controller
 
     
         $updateJob->save();
-
+        // if($updateJob->jobstatus_id == 3){
+        //     $designer = Designer::where('designer_id',$updateJob->designer_id)->first();
+        //     // $user = User::find($designer->user_id);
+        //     auth()->user()->find($designer->user_id)->notify(New JobsNotiAll($updateJob));
+        // }
 
       
         try{
@@ -820,6 +825,7 @@ class HomeController extends Controller
             ]);
 
     }
+
     public function storePaymentJob(Request $request)
     {
         // $jobs = Jobs::where('token',$token)->get();
@@ -863,8 +869,17 @@ class HomeController extends Controller
             'jobstatus_id' => 3
             ]);
             
+           
+    
+          
         $jobs = Jobs::where('id',$payment->job_id)->first();
-
+       
+        // if($jobs->jobstatus_id == 3){
+        //     $designer = Designer::find($jobs->designer_id);
+        //     // dd($designer);
+        //     // $user = User::find($designer->user_id);
+        //     auth()->user()->find($designer->user_id)->notify(New JobsNotiAll($updateJob));
+        // }
 
     // $updateJob2 = Jobs::find($request->$reviews->jobs_id);
         // $updateJob->reviews_id = $reviews->id;

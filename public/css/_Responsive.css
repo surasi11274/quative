@@ -3,8 +3,16 @@
 /* Mobile section  */
 /* iphone 5 */
 @media (min-width: 319.98px) {
+  .img-vote-designer{
+    width:100px; height:100px;  object-fit: cover;
+  }
+  .img-comment-designer{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
   .wraptext-md{
-    max-width: 160px;
+    max-width: 120px;
   }
   .designer-previous {
     width: 45% !important;
@@ -596,6 +604,9 @@
 
 /* iphone 6 iphone x */  
 @media (min-width: 374.98px){
+  .wraptext-md{
+    max-width: 180px;
+  }
   .upload-btn-wrapper-designer {
     position: absolute;
     overflow: hidden;
@@ -942,6 +953,9 @@
 }
 /* iphone 6/7/8 plus */
 @media (min-width: 414px){
+  .wraptext-md{
+    max-width: 200px;
+  }
   .upload-btn-wrapper-designer {
     position: absolute;
     overflow: hidden;
@@ -1316,7 +1330,14 @@
 
 /* ipad section  */
 @media (min-width: 768px) {
-
+  .img-comment-designer{
+    width: 50px;
+    height: 35px ;
+    object-fit: cover;
+  }
+  .wraptext-md{
+    max-width: 180px !important;
+  }
   .upload-btn-wrapper-designer {
     position: absolute;
     overflow: hidden;
@@ -2072,6 +2093,11 @@
 
 }
 @media (min-width:1023.98px){
+  .img-comment-designer{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
   .designer-previous {
     width: 45% !important;
     float: left !important;
@@ -2709,8 +2735,16 @@
     }
 }
 @media(min-width:1920px){
+  .img-comment-designer{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  .img-vote-designer{
+    width:100px; height:100px;  object-fit: cover;
+  }
   .wraptext-md{
-    max-width: 200px;
+    max-width: 200px !important;
   }
   .designer-previous{
     width: 20% !important;
@@ -2868,7 +2902,9 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 
 /* landscape _  */
 @media(min-width:568px){
-
+  .wraptext-md{
+    max-width: 250px !important;
+  }
   .upload-btn-wrapper-designer {
     position: absolute;
     overflow: hidden;

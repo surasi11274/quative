@@ -95,7 +95,7 @@ class MockupController extends Controller
         
         $mockup = Mockup::where('token',$token)->get();
 
-        // Storage::deleteDirectory('logomockupload/'.$mockup->first()->token)->where('created_at', '>=', Carbon::now()->subMinutes(120)->toDateTimeString());
+        Storage::deleteDirectory('logomockupload/'.$mockup->first()->token)->where('created_at', '>=', Carbon::now()->subMinutes(12)->toDateTimeString());
         return view('preview.mockupbyuser.preview',[
             'mockup'=>$mockup->first(),
 

@@ -46,9 +46,16 @@
                         <p class="_hilight">Site Navigation</p>
                         <hr>
                     </li>
+                    @if(Auth::guest())
+
+                    @elseif (auth()->user()->role == '0')
                     <li>
                         <a href="#"  class="_hilight">ค้นหานักออกแบบ</a>
                     </li>
+                    @else
+
+                    @endif
+                    
                         <li>
                             <a href="#!" class="_hilight">ผลงานนักออกแบบ</a>
                         </li>

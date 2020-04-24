@@ -36,7 +36,7 @@
     <a href="{{route('job.show', $notification->data['jobs']['token'])}}" style="text-decoration:none;"">
         <label class="font-weight-bold over-wrap" for="name">{{$notification->data['user']['name']}} </label><br>
     
-        <small class="over-wrap" style="color:#523EE8;">Accept your job W{{$notification->data['jobs']['id']}}
+        <small class="over-wrap" style="color:#523EE8;">รับงานคุณเรียบ W{{$notification->data['jobs']['id']}}
         </small>
         <br>
             <small>{{$notification->created_at->diffForHumans()}}</small>
