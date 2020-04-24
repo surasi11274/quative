@@ -39,7 +39,7 @@
 
         <div class="container">
             <div class="row text-center text-md-left justify-content-md-center justify-content-lg-start" >
-                <div class="col-12 col-md-8 col-lg-6">
+                <div class="col-12 col-md-8 col-lg-6" style="margin-top: 110px">
                     <div class="mt-ex" style="margin-top: 10rem">
                         <h1 class="header d-none d-md-block">ออกแบบ
                             <span class="_hilight font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
@@ -60,11 +60,11 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 mt_ex">
-                    <figure class="img-fluid ">
-                        <picture>
-                            {{-- <img src="photo/Frame.png" alt=""> --}}
-                        </picture>
-                    </figure>
+                    {{--<figure class="img-fluid ">--}}
+                        {{--<picture>--}}
+                            {{--<img src="photo/Frame.png" alt="">--}}
+                        {{--</picture>--}}
+                    {{--</figure>--}}
                 </div>
             </div>
             <div class=" text-center mt-5 mb-5 p-5 _curve">
@@ -112,7 +112,7 @@
         @else
         <div class="container">
             <div class="row text-center text-md-left justify-content-md-center justify-content-lg-start" >
-                <div class="col-12 col-md-8 col-lg-6">
+                <div class="col-12 col-md-8 col-lg-6" style="margin-top: 110px">
                     <div class="mt-ex" style="margin-top: 10rem">
                         <h1 class="header d-none d-md-block">ออกแบบ
                             <span class="_hilight font-weight-bold">บรรจุภัณฑ์</span><br>ด้วยดีไซน์เนอร์ที่ใช่</h1>
@@ -133,9 +133,17 @@
                     </div>
                 </div>
             </div>
-            <div class=" text-center mt-5 mb-5 p-5 _curve">
-
+            <div class="col-12 col-sm-6 mt_ex">
+                {{--<figure class="img-fluid ">--}}
+                    {{--<picture>--}}
+                        {{--<img src="photo/Frame.png" alt="">--}}
+                    {{--</picture>--}}
+                {{--</figure>--}}
             </div>
+        </div>
+        <div class=" text-center mt-5 mb-5 p-5 _curve">
+
+        </div>
 
         </div>
         @endif
