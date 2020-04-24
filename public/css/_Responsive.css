@@ -4,7 +4,7 @@
 /* iphone 5 */
 @media (min-width: 319.98px) {
   .img-vote-designer{
-    width:100px; height:100px;  object-fit: cover;
+    width:100px; object-fit: cover;
   }
   .img-comment-designer{
     width: 50px;
