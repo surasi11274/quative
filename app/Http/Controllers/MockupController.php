@@ -6,6 +6,7 @@ use App\Mockup;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class MockupController extends Controller
@@ -95,7 +96,12 @@ class MockupController extends Controller
         
         $mockup = Mockup::where('token',$token)->get();
 
-        // Storage::deleteDirectory('logomockupload/'.$mockup->first()->token)->where('created_at', '>=', Carbon::now()->subMinutes(12)->toDateTimeString());
+        // $delete = $mockup->first()->where('created_at', '>=', Carbon::now()->subMinutes(1)->toDateTimeString());
+
+        // if($delete){
+        //     Storage::deleteDirectory('logomockupload/'.$delete->first()->token);
+
+        // }
         return view('preview.mockupbyuser.preview',[
             'mockup'=>$mockup->first(),
 

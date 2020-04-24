@@ -2,8 +2,11 @@
 
 namespace App\Console;
 
+use Carbon\Carbon;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class Kernel extends ConsoleKernel
 {
@@ -14,6 +17,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
+        
     ];
 
     /**
@@ -26,6 +30,11 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        // $schedule->call(function () {
+        //     $mockup = DB::table('mockup')->where('created_at', '>=' , Carbon::now()->subMinutes(1)->toDateTimeString());
+        //     Storage::deleteDirectory('logomockupload/'.$mockup->first()->token);
+
+        // })->daily();
     }
 
     /**

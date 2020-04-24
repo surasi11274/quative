@@ -624,13 +624,13 @@
                                         <h5 class="text-center text-md-left ">สถานะการจ้างงาน : <label class="_hilight">{{$jobstatusid}}</label></h5>
 
                                </div>
-                               <div class="col-12 col-md-5">
-                                <div class="float-right d-md-flex col-12 mr-md-5">
+                               <div class="col-12 col-md-5 ">
+                                <div class="float-right  d-md-flex col-12 mr-md-5">
                                     @if ($jobs->jobstatus_id == 1)
                                         <button type="button" class="btn disabled _btn-dis m-1 btn-lg btn-block" >แจ้งชำระเงิน</button>
                                         <button type="button"class="btn _secondary-btn m-1 btn-lg btn-block" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                                     @elseif ($jobs->jobstatus_id == 2)
-                                        <a href="{{ route('job.showpayment', $jobs->token) }}" style="text-decoration:none;">
+                                        <a  href="{{ route('job.showpayment', $jobs->token) }}" style="text-decoration:none;">
                                             <button type="button" class="btn _primary-btn mr-md-1 btn-lg btn-block" >แจ้งชำระเงิน</button>
                                         </a>
                                         <button type="button" class="btn _secondary-btn ml-md-1 btn-lg btn-block" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
