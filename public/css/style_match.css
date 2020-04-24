@@ -104,7 +104,7 @@ input:focus 		{ outline:none; }
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    padding-left: 50px !important;
+    /* padding-left: 50px !important; */
     margin-bottom: 0;
     /* padding-right: 50px !important; */
     list-style: none;
