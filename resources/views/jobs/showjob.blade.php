@@ -7,18 +7,18 @@
     <div class="_black-bg mt-5 p-3 p-md-5">
         <div class="row">
             <div class="col-12 col-md-6 ">
-            <h3 class="content-bg mb-5 d-none d-md-block" >ข้อมูลการจ้างงาน no. W{{$jobs->id}}</h3>
-            <h5 class="content-bg mb-3 d-md-none font-weight-bold" >ข้อมูลการจ้างงาน no. W{{$jobs->id}}</h5>
+            <h5 class="content-bg mb-5 d-none d-md-block font-weight-bold" >ข้อมูลการจ้างงาน no. W{{$jobs->id}}</h5>
+            <h5 class="content-bg mb-3 d-md-none font-weight-bold text-center" >ข้อมูลการจ้างงาน no. W{{$jobs->id}}</h5>
                     <div class="row">
                         
-                        <div class="col-12 ">
+                        <div class="col-12 text-center">
                             <div class="d-md-none">
                                 <h6 for=""class="content-bg  font-weight-bold" >แพ็คเกจ {{number_format(round(strtotime($jobs->finishdate) - strtotime($jobs->created_at)) / (60 * 60 * 24))}} วัน</h6>
                                 <label for=""class="content-bg mt-md-5" ><small>วันที่เริ่มงาน : {{date('F d,Y',strtotime($jobs->created_at))}} </small></label>
                                 <label for=""class="content-bg " ><small>วันที่ต้องการงาน : {{date('F d,Y',strtotime($jobs->finishdate))}} </small>  </label>
                             </div>
                         </div>
-                        <div class="col-3 col-md-3 mb-3 mt-3" >
+                        <div class="col-12 col-md-4 mt-4" >
                             @php
                             $designerpic = \App\Designer::find($jobs->designer_id)->profilepic;
 
@@ -26,7 +26,7 @@
                             
                                 <img class="rounded-circle obj-img-showjob" src="/{{$designerpic}}" alt="">
                         </div>
-                        <div class="col-9 col-md-9 mb-3 mt-3">
+                        <div class="col-12 col-md-8 mt-4">
                             
 
                             @php
@@ -35,15 +35,15 @@
 
                             @endphp
                             
-                                <p class="content-bg mb-3">{{$designer->name}}</p> 
+                                <p class="content-bg mb-3 text-center text-md-left">{{$designer->name}}</p> 
                                 
                                 <a style="text-decoration:none;"  href="{{route('job.Messages',$jobs->token)}}">
                                     <button class="btn _primary-bg-dark btn-lg d-none d-md-block"><i class=" far fa-comments pr-2"></i>คุยกับนักออกแบบ</button>
                                 </a>
                         </div>
-                        <div class="col-12 d-md-none mt-3 mb-5">
+                        <div class="col-12 d-md-none">
                             <a style="text-decoration:none;"  href="{{route('job.Messages',$jobs->token)}}">
-                                <button class="btn _primary-bg-dark btn-lg btn-block mt-5"><i class=" far fa-comments pr-2"></i>คุยกับนักออกแบบ</button>
+                                <button class="btn _primary-bg-dark btn-lg btn-block "><i class=" far fa-comments pr-2"></i>คุยกับนักออกแบบ</button>
                             </a>
                         </div>
                     </div>
@@ -69,9 +69,15 @@
                                                     @endforeach --}}
 
                        <div class="d-none d-md-block">
-                        <h3 for=""class="content-bg " >แพ็คเกจ {{number_format(round(strtotime($jobs->finishdate) - strtotime($jobs->created_at)) / (60 * 60 * 24))}} วัน</h3><br>
-                        <label for=""class="content-bg mt-5" ><h5>วันที่เริ่มงาน : {{date('F d,Y',strtotime($jobs->created_at))}} </h5></label> <br>
-                        <label for=""class="content-bg" ><h5>วันที่ต้องการงาน : {{date('F d,Y',strtotime($jobs->finishdate))}} </h5>  </label><br>
+                        <h5 for=""class="content-bg  font-weight-bold" >แพ็คเกจ {{number_format(round(strtotime($jobs->finishdate) - strtotime($jobs->created_at)) / (60 * 60 * 24))}} วัน</h5><br>
+                        <label for=""class="content-bg mt-5" >
+                            <h6>วันที่เริ่มงาน : {{date('F d,Y',strtotime($jobs->created_at))}} </h6>
+                        </label>
+                         <br>
+                        <label for=""class="content-bg" >
+                            <h6>วันที่ต้องการงาน : {{date('F d,Y',strtotime($jobs->finishdate))}} </h6>
+                          </label>
+                          <br>
                        </div>
                         @if ($jobs->payment_id ==! NULL)
                         {{-- <a href="{{ route('job.payment', $jobs->token) }}"> --}}
@@ -129,35 +135,41 @@
                                 <div class="step">1</div>
                                 <div class="caption hidden-xs hidden-sm"> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
-                                    <p class="complete">นักออกแบบรับงานแล้ว</p>
+                                    <p class="complete d-none d-lg-block">นักออกแบบรับงานแล้ว</p>
+                                    <p class="complete d-md-none">นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">2</div>
                                 <div class="caption hidden-xs hidden-sm">
                                     <h5>ชำระเงิน</h5> <br>
-                                    <p>ตรวจสอบการชำระเงิน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบการชำระเงิน</p>
+                                    <p class="d-md-none ">ตรวจสอบการชำระเงิน</p>
+                                    
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">3</div>
                                 <div class="caption hidden-xs hidden-sm">
                                     <h5>ดำเนินการออกแบบ</h5> <br>
-                                    <p>กำลังออกแบบงาน</p>
+                                    <p class="d-none d-lg-block">กำลังออกแบบงาน</p>
+                                    <p class="d-md-none ">กำลังออกแบบงาน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">4</div>
                                 <div class="caption hidden-xs hidden-sm">
                                     <h5>ส่งมอบงาน</h5> <br>
-                                    <p>ตรวจสอบงาน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบงาน</p>
+                                    <p class="d-md-none">ตรวจสอบงาน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">5</div>
                                 <div class="caption hidden-xs hidden-sm">
                                     <h5>เสร็จสิ้นงาน</h5> <br>
-                                    <p>ให้คะแนนและรีวิว</p>
+                                    <p class="d-none d-lg-block">ให้คะแนนและรีวิว</p>
+                                    <p class="d-md-none">ให้คะแนนและรีวิว</p>
                                 </div>
                             </li>
                         </ol>
@@ -170,37 +182,42 @@
                         <ol class="step-indicator">
                             <li class="complete">
                                 <div class="step">1</div>
-                                <div class="caption hidden-xs hidden-sm"> 
+                                <div class="caption "> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
-                                    <p >นักออกแบบรับงานแล้ว</p>
+                                    <p class="complete d-none d-lg-block">นักออกแบบรับงานแล้ว</p>
+                                    <p class="complete d-md-none">นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">2</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ชำระเงิน</h5> <br>
-                                    <p class="complete">ตรวจสอบการชำระเงิน</p>
+                                    <p class="complete d-none d-lg-block">ตรวจสอบการชำระเงิน</p>
+                                    <p class="complete d-none d-lg-block">ตรวจสอบการชำระเงิน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">3</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ดำเนินการออกแบบ</h5> <br>
-                                    <p>กำลังออกแบบงาน</p>
+                                    <p class="d-none d-lg-block">กำลังออกแบบงาน</p>
+                                    <p class="d-md-none">กำลังออกแบบงาน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">4</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ส่งมอบงาน</h5> <br>
-                                    <p>ตรวจสอบงาน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบงาน</p>
+                                    <p class="d-md-none">ตรวจสอบงาน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">5</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>เสร็จสิ้นงาน</h5> <br>
-                                    <p>ให้คะแนนและรีวิว</p>
+                                    <p class="d-none d-lg-block">ให้คะแนนและรีวิว</p>
+                                    <p class="d-md-none">ให้คะแนนและรีวิว</p>
                                 </div>
                             </li>
                         </ol>
@@ -213,37 +230,42 @@
                         <ol class="step-indicator">
                             <li class="complete">
                                 <div class="step">1</div>
-                                <div class="caption hidden-xs hidden-sm"> 
+                                <div class="caption"> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
-                                    <p>นักออกแบบรับงานแล้ว</p>
+                                    <p class="complete d-none d-lg-block">นักออกแบบรับงานแล้ว</p>
+                                    <p class="complete d-md-none">นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">2</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ชำระเงิน</h5> <br>
-                                    <p >ตรวจสอบการชำระเงิน</p>
+                                    <p  class="complete d-none d-lg-block">ตรวจสอบการชำระเงิน</p>
+                                    <p  class="complete d-md-none">ตรวจสอบการชำระเงิน</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">3</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ดำเนินการออกแบบ</h5> <br>
-                                    <p>กำลังออกแบบงาน</p>
+                                    <p class="complete d-none d-lg-block">กำลังออกแบบงาน</p>
+                                    <p class="complete d-md-none">กำลังออกแบบงาน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">4</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ส่งมอบงาน</h5> <br>
-                                    <p>ตรวจสอบงาน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบงาน</p>
+                                    <p class="d-md-none">ตรวจสอบงาน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">5</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>เสร็จสิ้นงาน</h5> <br>
-                                    <p>ให้คะแนนและรีวิว</p>
+                                    <p class="d-none d-lg-block">ให้คะแนนและรีวิว</p>
+                                    <p class="d-md-none">ให้คะแนนและรีวิว</p>
                                 </div>
                             </li>
                         </ol>
@@ -256,37 +278,42 @@
                         <ol class="step-indicator">
                             <li class="complete">
                                 <div class="step">1</div>
-                                <div class="caption hidden-xs hidden-sm"> 
+                                <div class="caption"> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
-                                    <p>นักออกแบบรับงานแล้ว</p>
+                                    <p class="complete d-none d-lg-block">นักออกแบบรับงานแล้ว</p>
+                                    <p class="complete d-md-none">นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">2</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ชำระเงิน</h5> <br>
-                                    <p style="color:#C4C4C4;">ตรวจสอบการชำระเงิน</p>
+                                    <p class="d-none d-lg-block" style="color:#C4C4C4;">ตรวจสอบการชำระเงิน</p>
+                                    <p class="d-md-none" style="color:#C4C4C4;">ตรวจสอบการชำระเงิน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">3</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ดำเนินการออกแบบ</h5> <br>
-                                    <p>กำลังออกแบบงาน</p>
+                                    <p class="d-none d-lg-block">กำลังออกแบบงาน</p>
+                                    <p class="d-md-none">กำลังออกแบบงาน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">4</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ส่งมอบงาน</h5> <br>
-                                    <p>ตรวจสอบงาน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบงาน</p>
+                                    <p class="d-md-none">ตรวจสอบงาน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">5</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>เสร็จสิ้นงาน</h5> <br>
-                                    <p>ให้คะแนนและรีวิว</p>
+                                    <p class="d-none d-lg-block">ให้คะแนนและรีวิว</p>
+                                    <p class="d-md-none">ให้คะแนนและรีวิว</p>
                                 </div>
                             </li>
                         </ol>
@@ -299,37 +326,42 @@
                         <ol class="step-indicator">
                             <li class="complete">
                                 <div class="step">1</div>
-                                <div class="caption hidden-xs hidden-sm"> 
+                                <div class="caption"> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
-                                    <p>นักออกแบบรับงานแล้ว</p>
+                                    <p class="d-none d-lg-block">นักออกแบบรับงานแล้ว</p>
+                                    <p class="d-md-none">นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">2</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ชำระเงิน</h5> <br>
-                                    <p>ตรวจสอบการชำระเงิน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบการชำระเงิน</p>
+                                    <p class="d-md-none">ตรวจสอบการชำระเงิน</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">3</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption ">
                                     <h5>ดำเนินการออกแบบ</h5> <br>
-                                    <p>กำลังออกแบบงาน</p>
+                                    <p  class="d-none d-lg-block">กำลังออกแบบงาน</p>
+                                    <p  class="d-md-none">กำลังออกแบบงาน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">4</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ส่งมอบงาน</h5> <br>
-                                    <p>ตรวจสอบงาน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบงาน</p>
+                                    <p class="d-md-none">ตรวจสอบงาน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">5</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>เสร็จสิ้นงาน</h5> <br>
-                                    <p>ให้คะแนนและรีวิว</p>
+                                    <p class="d-none d-lg-block">ให้คะแนนและรีวิว</p>
+                                    <p class="d-md-none">ให้คะแนนและรีวิว</p>
                                 </div>
                             </li>
                         </ol>
@@ -342,37 +374,41 @@
                         <ol class="step-indicator">
                             <li class="complete">
                                 <div class="step">1</div>
-                                <div class="caption hidden-xs hidden-sm"> 
+                                <div class="caption"> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
-                                    <p>นักออกแบบรับงานแล้ว</p>
+                                    <p class="d-none d-lg-block">นักออกแบบรับงานแล้ว</p>
+                                     <p class="d-md-none">นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">2</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ชำระเงิน</h5> <br>
                                     <p>ตรวจสอบการชำระเงิน</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">3</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ดำเนินการออกแบบ</h5> <br>
-                                    <p>กำลังออกแบบงาน</p>
+                                    <p class="d-none d-lg-block">กำลังออกแบบงาน</p>
+                                    <p class="d-md-none">กำลังออกแบบงาน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">4</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5 style="color:#C4C4C4;">ส่งมอบงาน</h5> <br>
-                                    <p style="color:#C4C4C4;">ตรวจสอบงาน</p>
+                                    <p class="d-none d-lg-block" style="color:#C4C4C4;">ตรวจสอบงาน</p>
+                                    <p class="d-md-none " style="color:#C4C4C4;">ตรวจสอบงาน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">5</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5 style="color:#C4C4C4;">เสร็จสิ้นงาน</h5> <br>
-                                    <p style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
+                                    <p class="d-none d-lg-block" style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
+                                    <p class="d-md-none" style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
                                 </div>
                             </li>
                         </ol>
@@ -385,37 +421,42 @@
                         <ol class="step-indicator">
                             <li class="complete">
                                 <div class="step">1</div>
-                                <div class="caption hidden-xs hidden-sm"> 
+                                <div class="caption"> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
-                                    <p>นักออกแบบรับงานแล้ว</p>
+                                    <p class="d-none d-lg-block">นักออกแบบรับงานแล้ว</p>
+                                     <p class="d-md-none">นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">2</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ชำระเงิน</h5> <br>
-                                    <p>ตรวจสอบการชำระเงิน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบการชำระเงิน</p>
+                                    <p class="d-md-none">ตรวจสอบการชำระเงิน</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">3</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ดำเนินการออกแบบ</h5> <br>
-                                    <p>กำลังออกแบบงาน</p>
+                                    <p class="d-none d-lg-block">กำลังออกแบบงาน</p>
+                                    <p class="d-md-none">กำลังออกแบบงาน</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">4</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ส่งมอบงาน</h5> <br>
-                                    <p>ตรวจสอบงาน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบงาน</p>
+                                    <p class="d-md-none">ตรวจสอบงาน</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <div class="step">5</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5  style="color:#C4C4C4;">เสร็จสิ้นงาน</h5> <br>
-                                    <p  style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
+                                    <p class="d-none d-lg-block"  style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
+                                    <p class="d-md-none"  style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
                                 </div>
                             </li>
                         </ol>
@@ -428,37 +469,42 @@
                         <ol class="step-indicator">
                             <li class="complete">
                                 <div class="step">1</div>
-                                <div class="caption hidden-xs hidden-sm"> 
+                                <div class="caption"> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
-                                    <p>นักออกแบบรับงานแล้ว</p>
+                                    <p class="d-none d-lg-block">นักออกแบบรับงานแล้ว</p>
+                                     <p class="d-md-none">นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">2</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ชำระเงิน</h5> <br>
-                                    <p>ตรวจสอบการชำระเงิน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบการชำระเงิน</p>
+                                    <p class="d-md-none">ตรวจสอบการชำระเงิน</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">3</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ดำเนินการออกแบบ</h5> <br>
-                                    <p>กำลังออกแบบงาน</p>
+                                    <p class="d-none d-lg-block">กำลังออกแบบงาน</p>
+                                    <p class="d-md-none">กำลังออกแบบงาน</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">4</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ส่งมอบงาน</h5> <br>
-                                    <p>ตรวจสอบงาน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบงาน</p>
+                                    <p class="d-md-none">ตรวจสอบงาน</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">5</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5  class="_hilight">เสร็จสิ้นงาน</h5> <br>
-                                    <p  style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
+                                    <p class="d-none d-lg-block" style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
+                                    <p class="d-md-none" style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
                                 </div>
                             </li>
                         </ol>
@@ -471,37 +517,42 @@
                         <ol class="step-indicator">
                             <li class="complete">
                                 <div class="step">1</div>
-                                <div class="caption hidden-xs hidden-sm"> 
+                                <div class="caption"> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
-                                    <p>นักออกแบบรับงานแล้ว</p>
+                                    <p class="d-none d-lg-block">นักออกแบบรับงานแล้ว</p>
+                                     <p class="d-md-none">นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">2</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ชำระเงิน</h5> <br>
-                                    <p>ตรวจสอบการชำระเงิน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบการชำระเงิน</p>
+                                    <p class="d-md-none">ตรวจสอบการชำระเงิน</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">3</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ดำเนินการออกแบบ</h5> <br>
-                                    <p>กำลังออกแบบงาน</p>
+                                    <p class="d-none d-lg-block">กำลังออกแบบงาน</p>
+                                    <p class="d-md-none">กำลังออกแบบงาน</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">4</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ส่งมอบงาน</h5> <br>
-                                    <p>ตรวจสอบงาน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบงาน</p>
+                                    <p class="d-md-none">ตรวจสอบงาน</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">5</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>เสร็จสิ้นงาน</h5> <br>
-                                    <p  style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
+                                    <p class="d-none d-lg-block" style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
+                                    <p class="d-md-none" style="color:#C4C4C4;">ให้คะแนนและรีวิว</p>
                                 </div>
                             </li>
                         </ol>
@@ -514,37 +565,42 @@
                         <ol class="step-indicator">
                             <li class="complete">
                                 <div class="step">1</div>
-                                <div class="caption hidden-xs hidden-sm"> 
+                                <div class="caption"> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
-                                    <p>นักออกแบบรับงานแล้ว</p>
+                                    <p class="d-none d-lg-block" >นักออกแบบรับงานแล้ว</p>
+                                    <p class="d-md-none">นักออกแบบรับงานแล้ว</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">2</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ชำระเงิน</h5> <br>
-                                    <p>ตรวจสอบการชำระเงิน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบการชำระเงิน</p>
+                                    <p class="d-md-none">ตรวจสอบการชำระเงิน</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">3</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ดำเนินการออกแบบ</h5> <br>
-                                    <p>กำลังออกแบบงาน</p>
+                                    <p class="d-none d-lg-block">กำลังออกแบบงาน</p>
+                                    <p class="d-md-none">กำลังออกแบบงาน</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">4</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ส่งมอบงาน</h5> <br>
-                                    <p>ตรวจสอบงาน</p>
+                                    <p class="d-none d-lg-block">ตรวจสอบงาน</p>
+                                    <p class="d-md-none">ตรวจสอบงาน</p>
                                 </div>
                             </li>
                             <li class="complete">
                                 <div class="step">5</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>เสร็จสิ้นงาน</h5> <br>
-                                    <p>ให้คะแนนและรีวิว</p>
+                                    <p class="d-none d-lg-block">ให้คะแนนและรีวิว</p>
+                                    <p class="d-md-none">ให้คะแนนและรีวิว</p>
                                 </div>
                             </li>
                         </ol>
@@ -565,7 +621,7 @@
                                     @php
                                         $jobstatusid = \App\Jobstatus::find($jobs->jobstatus_id)->statusUserName;
                                     @endphp
-                                        <h4 class="text-center text-md-left ">สถานะการจ้างงาน : <label class="_hilight">&nbsp;&nbsp;{{$jobstatusid}}</label></h4>
+                                        <h5 class="text-center text-md-left ">สถานะการจ้างงาน : <label class="_hilight">{{$jobstatusid}}</label></h5>
 
                                </div>
                                <div class="col-12 col-md-5">
@@ -661,7 +717,7 @@
                                 @endforeach
                                 @if ($jobs->filelinks !== NULL)
                                 <p class="mt-5 font-weight-bold">ลิงค์สำหรับดาวน์โหลดไฟล์เพิ่มเติม</p>
-                                    <a href="{{$jobs->filelinks}}">
+                                    <a href="{{$jobs->filelinks}}" target="_blank">
                                         <p class="_hilight over-wrap mb-3" >{{$jobs->filelinks}}</p>
                                     </a>
                                     @endif

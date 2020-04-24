@@ -130,7 +130,10 @@
     right: 70px;
   }
   .obj-img-showjob{
-    width:100px;height:40px;object-fit:cover;
+      width: 100px;
+      height: 100px;
+      margin: 0px auto;
+      display: block !important;
   }
   .message-wrapper-none {
     padding: 10px;
@@ -663,7 +666,7 @@
     right: 90px;
   }
   .obj-img-showjob{
-    width:100px;height:60px;object-fit:cover;
+    width:100px;height:100px;object-fit:cover;
   }
   .rating {
     border: none;
@@ -1396,7 +1399,7 @@
     right: 240px !important;
   }
   .obj-img-showjob{
-    width:100px;height:50px !important;object-fit:cover;
+    width:100px;height:70px !important;object-fit:cover;
   }
   .rating {
     border: none;
