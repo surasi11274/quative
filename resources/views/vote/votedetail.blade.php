@@ -9,7 +9,7 @@
 
 
     <div class="container mt-5 ">
-        <a class="btn _secondary-btn btn-lg btn-block col-md-3 mt-3 mb-3 d-none d-md-block" href="/gallery"> <i class="fas fa-angle-left pr-4"></i>กลับไปหน้ารวมผลงาน</a>
+        <a class="btn _secondary-btn btn-lg btn-block col-md-6 col-lg-3 mt-3 mb-3 d-none d-md-block" href="/gallery"> <i class="fas fa-angle-left pr-4"></i>กลับไปหน้ารวมผลงาน</a>
         <div class="shadow-sm  bg-white ">
             <div class="container content-profile ">
                 <div class="row">
@@ -24,7 +24,7 @@
 
 
                             <figure class=" float-right  mt-3">
-                                <img class="rounded-circle img-vote-designer" src="/{{$designerid->profilepic}}">
+                                <img class="rounded-circle  img-vote-designer" src="/{{$designerid->profilepic}}">
                             </figure>
                         </div>
                     </div>

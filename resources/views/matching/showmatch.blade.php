@@ -270,7 +270,7 @@
                                   @foreach ($artworks as $artwork)
                                   @if ($artwork->fileartworkname == NULL)
 
-                                 <div class="col-4 col-md-4 col-lg-4 mt-3">
+                                 <div class="col-6 col-md-4  mt-3">
                                    
 
                                        {{-- <img class="rounded shadow-sm mt-3 mb-3 img-port"  style="width:100%; height:460px; object-fit: cover;" src="/{{ $artwork->fileimgname }}" /> --}}

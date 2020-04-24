@@ -8,7 +8,7 @@
 <div class="container">		
     <div class="row mt-3">
       <div class="col-12 col-md-4 card pb-3 pb-md-5"  style=" background-color: #000;">
-              <div class="profile-img text-center mt-5" style="width:120px; height:120px; margin:auto;">
+              <div class="profile-img text-center mt-3 mt-lg-5" style="width:120px; height:120px; margin:0px auto;">
                 @if ($designer->profilepic == NULL)
                 <img id="profileImage" class="rounded-circle " style="width:120px;height:120px; object-fit:cover;" src="{{auth()->user()->avatar}}" />
                 @else 
@@ -17,7 +17,7 @@
 
               </div>
               {{-- <h5 class="text-center mt-5 text-white">ปลายฟ้า เป็นตาธรรม</h5> --}}
-              <h5 class="titlename text-center text-white mt-5 font-weight-bold">{{$designer->name}} {{$designer->surname}}</h5>
+              <h5 class="titlename text-center text-white mt-lg-5 font-weight-bold">{{$designer->name}} {{$designer->surname}}</h5>
               @if ($designer->rating >= 1 && $designer->rating < 2)
               <p class="mt text-center"><i class="fas fa-star star1" id=""></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i>
 
@@ -54,7 +54,7 @@
           <div class="card-body bg-white">
 
               <div class="row">
-              <div class="col-6 col-md-3">
+              <div class="col-6 col-md-6 col-lg-3">
             
             <h5 class="font-weight-bold d-none d-md-block" >ข้อมูลเบื้องต้น</h5>
             <h6 class="font-weight-bold d-md-none" >ข้อมูลเบื้องต้น</h6>
@@ -66,7 +66,7 @@
             <small class="d-md-none">การจ้างงาน</small>
             </div>
 
-            <div class="col-6 col-md-3 mt-4" style="padding-right: 0px !important;
+            <div class="col-6 col-md-6 col-lg-3 mt-4" style="padding-right: 0px !important;
             padding-left: 0px !important;">
                 
                 <p class="d-none d-md-block">  {{date('F d,Y',strtotime( Auth::user()->created_at))}}</p>
@@ -300,7 +300,7 @@
                     @endphp
                     <div class="row  mt-2">
 
-                        <div class="col-2">
+                        <div class="col col-md-4">
                             <div class="profile-img2 mt-3" style="height:50px; width:50px;"> 
                                 @if ($profile && $profile->profilepic !== NULL)
                                 <img class="rounded-circle" style="height:50px; width:50px; object-fit:cover;" src="/{{$profile->profilepic}}" />
@@ -315,7 +315,7 @@
                         </div>
   
                           
-                      <div class="col">
+                      <div class="col col-md-8">
                      
                       <h5 class="mt-3">{{$user->name}} <span>
                             
