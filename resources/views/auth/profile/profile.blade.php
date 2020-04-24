@@ -43,7 +43,7 @@
                 
                 <div class="form-row pl-md-5 pr-md-5 p-3 ">
                     <div class="form-group dropdown col-12 col-md-3">
-                      <h5 class="font-weight-bold" for="due">   <i class="fas fa-venus-mars icon"></i>  คำนำหน้าชื่อ</h5>
+                      <h5 class="font-weight-bold" for="due">คำนำหน้าชื่อ</h5>
                         <select class="form-control" name="titleName" id="month" >
                                     <option selected="selected" value="นาย">นาย</option>
                                     <option value="นาง">นาง</option>
