@@ -52,7 +52,7 @@
 </div>
 <div class="container">
     <h1 class="mt-5 d-none d-md-block">ผลงานที่คุณถูกใจ<span class="_hilight font-weight-bold">ทั้งหมด</span></h1>
-    <h3 class="mt-5 text-center d-md-block">ผลงานที่คุณถูกใจ<span class="_hilight font-weight-bold">ทั้งหมด</span></h3>
+    <h3 class="mt-5 text-center d-md-none">ผลงานที่คุณถูกใจ<span class="_hilight font-weight-bold">ทั้งหมด</span></h3>
     <div class="row">
 
                     @if($jobs->count() == 0)

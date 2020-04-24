@@ -960,6 +960,15 @@
     overflow-x: scroll;
     width: 395px;
   }
+  .checkmark-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 93px;
+    width: 27%;
+    /* background-color: #eee; */
+    border-radius: 5px;
+}
   .obj-img-noti{
     width:70px; height:60px; object-fit:cover;
   }
