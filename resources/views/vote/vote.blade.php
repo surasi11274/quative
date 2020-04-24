@@ -145,7 +145,7 @@
 
                                 @endphp
 
-                                <article class="col-12 col-md-4 mt-5">
+                                <article class="col-12 col-md-6 col-lg-4 mt-5">
                                     <div class="card shadow-sm" data-id="{{ $job->id }}">
 
                                     <a href="{{ route('galleryDetail', $job->id) }}">
@@ -157,9 +157,12 @@
                                                 <div class="row pl-3">
                                                     <a style="text-decoration:none;" href="{{route('startjob.show',$designerid->token)}}">
 
-                                                        <p class="font-weight-bold">ออกแบบโดย
+                                                        <p class="font-weight-bold over-wrap d-none d-md-block text-truncate wraptext-md">ออกแบบโดย
                                                             {{$designerid->name}}
                                                         </p>
+                                                        <small class="font-weight-bold over-wrap d-md-none  text-truncate wraptext-md">ออกแบบโดย
+                                                            {{$designerid->name}}
+                                                        </small>
                                                         </a>
                                                 </div>
 
@@ -172,17 +175,19 @@
 
                                             @endforeach --}}
                                             <div class="row pl-3">
+                                                <span class="d-inline-block text-truncate wraptext-md">
                                             @foreach ($jobtags as $jobt)
                                                 @php
 
                                                 $tagname = \App\Tags::find($jobt)->tagName;
 
                                                 @endphp
-                                                <p>
+                                               
                                                     {{$tagname}},
-                                                </p>
+                                               
 
                                             @endforeach 
+                                                </span>
                                             </div>
                                 
                                         <div class="row pl-3 color-grey">
