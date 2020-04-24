@@ -44,10 +44,10 @@
     padding-left: inherit;
     z-index: 2;
 }
-.carousel-caption1:hover{
+/* .carousel-caption1:hover{
     background-color: rgba(0, 0, 0,.25);
     transition: 0.4s;
-}
+} */
 .love{
     background-color: white;
     color: #c4c4c4;

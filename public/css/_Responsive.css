@@ -1392,7 +1392,7 @@
 }
   .overflow-select {
     overflow-x: scroll;
-    width: 350px !important;
+    width: 700px !important;
 }
   .upload-btn-wrapper-work {
     position: relative;
@@ -2174,7 +2174,7 @@
 }
   .dropdown-menu-only {
     top: 100%;
-    left: -290px !important;
+    left: -260px !important;
     
 }
   .wrapper-profile{
