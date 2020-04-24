@@ -7,8 +7,8 @@
     <div class="_black-bg mt-5 p-3 p-md-5">
         <div class="row">
             <div class="col-12 col-md-6 ">
-            <h3 class="content-bg mb-5 d-none d-md-block" >ข้อมูลการจ้างงาน no. W{{$jobs->id}}</h3>
-            <h5 class="content-bg mb-3 d-md-none font-weight-bold" >ข้อมูลการจ้างงาน no. W{{$jobs->id}}</h5>
+            <h3 class="content-bg mb-5 d-none d-md-block" >ข้อมูลการจ้างงาน W{{$jobs->id}}</h3>
+            <h5 class="content-bg mb-3 d-md-none font-weight-bold" >ข้อมูลการจ้างงาน W{{$jobs->id}}</h5>
                     <div class="row">
                         
                         <div class="col-12 ">

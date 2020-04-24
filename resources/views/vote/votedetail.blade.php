@@ -23,8 +23,8 @@
                         @endphp
 
 
-                            <figure class="img-fluid float-right  mt-3">
-                                <img class="rounded-circle img-fluid" src="/{{$designerid->profilepic}}">
+                            <figure class=" float-right  mt-3">
+                                <img class="rounded-circle img-vote-designer" src="/{{$designerid->profilepic}}">
                             </figure>
                         </div>
                     </div>
