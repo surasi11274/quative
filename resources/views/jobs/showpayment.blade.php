@@ -70,25 +70,19 @@
               </div>
             </div>
             <div class="row pb-5">
-              <div class="col-12 col-md-4">
-                
+
+
+              <div class="col-6 col-md-3 offset-md-3">
+                <a href="{{ route('job.show', $jobs->token) }}" class="btn btn-outline-dark text-center mb-5 btn-lg btn-block">ยกเลิก</a>
               </div>
-              <div class="col-12 col-md-8">
-                <div class="row">
-                  <div class="col-4">
-                    <button type="button" class="btn _secondary-btn btn-lg btn-block" >ยกเลิก</button>
-                    
-                  </div>
-                  <div class="col-8">
-                    <a href="{{ route('job.payment', $jobs->token) }}">
-                      <button type="submit" class="btn _primary-black btn-lg  d-none d-md-block" style="width:100%;">อัพโหลดหลักฐานการชำระเงิน</button>
-                     </a>
-                     <a href="{{ route('job.payment', $jobs->token) }}">
-                      <button type="submit" class="btn _primary-black btn-lg d-md-none btn-block">อัพโหลด</button> 
-                    </a>
-                   
-                  </div>
-                </div>
+              <div class="col-6 col-md-6 ">
+                <a href="{{ route('job.payment', $jobs->token) }}">
+                <button type="submit" class="btn _primary-black text-center mb-5 btn-lg btn-block  d-none d-md-block">อัพโหลดหลักฐานการชำระเงิน</button>
+              </a>
+                <a href="{{ route('job.payment', $jobs->token) }}">
+                  <button type="submit" class="btn _primary-black text-center mb-5 btn-lg btn-block d-md-none">อัพโหลด</button>
+                  </a>
+          
               </div>
               
             </div>

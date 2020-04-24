@@ -87,16 +87,17 @@
                               <h5 class="font-weight-bold">ข้อความเพิ่มเติม (ถ้ามี)</h5>
                               <textarea class="form-control" id="validationTextarea" name="description" placeholder="ระบุรายข้อความเพื่มเติม" ></textarea>
                             </div>
-                            <div class="col-12 col-md-8">
+                            {{-- <div class="col-12 col-md-8">
 
+                            </div> --}}
+                          
+                            <div class="col-6 col-md-3 offset-md-6">
+                              <a href="{{ route('job.showpayment', $jobs->token) }}" class="btn btn-outline-dark text-center mb-5 btn-lg btn-block">ย้อนกลับ</a>
                             </div>
-                            <div class="col-12 col-md-4">
-                              <a href="{{ route('job.showpayment', $jobs->token) }}">
-                                <button type="button" class="btn btn-outline-dark text-center mb-5 btn-lg">ย้อนกลับ</button>
-
-                              </a>
-                             <button type="submit" class="btn _primary-black text-center mb-5 btn-lg">ยืนยัน</button>
+                            <div class="col-6 col-md-3 ">
+                              <button type="submit" class="btn _primary-black text-center mb-5 btn-lg btn-block">ยืนยัน</button>
                             </div>
+                          
                                 
                       </div>
                       

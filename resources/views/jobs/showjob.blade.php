@@ -575,19 +575,19 @@
                                         <button type="button"class="btn _secondary-btn m-1 btn-lg btn-block" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                                     @elseif ($jobs->jobstatus_id == 2)
                                         <a href="{{ route('job.showpayment', $jobs->token) }}" style="text-decoration:none;">
-                                            <button type="button" class="btn _primary-btn mr-1 btn-lg btn-block" >แจ้งชำระเงิน</button>
+                                            <button type="button" class="btn _primary-btn mr-md-1 btn-lg btn-block" >แจ้งชำระเงิน</button>
                                         </a>
-                                        <button type="button" class="btn _secondary-btn ml-1 btn-lg btn-block" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
+                                        <button type="button" class="btn _secondary-btn ml-md-1 btn-lg btn-block" onclick="addCart('0')" data-toggle="modal" data-target="#exampleModal">ยกเลิกงาน</button>
                                     @elseif ($jobs->jobstatus_id == 7)
-                          
 
-                                               
-                        
+                                        <button type="button" class="btn _primary-black m-1 btn-lg btn-block d-md-none" onclick="addCart('6')" data-toggle="modal" data-target="#exampleModal"><p >สั่งแก้ไข</p></button>
+                                        <button type="button" class="btn _primary-btn m-1 text-center mb-5 btn-lg btn-block d-md-none" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
+                                 
                                                             {{-- <div class="row">
                                                                 <div class="col-3"> --}}
-                                                                    <button type="button" class="btn _primary-black m-1 btn-lg btn-block w-auto" style="height:50px;" onclick="addCart('6')" data-toggle="modal" data-target="#exampleModal"><p >สั่งแก้ไข</p></button>
+                                                                    <button type="button" class="btn _primary-black m-1 btn-lg btn-block w-auto d-none d-md-block" style="height:50px;" onclick="addCart('6')" data-toggle="modal" data-target="#exampleModal"><p >สั่งแก้ไข</p></button>
 
-                                                                    <button type="button" class="btn _primary-btn m-1 btn-lg btn-block w-auto" style="height:50px;" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
+                                                                    <button type="button" class="btn _primary-btn m-1 btn-lg btn-block w-auto d-none d-md-block" style="height:50px;" onclick="addCart('8')" data-toggle="modal" data-target="#exampleModal">รับมอบงานสำเร็จ</button>
 
                                                                 {{-- </div>
                                                             </div>     --}}
@@ -621,9 +621,9 @@
                                 <h5 class="font-weight-bold  text-success">นักออกแบบส่งงานแล้ว กรุณาตรวจสอบงานออกแบบ</h5 >
                             </div>
                            
-                               <div class="row ml-1 mr-5 " >
+                               <div class="row p-3 " >
                                    
-                                   <div class="col" style="border: dashed 2px #523EE8; border-radius:15px;">
+                                   <div class="col-12" style="border: dashed 2px #523EE8; border-radius:15px; width:100%">
                                     {{-- @if ($jobs->jobstatus_id == 7) --}}
 
                                     
@@ -662,7 +662,7 @@
                                 @if ($jobs->filelinks !== NULL)
                                 <p class="mt-5 font-weight-bold">ลิงค์สำหรับดาวน์โหลดไฟล์เพิ่มเติม</p>
                                     <a href="{{$jobs->filelinks}}">
-                                        <p style="color:#523EE8;">{{$jobs->filelinks}}</p>
+                                        <p class="_hilight over-wrap mb-3" >{{$jobs->filelinks}}</p>
                                     </a>
                                     @endif
                                @endif
@@ -909,7 +909,7 @@
                                             @if ($jobs->filelinks !== NULL)
                                             <p class="mt-5 font-weight-bold">ลิงค์สำหรับดาวน์โหลดไฟล์เพิ่มเติม</p>
                                                 <a href="{{$jobs->filelinks}}">
-                                                    <p style="color:#523EE8;">{{$jobs->filelinks}}</p>
+                                                    <p class="_hilight over-wrap mb-3">{{$jobs->filelinks}}</p>
                                                 </a>
                                                 @endif
                                             
@@ -1008,11 +1008,11 @@
                                             <span>นักออกแบบสามารถนำผลงานของคุณไปแสดงในโปรไฟล์เพื่อ
                                              ช่วยสร้าง Portfolio บนเว็บไซต์เราได้หรือไม่</span>
                  
-                                             <div class="row  ">
-                                                 <div class="col-3"></div>
-                                                 <div class="col-6 mt-5 mb-5">
+                                             <div class="row">
+                                                 <div class="col-3 d-none d-md-block"></div>
+                                                 <div class="col-md-6 mt-5 mb-5">
                                                      <input class="form-check-input" type="radio" value="1" id="defaultCheck1" name="canshow">
-                                                     <label class="form-check-label _hilight" for="defaultCheck1">
+                                                     <label class="form-check-label _hilight text-left" for="defaultCheck1">
                                                          อนุญาตให้นักออกแบบนำงานคุณไปแสดงในโปรไฟล์
                                                      </label>
                                                      <input class="form-check-input" type="radio" value="0" id="defaultCheck2" name="canshow">
@@ -1020,7 +1020,7 @@
                                                         ไม่อนุญาตให้นักออกแบบนำงานคุณไปแสดง
                                                      </label>
                                                  </div>
-                                                 <div class="col-3"></div>
+                                                 <div class="col-3 d-none d-md-block"></div>
                  
                                                  
                                              </div>
