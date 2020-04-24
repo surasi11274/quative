@@ -29,7 +29,7 @@
     <a href="/message" style="text-decoration:none;"">
         <label class="font-weight-bold" for="name">{{$notification->data['user']['name']}} </label><br>
     
-        <small style="color:#523EE8;">Send your messages
+        <small style="color:#523EE8;">ส่งข้อความถึงคุณ
             {{-- {{$notification->data['jobs']['id']}} --}}
         </small>
         <br>

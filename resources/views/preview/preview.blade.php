@@ -25,6 +25,10 @@
     </style>
 </body>
 @section('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
 <div class="container">
 
 <div class="card mt-5 shadow-sm" style="width:100%; height:auto; margin-top: 150px !important;">		  
@@ -45,8 +49,8 @@
           <div class="col mt-5 mb-5">
             <div class="row">
               @guest
-              <a href="javascript:void(0);" >
-                <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถกดถูกใจได้.','ข้อมูล',{
+              <a class="mx-auto" href="javascript:void(0);" >
+                <button onclick="toastr.info('คุณต้องทำการ สมัครสมาชิกหรือเข้าสู่ระบบก่อน จึงสามารถอัพโหลดได้.','ข้อมูล',{
                     closeButton:true,
                     progressBar: true,
                 })" class="mx-auto btn _primary-btn btn-lg">
@@ -312,6 +316,8 @@
 </div>
 <!-- END CONTAINER -->
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script src="{{asset('js/dropzone.js')}}"></script>
 
 

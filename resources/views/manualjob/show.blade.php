@@ -110,8 +110,11 @@
                     <p >ประชาชน</p>
                     <p>เบอร์โทรศัพท์</p>
                 </div>
+                @php
+                        $udesigner = \App\User::find($designer->user_id);
+                    @endphp
                 <div class="col-2" style="display:grid;">
-                    @if (Auth::user()->email !== NULL) <i class="fas fa-check _hilight"></i>@endif
+                    @if ($udesigner->email !== NULL) <i class="fas fa-check _hilight"></i>@endif
                     @if ($designer->personalID !== NULL) <i class="fas fa-check _hilight"></i>@endif
                     @if ($designer->phonenumber !== NULL) <i class="fas fa-check _hilight"></i>@endif
                 </div>
@@ -299,6 +302,13 @@
                       
                       
                     </div>
+                    @if ($reviews->count() == 0)
+                    <div class="overflow-review" style="height:70px;">
+                        <div class="row  mt-5 ">
+                            <p class="mx-auto my-auto text-secondary" style="opacity:0.5;">ยังไม่มีการรีวิว</p>
+                        </div>
+                    </div>
+                    @else
                     <div class="overflow-review">
                     @foreach ($reviews as $review)
                     @php
@@ -337,6 +347,7 @@
 
                     @endforeach
                 </div>
+                @endif
                     
                     <!-- comment -->
 {{-- 

@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -85,7 +88,8 @@
                                                     </span>
                                                 </a>
                                   
-                                    @endif</a>
+                                    @endif
+                                </a>
                                                 
                                                </div>
                                                <div class="col-3 text-center">
@@ -139,13 +143,39 @@
                                        </li>
                                        <li class="nav-link">
                                            <a class="ml-2 nav-link" href="/message">ข้อความ  <span class="icon chat float-right mr-2"></span></a>
+
+                                        
+
                                        </li>
                                        <li class="nav-link">
+                                         @if(Auth::user()->designer() )
                                            <a class="ml-2 nav-link" role="button" href="/requestjob">ตรวจสอบการจ้างงาน  <span class="icon list-ul float-right mr-2"></span></a>
-                                       </li>
+                                           @elseif(!Auth::user()->designer() )
+
+                                           <a class="ml-2 nav-link" role="button" href="javascript:void(0);" onclick="toastr.info('คุณต้องทำการ เพิ่มโปรไฟล์นักออกแบบ ก่อนจึงจะสามารถเข้าสู่หน้านี้ได้.','ข้อมูล',{
+                                            closeButton:true,
+                                            progressBar: true,
+                                        })" >
+                                                {{-- <button   > --}}
+                                                    ตรวจสอบการจ้างงาน  <span class="icon list-ul float-right mr-2"></span>
+                                                    {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                                {{-- </button> --}}
+                                            </a>
+                                            @endif
+
+                                        </li>
                                        <li class="nav-link">
                                         @if (!Auth::user()->designer())
-                                        <a class="ml-2 nav-link" role="button" href="#">ภาพรวมรายรับของฉัน  <span class="icon dollar-sign  float-right mr-2"></span></a>
+                                        <a class="ml-2 nav-link" role="button" href="javascript:void(0);" onclick="toastr.info('คุณต้องทำการ เพิ่มโปรไฟล์นักออกแบบ ก่อนจึงจะสามารถเข้าสู่หน้านี้ได้.','ข้อมูล',{
+                                            closeButton:true,
+                                            progressBar: true,
+                                        })" >
+                                                {{-- <button   > --}}
+                                                    ภาพรวมรายรับของฉัน  <span class="icon dollar-sign  float-right mr-2"></span>
+                                                    {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                                {{-- </button> --}}
+                                            </a>
+                                        {{-- <a class="ml-2 nav-link" role="button" href="#">ภาพรวมรายรับของฉัน  <span class="icon dollar-sign  float-right mr-2"></span></a> --}}
 
                                         @elseif (Auth::user()->designer())
                                             <a class="ml-2 nav-link" role="button" href="{{route('designer.billing',Auth::user()->designer()->token)}}">ภาพรวมรายรับของฉัน  <span class="icon dollar-sign  float-right mr-2"></span></a>
@@ -154,7 +184,16 @@
                                         </li>
                                        <li class="nav-link">
                                            @if (!Auth::user()->designer())
-                                           <a class="ml-2 nav-link" href="#">เรทและราคางานของฉัน  <span class="icon file-import float-right mr-2"></span></a>
+                                           <a class="ml-2 nav-link" role="button" href="javascript:void(0);" onclick="toastr.info('คุณต้องทำการ เพิ่มโปรไฟล์นักออกแบบ ก่อนจึงจะสามารถเข้าสู่หน้านี้ได้.','ข้อมูล',{
+                                            closeButton:true,
+                                            progressBar: true,
+                                        })" >
+                                                {{-- <button   > --}}
+                                                    เรทและราคางานของฉัน  <span class="icon file-import float-right mr-2"></span>
+                                                    {{-- {{$job->favorite_to_users->count()}}                                 --}}
+                                                {{-- </button> --}}
+                                            </a>
+                                           {{-- <a class="ml-2 nav-link" href="#">เรทและราคางานของฉัน  <span class="icon file-import float-right mr-2"></span></a> --}}
 
                                            @elseif (Auth::user()->designer())
                                            <a class="ml-2 nav-link" href="{{ route('designer.course', Auth::user()->designer()->token) }}">เรทและราคางานของฉัน  <span class="icon file-import float-right mr-2"></span></a>

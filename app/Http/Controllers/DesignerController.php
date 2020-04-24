@@ -15,6 +15,8 @@ use App\Jobs;
 use App\Jobstatus;
 use App\Notifications\AcceptJob;
 use App\Notifications\CancelJob;
+use App\Notifications\JobsNoti;
+use App\Notifications\JobsNotiAll;
 use App\Payment;
 use App\Review;
 use DB;
@@ -378,6 +380,11 @@ class DesignerController extends Controller
             auth()->user()->find($updateJob->user_id)->notify(New CancelJob($updateJob));
 
         }
+        // else if($updateJob->jobstatus_id == 0) {
+        //     auth()->user()->find($updateJob->user_id)->notify(New JobsNotiAll($updateJob));
+
+        // }
+        
 
       
         try{

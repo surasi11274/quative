@@ -42,14 +42,17 @@
             <div class="col-12 col-md-2">
                 <ul class="list-unstyled mx-auto">
                     <li>
-                        <p class="_dark">Site Navigation</p>
+                        <p class="_hilight">Site Navigation</p>
                         <hr>
                     </li>
-                    @if (auth()->user()->role == 0)
+                    @if(Auth::guest())
+
+                    @elseif (auth()->user()->role == '0')
                     <li>
                         <a href="/search"  class="_hilight">ค้นหานักออกแบบ</a>
                     </li>
-                        
+                    @else
+
                     @endif
                     
                         <li>

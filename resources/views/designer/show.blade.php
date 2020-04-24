@@ -94,7 +94,10 @@
                     <p>เบอร์โทรศัพท์</p>
                 </div>
                 <div class="col-2" style="display:grid;">
-                    @if (Auth::user()->email !== NULL) <i class="fas fa-check _hilight"></i>@endif
+                    @php
+                        $udesigner = \App\User::find($designer->user_id);
+                    @endphp
+                    @if ($udesigner->email !== NULL) <i class="fas fa-check _hilight"></i>@endif
                     @if ($designer->personalID !== NULL) <i class="fas fa-check _hilight"></i>@endif
                     @if ($designer->phonenumber !== NULL) <i class="fas fa-check _hilight"></i>@endif
                 </div>

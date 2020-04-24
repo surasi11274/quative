@@ -153,12 +153,12 @@
                         <div class="col-12 col-md-7">
                         <h5 class="font-weight-bold">ความคิดเห็น ({{$jobs->comments()->count()}})</h5>
                                 @guest
-                                <div class="row">
-                                    <p class="mx-auto text-secondary mt-3" style="opacity:0.5;">For a new comment.You need to login first.
-
-                                </div>
-                                    <a href="{{route('login')}}">Login </a>
+                                <div class="row mt-5">
+                                    <p class="mx-auto text-secondary mt-3" style="opacity:0.5;">กรุณาเข้าสู่ระบบก่อน จึงจะสามารถแสดงความคิดเห็นได้.
                                     </p>
+                                </div>
+                                    {{-- <a href="{{route('login')}}">Login </a> --}}
+                                   
                                 @else 
                                 <form action="{{ route('comment.store',$jobs->id)}}" method="POST">
                                     @csrf
@@ -245,15 +245,20 @@
 
                                 <div class="row d-flex">
                                     <div class="col-2">
+                                        @php
+                                            $user = $comment->user_id;
+                                            $designer = \App\Designer::where('user_id',$user)->first();
+                                            $users = \App\User::find($user);
+                                        @endphp
                                         <figure class=" img-fluid">
-                                            @if (auth()->user()->designer())
+                                            @if ($designer && $designer->profilepic !== NULL)
                                                 
-                                            <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="/{{auth()->user()->designer()->profilepic}}">
-                                            @elseif(!auth()->user()->designer() &&  auth()->user()->profile() && auth()->user()->profile()->profilepic !== NULL )
-                                                <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="/{{auth()->user()->profile()->profilepic}}">
+                                            <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="/{{$designer->profilepic}}">
+                                            @elseif($users->profile() && $users->profile()->profilepic !== NULL )
+                                                <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="/{{$users->profile()->profilepic}}">
 
                                             @else
-                                                <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="{{auth()->user()->avatar}}">
+                                                <img class="rounded-circle" style="width:50px;height:50px; object-fit:cover;" src="{{$users->avatar}}">
 
                                             @endif
                                         </figure>

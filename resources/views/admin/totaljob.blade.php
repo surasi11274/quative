@@ -88,11 +88,17 @@
                                     {{-- <td class="pt-4 pb-4">{{date('F d,Y',strtotime($payment->dateatTransfer))}}</td> --}}
                                     <td class="pt-4 pb-4">{{date('F d,Y',strtotime($job->created_at))}}</td>
                                     {{-- <td class="pt-4 pb-4">{{$payment->timeatTransfer}}</td> --}}
-                                        
-                                    <td class="pt-4 pb-4">{{$user->name}}</td>
+                                    
+                                    @if ($user)
+                                      <td class="pt-4 pb-4">{{$user->name}}</td>
+                                    @endif
+
+                                    @if ($designer)
+                                    <td class="pt-4 pb-4 ">{{$designer->name}}</td>
+
+                                    @endif
 
                                     {{-- <td class="pt-4 pb-4 _hilight">{{$payment->total_price}}</td> --}}
-                                    <td class="pt-4 pb-4 ">{{$designer->name}}</td>
                                     <td class="pt-4 pb-4 ">
                                       {{-- <button type="button" class="btn _primary-btn">No. W{{$payment->job_id}}</button> --}}
                                       <p class="_hilight">
