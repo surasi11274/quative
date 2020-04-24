@@ -133,7 +133,7 @@
                         <ol class="step-indicator">
                             <li class="complete">
                                 <div class="step">1</div>
-                                <div class="caption hidden-xs hidden-sm"> 
+                                <div class="caption"> 
                                     <h5>เริ่มจ้างงาน</h5> <br>
                                     <p class="complete d-none d-lg-block">นักออกแบบรับงานแล้ว</p>
                                     <p class="complete d-md-none">นักออกแบบรับงานแล้ว</p>
@@ -141,7 +141,7 @@
                             </li>
                             <li class="active">
                                 <div class="step">2</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ชำระเงิน</h5> <br>
                                     <p class="d-none d-lg-block">ตรวจสอบการชำระเงิน</p>
                                     <p class="d-md-none ">ตรวจสอบการชำระเงิน</p>
@@ -150,7 +150,7 @@
                             </li>
                             <li class="active">
                                 <div class="step">3</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ดำเนินการออกแบบ</h5> <br>
                                     <p class="d-none d-lg-block">กำลังออกแบบงาน</p>
                                     <p class="d-md-none ">กำลังออกแบบงาน</p>
@@ -158,7 +158,7 @@
                             </li>
                             <li class="active">
                                 <div class="step">4</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>ส่งมอบงาน</h5> <br>
                                     <p class="d-none d-lg-block">ตรวจสอบงาน</p>
                                     <p class="d-md-none">ตรวจสอบงาน</p>
@@ -166,7 +166,7 @@
                             </li>
                             <li class="active">
                                 <div class="step">5</div>
-                                <div class="caption hidden-xs hidden-sm">
+                                <div class="caption">
                                     <h5>เสร็จสิ้นงาน</h5> <br>
                                     <p class="d-none d-lg-block">ให้คะแนนและรีวิว</p>
                                     <p class="d-md-none">ให้คะแนนและรีวิว</p>
