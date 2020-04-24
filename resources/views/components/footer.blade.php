@@ -10,6 +10,7 @@
 
             <!-- Grid column -->
 
+        
 
             <!-- Grid column -->
            <div class="col-12 col-md-8">
@@ -42,21 +43,17 @@
             <div class="col-12 col-md-2">
                 <ul class="list-unstyled mx-auto">
                     <li>
-                        <p class="_dark">Site Navigation</p>
+                        <p class="_hilight">Site Navigation</p>
                         <hr>
                     </li>
-                    @if (auth()->user()->role == 0)
                     <li>
-                        <a href="/search"  class="_hilight">ค้นหานักออกแบบ</a>
+                        <a href="#"  class="_hilight">ค้นหานักออกแบบ</a>
                     </li>
-                        
-                    @endif
-                    
                         <li>
-                            <a href="/gallery" class="_hilight">ผลงานนักออกแบบ</a>
+                            <a href="#!" class="_hilight">ผลงานนักออกแบบ</a>
                         </li>
                         <li>
-                            <a href="/preview" class="_hilight">พรีวิวโลโก้</a>
+                            <a href="#!" class="_hilight">พรีวิวโลโก้</a>
                         </li>
                 </ul>
             </div>
@@ -70,7 +67,7 @@
                         <a href="#" class="_hilight">ติดต่อเรา</a>
                     </li>
                     <li>
-                        <a href="/" class="_hilight">Quative ใช้ยังไง</a>
+                        <a href="#!" class="_hilight">Quative ใช้ยังไง</a>
                     </li>
                 </ul>
             </div>
