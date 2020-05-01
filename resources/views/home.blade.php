@@ -297,7 +297,7 @@
                                 <img id="profileImage" class="rounded-circle" src="../photo/top2.jpg" style="width: 90px; height: 90px; margin: 0px auto;">
                                     <h5 class="font-weight-bold mt-3 mb-5">ศุภชัย วอนเบ้า</h5>
 
-                                    <p>เว็บไซต์ดูแล้วเข้าใจง่ายรู้ว่าเว็บทำงานยังไง</p>
+                                    <p>เว็บไซต์ดูแล้วเข้าใจง่าย <br>รู้ว่าเว็บทำงานยังไง</p>
                             </div>
                         </div>
                         <div class="col-12 col-md-4 justify-content-center">
@@ -313,7 +313,7 @@
                                 <img id="profileImage" class="rounded-circle " src="../photo/top3.jpg" style="width: 90px; height: 90px; margin: 0px auto;">
                                     <h5 class="font-weight-bold mt-3 mb-5">เมียม</h5>
 
-                                    <p>เข้าใจจุดประสงค์ของเว็บไซต์ ระบบทำงานได้ดี</p>
+                                    <p>เข้าใจจุดประสงค์ของเว็บไซต์ <br>ระบบทำงานได้ดี</p>
                             </div>
                         </div>
 

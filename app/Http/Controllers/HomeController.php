@@ -644,7 +644,7 @@ class HomeController extends Controller
         $updateJob = Jobs::find($request->job_id);
         $updateJob->jobstatus_id = $request->jobstatus_id;
         $updateJob->editorcomment = $request->editorcomment;
-        $updateJob->filelinks = $request->filelinks;
+        // $updateJob->filelinks = $request->filelinks;
 
 
     

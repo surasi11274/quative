@@ -193,7 +193,7 @@
                                 <div class="caption">
                                     <h5>ชำระเงิน</h5> <br>
                                     <p class="complete d-none d-lg-block">ตรวจสอบการชำระเงิน</p>
-                                    <p class="complete d-none d-lg-block">ตรวจสอบการชำระเงิน</p>
+                                    <p class="complete d-md-none">ตรวจสอบการชำระเงิน</p>
                                 </div>
                             </li>
                             <li class="active">
@@ -679,7 +679,7 @@
                            
                                <div class="row p-3 " >
                                    
-                                   <div class="col-6" style="border: dashed 2px #523EE8; border-radius:15px; width:100%">
+                                   <div class="col-12 col-md-6" style="border: dashed 2px #523EE8; border-radius:15px; width:100%">
                                     {{-- @if ($jobs->jobstatus_id == 7) --}}
 
                                     
@@ -818,7 +818,9 @@
                                 <img class="rounded" src="/{{$jobs->productPic}}" alt="">
                                </div> --}}
                            </div>
-                           <h5 class=" mt-3 over-wrah5 font-weight-bold">URL : <a href="{{$jobs->url}}" target="_blank"><small>{{$jobs->url}}</small></a></p>
+                           <h5 class=" mt-3 over-wrah5 font-weight-bold">URL : <a href="{{$jobs->url}}" target="_blank">
+                            <small class="over-wrap">{{$jobs->url}}</small>
+                        </a></p>
                             <h4 class="mt-5 font-weight-bold">รูปภาพตัวอย่างงาน</h4>
                            <hr>
                            <h5 class="mt-3 font-weight-bold">รูปภาพงานใกล้เคียงกับงาน</h5>
@@ -965,7 +967,7 @@
                                             @if ($jobs->filelinks !== NULL)
                                             <p class="mt-5 font-weight-bold">ลิงค์สำหรับดาวน์โหลดไฟล์เพิ่มเติม</p>
                                                 <a href="{{$jobs->filelinks}}">
-                                                    <p class="_hilight over-wrap mb-3">{{$jobs->filelinks}}</p>
+                                                    <p class="_hilight over-wrap mb-3" target="_blank">{{$jobs->filelinks}}</p>
                                                 </a>
                                                 @endif
                                             
